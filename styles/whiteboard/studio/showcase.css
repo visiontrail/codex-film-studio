@@ -11,3 +11,55 @@
 .edition-picker select { margin-left: .7rem; padding: .45rem .6rem; font: inherit; color: inherit; background: transparent; border: 1px solid #b8b3a8; border-radius: 3px; }
 
 .make-film{padding-top:105px}.repository-link{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:32px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}.repository-link small{display:block;font-size:10px;letter-spacing:.14em;color:var(--soft)}.repository-link strong{display:block;font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.045em;margin:12px 0}.repository-link span span{font-size:13px;line-height:1.6}.repository-link b{font:60px Architects;color:var(--blue)}.repository-link:hover{text-decoration:none}.repository-link:hover strong{color:var(--blue)}.start-steps{list-style:none;padding:0;margin:40px 0;display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:36px}.step-number{font:27px Architects;color:var(--orange)}.start-steps h3{margin:16px 0 12px}.start-steps p,.starter-prompt p{font-size:13px;line-height:1.8}.start-steps a{font-size:12px;border-bottom:1px solid var(--line);padding-bottom:5px}.start-steps pre{font-size:11px;line-height:1.8;background:#e9e8e1;padding:16px;white-space:pre-wrap;overflow-wrap:anywhere;border-left:2px solid var(--blue)}.starter-prompt{padding:30px 32px;background:#e9ece5;border-left:3px solid var(--orange)}.starter-prompt blockquote{font:23px/1.65 Architects;margin:20px 0;color:var(--blue);max-width:950px}.starter-prompt p{max-width:720px;color:#555b5c;margin-bottom:0}@media(max-width:900px){.start-steps{grid-template-columns:1fr;gap:26px}.start-steps li{border-bottom:1px solid var(--line);padding-bottom:25px}}@media(max-width:620px){.make-film{padding-top:65px}.repository-link{gap:16px}.repository-link b{font-size:40px}.repository-link strong{font-size:30px}.starter-prompt{padding:24px}.starter-prompt blockquote{font-size:20px}}
+
+/* Keep the wordmark intact and give page language its own place in the masthead. */
+.masthead{display:grid;grid-template-columns:auto 1fr auto;gap:32px}
+.brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-mark{float:none;flex:none;display:block;width:40px;height:40px;margin:0;line-height:1}
+.brand-name{display:block;white-space:nowrap;line-height:1.2}
+.masthead nav{justify-content:center}
+.header-tools{display:flex;align-items:center;gap:24px}
+.language-switch{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;flex-shrink:0}
+.language-switch button{border:0;background:transparent;color:var(--soft);min-width:44px;min-height:36px;padding:8px 10px;cursor:pointer;font-size:11px;line-height:1.2;white-space:nowrap}
+.language-switch button+button{border-left:1px solid var(--line)}
+.language-switch button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.language-switch button:hover{color:var(--blue)}
+.language-switch button[aria-pressed=true]:hover{color:white}
+.language-switch button:focus-visible{outline-offset:-3px}
+
+/* A labelled selector and a separate viewing action share a clear baseline. */
+.film-actions{display:flex;align-items:flex-end;flex-wrap:wrap;gap:20px 26px;margin-top:28px}
+.edition-picker{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:0;font-size:11px;letter-spacing:.03em}
+.edition-picker[hidden]{display:none}
+.edition-picker select{margin:0;min-height:42px;max-width:100%;padding:10px 28px 10px 12px;font-size:12px}
+.watch-link{gap:30px;min-height:42px;margin:0;padding:8px 0;white-space:nowrap}
+.watch-link span{font:inherit;color:inherit}
+.watch-link .watch-arrow{font-size:25px;line-height:1;color:var(--orange)}
+.section-heading>p{justify-self:end}
+.chapter-strip{grid-template-columns:repeat(var(--chapter-count,5),minmax(0,1fr))}
+.repository-link{justify-content:flex-start}
+
+/* Chinese uses native CJK faces instead of the Latin-only handwriting font. */
+html[lang=zh-CN] body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+html[lang=zh-CN] h1{font-size:clamp(48px,5.4vw,82px);line-height:1.2;letter-spacing:-.04em}
+html[lang=zh-CN] h1 em,html[lang=zh-CN] .handwritten,html[lang=zh-CN] .starter-prompt blockquote{font-family:"Kaiti SC",STKaiti,KaiTi,serif}
+html[lang=zh-CN] h1 em{font-size:1.05em;white-space:nowrap}
+html[lang=zh-CN] h2{line-height:1.25;letter-spacing:-.035em}
+html[lang=zh-CN] .eyebrow{letter-spacing:.08em}
+html[lang=zh-CN] .starter-prompt blockquote{line-height:1.9}
+html[lang=zh-CN] .source{line-height:1.9}
+
+@media(max-width:1100px){.header-tools{gap:16px}.masthead nav{gap:24px}.edition{font-size:9px;letter-spacing:.08em}}
+@media(max-width:900px){.masthead{gap:24px}.header-tools .edition{display:none}.section-heading>p{max-width:100%}}
+@media(max-width:620px){
+  .masthead{grid-template-columns:1fr auto;gap:20px;padding:20px}
+  .masthead nav{grid-column:1/-1;grid-row:2;justify-content:space-between;gap:16px;padding-top:16px;border-top:1px solid var(--line)}
+  .header-tools{grid-column:2;grid-row:1}
+  .brand{font-size:11px;gap:10px}.brand-mark{width:34px;height:34px}
+  h1{font-size:clamp(34px,11.2vw,64px)}
+  .film-actions{gap:18px 24px;margin-top:24px}
+  .watch-link{margin-top:0}.chapter-strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .section-heading>p{justify-self:start}
+  html[lang=zh-CN] h1{font-size:clamp(34px,9.6vw,54px)}
+  html[lang=zh-CN] h2{font-size:38px}
+}

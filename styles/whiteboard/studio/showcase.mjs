@@ -1,55 +1,127 @@
 import {comparisonBeats} from './src/comparison.mjs'
-const $=id=>document.getElementById(id)
-const main=$('film-player')
-const read=async path=>{const r=await fetch(path);if(!r.ok)throw new Error(`${path}: ${r.status}`);return r.json()}
-const time=t=>`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`
-let edition='short',base=''
-try{
-  const long=await read('editions/long/media/timeline.json')
-  if(long.complete_audio){
-    $('edition-picker').hidden=false
-    if(new URLSearchParams(location.search).get('edition')==='long'){
-      edition='long';base='editions/long/'
-      $('edition-select').value='long'
-      const video=`${base}media/does-ai-help-you-learn-long.mp4`
-      main.poster=`${base}media/poster.jpg`
-      main.querySelector('source').src=video
-      main.querySelector('track').src=`${base}media/captions.vtt`
-      main.load()
-      $('download-film').href=video
+import {messages, chineseSources, resolveLanguage} from './showcase-i18n.mjs'
+
+const $ = id => document.getElementById(id)
+const main = $('film-player')
+const read = async path => {
+  const response = await fetch(path)
+  if (!response.ok) throw new Error(`${path}: ${response.status}`)
+  return response.json()
+}
+const time = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`
+let storedLanguage
+try { storedLanguage = localStorage.getItem('codex-film-language') } catch {}
+let language = resolveLanguage(location.search, storedLanguage, navigator.language)
+const edition = new URLSearchParams(location.search).get('edition') === 'long' ? 'long' : 'short'
+const base = edition === 'long' ? 'editions/long/' : ''
+let timeline, beats = [], claims = []
+
+function renderChapters() {
+  const ids = edition === 'short'
+    ? ['hook', 'study', 'counter', 'practice', 'closing']
+    : ['hook', 'turkey', 'delay', 'guidance', 'example', 'closing']
+  const container = $('chapters')
+  container.replaceChildren()
+  container.style.setProperty('--chapter-count', ids.length)
+  for (const id of ids) {
+    const beat = beats.find(item => item.id === id)
+    if (!beat) continue
+    const button = document.createElement('button'), stamp = document.createElement('small')
+    button.type = 'button'
+    stamp.textContent = time(beat.start)
+    button.append(stamp, document.createTextNode(messages[language].chapters[id]))
+    button.onclick = () => {
+      main.currentTime = beat.start
+      main.play().catch(() => {})
+      $('screen').scrollIntoView({behavior: 'smooth'})
     }
+    container.append(button)
   }
-}catch{}
-$('edition-select').onchange=()=>{
-  const url=new URL(location.href);url.searchParams.set('edition',$('edition-select').value)
+}
+
+function renderSources() {
+  const container = $('source-list'), seen = new Set()
+  container.replaceChildren()
+  for (const claim of claims) {
+    if (seen.has(claim.source)) continue
+    seen.add(claim.source)
+    const item = document.createElement('article'), id = document.createElement('b')
+    const body = document.createElement('div'), link = document.createElement('a'), kind = document.createElement('p')
+    const translated = language === 'zh' ? chineseSources[claim.id] : null
+    item.className = 'source'
+    id.textContent = claim.id
+    link.href = claim.source
+    link.textContent = (translated?.[0] || claim.claim) + ' ↗'
+    kind.textContent = translated?.[1] || claim.type
+    body.append(link, kind)
+    item.append(id, body)
+    container.append(item)
+  }
+}
+
+function applyLanguage() {
+  const copy = messages[language]
+  document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en'
+  document.title = copy.title
+  document.querySelector('meta[name="description"]').content = copy.description
+  for (const element of document.querySelectorAll('[data-i18n]')) {
+    element.textContent = copy[element.dataset.i18n]
+  }
+  // Only fixed, repository-owned heading markup is used here.
+  for (const element of document.querySelectorAll('[data-i18n-html]')) {
+    element.innerHTML = copy[element.dataset.i18nHtml]
+  }
+  for (const element of document.querySelectorAll('[data-i18n-aria]')) {
+    element.setAttribute('aria-label', copy[element.dataset.i18nAria])
+  }
+  for (const button of document.querySelectorAll('[data-language]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.language === language))
+  }
+  $('film-duration').textContent = timeline ? `${time(timeline.duration)} ${copy.durationUnit}` : copy.sampleFilm
+  renderChapters()
+  renderSources()
+}
+
+for (const button of document.querySelectorAll('[data-language]')) {
+  button.onclick = () => {
+    language = button.dataset.language
+    const url = new URL(location.href)
+    url.searchParams.set('lang', language)
+    history.replaceState(null, '', url)
+    try { localStorage.setItem('codex-film-language', language) } catch {}
+    applyLanguage()
+  }
+}
+applyLanguage()
+
+$('edition-select').value = edition
+if (edition === 'long') {
+  const video = `${base}media/does-ai-help-you-learn-long.mp4`
+  main.poster = `${base}media/poster.jpg`
+  main.querySelector('source').src = video
+  main.querySelector('track').src = `${base}media/captions.vtt`
+  main.load()
+  $('download-film').href = video
+}
+$('edition-select').onchange = () => {
+  const url = new URL(location.href)
+  url.searchParams.set('edition', $('edition-select').value)
+  url.searchParams.set('lang', language)
   location.assign(url)
 }
-let timeline,beats=[]
-try{
-  timeline=await read(`${base}media/timeline.json`)
-  $('film-duration').textContent=`${time(timeline.duration)} MIN`
-  beats=comparisonBeats(timeline,await read(`${base}content/comparison.json`))
-  const chapterLabels=edition==='short'
-    ?[['hook','The question'],['study','Two scoreboards'],['counter','Design matters'],['practice','A practical loop'],['closing','What remains']]
-    :[['hook','The question'],['turkey','Two scoreboards'],['delay','One week later'],
-      ['guidance','Choosing help'],['example','Try the method'],['closing','What remains']]
-  for(const [id,label]of chapterLabels){
-    const b=beats.find(b=>b.id===id),button=document.createElement('button'),stamp=document.createElement('small')
-    stamp.textContent=time(b.start);button.append(stamp,document.createTextNode(label))
-    button.onclick=()=>{main.currentTime=b.start;main.play();$('screen').scrollIntoView({behavior:'smooth'})}
-    $('chapters').append(button)
-  }
-}catch{
-  $('film-duration').textContent='SAMPLE FILM'
-}
-try{
-  const {claims}=await read(`${base}content/sources.json`),seen=new Set()
-  for(const claim of claims){
-    if(seen.has(claim.source))continue;seen.add(claim.source)
-    const item=document.createElement('article');item.className='source'
-    const id=document.createElement('b');id.textContent=claim.id
-    const body=document.createElement('div'),link=document.createElement('a'),kind=document.createElement('p')
-    link.href=claim.source;link.textContent=claim.claim+' ↗';kind.textContent=claim.type
-    body.append(link,kind);item.append(id,body);$('source-list').append(item)
-  }
-}catch{}
+
+// Load independent page data together; language controls never wait for media.
+const longTimeline = read('editions/long/media/timeline.json')
+longTimeline.then(long => { $('edition-picker').hidden = !long.complete_audio }).catch(() => {})
+const timelineData = edition === 'long' ? longTimeline : read('media/timeline.json')
+await Promise.allSettled([
+  Promise.all([timelineData, read(`${base}content/comparison.json`)]).then(([loaded, definitions]) => {
+    timeline = loaded
+    beats = comparisonBeats(timeline, definitions)
+    applyLanguage()
+  }),
+  read(`${base}content/sources.json`).then(loaded => {
+    claims = loaded.claims
+    renderSources()
+  }),
+])

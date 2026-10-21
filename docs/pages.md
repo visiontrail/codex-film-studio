@@ -7,6 +7,12 @@ twelve-minute films, posters, subtitles and chapter timings come from the
 checksum-pinned `v0.1.0` Release. Videos are served from Pages itself, so the
 player and captions share the same origin. No TTS credentials are required.
 
+The header switches between English and Chinese page copy, including chapters,
+instructions and research summaries. The choice is remembered locally; a
+`?lang=en` or `?lang=zh` link overrides it. Language changes preserve the film's
+playback state. The sample films retain their original English narration and
+subtitles.
+
 ## Deploy
 
 1. In the repository, select **Settings → Pages → Source → GitHub Actions**.

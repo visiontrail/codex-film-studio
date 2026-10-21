@@ -15,7 +15,7 @@ STUDIO = ROOT / "styles/whiteboard/studio"
 def build_site(demo_root, output, revision=""):
     """Copy only the files needed by the public player, never a whole studio."""
     source_files = [
-        "index.html", "showcase.css", "showcase.mjs",
+        "index.html", "showcase.css", "showcase.mjs", "showcase-i18n.mjs",
         "fonts/ArchitectsDaughter-Regular.ttf", "src/comparison.mjs",
         "content/comparison.json", "content/sources.json",
         "editions/long/content/comparison.json", "editions/long/content/sources.json",
