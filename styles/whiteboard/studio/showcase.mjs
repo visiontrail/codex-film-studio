@@ -1,5 +1,5 @@
 import {comparisonBeats} from './src/comparison.mjs'
-import {messages, chineseSources, resolveLanguage} from './showcase-i18n.mjs?v=creator-link-v1'
+import {messages, chineseSources, resolveLanguage} from './showcase-i18n.mjs?v=source-credit-v1'
 
 const $ = id => document.getElementById(id)
 const main = $('film-player')

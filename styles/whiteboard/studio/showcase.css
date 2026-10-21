@@ -63,3 +63,10 @@ html[lang=zh-CN] .source{line-height:1.9}
   html[lang=zh-CN] h1{font-size:clamp(34px,9.6vw,54px)}
   html[lang=zh-CN] h2{font-size:38px}
 }
+
+/* Keep the source acknowledgement readable in both desktop and mobile footers. */
+footer{display:block}
+.footer-main{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.source-credit{max-width:none;margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:11px;line-height:1.9;color:var(--soft)}
+.source-credit a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+@media(max-width:620px){.footer-main{flex-wrap:wrap;gap:20px}.source-credit{margin-top:22px}}
