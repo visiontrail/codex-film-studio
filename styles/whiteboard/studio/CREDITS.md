@@ -1,17 +1,13 @@
 # Credits and provenance
 
 **Does AI Help You Learn—or Just Finish?** is an original editorial adaptation
-made for LeoGuoLabs. Its Canvas renderer, board composition, camera timing,
-sound synthesis, review tools and local showcase were written independently
-with Codex.
+made for LeoGuoLabs with Codex.
 
 The visual reference is **Einstein in Your Pocket — Whiteboard Explainer v2**,
 by LemoLab, from [lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar).
 The reference film and reference frames are used under
 [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
-The optional development comparison can show the reference beside the new film. The reference
-engine, demo scene code, audio, music samples and build pipeline were not
-imported into this production. Reference-source revision:
+Reference-source revision:
 `b5e8ef93930b6d828f352055a689320f138237b1`.
 
 The new film uses the same openly licensed font families to study the style:
@@ -44,8 +40,7 @@ Research claims and their primary sources are recorded in
 The suggested learning loop is editorial synthesis, with its limitations
 stated in the narration.
 
-Third-party runtime packages retain their respective licenses. This local
-project does not assert ownership of the reference film or its fonts.
+Third-party runtime packages retain their respective licenses.
 
 The illustrated edition adds original procedural learner drawings and a
 hand-drawn Turkish flag. The flag's red field, white crescent and five-point

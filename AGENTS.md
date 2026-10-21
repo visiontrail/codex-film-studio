@@ -1,7 +1,7 @@
 # Codex Film Studio
 
 A growing collection of film styles with editable, working examples. Start
-with `styles.json`; only whiteboard is available in the first release.
+with `styles.json` to find the available styles.
 
 For a film request, read `DIRECTOR.md`, `TECHNIQUE.md` and the selected
 `styles/<id>/STYLE.md`. Use `scripts/new_film.py <name> --style <id>` to make

@@ -58,6 +58,4 @@ Reject clipped focal labels, subtitle overlap, unexplained object motion,
 missing writing strokes, blank frames, abrupt camera cuts, and unreadable holds.
 Do not claim literal 100% perceptual equivalence.
 
-Reference: LemoLab, *Einstein in Your Pocket*, lemo-opuscar (CC BY 4.0).
-The film renderer, story, sound and review tooling are authored independently;
-no reference engine, scene code or build pipeline is imported.
+Sources and licenses are recorded in [CREDITS.md](../CREDITS.md).

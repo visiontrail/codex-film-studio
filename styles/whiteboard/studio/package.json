@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Independent deterministic whiteboard film studio and complete-frame review",
+  "description": "Whiteboard film template with narration, animation and captions",
   "scripts": {
     "fonts": "node scripts/prepare-fonts.mjs",
     "render": "node scripts/render.mjs",

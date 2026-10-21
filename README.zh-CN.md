@@ -3,7 +3,7 @@
 **选一个风格，带一个故事，用 Codex 做成视频。**
 
 这是一个会持续扩展的视频风格库。每种风格包含真实样片、风格提示词和
-可编辑的制作代码。第一版只收录 **白板讲解**，后续风格独立加入。
+可编辑的制作代码。
 
 [English](README.md) · [下载样片](https://github.com/visiontrail/codex-film-studio/releases/tag/v0.1.0)
 
@@ -78,7 +78,8 @@ python3 scripts/new_film.py my-film --style whiteboard
 新增风格的目录规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 由 LeoGuoLabs 使用 Codex 制作。风格库的组织方式参考
-[LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)，白板视觉参考
-其 CC BY 4.0 样片 *Einstein in Your Pocket*。本项目独立编写绘图和制作代码，
-不是 LemoLab 或 OpenAI 官方项目。代码和文档采用 MIT，原创样片与剧照采用
-CC BY 4.0，第三方素材保留各自许可证。
+[LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)。
+
+代码和文档采用 [MIT](LICENSE)，原创样片与剧照采用
+[CC BY 4.0](MEDIA-LICENSE.md)。素材出处和许可证见
+[CREDITS.md](styles/whiteboard/studio/CREDITS.md)。

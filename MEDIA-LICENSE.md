@@ -6,6 +6,6 @@ narration recordings and stills by LeoGuoLabs are distributed under
 Credit **LeoGuoLabs / Codex Film Studio**, link to this repository, and identify
 your changes when adapting these media.
 
-The independent code and documentation use the MIT license. Fonts and
-instrument samples retain the licenses shipped with them. LemoLab's reference
-film is separately credited and is not part of the demo download bundle.
+Code and documentation use the MIT license. Fonts and instrument samples
+retain the licenses shipped with them. See
+[CREDITS.md](styles/whiteboard/studio/CREDITS.md) for sources and licenses.

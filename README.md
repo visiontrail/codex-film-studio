@@ -3,8 +3,7 @@
 **Choose a style. Bring a story. Make a film with Codex.**
 
 A growing library of film styles, each with a real sample, a reusable style
-prompt and editable production code. The first release contains **one style:
-Whiteboard Explainer**. More styles can be added independently.
+prompt and editable production code.
 
 [简体中文](README.zh-CN.md) · [Make a film](#make-a-film-with-codex) ·
 [Rebuild the sample](#rebuild-the-whiteboard-sample) · [Releases](https://github.com/visiontrail/codex-film-studio/releases)
@@ -99,16 +98,12 @@ as editable code; Codex must adapt its narration **and** illustrations.
 ## Add a style
 
 Each entry in `styles.json` points to its own guide, prompt, poster, demo and
-working template. See [Contributing a style](CONTRIBUTING.md). No placeholder
-styles or unmade demo films are listed as available.
+working template. See [Contributing a style](CONTRIBUTING.md).
 
 ## Credits and license
 
 By **LeoGuoLabs**, built with Codex. Inspired by the style-library approach of
 [LemoLab's lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar).
-The whiteboard visual reference is LemoLab's *Einstein in Your Pocket*,
-CC BY 4.0. This repository's drawing engine, story and production code were
-written independently; it is not an official LemoLab or OpenAI project.
 
 Original code and documentation: [MIT](LICENSE). Our sample films and stills:
 [CC BY 4.0](MEDIA-LICENSE.md). Fonts and instrument recordings retain their

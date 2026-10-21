@@ -5,7 +5,7 @@ description: Make or adapt a video using a style and editable sample from Codex 
 
 Locate the repository root containing `styles.json`. Read the requested
 style's entry, `DIRECTOR.md`, `TECHNIQUE.md` and its `STYLE.md`. Only choose
-styles actually listed; the first release contains whiteboard.
+styles actually listed.
 
 For a new topic, create a working copy with
 `python3 scripts/new_film.py <name> --style <id>`. Adapt the narration,

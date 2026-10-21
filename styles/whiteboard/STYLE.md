@@ -31,5 +31,4 @@ behavior and the persistent board. Avoid slide transitions, typing effects,
 generic icon grids and dense writing without reading time.
 
 The included sample is a 3-minute film and a 12-minute edition of the same
-story. Their renderer is independent. The visual reference is LemoLab's
-*Einstein in Your Pocket*, credited in the studio's `CREDITS.md`.
+story. See [CREDITS.md](studio/CREDITS.md) for sources and licenses.
