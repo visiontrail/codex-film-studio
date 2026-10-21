@@ -5,6 +5,7 @@
 A growing library of film styles, each with a real sample, a reusable style
 prompt and editable production code.
 
+[Watch the films online](https://visiontrail.github.io/codex-film-studio/) ·
 [简体中文](README.zh-CN.md) · [Make a film](#make-a-film-with-codex) ·
 [Rebuild the sample](#rebuild-the-whiteboard-sample) · [Releases](https://github.com/visiontrail/codex-film-studio/releases)
 
@@ -99,6 +100,17 @@ as editable code; Codex must adapt its narration **and** illustrations.
 
 Each entry in `styles.json` points to its own guide, prompt, poster, demo and
 working template. See [Contributing a style](CONTRIBUTING.md).
+
+## The public showcase
+
+The [GitHub Pages site](https://visiontrail.github.io/codex-film-studio/) plays
+both sample editions with subtitles, chapters and links to the getting-started
+guides. The Pages workflow deploys updates pushed to `main`.
+
+To host a fork, select **Settings → Pages → Source → GitHub Actions**, then
+run **Deploy film showcase** in Actions. The build downloads the pinned Release
+assets, verifies their SHA-256 hashes and publishes only the player assets.
+See [the deployment guide](docs/pages.md) for local preview and customization.
 
 ## Credits and license
 

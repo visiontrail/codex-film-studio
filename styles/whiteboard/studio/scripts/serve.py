@@ -62,8 +62,9 @@ class MediaHandler(SimpleHTTPRequestHandler):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", type=int, default=8246)
+    parser.add_argument("--directory", type=Path, default=ROOT)
     args = parser.parse_args()
     server = ThreadingHTTPServer(("127.0.0.1", args.port),
-                                partial(MediaHandler, directory=str(ROOT)))
+                                partial(MediaHandler, directory=str(args.directory.resolve())))
     print(f"Whiteboard Studio: http://127.0.0.1:{args.port}", flush=True)
     server.serve_forever()

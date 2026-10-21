@@ -5,6 +5,7 @@
 这是一个会持续扩展的视频风格库。每种风格包含真实样片、风格提示词和
 可编辑的制作代码。
 
+[在线展示与播放](https://visiontrail.github.io/codex-film-studio/) ·
 [English](README.md) · [下载样片](https://github.com/visiontrail/codex-film-studio/releases/tag/v0.1.0)
 
 ## 01 · 白板讲解
@@ -76,6 +77,16 @@ python3 scripts/new_film.py my-film --style whiteboard
 修改主题必须同时修改脚本和画面，不能只替换字幕。
 
 新增风格的目录规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## GitHub Pages 展示页
+
+[在线展示页](https://visiontrail.github.io/codex-film-studio/) 支持三分钟和
+十二分钟样片切换、英文字幕、章节跳转，以及仓库和使用说明入口。
+推送到 `main` 后，GitHub Actions 会自动构建并部署。
+
+部署自己的 fork：在 **Settings → Pages → Source** 选择 **GitHub Actions**，
+然后在 Actions 中运行 **Deploy film showcase**。构建会下载并校验 Release
+样片，只发布播放器需要的文件。预览命令及修改方法见 [部署说明](docs/pages.md)。
 
 由 LeoGuoLabs 使用 Codex 制作。风格库的组织方式参考
 [LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)。
