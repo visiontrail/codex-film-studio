@@ -27,7 +27,7 @@ export const messages = {
     note2Title: 'One shared clock', note2Body: 'Letter strokes, camera movement, pen lifts, captions and felt sounds follow the same timeline. Every frame can be reproduced.',
     note3Title: 'Evidence before polish', note3Body: 'The script separates assisted grades from unaided exams, immediate tests from retention, and a helpful tutor from a ready-made answer.',
     rebuild: 'Rebuild the project ↗', direct: 'Direct your film ↗', production: 'Production guide ↗', credits: 'Credits & licenses ↗',
-    researchEyebrow: '04 / THE RESEARCH BEHIND THE FILM', madeWith: 'Made with', footerEdition: 'Made for LeoGuoLabs<br>2026 · Edition 01',
+    researchEyebrow: '04 / THE RESEARCH BEHIND THE FILM', madeWith: 'Made with', footerEdition: 'Made for <a href="https://x.com/LeoGuoLabs" target="_blank" rel="noopener noreferrer">LeoGuoLabs</a><br>2026 · Edition 01',
     chapters: {hook: 'The question', study: 'Two scoreboards', turkey: 'Two scoreboards', counter: 'Design matters', practice: 'A practical loop', delay: 'One week later', guidance: 'Choosing help', example: 'Try the method', closing: 'What remains'},
   },
   zh: {
@@ -55,7 +55,7 @@ export const messages = {
     note2Title: '共用一条时间线', note2Body: '文字笔画、镜头移动、抬笔动作、字幕和笔触音效遵循同一条时间线，每一帧都可以复现。',
     note3Title: '先把证据讲清楚', note3Body: '脚本区分借助 AI 的成绩和独立考试成绩、即时测验和长期保持，也区分引导学习的导师和现成答案。',
     rebuild: '复现样片 ↗', direct: '导演指南 ↗', production: '制作方法 ↗', credits: '素材出处与许可证 ↗',
-    researchEyebrow: '04 / 影片背后的研究', madeWith: '使用', footerEdition: '为 LeoGuoLabs 制作<br>2026 · 第 01 期',
+    researchEyebrow: '04 / 影片背后的研究', madeWith: '使用', footerEdition: '为 <a href="https://x.com/LeoGuoLabs" target="_blank" rel="noopener noreferrer">LeoGuoLabs</a> 制作<br>2026 · 第 01 期',
     chapters: {hook: '提出问题', study: '两种成绩', turkey: '两种成绩', counter: '设计很关键', practice: '一个练习循环', delay: '一周之后', guidance: '选择怎样的帮助', example: '试试这个方法', closing: '最后留下什么'},
   },
 }
