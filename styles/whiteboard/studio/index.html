@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A whiteboard film about AI and learning, with a reusable Codex film project.">
   <title>Codex Film Studio — Whiteboard Explainer</title>
-  <link rel="stylesheet" href="showcase.css?v=source-credit-v1">
-  <script type="module" src="showcase.mjs?v=source-credit-v1"></script>
+  <link rel="stylesheet" href="showcase.css?v=edition-options-v1">
+  <script type="module" src="showcase.mjs?v=edition-options-v1"></script>
 </head>
 <body>
   <header class="masthead">
@@ -24,12 +24,12 @@
           <p data-i18n="intro">An AI tool can improve your result today. Whether that becomes knowledge you can use tomorrow is a different question.</p>
           <p class="film-title" data-i18n="filmTitle">Does AI Help You Learn—or Just Finish?</p>
           <div class="film-meta"><span id="film-duration">~3 MIN</span><span>1080P</span><span>24 FPS</span><span data-i18n="audioLanguage">ENGLISH AUDIO</span></div>
-          <div class="film-actions"><label id="edition-picker" class="edition-picker" hidden><span data-i18n="editionLabel">Edition</span>
-            <select id="edition-select" aria-label="Film edition" data-i18n-aria="filmEdition">
-              <option value="short" data-i18n="shortEdition">Three-minute film</option>
-              <option value="long" data-i18n="longEdition">Full-length film</option>
-            </select>
-          </label>
+          <div class="film-actions"><div id="edition-picker" class="edition-picker"><span data-i18n="editionLabel">Edition</span>
+            <div class="edition-options" role="group" aria-label="Film edition" data-i18n-aria="filmEdition">
+              <a class="edition-choice" href="?edition=short" data-edition="short" data-i18n="shortEdition" aria-current="page">Three-minute film</a>
+              <a class="edition-choice" href="?edition=long" data-edition="long" data-i18n="longEdition">Twelve-minute film</a>
+            </div>
+          </div>
           <a class="watch-link" href="#screen"><span data-i18n="watch">Watch the film</span><span class="watch-arrow" aria-hidden="true">↘</span></a></div>
         </div>
       </div>

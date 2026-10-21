@@ -1,5 +1,5 @@
 import {comparisonBeats} from './src/comparison.mjs'
-import {messages, chineseSources, resolveLanguage} from './showcase-i18n.mjs?v=source-credit-v1'
+import {messages, chineseSources, resolveLanguage} from './showcase-i18n.mjs?v=edition-options-v1'
 
 const $ = id => document.getElementById(id)
 const main = $('film-player')
@@ -77,6 +77,14 @@ function applyLanguage() {
   for (const button of document.querySelectorAll('[data-language]')) {
     button.setAttribute('aria-pressed', String(button.dataset.language === language))
   }
+  for (const choice of document.querySelectorAll('[data-edition]')) {
+    const url = new URL(location.href)
+    url.searchParams.set('edition', choice.dataset.edition)
+    url.searchParams.set('lang', language)
+    choice.href = url.href
+    if (choice.dataset.edition === edition) choice.setAttribute('aria-current', 'page')
+    else choice.removeAttribute('aria-current')
+  }
   $('film-duration').textContent = timeline ? `${time(timeline.duration)} ${copy.durationUnit}` : copy.sampleFilm
   renderChapters()
   renderSources()
@@ -94,7 +102,6 @@ for (const button of document.querySelectorAll('[data-language]')) {
 }
 applyLanguage()
 
-$('edition-select').value = edition
 if (edition === 'long') {
   const video = `${base}media/does-ai-help-you-learn-long.mp4`
   main.poster = `${base}media/poster.jpg`
@@ -103,17 +110,8 @@ if (edition === 'long') {
   main.load()
   $('download-film').href = video
 }
-$('edition-select').onchange = () => {
-  const url = new URL(location.href)
-  url.searchParams.set('edition', $('edition-select').value)
-  url.searchParams.set('lang', language)
-  location.assign(url)
-}
-
 // Load independent page data together; language controls never wait for media.
-const longTimeline = read('editions/long/media/timeline.json')
-longTimeline.then(long => { $('edition-picker').hidden = !long.complete_audio }).catch(() => {})
-const timelineData = edition === 'long' ? longTimeline : read('media/timeline.json')
+const timelineData = read(`${base}media/timeline.json`)
 await Promise.allSettled([
   Promise.all([timelineData, read(`${base}content/comparison.json`)]).then(([loaded, definitions]) => {
     timeline = loaded

@@ -9,7 +9,7 @@ export const messages = {
     handwritten: 'The work is finished.<br>What did you learn?',
     intro: 'An AI tool can improve your result today. Whether that becomes knowledge you can use tomorrow is a different question.',
     filmTitle: 'Does AI Help You Learn—or Just Finish?', audioLanguage: 'ENGLISH AUDIO',
-    editionLabel: 'Edition', filmEdition: 'Film edition', shortEdition: 'Three-minute film', longEdition: 'Full-length film',
+    editionLabel: 'Edition', filmEdition: 'Film edition', shortEdition: 'Three-minute film', longEdition: 'Twelve-minute film',
     watch: 'Watch the film', download: 'Download film ↗', filmCaption: 'ONE BOARD. DRAWN BY HAND. A QUESTION WORTH KEEPING.',
     filmChapters: 'Film chapters', durationUnit: 'MIN', sampleFilm: 'SAMPLE FILM',
     makeEyebrow: '02 / MAKE IT YOURS', makeTitle: 'Your story.<br>The same style.',
