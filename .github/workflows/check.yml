@@ -1,0 +1,32 @@
+name: Check the film kit
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  whiteboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test packaging
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Install renderer
+        working-directory: styles/whiteboard/studio
+        run: npm ci
+      - name: Test drawing and timeline
+        working-directory: styles/whiteboard/studio
+        run: node --test scripts/test_*.mjs
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Render a picture preview
+        working-directory: styles/whiteboard/studio
+        run: node scripts/render.mjs --draft --start 0 --end 2 --width 640 --out media/ci-preview.mp4

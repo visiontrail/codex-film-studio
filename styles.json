@@ -1,0 +1,14 @@
+{
+  "styles": [
+    {
+      "id": "whiteboard",
+      "name": "Whiteboard Explainer",
+      "name_zh": "白板讲解",
+      "description": "One persistent board, handwritten ideas, moving markers and story-driven line characters.",
+      "guide": "styles/whiteboard/STYLE.md",
+      "template": "styles/whiteboard/studio",
+      "poster": "styles/whiteboard/poster.png",
+      "demo": "styles/whiteboard/DEMO.md"
+    }
+  ]
+}
