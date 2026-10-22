@@ -1,0 +1,15 @@
+# The House Gets Coffee
+
+English sci-fi sitcom essay, approximately 5 minutes; final duration follows measured, accepted dialogue; the Pocket TTS casting is Marius / Bo and Javert / Qin. 1920×1080, 24 fps. Original, independently implemented Canvas animation. No FrontierTechSN task is created and no lemo-opuscar animation code is copied.
+
+Bo wants ten dollars to turn a winning football bet into a month of coffee. Qin, an exhausted inventor, takes Bo through the machinery behind the bet. Odds become a hungry register; parlays become successive gates; pooled stakes become a literal soup pot; attention becomes a phone creature; evidence becomes a stadium evidence booth; regulated markets look comically ordinary; credit betting grows teeth. They return with the ten dollars unspent. The punchline gets a clean pause.
+
+The argument: distinguish the match from the economic incentives surrounding it. Betting turnover, operator revenue and profit differ. Odds embed a margin; uncertainty and repeated play matter; legal status depends on jurisdiction; allegations need evidence; illegal credit betting adds debt and coercion risk.
+
+Reference: LemoLab, Coffee Run / Sci-Fi Sitcom Toon, supplied local MP4. Style grammar studied from rendered frames and written reference. Reference frames are retained privately in ignored review files. Original cast adaptation: tall, weary teal-clad Qin with brass forehead goggles, sparse hair and enormous slippers; compact purple-clad Bo with orange protective helmet, oversized round glasses and a worried expression. Flat color, warm skin, off-white eyes, tiny pupils; purple-black ~7 px strokes remain constant through camera changes. Background outlines ~4–5 px. Three line drawings cycle at 12 fps; acting on twos, portals/camera on ones. No gradients. World palettes: sage / magenta-cyan / orange-teal / pale aqua-coral / ultraviolet-gold / slate-red / dull beige / burgundy-ink / sage.
+
+The supplied transcript is not authoritative. Omit unverifiable global market estimates and operational criminal details. Correct the Woolmer allegation, Turkey's account-versus-betting distinction, and Hanson's sentence using primary records. Draw referenced real people, brands and flags with recognizable identifying details; retain an explicit factual caption for criminal-history portraits. Do not depict fictional actions as documentary footage.
+
+Delivery: film MP4, English SRT and speech script, editable sources, synthesized original score/foley, full decoded-frame metrics and atlases for reference and final, representative full-resolution comparisons, review findings and revisions. Automated coverage and visual inspection coverage will be reported separately. No claim of mathematical or perceptual 100% identity follows from a successful encode or an atlas.
+
+Resource coordination: before every FFmpeg process, wait until no other FFmpeg is running, and hold a shared file lock during this project's invocation. Continue non-FFmpeg work while another film encodes.

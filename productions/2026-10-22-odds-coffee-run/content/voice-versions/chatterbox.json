@@ -1,0 +1,474 @@
+{
+  "script_sha256": "f040344e020b592379b85602776a9405637c2bc87814b2542661f3e6675288c0",
+  "engine": "Chatterbox Turbo 8-bit / MLX",
+  "selection_basis": "Independent unprompted Whisper transcription reviewed against every intended line. Numeric written forms, brand spacing, punctuation and phonetically equivalent surnames were reviewed separately. Signal checks found no clipping in initial and repair1 sets. This record is not a claim of human listening.",
+  "rejected_takes": {
+    "L011": "extra word in first take",
+    "L021": "missing article in first take",
+    "L023": "reference-prompt continuation in first take; repeated dialogue revised and regenerated",
+    "L032": "incorrect opening word in first take",
+    "L043": "reference-prompt continuation in first take",
+    "L044": "plural or consonant errors in first three attempts; repair3 matches intended words"
+  },
+  "takes": [
+    {
+      "id": "L001",
+      "wav": "media/speech-local/L001.wav",
+      "asr": "review/asr-local/L001.json",
+      "sha256": "d4539cf98c48a8f9d1c22d8c401c99bf6238fe2e96279061e921bbd3a543ec74",
+      "asr_sha256": "03231649045d013656a3463b1136256f8a07f34c68f5cd71c2567c1b825f5c23",
+      "reviewed_transcript": "Coffee went up again. Lend me ten bucks. One winning bet buys coffee for a month.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L002",
+      "wav": "media/speech-local/L002.wav",
+      "asr": "review/asr-local/L002.json",
+      "sha256": "8727a5fb3eac1c3632e1e4519f6ea695c7f616cc1473e72312644253118c7e47",
+      "asr_sha256": "2bf9f5e870d494924b9eb948a545b64a4f836684ca8343153d1b8f3d17faa621",
+      "reviewed_transcript": "You want a drink? Why are you predicting the universe?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L003",
+      "wav": "media/speech-local/L003.wav",
+      "asr": "review/asr-local/L003.json",
+      "sha256": "b10b9812e52fc5eb068de90142a4f2c85ddfb392c4ac062d6128220eba12ef19",
+      "asr_sha256": "782e9f98631c8530ec673957e84f68dda5bd3f892ec7e4f4912205f698930a5a",
+      "reviewed_transcript": "Because I know football.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L004",
+      "wav": "media/speech-local/L004.wav",
+      "asr": "review/asr-local/L004.json",
+      "sha256": "647e6f982b3f83f2d3c83d576d019f7c92a63c74140f7718470ca76361e4d149",
+      "asr_sha256": "68d6f1100ef28b5888ff0aa416ef4f5a4b2bd75f070c5d6bddd48705a108c821",
+      "reviewed_transcript": "Then meet the people who make money from that sentence.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L005",
+      "wav": "media/speech-local/L005.wav",
+      "asr": "review/asr-local/L005.json",
+      "sha256": "a3d6346b8c3355b364b4b3860a8766273bc9ff6d968d5ca2ad10fe2f81d2195e",
+      "asr_sha256": "46a7efaf37821941340c4c13dc314605887a9f8f3943da429ea0d7d22287ef51",
+      "reviewed_transcript": "Tiny stadium, enormous cash register.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L006",
+      "wav": "media/speech-local/L006.wav",
+      "asr": "review/asr-local/L006.json",
+      "sha256": "d8ae7a2681378b2796a4e72cc18b39ac957714f65af41f09ea0e8b93b8c36f14",
+      "asr_sha256": "402b3f3f48a7127f2d350838507333c64c444dcc1060b83d574c83714e820472",
+      "reviewed_transcript": "Three different numbers. Money wagered. Revenue kept by the operator. Profit after costs. Never mix them up.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L007",
+      "wav": "media/speech-local/L007.wav",
+      "asr": "review/asr-local/L007.json",
+      "sha256": "9fb754a27c8ebb00b0b19d99e398cdafcb85ce87e21343db0dff86dee08d4440",
+      "asr_sha256": "09c1d081e7f1e8ba38b182fcde3b4d9ea4b7e74a7a6b68b7a7e2203192d2fa93",
+      "reviewed_transcript": "Bet the same hundred ten times and the total wagered is a thousand. My wallet is still tiny.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L008",
+      "wav": "media/speech-local/L008.wav",
+      "asr": "review/asr-local/L008.json",
+      "sha256": "f32227bf4dffc9a383d625f917c24d71aee817ce5a255b1543474772c1e85750",
+      "asr_sha256": "66f7e337faaba1e349a25fe80635b10a1e0ce396cd1ae814f2ddecdb3f5dfc8e",
+      "reviewed_transcript": "Now, odds. Two possible results. Each pays 1.9. Bet 100. Win. Get 190 back. Including your stake.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L009",
+      "wav": "media/speech-local/L009.wav",
+      "asr": "review/asr-local/L009.json",
+      "sha256": "62bafee4f91d21b0c592715bf9be63edb1fef34dc87ac653edc63719ecf6cea4",
+      "asr_sha256": "d9b81fc6bcb48fb14052d709c2d003d4a409ce2f3440035348ddf6c07d96936a",
+      "reviewed_transcript": "Where does the other 10 go?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L010",
+      "wav": "media/speech-local/L010.wav",
+      "asr": "review/asr-local/L010.json",
+      "sha256": "238a26a99af1b6b9946aeb237c6906732a8c11e6495dc1af97840d5e3e49246b",
+      "asr_sha256": "394177bf02d4bbb219a4c8c86b12031491f2b6c2624c3c4b7c50896947c1a27d",
+      "reviewed_transcript": "100 on each side means 200 collected. Either winner gets 190. 10 stays in the till.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L011",
+      "wav": "media/speech-repair1/L011.wav",
+      "asr": "review/asr-repair1/L011.json",
+      "sha256": "f63087e63a20eca7427606d97277f1e0ed9805fb058e70e1dd7cce16f6fb7446",
+      "asr_sha256": "89406b0b7435d724e6d41a004fc22e441d0e6a7b847f64395c37b80cb08d222d",
+      "reviewed_transcript": "The cash register scored before kickoff.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L012",
+      "wav": "media/speech-local/L012.wav",
+      "asr": "review/asr-local/L012.json",
+      "sha256": "bdf1525d47ab7f14d958f64576005a99d8bbfec4301c84ec390be7eaa6d4ebe2",
+      "asr_sha256": "8bb2e032724c24167dd38740b5b061a2ef79d2001d68ed0c4ee15b19b4c3815f",
+      "reviewed_transcript": "In this balanced example, real bookmakers face uneven bets, pricing errors, and risk. They do not win on every match.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L013",
+      "wav": "media/speech-local/L013.wav",
+      "asr": "review/asr-local/L013.json",
+      "sha256": "32c3f3a5d4e2878575a161d30eff06229aeb1433fafb0b975a7ad2df00d84528",
+      "asr_sha256": "09761797e77d7e426038b0c466bb49a1b513b67c501cae5d39d8145238c5ac46",
+      "reviewed_transcript": "1 divided by 1.9 is about 52.6%. Both sides add up above 100. That excess shows the markup.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L014",
+      "wav": "media/speech-local/L014.wav",
+      "asr": "review/asr-local/L014.json",
+      "sha256": "11dfd443a011aef9230c65e86db0ab8fa2f59a3e08917a0b06e466ddebc4f71d",
+      "asr_sha256": "2b794c2433ad059af4dbfe72da5ead75bb5a4586eee89c6a98e94067dc83c2be",
+      "reviewed_transcript": "New door, tiny stake, giant prize, this one gets me.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L015",
+      "wav": "media/speech-local/L015.wav",
+      "asr": "review/asr-local/L015.json",
+      "sha256": "9605702107eaacfcba9f8870f626ce0fac0adabfc2b467040f82438b5ee071a0",
+      "asr_sha256": "c48f96403bcefc8026768f4003d27941d5b1d176a91b7ff3c1dffe798c995f81",
+      "reviewed_transcript": "A parlay. Every selection must win. Three independent 50-50 outcomes. All three win only one time in eight.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L016",
+      "wav": "media/speech-local/L016.wav",
+      "asr": "review/asr-local/L016.json",
+      "sha256": "6626784cef06293b90957540584e2603303f6bc61e692df141117a7b7a64f42e",
+      "asr_sha256": "ae90fea28578e75670507829b106c5e4fd52942c17dd28c5359539764ef66b24",
+      "reviewed_transcript": "I only missed the last one.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L017",
+      "wav": "media/speech-local/L017.wav",
+      "asr": "review/asr-local/L017.json",
+      "sha256": "7ede9f2cf8a7021725541f53b1cabed748fec40c5102828ee15c5dee922b6548",
+      "asr_sha256": "60657d8ebb5e48e0d214a1fb0b5d73c228e074e8fa50679cd543adbbe8fabf2d",
+      "reviewed_transcript": "The till loves the word only. Big payouts come with low probabilities, and discounts in the odds compound.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L018",
+      "wav": "media/speech-local/L018.wav",
+      "asr": "review/asr-local/L018.json",
+      "sha256": "ee8b3133fca35ebf27abf97060a4c1f58387a76c601bbbcd5edad7fb6a3c73f9",
+      "asr_sha256": "2c05d0637546ed6e76c5d37347947cf592eab62436815acf3d693d4f63b40441",
+      "reviewed_transcript": "Why are the horses circling a soup pot?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L019",
+      "wav": "media/speech-local/L019.wav",
+      "asr": "review/asr-local/L019.json",
+      "sha256": "664356e32d754864d7e784eec693f4b8c663ffc187bb61c29d529eaff370609f",
+      "asr_sha256": "84d4029e9aa89401358afc56c23f4a6e322ac9082a068527425b35cc5ddf0e34",
+      "reviewed_transcript": "Pool betting. Stakes go into one pot. The operator takes a stated deduction. Winning tickets divide what remains. Your final payout depends on the pool.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L020",
+      "wav": "media/speech-local/L020.wav",
+      "asr": "review/asr-local/L020.json",
+      "sha256": "50ab2b615783190b6492717a870564a2973cd761fd73ecf99791d59e7b75072e",
+      "asr_sha256": "8575443c2fc09603f492c296676e909e2679a613f0b88e83a894ec85b16e7d52",
+      "reviewed_transcript": "The horses get a track, my money gets a drain.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L021",
+      "wav": "media/speech-repair1/L021.wav",
+      "asr": "review/asr-repair1/L021.json",
+      "sha256": "714250cf553996102445d4edc5f0e1a9ef33af79f98d47ab4aabe3d04d1641ac",
+      "asr_sha256": "4b0823f54140bce8e3f0ae903ceef50225a8d3ec71d35c3e2c1b1af681091fe3",
+      "reviewed_transcript": "Free money. Finally, a universe with customer service.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L022",
+      "wav": "media/speech-local/L022.wav",
+      "asr": "review/asr-local/L022.json",
+      "sha256": "cc2105a87ec6420b50f555404a556fd0003ec7cda5152dd034008e05faad757a",
+      "asr_sha256": "b7cd930781c1ec1d129b25ba85b11e2d3a014e06f1c12b9777b4e7fe65726026",
+      "reviewed_transcript": "Read the conditions. Bonuses can require more wagering. Notifications and live bets turn one match into dozens of decisions.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L023",
+      "wav": "media/speech-repair1/L023.wav",
+      "asr": "review/asr-repair1/L023.json",
+      "sha256": "6216ae7a82fd9ea42b17abe6012ab3a6d3722f913550c44456a8295d8ae234c0",
+      "asr_sha256": "e138bd10ed5d4899f75487185a725f51bf8e5c520964a3d09970cdd8d3d962af",
+      "reviewed_transcript": "So close. One more try. So close. Another try. So close.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L024",
+      "wav": "media/speech-local/L024.wav",
+      "asr": "review/asr-local/L024.json",
+      "sha256": "35d2a93a27f8dc8cc1ce150492c96e4cb9c9967c381ed05558197c6eb768d2db",
+      "asr_sha256": "5542165a791cb4ea3e575283f61ec57d2ce66dc605a9588ba83078239ef1983f",
+      "reviewed_transcript": "Stop. Nearly winning is still losing. It can make you want another turn. It does not make the next win more likely.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L025",
+      "wav": "media/speech-local/L025.wav",
+      "asr": "review/asr-local/L025.json",
+      "sha256": "b881e0d0c344863beeb2a609843b7fafec20ce0ee5f797578a10ba24747f1574",
+      "asr_sha256": "3c4f52a0779d57e34d61d8ae0f3c8b855dce146d893053eee422601ae7670643",
+      "reviewed_transcript": "What about inside information? Are all the matches already scripted?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L026",
+      "wav": "media/speech-local/L026.wav",
+      "asr": "review/asr-local/L026.json",
+      "sha256": "1445f4b2c6b4f7ae00468be13d32c4619469ccec581799d0738183c52ba3ba75",
+      "asr_sha256": "aac796e31f4a07b33d440d9f2100462202d135d4d59db23862d95a10bd8ee7f4",
+      "reviewed_transcript": "Match fixing exists. An upset is not proof of it. Evidence has to identify what happened and who was involved.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L027",
+      "wav": "media/speech-local/L027.wav",
+      "asr": "review/asr-local/L027.json",
+      "sha256": "b0e02141eb4c39d4ed46abf5fbb4d92b4cd47da64e8629539dcae98eaad0d53e",
+      "asr_sha256": "ec8e8c3d958706524545653f74ab1355821e74d671e3963c350a86eb9c1b5663",
+      "reviewed_transcript": "In 2025, Turkey reported 371 referees with betting accounts. 152 had football betting records.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L028",
+      "wav": "media/speech-local/L028.wav",
+      "asr": "review/asr-local/L028.json",
+      "sha256": "7742108818094e9de13bd501762c25583e2fcab228a66413689707d300cad14c",
+      "asr_sha256": "a8568098ca747b1167b521404ab6424f3d0de4303eb35aaeb3c9176109c2c879",
+      "reviewed_transcript": "Having an account, placing bets, fixing matches. Three different claims.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L029",
+      "wav": "media/speech-local/L029.wav",
+      "asr": "review/asr-local/L029.json",
+      "sha256": "f018044daeb9434bf21d9a6faa44796106086730fb94a3109846a2e74df32219",
+      "asr_sha256": "e83c7372dc6fa427f3424be888fe8d33f56f866ca40ce3a8c9377766d54ca2b9",
+      "reviewed_transcript": "Exactly. And that story about Coach Bob Wollmer being murdered, Jamaican police later closed the case accepting natural causes.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L030",
+      "wav": "media/speech-local/L030.wav",
+      "asr": "review/asr-local/L030.json",
+      "sha256": "14e2a8f1e968528a1df39946e3d23bcb6562e835a6f3ec35fe4230e7e52d9472",
+      "asr_sha256": "3619490fc173bb51e9cc73ec9d92127e3bcd464c8f4586f4183c80808c33fe3d",
+      "reviewed_transcript": "This world looks suspiciously normal. Shops, advertisements...",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L031",
+      "wav": "media/speech-local/L031.wav",
+      "asr": "review/asr-local/L031.json",
+      "sha256": "846c74117c9d44f7bdd20850530b9aca3ce686811726892cae434cf381c0b83c",
+      "asr_sha256": "19bd22f1a92681f0f2f36c7a5cc5aeb892f3e19f75acbf059822be2f06e5fa2a",
+      "reviewed_transcript": "Different places, different rules. Britain licenses operators. A 2018 Supreme Court ruling let American states decide whether to authorize sports betting.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L032",
+      "wav": "media/speech-repair1/L032.wav",
+      "asr": "review/asr-repair1/L032.json",
+      "sha256": "cd34c46da434f04728eda9dc9567e0013ff1be9b5bb6a0a3dc1dd2147bb99884",
+      "asr_sha256": "0da1a0d62df8363b1765e45c740c9a1a8351cad2d5f0db5b82c65f8d2096987a",
+      "reviewed_transcript": "I recognize those. FanDuel. DraftKings.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L033",
+      "wav": "media/speech-local/L033.wav",
+      "asr": "review/asr-local/L033.json",
+      "sha256": "c945d818cf6feefa8438ae6a38e5df5e983a00380e1a0835302978ce08a24268",
+      "asr_sha256": "c9e3e46a2a1e0601e2dc0ebd52c6cfefe01ffdfd776e77ab5dfbffd20d44bc57",
+      "reviewed_transcript": "Real operators. A legal business can still cost you money, and legal somewhere does not mean legal everywhere.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L034",
+      "wav": "media/speech-local/L034.wav",
+      "asr": "review/asr-local/L034.json",
+      "sha256": "eb60c044d241d19be3a61b752e4885d6db3c3418876ff1afabc10451f3d81834",
+      "asr_sha256": "41a023072a81704da0257b307fcf61b1754355ce4f0b6c670cd2af25640f828b",
+      "reviewed_transcript": "Hong Kong authorizes jockey club businesses. Singapore has regulated operators. Mainland China has its own authorized lottery system.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L035",
+      "wav": "media/speech-local/L035.wav",
+      "asr": "review/asr-local/L035.json",
+      "sha256": "ca5fd2f7da8f1bde36a16ec358a7f3450da2ee43b579710703220992b06ad54f",
+      "asr_sha256": "ebbb6ccb1832f215f0c4531afb25bc2a2a7a57ff5071c190a3bc73c125cb73a8",
+      "reviewed_transcript": "A foreign license is not an interdimensional passport.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L036",
+      "wav": "media/speech-local/L036.wav",
+      "asr": "review/asr-local/L036.json",
+      "sha256": "77151e8343a0e35f55bb1bc122f046a51859ce9cba4f0feff64c79f2f6d76451",
+      "asr_sha256": "95489280077e4fbd0f763191e5980c07ac4248b11bd8f9240c0d16ef21615708",
+      "reviewed_transcript": "Nor does a famous brand or a public benefit purpose guarantee generous payouts. Read the actual allocation rules.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L037",
+      "wav": "media/speech-local/L037.wav",
+      "asr": "review/asr-local/L037.json",
+      "sha256": "ed1cad3e9098c93e27479041902722004500b1e3db9b6f466ceccdb6d78833c0",
+      "asr_sha256": "89981670996d72702424591709965df3e73cf9b56016b7704f5f2588e4d65cc6",
+      "reviewed_transcript": "Last door. No cash up front. They finally trust my football knowledge.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L038",
+      "wav": "media/speech-local/L038.wav",
+      "asr": "review/asr-local/L038.json",
+      "sha256": "c22fd38477eb9e5d6a70a6fd3c0bf7cc835228ace2ad2603c438d4d331055093",
+      "asr_sha256": "c2e48ac93a8dd82685f984ef4fade85a324630509e8d75eb0196ea6bf3bcefa9",
+      "reviewed_transcript": "They trust that you will owe them money.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L039",
+      "wav": "media/speech-local/L039.wav",
+      "asr": "review/asr-local/L039.json",
+      "sha256": "9be21e10e5dcb8e6b5fd1f459a80d7f885a3c0d09970f2919530d62f71311e44",
+      "asr_sha256": "43ecf214ffb8d6cccdc0af8b023a1fde44ef696acb3cd4d759409dfd6562a42b",
+      "reviewed_transcript": "Why do the chips have teeth?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L040",
+      "wav": "media/speech-local/L040.wav",
+      "asr": "review/asr-local/L040.json",
+      "sha256": "bdcf60df401a0fa4d0949701c3b4da79824d5c8b263558d9c0be9770922eee63",
+      "asr_sha256": "b681a3175b30b015c9b71bb80b75339c4e817b3b1b309d1fe7702e7fdd2b6ab1",
+      "reviewed_transcript": "Some illegal operations combine credit betting, debt, and threats. No deposit can become a debt much bigger than your original budget.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L041",
+      "wav": "media/speech-local/L041.wav",
+      "asr": "review/asr-local/L041.json",
+      "sha256": "a1246bb17b3ca654e74479cc376677da9a983d3123b4ba2dc0590789538813c8",
+      "asr_sha256": "40e1d31c3e3eda8ec5c8c5710a43fbc67cd985ff3589872aa8593e44e7e686d6",
+      "reviewed_transcript": "Owen Hansen is a real case. His criminal enterprise involved illegal gambling, drug trafficking, and money laundering.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L042",
+      "wav": "media/speech-local/L042.wav",
+      "asr": "review/asr-local/L042.json",
+      "sha256": "83edbeb8ac8d617cba14ad639db695fd9a05a76ee9fe4cd780b33b01fec75481",
+      "asr_sha256": "d4df3b34265c4e58430e2c26b85d47258aea12c09bdff1af32d6b518dbb662f1",
+      "reviewed_transcript": "In 2017, he received 255 months in prison, more than 21 years.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L043",
+      "wav": "media/speech-repair1/L043.wav",
+      "asr": "review/asr-repair1/L043.json",
+      "sha256": "143c66c0a18e4d735c66723b9d15aa1b29a7c4f9c83581179389fd62f17ce9af",
+      "asr_sha256": "3d7bf6b6d03003e211e89105e0dec8a2e6c15168a70a5807ffb350bf54319e94",
+      "reviewed_transcript": "A friend introduced me is not a safety certificate.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L044",
+      "wav": "media/speech-repair3/L044.wav",
+      "asr": "review/asr-repair3/L044.json",
+      "sha256": "b4c466f781119f024c4264779257e0a8bfbf1fe8313eb0a28cdefb67ec613231",
+      "asr_sha256": "73b1b388158ac5e335a557c8e9f92369f6d66bc29f0c64381ddbdcc861074ab0",
+      "reviewed_transcript": "Right. An illegal book is not simply a cheaper app, and a licensed operator is not automatically a criminal enterprise. Keep the claims separate.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L045",
+      "wav": "media/speech-local/L045.wav",
+      "asr": "review/asr-local/L045.json",
+      "sha256": "ad69c76b43f968f3eb0a697af7bb8e9986945a818f767bdae30b656308f27825",
+      "asr_sha256": "23ee23c86ba3478765bc8d9cbec0212c423dc2effc5fd5567d6f4af3442757ec",
+      "reviewed_transcript": "After all those universes, did you find a guaranteed way to make money?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L046",
+      "wav": "media/speech-local/L046.wav",
+      "asr": "review/asr-local/L046.json",
+      "sha256": "04696c11c73c51fd970f1a738ba6a42a4b8c45660e0cb0ece52dc1c4f5d00acf",
+      "asr_sha256": "344e2c5720189c123217d9118e8fca0ba6add6a68d7bf3014ab240422971c045",
+      "reviewed_transcript": "yes",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L047",
+      "wav": "media/speech-local/L047.wav",
+      "asr": "review/asr-local/L047.json",
+      "sha256": "52daea0f178f2d9e7c47f018e696db052db04829435e78648f7f2f519ae66a75",
+      "asr_sha256": "6eff99b897d2a1ba88c90662fc10c1640cc3f1c94053097253a6a614b5c74842",
+      "reviewed_transcript": "Really?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L048",
+      "wav": "media/speech-local/L048.wav",
+      "asr": "review/asr-local/L048.json",
+      "sha256": "2ce33e90a92e39f7662ccfe9b651d11deb9e9893bc4c6bb99d0875d1e55abdb3",
+      "asr_sha256": "13dec25ad90b3926c2390fc70d1bb2f0007aaa0a10f247d65cce408556084ceb",
+      "reviewed_transcript": "sell coffee",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L049",
+      "wav": "media/speech-local/L049.wav",
+      "asr": "review/asr-local/L049.json",
+      "sha256": "c833183aff147ad3838f9b700388e4182de5bd7e52701cd64165c15fd28929e2",
+      "asr_sha256": "9652ab483b068349c6a6e30a009d054c3df0c298c46b736df514aeab7530d545",
+      "reviewed_transcript": "What happened to my 10 bucks?",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L050",
+      "wav": "media/speech-local/L050.wav",
+      "asr": "review/asr-local/L050.json",
+      "sha256": "8b45ff66752fa4aeb10d7d3eebc5143622869581b51ebea6baaa2da9d8446d71",
+      "asr_sha256": "2413525cbc58ea645f429def8ff83325eed646549679a088c2762377a839d6fc",
+      "reviewed_transcript": "Still in your pocket.",
+      "status": "selected after transcript review"
+    },
+    {
+      "id": "L051",
+      "wav": "media/speech-local/L051.wav",
+      "asr": "review/asr-local/L051.json",
+      "sha256": "b3221ce1752cb28e7195c68e5b8df2fafc7a03db6569ee657b20c13b5f176047",
+      "asr_sha256": "9ea311b943c03daff2ec373645fcd158d389fc98941b920ff7679f647257ac22",
+      "reviewed_transcript": "Biggest upset of the day. I did not place a bet.",
+      "status": "selected after transcript review"
+    }
+  ]
+}
