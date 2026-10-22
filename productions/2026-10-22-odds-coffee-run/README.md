@@ -6,7 +6,9 @@ This production is self-contained in this folder. No FrontierTechSN application 
 
 ## Current state
 
-A complete Pocket TTS edition runs 5:28.708 at 1920×1080 / 24 fps: 7,889 frames, 95 shots and 51 English dialogue lines. Marius voices Bo; Javert voices Qin. Audio selection, independent transcription, mouth envelopes, captions and sound mixing have been completed. The first Pocket export is retained as `media/the-house-gets-coffee-pocket-v1.mp4`; all of its frames were inspected in 247 paired thumbnail pages, with 19 additional native-size samples. Native comparison led to a further revision of Bo's spectacles and the characters' hands. That revised picture is being rendered and has not yet passed final visual review. See `content/review-report.md` for version-specific evidence.
+A complete Pocket TTS v2 edition is available at `media/the-house-gets-coffee.mp4`, also retained as `media/the-house-gets-coffee-pocket-v2.mp4`. It runs 5:28.708 at 1920×1080 / 24 fps: 7,889 frames, 95 shots and 51 English dialogue lines. Marius voices Bo; Javert voices Qin. Audio selection, independent transcription, mouth envelopes, captions and sound mixing are complete. All 7,889 frames of this exact export were visually inspected in 247 paired thumbnail pages, with 20 additional native-size decoded samples. Full decode, audio signal checks and browser playback through the natural end passed. Revision 14 adds round pale-rimmed spectacles and articulated hands. Remaining visual differences and one minor label overlap are documented in `content/review-report.md`; style identity is not accepted as 100%.
+
+The current file SHA-256 is `b4abc9d01eddee6623b550b7d1f46638a2013dc3d4c151e62fcd603c1fcd92a7`. The first Pocket export remains at `media/the-house-gets-coffee-pocket-v1.mp4` with its own inspection records.
 
 The earlier 5:16.5 Chatterbox edition remains at `media/the-house-gets-coffee-chatterbox.mp4`.
 
@@ -54,6 +56,6 @@ Open `http://127.0.0.1:8736/review.html` after starting the server. It binds onl
 
 ## Review boundaries
 
-All 1,380 reference frames were decoded and visually reviewed as consecutive labeled thumbnails. Eight native-size reference frames were also inspected. Every-frame thumbnail review, sampled native-size inspection, automated measurements, independent speech transcription, signal measurements and browser playback are separate categories of evidence. The final report will state the coverage actually completed. No numerical “100% identical” claim follows from an encode or a pixel statistic.
+All 1,380 reference frames were decoded and visually reviewed as consecutive labeled thumbnails. Eight native-size reference frames were also inspected. Every-frame thumbnail review, sampled native-size inspection, automated measurements, independent speech transcription, signal measurements and browser playback are separate categories of evidence. The review report states the coverage actually completed. No numerical “100% identical” claim follows from an encode or a pixel statistic.
 
 The new film draws different story content, so comparison pairs match shot roles rather than expecting equal pixels. Public figures and brands are independently redrawn, with identifying features and labels. Photographic research is not composited into the video. Source and font credits are included with the editable project; the visual reference also receives an end-card credit.
