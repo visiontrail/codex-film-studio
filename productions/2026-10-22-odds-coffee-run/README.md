@@ -6,9 +6,9 @@ This production is self-contained in this folder. No FrontierTechSN application 
 
 ## Current state
 
-A complete Pocket TTS v2 edition is available at `media/the-house-gets-coffee.mp4`, also retained as `media/the-house-gets-coffee-pocket-v2.mp4`. It runs 5:28.708 at 1920×1080 / 24 fps: 7,889 frames, 95 shots and 51 English dialogue lines. Marius voices Bo; Javert voices Qin. Audio selection, independent transcription, mouth envelopes, captions and sound mixing are complete. All 7,889 frames of this exact export were visually inspected in 247 paired thumbnail pages, with 20 additional native-size decoded samples. Full decode, audio signal checks and browser playback through the natural end passed. Revision 14 adds round pale-rimmed spectacles and articulated hands. Remaining visual differences and one minor label overlap are documented in `content/review-report.md`; style identity is not accepted as 100%.
+A complete Pocket TTS v4 edition is available at `media/the-house-gets-coffee.mp4`, also retained as `media/the-house-gets-coffee-pocket-v4.mp4`. It runs 5:28.708 at 1920×1080 / 24 fps: 7,889 frames, 95 shots and 51 English dialogue lines. Marius voices Bo; Javert voices Qin. Audio selection, independent transcription, mouth envelopes, captions and sound mixing are complete. All 7,889 frames of this exact export were visually inspected in 247 paired thumbnail pages, with 26 additional native-size decoded samples. Full decode, audio signal checks and browser playback through the natural end passed. Revisions 15–16 refine faces, connected arm gestures, panic expressions, the pool label and end portal. Remaining differences in proportions, acting and pacing are documented in `content/review-report.md`; style identity is not accepted as 100%.
 
-The current file SHA-256 is `b4abc9d01eddee6623b550b7d1f46638a2013dc3d4c151e62fcd603c1fcd92a7`. The first Pocket export remains at `media/the-house-gets-coffee-pocket-v1.mp4` with its own inspection records.
+The current file SHA-256 is `17c96c492af3f07d5424e33583560ea9162c7cfb6568f488b9244dde239fdcbe`. Pocket v1 and v2 remain with their own complete inspection records. Rejected v3 is retained with explicitly partial inspection coverage; it is not the current preview.
 
 The earlier 5:16.5 Chatterbox edition remains at `media/the-house-gets-coffee-chatterbox.mp4`.
 

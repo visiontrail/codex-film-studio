@@ -2,7 +2,7 @@ import {Ink,INK,WHITE,clamp,ease} from './ink.mjs';
 import {character,portal} from './cast.mjs';
 import {background,props,palettes,football} from './worlds.mjs';
 const tags={home:['DIMENSION 01','THE COFFEE PROBLEM'],odds:['DIMENSION 02','THE HOUSE MARGIN'],parlay:['DIMENSION 03','ONE MORE GATE'],pool:['DIMENSION 04','THE MONEY SOUP'],attention:['DIMENSION 05','ONE MORE TURN'],stadium:['DIMENSION 06','EVIDENCE, PLEASE'],legal:['DIMENSION 07','SUSPICIOUSLY NORMAL'],underground:['DIMENSION 08','PAY LATER']};
-export function drawFilm(ctx,frame,timeline,width=1920){let g=new Ink(ctx,frame);g.push(0,0,width/1920);let t=frame/24,shot=timeline.shots.find(s=>frame>=s.start&&frame<s.end)||timeline.shots.at(-1),local=(frame-shot.start)/24,line=timeline.cues.find(c=>c.id===shot.line)||{id:'L000',shot:'wide',emotion:'deadpan',speaker:'qin'},kind=shot.kind,world=shot.world;
+export function drawFilm(ctx,frame,timeline,width=1920){ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);let g=new Ink(ctx,frame);g.push(0,0,width/1920);let t=frame/24,shot=timeline.shots.find(s=>frame>=s.start&&frame<s.end)||timeline.shots.at(-1),local=(frame-shot.start)/24,line=timeline.cues.find(c=>c.id===shot.line)||{id:'L000',shot:'wide',emotion:'deadpan',speaker:'qin'},kind=shot.kind,world=shot.world;
  const contentLine=line;line={...line,shot:shot.shot||line.shot};let cue=line.start===undefined?null:line,speech=cue&&frame>=cue.start&&frame<cue.end,index=cue?Math.floor((frame-cue.start)/2):0,amp=speech?(cue.rms12?.[index]??(.3+Math.sin(index*1.7)*.2)):0;
  let cam={x:960,y:580,z:1.45};if(world==='home')cam.x=860;if(kind==='title')cam={x:960,y:540,z:1.15};if(kind==='dialogue'){
   if(['bo','qin'].includes(line.shot))cam={x:line.shot==='bo'?530:810,y:line.shot==='bo'?644:500,z:line.shot==='bo'?3.05:3.5};
@@ -14,7 +14,7 @@ export function drawFilm(ctx,frame,timeline,width=1920){let g=new Ink(ctx,frame)
  }
  if(kind==='cold')cam={x:175,y:495,z:2.4+local*.025};
  if(kind==='end'){
-  g.rect(0,0,1920,1080,'#231638',null,0);portal(g,960,505,360,t,.48);title(g,t,960,300,1);g.text('A sci-fi sitcom about sports betting',960,679,42,'#e7d8b8');g.text('AN INTERDIMENSIONAL CAUTIONARY COMEDY',960,751,28,'#bbaac9',{font:'VT323'});g.text('Visual reference: Coffee Run - LemoLab (CC BY 4.0)',960,850,25,'#bbaac9',{font:'VT323'});g.text('THE HOUSE GETS COFFEE / 2026',960,887,23,'#bbaac9',{font:'VT323'});football(g,960+Math.sin(local*3)*77,493+Math.cos(local*2)*66,22);g.pop();return;
+  g.rect(-4,-4,1928,1088,'#231638',null,0);g.push(960,505,1.38,1);portal(g,0,0,415,t,.48);g.pop();title(g,t,960,300,1);g.text('A sci-fi sitcom about sports betting',960,679,42,'#e7d8b8');g.text('AN INTERDIMENSIONAL CAUTIONARY COMEDY',960,751,28,'#bbaac9',{font:'VT323'});g.text('Visual reference: Coffee Run - LemoLab (CC BY 4.0)',960,850,25,'#bbaac9',{font:'VT323'});g.text('THE HOUSE GETS COFFEE / 2026',960,887,23,'#bbaac9',{font:'VT323'});football(g,960+Math.sin(local*3)*77,493+Math.cos(local*2)*66,22);g.pop();return;
  }
  g.push(960-cam.x*cam.z,540-cam.y*cam.z,cam.z);background(g,world,t);props(g,world,{...contentLine,shot:line.shot==='debt'?'debt':contentLine.shot},Math.max(0,cue?(frame-cue.start)/24:local));
  if(kind==='cold'){
@@ -28,14 +28,13 @@ export function drawFilm(ctx,frame,timeline,width=1920){let g=new Ink(ctx,frame)
  let qb={x:810,y:865,s:1},bb={x:530,y:865,s:.93};
  if(kind==='arrival'){let d=ease(local/.7);qb.y=865-(1-d)*500;bb.y=865-(1-ease((local-.2)/.75))*540;qb.s=1+Math.sin(Math.max(0,local-.7)*17)*Math.exp(-Math.max(0,local-.7)*8)*.08;portal(g,250,490,150,t,1-ease((local-.9)/.5))}
  if(kind==='departure'){let d=ease(local/.9);portal(g,660,540,180*(.7+d*.4),t);qb.x=810+(660-810)*d;bb.x=530+(660-530)*d;qb.y=865-270*d;bb.y=865-210*d;qb.s=1-d*.95;bb.s=.93-d*.85}
- let gesture=speech?Math.sin(clamp(local/.6)*Math.PI/2)*(.15+.1*Math.sin(Math.floor(local*12)/12*3)):0;
- if(['panic','eager','explain'].includes(line.emotion))gesture*=3;
+ let acting=performance(frame,line,speech),gesture=acting.gesture;
  let still=line.id==='L048'&&frame>line.end;
  let focus=['bo','qin','phone'].includes(line.shot)?line.shot:null;
  let insert=['board','machine','coins','gates','pool','referee','turkey','woolmer','brands','asia','flags','debt','hanson','reveal'].includes(line.shot)&&kind==='dialogue';
  if(kind!=='cold'){
-  if(!insert&&focus!=='qin')character(g,'bo',bb.x,bb.y,bb.s,{time:t,talk:line.speaker==='bo'?amp:0,emotion:line.speaker==='bo'?line.emotion:world==='underground'?'worry':'alert',gesture:line.speaker==='bo'?gesture:0,prop:contentLine.shot==='phone'||line.shot==='phone'||world==='attention'?'phone':null,still});
-  if(!insert&&focus!=='bo'&&focus!=='phone')character(g,'qin',qb.x,qb.y,qb.s,{time:t,talk:line.speaker==='qin'?amp:0,emotion:line.speaker==='qin'?line.emotion:'deadpan',gesture:line.speaker==='qin'?gesture:0,prop:line.shot==='portal'?'remote':null,still});
+  if(!insert&&focus!=='qin')character(g,'bo',bb.x,bb.y,bb.s,{time:t,talk:line.speaker==='bo'?amp:0,emotion:line.speaker==='bo'?line.emotion:world==='underground'?'worry':'alert',gesture:line.speaker==='bo'?gesture:0,headAngle:line.speaker==='bo'?acting.headAngle:-.025,prop:contentLine.shot==='phone'||line.shot==='phone'||world==='attention'?'phone':null,still});
+  if(!insert&&focus!=='bo'&&focus!=='phone')character(g,'qin',qb.x,qb.y,qb.s,{time:t,talk:line.speaker==='qin'?amp:0,emotion:line.speaker==='qin'?line.emotion:'deadpan',gesture:line.speaker==='qin'?gesture:0,headAngle:line.speaker==='qin'?acting.headAngle:0,prop:line.shot==='portal'?'remote':null,still});
  }
  if(line.shot==='portal'){let d=ease((local-.7)/.6);portal(g,1100,535,210*d,t)}
  g.pop();
@@ -45,6 +44,16 @@ export function drawFilm(ctx,frame,timeline,width=1920){let g=new Ink(ctx,frame)
  if(['dialogue','arrival'].includes(kind)&&world!=='home'&&line.id!=='L048')tag(g,world,(frame-(shot.world_entry??shot.start))/24);
  if(speech){let cap=timeline.captions.find(c=>frame>=c.start&&frame<c.end);if(cap)caption(g,cap)}
  g.pop()
+}
+function performance(frame,line,speaking){
+ if(!speaking)return {gesture:0,headAngle:0};
+ const f=Math.floor((frame-line.start)/2)*2,age=f/24,duration=(line.end-line.start)/24;
+ const settle=ease(age/.22),release=1-ease((age-duration+.22)/.22);
+ const beat=Math.floor(age/1.7),accent=[1,.52,.84][beat%3],base=({panic:.96,shock:.76,eager:.65,explain:.72,worry:.25,think:.28,confused:.45,smug:.35,relieved:.28,serious:.15,deadpan:.10,tired:.06,blank:0})[line.emotion]??.15;
+ const previous=[1,.52,.84][Math.max(0,beat-1)%3],transition=ease((age-beat*1.7)/.16);
+ const held=previous+(accent-previous)*transition;
+ const tilt=({panic:.075,shock:-.065,eager:.035,smug:-.06,think:.09,confused:.06,worry:.04,relieved:-.035,tired:.055})[line.emotion]??-.018;
+ return {gesture:base*held*settle*release,headAngle:tilt*settle+Math.sin(Math.min(1,(age%1.7)/.28)*Math.PI)*.018};
 }
 function tag(g,world,t){let [a,b]=tags[world];g.rect(65,55,435,126,({odds:'#f7449f',parlay:'#ee8730',pool:'#478f83',attention:'#664292',stadium:'#546b8e',legal:'#9d7c4c',underground:'#873c56'})[world],INK,6,9);g.text(('> '+a).slice(0,Math.floor(t*40)+4),92,96,39,WHITE,{font:'VT323',align:'left'});g.text(b,92,145,28,WHITE,{font:'VT323',align:'left'})}
 function title(g,t,x,y,s){g.push(x,y,s,s,-.025);g.ellipse(0,15,615,110,null,'#59cfd0',7);g.text('THE HOUSE GETS',6,-22,83,'#b94980',{font:'Bungee',stroke:INK,width:19});g.text('THE HOUSE GETS',0,-28,83,'#fff0ce',{font:'Bungee',stroke:INK,width:12});g.text('COFFEE',10,83,104,'#b94980',{font:'Bungee',stroke:INK,width:19});g.text('COFFEE',0,73,104,'#fff0ce',{font:'Bungee',stroke:INK,width:12});for(let i of [-1,1])g.star(i*630,-37,15,'#e8bf65',4);g.pop()}
