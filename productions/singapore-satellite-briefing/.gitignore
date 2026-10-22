@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+media/
+reference/
+review/
+assets/plates/
+assets/footage/
+assets/raw/
+assets/fonts/*
+!assets/fonts/OFL-*.txt
+.venv-*/

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "L01",
+    "caption_start_text": "Give three days to three routes.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 10,
+    "asr_word": {
+      "word": " Give",
+      "start": 2.88,
+      "end": 3.16,
+      "probability": 0.98974609375,
+      "token": "give"
+    },
+    "seconds_within_audio": 2.88,
+    "frame": 93,
+    "audio_sha256": "e0889df5d1c2036b0f4a27da8ca32e2f9ca4f5475c9a6162f5e2e2a350212aa3"
+  },
+  {
+    "id": "L02",
+    "caption_start_text": "Drop your bags, then begin at Marina Bay.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 12,
+    "asr_word": {
+      "word": " Drop",
+      "start": 3.6,
+      "end": 3.94,
+      "probability": 0.99267578125,
+      "token": "drop"
+    },
+    "seconds_within_audio": 3.6,
+    "frame": 334,
+    "audio_sha256": "d90f1e8b2c36c9f4be34c4e8d0aa3c06985fac342379d93fe40b7f6f2c25d0dd"
+  },
+  {
+    "id": "L03",
+    "caption_start_text": "the Merlion, Marina Bay Sands, and Gardens by the Bay.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 6,
+    "asr_word": {
+      "word": " the",
+      "start": 1.9,
+      "end": 2.06,
+      "probability": 0.982421875,
+      "token": "the"
+    },
+    "seconds_within_audio": 1.9,
+    "frame": 486,
+    "audio_sha256": "71b4fc2a793aa0fd4d68537aad81291f408afe01a1ff9ef05096a3e117883781"
+  },
+  {
+    "id": "L04",
+    "caption_start_text": "Keep indoor sights for the hottest hours.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 11,
+    "asr_word": {
+      "word": " Keep",
+      "start": 3.58,
+      "end": 3.94,
+      "probability": 0.9892578125,
+      "token": "keep"
+    },
+    "seconds_within_audio": 3.58,
+    "frame": 718,
+    "audio_sha256": "4ead9731663d981b99b64e0280f81e147ff521cb59188ffff3c0cc08962fead3"
+  },
+  {
+    "id": "L05",
+    "caption_start_text": "Start with Chinatown shophouses, then a meal at Maxwell Food Centre.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 10,
+    "asr_word": {
+      "word": " start",
+      "start": 2.82,
+      "end": 3.04,
+      "probability": 0.9873046875,
+      "token": "start"
+    },
+    "seconds_within_audio": 2.82,
+    "frame": 898,
+    "audio_sha256": "dcaf321bd5546ea68a5fe5a1980f6f17f73fe159c0d2bf40a615565e6c08fe1a"
+  },
+  {
+    "id": "L06",
+    "caption_start_text": "Sultan Mosque and Haji Lane fit into the same walk.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 7,
+    "asr_word": {
+      "word": " Sultan",
+      "start": 2.9,
+      "end": 3.1,
+      "probability": 0.9208984375,
+      "token": "sultan"
+    },
+    "seconds_within_audio": 2.9,
+    "frame": 1115,
+    "audio_sha256": "9eaf7428c77192ee32e8c9fdf2a7ca959f660d4d1af3a65c900616e3d153bc9c"
+  },
+  {
+    "id": "L07",
+    "caption_start_text": "Leave time for side streets, instead of another taxi ride.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 9,
+    "asr_word": {
+      "word": " Leave",
+      "start": 3.08,
+      "end": 3.48,
+      "probability": 0.99365234375,
+      "token": "leave"
+    },
+    "seconds_within_audio": 3.08,
+    "frame": 1311,
+    "audio_sha256": "55b44710515c67044105a2c50b30c0b757fbe18dcf21b56260ed1d2c93c0b1f2"
+  },
+  {
+    "id": "L08",
+    "caption_start_text": "From HarbourFront, head through VivoCity for the Sentosa Express,",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 5,
+    "asr_word": {
+      "word": " From",
+      "start": 2.02,
+      "end": 2.42,
+      "probability": 0.99755859375,
+      "token": "from"
+    },
+    "seconds_within_audio": 2.02,
+    "frame": 1480,
+    "audio_sha256": "c3cbda5cecc69e42fdf6e7a1347dea0aca5758f7d84f9945d779031b28d2b1e2"
+  },
+  {
+    "id": "L08",
+    "caption_start_text": "or walk across the boardwalk.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 14,
+    "asr_word": {
+      "word": " or",
+      "start": 5.38,
+      "end": 5.82,
+      "probability": 0.8046875,
+      "token": "or"
+    },
+    "seconds_within_audio": 5.38,
+    "frame": 1561,
+    "audio_sha256": "c3cbda5cecc69e42fdf6e7a1347dea0aca5758f7d84f9945d779031b28d2b1e2"
+  },
+  {
+    "id": "L09",
+    "caption_start_text": "Give the theme park room, instead of packing two days into one.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 9,
+    "asr_word": {
+      "word": " Give",
+      "start": 3.28,
+      "end": 3.6,
+      "probability": 0.7314453125,
+      "token": "give"
+    },
+    "seconds_within_audio": 3.28,
+    "frame": 1731,
+    "audio_sha256": "9656664c411880f4d511998e09a273c5bd72869dcfbc4513537e661398a32ced"
+  },
+  {
+    "id": "L10",
+    "caption_start_text": "Tap in and out with the same card and payment method.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 6,
+    "asr_word": {
+      "word": " Tap",
+      "start": 2.22,
+      "end": 2.58,
+      "probability": 0.99072265625,
+      "token": "tap"
+    },
+    "seconds_within_audio": 2.22,
+    "frame": 1904,
+    "audio_sha256": "5298cdbb0dca5fa6afcb098feb22119ee1a9b744359493637e5f341327b5b0b2"
+  },
+  {
+    "id": "L10",
+    "caption_start_text": "Keep card and phone separate.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 17,
+    "asr_word": {
+      "word": " Keep",
+      "start": 5.14,
+      "end": 5.48,
+      "probability": 0.99267578125,
+      "token": "keep"
+    },
+    "seconds_within_audio": 5.14,
+    "frame": 1974,
+    "audio_sha256": "5298cdbb0dca5fa6afcb098feb22119ee1a9b744359493637e5f341327b5b0b2"
+  },
+  {
+    "id": "L11",
+    "caption_start_text": "Save midday for hawker centres and indoor sights,",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 9,
+    "asr_word": {
+      "word": " Save",
+      "start": 3.14,
+      "end": 3.58,
+      "probability": 0.9921875,
+      "token": "save"
+    },
+    "seconds_within_audio": 3.14,
+    "frame": 2143,
+    "audio_sha256": "b5bbe384fb6ab3fe406bbbdd04627b5942ebfd0cc081ce2d2230b50586681b6f"
+  },
+  {
+    "id": "L11",
+    "caption_start_text": "with room for a change of weather.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 17,
+    "asr_word": {
+      "word": " with",
+      "start": 6.0,
+      "end": 6.54,
+      "probability": 0.81787109375,
+      "token": "with"
+    },
+    "seconds_within_audio": 6.0,
+    "frame": 2212,
+    "audio_sha256": "b5bbe384fb6ab3fe406bbbdd04627b5942ebfd0cc081ce2d2230b50586681b6f"
+  },
+  {
+    "id": "L12",
+    "caption_start_text": "First the bay, then the neighbourhoods, and finally, time by the sea.",
+    "method": "exact_source_token_to_reviewed_ASR_word_start",
+    "source_token_index": 4,
+    "asr_word": {
+      "word": " First",
+      "start": 1.34,
+      "end": 1.72,
+      "probability": 0.9931640625,
+      "token": "first"
+    },
+    "seconds_within_audio": 1.34,
+    "frame": 2373,
+    "audio_sha256": "54129fbfb63e2c78798f0c30de26de3ebd5d3d531d902242ddacc50a4cd5d5f3"
+  }
+]
