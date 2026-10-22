@@ -1,0 +1,57 @@
+{
+  "title": "Does AI Help You Learn\u2014or Just Finish?",
+  "duration_seconds": 198.0,
+  "fps": 24,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "frames": 4752,
+  "shots": 23,
+  "speech_recordings": 22,
+  "subtitle_cues": 62,
+  "hash_bound_independent_asr_lines": [
+    "08"
+  ],
+  "retained_evidence_checks_passed": true,
+  "subjective_listening": "not completed; audio input unavailable",
+  "artistic_equivalence_percentage": null,
+  "files": {
+    "media/Does-AI-Help-You-Learn-Midcentury.mp4": {
+      "bytes": 75820924,
+      "sha256": "f6fabd0b6d3f09328ae75582d70e163ff2c9e82aebba161128533c0d1fc0ea47"
+    },
+    "media/narration.en.srt": {
+      "bytes": 4891,
+      "sha256": "45e9420391f5325ea02f6f149315edfb657e33c6aa9b86f4e8668fb4f127f17a"
+    },
+    "media/narration.en.vtt": {
+      "bytes": 4722,
+      "sha256": "f8ac6244f2af92e90091e1875743adf348573d406a21922bcfbc6d065cecc724"
+    },
+    "content/timeline.json": {
+      "bytes": 17515,
+      "sha256": "50586ca02334ead5436763697964f5c8a259d5f5ca6d09ac9fe8f22705401f20"
+    },
+    "content/narration.json": {
+      "bytes": 3707,
+      "sha256": "2d42d7a98d51077099e030e16bad390f6d22c58f03769a9cf6e91863f5a704b3"
+    },
+    "review/visual-review.json": {
+      "bytes": 3511,
+      "sha256": "b2dd9d198c02c83242ed0351074e03ff4167641f4ca09b1efe06aa158ed1a6dd"
+    },
+    "review/delivery/delivery-check.json": {
+      "bytes": 7269,
+      "sha256": "521fd098eccc239abe3fe642fa3fa1f83125ebf26e81f1cf0892acb3efcdd23c"
+    },
+    "review/comparison/frames.csv": {
+      "bytes": 337781,
+      "sha256": "26ffea6b461a782656c2eed3df7adb568ae0cf33ff72c8dde9b06e6de012a9d1"
+    },
+    "review/comparison-browser.png": {
+      "bytes": 78776,
+      "sha256": "34694bbcd2d91a1ecb4bf9e02d32797239530095090a28a0a6bbe4fa84eac4ca"
+    }
+  }
+}
