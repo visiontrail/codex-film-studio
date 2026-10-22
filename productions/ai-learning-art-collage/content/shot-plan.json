@@ -1,0 +1,1198 @@
+[
+  {
+    "id": "01",
+    "bg": "white",
+    "scene_type": "desk",
+    "headline": "Almost midnight",
+    "subhead": "One deadline. One broken formula.",
+    "main_visual": "A persistent photographic learner, cut out with an irregular ivory edge, sits large at the right of a newspaper-and-wood desk. A charcoal city skyline grows behind the desk, with a paper moon, antique clock, coffee cup and tangled pencil scribble. The laptop is a photographed cutout angled toward the learner; ChatGPT has a recognizable printed-paper emblem.",
+    "beats": [
+      {
+        "at_fraction": 0.04,
+        "action": "Raise the low city skyline from a torn white ground; clock hand settles near midnight.",
+        "text": "11:47 PM"
+      },
+      {
+        "at_fraction": 0.33,
+        "action": "Learner hand pushes a scribbled spreadsheet strip into the laptop; a clean formula strip emerges.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.74,
+        "action": "Slide the formula onto the physical spreadsheet; one missing cell receives its result.",
+        "text": "Solved"
+      }
+    ],
+    "reference_role": "Reference approximately 2–14 seconds: white fibrous paper, building cutouts, photographic subject, bold props and foreground layering."
+  },
+  {
+    "id": "02",
+    "bg": "white",
+    "scene_type": "desk",
+    "headline": "It all makes sense",
+    "subhead": "While the answer is there.",
+    "main_visual": "Stay at the same desk in a closer crop. The learner’s face and hand remain recognizable. Oversized formula fragments overlap the skyline like magazine clippings; leaf engravings and a small yellow bird soften the edge. A stamped completion receipt sits under the mug.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "The learner follows three formula fragments as they settle in reading order.",
+        "text": "Choose · Compare · Return"
+      },
+      {
+        "at_fraction": 0.46,
+        "action": "A worn green DONE stamp hits the receipt; the learner straightens slightly.",
+        "text": "Done"
+      },
+      {
+        "at_fraction": 0.79,
+        "action": "The laptop lid closes as the explanation strips remain visible above it.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 6–14 seconds: large human cutout with an assemblage of flowers, colored objects and monochrome architecture."
+  },
+  {
+    "id": "03",
+    "bg": "blue",
+    "scene_type": "desk",
+    "headline": "The next morning",
+    "subhead": "Same skill. A different table.",
+    "main_visual": "The desk returns on pale blue document paper. A sun engraving replaces the moon. The same learner occupies the left foreground, with a large cutout hand and pencil at center. Actual spreadsheet column strips overlap behind the learner, with one column moved to a new location.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Swap the moon for a sun and slide a calendar leaf into view.",
+        "text": "Tomorrow"
+      },
+      {
+        "at_fraction": 0.35,
+        "action": "Move one spreadsheet column sideways; fold the printed chatbot sheet shut.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.7,
+        "action": "The pencil approaches a blank formula line, stops, and leaves a long visible pause.",
+        "text": "Where do you start?"
+      }
+    ],
+    "reference_role": "Reference approximately 46–50 seconds: pale blue archival paper, overlapping documents, map and building cutouts."
+  },
+  {
+    "id": "04",
+    "bg": "botanical",
+    "scene_type": "title",
+    "headline": "LEARN",
+    "subhead": "or just finish?",
+    "main_visual": "An asymmetric title assemblage fills the frame: LEARN in individually cut magazine letters across the center, a smaller inked question below. The learner remains on the right beside an old marble thinker cutout, botanical leaves, a coral flower, clock and formula ribbons. The completed paper pulls away from the learner rather than becoming a dashboard.",
+    "beats": [
+      {
+        "at_fraction": 0.04,
+        "action": "Large cut letters land with slightly different angles over cream and colored paper patches.",
+        "text": "LEARN"
+      },
+      {
+        "at_fraction": 0.39,
+        "action": "A completed worksheet separates from the learner’s hands as the second line appears.",
+        "text": "or just finish?"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "A black pencil circle opens around the learner and blank notebook.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 18 seconds: eclectic cut-letter title surrounded by botanical, sculptural and photographic elements."
+  },
+  {
+    "id": "05",
+    "bg": "news",
+    "scene_type": "study",
+    "headline": "Look beyond the answer",
+    "subhead": "What did the person learn?",
+    "main_visual": "The opening desk is now a small photograph pasted on a spread of densely printed newsprint. The same learner steps out of that photograph into the foreground with a notebook. Four torn margin tabs emerge around a magnified research page, each holding a concrete object rather than an abstract icon.",
+    "beats": [
+      {
+        "at_fraction": 0.05,
+        "action": "Pull back from the desk image to reveal its ragged photograph edge.",
+        "text": "Illustration"
+      },
+      {
+        "at_fraction": 0.4,
+        "action": "The foreground learner lifts a magnifying glass over a research paragraph.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.73,
+        "action": "Four tabs appear with a laptop, closed book, calendar and changed equation.",
+        "text": "Four questions"
+      }
+    ],
+    "reference_role": "Reference approximately 46–62 seconds: paper documents overlap at varied angles; real object silhouettes sit over printed material."
+  },
+  {
+    "id": "06",
+    "bg": "triptych",
+    "scene_type": "metrics",
+    "headline": "With help. Alone.",
+    "subhead": "Two different observations.",
+    "main_visual": "Use two open panels of a distressed paper triptych, leaving the narrow center fold visible. The same learner appears in matching photographic poses on the left and right, tied by the same handwritten problem. A printed laptop supplies an answer on one side; the other side contains only the notebook and pencil.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "The left problem receives an answer from the laptop while the learner watches.",
+        "text": "WITH HELP"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Pull the laptop and solution sheet away from the right-hand copy of the desk.",
+        "text": "ALONE"
+      },
+      {
+        "at_fraction": 0.75,
+        "action": "The left result stays complete; the right page remains honestly unresolved.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 26–34 seconds: richly textured adjacent full-height collage panels, not floating cards."
+  },
+  {
+    "id": "07",
+    "bg": "blue",
+    "scene_type": "metrics",
+    "headline": "Later. Somewhere new.",
+    "subhead": "Retention and transfer.",
+    "main_visual": "The learner’s photographed hand holds a loop of calendar leaves across the foreground. Behind it, a second torn spreadsheet is rotated and rearranged over pale blue ledger paper. A botanical stem winds between the two paths, holding the composition together without a digital connector network.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Turn the calendar leaves to a later date while the original equation remains tucked away.",
+        "text": "RETENTION"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Replace the familiar table with a visibly changed table; the learner reaches for it.",
+        "text": "TRANSFER"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Keep both outcomes on separate paper labels under their physical examples.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 46–50 seconds: archival blue papers, layered historical documents and cutout foreground objects."
+  },
+  {
+    "id": "08",
+    "bg": "cubist",
+    "scene_type": "boundary",
+    "headline": "What was tested?",
+    "subhead": "Look at the test.",
+    "main_visual": "Cream, charcoal and muted blue paper shapes interlock like the reference’s cubist guitar collage. The learner is a large photographic bust along the left edge, looking toward a short exam ticket laid over a much longer calendar ribbon. A second problem sheet peeks from behind rough burlap-textured paper.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Lay an IMMEDIATE ticket across the exam sheet.",
+        "text": "Immediately"
+      },
+      {
+        "at_fraction": 0.4,
+        "action": "Unroll a months-long calendar beyond the exam ticket’s edge; leave it unmarked.",
+        "text": "Months later?"
+      },
+      {
+        "at_fraction": 0.74,
+        "action": "A hand separates a repeated question from a changed one.",
+        "text": "A different problem?"
+      }
+    ],
+    "reference_role": "Reference approximately 54–62 seconds: tightly interlocked cubist scraps, rough fabric, musical/newsprint fragments and a large portrait."
+  },
+  {
+    "id": "09",
+    "bg": "white",
+    "scene_type": "retrieval",
+    "headline": "Can you rebuild it?",
+    "subhead": "Cover the explanation.",
+    "main_visual": "A close photographic crop shows the recurring learner’s eyes above a large printed solution. Rough cream paper, pencil scribble and inked leaves fill the margins. The notebook and writing hand dominate the lower half, retaining the natural irregular silhouette of a physical collage.",
+    "beats": [
+      {
+        "at_fraction": 0.09,
+        "action": "Move a translucent reading strip down the visible solution as the learner follows it.",
+        "text": "Looks familiar"
+      },
+      {
+        "at_fraction": 0.45,
+        "action": "A torn opaque sheet slides over the solution without covering the original question.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "The pencil starts the first independent line; the rest stays blank.",
+        "text": "Build it again"
+      }
+    ],
+    "reference_role": "Reference approximately 10–14 seconds: human face and opened-head conceptual collage over spare white paper."
+  },
+  {
+    "id": "10",
+    "bg": "blue",
+    "scene_type": "study",
+    "headline": "TURKEY",
+    "subhead": "Nearly 1,000 mathematics students.",
+    "main_visual": "A recognizable Turkish flag, red with white crescent and star, hangs as torn printed fabric behind a photographic school desk. The recurring learner remains in the foreground as viewer guide; small classroom silhouettes are illustrative. An old map, schoolbook, ruler and three torn workbook covers fill the scene.",
+    "beats": [
+      {
+        "at_fraction": 0.04,
+        "action": "The map and flag rise behind the desk while a paper count settles beside the book.",
+        "text": "Nearly 1,000"
+      },
+      {
+        "at_fraction": 0.38,
+        "action": "Fan three physical workbook covers: ordinary resources, GPT Base and GPT Tutor.",
+        "text": "CONTROL · GPT BASE · GPT TUTOR"
+      },
+      {
+        "at_fraction": 0.75,
+        "action": "One common mathematics problem lies across all three books.",
+        "text": "Same coursework"
+      }
+    ],
+    "reference_role": "Reference approximately 46–50 seconds: map and institutional building collage with a small row of torn paper labels."
+  },
+  {
+    "id": "11",
+    "bg": "triptych",
+    "scene_type": "two_tools",
+    "headline": "One model. Two designs.",
+    "subhead": "The help changes.",
+    "main_visual": "A single printed GPT-4 emblem is pinned near the central seam of a triptych. At left, the learner receives a complete answer ribbon from a chat printout. At right, a teacher’s photographic hand places hint scraps beside the learner’s own attempt. Both sides remain visibly physical paper workspaces.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "A shared GPT-4 paper emblem appears between the two desks.",
+        "text": "GPT-4"
+      },
+      {
+        "at_fraction": 0.4,
+        "action": "Unrestricted answer strips fill the left page in one gesture.",
+        "text": "GPT Base"
+      },
+      {
+        "at_fraction": 0.73,
+        "action": "Teacher notes and one question arrive on the right, leaving room for the learner’s pencil.",
+        "text": "GPT Tutor"
+      }
+    ],
+    "reference_role": "Reference approximately 26–34 seconds: three contrasting collage fields with white lettering; preserve material differences and visible seams."
+  },
+  {
+    "id": "12",
+    "bg": "magenta",
+    "scene_type": "scoreboard",
+    "headline": "During practice",
+    "subhead": "Relative to the control group.",
+    "main_visual": "Large irregular magazine numerals occupy a distressed magenta-and-cream printed background. The recurring learner stands on a photographic stack of books in the foreground, looking toward two vertical stacks of marked practice papers. GPT Base and GPT Tutor are small pasted labels under their respective figures.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Stamp +48% onto the first practice-paper stack with a brief paper impact.",
+        "text": "+48%"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "Unfold a larger +127% sheet beside the second stack.",
+        "text": "+127%"
+      },
+      {
+        "at_fraction": 0.75,
+        "action": "Pin a small plain-language footnote across the two piles.",
+        "text": "Practice · relative to control"
+      }
+    ],
+    "reference_role": "Reference approximately 66–70 seconds: saturated magenta print, oversized mismatched cut letters, large photographed props."
+  },
+  {
+    "id": "13",
+    "bg": "white",
+    "scene_type": "scoreboard",
+    "headline": "Then the help disappeared",
+    "subhead": "The exam without resources.",
+    "main_visual": "Return abruptly to textured white paper. The learner sits at a bare photographic school desk. The ornate paper answer ribbons and branded chat printouts are physically pulled beyond the frame, leaving a single exam sheet. A heavy dark-red −17% newspaper figure occupies the now-empty side.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Pull every assistance sheet from the desk in one coordinated paper sweep.",
+        "text": "No resources"
+      },
+      {
+        "at_fraction": 0.41,
+        "action": "Drop the −17% figure beside the exam with a small shadow and firm settle.",
+        "text": "−17%"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Leave the learner, pencil and exam stationary for the contrast to register.",
+        "text": "GPT Base · relative to control"
+      }
+    ],
+    "reference_role": "Reference opening white-paper stage: large physical cutouts with clear negative space; use the visual removal itself as the transition."
+  },
+  {
+    "id": "14",
+    "bg": "blue",
+    "scene_type": "scoreboard",
+    "headline": "A different exam result",
+    "subhead": "The guarded tutor.",
+    "main_visual": "The recurring learner holds two exam sheets over an archival blue background. Torn percent signs, a small Turkish flag and a marked practice worksheet sit in the margins. GPT Tutor and control papers overlap slightly without a mathematically false equality symbol or fabricated raw scores.",
+    "beats": [
+      {
+        "at_fraction": 0.09,
+        "action": "A hand pins a modest note under the earlier percentages.",
+        "text": "Relative changes"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "The GPT Tutor exam paper moves beside the control paper.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "A long cream strip settles across their lower edges.",
+        "text": "No statistically clear difference"
+      }
+    ],
+    "reference_role": "Reference approximately 46–50 seconds: translucent archival layering and hand-placed labels; keep institutional material grounded in paper."
+  },
+  {
+    "id": "15",
+    "bg": "cubist",
+    "scene_type": "boundary",
+    "headline": "What the result establishes",
+    "subhead": "A loss avoided is not a gain proved.",
+    "main_visual": "The learner’s large photographic bust occupies the left edge of a cubist brown-and-charcoal spread. Three substantial paper stamps are physically arranged across rough fiber and newsprint: LOSS, UNCERTAIN DIFFERENCE, GAIN. The central result has the strongest light and space.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "The loss stamp is struck on an abandoned GPT Base exam scrap.",
+        "text": "Loss"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "Place the tutor result on the middle strip without sliding it into the gain area.",
+        "text": "No clear difference"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Keep an unfilled space before GAIN while the learner points to the middle finding.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 54–62 seconds: bold portrait over cubist materials, uneven blocks and limited high-contrast words."
+  },
+  {
+    "id": "16",
+    "bg": "news",
+    "scene_type": "help_logs",
+    "headline": "What students asked for",
+    "subhead": "The conversation leaves clues.",
+    "main_visual": "Two flowing bands of printed chat transcripts arc across old newsprint. The learner sits centrally on a cutout chair, with one photographed hand on a first attempt. Whole solution sheets build up on one side; short hint slips and revised handwritten lines accumulate on the other.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "Complete answer pages fan rapidly into the left band.",
+        "text": "Full solutions"
+      },
+      {
+        "at_fraction": 0.4,
+        "action": "A handwritten attempt enters the right band, followed by a smaller hint and another attempt.",
+        "text": "Attempt · hint · revise"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Attach a tiny margin label to the transcript seam.",
+        "text": "Clues, not every cause"
+      }
+    ],
+    "reference_role": "Reference document/cubist sections: continuous print texture and oversized tangible scraps, no rounded chat bubbles."
+  },
+  {
+    "id": "17",
+    "bg": "blue",
+    "scene_type": "boundary",
+    "headline": "One setting. One short-term test.",
+    "subhead": "Keep the scope in view.",
+    "main_visual": "A Turkish classroom photograph and flag sit inside a rough ink circle on a blue archive sheet. The recurring learner leans into the circle from outside. A long strip of calendar dates and diverse subject-book spines extend beyond the measured scene rather than being crossed out or falsely resolved.",
+    "beats": [
+      {
+        "at_fraction": 0.1,
+        "action": "Frame the classroom and mathematics book with the rough ink circle.",
+        "text": "Mathematics"
+      },
+      {
+        "at_fraction": 0.45,
+        "action": "A short exam ticket lands inside; the long calendar remains outside.",
+        "text": "Short-term exam"
+      },
+      {
+        "at_fraction": 0.78,
+        "action": "The learner opens an empty margin beside the calendar.",
+        "text": "Years later?"
+      }
+    ],
+    "reference_role": "Reference approximately 46–50 seconds: documentary papers over a pale blue field; objects communicate the boundary."
+  },
+  {
+    "id": "18",
+    "bg": "botanical",
+    "scene_type": "physics",
+    "headline": "HARVARD",
+    "subhead": "A different teaching design.",
+    "main_visual": "Use a sourced Harvard building cutout, a correct crimson identity mark and a large opened physics book. The learner sits in front of the book; a second photographic group of students discusses a diagram in the distance. Leaf engravings, fluid-flow lines and old scientific apparatus form the surrounding collage.",
+    "beats": [
+      {
+        "at_fraction": 0.05,
+        "action": "Harvard architecture and the crimson mark settle behind the physics book.",
+        "text": "Harvard"
+      },
+      {
+        "at_fraction": 0.4,
+        "action": "The left book page reveals a tutor exchange; the right reveals students actively solving a problem.",
+        "text": "Tutor · active classroom"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "A small post-lesson test sheet crosses between the two scenes.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 6–18 seconds: botanical/sculptural assemblage with large photographic subjects; institutional identity replaces decorative celebrity imagery."
+  },
+  {
+    "id": "19",
+    "bg": "blue",
+    "scene_type": "physics",
+    "headline": "Designed to teach",
+    "subhead": "Questions, feedback and pacing.",
+    "main_visual": "A printed tutor sequence winds upward through a pale blue physics manuscript. The learner’s hand turns a page while a teacher’s hand inserts an expert solution. Two large cut-paper median figures sit on differently angled test slips, with the physics book continuous in the foreground.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "Reveal a question, an attempted response and feedback in a visible ordered chain.",
+        "text": "Question → attempt → feedback"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Place 4.5 on the tutor test slip and 3.5 on the active-classroom slip.",
+        "text": "4.5 · 3.5"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Pin a small qualifier immediately beneath both values.",
+        "text": "Median immediate post-test scores"
+      }
+    ],
+    "reference_role": "Reference archival section: layered documents and legible pasted notes on a soft blue field, with photographic hands anchoring scale."
+  },
+  {
+    "id": "20",
+    "bg": "cubist",
+    "scene_type": "boundary",
+    "headline": "An immediate result",
+    "subhead": "Months later remains a question.",
+    "main_visual": "The Harvard study sheet occupies a cubist arrangement of cream, indigo and rough brown paper. The recurring learner holds a cutout clock over the immediate test; an unmarked calendar unfurls behind the learner, extending beyond the composition’s central cluster.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Clip the test sheet to a clock marked NOW.",
+        "text": "After the lesson"
+      },
+      {
+        "at_fraction": 0.46,
+        "action": "Pull a long calendar from behind the paper cluster and leave it blank.",
+        "text": "Months later?"
+      },
+      {
+        "at_fraction": 0.79,
+        "action": "The learner looks from the measured test to the unanswered calendar.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 54–62 seconds: restrained cubist layers with a dominant portrait and a single strong paper object."
+  },
+  {
+    "id": "21",
+    "bg": "triptych",
+    "scene_type": "study",
+    "headline": "Three kinds of help",
+    "subhead": "Check both learning and correctness.",
+    "main_visual": "A full-frame triptych contains three worn mathematics workbooks, each with a photographed hand and the same learner’s small notebook. One carries a recognizable ChatGPT collage emblem, one a human tutor’s pen and one no extra help. Paper edges and printed textures connect the panels.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "The three workbooks open sequentially across the frame.",
+        "text": "Generated · human · no help"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "A result strip connects generated help with improved learning over no help.",
+        "text": "Learning improved"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "A second, smaller strip rests across generated and human help.",
+        "text": "Difference not statistically clear"
+      }
+    ],
+    "reference_role": "Reference approximately 26–34 seconds: three complete visual worlds across the frame; avoid a modern comparison-card layout."
+  },
+  {
+    "id": "22",
+    "bg": "magenta",
+    "scene_type": "quality",
+    "headline": "Check the explanation",
+    "subhead": "Confident can still be wrong.",
+    "main_visual": "A dense fan of printed hint fragments covers an energetic magenta print field. The learner’s photographed face is large at left, with a magnifying glass and checking pen reaching into the paper mass. The number 32% is cut from contrasting colored print; a single wrong arithmetic step is large enough to inspect.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Scatter a controlled stack of initial hint slips across the frame.",
+        "text": "Initial generated help"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Mark a clearly labeled 32% sheet REJECTED while the learner circles an incorrect step.",
+        "text": "32% failed quality checks"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Replace the incorrect step with its checked correction, keeping a visible cross-out.",
+        "text": "Check the reasoning"
+      }
+    ],
+    "reference_role": "Reference approximately 66–70 seconds: loud magenta-and-cream print, oversized eclectic type, oversized photographic hand and object."
+  },
+  {
+    "id": "23",
+    "bg": "botanical",
+    "scene_type": "offload",
+    "headline": "What thinking stays yours?",
+    "subhead": "Some work moves outside your head.",
+    "main_visual": "The learner’s photographic head and shoulders sit among lush engraved leaves, a calendar, calculator, notebook and branded chatbot print. A clean paper flap above the head opens like the reference’s conceptual brain collage; formula fragments move toward external objects without bodily imagery or anatomy.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Calendar, calculator and note fragments emerge from behind the learner.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.41,
+        "action": "A formula strip moves from the head-shaped paper flap into the calculator.",
+        "text": "Offloading"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "A second strip labeled CHOOSE stays with the learner’s hand and notebook.",
+        "text": "What stays yours?"
+      }
+    ],
+    "reference_role": "Reference approximately 10–18 seconds: a photographic figure, opened-head visual metaphor, botanical abundance and sculptural layering."
+  },
+  {
+    "id": "24",
+    "bg": "triptych",
+    "scene_type": "offload",
+    "headline": "Name the job",
+    "subhead": "Finish a task, or practise a skill?",
+    "main_visual": "Two halves of a rich paper triptych share the same photographic learner at a desk. On one side, routine bookkeeping receipts flow into the computer; on the other, the learner physically keeps the formula-choice and error-check scraps beside the pencil. The same tools appear in both.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Routine receipts slide into the left computer while a finished ledger comes out.",
+        "text": "Finish the bookkeeping"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "On the other side the learner draws the formula-choice scrap back toward the notebook.",
+        "text": "Learn the method"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Hold both useful outcomes in view with neither presented as morally superior.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 26–34 seconds: contrasting full-height material panels; the same subject ties the split composition together."
+  },
+  {
+    "id": "25",
+    "bg": "white",
+    "scene_type": "target",
+    "headline": "Choose. Check. Explain.",
+    "subhead": "Pick the skill you want.",
+    "main_visual": "The learner sits large on a stack of photographed books against white fibrous paper. Three long notebook tabs form an uneven fan around the figure. A pencil, magnifying glass and open book stand in for choosing, checking and explaining; botanical stems and a dark scribble fill only the margins.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "The learner takes one blank notebook tab and writes the target skill.",
+        "text": "CHOOSE"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "A magnifying glass moves over an error while a second tab appears.",
+        "text": "CHECK"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "The learner points at a short written justification on the third tab.",
+        "text": "EXPLAIN"
+      }
+    ],
+    "reference_role": "Reference opening white-paper portraits and title assemblage: a dominant figure surrounded by a few oversized meaningful objects."
+  },
+  {
+    "id": "26",
+    "bg": "news",
+    "scene_type": "feedback",
+    "headline": "Notice how you ask for help",
+    "subhead": "704 adults. Fraction arithmetic.",
+    "main_visual": "A paper study report lies across newspaper columns, with the learner leaning over a personal tally sheet. Fraction strips, a photographed calculator and complete-answer slips form a rich foreground. A small PREPRINT paper label remains attached throughout; reward tokens are a minor side object.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Lay a help-history tally beside the learner’s fraction work.",
+        "text": "704 adults"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "The learner reviews the tally; complete-answer requests are replaced by a smaller help request and an attempt.",
+        "text": "Feedback on help seeking"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Move to a fresh unaided test; reward tokens stay apart under a modest note.",
+        "text": "No clear reward effect"
+      }
+    ],
+    "reference_role": "Reference dense printed-paper assemblages: photographed hands and found objects interrupt the page without becoming interface widgets."
+  },
+  {
+    "id": "27",
+    "bg": "cubist",
+    "scene_type": "boundary",
+    "headline": "Promising, with limits",
+    "subhead": "One recent preprint. One narrow task.",
+    "main_visual": "A large learner portrait rests on the left of a restrained cubist spread. The fraction-study printout has uneven exposed edges and an attached PREPRINT tag. A handful of fraction pieces remain central; a distant blank calendar and closed subject books sit beyond the main cluster.",
+    "beats": [
+      {
+        "at_fraction": 0.09,
+        "action": "Bring the small fraction-study sheet into the foreground with its preprint tag still visible.",
+        "text": "Preprint"
+      },
+      {
+        "at_fraction": 0.45,
+        "action": "A hand circles the fractions and the later test together.",
+        "text": "Fraction arithmetic"
+      },
+      {
+        "at_fraction": 0.78,
+        "action": "Let the wider calendar and other books remain unresolved in the margins.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference approximately 54–62 seconds: large portrait, cream/canvas/newsprint materials and narrow readable emphasis."
+  },
+  {
+    "id": "28",
+    "bg": "white",
+    "scene_type": "retrieval",
+    "headline": "Hide it. Recall it. Check it.",
+    "subhead": "Make the method visible from memory.",
+    "main_visual": "On the white paper stage, the recurring learner and photographed writing hand sit beside an oversized solution sheet. A rough opaque cover, a fresh notebook and a checking pen form three overlapping planes. A small pile of research pages with a 44-study label rests behind the desk.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "A torn cover slides over the solution but leaves the original question visible.",
+        "text": "Hide"
+      },
+      {
+        "at_fraction": 0.41,
+        "action": "The learner writes a partial method on the fresh notebook.",
+        "text": "Recall"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "The cover lifts enough to compare and mark one specific correction.",
+        "text": "Check"
+      }
+    ],
+    "reference_role": "Reference white opening: large concrete cutouts, subtle paper shadows and conceptual action carried by foreground objects."
+  },
+  {
+    "id": "29",
+    "bg": "magenta",
+    "scene_type": "retrieval",
+    "headline": "Do not rehearse the mistake",
+    "subhead": "Check the step that failed.",
+    "main_visual": "A band of repeated wrong equation clippings crosses a distressed magenta field like a printed pattern. The learner’s large photographed hand interrupts that repetition with a checking pencil. A reliable worked example and a corrected equation are layered over the broken band.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Repeat one clearly wrong equation across a short run of paper strips.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "The checking pencil crosses the exact incorrect operation, stopping the repeated band.",
+        "text": "Find the missing step"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "A checked substitution strip lands on top and the learner traces it once.",
+        "text": "Try it in the original"
+      }
+    ],
+    "reference_role": "Reference magenta Dada section: repeated print, disruptive large photographed hand, mismatched headline letters."
+  },
+  {
+    "id": "30",
+    "bg": "blue",
+    "scene_type": "novice",
+    "headline": "Beginners need a way in",
+    "subhead": "A clear example can help.",
+    "main_visual": "The learner is younger only through a separate illustrative student cutout, while the recurring adult guide remains at the margin. A correct Indonesian red-over-white flag, algebra textbook and photographic classroom desk sit on blue archival paper. Complete bracket-expansion steps occupy the open book.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Open the worked-example book beside the novice’s pencil.",
+        "text": "Start with an example"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "The novice follows the shown bracket expansion, then reaches for a similar fresh problem.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Pin a small study boundary under the book.",
+        "text": "Tested just after learning"
+      }
+    ],
+    "reference_role": "Reference pale-blue history section: map/document layering, geographically accurate identity and legible torn-paper notes."
+  },
+  {
+    "id": "31",
+    "bg": "triptych",
+    "scene_type": "sequence",
+    "headline": "Try, then learn",
+    "subhead": "The sequence matters.",
+    "main_visual": "Two paths made from torn arrow-shaped paper run across a three-panel background. The recurring learner’s photographs appear at the attempt and instruction stages; books, a teacher’s hand and rough first attempts are the tangible nodes. A thick 53-study paper stack anchors the bottom.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Place a rough first attempt before a teacher’s worked explanation on the upper path.",
+        "text": "Try → instruction"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Show instruction before practice on the second path without marking it universally wrong.",
+        "text": "Instruction → try"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Add small age, task and design labels onto the central fold.",
+        "text": "Depends on the learner and task"
+      }
+    ],
+    "reference_role": "Reference three-panel genre display: adjacent textured fields, small clear labels and material variation rather than clean digital flowcharts."
+  },
+  {
+    "id": "32",
+    "bg": "news",
+    "scene_type": "delayed",
+    "headline": "What happens later?",
+    "subhead": "More than 6,000 students.",
+    "main_visual": "An accurate United States flag and photographic schoolbuilding cutout sit behind a large open mathematics workbook. The learner guides attention from the foreground. Conventional computer-practice printouts and assistant-generated hints meet a row of mastery check marks, all over newspaper texture.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "A 2026 working-paper sheet unfolds behind the school and flag.",
+        "text": "Working paper · 2026"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Separate the practice materials into AI support and conventional computer practice.",
+        "text": "More than 6,000 students"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "A photographic hand places a mastery strip across both practice paths.",
+        "text": "Mastery requirement"
+      }
+    ],
+    "reference_role": "Reference archival/city collage: large architecture, strong documentary paper, flags as actual physical cutouts rather than icons."
+  },
+  {
+    "id": "33",
+    "bg": "blue",
+    "scene_type": "delayed",
+    "headline": "One week later",
+    "subhead": "A narrower result.",
+    "main_visual": "Seven worn calendar leaves arc over the recurring learner and a fresh test booklet. One side of the booklet repeats familiar mathematics material; the other contains visibly changed problems. The result is a small carefully qualified newspaper clipping, not a triumphant large upward graph.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "Turn seven paper leaves and place the test booklet on the desk.",
+        "text": "One week later"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "Open practiced and unpracticed material on separate pages.",
+        "text": "Practised · unfamiliar"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Attach a modest qualifier beside the practiced-material result.",
+        "text": "Limited, conditional evidence"
+      }
+    ],
+    "reference_role": "Reference pale-blue documentary sequence: overlapping sheets, quiet material depth and a few restrained words."
+  },
+  {
+    "id": "34",
+    "bg": "triptych",
+    "scene_type": "research_table",
+    "headline": "Read each result in context",
+    "subhead": "Learners. Comparison. Test.",
+    "main_visual": "Three full-frame paper panels hold the Turkish classroom, Harvard physics book and one-week school assessment. The recurring learner is a large foreground cutout at the seam, looking across all three. A rough handwritten ledger runs along the lower edge, with physical paper rows and no polished dashboard borders.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Reveal all three study worlds with distinct country/institutional identities.",
+        "text": "Turkey · Harvard · one week later"
+      },
+      {
+        "at_fraction": 0.4,
+        "action": "The learner places a different test ticket under each study.",
+        "text": "Different tests"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "A handwritten three-row ledger aligns population, comparison and assessment without merging results.",
+        "text": "Learners · comparison · test"
+      }
+    ],
+    "reference_role": "Reference approximately 26–34 seconds: three independent visual worlds seen together; preserve their distinct textures and imagery."
+  },
+  {
+    "id": "35",
+    "bg": "botanical",
+    "scene_type": "fade_support",
+    "headline": "Let the support change",
+    "subhead": "Example. Partial step. Fresh attempt.",
+    "main_visual": "The learner’s desk sits within leaves, books and inked floral scraps. A complete worked example is attached to the left, a partial example lies under the writing hand, and a fresh question waits at right. The same paper, pencil and protagonist carry continuity as support visibly reduces.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "The learner studies the complete page and points to its crucial operation.",
+        "text": "Study an example"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Fold away selected solution lines, leaving a meaningful gap for the learner to complete.",
+        "text": "Finish a step"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Slide the worked pages aside and reveal a fresh problem.",
+        "text": "Try a new one"
+      }
+    ],
+    "reference_role": "Reference botanical title assemblage: rich plants, physical objects and a large human subject; movement follows objects rather than UI animation."
+  },
+  {
+    "id": "36",
+    "bg": "white",
+    "scene_type": "protocol",
+    "headline": "One skill. One problem.",
+    "subhead": "Begin where you are.",
+    "main_visual": "The recurring learner sits at an uncluttered photographed desk on thick white paper. A single notebook has a rough title tab; a pencil and one chosen problem dominate. A subtle margin scrap says practical check. No stopwatch, countdown, progress ring or timed universal promise appears.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "The learner writes a specific skill on a torn notebook tab.",
+        "text": "Choose one skill"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "Place one manageable problem on the desk and start a rough first line.",
+        "text": "Make an attempt"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Keep the assistant printout folded away until an actual gap appears.",
+        "text": ""
+      }
+    ],
+    "reference_role": "Reference white opening’s spacious material stage: enough negative space for a single human action while retaining real paper and photographs."
+  },
+  {
+    "id": "37",
+    "bg": "blue",
+    "scene_type": "protocol",
+    "headline": "Ask about the missing step",
+    "subhead": "Show your attempt.",
+    "main_visual": "A pale blue spread contains the learner’s rough working, a textbook example and a small handwritten hint. The photographic learner and writing hand occupy the center. Two loose paper paths branch around the desk: unfamiliar topic toward a complete example, specific gap toward a short hint.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "For a blank start, open a clear worked example beside the learner.",
+        "text": "New topic? Start here."
+      },
+      {
+        "at_fraction": 0.41,
+        "action": "The learner circles one unexplained step in an existing attempt.",
+        "text": "Which step is missing?"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "A short hint lands beside that circle; the pencil resumes the work.",
+        "text": "One useful hint"
+      }
+    ],
+    "reference_role": "Reference archival papers: informative document layering, a real hand and a small number of physical labels."
+  },
+  {
+    "id": "38",
+    "bg": "cubist",
+    "scene_type": "equation",
+    "headline": "Make it concrete",
+    "subhead": "Find x, and explain why.",
+    "main_visual": "An oversized cream equation strip fills the center of a cubist slate-blue, black and brown collage. The recurring learner stands left, pointing with a photographed pencil. The original problem stays above every step; operation marks are separate slips placed on both sides, preserving a visible equality.",
+    "beats": [
+      {
+        "at_fraction": 0.06,
+        "action": "Set the original equation strip above the learner’s hand.",
+        "text": "2(x + 3) = 14"
+      },
+      {
+        "at_fraction": 0.41,
+        "action": "Place ÷2 slips under both sides, then reveal the resulting line.",
+        "text": "x + 3 = 7"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Place −3 slips under both sides; reveal the final value only after the operation.",
+        "text": "x = 4"
+      }
+    ],
+    "reference_role": "Reference cubist section: mathematically useful flat scraps embedded in tactile asymmetry, with a large portrait and layered printed surfaces."
+  },
+  {
+    "id": "39",
+    "bg": "magenta",
+    "scene_type": "equation",
+    "headline": "Check the brackets",
+    "subhead": "One missed multiplication.",
+    "main_visual": "The learner’s hand and checking pencil dominate a magenta print field. The original equation and substitution occupy thick cream paper at center. A wrong expansion sits on an off-angle scrap below, ready for a conspicuous black cross-out and a replacement strip.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Insert four visibly inside the brackets of the original equation.",
+        "text": "2(4 + 3) = 14"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "Expose the erroneous expansion on a separate scrap and circle its last term.",
+        "text": "2x + 3"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Cross out that expansion and replace it with the correct multiplied terms.",
+        "text": "2x + 6"
+      }
+    ],
+    "reference_role": "Reference magenta section: bold letter collage, forceful photographed hand and high-contrast editorial intervention."
+  },
+  {
+    "id": "40",
+    "bg": "white",
+    "scene_type": "equation",
+    "headline": "Now cover the answer",
+    "subhead": "Build the method yourself.",
+    "main_visual": "Back on textured white paper, the same learner and equation remain spatially familiar. A rough beige cover hides all worked steps while leaving the original question visible. The notebook is blank below it, with the photographed writing hand ready to reconstruct the method.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Cover the entire worked solution, leaving only 2(x + 3) = 14 above it.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "The learner places operation slips on both sides and writes the first new line.",
+        "text": "Why divide both sides?"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "Finish the reconstruction and show the value only after its explanation.",
+        "text": "Explain the steps"
+      }
+    ],
+    "reference_role": "Reference white paper conceptual scenes: the important event is physical concealment and reconstruction, with no abstract mastery meter."
+  },
+  {
+    "id": "41",
+    "bg": "blue",
+    "scene_type": "transfer",
+    "headline": "A different problem",
+    "subhead": "Does the idea travel?",
+    "main_visual": "The learner picks up a new equation strip over blue manuscript paper. The old problem is folded but recognizable at the margin. Changed numbers and the minus sign are different colored paper fragments, while the operations are the same material and positions used in the prior example.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "Unfold the changed question above the desk.",
+        "text": "3(y − 2) = 15"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Apply the matching divide operation to both sides and reveal the new intermediate line.",
+        "text": "y − 2 = 5"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Add two to both sides and settle the checked result beside a small qualifier.",
+        "text": "y = 7 · near transfer"
+      }
+    ],
+    "reference_role": "Reference blue archive sequence: changed fragments on an otherwise continuous physical document, preserving recognizable visual anchors."
+  },
+  {
+    "id": "42",
+    "bg": "botanical",
+    "scene_type": "calendar",
+    "headline": "Come back later",
+    "subhead": "A fresh attempt after a real delay.",
+    "main_visual": "A large photographic calendar opens amid botanical leaves and the recurring learner’s notebook. The earlier solution is tucked into a visibly closed envelope. A new blank question sheet and pencil sit in the foreground, with the learner returning from the opposite side of the composition.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "Fold the old solution into the envelope and turn the calendar to a later occasion.",
+        "text": "Later"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "The learner returns and opens a fresh problem while the envelope stays closed.",
+        "text": "Try without looking"
+      },
+      {
+        "at_fraction": 0.77,
+        "action": "A small calendar tag remains unnumbered to avoid implying one perfect delay.",
+        "text": "Check what remains"
+      }
+    ],
+    "reference_role": "Reference botanical and white assemblages: generous organic layers, photographed objects and a physical time transition."
+  },
+  {
+    "id": "43",
+    "bg": "triptych",
+    "scene_type": "fade_support",
+    "headline": "Watch what happens after help",
+    "subhead": "The label is not the result.",
+    "main_visual": "The learner occupies the center of a triptych. A full worked answer approaches from one side, a short hint from the other. Both lead to the same central notebook and independent attempt. One incorrect hint has a visible checking mark; neither help type receives a blanket good-or-bad symbol.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "The learner studies a complete solution, folds it away and reaches for the notebook.",
+        "text": "Full answer"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "A hint arrives from the other side; the learner checks its content before using it.",
+        "text": "Hint"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Both papers slide back and the same fresh attempt remains at center.",
+        "text": "What can you do afterward?"
+      }
+    ],
+    "reference_role": "Reference triptych: contrasting paper fields converge on a single foreground person and concrete shared action."
+  },
+  {
+    "id": "44",
+    "bg": "news",
+    "scene_type": "log",
+    "headline": "Keep a small learning record",
+    "subhead": "Attempt. Help. Independent work.",
+    "main_visual": "A real-looking ruled notebook fills most of a newsprint collage. The learner’s photographed hand writes three compact column headings by hand. Scrap-sized examples, one help slip, a checked independent attempt and a later-date tab overlap the notebook rather than appearing as software table rows.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "Write the three paper-column headings across the notebook.",
+        "text": "Attempt · help · alone"
+      },
+      {
+        "at_fraction": 0.42,
+        "action": "Paste one concrete example under each heading, with the independent attempt visibly reconstructed.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Add a changed-problem slip and a later-date tab to the notebook edge.",
+        "text": "Change it. Return later."
+      }
+    ],
+    "reference_role": "Reference document collage: a practical physical ledger embedded in varied print texture and photographic objects."
+  },
+  {
+    "id": "45",
+    "bg": "white",
+    "scene_type": "desk",
+    "headline": "Tomorrow, try again",
+    "subhead": "Close the chat. Change the table.",
+    "main_visual": "Return to the exact desk, city skyline and photographic learner from the opening, now in daylight. The same ChatGPT emblem is visible on the folded chat paper. The spreadsheet columns are rearranged; the learner’s notebook and pencil occupy more visual space than the laptop.",
+    "beats": [
+      {
+        "at_fraction": 0.07,
+        "action": "Match the opening desk composition, replacing the paper moon with morning light.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.4,
+        "action": "Close the chat printout and visibly move one spreadsheet column.",
+        "text": "A fresh case"
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "The learner builds a new formula strip, checks one result and keeps the notebook open.",
+        "text": "Try. Check. Try again."
+      }
+    ],
+    "reference_role": "Reference white-paper opening reprise: reuse the same architecture and subject so a changed human action provides the ending."
+  },
+  {
+    "id": "46",
+    "bg": "botanical",
+    "scene_type": "closing",
+    "headline": "WHAT REMAINS?",
+    "subhead": "Make the next independent attempt better.",
+    "main_visual": "The recurring learner stands beside the completed notebook in a rich final botanical assemblage. Calendar, formula, checking pencil, a small skyline and the folded branded chat printout surround the subject. Large eclectic cut letters form the question; the face, hands and independent work remain fully visible.",
+    "beats": [
+      {
+        "at_fraction": 0.08,
+        "action": "Bring the notebook, pencil and later-date slip together around the learner.",
+        "text": "Explain · check · do"
+      },
+      {
+        "at_fraction": 0.43,
+        "action": "The support papers drift slightly outward while the learner and fresh work stay central.",
+        "text": ""
+      },
+      {
+        "at_fraction": 0.76,
+        "action": "Cut letters settle into the final question and hold without an extra slogan or production label.",
+        "text": "WHAT REMAINS?"
+      }
+    ],
+    "reference_role": "Reference approximately 18 seconds: full botanical/title collage with multicolored cut letters, photographic subject and deep paper layering; resolve with a clean hold."
+  }
+]

@@ -1,0 +1,8 @@
+reference/
+review/
+media/
+delivery/
+node_modules/
+.venv/
+assets/generated/
+assets/source/

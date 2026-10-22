@@ -1,0 +1,33 @@
+{
+  "title": "Does AI Help You Learn—or Just Finish?",
+  "latest_complete_candidate": "v8",
+  "work_in_progress": "v9 paper material revision",
+  "duration_seconds": 586.48,
+  "frames": 14662,
+  "width": 1920,
+  "height": 1080,
+  "fps": 25,
+  "language": "English",
+  "frontier_task_created": false,
+  "published": false,
+  "candidates": {
+    "v7": {
+      "file": "delivery/Does-AI-Help-You-Learn-or-Just-Finish.mp4",
+      "sha256": "807c8ff6ff631f4601f998083d8820520cdb1dcea14cb5535d09534918591d84",
+      "actual_review": "review/v7-visual-review-coverage.json"
+    },
+    "v8": {
+      "file": "delivery/v8/Does-AI-Help-You-Learn-or-Just-Finish.mp4",
+      "sha256": "72b242d358e281433c380051f43009dbc8db36083542d5f29e0441147fd36afc",
+      "actual_review_status": "changed-frame assignments being completed",
+      "playback_observations": "review/v8-playback/observations.json"
+    },
+    "v9": {
+      "render_work": "media/render-final-v9-chunks",
+      "status": "rendering, not reviewed"
+    }
+  },
+  "review_boundary": "Actual every-frame reviews use 160x90 cells with selected native 1920x1080 checks. Automated metrics are not artistic similarity percentages.",
+  "style_equivalence_100_percent_established": false,
+  "subjective_listening_established": false
+}

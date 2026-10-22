@@ -1,0 +1,355 @@
+{
+  "schema_version": 2,
+  "updated_utc": "2026-10-22T23:08:01.239081+00:00",
+  "scope": "Asset and source provenance, not a final quality or listening certificate. Runtime acceptance belongs to hash-bound review records.",
+  "reference": {
+    "url": "https://www.youtube.com/watch?v=04UfoNpOQdw",
+    "channel": "101 academy入門教室",
+    "title": "【藝術欣賞101】第廿八集 —  拼拼貼貼成藝術",
+    "local_file": "reference/art-collage-1080p.mp4",
+    "sha256": "9738507787ff37f8e431c195c3982b648c779d54d69e8b278950b0c6f7ade1bf",
+    "format": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 25,
+      "decoded_frames": 5551,
+      "decoded_duration_seconds": 222.04
+    },
+    "role": "Visual study and comparison only. Reference footage, cutout images and soundtrack are not used in the new film.",
+    "comparison_basis": "content/reference-map.json maps by visual function, not same-content pixel alignment.",
+    "audit_record": "review/reference-full-1080p-unobscured/audit.json"
+  },
+  "generated_assets": [
+    {
+      "file": "assets/generated/learner-sheet.png",
+      "method": "OpenAI built-in image_gen tool in this production conversation",
+      "original_file": "/Users/leoguo/.codex/generated_images/01a1630d-8d75-7860-b594-a51bcfba4c2c/exec-9feafcf5-9839-4e1a-9632-2cfc9cc61d16.png",
+      "prompt_summary": "Six photographic cut-paper poses of the same fictional adult East Asian learner in mustard cardigan and teal trousers.",
+      "prompt_record_type": "Summary, not a verbatim prompt. Exact generation prompts were not durably saved.",
+      "bytes": 2037225,
+      "sha256": "1d1ac126c2f1b33294fb2a3275a9ef41e1b22a5294847c25297f40e1af2654d5",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "use": "assets/learner-bounds.json; src/materials.mjs",
+      "interpretation": "Generated illustration, not documentary evidence of a study participant, classroom or institution.",
+      "original_sha256": "1d1ac126c2f1b33294fb2a3275a9ef41e1b22a5294847c25297f40e1af2654d5",
+      "local_copy_matches_original": true
+    },
+    {
+      "file": "assets/generated/props-sheet.png",
+      "method": "OpenAI built-in image_gen tool in this production conversation",
+      "original_file": "/Users/leoguo/.codex/generated_images/01a1630d-8d75-7860-b594-a51bcfba4c2c/exec-4a0927a9-8b7e-45fa-9970-783ac6af0d3b.png",
+      "prompt_summary": "Eight photographic magazine-paper learning props: laptop, clock, books, brain, desk, notebook, hand and calculator.",
+      "prompt_record_type": "Summary, not a verbatim prompt. Exact generation prompts were not durably saved.",
+      "bytes": 1844908,
+      "sha256": "2a500e6755463a067c0b594f407579622f5a9200032cf26700929cd5f08cfa37",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "use": "src/props.mjs; unequal manually inspected source rectangles",
+      "interpretation": "Generated illustration, not documentary evidence of a study participant, classroom or institution.",
+      "original_sha256": "2a500e6755463a067c0b594f407579622f5a9200032cf26700929cd5f08cfa37",
+      "local_copy_matches_original": true
+    },
+    {
+      "file": "assets/generated/ornament-sheet.png",
+      "method": "OpenAI built-in image_gen tool in this production conversation",
+      "original_file": "/Users/leoguo/.codex/generated_images/01a1630d-8d75-7860-b594-a51bcfba4c2c/exec-f1d8e181-637d-40e2-a573-dbcfa0911213.png",
+      "prompt_summary": "Photographic botanical cutouts, classical plaster head, architectural skyline, roses, eye strip and an old map.",
+      "prompt_record_type": "Summary, not a verbatim prompt. Exact generation prompts were not durably saved.",
+      "bytes": 3242321,
+      "sha256": "e56c178bda987dc0c986dde24aeaeba809a4c0590a693d0e442b033a596e8866",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "use": "src/materials.mjs ornament(); source shapes overlap and are clipped at draw time",
+      "interpretation": "Generated illustration, not documentary evidence of a study participant, classroom or institution.",
+      "original_sha256": "e56c178bda987dc0c986dde24aeaeba809a4c0590a693d0e442b033a596e8866",
+      "local_copy_matches_original": true
+    },
+    {
+      "file": "assets/generated/desk-group.png",
+      "method": "OpenAI built-in image_gen tool in this production conversation",
+      "original_file": "/Users/leoguo/.codex/generated_images/01a1630d-8d75-7860-b594-a51bcfba4c2c/exec-669ef87a-3228-459d-a5d0-dc99f5ac1b85.png",
+      "prompt_summary": "A coherent photographic learner, school desk and laptop group for the opening and closing collage.",
+      "prompt_record_type": "Summary, not a verbatim prompt. Exact generation prompts were not durably saved.",
+      "bytes": 1821177,
+      "sha256": "f7b5fe2af9bf9dca7b6fabd83108bda775053f4aca87adfdec1fbf7f499a21d0",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "use": "src/hero-scenes.mjs",
+      "interpretation": "Generated illustration, not documentary evidence of a study participant, classroom or institution.",
+      "original_sha256": "f7b5fe2af9bf9dca7b6fabd83108bda775053f4aca87adfdec1fbf7f499a21d0",
+      "local_copy_matches_original": true
+    },
+    {
+      "file": "assets/generated/study-sheet.png",
+      "method": "OpenAI built-in image_gen tool in this production conversation",
+      "original_file": "/Users/leoguo/.codex/generated_images/01a1630d-8d75-7860-b594-a51bcfba4c2c/exec-67a764a6-9497-498e-816c-ba70547b5bd6.png",
+      "prompt_summary": "Photographic paper stacks, an illustrative classroom, a hand holding a calendar, a monochrome teacher, algebra notes and an eye strip.",
+      "prompt_record_type": "Summary, not a verbatim prompt. Exact generation prompts were not durably saved.",
+      "bytes": 3008154,
+      "sha256": "f5fd3c39e4ad1cde0a7dafa84dd0e998625e3dd2a182f34e66a9c9a1b2830df5",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "use": "src/practice-scenes.mjs; manually inspected unequal crop rectangles",
+      "interpretation": "Generated illustration, not documentary evidence of a study participant, classroom or institution.",
+      "original_sha256": "f5fd3c39e4ad1cde0a7dafa84dd0e998625e3dd2a182f34e66a9c9a1b2830df5",
+      "local_copy_matches_original": true
+    },
+    {
+      "file": "assets/generated/paper-fiber-v9.png",
+      "method": "OpenAI built-in image_gen tool",
+      "original_file": "/Users/leoguo/.codex/generated_images/01a1630d-8d75-7860-b594-a51bcfba4c2c/exec-0fb4b013-c11d-4513-89d6-56024778d004.png",
+      "prompt_file": "content/paper-texture-v9-prompt.txt",
+      "prompt_record_type": "Complete verbatim prompt",
+      "sha256": "4296fe10b16d79ce263751979d5a85cddd8a459f79ba53f0f2f800ffef2d3c83",
+      "bytes": 3036510,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "use": "src/materials.mjs PAPER; generated fibre scan composited onto backgrounds and paper objects at render time.",
+      "interpretation": "Generated original paper surface; not reference footage."
+    }
+  ],
+  "official_assets": [
+    {
+      "file": "assets/source/openai-blossom-official.svg",
+      "sha256": "01485e70cea6df8422f5abc643fbbd3c153442cc41da0e7d8e7451801ebf26e2",
+      "source_page": "https://openai.com/brand/",
+      "asset_url": "https://images.ctfassets.net/kftzwdyauwt9/3hUGLn3ypllZ0oa01qOYVq/28e8188e6f11b84c3e876569d492734f/Blossom_Light.svg?w=3840&q=90",
+      "operation": "Unmodified publicly displayed SVG from official brand page. Includes spacing guides and two marks."
+    },
+    {
+      "file": "assets/source/openai-blossom-mark.svg",
+      "sha256": "68446d29cabcb5cfad2095824d631a6cf6612a6afee474f2c4370aaa38ba4c42",
+      "derived_from": "assets/source/openai-blossom-official.svg",
+      "operation": "Extract first black-filled path unchanged from official spacing illustration; omit spacing guides and duplicate mark; viewBox fits original shape.",
+      "path_d_sha256": "fb0a32a5384df5cdacc7d1a304f5b14df3c38a9a41ed08878adc99653efd0a33",
+      "geometry_changed": false,
+      "rendering": "Exact Path2D shape, uniformly scaled; green ink variation on beige paper via source-atop compositing.",
+      "provenance_record": "assets/source/openai-blossom-provenance.json",
+      "visual_review_record": "review/brand/verification.json"
+    }
+  ],
+  "code_art": {
+    "creator": "Codex and its delegated agents in this production conversation",
+    "files": [
+      "src/backgrounds.mjs",
+      "src/critical-scenes.mjs",
+      "src/evidence-scenes.mjs",
+      "src/film.mjs",
+      "src/hero-scenes.mjs",
+      "src/materials.mjs",
+      "src/practice-scenes.mjs",
+      "src/props.mjs"
+    ],
+    "craft_reference": "/Volumes/TP-1TB/WorspacePlus/Myself/Reference/lemo-opuscar",
+    "note": "Read for transferable visual/directing craft; no demo footage, renderer code or Tasks workflow copied. src/ is the implemented scene authority; content/shot-plan.json is an earlier plan and may describe superseded details.",
+    "sound_cues": "content/audio-cues.json is the explicit implemented-movement cue source, separate from older storyboard prose."
+  },
+  "identities": {
+    "ChatGPT": "Official Blossom geometry retained from public OpenAI brand asset; word label ChatGPT appears where relevant, omitted in the common GPT-4 composition to avoid overlap. Editorial tool depiction, no endorsement statement.",
+    "Harvard": "Original canvas redraw of a crimson shield with three white books and VERITAS; not an official supplied shield asset.",
+    "flags": [
+      "Turkey: red field with white crescent and five-point star",
+      "Indonesia: red over white horizontal bicolor",
+      "United States: thirteen stripes and fifty stars"
+    ],
+    "public_figures": "No named public figure is part of the narration. Generated learners and teachers are illustrative, not researcher or participant portraits."
+  },
+  "research_documents": {
+    "canonical_claim_file": "content/sources.json",
+    "checked_on_recorded_by_research": "2026-10-22",
+    "citation_entries": [
+      {
+        "claim_id": "C01",
+        "type": "Primary laboratory research overview",
+        "url": "https://bjorklab.psych.ucla.edu/research/",
+        "additional_urls": {}
+      },
+      {
+        "claim_id": "C02",
+        "type": "Peer-reviewed randomized field experiment",
+        "url": "https://doi.org/10.1073/pnas.2422633122",
+        "additional_urls": {
+          "author_copy": "https://hamsabastani.github.io/education_llm.pdf"
+        }
+      },
+      {
+        "claim_id": "C03",
+        "type": "Same randomized field experiment",
+        "url": "https://doi.org/10.1073/pnas.2422633122",
+        "additional_urls": {
+          "author_copy": "https://hamsabastani.github.io/education_llm.pdf"
+        }
+      },
+      {
+        "claim_id": "C04",
+        "type": "Peer-reviewed randomized crossover experiment",
+        "url": "https://www.nature.com/articles/s41598-025-97652-6",
+        "additional_urls": {}
+      },
+      {
+        "claim_id": "C05",
+        "type": "Peer-reviewed review",
+        "url": "https://doi.org/10.1016/j.tics.2016.07.002",
+        "additional_urls": {
+          "retrieved_source": "https://discovery.ucl.ac.uk/id/eprint/1508770/"
+        }
+      },
+      {
+        "claim_id": "C06",
+        "type": "Peer-reviewed randomized experiment",
+        "url": "https://doi.org/10.1080/01443410.2023.2273762",
+        "additional_urls": {
+          "retrieved_source": "https://www.tandfonline.com/doi/abs/10.1080/01443410.2023.2273762",
+          "author_record": "https://repository.lboro.ac.uk/articles/journal_contribution/The_effect_of_worked_examples_on_learning_solution_steps_and_knowledge_transfer/24459859"
+        }
+      },
+      {
+        "claim_id": "C07",
+        "type": "Peer-reviewed systematic review and meta-analysis",
+        "url": "https://link.springer.com/article/10.1007/s10648-025-10076-6",
+        "additional_urls": {}
+      },
+      {
+        "claim_id": "C08",
+        "type": "August 2026 working paper",
+        "url": "https://edworkingpapers.com/ai26-1552",
+        "additional_urls": {}
+      },
+      {
+        "claim_id": "C09",
+        "type": "September 2026 preprint",
+        "url": "https://arxiv.org/abs/2609.20143",
+        "additional_urls": {}
+      },
+      {
+        "claim_id": "C10",
+        "type": "Peer-reviewed randomized experiment",
+        "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0304013",
+        "additional_urls": {}
+      },
+      {
+        "claim_id": "C11",
+        "type": "Peer-reviewed meta-analysis",
+        "url": "https://doi.org/10.3102/00346543211019105",
+        "additional_urls": {
+          "retrieved_source": "https://www.research-collection.ethz.ch/bitstreams/f6c98c41-ec4b-4996-b677-97fa3c997cf9/download",
+          "author_record": "https://lse.ethz.ch/publications-and-awards.html"
+        }
+      }
+    ],
+    "interpretation": "URLs, study types and verification descriptions are maintained in sources.json. Original scenario/algebra/editorial synthesis is marked E01–E03 there. No complete local PDF archive exists in this production directory; this documentation update does not re-fetch or independently re-verify every paper.",
+    "narration": "content/narration.json is canonical. Draft and repair source files are retained history; review/audio-repairs-v1/merge-candidates.json identifies seven adopted local repairs, and review/audio-merged/completion.json records their completed merge."
+  },
+  "audio": {
+    "narration_method": "Standalone scripts/speech.py requests configured Chatterbox service without creating a FrontierTechSN Task.",
+    "voice": "space-en-f1",
+    "speed": 1.0,
+    "original_provider_evidence": [
+      "media/audio/provider/",
+      "media/audio-repairs-v1/provider/",
+      "media/audio-repair26-v2/provider/",
+      "media/audio-repair33-v2/provider/",
+      "media/audio-repair40-v1/provider/"
+    ],
+    "canonical_manifest": "media/audio/manifest.json",
+    "repair_input": "content/narration-repair*.json; adopted candidates explicitly listed in review/audio-repairs-v1/merge-candidates.json",
+    "repair_evidence": [
+      "review/audio-repairs-v1/",
+      "review/audio-repair26-v2/",
+      "review/audio-repair33-adopted/",
+      "review/audio-repair40-v1/",
+      "review/audio-merged/completion.json"
+    ],
+    "score_and_foley": "Original procedural synthesis in scripts/soundtrack.py using NumPy/SciPy; no sampled music library or reference soundtrack. content/audio-cues.json supplies explicit movement cues.",
+    "mix": "scripts/mix_audio.py preserves natural speech speed, resamples to the mix rate, applies gain and ducks the music; mix-report.json contains sample peak/RMS, not a measured LUFS or true-peak certificate.",
+    "review_boundaries": "Provider identity/PCM integrity, unprompted ASR, timing and subjective listening are separate. No listening completion asserted here.",
+    "listening_capability_record": "review/audio-listening-capability.json",
+    "loudness_measurement": "scripts/measure_loudness.py writes BS.1770 integrated LUFS with pyloudnorm 0.1.1 and a 4x SciPy polyphase oversampled peak estimate. The peak estimate is not a certified true-peak result; subjective_listening_established remains false.",
+    "repair_ids": [
+      "11",
+      "15",
+      "18",
+      "26",
+      "31",
+      "33",
+      "40"
+    ],
+    "repair_candidates": "review/audio-repairs-v1/merge-candidates.json",
+    "canonical_transcript_adoption": "Only33v2: canonical the tests included replaces source the test included as an explicit editorial decision referring to plural student assessments, without asserting added test waves. scripts/transcript_adoption.py binds original/canonical source SHA, unchanged WAV SHA and four preserved ASR runs. Original provider source and rejected evidence remain unchanged.",
+    "merged_status": {
+      "canonical_segments": 46,
+      "canonical_words": 1657,
+      "pure_narration_seconds": 554.86,
+      "completion_record": "review/audio-merged/completion.json",
+      "listening_established": false
+    }
+  },
+  "fonts": {
+    "source": "Pre-installed macOS supplemental fonts; not copied or redistributed in this production.",
+    "directory": "/System/Library/Fonts/Supplemental/",
+    "files": [
+      "Arial Unicode.ttf",
+      "Arial Bold.ttf",
+      "Arial Narrow Bold.ttf",
+      "Georgia.ttf",
+      "Courier New.ttf",
+      "Bradley Hand Bold.ttf"
+    ],
+    "portability": "Re-rendering without these fonts can change typography, wrapping and spacing."
+  },
+  "reproducibility": {
+    "stable_inputs": "Retain these exact PNG/SVG bytes, source code, package-lock.json, canonical narration, final audio manifest and WAVs, final media/timeline.json, and explicit audio cues.",
+    "generation_limit": "The original five cutout atlas prompts were not durably archived. V9 paper has a complete prompt file. Model output is not guaranteed repeatable; existing hashed bitmaps remain required.",
+    "local_outputs": "Videos, audio, downloaded references, contact sheets and runtime evidence are local artifacts; generated media is not part of the source commit. Preserve a separate local/archive copy of required assets and provider evidence.",
+    "source_identity_tool": "scripts/validate_production.py; read-only JSON report to stdout; does not approve visual quality, research truth or listening.",
+    "render_pipeline": "scripts/render_film.py launches bounded 750-frame Node processes, records input hashes and chunk checkpoints, decodes every newly encoded chunk, and concatenates without re-encoding. Each encoder/concat call uses ffmpeg_gate.py.",
+    "dependencies": {
+      "node_observed": "24.15.0",
+      "npm_observed": "11.12.1",
+      "node_lockfile": "package-lock.json",
+      "canvas_resolved": "0.1.100",
+      "python_observed": "3.11.9",
+      "production_python_packages": {
+        "av": "18.1.0",
+        "Pillow": "13.0.0",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "requests": "2.34.2",
+        "pyloudnorm": "0.1.1"
+      },
+      "asr_python": "/Volumes/TP-1TB/WorspacePlus/IslaProject/FrontierTechSN/.venv/bin/python",
+      "asr_packages": {
+        "mlx": "0.32.1",
+        "mlx-whisper": "0.4.3",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1"
+      },
+      "asr_cached_models": [
+        "mlx-community/whisper-large-v3-turbo-q4",
+        "mlx-community/whisper-medium-mlx",
+        "mlx-community/whisper-small-mlx"
+      ],
+      "encoder": "System FFmpeg with macOS h264_videotoolbox; exact binary version not captured by this documentation task."
+    },
+    "packaging": "scripts/package_delivery.py validates complete timeline/PCM/subtitle evidence, copies encoded picture packets into MP4 with English audio, emits independent English SRT and verifies packet SHA unchanged. No embedded subtitles in delivered MP4."
+  }
+}

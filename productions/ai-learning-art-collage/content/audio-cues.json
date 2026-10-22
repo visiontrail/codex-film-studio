@@ -1,0 +1,132 @@
+{
+  "basis": "Explicit cues for visible paper movement in the implemented scene modules; timing uses the same shot clock as the renderer.",
+  "cues": [
+    {
+      "shot": "01",
+      "seconds": 2.65,
+      "kind": "slide",
+      "action": "Spreadsheet sheet enters from the right."
+    },
+    {
+      "shot": "04",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Three paper columns reveal the title collage."
+    },
+    {
+      "shot": "06",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Three paper columns reveal the comparison."
+    },
+    {
+      "shot": "09",
+      "fraction": 0.36,
+      "kind": "slide",
+      "action": "A paper covers the worked answer."
+    },
+    {
+      "shot": "10",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Diagonal paper reveal introduces Turkey."
+    },
+    {
+      "shot": "11",
+      "seconds": 0.85,
+      "kind": "slide",
+      "action": "Laptop cutout slides into the left panel."
+    },
+    {
+      "shot": "15",
+      "seconds": 0.1,
+      "kind": "slide",
+      "action": "Torn edge crosses into the pink composition."
+    },
+    {
+      "shot": "16",
+      "seconds": 2.15,
+      "kind": "slide",
+      "action": "The second request ticket enters."
+    },
+    {
+      "shot": "18",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Diagonal paper reveal introduces Harvard."
+    },
+    {
+      "shot": "23",
+      "seconds": 0.1,
+      "kind": "slide",
+      "action": "Torn paper edge reveals the teal field."
+    },
+    {
+      "shot": "28",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Diagonal paper reveal introduces retrieval practice."
+    },
+    {
+      "shot": "29",
+      "fraction": 0.77,
+      "kind": "slide",
+      "action": "Corrected algebra sheet slides up."
+    },
+    {
+      "shot": "31",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Paper columns reveal the instruction sequence."
+    },
+    {
+      "shot": "34",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Paper columns reveal the study comparison."
+    },
+    {
+      "shot": "36",
+      "seconds": 0.1,
+      "kind": "slide",
+      "action": "Torn edge reveals the practical exercise."
+    },
+    {
+      "shot": "38",
+      "voice_fraction": 0.3,
+      "offset_seconds": 0.6,
+      "kind": "slide",
+      "action": "The second equation strip slides into place."
+    },
+    {
+      "shot": "39",
+      "fraction": 0.77,
+      "kind": "slide",
+      "action": "Corrected expression slides up beneath the crossed-out mistake."
+    },
+    {
+      "shot": "40",
+      "fraction": 0.13,
+      "kind": "slide",
+      "action": "Paper physically covers the worked solution."
+    },
+    {
+      "shot": "42",
+      "fraction": 0.1,
+      "kind": "slide",
+      "action": "Envelope enters above the fresh problem."
+    },
+    {
+      "shot": "45",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Diagonal reveal returns to the spreadsheet."
+    },
+    {
+      "shot": "46",
+      "seconds": 0.1,
+      "kind": "fold",
+      "action": "Paper columns reveal the closing collage."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "11",
+    "text": "Both tools relied on the same model. The unrestricted version looked like a standard chat. The tutoring version drew on teacher prepared solutions and hints, with instructions meant to guide students rather than give the answer.",
+    "visual": "GPT-4 printed badge branches into two different paper interfaces; teacher hint cards feed only the tutor branch.",
+    "claim_ids": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "15",
+    "text": "There are three different findings: loss, no clear difference, and gain. The tutoring group had no statistically clear exam gain over the control group. That does not establish equality, or prove that the tutor improved learning.",
+    "visual": "Three paper stamps: LOSS, NO CLEAR DIFFERENCE, GAIN. Middle stamp stays visible; no equality sign between groups.",
+    "claim_ids": [
+      "C03"
+    ]
+  },
+  {
+    "id": "18",
+    "text": "A randomized study with one hundred ninety four Harvard physics students found higher immediate test scores with a carefully designed tutor than with an active classroom lesson. The comparison involved active teaching, not passive lectures.",
+    "visual": "Harvard name and recognizable crimson shield redrawn in collage; physics book and active classroom on parallel paper panels.",
+    "claim_ids": [
+      "C04"
+    ]
+  },
+  {
+    "id": "26",
+    "text": "A pre-registered study of seven hundred and four adults tested feedback on help seeking in fraction arithmetic. It reduced full answer requests and improved a later unaided test. There was no evidence that effort rewards changed either outcome.",
+    "visual": "Fraction cards and personal help-history tally; PREPRINT label; answer requests shrink after feedback, no odds-ratio animation.",
+    "claim_ids": [
+      "C09"
+    ]
+  },
+  {
+    "id": "31",
+    "text": "A meta-analysis of fifty three studies favored trying problems before instruction overall. Results varied with age, task, and implementation. This evidence concerns teaching sequences, not a universal rule for talking to a chatbot.",
+    "visual": "Two instructional sequences built from paper arrows; 53-study stack; age and task tabs interrupt universal ranking.",
+    "claim_ids": [
+      "C11"
+    ]
+  }
+]
