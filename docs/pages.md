@@ -1,89 +1,96 @@
-# GitHub Pages
+# The Film Studio homepage
 
-Live site: <https://visiontrail.github.io/codex-film-studio/>.
+Site URL: <https://visiontrail.github.io/codex-film-studio/>.
 
-The published site uses the existing whiteboard showcase. Its three-minute and
-twelve-minute films, posters, subtitles and chapter timings come from the
-checksum-pinned `v0.1.0` Release. Videos are served from Pages itself, so the
-player and captions share the same origin. No TTS credentials are required.
+The source now builds a unified style library at the root and keeps the existing
+whiteboard player at `styles/whiteboard/studio/index.html`. The homepage becomes
+public on the next requested Pages deployment; changing local source does not
+publish it. Root links with `?edition=short`, `?edition=long` or `#film` continue
+to the whiteboard player.
 
-The header switches between English and Chinese page copy, including chapters,
-instructions and research summaries. The choice is remembered locally; a
-`?lang=en` or `?lang=zh` link overrides it. Language changes preserve the film's
-playback state. The sample films retain their original English narration and
-subtitles.
+## Design and source
 
-## Deploy
+`index.html` and `catalog/` contain the homepage. Its streaming-library layout uses
+forest black, warm white and coral, an original material-study hero, a searchable
+style collection, a screening room and an authoring path. English and Chinese
+copy share the same layout; `?lang=en` / `?lang=zh` overrides the saved language.
+Motion respects `prefers-reduced-motion`. No framework, CDN, remote font or
+third-party script is needed.
 
-1. In the repository, select **Settings → Pages → Source → GitHub Actions**.
-2. Push to `main`, or run **Deploy film showcase** from the Actions tab.
-3. Wait for both the build and deployment jobs. The deployment environment
-   links to the live site.
+`styles.json` supplies every style's name, descriptions, readiness, preview and
+showcase paths, as it does for the READMEs. Filters add only presentation metadata
+in `catalog/studio.mjs`; an unfamiliar style still appears under All styles and
+in search. `docs/readme/frames.json` supplies undecorated film frames when present,
+with the registry preview as a fallback. [Preview credits](readme/README.md)
+remain with those images. The hero is an original, subject-independent SVG.
 
-The workflow downloads the exact assets listed in
-`styles/whiteboard/demo-assets.json` and checks their file sizes and SHA-256
-hashes before publishing. It copies an explicit list of player assets to
-`.site/`; source audio, local working films, review records and settings are
-not included. `build-info.json` records the deployed commit and video hashes.
-The Pages permission is limited to the deployment job.
+Style details show all available showcase links, guides, prompts and the project
+creation command. Readiness describes the reusable package. A displayed frame,
+a retained local film and a published sample remain separate states.
 
-The local `productions/` directory is ignored by Git and is not a Pages build
-input. Keep its working projects locally; the published whiteboard demos remain
-in the Release and the existing `styles/whiteboard/` source directories.
+## Local style catalog
 
-## Preview locally
+From the repository root:
 
-From the repository root, with Python 3.11 or later:
+```sh
+python3 scripts/serve_styles.py --port 8249
+```
+
+Open **http://127.0.0.1:8249/** for the homepage. The server's
+`catalog-availability.json` checks the actual entry file for each retained local
+project. Missing projects have disabled showcase links and setup instructions.
+
+Mid-century Cartoon has short/long players and motion review. Satellite Briefing
+has a player, live composition and frame comparison. Sci-Fi Sitcom has its review
+player, and Crayon Book has its player and frame comparison. Their HTML lives in
+`styles/<id>/showcase/`; whiteboard retains `styles/whiteboard/studio/`.
+
+Each local `showcases` entry records a repository-relative `project` and original
+`source_page`. The server maps `/_projects/<showcase-id>/...` to that project,
+with byte-range support for video seeking. An explicitly listed `linked_files`
+entry permits a retained file symlink such as the sci-fi reference video; other
+paths remain inside their project. Original production files are preserved.
+If a project is stored elsewhere, update its `project` path locally.
+
+A fresh clone contains the page source and preview images. It does not contain
+local films or private review assets. To replay whiteboard locally, download its
+pinned Release assets with:
+
+```sh
+python3 scripts/fetch_demo.py --edition all
+```
+
+## Build and preview Pages
+
+With Python 3.11 or later:
 
 ```sh
 python3 scripts/build_pages.py
 python3 styles/whiteboard/studio/scripts/serve.py --port 8248 --directory .site
 ```
 
-Open <http://127.0.0.1:8248/>. To reuse downloaded Release files, add
-`--asset-dir /path/to/release-files` to the build command. The builder refuses
-to overwrite an existing output folder; use `--output /path/to/a/new-folder`
-for a second preview build.
+Open <http://127.0.0.1:8248/>. Add `--asset-dir /path/to/release-files` to reuse
+downloaded Release archives. The builder refuses to overwrite an existing output;
+use `--output /path/to/a/new-folder` for another preview build.
 
-## Customize a fork
+The builder copies an explicit list: the homepage, catalog, preview artwork and
+existing whiteboard player with its checksum-verified `v0.1.0` sample assets.
+It omits local production paths from the public catalog. Local showcases remain
+discoverable in style details, with instructions to open them locally. Their
+films, review pages, working audio and provider settings are not packaged.
+`build-info.json` retains the source revision and released video hashes.
 
-The page source is `styles/whiteboard/studio/index.html`, `showcase.css` and
-`showcase.mjs`. Update the GitHub links and README site URLs to your repository.
-To publish different sample films, update the Release asset manifest and the
-page's edition filenames together. All player assets use relative paths so
-the site works under a project URL such as `/codex-film-studio/`.
+Assets use relative paths, including under a project URL such as
+`/codex-film-studio/`. The player keeps its own relative media paths, subtitles,
+chapters, language and edition controls.
 
-GitHub's [custom workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
-describes the Pages deployment actions.
+## Deploy
 
-## Local style catalog
+Publishing requires a user request. The existing workflow runs on a push to
+`main` or **Deploy film showcase** in Actions. Set **Settings → Pages → Source →
+GitHub Actions** first, then wait for both build and deployment jobs. Only the
+deployment job has Pages write permission. A local build or preview is not
+evidence of a successful public deployment.
 
-All style packages and retained showcase pages are indexed in `styles.json`.
-The readable catalog is `styles/README.md`; preview them together with:
-
-```sh
-python3 scripts/serve_styles.py --port 8249
-```
-
-Open **http://127.0.0.1:8249/**. Mid-century Cartoon has short/long players and
-motion review, Satellite Briefing has a player, live composition and frame
-comparison, Sci-Fi Sitcom has its review player, and Crayon Book has its player
-and frame comparison. These HTML files live under `styles/<id>/showcase/`.
-Whiteboard retains its existing `styles/whiteboard/studio/` entrypoint.
-
-The migrated pages read media and review assets from the retained local projects.
-Each local `showcases` entry records a repository-relative `project` and original
-`source_page`. The server maps `/_projects/<showcase-id>/...` to that project,
-with byte-range support for video seeking. An explicitly listed `linked_files`
-entry permits a retained file symlink such as the sci-fi reference video; other
-paths remain inside their project. A page's base URL preserves CSS,
-fetches and dynamic image paths; links between migrated pages use their new
-`styles/` paths. Original production files and prior snapshots remain available.
-If a project is stored elsewhere, update that entry's `project` path locally.
-
-A fresh clone contains the page source but does not include local films or private
-review assets. The catalog marks a missing project, and missing resources return
-404. To replay whiteboard locally, download its Release assets with
-`python3 scripts/fetch_demo.py --edition all`. The local catalog does not alter
-`build_pages.py`: only the existing pinned whiteboard showcase is published by
-the Pages workflow. Publishing another film remains a separate requested action.
+To publish another film, add its approved assets and player deliberately; do not
+copy a retained production directory into the Pages output.
