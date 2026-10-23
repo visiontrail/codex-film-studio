@@ -38,15 +38,16 @@ export function character(g,kind,x,y,scale=1,opts={}){
  let t=opts.still?0:(opts.time||0),pose=Math.floor(t*12)/12,emotion=opts.emotion||'deadpan',talk=opts.talk||0,panic=emotion==='panic',gesture=opts.gesture||0;
  let breath=opts.still?0:Math.sin(pose*2.3)*.007;let jitter=panic?Math.sin(pose*89)*2.7:0;g.push(x+jitter,y,scale*(1-breath),scale*(1+breath),opts.angle||0);
  if(kind==='qin'){
+  g.push(0,0,.9,1);
   // Patterned socks and oversized flat slippers.
   for(let lx of [-38,31]){g.rect(lx-13,-96,25,79,'#b39bd0',INK,5,6);for(let yy=-80;yy<-25;yy+=16)g.line([[lx-12,yy],[lx+11,yy]],'#71557b',3);g.ellipse(lx-10,-9,36,15,'#dd8fb1',INK,6)}
-  g.curve([[-80,-290],[-113,-230],[-103,-110],[-83,-83],[-20,-72],[44,-72],[85,-87],[98,-174],[96,-237],[62,-291]],'#278f89',INK,7,true);
-  g.poly([[45,-287],[73,-270],[91,-180],[84,-86],[50,-78],[36,-221]],'#1f6667',null,0);
-  g.poly([[-29,-293],[31,-296],[14,-185]],'#b99ccf',INK,4);g.line([[-55,-281],[-24,-238],[9,-188],[-5,-120]],INK,4);g.line([[32,-290],[48,-242],[20,-196]],INK,4);
-  g.rect(-92,-143,178,23,'#246f73',INK,5,7);g.ellipse(-10,-130,13,12,'#267a7d',INK,4);g.poly([[-15,-122],[-32,-76],[-11,-83],[-3,-121]],'#2d7d7a',INK,4);
-  g.rect(39,-119,30,25,null,'#1a6669',3,4);
+  g.curve([[-80,-310],[-113,-250],[-103,-110],[-83,-83],[-20,-72],[44,-72],[85,-87],[98,-174],[96,-257],[62,-311]],'#278f89',INK,7,true);
+  g.poly([[45,-307],[73,-290],[91,-180],[84,-86],[50,-78],[36,-241]],'#1f6667',null,0);
+  g.poly([[-29,-313],[31,-316],[14,-205]],'#b99ccf',INK,4);g.line([[-55,-301],[-24,-258],[9,-208],[-5,-120]],INK,4);g.line([[32,-310],[48,-262],[20,-216]],INK,4);
+  g.rect(-92,-175,178,23,'#246f73',INK,5,7);g.ellipse(-10,-162,13,12,'#267a7d',INK,4);g.poly([[-15,-154],[-32,-108],[-11,-115],[-3,-153]],'#2d7d7a',INK,4);
+  g.curve([[48,-135],[18,-135],[20,-119],[18,-108]],null,'#1b4146',4);g.pop();
   // Neck and head: asymmetry, long nose, beard shadow, forehead goggles.
-  g.rect(-6,-320,40,34,skinA,INK,5,9);g.push(-10,-300,.82,1,-.11+(opts.headAngle||0));g.push(0,300);
+  g.rect(-6,-328,32,24,skinA,INK,5,9);g.push(-10,-300,.97,1.12,-.11+(opts.headAngle||0));g.push(0,300);
   let head=[[-62,-446],[-24,-482],[53,-474],[73,-425],[92,-374],[64,-315],[20,-306],[-25,-297],[-68,-333],[-76,-383],[-84,-412],[-78,-435],[-62,-446]];
   g.curve(head,skinA,INK,7,true);g.c.save();g.c.clip();
   g.curve([[-65,-348],[-50,-359],[-30,-349],[-9,-343],[22,-359],[40,-356],[65,-335],[55,-319],[20,-310],[-24,-309],[-58,-329],[-65,-348],[-65,-348]],shadeA,null,0,true);
@@ -64,26 +65,32 @@ export function character(g,kind,x,y,scale=1,opts={}){
   g.c.restore();
   mouth(g,1,-331,talk,panic,emotion==='relieved'?7:-1);
   g.pop();g.pop();g.pop();
-  // Near arm retains a clear elbow and independent hand.
-  let hx=-105-gesture*55,hy=-176-gesture*80;
-  g.curve([[-75,-270],[-101,-276],[-116,-213],[hx,hy],[hx+16,hy+16],[-69,-189],[-55,-230]],'#2ca099',INK,6,true);hand(g,hx-4,hy+5,.8,gesture>.6);
-  g.curve([[75,-266],[104,-252],[118,-181],[93,-163],[80,-168],[71,-206],[66,-228]],'#226f70',INK,6,true);hand(g,91,-164,.8);
-  if(opts.prop==='remote'){g.rect(hx-22,hy-44,34,65,'#737b89',INK,5,8);g.ellipse(hx-5,hy-23,10,10,'#ed5b51',INK,3);g.line([[hx-6,hy-47],[hx-8,hy-62]],INK,4)}
-  else {g.rect(69,-191,42,49,'#f7e4c3',INK,5,5);g.ellipse(90,-191,21,6,'#74472e',INK,4);g.curve([[108,-181],[134,-188],[133,-151],[111,-155]],null,INK,5)}
+  // A chest-height cup is the inventor's continuous foreground prop.
+  g.push(0,0,.9,1);
+  const lift=opts.flight||0,hx=-105-18*lift,hy=-213-190*lift;
+  g.curve([[-75,-290],[-104,-304],[-113,-260],[hx,hy],[hx+17,hy+16],[-57,-215],[-55,-250]],'#2ca099',INK,6,true);
+  hand(g,hx,hy,.8);
+  if(opts.prop==='remote'){g.rect(hx-18,hy-48,34,65,'#737b89',INK,5,8);g.ellipse(hx-1,hy-29,10,10,'#ed5b51',INK,3);g.line([[hx-2,hy-51],[hx-4,hy-66]],INK,4)}
+  else {g.rect(hx-14,hy-43,46,58,'#e8dff1',INK,5,5);g.ellipse(hx+9,hy-43,23,6,'#74472e',INK,4);g.curve([[hx-14,hy-31],[hx-42,hy-41],[hx-42,hy+5],[hx-14,hy]],null,INK,5);g.text('ODDS?',hx+9,hy-14,9,'#78618f')}
+  const rx=105+gesture*51,ry=-112-gesture*145-lift*225;
+  g.curve([[75,-286],[102,-286],[110,-211],[rx,ry],[rx-16,ry+12],[77,-161],[66,-228]],'#226f70',INK,6,true);hand(g,rx,ry,.8,gesture>.6);
+  g.pop();
  }else{
-  // Helmeted nervous assistant: compact silhouette, broad eyes, contrasting warm skin.
+  // Helmeted nervous assistant: broad head over a narrower, compact vest.
+  g.push(0,0,.85,1);
   for(let lx of [-28,30]){g.rect(lx-10,-68,20,54,'#e4bd90',INK,5,4);g.rect(lx-12,-32,23,22,WHITE,INK,3);g.ellipse(lx-7,-8,31,12,'#738dce',INK,5)}
-  g.curve([[-61,-208],[-89,-175],[-80,-95],[-57,-66],[-8,-58],[55,-58],[69,-79],[84,-117],[77,-185],[52,-208]],'#9663bd',INK,7,true);
-  g.poly([[49,-202],[73,-166],[74,-101],[56,-69],[26,-62],[36,-124]],'#714698',null,0);
-  g.poly([[-42,-204],[-10,-187],[8,-204],[-4,-164]],WHITE,INK,4);g.line([[-60,-80],[60,-80]],'#b88fcf',5);
-  g.rect(-51,-155,34,34,WHITE,INK,3,4);g.line([[-43,-169],[-42,-148]],'#e67455',5);g.line([[-29,-167],[-28,-147]],'#55b4aa',5);
-  const reach=clamp(Math.max(gesture,opts.prop==='phone'?.36:0)), leftReach=panic?reach*.82:emotion==='shock'?reach*.5:0;
+  g.rect(-72,-84,139,45,'#e4bd90',INK,5,13);
+  g.curve([[-61,-198],[-89,-175],[-80,-105],[-57,-76],[-8,-68],[55,-68],[69,-89],[84,-127],[77,-185],[52,-198]],'#9663bd',INK,7,true);
+  g.poly([[49,-192],[73,-166],[74,-111],[56,-79],[26,-72],[36,-124]],'#714698',null,0);
+  g.poly([[-42,-194],[-10,-177],[8,-194],[-4,-154]],WHITE,INK,4);for(const yy of [-99,-91,-83])g.line([[-60,yy],[60,yy]],'#b88fcf',3);
+  for(const [xx,color]of [[-44,'#f55c42'],[-32,'#6a83d4'],[-20,'#43b85d']])g.rect(xx,-157,9,24,color,INK,2.5,4);g.rect(-51,-139,45,29,WHITE,INK,3,4);
+  const flight=opts.flight||0,reach=clamp(Math.max(gesture,opts.prop==='phone'?.36:0,flight)), leftReach=flight>0?flight:panic?reach*.82:emotion==='shock'?reach*.5:0;
   const thought=emotion==='think',panicLift=panic?ease((reach-.6)/.2):0;
   const leftPose=panicLift>0?{x:-(72+leftReach*119)*(1-panicLift)-78*panicLift,y:(-72-leftReach*190)*(1-panicLift)-288*panicLift}:null,rightPose=thought?{x:36,y:-214}:emotion==='smug'?{x:94,y:-162}:null;
   assistantArm(g,-1,leftReach,skinB,false,leftPose);
   const rightHand=assistantArm(g,1,reach,skinB,reach>.55&&opts.prop!=='phone',rightPose);
-  g.rect(-15,-225,31,28,skinB,INK,4,7);
-  g.push(0,-217,1,1,opts.headAngle||0);g.push(0,217);
+  g.rect(-15,-215,31,28,skinB,INK,4,7);g.pop();
+  g.push(0,-207,1.1,1.08,opts.headAngle||0);g.push(0,217);
   for(const side of [-1,1]){g.ellipse(side*69,-266,12,19,skinB,INK,4);g.line([[side*72,-272],[side*68,-261]],shadeB,3)}
   const face=[[-67,-293],[-76,-274],[-67,-235],[-45,-219],[-28,-205],[-5,-199],[14,-207],[43,-215],[65,-241],[68,-271],[72,-300],[20,-326],[-15,-322],[-38,-326],[-58,-310],[-67,-293]];
   g.curve(face,skinB,INK,7,true);g.c.save();g.c.clip();
@@ -93,9 +100,10 @@ export function character(g,kind,x,y,scale=1,opts={}){
   for(const xx of [-32,0,33])g.rect(xx-6,-359+(xx?4:0),13,31,INK,null,0,6);
   g.star(-53,-320,8,'#f4d276');eyes(g,0,-270,'bo',pose,emotion,opts.look??1);
   g.ellipse(-1,-238,8,7,skinB,INK,3);mouth(g,0,-217,talk,panic,emotion==='relieved'?6:0);
-  g.pop();g.pop();
+  if(panic){for(const [xx,yy]of [[-61,-340],[64,-303]])g.curve([[xx,yy],[xx+8,yy+12],[xx+10,yy+24],[xx,yy+26],[xx-11,yy+27],[xx-10,yy+11],[xx,yy]],'#bce6eb',INK,3,true)}
+  g.pop();g.pop();g.push(0,0,.85,1);
   if(opts.prop==='phone'){g.rect(rightHand.x-14,rightHand.y-52,32,57,'#46444f',INK,5,5);g.rect(rightHand.x-9,rightHand.y-42,22,32,'#8de1d8',null,0)}
-  if(panic){g.curve([[68,-303],[81,-280],[87,-273],[78,-266],[68,-265],[65,-279],[68,-303]],'#bce6eb',INK,3,true)}
+  g.pop();
  }
  g.pop()
 }

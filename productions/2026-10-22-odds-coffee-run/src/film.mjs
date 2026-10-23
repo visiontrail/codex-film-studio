@@ -5,7 +5,7 @@ const tags={home:['DIMENSION 01','THE COFFEE PROBLEM'],odds:['DIMENSION 02','THE
 export function drawFilm(ctx,frame,timeline,width=1920){ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);let g=new Ink(ctx,frame);g.push(0,0,width/1920);let t=frame/24,shot=timeline.shots.find(s=>frame>=s.start&&frame<s.end)||timeline.shots.at(-1),local=(frame-shot.start)/24,line=timeline.cues.find(c=>c.id===shot.line)||{id:'L000',shot:'wide',emotion:'deadpan',speaker:'qin'},kind=shot.kind,world=shot.world;
  const contentLine=line;line={...line,shot:shot.shot||line.shot};let cue=line.start===undefined?null:line,speech=cue&&frame>=cue.start&&frame<cue.end,index=cue?Math.floor((frame-cue.start)/2):0,amp=speech?(cue.rms12?.[index]??(.3+Math.sin(index*1.7)*.2)):0;
  let cam={x:960,y:580,z:1.45};if(world==='home')cam.x=860;if(kind==='title')cam={x:960,y:540,z:1.15};if(kind==='dialogue'){
-  if(['bo','qin'].includes(line.shot))cam={x:line.shot==='bo'?530:810,y:line.shot==='bo'?644:500,z:line.shot==='bo'?3.05:3.5};
+  if(['bo','qin'].includes(line.shot))cam={x:line.shot==='bo'?530:810,y:line.shot==='bo'?580:470,z:2.7};
   if(['phone'].includes(line.shot))cam={x:552,y:650,z:2.8};
   if(['board','machine','coins','gates','pool','referee','turkey','woolmer','brands','asia','flags','debt','hanson','reveal'].includes(line.shot))cam={x:world==='home'?1400:1410,y:['hanson','woolmer'].includes(line.shot)?490:510,z:1.36};
   if(line.shot==='portal')cam={x:850,y:565,z:1.30};
@@ -33,8 +33,8 @@ export function drawFilm(ctx,frame,timeline,width=1920){ctx.clearRect(0,0,ctx.ca
  let focus=['bo','qin','phone'].includes(line.shot)?line.shot:null;
  let insert=['board','machine','coins','gates','pool','referee','turkey','woolmer','brands','asia','flags','debt','hanson','reveal'].includes(line.shot)&&kind==='dialogue';
  if(kind!=='cold'){
-  if(!insert&&focus!=='qin')character(g,'bo',bb.x,bb.y,bb.s,{time:t,talk:line.speaker==='bo'?amp:0,emotion:line.speaker==='bo'?line.emotion:world==='underground'?'worry':'alert',gesture:line.speaker==='bo'?gesture:0,headAngle:line.speaker==='bo'?acting.headAngle:-.025,prop:contentLine.shot==='phone'||line.shot==='phone'||world==='attention'?'phone':null,still});
-  if(!insert&&focus!=='bo'&&focus!=='phone')character(g,'qin',qb.x,qb.y,qb.s,{time:t,talk:line.speaker==='qin'?amp:0,emotion:line.speaker==='qin'?line.emotion:'deadpan',gesture:line.speaker==='qin'?gesture:0,headAngle:line.speaker==='qin'?acting.headAngle:0,prop:line.shot==='portal'?'remote':null,still});
+  if(!insert&&focus!=='qin')character(g,'bo',bb.x,bb.y,bb.s,{time:t,flight:kind==='arrival'?1-ease(local/.75):0,talk:line.speaker==='bo'?amp:0,emotion:line.speaker==='bo'?line.emotion:world==='underground'?'worry':'alert',gesture:line.speaker==='bo'?gesture:0,headAngle:line.speaker==='bo'?acting.headAngle:-.025,prop:contentLine.shot==='phone'||line.shot==='phone'||world==='attention'?'phone':null,still});
+  if(!insert&&focus!=='bo'&&focus!=='phone')character(g,'qin',qb.x,qb.y,qb.s,{time:t,flight:kind==='arrival'?1-ease(local/.75):0,talk:line.speaker==='qin'?amp:0,emotion:line.speaker==='qin'?line.emotion:'deadpan',gesture:line.speaker==='qin'?gesture:0,headAngle:line.speaker==='qin'?acting.headAngle:0,prop:line.shot==='portal'?'remote':null,still});
  }
  if(line.shot==='portal'){let d=ease((local-.7)/.6);portal(g,1100,535,210*d,t)}
  g.pop();
