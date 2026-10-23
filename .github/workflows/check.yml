@@ -7,6 +7,23 @@ on:
 permissions:
   contents: read
 jobs:
+  style-helpers:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        style: [midcentury-cartoon, satellite-briefing, scifi-sitcom]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test isolated style creation
+        run: python3 -B -m unittest discover -s styles/${{ matrix.style }}/tests -v
+      - name: Test style drawing and timeline helpers
+        run: node --test styles/${{ matrix.style }}/starter/tests/*.mjs
   whiteboard:
     runs-on: ubuntu-latest
     steps:

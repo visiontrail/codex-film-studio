@@ -2,11 +2,22 @@
 
 ## Working copy
 
-Run `python3 scripts/new_film.py <name> --style whiteboard` from the repository
+Run `python3 scripts/new_film.py --list` to see every style and its completion
+status. Run `python3 scripts/new_film.py <name> --style <id>` from the repository
 root. The default destination is `../codex-film-studio-projects/<name>`; use
 `--output /absolute/external/path` to choose another location. Destinations
 inside the library, including through a symlink, are rejected. All following
 commands run inside that external project unless stated otherwise.
+For every style, start with the generated `README.md`, `STYLE.md` and available
+`WORKFLOW.md` / `REVIEW.md`. Shared methods live in `methods/` in this repository.
+Blank starters need new scenes and a renderer; material toolkits also need the
+production pipeline. Their package status is separate from existing local
+showcase films. Use `python3 scripts/serve_styles.py` from the library root to
+open the unified catalog and retained showcase pages.
+
+## Whiteboard sample implementation
+
+The commands and paths below apply to the whiteboard studio.
 Install dependencies with `npm ci`, create a Python virtual environment and
 install `requirements.txt`. FFmpeg must be on PATH.
 

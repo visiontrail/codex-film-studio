@@ -1,7 +1,9 @@
 # Codex Film Studio
 
-A library of reusable film methods and styles. Start with `styles.json` for
-registered styles, or `methods/` for subject-independent production methods.
+A library of reusable film styles and shared production methods. All visual
+styles live in `styles/<id>/` and are registered in `styles.json`, including
+toolkits and starters without published demos. Read each entry's completion
+status and capabilities. `methods/` contains only cross-style workflows.
 
 New contributions must be methodology, generic tools or empty input contracts.
 Do not add a requested example's narration, claims, portraits, brand assets,
@@ -18,7 +20,12 @@ For a film request, read `DIRECTOR.md`, `TECHNIQUE.md` and the selected
 `styles/<id>/STYLE.md`. Use `scripts/new_film.py <name> --style <id>` to make
 an independent working copy outside the repository. Its default location is
 `../codex-film-studio-projects/<name>`; `--output` selects another external path.
-Use `--method art-collage` for an empty collage starter. Keep published examples intact.
+Use the same `--style <id>` command for every style; `--list` shows completion
+status. Keep published examples intact. Existing showcase entrypoints belong in
+`styles/<id>/showcase/` (whiteboard retains its legacy `studio/` page). Their
+local media dependencies remain in the retained production projects; use
+`scripts/serve_styles.py` to preview them. Do not copy showcase content into
+new-film starters or treat a local page as a published demo.
 The repo-local `codex-film` skill describes this workflow.
 
 For an exact sample rebuild, use the released demo inputs and existing

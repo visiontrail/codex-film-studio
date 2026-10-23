@@ -48,9 +48,20 @@ class PackagingTests(unittest.TestCase):
     def test_blank_method_creates_no_inherited_story_or_portrait(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp) / "library"
-            method = root / "methods/collage"
+            method = root / "styles/collage"
             (method / "starter/content").mkdir(parents=True)
             (method / "README.md").write_text("Reusable rules")
+            (method / "STYLE.md").write_text("Collage rules")
+            for name in ["DIRECTOR.md", "TECHNIQUE.md"]:
+                (root / name).write_text(name)
+            (root / "methods").mkdir()
+            for name in ["WORKFLOW.md", "REVIEW.md"]:
+                (root / "methods" / name).write_text(name)
+            (root / "scripts/frame_review").mkdir(parents=True)
+            (root / "scripts/frame_review/README.md").write_text("Review tools")
+            (root / "styles.json").write_text(json.dumps({"styles": [{
+                "id": "collage", "template": "styles/collage/starter",
+                "guide": "styles/collage/STYLE.md", "template_kind": "blank"}]}))
             (method / "starter/content/characters.json").write_text('{"characters": []}')
             dest = create_method("new", "collage", root, Path(temp) / "my-project")
             self.assertEqual(json.loads((dest / "content/characters.json").read_text()), {"characters": []})

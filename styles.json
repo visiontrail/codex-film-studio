@@ -1,4 +1,19 @@
 {
+  "schema_version": 2,
+  "statuses": {
+    "demo-ready": {
+      "name": "Published sample",
+      "name_zh": "已发布样片"
+    },
+    "starter-ready": {
+      "name": "Authoring starter",
+      "name_zh": "创作起步包"
+    },
+    "toolkit-ready": {
+      "name": "Material toolkit",
+      "name_zh": "材质工具包"
+    }
+  },
   "styles": [
     {
       "id": "whiteboard",
@@ -8,7 +23,204 @@
       "guide": "styles/whiteboard/STYLE.md",
       "template": "styles/whiteboard/studio",
       "poster": "styles/whiteboard/poster.png",
-      "demo": "styles/whiteboard/DEMO.md"
+      "demo": "styles/whiteboard/DEMO.md",
+      "status": "demo-ready",
+      "status_note": "Released short and long samples with an editable renderer.",
+      "status_note_zh": "已有短版、长版发布样片和可编辑渲染工程。",
+      "prompt": "styles/whiteboard/prompt.txt",
+      "template_kind": "demo",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": true,
+        "published_demo": true
+      },
+      "showcases": [
+        {
+          "id": "whiteboard",
+          "title": "Short and long published samples",
+          "page": "styles/whiteboard/studio/index.html",
+          "access": "release"
+        }
+      ]
+    },
+    {
+      "id": "art-collage",
+      "name": "Art Collage",
+      "name_zh": "艺术拼贴",
+      "description": "Paper cutouts, layered typography and physical collage motion.",
+      "status": "starter-ready",
+      "status_note": "Blank inputs, paper primitives and shared production/review guides; author scenes and renderer.",
+      "status_note_zh": "已有空白输入、纸材工具和通用制作审查流程；需编写场景与渲染器。",
+      "guide": "styles/art-collage/STYLE.md",
+      "readme": "styles/art-collage/README.md",
+      "prompt": "styles/art-collage/prompt.txt",
+      "template": "styles/art-collage/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": []
+    },
+    {
+      "id": "crayon-book",
+      "name": "Crayon Picture Book",
+      "name_zh": "蜡笔绘本",
+      "description": "Wax pigment, textured paper, hand-drawn reveals and physical book motion.",
+      "status": "toolkit-ready",
+      "status_note": "Material tools and an input contract; project creation is available, scene and audio pipelines remain to be authored.",
+      "status_note_zh": "已有材质工具、输入合同和项目创建入口；场景、配音与渲染流程仍需编写。",
+      "guide": "styles/crayon-book/STYLE.md",
+      "readme": "styles/crayon-book/README.md",
+      "prompt": "styles/crayon-book/prompt.txt",
+      "template": "styles/crayon-book/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": [
+        {
+          "id": "crayon-film",
+          "title": "Leo the Farmer",
+          "page": "styles/crayon-book/showcase/index.html",
+          "access": "local",
+          "project": "../codex-film-studio-projects/crayon-book-film",
+          "source_page": "index.html"
+        },
+        {
+          "id": "crayon-comparison",
+          "title": "Frame comparison",
+          "page": "styles/crayon-book/showcase/comparison.html",
+          "access": "local",
+          "project": "../codex-film-studio-projects/crayon-book-film",
+          "source_page": "review/compare.html"
+        }
+      ]
+    },
+    {
+      "id": "midcentury-cartoon",
+      "name": "Mid-century Cartoon",
+      "name_zh": "50 年代平涂卡通",
+      "description": "Misregistered flat colour, broken ink, held poses and jazz.",
+      "status": "starter-ready",
+      "status_note": "Blank inputs, print/timeline helpers and style-specific workflow, audio and review guides; author scenes and renderer.",
+      "status_note_zh": "已有空白项目、套色与时间轴工具、制作和音频审查规范；需编写场景与渲染器。",
+      "guide": "styles/midcentury-cartoon/STYLE.md",
+      "readme": "styles/midcentury-cartoon/README.md",
+      "prompt": "styles/midcentury-cartoon/prompt.txt",
+      "template": "styles/midcentury-cartoon/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": [
+        {
+          "id": "midcentury-short",
+          "title": "Short film",
+          "page": "styles/midcentury-cartoon/showcase/index.html",
+          "access": "local",
+          "project": "productions/ai-learning-midcentury",
+          "source_page": "index.html"
+        },
+        {
+          "id": "midcentury-long",
+          "title": "Long film",
+          "page": "styles/midcentury-cartoon/showcase/long.html",
+          "access": "local",
+          "project": "productions/ai-learning-midcentury",
+          "source_page": "editions/long/index.html"
+        },
+        {
+          "id": "midcentury-motion",
+          "title": "Long-film motion review",
+          "page": "styles/midcentury-cartoon/showcase/motion.html",
+          "access": "local",
+          "project": "productions/ai-learning-midcentury",
+          "source_page": "editions/long/review/motion.html"
+        }
+      ]
+    },
+    {
+      "id": "satellite-briefing",
+      "name": "Satellite Briefing",
+      "name_zh": "卫星影像／地理简报",
+      "description": "Geographic camera, satellite imagery and measured annotations.",
+      "status": "starter-ready",
+      "status_note": "Blank inputs, geographic helpers and footage/review guides; author imagery renderer and edit.",
+      "status_note_zh": "已有空白项目、地理计算工具、实拍与审查流程；需编写影像渲染与剪辑。",
+      "guide": "styles/satellite-briefing/STYLE.md",
+      "readme": "styles/satellite-briefing/README.md",
+      "prompt": "styles/satellite-briefing/prompt.txt",
+      "template": "styles/satellite-briefing/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": [
+        {
+          "id": "satellite-film",
+          "title": "Singapore film",
+          "page": "styles/satellite-briefing/showcase/index.html",
+          "access": "local",
+          "project": "productions/singapore-satellite-briefing",
+          "source_page": "watch.html"
+        },
+        {
+          "id": "satellite-composition",
+          "title": "Live composition",
+          "page": "styles/satellite-briefing/showcase/composition.html",
+          "access": "local",
+          "project": "productions/singapore-satellite-briefing",
+          "source_page": "index.html"
+        },
+        {
+          "id": "satellite-comparison",
+          "title": "Frame comparison",
+          "page": "styles/satellite-briefing/showcase/comparison.html",
+          "access": "local",
+          "project": "productions/singapore-satellite-briefing",
+          "source_page": "review/comparison.html"
+        }
+      ]
+    },
+    {
+      "id": "scifi-sitcom",
+      "name": "Sci-Fi Sitcom Toon",
+      "name_zh": "科幻情景喜剧卡通",
+      "description": "Flat cartoon drawing, contrasting performances and spatial comedy.",
+      "status": "starter-ready",
+      "status_note": "Blank inputs, ink/timeline helpers and workflow/review guides; author cast, scenes and renderer.",
+      "status_note_zh": "已有空白项目、描边与时间轴工具、制作和审查流程；需创作角色、场景与渲染器。",
+      "guide": "styles/scifi-sitcom/STYLE.md",
+      "readme": "styles/scifi-sitcom/README.md",
+      "prompt": "styles/scifi-sitcom/prompt.txt",
+      "template": "styles/scifi-sitcom/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": [
+        {
+          "id": "scifi-review",
+          "title": "The House Gets Coffee",
+          "page": "styles/scifi-sitcom/showcase/index.html",
+          "access": "local",
+          "project": "productions/2026-10-22-odds-coffee-run",
+          "source_page": "review.html",
+          "linked_files": [
+            "reference/coffee-run.mp4"
+          ]
+        }
+      ]
     }
   ]
 }

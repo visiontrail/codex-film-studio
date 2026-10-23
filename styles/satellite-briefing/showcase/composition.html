@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<base href="/_projects/satellite-composition/">
+<title>Singapore · Three Days, Three Routes</title>
+<style>
+@font-face{font-family:BC;src:url(assets/fonts/BarlowCondensed-Light.ttf);font-weight:300}
+@font-face{font-family:BC;src:url(assets/fonts/BarlowCondensed-Regular.ttf);font-weight:400}
+@font-face{font-family:BR;src:url(assets/fonts/BarlowCondensed-Regular.ttf);font-weight:400}
+@font-face{font-family:SCS;src:url(assets/fonts/NotoSansSC-Medium.woff2);font-weight:500}
+@font-face{font-family:PM;src:url(assets/fonts/IBMPlexMono-Regular.ttf)}
+@font-face{font-family:SC;src:url(assets/fonts/NotoSansSC.woff2)}
+@font-face{font-family:SS;src:url(assets/fonts/NotoSerifSC.woff2);font-weight:600}
+*{box-sizing:border-box}html,body{margin:0;background:#030507;color:#eef2f4;width:100%;height:100%;overflow:hidden}
+#stage{position:absolute;width:1920px;height:1080px;left:50%;top:50%;transform-origin:center;transform:translate(-50%,-50%) scale(var(--scale,1))}
+canvas{position:absolute;inset:0;width:1920px;height:1080px}#controls{position:fixed;bottom:12px;left:20px;right:20px;display:flex;gap:12px;align-items:center;background:#071017dd;padding:8px 12px;opacity:0;transition:opacity .2s;font:12px monospace}body:hover #controls{opacity:1}button{background:none;color:white;border:1px solid #65747d;padding:6px 12px;cursor:pointer}input{flex:1}#error{white-space:pre-wrap;font:18px monospace}
+</style><div id="stage"><canvas id="gl" width="1920" height="1080"></canvas><canvas id="ov" width="1920" height="1080"></canvas></div>
+<div id="controls"><button id="play">Play</button><input id="seek" type="range" min="0" value="0" step="1"><span id="time">0:00</span><a href="media/final.mp4" style="color:#ffbe55">MP4</a></div><div id="error"></div>
+<script type="module" src="src/film.mjs"></script></html>

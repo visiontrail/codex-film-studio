@@ -2,8 +2,9 @@
 
 **Choose a style. Bring a story. Make a film with Codex.**
 
-A growing library of film styles, each with a real sample, a reusable style
-prompt and editable production code.
+A growing library of film styles, with explicit completion status, reusable
+rules and project starters. All styles live in `styles/`; shared production
+workflows live in `methods/`. Existing films and local projects are preserved.
 
 [Watch the films online](https://visiontrail.github.io/codex-film-studio/) ·
 [简体中文](README.zh-CN.md) · [Make a film](#make-a-film-with-codex) ·
@@ -11,7 +12,29 @@ prompt and editable production code.
 
 ## The styles
 
-### 01 · Whiteboard Explainer
+Start with the [complete style catalog](styles/README.md) or run:
+
+```sh
+python3 scripts/new_film.py --list
+python3 scripts/new_film.py my-film --style midcentury-cartoon
+```
+
+The catalog includes **whiteboard, art-collage, crayon-book, midcentury-cartoon,
+satellite-briefing and scifi-sitcom**. Each uses the same command. Completion
+is recorded as a published sample, an authoring starter or a material toolkit;
+the catalog also lists whether a renderer and local showcase pages exist.
+
+Open all existing showcase pages from one local entrypoint:
+
+```sh
+python3 scripts/serve_styles.py --port 8249
+```
+
+Open **http://127.0.0.1:8249/**. The pages live under their style package and read
+media from the retained projects. See the [local showcase guide](docs/pages.md#local-style-catalog)
+for dependencies and the difference between local and published pages.
+
+### Published sample · Whiteboard Explainer
 
 [![Whiteboard: learners, a Turkish flag and two scoreboards](styles/whiteboard/poster.png)](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4)
 
@@ -25,38 +48,11 @@ finishing with help and doing the work alone.
 [12-minute edition](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
 [Style guide](styles/whiteboard/STYLE.md) · [Sample details](styles/whiteboard/DEMO.md)
 
-## Reusable production methods
+## Shared production methods
 
-[Mid-century Cartoon](methods/midcentury-cartoon/README.md) preserves misregistered
-flat colour, broken ink, held character poses, purposeful hand actions and a
-cool-jazz sound palette. Its subject-empty starter includes Canvas primitives,
-an audio-led frame timeline, Chatterbox contracts and explicit every-frame
-review rules for short or chaptered films:
-
-```sh
-python3 methods/midcentury-cartoon/new_project.py my-film
-```
-
-[Satellite Briefing](methods/satellite-briefing/README.md) provides geographic
-camera and measurement rules, local map/scan treatment, an optional verified
-YouTube-footage workflow, Chatterbox timing contracts and frame-review criteria.
-Its external starter contains empty inputs and tested geographic helpers:
-
-```sh
-python3 methods/satellite-briefing/new_project.py my-film
-```
-
-[Sci-Fi Sitcom Toon](methods/scifi-sitcom/README.md) provides subject-independent
-drawing, acting, camera, sound and review rules, an empty project creator, and
-generic ink/timeline helpers. It includes no inherited story, cast, country,
-statistics or dialogue. Start with its guide and supply your own subject.
-
-```sh
-python3 methods/scifi-sitcom/new_project.py my-film
-```
-
-The project is created outside the library. This is a reusable method package;
-it is separate from the released sample styles listed above.
+[methods/](methods/README.md) contains the common production and review workflows.
+Style-specific paper, crayon, cartoon, geography and performance rules live with
+the corresponding style. Existing external projects are independent copies.
 
 ## Make a film with Codex
 
@@ -122,33 +118,35 @@ produce different file bytes.
 ## Make your own working copy
 
 ```sh
-python3 scripts/new_film.py my-film --style whiteboard
+python3 scripts/new_film.py my-film --style <id>
+# Optional destination; it must not already exist and must be outside this library.
+python3 scripts/new_film.py my-film --style <id> --output /absolute/path/my-film
 ```
 
-Open `../codex-film-studio-projects/my-film` in Codex. See [TECHNIQUE.md](TECHNIQUE.md) for the file map,
-speech setup and rendering commands. The starter contains the sample story
-as editable code; Codex must adapt its narration **and** illustrations.
+Open `../codex-film-studio-projects/my-film` in Codex. Read its `README.md`,
+`STYLE.md`, `prompt.txt` and available workflow/review guides. Supply the subject,
+audience, language and duration. The command prepares a project; authoring,
+narration and rendering follow in that project.
+
+The whiteboard studio contains its legacy sample composition as editable code.
+Other styles supply blank inputs and helpers; scenes and rendering must be
+written for the new subject. Crayon Book currently supplies material tools and
+an input contract. New films always need their own picture, motion and audio review.
+
+The former `methods/<style>/` packages now live in `styles/<style>/`. Use the
+unified command above. `--method <id>` remains a deprecated alias for saved
+commands. No old project must be recreated to continue using it.
 
 ## Add a style
 
-Each entry in `styles.json` points to its own guide, prompt, poster, demo and
-working template. See [Contributing a style](CONTRIBUTING.md).
+Register every visual style in `styles.json`, including those without a published
+sample. Record actual completion and capabilities, then regenerate the readable
+index with `python3 scripts/update_style_index.py`. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Reusable methods
-
-[Art collage](methods/art-collage/README.md) contains visual and motion rules,
-portrait input contracts, material primitives and [frame-review tools](scripts/frame_review/README.md).
-Its starter has no example story, narration, character or brand asset:
-
-```sh
-python3 scripts/new_film.py my-film --method art-collage --output /path/to/my-film
-```
-
-Specific real people require portraits supplied by the new film's user. The
-reference person's likeness is optional; material, composition and motion are
-reviewed separately. Keep each new production outside this library. Contribute
-only reusable methods/tools or empty inputs back to the repository. Existing
-published demos remain legacy reference material.
+Specific real people require portraits supplied for the new film. Keep production
+media and private records in the external project; contribute reusable rules,
+tools and blank inputs to the library. Existing samples and showcase pages remain
+available as reference material.
 
 ## The public showcase
 

@@ -2,13 +2,38 @@
 
 **选一个风格，带一个故事，用 Codex 做成视频。**
 
-这是一个会持续扩展的视频风格库。每种风格包含真实样片、风格提示词和
-可编辑的制作代码。
+这是一个会持续扩展的视频风格库。所有视觉风格统一放在 `styles/`，
+逐项标注完成状态；`methods/` 保存跨风格通用的制作和审查流程。
 
 [在线展示与播放](https://visiontrail.github.io/codex-film-studio/) ·
 [English](README.md) · [下载样片](https://github.com/visiontrail/codex-film-studio/releases/tag/v0.1.0)
 
-## 01 · 白板讲解
+## 所有风格与完成状态
+
+[统一风格目录](styles/README.md)包含白板、艺术拼贴、蜡笔绘本、50 年代平涂卡通、
+卫星影像／地理简报、科幻情景喜剧卡通。所有风格使用同一创建命令：
+
+```sh
+python3 scripts/new_film.py --list
+python3 scripts/new_film.py my-film --style midcentury-cartoon
+```
+
+目录标明“已发布样片”“创作起步包”“材质工具包”，同时列出渲染工程和已有网页。
+这描述风格包的完成情况；每一部新影片仍须独立创作和审查。
+
+已有播放与审阅网页集中在各自的风格目录中，通过统一入口打开：
+
+```sh
+python3 scripts/serve_styles.py --port 8249
+```
+
+访问 **http://127.0.0.1:8249/**。网页读取保留项目里的影片、字体和审阅数据，
+详细说明见[本地网页说明](docs/pages.md#local-style-catalog)。原项目及其输出继续保留。
+
+[通用制作方法](methods/README.md)提供共用的故事、音频、时间轴与审查流程；
+每种风格自己的材质、绘画、镜头和声音规则都在 `styles/<id>/`。
+
+## 已发布样片 · 白板讲解
 
 [![白板上的人物、土耳其国旗和学习成绩对比](styles/whiteboard/poster.png)](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4)
 
@@ -20,38 +45,6 @@
 [3 分钟样片](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
 [12 分钟长版](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
 [风格说明](styles/whiteboard/STYLE.md)
-
-## 卫星简报制作方法
-
-[Satellite Briefing](methods/satellite-briefing/README.md) 提供地理镜头与测量规则、局部纸图和扫描效果、可选的 YouTube 实拍核验流程、Chatterbox 配音与时间轴约定，以及逐帧审阅标准。独立项目起步包包含空白输入和经过测试的地理计算工具，不携带旧影片的故事或验收结论。
-
-```sh
-python3 methods/satellite-briefing/new_project.py my-film
-```
-
-## 科幻情景喜剧制作方法
-
-[Sci-Fi Sitcom Toon 方法包](methods/scifi-sitcom/README.md)保存可复用的绘画、
-角色表演、镜头、声音和审查规则，附空白项目创建器及通用描边、时间轴代码。
-它不预置上一部影片的主题、人物、国家、统计数字或台词。
-
-```sh
-python3 methods/scifi-sitcom/new_project.py my-film
-```
-
-新项目创建在仓库外，提供自己的选题后继续创作。方法包与上方已发布样片的
-风格目录分开，具体使用方法和验证范围见包内说明。
-
-## Mid-century Cartoon 制作方法
-
-[50 年代平涂卡通方法包](methods/midcentury-cartoon/README.md)提炼套色偏移、
-断续墨线、两帧一姿态、手部动作、教学镜头与冷爵士声音语言。包含空白项目
-创建器、通用 Canvas 工具、Chatterbox 音频合同、短片/长篇编排和逐帧审查
-规则，可为新的主题独立创作。
-
-```sh
-python3 methods/midcentury-cartoon/new_project.py my-film
-```
 
 ## 通过 Codex 使用
 
@@ -68,8 +61,8 @@ cd codex-film-studio
 > 动作问题，完成后再让我看。
 
 仓库包含 `.agents/skills/codex-film/SKILL.md`，也可以明确让 Codex 阅读它。
-当前手写字体和字幕布局面向英文；中文主题可以用中文沟通，影片默认采用
-英文。要生成中文字幕，需要另外配置中文字形和排版，不能直接套用英文描边字体。
+白板样片的手写字体和字幕布局面向英文；制作中文白板片需要配置中文字形和排版。
+其他风格按各自说明选择字体与配音，影片语言以新项目要求为准。
 
 ## 先复现现有样片
 
@@ -102,11 +95,18 @@ python3 scripts/serve.py
 ## 新建影片与扩展风格
 
 ```sh
-python3 scripts/new_film.py my-film --style whiteboard
+python3 scripts/new_film.py my-film --style <id>
 ```
 
-然后用 Codex 打开 `../codex-film-studio-projects/my-film`。它位于方法库之外，不会修改风格样片。
-修改主题必须同时修改脚本和画面，不能只替换字幕。
+然后用 Codex 打开 `../codex-film-studio-projects/my-film`，阅读生成的 README、STYLE、
+prompt 和制作审查说明，提供选题、观众、语言和时长。可用 `--output` 指定其他外部目录；
+已有目标目录会被拒绝覆盖。创建命令负责准备工程，随后继续创作、配音和渲染。
+
+白板保留可编辑的样片工程；其他风格提供空白输入和通用工具，需要为新选题编写场景与
+渲染器。蜡笔绘本目前是材质工具包。修改主题必须同时修改叙事和画面。
+
+原 `methods/<style>/` 已迁入 `styles/<style>/`；所有新项目使用 `--style <id>`。
+旧的 `--method <id>` 参数保留为兼容别名。已创建的项目拥有独立副本，可继续使用。
 
 新增风格的目录规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
@@ -127,12 +127,11 @@ python3 scripts/new_film.py my-film --style whiteboard
 [CC BY 4.0](MEDIA-LICENSE.md)。素材出处和许可证见
 [CREDITS.md](styles/whiteboard/studio/CREDITS.md)。
 
-## 可复用方法
+## 扩展与维护
 
-[艺术拼贴方法](methods/art-collage/README.md)提供材质、构图、动作、人物输入约定和逐帧审看工具，空白起步目录不包含具体选题、台词、人物图或品牌素材。
+无论有没有发布样片，视觉风格都登记到 `styles.json`，按实际内容标注完成状态和能力。
+修改索引后执行 `python3 scripts/update_style_index.py` 同步可读目录，贡献规范见
+[CONTRIBUTING.md](CONTRIBUTING.md)。
 
-```sh
-python3 scripts/new_film.py my-film --method art-collage --output /path/to/my-film
-```
-
-指定真实人物时，由后续使用者提供肖像。参考片人物长相不作为必须一致的风格属性；材质、构图、排版和动作分别检查。新制作项目全部放在仓库外，只把通用方法、工具和空白输入约定贡献回方法库。既有发布样片保留为历史参考。
+新影片的选题、人物、配音、成片和审阅记录放到外部项目；向库内贡献通用规则、工具和
+空白输入。指定真实人物时使用新项目提供的肖像。已有样片和网页保留为历史参考。
