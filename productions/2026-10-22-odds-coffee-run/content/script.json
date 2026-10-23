@@ -1,0 +1,410 @@
+[
+  {
+    "id": "L001",
+    "world": "home",
+    "speaker": "bo",
+    "text": "Coffee went up again. Lend me ten bucks. One winning bet buys coffee for a month.",
+    "shot": "phone",
+    "emotion": "eager"
+  },
+  {
+    "id": "L002",
+    "world": "home",
+    "speaker": "qin",
+    "text": "You want a drink. Why are you predicting the universe?",
+    "shot": "qin",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L003",
+    "world": "home",
+    "speaker": "bo",
+    "text": "Because I know football.",
+    "shot": "bo",
+    "emotion": "smug"
+  },
+  {
+    "id": "L004",
+    "world": "home",
+    "speaker": "qin",
+    "text": "Then meet the people who make money from that sentence.",
+    "shot": "portal",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L005",
+    "world": "odds",
+    "speaker": "bo",
+    "text": "Tiny stadium. Enormous cash register.",
+    "shot": "wide",
+    "emotion": "shock"
+  },
+  {
+    "id": "L006",
+    "world": "odds",
+    "speaker": "qin",
+    "text": "Three different numbers. Money wagered. Revenue kept by the operator. Profit after costs. Never mix them up.",
+    "shot": "machine",
+    "emotion": "explain"
+  },
+  {
+    "id": "L007",
+    "world": "odds",
+    "speaker": "bo",
+    "text": "Bet one hundred dollars ten times. That's a thousand wagered. My wallet is still tiny.",
+    "shot": "bo",
+    "emotion": "worry"
+  },
+  {
+    "id": "L008",
+    "world": "odds",
+    "speaker": "qin",
+    "text": "Now, odds. Two possible results. Each pays one point nine. Bet a hundred, win, get one hundred ninety back. Including your stake.",
+    "shot": "board",
+    "emotion": "explain"
+  },
+  {
+    "id": "L009",
+    "world": "odds",
+    "speaker": "bo",
+    "text": "Where does the other ten go?",
+    "shot": "bo",
+    "emotion": "worry"
+  },
+  {
+    "id": "L010",
+    "world": "odds",
+    "speaker": "qin",
+    "text": "A hundred on each side means two hundred collected. Either winner gets one ninety. Ten stays in the till.",
+    "shot": "coins",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L011",
+    "world": "odds",
+    "speaker": "bo",
+    "text": "The cash register scored before kickoff.",
+    "shot": "bo",
+    "emotion": "shock"
+  },
+  {
+    "id": "L012",
+    "world": "odds",
+    "speaker": "qin",
+    "text": "In this balanced example. Real bookmakers face uneven bets, pricing errors and risk. They do not win on every match.",
+    "shot": "qin",
+    "emotion": "explain"
+  },
+  {
+    "id": "L013",
+    "world": "odds",
+    "speaker": "qin",
+    "text": "One divided by one point nine is about fifty-two point six percent. Both sides add up above a hundred. That excess shows the markup.",
+    "shot": "board",
+    "emotion": "explain"
+  },
+  {
+    "id": "L014",
+    "world": "parlay",
+    "speaker": "bo",
+    "text": "New door! Tiny stake. Giant prize. This one gets me.",
+    "shot": "wide",
+    "emotion": "eager"
+  },
+  {
+    "id": "L015",
+    "world": "parlay",
+    "speaker": "qin",
+    "text": "A parlay. Every selection must win. Three independent fifty-fifty outcomes? All three win only one time in eight.",
+    "shot": "gates",
+    "emotion": "explain"
+  },
+  {
+    "id": "L016",
+    "world": "parlay",
+    "speaker": "bo",
+    "text": "I only missed the last one!",
+    "shot": "bo",
+    "emotion": "panic"
+  },
+  {
+    "id": "L017",
+    "world": "parlay",
+    "speaker": "qin",
+    "text": "The till loves the word only. Big payouts come with low probabilities. And discounts in the odds compound.",
+    "shot": "qin",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L018",
+    "world": "pool",
+    "speaker": "bo",
+    "text": "Why are the horses circling a soup pot?",
+    "shot": "wide",
+    "emotion": "shock"
+  },
+  {
+    "id": "L019",
+    "world": "pool",
+    "speaker": "qin",
+    "text": "Pool betting. Stakes go into one pot. The operator takes a stated deduction. Winning tickets divide what remains. Your final payout depends on the pool.",
+    "shot": "pool",
+    "emotion": "explain"
+  },
+  {
+    "id": "L020",
+    "world": "pool",
+    "speaker": "bo",
+    "text": "Horses get a track. My money gets a drain.",
+    "shot": "bo",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L021",
+    "world": "attention",
+    "speaker": "bo",
+    "text": "Free money! Finally, a universe with customer service.",
+    "shot": "phone",
+    "emotion": "eager"
+  },
+  {
+    "id": "L022",
+    "world": "attention",
+    "speaker": "qin",
+    "text": "Read the conditions. Bonuses can require more wagering. Notifications and live bets turn one match into dozens of decisions.",
+    "shot": "wide",
+    "emotion": "explain"
+  },
+  {
+    "id": "L023",
+    "world": "attention",
+    "speaker": "bo",
+    "text": "So close! One more try. So close! Another try. So close!",
+    "shot": "bo",
+    "emotion": "panic"
+  },
+  {
+    "id": "L024",
+    "world": "attention",
+    "speaker": "qin",
+    "text": "Stop. Nearly winning is still losing. It can make you want another turn. It does not make the next win more likely.",
+    "shot": "qin",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L025",
+    "world": "stadium",
+    "speaker": "bo",
+    "text": "What about inside information? Are all the matches already scripted?",
+    "shot": "wide",
+    "emotion": "suspicious"
+  },
+  {
+    "id": "L026",
+    "world": "stadium",
+    "speaker": "qin",
+    "text": "Match fixing exists. An upset is not proof of it. Evidence has to identify what happened and who was involved.",
+    "shot": "referee",
+    "emotion": "explain"
+  },
+  {
+    "id": "L027",
+    "world": "stadium",
+    "speaker": "qin",
+    "text": "In twenty twenty-five, Turkey reported three hundred seventy-one referees with betting accounts. One hundred fifty-two had football betting records.",
+    "shot": "turkey",
+    "emotion": "explain"
+  },
+  {
+    "id": "L028",
+    "world": "stadium",
+    "speaker": "bo",
+    "text": "Having an account, placing bets, fixing matches. Three different claims.",
+    "shot": "bo",
+    "emotion": "think"
+  },
+  {
+    "id": "L029",
+    "world": "stadium",
+    "speaker": "qin",
+    "text": "Exactly. And that story about coach Bob Woolmer being murdered? Jamaican police later closed the case, accepting natural causes.",
+    "shot": "woolmer",
+    "emotion": "serious"
+  },
+  {
+    "id": "L030",
+    "world": "legal",
+    "speaker": "bo",
+    "text": "This world looks suspiciously normal. Shops? Advertisements?",
+    "shot": "wide",
+    "emotion": "confused"
+  },
+  {
+    "id": "L031",
+    "world": "legal",
+    "speaker": "qin",
+    "text": "Different places, different rules. Britain licenses operators. A twenty eighteen Supreme Court ruling let American states decide whether to authorize sports betting.",
+    "shot": "flags",
+    "emotion": "explain"
+  },
+  {
+    "id": "L032",
+    "world": "legal",
+    "speaker": "bo",
+    "text": "I recognize those. Fan Duel. Draft Kings.",
+    "shot": "brands",
+    "emotion": "eager"
+  },
+  {
+    "id": "L033",
+    "world": "legal",
+    "speaker": "qin",
+    "text": "Real operators. A legal business can still cost you money. And legal somewhere does not mean legal everywhere.",
+    "shot": "brands",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L034",
+    "world": "legal",
+    "speaker": "qin",
+    "text": "Hong Kong authorizes Jockey Club businesses. Singapore has regulated operators. Mainland China has its own authorized lottery system.",
+    "shot": "asia",
+    "emotion": "explain"
+  },
+  {
+    "id": "L035",
+    "world": "legal",
+    "speaker": "bo",
+    "text": "This foreign license is not an interdimensional passport.",
+    "shot": "bo",
+    "emotion": "think"
+  },
+  {
+    "id": "L036",
+    "world": "legal",
+    "speaker": "qin",
+    "text": "Nor does a famous brand or a public-benefit purpose guarantee generous payouts. Read the actual allocation rules.",
+    "shot": "qin",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L037",
+    "world": "underground",
+    "speaker": "bo",
+    "text": "One last door. No cash up front! They finally trust my football knowledge.",
+    "shot": "wide",
+    "emotion": "eager"
+  },
+  {
+    "id": "L038",
+    "world": "underground",
+    "speaker": "qin",
+    "text": "They trust that you will owe them money.",
+    "shot": "qin",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L039",
+    "world": "underground",
+    "speaker": "bo",
+    "text": "Why do the chips have teeth?",
+    "shot": "debt",
+    "emotion": "panic"
+  },
+  {
+    "id": "L040",
+    "world": "underground",
+    "speaker": "qin",
+    "text": "Some illegal operations combine credit betting, debt and threats. No deposit can become a debt much bigger than your original budget.",
+    "shot": "wide",
+    "emotion": "serious"
+  },
+  {
+    "id": "L041",
+    "world": "underground",
+    "speaker": "qin",
+    "text": "Owen Hanson is a real case. His criminal enterprise involved illegal gambling, drug trafficking and money laundering.",
+    "shot": "hanson",
+    "emotion": "serious"
+  },
+  {
+    "id": "L042",
+    "world": "underground",
+    "speaker": "qin",
+    "text": "In twenty seventeen, he received two hundred fifty-five months in prison. More than twenty-one years.",
+    "shot": "hanson",
+    "emotion": "serious"
+  },
+  {
+    "id": "L043",
+    "world": "underground",
+    "speaker": "bo",
+    "text": "Being introduced by a friend is not a safety certificate.",
+    "shot": "bo",
+    "emotion": "worry"
+  },
+  {
+    "id": "L044",
+    "world": "underground",
+    "speaker": "qin",
+    "text": "Right. An illegal book is not simply a cheaper app. And a licensed operator is not automatically a criminal enterprise. Keep the claims separate.",
+    "shot": "qin",
+    "emotion": "explain"
+  },
+  {
+    "id": "L045",
+    "world": "home",
+    "speaker": "bo",
+    "text": "After all those universes, did you find a guaranteed way to make money?",
+    "shot": "wide",
+    "emotion": "tired"
+  },
+  {
+    "id": "L046",
+    "world": "home",
+    "speaker": "qin",
+    "text": "Yes.",
+    "shot": "qin",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L047",
+    "world": "home",
+    "speaker": "bo",
+    "text": "Really?",
+    "shot": "bo",
+    "emotion": "eager"
+  },
+  {
+    "id": "L048",
+    "world": "home",
+    "speaker": "qin",
+    "text": "Sell coffee.",
+    "shot": "reveal",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L049",
+    "world": "home",
+    "speaker": "bo",
+    "text": "What happened to my ten bucks?",
+    "shot": "bo",
+    "emotion": "blank"
+  },
+  {
+    "id": "L050",
+    "world": "home",
+    "speaker": "qin",
+    "text": "Still in your pocket.",
+    "shot": "qin",
+    "emotion": "deadpan"
+  },
+  {
+    "id": "L051",
+    "world": "home",
+    "speaker": "bo",
+    "text": "Biggest upset of the day. I did not place a bet.",
+    "shot": "wide",
+    "emotion": "relieved"
+  }
+]

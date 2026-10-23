@@ -13,6 +13,3 @@ films/
 **/reference/
 .verification/
 .site/
-
-# Local production projects are not library or Pages source files.
-/productions/

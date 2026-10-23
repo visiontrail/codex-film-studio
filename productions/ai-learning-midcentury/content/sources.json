@@ -1,0 +1,10 @@
+{
+  "checked_on": "2026-10-22",
+  "claims": [
+    {"lines":["03","19"],"claim":"Assisted performance, unaided performance, delayed retention and transfer are distinct outcomes.","source":"https://bjorklab.psych.ucla.edu/research/","verification":"Official lab research overview retrieved, especially testing, fluency and desirable difficulties. Practical sequence is editorial synthesis."},
+    {"lines":["04","05","06"],"claim":"Nearly 1000 Turkish high-school math students; GPT Base practice grades 48% above control, unaided exam grades 17% below control. Teacher-hint safeguards largely mitigated the penalty without a statistically significant positive exam effect.","source":"https://doi.org/10.1073/pnas.2422633122","author_manuscript":"https://hamsabastani.github.io/education_llm.pdf","verification":"Author PDF and publisher indexed text retrieved. Relative changes, not percentage points. No claim of permanent harm."},
+    {"lines":["07","08"],"claim":"A separate structured college physics tutor improved immediate post-test performance compared with active classroom learning.","source":"https://doi.org/10.1038/s41598-025-97652-6","verification":"Publisher indexed abstract and results retrieved. Direct PDF request redirected to inaccessible cookie authorization. No claim of universal superiority or months-long retention."},
+    {"lines":["11"],"claim":"Worked examples can help novices; unguided struggle is not a universal recommendation.","source":"https://doi.org/10.1080/01443410.2023.2273762","verification":"Publisher indexed full text retrieved. Randomized novice Year-7 algebra study; retention and near-transfer favored worked examples. No effect size narrated."},
+    {"lines":["09","10","12","13","14","15","16","17","18","20","21","22"],"claim":"A practical demonstration: attempt with appropriate guidance, seek a hint, hide the answer, explain and check, vary the task and return later.","source":"Editorial synthesis based on the cited literature; not an independently validated universal intervention.","verification":"Illustrative equations checked: 2*4+3=11; (15-3)/2=6. Ada is fictional, not a reported study participant."}
+  ]
+}

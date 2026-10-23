@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-22",
+  "render": {
+    "bay": {
+      "frames": "assets/footage/bay-frames",
+      "count": 336,
+      "fps": 24,
+      "sourceStart": 0,
+      "sourceEndExclusive": 14
+    },
+    "jewel": {
+      "frames": "assets/footage/jewel-frames",
+      "count": 192,
+      "fps": 24,
+      "sourceStart": 0,
+      "sourceEndExclusive": 8
+    }
+  },
+  "sources": [
+    {
+      "id": "bay",
+      "sourceFile": "assets/footage/marina-bay.mp4",
+      "sourceUrl": "https://www.youtube.com/watch?v=nCQai7lfwwY",
+      "title": "Marina Bay and Garden By the Bay Aerial View in Singapore Wheel Free Stock Video #freestockvideo",
+      "creator": "Free Stock Videos",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "licenseStatus": "CC BY designation observed in YouTube extraction metadata; original ownership not independently established",
+      "licenseHelp": "https://support.google.com/youtube/answer/2797468?hl=en",
+      "sourceSha256": "ab225ed88cdae0d590e19a1e4060dfa316c623d5820c2a53637f8e0e5c6b438c",
+      "sourceFps": 23.976023976023978,
+      "sourceDuration": 34.117417,
+      "sourceFramesDecoded": 818,
+      "automatedFrameCoverage": "818/818",
+      "sourceStart": 0,
+      "sourceEndExclusive": 14,
+      "metadata": "assets/footage/marina-bay-1080.metadata.json",
+      "review": "assets/footage/bay-review-summary.json",
+      "visualReviewResult": "usable",
+      "visualReviewCoverage": "20 source samples plus extracted endpoints",
+      "publiclyPublished": false
+    },
+    {
+      "id": "jewel",
+      "sourceFile": "assets/footage/jewel-source.mp4",
+      "sourceUrl": "https://www.youtube.com/watch?v=mNLqks3eiHk",
+      "title": "the rain vortex waterfall at the jewel changi airport in singapore [Copyright-Free Video]",
+      "creator": "dod5",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "licenseStatus": "CC BY designation observed in YouTube extraction metadata; original ownership not independently established",
+      "licenseHelp": "https://support.google.com/youtube/answer/2797468?hl=en",
+      "sourceSha256": "47f78e6e5f89c8b0d3537e77030fc346fb64cc86892f3b89ac1434ad4885b94d",
+      "sourceFps": 60,
+      "sourceDuration": 15.383333,
+      "sourceFramesDecoded": 923,
+      "automatedFrameCoverage": "923/923",
+      "sourceStart": 0,
+      "sourceEndExclusive": 8,
+      "metadata": "assets/footage/jewel.metadata.json",
+      "review": "assets/footage/jewel-review-summary.json",
+      "visualReviewResult": "usable",
+      "visualReviewCoverage": "20 source samples plus extracted endpoints",
+      "publiclyPublished": false
+    }
+  ],
+  "unused": [
+    {
+      "file": "assets/footage/night.mp4",
+      "sourceUrl": "https://www.youtube.com/watch?v=yXwGjpJdnww",
+      "creator": "Travelling Tips By Sunny",
+      "sourceStart": 204,
+      "sourceEndExclusive": 219,
+      "reason": "Preserved existing project clip but excluded from current rendering because its reuse license is unverified."
+    }
+  ],
+  "extraction": {
+    "decoder": "macOS AVFoundation AVAssetReader",
+    "rendererFrameRate": 24,
+    "imageSize": [
+      960,
+      540
+    ],
+    "format": "JPEG quality 0.94",
+    "frameIndexConvention": "zero-based; half-open intervals",
+    "sampling": "nearest source frame to target timestamp; source frame rate verified by ffprobe",
+    "usedFfmpegProcess": false,
+    "note": "AVFoundation asset.duration overreported the bay container; stream timestamps/fps and the complete decoded sequence are authoritative."
+  }
+}

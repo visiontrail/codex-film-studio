@@ -27,10 +27,6 @@ hashes before publishing. It copies an explicit list of player assets to
 not included. `build-info.json` records the deployed commit and video hashes.
 The Pages permission is limited to the deployment job.
 
-The local `productions/` directory is ignored by Git and is not a Pages build
-input. Keep its working projects locally; the published whiteboard demos remain
-in the Release and the existing `styles/whiteboard/` source directories.
-
 ## Preview locally
 
 From the repository root, with Python 3.11 or later:
