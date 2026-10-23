@@ -10,20 +10,28 @@ style or a claim that an arbitrary render matches a reference.
 
 - Warm ivory paper with multiscale fibre relief. Treat paper as a surface under
   the drawing: a camera move carries both grain and pigment, while illumination
-  can stay in camera space.
+  can stay in camera space. Keep fine tooth, broader relief and longer fibres
+  separately adjustable; compare the encoded texture at its intended scale.
 - Dark indigo contours with restrained position and pressure variation. Keep
   eyes, mouths and small text readable; do not erode every object equally.
 - Wax deposited in directional passes with irregular uncovered paper. Vary
   pressure by pigment and by form. Allow small, intentional strokes outside
-  boundaries instead of applying the same speckle mask to every shape.
+  boundaries instead of applying the same speckle mask to every shape. Subdivide
+  long polygon edges with small seeded displacements; protect tiny features.
 - Handwritten titles and captions with stable baselines and explicit safe areas.
   Text must remain legible at the delivery resolution and a smaller player size.
 - Poses may hold for two frames while camera motion remains continuous. Derive
   all state from the requested frame so arbitrary seeking stays deterministic.
-- Reveal actual drawing strokes in order. A wash advances with brush bands,
+- Reveal actual drawing strokes in order. Where the reference separates line
+  drawing and colouring, keep separate stroke budgets for those passes. Drawing
+  one fully coloured object after another is a visibly different reveal.
+  `Wax.outlineOnly`, `strokeBudget` and `fillBudget` permit independent stages;
+  `begin(frame)` resets their state so the caller sets them after each begin.
+  A wash advances with brush bands,
   bristle variation, pooling edges and wax resistance.
 - A physical book ending needs a hinge, two paper surfaces, self-shadow, gutter,
-  desk grain and a camera destination. Preserve contact and continuity through
+  desk grain and a camera destination. Combine irregular long fibres, broken
+  highlights and broad tonal bands to avoid periodic wood stripes. Preserve contact and continuity through
   the turn rather than treating the image as a flat wipe.
 
 `lib/material.mjs` provides deterministic canvas primitives and wax/paper
@@ -41,6 +49,16 @@ external production. Keep source identity separate from style identity.
 Use one integer-frame timeline with half-open ranges `[start, end)`. Reference
 named events from both animation and sound. Caption timing follows recorded
 speech. A change to the action frame must automatically move its sound cue.
+
+Give each action shot a camera destination: follow the active character, move
+closer to a small action, or settle with the pose. Keep educational choice
+spreads wide enough to read. Evaluate the whole move, not only its midpoint,
+for clipped titles, lost contact points and limbs outside the frame.
+
+`composite(wax, paper, canvas, scale, centerX, centerY)` samples the paper in
+the same camera space as the drawing. Centers use output-pixel coordinates;
+omitted centers default to the canvas center. Convert scene coordinates by
+the rendering scale and keep the sampled viewport within the paper bounds.
 
 ## Music and sound
 
