@@ -1,0 +1,9 @@
+{
+  "subject": null,
+  "audience": null,
+  "question": null,
+  "language": null,
+  "target_seconds": null,
+  "delivery": {"width": 1920, "height": 1080, "fps": 24},
+  "required_identities": []
+}
