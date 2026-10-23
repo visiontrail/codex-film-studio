@@ -79,6 +79,9 @@ relative progress; this does not imply matching content or equal running time.
 Inspect every generated pair when an every-frame review is requested. Record
 which files and ranges were actually opened. State the thumbnail resolution;
 check selected frames at native resolution for grain, edges, symbols and text.
+Verify each saved image's pixel dimensions before describing it as native
+resolution. If an exported comparison is smaller than the encoded stream,
+extract a fresh frame at stream dimensions and inspect that file.
 Watch actual movement and playback separately. Record each concrete defect,
 its repair and the new evidence. Generated contact sheets alone are not review.
 
