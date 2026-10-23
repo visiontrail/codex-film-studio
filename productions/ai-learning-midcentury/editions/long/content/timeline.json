@@ -1,0 +1,2133 @@
+{
+  "fps": 24,
+  "duration_frames": 15012,
+  "draft": false,
+  "bpm": 132,
+  "chapters": [
+    {
+      "title": "01 \u00b7 The finished page",
+      "start": 0,
+      "seconds": 0.0
+    },
+    {
+      "title": "02 \u00b7 What the studies measured",
+      "start": 1512,
+      "seconds": 63.0
+    },
+    {
+      "title": "03 \u00b7 Why easy can feel like learned",
+      "start": 3864,
+      "seconds": 161.0
+    },
+    {
+      "title": "04 \u00b7 A lesson Ada can own",
+      "start": 5904,
+      "seconds": 246.0
+    },
+    {
+      "title": "05 \u00b7 Transfer and a later return",
+      "start": 9384,
+      "seconds": 391.0
+    },
+    {
+      "title": "06 \u00b7 Beyond mathematics",
+      "start": 11484,
+      "seconds": 478.5
+    },
+    {
+      "title": "07 \u00b7 Your next session",
+      "start": 13824,
+      "seconds": 576.0
+    }
+  ],
+  "shots": [
+    {
+      "scene": "hook",
+      "text": "Meet Ada. Her homework is finished. The answer looks perfectly clear. But close the screen, and something changes.",
+      "caption": "The page is finished. Is the learning?",
+      "purpose": "Ada closes a completed answer and hesitates over an empty page.",
+      "reference_range": [
+        0,
+        174
+      ],
+      "chapter": "01 \u00b7 The finished page",
+      "reuse_short_id": "01",
+      "id": "01",
+      "start": 0,
+      "end": 192,
+      "voice_start": 27,
+      "voice_duration": 6.28,
+      "audio": "media/audio/01-41e9a65e3a87.wav",
+      "action": 120,
+      "cues": {}
+    },
+    {
+      "scene": "two_pages",
+      "title": "Two things can improve",
+      "caption": "A better product and a stronger skill are separate goals.",
+      "text": "An excellent answer is one kind of success. Being able to explain and adapt it yourself is another. They can grow together, but one does not guarantee the other.",
+      "chapter": "01 \u00b7 The finished page",
+      "purpose": "Two things can improve",
+      "reference_range": [
+        175,
+        300
+      ],
+      "left": [
+        "THE PRODUCT",
+        "Clear answer",
+        "Finished on time"
+      ],
+      "right": [
+        "THE LEARNER",
+        "Explain it",
+        "Use it again"
+      ],
+      "id": "02",
+      "start": 192,
+      "end": 432,
+      "voice_start": 210,
+      "voice_duration": 8.4,
+      "audio": "media/audio/02-727f39a1e2ff.wav",
+      "action": 291,
+      "cues": {}
+    },
+    {
+      "scene": "title",
+      "text": "Does artificial intelligence help you learn, or just finish? The difference shows up when the help goes away.",
+      "caption": "What remains when the help goes away?",
+      "purpose": "Title opens from the empty answer circle; Ada presents the question.",
+      "reference_range": [
+        42,
+        174
+      ],
+      "chapter": "01 \u00b7 The finished page",
+      "reuse_short_id": "02",
+      "id": "03",
+      "start": 432,
+      "end": 612,
+      "voice_start": 450,
+      "voice_duration": 5.84,
+      "audio": "media/audio/03-e6afb7cbc7fd.wav",
+      "action": 485,
+      "cues": {}
+    },
+    {
+      "scene": "four_tests",
+      "text": "Finishing with help is one test. Doing it alone is another. Remembering later, and solving a different problem, are two more.",
+      "caption": "Help now. Alone. Later. Somewhere new.",
+      "purpose": "Four physical medallions expose four different outcome measures.",
+      "reference_range": [
+        744,
+        878
+      ],
+      "chapter": "01 \u00b7 The finished page",
+      "reuse_short_id": "03",
+      "id": "04",
+      "start": 612,
+      "end": 816,
+      "voice_start": 630,
+      "voice_duration": 7.16,
+      "audio": "media/audio/04-6fd270ce3c0d.wav",
+      "action": 665,
+      "cues": {}
+    },
+    {
+      "scene": "tests_detail",
+      "title": "First: performance with help",
+      "caption": "What can the person and the tool do together?",
+      "text": "With the tool open, you are measuring a partnership. The result can be impressive. It still leaves open how much of the method belongs to the learner.",
+      "chapter": "01 \u00b7 The finished page",
+      "purpose": "First: performance with help",
+      "reference_range": [
+        175,
+        300
+      ],
+      "focus": 0,
+      "id": "05",
+      "start": 816,
+      "end": 1044,
+      "voice_start": 834,
+      "voice_duration": 8.08,
+      "audio": "media/audio/05-fd3d648f4b15.wav",
+      "action": 912,
+      "cues": {}
+    },
+    {
+      "scene": "tests_detail",
+      "title": "Second: an independent attempt",
+      "caption": "Close the tool. Keep the question.",
+      "text": "Remove the assistance and try a fresh problem. Can you choose a first step, explain your choices, and notice when the result makes no sense?",
+      "chapter": "01 \u00b7 The finished page",
+      "purpose": "Second: an independent attempt",
+      "reference_range": [
+        175,
+        300
+      ],
+      "focus": 1,
+      "id": "06",
+      "start": 1044,
+      "end": 1260,
+      "voice_start": 1062,
+      "voice_duration": 7.32,
+      "audio": "media/audio/06-e8beefa27c6d.wav",
+      "action": 1132,
+      "cues": {}
+    },
+    {
+      "scene": "tests_detail",
+      "title": "Third and fourth: later and elsewhere",
+      "caption": "A familiar page cannot answer every learning question.",
+      "text": "A later test asks what remains after time passes. A changed situation asks whether you recognize where the method applies. Those questions deserve separate evidence.",
+      "chapter": "01 \u00b7 The finished page",
+      "purpose": "Third and fourth: later and elsewhere",
+      "reference_range": [
+        175,
+        300
+      ],
+      "focus": 3,
+      "id": "07",
+      "start": 1260,
+      "end": 1512,
+      "voice_start": 1278,
+      "voice_duration": 9.28,
+      "audio": "media/audio/07-caeccd7c10d7.wav",
+      "action": 1367,
+      "cues": {}
+    },
+    {
+      "scene": "turkey",
+      "text": "In a randomized study of nearly a thousand high school mathematics students in Turkey, an unrestricted chatbot improved practice grades by forty eight percent, compared with the control group.",
+      "caption": "Practice grades: +48% relative to control.",
+      "purpose": "A Turkish classroom and a GPT-4 terminal establish the randomized study; the practice result stamps onto paper.",
+      "reference_range": [
+        175,
+        300
+      ],
+      "chapter": "02 \u00b7 What the studies measured",
+      "reuse_short_id": "04",
+      "id": "08",
+      "start": 1512,
+      "end": 1776,
+      "voice_start": 1539,
+      "voice_duration": 9.24,
+      "audio": "media/audio/08-37004ef3bdc6.wav",
+      "action": 1698,
+      "cues": {}
+    },
+    {
+      "scene": "evidence_board",
+      "title": "Read the comparison carefully",
+      "caption": "Relative change is not a percentage-point change.",
+      "text": "That figure is relative to the control group's practice grades. It does not mean forty eight extra percentage points, or the same improvement for every student.",
+      "chapter": "02 \u00b7 What the studies measured",
+      "purpose": "Read the comparison carefully",
+      "reference_range": [
+        175,
+        300
+      ],
+      "lines": [
+        "PRACTICE WITH HELP",
+        "GPT Base: +48%",
+        "Relative to control"
+      ],
+      "aside": "Not +48 percentage points",
+      "tone": "blue",
+      "id": "09",
+      "start": 1776,
+      "end": 2004,
+      "voice_start": 1794,
+      "voice_duration": 8.24,
+      "audio": "media/audio/09-7521db3fe6e8.wav",
+      "action": 1873,
+      "cues": {}
+    },
+    {
+      "scene": "exam",
+      "text": "But on the exam without the tool, that group scored seventeen percent lower. Better homework performance had hidden weaker independent performance.",
+      "caption": "Unaided exam grades: \u221217% relative to control.",
+      "purpose": "The screen is covered. A second test paper reveals the independent-performance reversal.",
+      "reference_range": [
+        175,
+        300
+      ],
+      "chapter": "02 \u00b7 What the studies measured",
+      "reuse_short_id": "05",
+      "id": "10",
+      "start": 2004,
+      "end": 2220,
+      "voice_start": 2022,
+      "voice_duration": 7.32,
+      "audio": "media/audio/10-86d1a7a9ac88.wav",
+      "action": 2077,
+      "cues": {}
+    },
+    {
+      "scene": "two_pages",
+      "title": "One experiment, two outcomes",
+      "caption": "Keep the practice result beside the unaided result.",
+      "text": "Random assignment provides stronger evidence than comparing people who chose a chatbot with those who did not. But the result still belongs to this particular setting.",
+      "chapter": "02 \u00b7 What the studies measured",
+      "purpose": "One experiment, two outcomes",
+      "reference_range": [
+        175,
+        300
+      ],
+      "left": [
+        "DURING PRACTICE",
+        "Tool available",
+        "Higher grades"
+      ],
+      "right": [
+        "UNAIDED EXAM",
+        "Tool removed",
+        "Lower grades"
+      ],
+      "id": "11",
+      "start": 2220,
+      "end": 2484,
+      "voice_start": 2238,
+      "voice_duration": 9.76,
+      "audio": "media/audio/11-324487f4fffd.wav",
+      "action": 2332,
+      "cues": {}
+    },
+    {
+      "scene": "guardrails",
+      "text": "A tutor designed around teacher supplied hints largely removed that penalty. It did not produce a statistically significant exam improvement over the control group.",
+      "caption": "Teacher-designed hints changed the outcome.",
+      "purpose": "The answer card becomes a hint card; show mitigation without inventing an exam gain.",
+      "reference_range": [
+        307,
+        430
+      ],
+      "chapter": "02 \u00b7 What the studies measured",
+      "reuse_short_id": "06",
+      "id": "12",
+      "start": 2484,
+      "end": 2760,
+      "voice_start": 2502,
+      "voice_duration": 10.28,
+      "audio": "media/audio/12-d2d5d724e7a6.wav",
+      "action": 2537,
+      "cues": {}
+    },
+    {
+      "scene": "evidence_board",
+      "title": "The guardrails matter",
+      "caption": "Removing a penalty is different from proving a gain.",
+      "text": "The guarded tutor used teacher designed hints. Its result does not mean any friendly chatbot will teach well. The design of the help matters.",
+      "chapter": "02 \u00b7 What the studies measured",
+      "purpose": "The guardrails matter",
+      "reference_range": [
+        175,
+        300
+      ],
+      "lines": [
+        "TEACHER-DESIGNED HINTS",
+        "Penalty largely removed",
+        "No significant exam gain"
+      ],
+      "aside": "Specific design, specific comparison",
+      "tone": "gold",
+      "id": "13",
+      "start": 2760,
+      "end": 2988,
+      "voice_start": 2778,
+      "voice_duration": 8.04,
+      "audio": "media/audio/13-a0c5a03b2779.wav",
+      "action": 2855,
+      "cues": {}
+    },
+    {
+      "scene": "physics",
+      "text": "In a separate college physics experiment, a carefully designed tutor led to higher immediate test scores than an active classroom lesson.",
+      "caption": "Tutor design matters.",
+      "purpose": "A physics learner tests a pendulum with a structured tutor; establish a separate experiment.",
+      "reference_range": [
+        307,
+        430
+      ],
+      "chapter": "02 \u00b7 What the studies measured",
+      "reuse_short_id": "07",
+      "id": "14",
+      "start": 2988,
+      "end": 3192,
+      "voice_start": 3006,
+      "voice_duration": 7.24,
+      "audio": "media/audio/14-3d6a23c83407.wav",
+      "action": 3041,
+      "cues": {}
+    },
+    {
+      "scene": "evidence_board",
+      "title": "Look at the actual teaching task",
+      "caption": "Different subjects. Different learners. Different tutors.",
+      "text": "This comparison involved a structured tutor and an active classroom lesson. It compares those teaching arrangements, not all machines with all teachers.",
+      "chapter": "02 \u00b7 What the studies measured",
+      "purpose": "Look at the actual teaching task",
+      "reference_range": [
+        175,
+        300
+      ],
+      "lines": [
+        "COLLEGE PHYSICS",
+        "Structured AI tutor",
+        "Active classroom comparison"
+      ],
+      "aside": "Immediate test outcome",
+      "tone": "olive",
+      "id": "15",
+      "start": 3192,
+      "end": 3420,
+      "voice_start": 3210,
+      "voice_duration": 8.12,
+      "audio": "media/audio/15-ee8e1e2ba8da.wav",
+      "action": 3288,
+      "cues": {}
+    },
+    {
+      "scene": "limits",
+      "text": "These are different designs and different settings. Neither result tells us what every learner will remember months later.",
+      "caption": "An immediate test is not a long-term test.",
+      "purpose": "A moving calendar and clock distinguish immediate testing from later memory.",
+      "reference_range": [
+        655,
+        744
+      ],
+      "chapter": "02 \u00b7 What the studies measured",
+      "reuse_short_id": "08",
+      "id": "16",
+      "start": 3420,
+      "end": 3588,
+      "voice_start": 3438,
+      "voice_duration": 5.36,
+      "audio": "media/audio/16-7cb81af18ec2.wav",
+      "action": 3471,
+      "cues": {}
+    },
+    {
+      "scene": "two_pages",
+      "title": "Avoid the universal headline",
+      "caption": "Ask what was taught, compared and measured.",
+      "text": "Together, these studies suggest asking which designs preserve the learner's thinking. They do not establish one universal percentage for how much artificial intelligence helps or harms learning.",
+      "chapter": "02 \u00b7 What the studies measured",
+      "purpose": "Avoid the universal headline",
+      "reference_range": [
+        175,
+        300
+      ],
+      "left": [
+        "ASK ABOUT DESIGN",
+        "Who learned?",
+        "What assistance?"
+      ],
+      "right": [
+        "ASK ABOUT TESTS",
+        "Compared with what?",
+        "Measured when?"
+      ],
+      "id": "17",
+      "start": 3588,
+      "end": 3864,
+      "voice_start": 3606,
+      "voice_duration": 10.16,
+      "audio": "media/audio/17-0a33915cd9ad.wav",
+      "action": 3703,
+      "cues": {}
+    },
+    {
+      "scene": "reading",
+      "title": "The answer feels familiar",
+      "caption": "Following an explanation is one experience.",
+      "text": "Read a clear explanation twice and its steps can feel obvious. That feeling does not prove you could reconstruct the explanation without looking.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "The answer feels familiar",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "open",
+      "id": "18",
+      "start": 3864,
+      "end": 4104,
+      "voice_start": 3891,
+      "voice_duration": 7.96,
+      "audio": "media/audio/18-a3dab6506f12.wav",
+      "action": 3967,
+      "cues": {}
+    },
+    {
+      "scene": "reading",
+      "title": "Close the book",
+      "caption": "Reconstructing it is a different task.",
+      "text": "When the page disappears, its prompts disappear too. You must select the idea, retrieve the steps, and organize them. A blank sheet can expose hidden gaps.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "Close the book",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "closed",
+      "id": "19",
+      "start": 4104,
+      "end": 4356,
+      "voice_start": 4122,
+      "voice_duration": 9.24,
+      "audio": "media/audio/19-b8bc9a0f7efb.wav",
+      "action": 4211,
+      "cues": {}
+    },
+    {
+      "scene": "retrieval_study",
+      "title": "A classic retrieval experiment",
+      "caption": "Study passages. Practise recall. Test later.",
+      "text": "In a classic prose passage experiment, repeated study looked better on the immediate test. Earlier recall tests helped more when people were tested after a delay.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "A classic retrieval experiment",
+      "reference_range": [
+        175,
+        300
+      ],
+      "phase": "result",
+      "id": "20",
+      "start": 4356,
+      "end": 4632,
+      "voice_start": 4374,
+      "voice_duration": 9.92,
+      "audio": "media/audio-repairs/20-544c21cd0b8a.wav",
+      "action": 4469,
+      "cues": {}
+    },
+    {
+      "scene": "retrieval_study",
+      "title": "Confidence did not settle it",
+      "caption": "A confident prediction is still a prediction.",
+      "text": "Repeated studying also increased confidence. Yet the delayed advantage favored retrieval practice. Feeling fluent and remembering later were different outcomes in these experiments.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "Confidence did not settle it",
+      "reference_range": [
+        175,
+        300
+      ],
+      "phase": "confidence",
+      "id": "21",
+      "start": 4632,
+      "end": 4920,
+      "voice_start": 4650,
+      "voice_duration": 10.44,
+      "audio": "media/audio/21-05dd0a379111.wav",
+      "action": 4747,
+      "cues": {}
+    },
+    {
+      "scene": "practice_cards",
+      "title": "Retrieve, then check",
+      "caption": "An attempt gives feedback something to work on.",
+      "text": "Try recalling before reopening the answer, then check your work. Correct the missing or mistaken parts. An unsuccessful attempt is information, not a reason to keep practising errors.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "Retrieve, then check",
+      "reference_range": [
+        175,
+        300
+      ],
+      "labels": [
+        "TRY FROM MEMORY",
+        "CHECK THE SOURCE",
+        "CORRECT THE GAP"
+      ],
+      "id": "22",
+      "start": 4920,
+      "end": 5184,
+      "voice_start": 4938,
+      "voice_duration": 9.4,
+      "audio": "media/audio/22-3c5f1679bf89.wav",
+      "action": 5028,
+      "cues": {}
+    },
+    {
+      "scene": "calendar_long",
+      "title": "Spread the attempts",
+      "caption": "Return after some time has passed.",
+      "text": "In a mathematics experiment by Rohrer and Taylor, practice spread across sessions produced better performance a week later than practice concentrated in one session.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "Spread the attempts",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "spacing",
+      "id": "23",
+      "start": 5184,
+      "end": 5424,
+      "voice_start": 5202,
+      "voice_duration": 8.76,
+      "audio": "media/audio/23-6a2e902a78c5.wav",
+      "action": 5286,
+      "cues": {}
+    },
+    {
+      "scene": "mix_cards",
+      "title": "Mix problems that need different methods",
+      "caption": "Choosing a method is part of the work.",
+      "text": "Their second experiment favored mixing problem types over blocking them on a later test. Mixing asks you to identify the problem before selecting a procedure.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "Mix problems that need different methods",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "mix",
+      "id": "24",
+      "start": 5424,
+      "end": 5676,
+      "voice_start": 5442,
+      "voice_duration": 9.2,
+      "audio": "media/audio/24-5e0e02e60a0c.wav",
+      "action": 5530,
+      "cues": {}
+    },
+    {
+      "scene": "two_pages",
+      "title": "Apply the principle with care",
+      "caption": "These learning studies were not chatbot trials.",
+      "text": "These studies support independent practice and later checks. They do not prove that one particular chatbot prompt or practice schedule will work for every person.",
+      "chapter": "03 \u00b7 Why easy can feel like learned",
+      "purpose": "Apply the principle with care",
+      "reference_range": [
+        175,
+        300
+      ],
+      "left": [
+        "RESEARCH SUPPORT",
+        "Retrieval",
+        "Spacing and mixing"
+      ],
+      "right": [
+        "PRACTICAL DESIGN",
+        "Choose suitable help",
+        "Check the next attempt"
+      ],
+      "id": "25",
+      "start": 5676,
+      "end": 5904,
+      "voice_start": 5694,
+      "voice_duration": 8.0,
+      "audio": "media/audio/25-641e1dff4686.wav",
+      "action": 5771,
+      "cues": {}
+    },
+    {
+      "scene": "choose",
+      "text": "So, when learning is the goal, give the tool a different job. Let it support the thinking you need to practise.",
+      "caption": "Keep the thinking you need to practise.",
+      "purpose": "Ada moves the terminal aside to put her own working sheet in the centre.",
+      "reference_range": [
+        175,
+        300
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "09",
+      "id": "26",
+      "start": 5904,
+      "end": 6108,
+      "voice_start": 5931,
+      "voice_duration": 6.52,
+      "audio": "media/audio/26-42fdf0ed1027.wav",
+      "action": 5966,
+      "cues": {}
+    },
+    {
+      "scene": "step1",
+      "text": "Step one. Make an attempt. If you know enough to start, put your own first step on the page.",
+      "caption": "Step one. Make an attempt.",
+      "purpose": "First numbered medallion; Ada writes her own attempt.",
+      "reference_range": [
+        175,
+        300
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "10",
+      "id": "27",
+      "start": 6108,
+      "end": 6276,
+      "voice_start": 6126,
+      "voice_duration": 4.56,
+      "audio": "media/audio/27-bc042a0d4b40.wav",
+      "action": 6152,
+      "cues": {}
+    },
+    {
+      "scene": "example",
+      "text": "For a completely new topic, study a clear worked example first. A beginner needs guidance, not a guessing contest.",
+      "caption": "New topic? Start with a worked example.",
+      "purpose": "Open example book supports a novice without pretending unassisted struggle is always best.",
+      "reference_range": [
+        307,
+        430
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "11",
+      "id": "28",
+      "start": 6276,
+      "end": 6468,
+      "voice_start": 6294,
+      "voice_duration": 6.8,
+      "audio": "media/audio/28-aae9885e3db2.wav",
+      "action": 6329,
+      "cues": {}
+    },
+    {
+      "scene": "reading",
+      "title": "Guidance has a job",
+      "caption": "Reduce confusion without removing every decision.",
+      "text": "If the notation is unfamiliar, struggling alone can be unhelpful. A worked example provides a path to inspect. Can the learner explain that path?",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "Guidance has a job",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "example",
+      "id": "29",
+      "start": 6468,
+      "end": 6708,
+      "voice_start": 6486,
+      "voice_duration": 8.44,
+      "audio": "media/audio/29-55c5b970ac89.wav",
+      "action": 6567,
+      "cues": {}
+    },
+    {
+      "scene": "balance",
+      "title": "An equation makes a promise",
+      "caption": "Both sides name the same quantity.",
+      "text": "Both sides of Ada's equation are equal. Each operation must preserve that equality. She is keeping the balance true, not moving symbols by magic.",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "An equation makes a promise",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "initial",
+      "id": "30",
+      "start": 6708,
+      "end": 6936,
+      "voice_start": 6726,
+      "voice_duration": 7.92,
+      "audio": "media/audio/30-5413fda99ca1.wav",
+      "action": 6802,
+      "cues": {}
+    },
+    {
+      "scene": "hint",
+      "text": "Now ask for a hint about the exact step you cannot explain. Ask it to check your reasoning before showing the whole solution.",
+      "caption": "Ask for the next useful hint.",
+      "purpose": "Round detail callout shows the specific hint request and a partial response.",
+      "reference_range": [
+        325,
+        420
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "12",
+      "id": "31",
+      "start": 6936,
+      "end": 7128,
+      "voice_start": 6954,
+      "voice_duration": 6.44,
+      "audio": "media/audio/31-0e72460fe3f2.wav",
+      "action": 6989,
+      "cues": {}
+    },
+    {
+      "scene": "algebra",
+      "text": "Ada needs to solve two times a number, plus three, equals eleven. Her hint is simple: undo the addition first.",
+      "caption": "Undo the addition first.",
+      "purpose": "Close-up of the actual algebra and subtraction action.",
+      "reference_range": [
+        438,
+        526
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "13",
+      "id": "32",
+      "start": 7128,
+      "end": 7296,
+      "voice_start": 7146,
+      "voice_duration": 5.76,
+      "audio": "media/audio/32-50e5698a57da.wav",
+      "action": 7247,
+      "cues": {
+        "number": 7178
+      }
+    },
+    {
+      "scene": "balance",
+      "title": "Subtract from both sides",
+      "caption": "Keep the equality true while simplifying.",
+      "text": "Subtracting three undoes the addition on the left. Doing the same on the right leaves eight. Two times the unknown must therefore equal eight.",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "Subtract from both sides",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "subtract",
+      "id": "33",
+      "start": 7296,
+      "end": 7512,
+      "voice_start": 7314,
+      "voice_duration": 7.4,
+      "audio": "media/audio/33-26987fdebda7.wav",
+      "action": 7385,
+      "cues": {}
+    },
+    {
+      "scene": "balance",
+      "title": "Then divide both sides",
+      "caption": "Two equal groups share a total of eight.",
+      "text": "Divide both sides by two. One copy of the unknown equals four. That reasoning still applies when the next equation uses different numbers.",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "Then divide both sides",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "divide",
+      "id": "34",
+      "start": 7512,
+      "end": 7728,
+      "voice_start": 7530,
+      "voice_duration": 7.36,
+      "audio": "media/audio/34-56f85d5c39ad.wav",
+      "action": 7601,
+      "cues": {}
+    },
+    {
+      "scene": "practice_cards",
+      "title": "A small check before moving on",
+      "caption": "Pause and explain one step in your own words.",
+      "text": "Explain why three is subtracted from both sides. If your only reason is that the chatbot said so, return to the meaning of equality.",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "A small check before moving on",
+      "reference_range": [
+        175,
+        300
+      ],
+      "labels": [
+        "WHY SUBTRACT THREE?",
+        "WHY BOTH SIDES?",
+        "WHAT STAYS EQUAL?"
+      ],
+      "hold": 4,
+      "id": "35",
+      "start": 7728,
+      "end": 8016,
+      "voice_start": 7746,
+      "voice_duration": 6.76,
+      "audio": "media/audio-repairs/35-829659e08164.wav",
+      "action": 7811,
+      "cues": {}
+    },
+    {
+      "scene": "step2",
+      "text": "Step two. Hide the answer. Close the screen. Take a fresh sheet, and explain the method from memory.",
+      "caption": "Step two. Hide the answer.",
+      "purpose": "Second numbered medallion; a large gloved hand shuts the computer.",
+      "reference_range": [
+        438,
+        526
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "14",
+      "id": "36",
+      "start": 8016,
+      "end": 8208,
+      "voice_start": 8034,
+      "voice_duration": 6.64,
+      "audio": "media/audio/36-8c6b52449687.wav",
+      "action": 8072,
+      "cues": {}
+    },
+    {
+      "scene": "retrieve",
+      "text": "Ada subtracts three from both sides. Then she divides both sides by two. The number is four. Each step has a reason.",
+      "caption": "Explain why each step works.",
+      "purpose": "An overhead page reveals the reasoning one step at a time.",
+      "reference_range": [
+        528,
+        655
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "15",
+      "id": "37",
+      "start": 8208,
+      "end": 8400,
+      "voice_start": 8226,
+      "voice_duration": 6.8,
+      "audio": "media/audio/37-df5471f056eb.wav",
+      "action": 8283,
+      "cues": {
+        "subtracts": 8230,
+        "divides": 8283,
+        "number": 8322
+      }
+    },
+    {
+      "scene": "reading",
+      "title": "A missing step tells you where to look",
+      "caption": "Use the smallest useful piece of help.",
+      "text": "Suppose Ada cannot explain the division. She can reopen that step, study its reason, and retry. She need not replace her entire attempt with a copied solution.",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "A missing step tells you where to look",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "gap",
+      "id": "38",
+      "start": 8400,
+      "end": 8664,
+      "voice_start": 8418,
+      "voice_duration": 9.8,
+      "audio": "media/audio/38-b15539543ce1.wav",
+      "action": 8512,
+      "cues": {}
+    },
+    {
+      "scene": "error_work",
+      "title": "A mistake worth finding",
+      "caption": "Check the operation, not just the final number.",
+      "text": "If she subtracts three on the left but forgets the right, the work can still look orderly. Substituting her proposed answer into the original equation exposes the mistake.",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "A mistake worth finding",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "wrong",
+      "id": "39",
+      "start": 8664,
+      "end": 8940,
+      "voice_start": 8682,
+      "voice_duration": 10.0,
+      "audio": "media/audio-repairs/39-b2228a008f5d.wav",
+      "action": 8778,
+      "cues": {}
+    },
+    {
+      "scene": "feedback",
+      "text": "Check the work. Put four back into the original equation. Two times four, plus three, is eleven. If something fails, correct it.",
+      "caption": "Check. Correct. Try again.",
+      "purpose": "Ada substitutes the result into the original equation and stamps a check.",
+      "reference_range": [
+        307,
+        430
+      ],
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "reuse_short_id": "16",
+      "id": "40",
+      "start": 8940,
+      "end": 9144,
+      "voice_start": 8958,
+      "voice_duration": 7.24,
+      "audio": "media/audio/40-f6a0e86cba1d.wav",
+      "action": 9079,
+      "cues": {}
+    },
+    {
+      "scene": "error_work",
+      "title": "Name the error, then retry",
+      "caption": "Repair the reason that produced the mistake.",
+      "text": "Useful feedback names the error: apply the same operation to both sides. Ada corrects that step and tries another equation. A green check tells her less.",
+      "chapter": "04 \u00b7 A lesson Ada can own",
+      "purpose": "Name the error, then retry",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "correct",
+      "id": "41",
+      "start": 9144,
+      "end": 9384,
+      "voice_start": 9162,
+      "voice_duration": 8.48,
+      "audio": "media/audio/41-ca782d7dbe26.wav",
+      "action": 9243,
+      "cues": {}
+    },
+    {
+      "scene": "step3",
+      "text": "Step three. Change the problem. New numbers are a start. A new situation checks whether you can choose the method yourself.",
+      "caption": "Step three. Change the problem.",
+      "purpose": "Third numbered medallion; the algebra sheet becomes a shop problem.",
+      "reference_range": [
+        175,
+        300
+      ],
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "reuse_short_id": "17",
+      "id": "42",
+      "start": 9384,
+      "end": 9600,
+      "voice_start": 9411,
+      "voice_duration": 7.36,
+      "audio": "media/audio/42-1b36e09fa9c4.wav",
+      "action": 9446,
+      "cues": {}
+    },
+    {
+      "scene": "transfer",
+      "text": "Two notebooks and a three dollar delivery fee cost fifteen dollars. What does one notebook cost? Ada has to build the equation before solving it.",
+      "caption": "Choose the method in a new situation.",
+      "purpose": "Two notebooks, a delivery tag and a receipt establish a real transfer example.",
+      "reference_range": [
+        528,
+        655
+      ],
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "reuse_short_id": "18",
+      "id": "43",
+      "start": 9600,
+      "end": 9816,
+      "voice_start": 9618,
+      "voice_duration": 7.4,
+      "audio": "media/audio/43-4c87ff9a4e1b.wav",
+      "action": 9762,
+      "cues": {}
+    },
+    {
+      "scene": "transfer_model",
+      "title": "Build the equation first",
+      "caption": "Name the unknown before calculating.",
+      "text": "Let the unknown name one notebook's price. Two identical notebooks cost twice that amount. Delivery is charged once, adding three dollars to the total.",
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "purpose": "Build the equation first",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "build",
+      "id": "44",
+      "start": 9816,
+      "end": 10056,
+      "voice_start": 9834,
+      "voice_duration": 8.68,
+      "audio": "media/audio/44-450a98f5dd13.wav",
+      "action": 9917,
+      "cues": {}
+    },
+    {
+      "scene": "transfer_model",
+      "title": "The same structure, a new story",
+      "caption": "Two notebook prices plus one fee equal fifteen.",
+      "text": "Remove the three dollar delivery fee from fifteen dollars. Twelve dollars remain for two notebooks. Divide by two. The price is six dollars per notebook. This calculation follows the same equation structure.",
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "purpose": "The same structure, a new story",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "solve",
+      "id": "45",
+      "start": 10056,
+      "end": 10320,
+      "voice_start": 10074,
+      "voice_duration": 9.76,
+      "audio": "media/audio-repairs/45-d6ffba9a5928.wav",
+      "action": 10168,
+      "cues": {}
+    },
+    {
+      "scene": "transfer_model",
+      "title": "Check against the situation",
+      "caption": "Does the answer account for every part of the cost?",
+      "text": "Two notebooks at six dollars cost twelve. Add the three dollar fee: fifteen. The check connects the calculation back to the situation in the question.",
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "purpose": "Check against the situation",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "check",
+      "id": "46",
+      "start": 10320,
+      "end": 10536,
+      "voice_start": 10338,
+      "voice_duration": 7.8,
+      "audio": "media/audio/46-d2212ab5d669.wav",
+      "action": 10413,
+      "cues": {}
+    },
+    {
+      "scene": "mix_cards",
+      "title": "A changed story may need a changed model",
+      "caption": "Do not apply the last procedure automatically.",
+      "text": "If delivery is charged for each notebook, the equation changes. Similar words can hide different relationships. Explain which costs repeat before choosing a calculation.",
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "purpose": "A changed story may need a changed model",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "fees",
+      "id": "47",
+      "start": 10536,
+      "end": 10788,
+      "voice_start": 10554,
+      "voice_duration": 9.04,
+      "audio": "media/audio/47-21eba7b4e6e4.wav",
+      "action": 10641,
+      "cues": {}
+    },
+    {
+      "scene": "later",
+      "text": "Come back later for another fresh problem, without the tool. That checks retention separately from what feels easy right now.",
+      "caption": "Return later. Try without the tool.",
+      "purpose": "Calendar page turns; a clean question awaits Ada with the computer closed.",
+      "reference_range": [
+        655,
+        744
+      ],
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "reuse_short_id": "19",
+      "id": "48",
+      "start": 10788,
+      "end": 10980,
+      "voice_start": 10806,
+      "voice_duration": 6.6,
+      "audio": "media/audio/48-7a4dbe92c64e.wav",
+      "action": 10813,
+      "cues": {}
+    },
+    {
+      "scene": "calendar_long",
+      "title": "Make the later check fresh",
+      "caption": "Use a new question without the worked solution beside it.",
+      "text": "Use a fresh question for the later attempt. Put the old solution away. Record what you can do independently, then decide what to revisit.",
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "purpose": "Make the later check fresh",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "return",
+      "id": "49",
+      "start": 10980,
+      "end": 11220,
+      "voice_start": 10998,
+      "voice_duration": 8.32,
+      "audio": "media/audio/49-4ef82287bd6c.wav",
+      "action": 11078,
+      "cues": {}
+    },
+    {
+      "scene": "two_pages",
+      "title": "Compare prediction with performance",
+      "caption": "Let evidence update your confidence.",
+      "text": "Before checking, predict what you can explain. Compare that prediction with your actual work. Use the gap to choose your next practice, rather than relying on ease.",
+      "chapter": "05 \u00b7 Transfer and a later return",
+      "purpose": "Compare prediction with performance",
+      "reference_range": [
+        175,
+        300
+      ],
+      "left": [
+        "BEFORE THE ATTEMPT",
+        "What can I explain?",
+        "Make a prediction"
+      ],
+      "right": [
+        "AFTER THE ATTEMPT",
+        "What did I do?",
+        "Find the next gap"
+      ],
+      "id": "50",
+      "start": 11220,
+      "end": 11484,
+      "voice_start": 11238,
+      "voice_duration": 9.44,
+      "audio": "media/audio/50-6112bc231d32.wav",
+      "action": 11329,
+      "cues": {}
+    },
+    {
+      "scene": "writing",
+      "title": "Use the same idea when writing",
+      "caption": "Choose the writing skill you want to practise.",
+      "text": "For writing, a chatbot's rewrite may improve the document. To practise argument, Ada can first state her own claim and the evidence she thinks supports it.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "Use the same idea when writing",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "claim",
+      "id": "51",
+      "start": 11484,
+      "end": 11724,
+      "voice_start": 11511,
+      "voice_duration": 8.28,
+      "audio": "media/audio/51-abe1787f4080.wav",
+      "action": 11590,
+      "cues": {}
+    },
+    {
+      "scene": "writing",
+      "title": "Ask for a reader\u2019s question",
+      "caption": "Locate the weakness before accepting a rewrite.",
+      "text": "Ask which sentence is unsupported, or what a skeptical reader would question. Then revise the paragraph yourself and explain the change. Keep that decision with the writer.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "Ask for a reader\u2019s question",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "question",
+      "id": "52",
+      "start": 11724,
+      "end": 11988,
+      "voice_start": 11742,
+      "voice_duration": 9.76,
+      "audio": "media/audio/52-094edfeb156d.wav",
+      "action": 11836,
+      "cues": {}
+    },
+    {
+      "scene": "writing",
+      "title": "Try another paragraph",
+      "caption": "A polished draft is useful; a new attempt tests the skill.",
+      "text": "Later, write another paragraph without those suggestions. This adapts the routine to writing; it is not evidence that these exact prompts have been experimentally validated.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "Try another paragraph",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "new",
+      "id": "53",
+      "start": 11988,
+      "end": 12288,
+      "voice_start": 12006,
+      "voice_duration": 10.88,
+      "audio": "media/audio/53-8f8a5748608c.wav",
+      "action": 12103,
+      "cues": {}
+    },
+    {
+      "scene": "code",
+      "title": "For code, predict before running",
+      "caption": "Explain what the program will do.",
+      "text": "For programming, explain what each line changes. Predict the result for a specific input, then run the function. Compare the execution with your prediction.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "For code, predict before running",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "trace",
+      "id": "54",
+      "start": 12288,
+      "end": 12540,
+      "voice_start": 12306,
+      "voice_duration": 8.88,
+      "audio": "media/audio/54-2113701de01f.wav",
+      "action": 12391,
+      "cues": {}
+    },
+    {
+      "scene": "code",
+      "title": "A passing example is only one case",
+      "caption": "Test the boundary your explanation depends on.",
+      "text": "This function returns the first item in a list. It works for a nonempty list. What happens with an empty one? Test the assumption behind that first success.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "A passing example is only one case",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "empty",
+      "id": "55",
+      "start": 12540,
+      "end": 12780,
+      "voice_start": 12558,
+      "voice_duration": 8.4,
+      "audio": "media/audio/55-ccd430122305.wav",
+      "action": 12639,
+      "cues": {}
+    },
+    {
+      "scene": "code",
+      "title": "Make and explain the repair",
+      "caption": "A new requirement creates another independent attempt.",
+      "text": "She adds an explicit check for an empty list. She explains what each branch returns. Then she tests a new requirement on her own, instead of simply accepting a patch.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "Make and explain the repair",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "repair",
+      "id": "56",
+      "start": 12780,
+      "end": 13032,
+      "voice_start": 12798,
+      "voice_duration": 9.16,
+      "audio": "media/audio-repairs/56-d204d40b9487.wav",
+      "action": 12886,
+      "cues": {}
+    },
+    {
+      "scene": "evidence_board",
+      "title": "The tool\u2019s explanation also needs checking",
+      "caption": "Use the relevant source, calculation or test.",
+      "text": "A clear explanation can be wrong. Check equations by substitution, code with suitable tests, and factual claims against reliable sources. The system's confidence is not independent verification.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "The tool\u2019s explanation also needs checking",
+      "reference_range": [
+        175,
+        300
+      ],
+      "lines": [
+        "CHECK THE CLAIM",
+        "Calculate or execute",
+        "Consult the source"
+      ],
+      "aside": "Confidence is not a verification method",
+      "tone": "blue",
+      "id": "57",
+      "start": 13032,
+      "end": 13308,
+      "voice_start": 13050,
+      "voice_duration": 9.88,
+      "audio": "media/audio/57-bdacaadbcd12.wav",
+      "action": 13145,
+      "cues": {}
+    },
+    {
+      "scene": "two_pages",
+      "title": "Support can remove the wrong obstacle",
+      "caption": "Keep the target skill clear.",
+      "text": "Language or accessibility support can free attention for the target skill. Practise that skill independently where appropriate; do not demand that every useful support disappear.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "Support can remove the wrong obstacle",
+      "reference_range": [
+        175,
+        300
+      ],
+      "left": [
+        "USEFUL SUPPORT",
+        "Readable language",
+        "Accessible material"
+      ],
+      "right": [
+        "TARGET SKILL",
+        "Explain the idea",
+        "Make the decision"
+      ],
+      "id": "58",
+      "start": 13308,
+      "end": 13584,
+      "voice_start": 13326,
+      "voice_duration": 9.96,
+      "audio": "media/audio/58-67dc90cad0fa.wav",
+      "action": 13422,
+      "cues": {}
+    },
+    {
+      "scene": "two_pages",
+      "title": "Sometimes the goal is the finished product",
+      "caption": "Decide what you need from this session.",
+      "text": "Sometimes a finished product is the goal. That is a different choice. Decide what to delegate, what to verify, and which capability you want to retain.",
+      "chapter": "06 \u00b7 Beyond mathematics",
+      "purpose": "Sometimes the goal is the finished product",
+      "reference_range": [
+        175,
+        300
+      ],
+      "left": [
+        "PRODUCTION SESSION",
+        "Finish the task",
+        "Verify the output"
+      ],
+      "right": [
+        "LEARNING SESSION",
+        "Practise the skill",
+        "Verify the next attempt"
+      ],
+      "id": "59",
+      "start": 13584,
+      "end": 13824,
+      "voice_start": 13602,
+      "voice_duration": 8.8,
+      "audio": "media/audio/59-de637aeff4ce.wav",
+      "action": 13686,
+      "cues": {}
+    },
+    {
+      "scene": "practice_cards",
+      "title": "Turn the idea into one small session",
+      "caption": "Choose a skill, a question and a later check.",
+      "text": "Choose one skill to retain. Pick a suitable question and the help needed to begin. Reserve a fresh question for a later independent attempt.",
+      "chapter": "07 \u00b7 Your next session",
+      "purpose": "Turn the idea into one small session",
+      "reference_range": [
+        175,
+        300
+      ],
+      "labels": [
+        "ONE TARGET SKILL",
+        "ONE SUITABLE QUESTION",
+        "ONE LATER CHECK"
+      ],
+      "id": "60",
+      "start": 13824,
+      "end": 14064,
+      "voice_start": 13851,
+      "voice_duration": 8.16,
+      "audio": "media/audio/60-023631d46dde.wav",
+      "action": 13929,
+      "cues": {}
+    },
+    {
+      "scene": "summary",
+      "text": "Attempt with suitable guidance. Hide, explain, and check. Change the problem, then return later. Keep the next independent attempt in view.",
+      "caption": "Attempt. Explain. Check. Transfer. Return.",
+      "purpose": "Pull back from the detail into the three-step manual card.",
+      "reference_range": [
+        744,
+        878
+      ],
+      "chapter": "07 \u00b7 Your next session",
+      "reuse_short_id": "20",
+      "id": "61",
+      "start": 14064,
+      "end": 14268,
+      "voice_start": 14082,
+      "voice_duration": 7.28,
+      "audio": "media/audio/61-c8732561e4b6.wav",
+      "action": 14117,
+      "cues": {}
+    },
+    {
+      "scene": "practice_log",
+      "title": "Keep a useful practice record",
+      "caption": "Record the help, the gap and the next attempt.",
+      "text": "Record your attempt, the help used, the error corrected, and what you could do later. Look for progress in your own work, not the number of chatbot messages.",
+      "chapter": "07 \u00b7 Your next session",
+      "purpose": "Keep a useful practice record",
+      "reference_range": [
+        175,
+        300
+      ],
+      "mode": "log",
+      "id": "62",
+      "start": 14268,
+      "end": 14496,
+      "voice_start": 14286,
+      "voice_duration": 8.0,
+      "audio": "media/audio/62-8f9ea6642a47.wav",
+      "action": 14363,
+      "cues": {}
+    },
+    {
+      "scene": "caution",
+      "text": "This is a practical check, not a universally proven recipe. The right amount of help depends on the learner and the task.",
+      "caption": "Match the help to the learner and the task.",
+      "purpose": "Tip ribbon makes the practical limits explicit.",
+      "reference_range": [
+        655,
+        744
+      ],
+      "chapter": "07 \u00b7 Your next session",
+      "reuse_short_id": "21",
+      "id": "63",
+      "start": 14496,
+      "end": 14688,
+      "voice_start": 14514,
+      "voice_duration": 6.32,
+      "audio": "media/audio/63-55e51ed3078d.wav",
+      "action": 14549,
+      "cues": {}
+    },
+    {
+      "scene": "closing",
+      "text": "A finished page is useful. A skill you can use again is something more. What can you do when the answer is gone?",
+      "caption": "What can you do when the answer is gone?",
+      "purpose": "Return to Ada and a new successful page, then close into a circular end card.",
+      "reference_range": [
+        878,
+        960
+      ],
+      "chapter": "07 \u00b7 Your next session",
+      "reuse_short_id": "22",
+      "id": "64",
+      "start": 14688,
+      "end": 14868,
+      "voice_start": 14706,
+      "voice_duration": 6.2,
+      "audio": "media/audio/64-cabfc47a4878.wav",
+      "action": 14741,
+      "cues": {}
+    },
+    {
+      "id": "65",
+      "scene": "credits",
+      "chapter": "Credits",
+      "start": 14868,
+      "end": 15012,
+      "voice_start": 14868,
+      "voice_duration": 0,
+      "audio": null,
+      "text": "",
+      "caption": "",
+      "action": 14868,
+      "purpose": "Circular end title and source attribution.",
+      "reference_range": [
+        891,
+        960
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "01-transition",
+      "frame": 0,
+      "kind": "swish"
+    },
+    {
+      "id": "01-action",
+      "frame": 120,
+      "kind": "paper"
+    },
+    {
+      "id": "02-transition",
+      "frame": 192,
+      "kind": "swish"
+    },
+    {
+      "id": "02-action",
+      "frame": 291,
+      "kind": "paper"
+    },
+    {
+      "id": "03-transition",
+      "frame": 432,
+      "kind": "swish"
+    },
+    {
+      "id": "03-action",
+      "frame": 485,
+      "kind": "paper"
+    },
+    {
+      "id": "04-transition",
+      "frame": 612,
+      "kind": "swish"
+    },
+    {
+      "id": "04-action",
+      "frame": 665,
+      "kind": "paper"
+    },
+    {
+      "id": "05-transition",
+      "frame": 816,
+      "kind": "swish"
+    },
+    {
+      "id": "05-action",
+      "frame": 912,
+      "kind": "paper"
+    },
+    {
+      "id": "06-transition",
+      "frame": 1044,
+      "kind": "swish"
+    },
+    {
+      "id": "06-action",
+      "frame": 1132,
+      "kind": "paper"
+    },
+    {
+      "id": "07-transition",
+      "frame": 1260,
+      "kind": "swish"
+    },
+    {
+      "id": "07-action",
+      "frame": 1367,
+      "kind": "paper"
+    },
+    {
+      "id": "08-transition",
+      "frame": 1512,
+      "kind": "swish"
+    },
+    {
+      "id": "08-action",
+      "frame": 1698,
+      "kind": "paper"
+    },
+    {
+      "id": "09-transition",
+      "frame": 1776,
+      "kind": "swish"
+    },
+    {
+      "id": "09-action",
+      "frame": 1873,
+      "kind": "paper"
+    },
+    {
+      "id": "10-transition",
+      "frame": 2004,
+      "kind": "swish"
+    },
+    {
+      "id": "10-action",
+      "frame": 2077,
+      "kind": "paper"
+    },
+    {
+      "id": "11-transition",
+      "frame": 2220,
+      "kind": "swish"
+    },
+    {
+      "id": "11-action",
+      "frame": 2332,
+      "kind": "paper"
+    },
+    {
+      "id": "12-transition",
+      "frame": 2484,
+      "kind": "swish"
+    },
+    {
+      "id": "12-action",
+      "frame": 2537,
+      "kind": "paper"
+    },
+    {
+      "id": "13-transition",
+      "frame": 2760,
+      "kind": "swish"
+    },
+    {
+      "id": "13-action",
+      "frame": 2855,
+      "kind": "paper"
+    },
+    {
+      "id": "14-transition",
+      "frame": 2988,
+      "kind": "swish"
+    },
+    {
+      "id": "14-action",
+      "frame": 3041,
+      "kind": "paper"
+    },
+    {
+      "id": "15-transition",
+      "frame": 3192,
+      "kind": "swish"
+    },
+    {
+      "id": "15-action",
+      "frame": 3288,
+      "kind": "paper"
+    },
+    {
+      "id": "16-transition",
+      "frame": 3420,
+      "kind": "swish"
+    },
+    {
+      "id": "16-action",
+      "frame": 3471,
+      "kind": "paper"
+    },
+    {
+      "id": "17-transition",
+      "frame": 3588,
+      "kind": "swish"
+    },
+    {
+      "id": "17-action",
+      "frame": 3703,
+      "kind": "paper"
+    },
+    {
+      "id": "18-transition",
+      "frame": 3864,
+      "kind": "swish"
+    },
+    {
+      "id": "18-action",
+      "frame": 3967,
+      "kind": "paper"
+    },
+    {
+      "id": "19-transition",
+      "frame": 4104,
+      "kind": "swish"
+    },
+    {
+      "id": "19-action",
+      "frame": 4211,
+      "kind": "paper"
+    },
+    {
+      "id": "20-transition",
+      "frame": 4356,
+      "kind": "swish"
+    },
+    {
+      "id": "20-action",
+      "frame": 4469,
+      "kind": "paper"
+    },
+    {
+      "id": "21-transition",
+      "frame": 4632,
+      "kind": "swish"
+    },
+    {
+      "id": "21-action",
+      "frame": 4747,
+      "kind": "paper"
+    },
+    {
+      "id": "22-transition",
+      "frame": 4920,
+      "kind": "swish"
+    },
+    {
+      "id": "22-action",
+      "frame": 5028,
+      "kind": "paper"
+    },
+    {
+      "id": "23-transition",
+      "frame": 5184,
+      "kind": "swish"
+    },
+    {
+      "id": "23-action",
+      "frame": 5286,
+      "kind": "paper"
+    },
+    {
+      "id": "24-transition",
+      "frame": 5424,
+      "kind": "swish"
+    },
+    {
+      "id": "24-action",
+      "frame": 5530,
+      "kind": "paper"
+    },
+    {
+      "id": "25-transition",
+      "frame": 5676,
+      "kind": "swish"
+    },
+    {
+      "id": "25-action",
+      "frame": 5771,
+      "kind": "paper"
+    },
+    {
+      "id": "26-transition",
+      "frame": 5904,
+      "kind": "swish"
+    },
+    {
+      "id": "26-action",
+      "frame": 5966,
+      "kind": "paper"
+    },
+    {
+      "id": "27-transition",
+      "frame": 6108,
+      "kind": "swish"
+    },
+    {
+      "id": "27-action",
+      "frame": 6152,
+      "kind": "paper"
+    },
+    {
+      "id": "28-transition",
+      "frame": 6276,
+      "kind": "swish"
+    },
+    {
+      "id": "28-action",
+      "frame": 6329,
+      "kind": "paper"
+    },
+    {
+      "id": "29-transition",
+      "frame": 6468,
+      "kind": "swish"
+    },
+    {
+      "id": "29-action",
+      "frame": 6567,
+      "kind": "paper"
+    },
+    {
+      "id": "30-transition",
+      "frame": 6708,
+      "kind": "swish"
+    },
+    {
+      "id": "30-action",
+      "frame": 6802,
+      "kind": "paper"
+    },
+    {
+      "id": "31-transition",
+      "frame": 6936,
+      "kind": "swish"
+    },
+    {
+      "id": "31-action",
+      "frame": 6989,
+      "kind": "paper"
+    },
+    {
+      "id": "32-transition",
+      "frame": 7128,
+      "kind": "swish"
+    },
+    {
+      "id": "32-action",
+      "frame": 7247,
+      "kind": "paper"
+    },
+    {
+      "id": "33-transition",
+      "frame": 7296,
+      "kind": "swish"
+    },
+    {
+      "id": "33-action",
+      "frame": 7385,
+      "kind": "paper"
+    },
+    {
+      "id": "34-transition",
+      "frame": 7512,
+      "kind": "swish"
+    },
+    {
+      "id": "34-action",
+      "frame": 7601,
+      "kind": "paper"
+    },
+    {
+      "id": "35-transition",
+      "frame": 7728,
+      "kind": "swish"
+    },
+    {
+      "id": "35-action",
+      "frame": 7811,
+      "kind": "paper"
+    },
+    {
+      "id": "36-transition",
+      "frame": 8016,
+      "kind": "swish"
+    },
+    {
+      "id": "36-action",
+      "frame": 8072,
+      "kind": "click"
+    },
+    {
+      "id": "37-transition",
+      "frame": 8208,
+      "kind": "swish"
+    },
+    {
+      "id": "37-action",
+      "frame": 8283,
+      "kind": "paper"
+    },
+    {
+      "id": "38-transition",
+      "frame": 8400,
+      "kind": "swish"
+    },
+    {
+      "id": "38-action",
+      "frame": 8512,
+      "kind": "paper"
+    },
+    {
+      "id": "39-transition",
+      "frame": 8664,
+      "kind": "swish"
+    },
+    {
+      "id": "39-action",
+      "frame": 8778,
+      "kind": "paper"
+    },
+    {
+      "id": "40-transition",
+      "frame": 8940,
+      "kind": "swish"
+    },
+    {
+      "id": "40-action",
+      "frame": 9079,
+      "kind": "paper"
+    },
+    {
+      "id": "41-transition",
+      "frame": 9144,
+      "kind": "swish"
+    },
+    {
+      "id": "41-action",
+      "frame": 9243,
+      "kind": "paper"
+    },
+    {
+      "id": "42-transition",
+      "frame": 9384,
+      "kind": "swish"
+    },
+    {
+      "id": "42-action",
+      "frame": 9446,
+      "kind": "paper"
+    },
+    {
+      "id": "43-transition",
+      "frame": 9600,
+      "kind": "swish"
+    },
+    {
+      "id": "43-action",
+      "frame": 9762,
+      "kind": "paper"
+    },
+    {
+      "id": "44-transition",
+      "frame": 9816,
+      "kind": "swish"
+    },
+    {
+      "id": "44-action",
+      "frame": 9917,
+      "kind": "paper"
+    },
+    {
+      "id": "45-transition",
+      "frame": 10056,
+      "kind": "swish"
+    },
+    {
+      "id": "45-action",
+      "frame": 10168,
+      "kind": "paper"
+    },
+    {
+      "id": "46-transition",
+      "frame": 10320,
+      "kind": "swish"
+    },
+    {
+      "id": "46-action",
+      "frame": 10413,
+      "kind": "paper"
+    },
+    {
+      "id": "47-transition",
+      "frame": 10536,
+      "kind": "swish"
+    },
+    {
+      "id": "47-action",
+      "frame": 10641,
+      "kind": "paper"
+    },
+    {
+      "id": "48-transition",
+      "frame": 10788,
+      "kind": "swish"
+    },
+    {
+      "id": "48-action",
+      "frame": 10813,
+      "kind": "paper"
+    },
+    {
+      "id": "49-transition",
+      "frame": 10980,
+      "kind": "swish"
+    },
+    {
+      "id": "49-action",
+      "frame": 11078,
+      "kind": "paper"
+    },
+    {
+      "id": "50-transition",
+      "frame": 11220,
+      "kind": "swish"
+    },
+    {
+      "id": "50-action",
+      "frame": 11329,
+      "kind": "paper"
+    },
+    {
+      "id": "51-transition",
+      "frame": 11484,
+      "kind": "swish"
+    },
+    {
+      "id": "51-action",
+      "frame": 11590,
+      "kind": "paper"
+    },
+    {
+      "id": "52-transition",
+      "frame": 11724,
+      "kind": "swish"
+    },
+    {
+      "id": "52-action",
+      "frame": 11836,
+      "kind": "paper"
+    },
+    {
+      "id": "53-transition",
+      "frame": 11988,
+      "kind": "swish"
+    },
+    {
+      "id": "53-action",
+      "frame": 12103,
+      "kind": "paper"
+    },
+    {
+      "id": "54-transition",
+      "frame": 12288,
+      "kind": "swish"
+    },
+    {
+      "id": "54-action",
+      "frame": 12391,
+      "kind": "click"
+    },
+    {
+      "id": "55-transition",
+      "frame": 12540,
+      "kind": "swish"
+    },
+    {
+      "id": "55-action",
+      "frame": 12639,
+      "kind": "click"
+    },
+    {
+      "id": "56-transition",
+      "frame": 12780,
+      "kind": "swish"
+    },
+    {
+      "id": "56-action",
+      "frame": 12886,
+      "kind": "click"
+    },
+    {
+      "id": "57-transition",
+      "frame": 13032,
+      "kind": "swish"
+    },
+    {
+      "id": "57-action",
+      "frame": 13145,
+      "kind": "paper"
+    },
+    {
+      "id": "58-transition",
+      "frame": 13308,
+      "kind": "swish"
+    },
+    {
+      "id": "58-action",
+      "frame": 13422,
+      "kind": "paper"
+    },
+    {
+      "id": "59-transition",
+      "frame": 13584,
+      "kind": "swish"
+    },
+    {
+      "id": "59-action",
+      "frame": 13686,
+      "kind": "paper"
+    },
+    {
+      "id": "60-transition",
+      "frame": 13824,
+      "kind": "swish"
+    },
+    {
+      "id": "60-action",
+      "frame": 13929,
+      "kind": "paper"
+    },
+    {
+      "id": "61-transition",
+      "frame": 14064,
+      "kind": "swish"
+    },
+    {
+      "id": "61-action",
+      "frame": 14117,
+      "kind": "paper"
+    },
+    {
+      "id": "62-transition",
+      "frame": 14268,
+      "kind": "swish"
+    },
+    {
+      "id": "62-action",
+      "frame": 14363,
+      "kind": "paper"
+    },
+    {
+      "id": "63-transition",
+      "frame": 14496,
+      "kind": "swish"
+    },
+    {
+      "id": "63-action",
+      "frame": 14549,
+      "kind": "paper"
+    },
+    {
+      "id": "64-transition",
+      "frame": 14688,
+      "kind": "swish"
+    },
+    {
+      "id": "64-action",
+      "frame": 14741,
+      "kind": "paper"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "checked_on": "2026-10-23",
+  "claims": [
+    {
+      "lines": [
+        "04",
+        "05",
+        "06",
+        "07",
+        "48",
+        "49",
+        "50"
+      ],
+      "claim": "Assisted performance, unaided performance, delayed retention and transfer are distinct outcomes.",
+      "source": "https://bjorklab.psych.ucla.edu/research/",
+      "verification": "Official lab research overview retrieved, especially testing, fluency and desirable difficulties. Practical sequence is editorial synthesis."
+    },
+    {
+      "lines": [
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "claim": "Nearly 1000 Turkish high-school math students; GPT Base practice grades 48% above control, unaided exam grades 17% below control. Teacher-hint safeguards largely mitigated the penalty without a statistically significant positive exam effect.",
+      "source": "https://doi.org/10.1073/pnas.2422633122",
+      "author_manuscript": "https://hamsabastani.github.io/education_llm.pdf",
+      "verification": "Author PDF and publisher indexed text retrieved. Relative changes, not percentage points. No claim of permanent harm."
+    },
+    {
+      "lines": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "claim": "A separate structured college physics tutor improved immediate post-test performance compared with active classroom learning.",
+      "source": "https://doi.org/10.1038/s41598-025-97652-6",
+      "verification": "Publisher indexed abstract and results retrieved. Direct PDF request redirected to inaccessible cookie authorization. No claim of universal superiority or months-long retention."
+    },
+    {
+      "lines": [
+        "28",
+        "29"
+      ],
+      "claim": "Worked examples can help novices; unguided struggle is not a universal recommendation.",
+      "source": "https://doi.org/10.1080/01443410.2023.2273762",
+      "verification": "Publisher indexed full text retrieved. Randomized novice Year-7 algebra study; retention and near-transfer favored worked examples. No effect size narrated."
+    },
+    {
+      "lines": [
+        "26",
+        "27",
+        "31",
+        "32",
+        "36",
+        "37",
+        "40",
+        "42",
+        "43",
+        "61",
+        "63",
+        "64"
+      ],
+      "claim": "A practical demonstration: attempt with appropriate guidance, seek a hint, hide the answer, explain and check, vary the task and return later.",
+      "source": "Editorial synthesis based on the cited literature; not an independently validated universal intervention.",
+      "verification": "Illustrative equations checked: 2*4+3=11; (15-3)/2=6. Ada is fictional, not a reported study participant."
+    },
+    {
+      "lines": [
+        "18",
+        "19",
+        "20",
+        "21",
+        "22"
+      ],
+      "claim": "In prose-passage experiments, repeated study helped more on an immediate test, while retrieval practice favored delayed retention; repeated study also increased confidence. This is not an AI trial.",
+      "source": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01693.x/",
+      "verification": "Publisher abstract retrieved 2026-10-23; no effect size or universal guarantee asserted."
+    },
+    {
+      "lines": [
+        "23",
+        "24"
+      ],
+      "claim": "Rohrer and Taylor separately tested spaced mathematics practice and mixed problem types. Each favored later test performance relative to its comparison.",
+      "source": "https://link.springer.com/article/10.1007/s11251-007-9015-8",
+      "verification": "Publisher abstract retrieved 2026-10-23. Distinct experiments; no causal effect assigned to a chatbot."
+    },
+    {
+      "lines": [
+        "30",
+        "33",
+        "34",
+        "35",
+        "39",
+        "41",
+        "44",
+        "45",
+        "46",
+        "47",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56",
+        "58",
+        "59",
+        "60",
+        "62",
+        "25",
+        "38",
+        "57"
+      ],
+      "claim": "Original instructional demonstrations and editorial applications, not additional experimental findings. Algebra invariants and executable code examples are checked separately.",
+      "source": "Original teaching illustrations",
+      "verification": "No invented study, effect size or public individual."
+    }
+  ]
+}

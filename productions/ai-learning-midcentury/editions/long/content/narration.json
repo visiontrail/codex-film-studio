@@ -1,0 +1,976 @@
+[
+  {
+    "scene": "hook",
+    "text": "Meet Ada. Her homework is finished. The answer looks perfectly clear. But close the screen, and something changes.",
+    "caption": "The page is finished. Is the learning?",
+    "purpose": "Ada closes a completed answer and hesitates over an empty page.",
+    "reference_range": [
+      0,
+      174
+    ],
+    "chapter": "01 \u00b7 The finished page",
+    "reuse_short_id": "01",
+    "id": "01"
+  },
+  {
+    "scene": "two_pages",
+    "title": "Two things can improve",
+    "caption": "A better product and a stronger skill are separate goals.",
+    "text": "An excellent answer is one kind of success. Being able to explain and adapt it yourself is another. They can grow together, but one does not guarantee the other.",
+    "chapter": "01 \u00b7 The finished page",
+    "purpose": "Two things can improve",
+    "reference_range": [
+      175,
+      300
+    ],
+    "left": [
+      "THE PRODUCT",
+      "Clear answer",
+      "Finished on time"
+    ],
+    "right": [
+      "THE LEARNER",
+      "Explain it",
+      "Use it again"
+    ],
+    "id": "02"
+  },
+  {
+    "scene": "title",
+    "text": "Does artificial intelligence help you learn, or just finish? The difference shows up when the help goes away.",
+    "caption": "What remains when the help goes away?",
+    "purpose": "Title opens from the empty answer circle; Ada presents the question.",
+    "reference_range": [
+      42,
+      174
+    ],
+    "chapter": "01 \u00b7 The finished page",
+    "reuse_short_id": "02",
+    "id": "03"
+  },
+  {
+    "scene": "four_tests",
+    "text": "Finishing with help is one test. Doing it alone is another. Remembering later, and solving a different problem, are two more.",
+    "caption": "Help now. Alone. Later. Somewhere new.",
+    "purpose": "Four physical medallions expose four different outcome measures.",
+    "reference_range": [
+      744,
+      878
+    ],
+    "chapter": "01 \u00b7 The finished page",
+    "reuse_short_id": "03",
+    "id": "04"
+  },
+  {
+    "scene": "tests_detail",
+    "title": "First: performance with help",
+    "caption": "What can the person and the tool do together?",
+    "text": "With the tool open, you are measuring a partnership. The result can be impressive. It still leaves open how much of the method belongs to the learner.",
+    "chapter": "01 \u00b7 The finished page",
+    "purpose": "First: performance with help",
+    "reference_range": [
+      175,
+      300
+    ],
+    "focus": 0,
+    "id": "05"
+  },
+  {
+    "scene": "tests_detail",
+    "title": "Second: an independent attempt",
+    "caption": "Close the tool. Keep the question.",
+    "text": "Remove the assistance and try a fresh problem. Can you choose a first step, explain your choices, and notice when the result makes no sense?",
+    "chapter": "01 \u00b7 The finished page",
+    "purpose": "Second: an independent attempt",
+    "reference_range": [
+      175,
+      300
+    ],
+    "focus": 1,
+    "id": "06"
+  },
+  {
+    "scene": "tests_detail",
+    "title": "Third and fourth: later and elsewhere",
+    "caption": "A familiar page cannot answer every learning question.",
+    "text": "A later test asks what remains after time passes. A changed situation asks whether you recognize where the method applies. Those questions deserve separate evidence.",
+    "chapter": "01 \u00b7 The finished page",
+    "purpose": "Third and fourth: later and elsewhere",
+    "reference_range": [
+      175,
+      300
+    ],
+    "focus": 3,
+    "id": "07"
+  },
+  {
+    "scene": "turkey",
+    "text": "In a randomized study of nearly a thousand high school mathematics students in Turkey, an unrestricted chatbot improved practice grades by forty eight percent, compared with the control group.",
+    "caption": "Practice grades: +48% relative to control.",
+    "purpose": "A Turkish classroom and a GPT-4 terminal establish the randomized study; the practice result stamps onto paper.",
+    "reference_range": [
+      175,
+      300
+    ],
+    "chapter": "02 \u00b7 What the studies measured",
+    "reuse_short_id": "04",
+    "id": "08"
+  },
+  {
+    "scene": "evidence_board",
+    "title": "Read the comparison carefully",
+    "caption": "Relative change is not a percentage-point change.",
+    "text": "That figure is relative to the control group's practice grades. It does not mean forty eight extra percentage points, or the same improvement for every student.",
+    "chapter": "02 \u00b7 What the studies measured",
+    "purpose": "Read the comparison carefully",
+    "reference_range": [
+      175,
+      300
+    ],
+    "lines": [
+      "PRACTICE WITH HELP",
+      "GPT Base: +48%",
+      "Relative to control"
+    ],
+    "aside": "Not +48 percentage points",
+    "tone": "blue",
+    "id": "09"
+  },
+  {
+    "scene": "exam",
+    "text": "But on the exam without the tool, that group scored seventeen percent lower. Better homework performance had hidden weaker independent performance.",
+    "caption": "Unaided exam grades: \u221217% relative to control.",
+    "purpose": "The screen is covered. A second test paper reveals the independent-performance reversal.",
+    "reference_range": [
+      175,
+      300
+    ],
+    "chapter": "02 \u00b7 What the studies measured",
+    "reuse_short_id": "05",
+    "id": "10"
+  },
+  {
+    "scene": "two_pages",
+    "title": "One experiment, two outcomes",
+    "caption": "Keep the practice result beside the unaided result.",
+    "text": "Random assignment provides stronger evidence than comparing people who chose a chatbot with those who did not. But the result still belongs to this particular setting.",
+    "chapter": "02 \u00b7 What the studies measured",
+    "purpose": "One experiment, two outcomes",
+    "reference_range": [
+      175,
+      300
+    ],
+    "left": [
+      "DURING PRACTICE",
+      "Tool available",
+      "Higher grades"
+    ],
+    "right": [
+      "UNAIDED EXAM",
+      "Tool removed",
+      "Lower grades"
+    ],
+    "id": "11"
+  },
+  {
+    "scene": "guardrails",
+    "text": "A tutor designed around teacher supplied hints largely removed that penalty. It did not produce a statistically significant exam improvement over the control group.",
+    "caption": "Teacher-designed hints changed the outcome.",
+    "purpose": "The answer card becomes a hint card; show mitigation without inventing an exam gain.",
+    "reference_range": [
+      307,
+      430
+    ],
+    "chapter": "02 \u00b7 What the studies measured",
+    "reuse_short_id": "06",
+    "id": "12"
+  },
+  {
+    "scene": "evidence_board",
+    "title": "The guardrails matter",
+    "caption": "Removing a penalty is different from proving a gain.",
+    "text": "The guarded tutor used teacher designed hints. Its result does not mean any friendly chatbot will teach well. The design of the help matters.",
+    "chapter": "02 \u00b7 What the studies measured",
+    "purpose": "The guardrails matter",
+    "reference_range": [
+      175,
+      300
+    ],
+    "lines": [
+      "TEACHER-DESIGNED HINTS",
+      "Penalty largely removed",
+      "No significant exam gain"
+    ],
+    "aside": "Specific design, specific comparison",
+    "tone": "gold",
+    "id": "13"
+  },
+  {
+    "scene": "physics",
+    "text": "In a separate college physics experiment, a carefully designed tutor led to higher immediate test scores than an active classroom lesson.",
+    "caption": "Tutor design matters.",
+    "purpose": "A physics learner tests a pendulum with a structured tutor; establish a separate experiment.",
+    "reference_range": [
+      307,
+      430
+    ],
+    "chapter": "02 \u00b7 What the studies measured",
+    "reuse_short_id": "07",
+    "id": "14"
+  },
+  {
+    "scene": "evidence_board",
+    "title": "Look at the actual teaching task",
+    "caption": "Different subjects. Different learners. Different tutors.",
+    "text": "This comparison involved a structured tutor and an active classroom lesson. It compares those teaching arrangements, not all machines with all teachers.",
+    "chapter": "02 \u00b7 What the studies measured",
+    "purpose": "Look at the actual teaching task",
+    "reference_range": [
+      175,
+      300
+    ],
+    "lines": [
+      "COLLEGE PHYSICS",
+      "Structured AI tutor",
+      "Active classroom comparison"
+    ],
+    "aside": "Immediate test outcome",
+    "tone": "olive",
+    "id": "15"
+  },
+  {
+    "scene": "limits",
+    "text": "These are different designs and different settings. Neither result tells us what every learner will remember months later.",
+    "caption": "An immediate test is not a long-term test.",
+    "purpose": "A moving calendar and clock distinguish immediate testing from later memory.",
+    "reference_range": [
+      655,
+      744
+    ],
+    "chapter": "02 \u00b7 What the studies measured",
+    "reuse_short_id": "08",
+    "id": "16"
+  },
+  {
+    "scene": "two_pages",
+    "title": "Avoid the universal headline",
+    "caption": "Ask what was taught, compared and measured.",
+    "text": "Together, these studies suggest asking which designs preserve the learner's thinking. They do not establish one universal percentage for how much artificial intelligence helps or harms learning.",
+    "chapter": "02 \u00b7 What the studies measured",
+    "purpose": "Avoid the universal headline",
+    "reference_range": [
+      175,
+      300
+    ],
+    "left": [
+      "ASK ABOUT DESIGN",
+      "Who learned?",
+      "What assistance?"
+    ],
+    "right": [
+      "ASK ABOUT TESTS",
+      "Compared with what?",
+      "Measured when?"
+    ],
+    "id": "17"
+  },
+  {
+    "scene": "reading",
+    "title": "The answer feels familiar",
+    "caption": "Following an explanation is one experience.",
+    "text": "Read a clear explanation twice and its steps can feel obvious. That feeling does not prove you could reconstruct the explanation without looking.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "The answer feels familiar",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "open",
+    "id": "18"
+  },
+  {
+    "scene": "reading",
+    "title": "Close the book",
+    "caption": "Reconstructing it is a different task.",
+    "text": "When the page disappears, its prompts disappear too. You must select the idea, retrieve the steps, and organize them. A blank sheet can expose hidden gaps.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "Close the book",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "closed",
+    "id": "19"
+  },
+  {
+    "scene": "retrieval_study",
+    "title": "A classic retrieval experiment",
+    "caption": "Study passages. Practise recall. Test later.",
+    "text": "In a classic prose passage experiment, repeated study looked better on the immediate test. Earlier recall tests helped more when people were tested after a delay.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "A classic retrieval experiment",
+    "reference_range": [
+      175,
+      300
+    ],
+    "phase": "result",
+    "id": "20"
+  },
+  {
+    "scene": "retrieval_study",
+    "title": "Confidence did not settle it",
+    "caption": "A confident prediction is still a prediction.",
+    "text": "Repeated studying also increased confidence. Yet the delayed advantage favored retrieval practice. Feeling fluent and remembering later were different outcomes in these experiments.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "Confidence did not settle it",
+    "reference_range": [
+      175,
+      300
+    ],
+    "phase": "confidence",
+    "id": "21"
+  },
+  {
+    "scene": "practice_cards",
+    "title": "Retrieve, then check",
+    "caption": "An attempt gives feedback something to work on.",
+    "text": "Try recalling before reopening the answer, then check your work. Correct the missing or mistaken parts. An unsuccessful attempt is information, not a reason to keep practising errors.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "Retrieve, then check",
+    "reference_range": [
+      175,
+      300
+    ],
+    "labels": [
+      "TRY FROM MEMORY",
+      "CHECK THE SOURCE",
+      "CORRECT THE GAP"
+    ],
+    "id": "22"
+  },
+  {
+    "scene": "calendar_long",
+    "title": "Spread the attempts",
+    "caption": "Return after some time has passed.",
+    "text": "In a mathematics experiment by Rohrer and Taylor, practice spread across sessions produced better performance a week later than practice concentrated in one session.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "Spread the attempts",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "spacing",
+    "id": "23"
+  },
+  {
+    "scene": "mix_cards",
+    "title": "Mix problems that need different methods",
+    "caption": "Choosing a method is part of the work.",
+    "text": "Their second experiment favored mixing problem types over blocking them on a later test. Mixing asks you to identify the problem before selecting a procedure.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "Mix problems that need different methods",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "mix",
+    "id": "24"
+  },
+  {
+    "scene": "two_pages",
+    "title": "Apply the principle with care",
+    "caption": "These learning studies were not chatbot trials.",
+    "text": "These studies support independent practice and later checks. They do not prove that one particular chatbot prompt or practice schedule will work for every person.",
+    "chapter": "03 \u00b7 Why easy can feel like learned",
+    "purpose": "Apply the principle with care",
+    "reference_range": [
+      175,
+      300
+    ],
+    "left": [
+      "RESEARCH SUPPORT",
+      "Retrieval",
+      "Spacing and mixing"
+    ],
+    "right": [
+      "PRACTICAL DESIGN",
+      "Choose suitable help",
+      "Check the next attempt"
+    ],
+    "id": "25"
+  },
+  {
+    "scene": "choose",
+    "text": "So, when learning is the goal, give the tool a different job. Let it support the thinking you need to practise.",
+    "caption": "Keep the thinking you need to practise.",
+    "purpose": "Ada moves the terminal aside to put her own working sheet in the centre.",
+    "reference_range": [
+      175,
+      300
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "09",
+    "id": "26"
+  },
+  {
+    "scene": "step1",
+    "text": "Step one. Make an attempt. If you know enough to start, put your own first step on the page.",
+    "caption": "Step one. Make an attempt.",
+    "purpose": "First numbered medallion; Ada writes her own attempt.",
+    "reference_range": [
+      175,
+      300
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "10",
+    "id": "27"
+  },
+  {
+    "scene": "example",
+    "text": "For a completely new topic, study a clear worked example first. A beginner needs guidance, not a guessing contest.",
+    "caption": "New topic? Start with a worked example.",
+    "purpose": "Open example book supports a novice without pretending unassisted struggle is always best.",
+    "reference_range": [
+      307,
+      430
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "11",
+    "id": "28"
+  },
+  {
+    "scene": "reading",
+    "title": "Guidance has a job",
+    "caption": "Reduce confusion without removing every decision.",
+    "text": "If the notation is unfamiliar, struggling alone can be unhelpful. A worked example provides a path to inspect. Can the learner explain that path?",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "Guidance has a job",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "example",
+    "id": "29"
+  },
+  {
+    "scene": "balance",
+    "title": "An equation makes a promise",
+    "caption": "Both sides name the same quantity.",
+    "text": "Both sides of Ada's equation are equal. Each operation must preserve that equality. She is keeping the balance true, not moving symbols by magic.",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "An equation makes a promise",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "initial",
+    "id": "30"
+  },
+  {
+    "scene": "hint",
+    "text": "Now ask for a hint about the exact step you cannot explain. Ask it to check your reasoning before showing the whole solution.",
+    "caption": "Ask for the next useful hint.",
+    "purpose": "Round detail callout shows the specific hint request and a partial response.",
+    "reference_range": [
+      325,
+      420
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "12",
+    "id": "31"
+  },
+  {
+    "scene": "algebra",
+    "text": "Ada needs to solve two times a number, plus three, equals eleven. Her hint is simple: undo the addition first.",
+    "caption": "Undo the addition first.",
+    "purpose": "Close-up of the actual algebra and subtraction action.",
+    "reference_range": [
+      438,
+      526
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "13",
+    "id": "32"
+  },
+  {
+    "scene": "balance",
+    "title": "Subtract from both sides",
+    "caption": "Keep the equality true while simplifying.",
+    "text": "Subtracting three undoes the addition on the left. Doing the same on the right leaves eight. Two times the unknown must therefore equal eight.",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "Subtract from both sides",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "subtract",
+    "id": "33"
+  },
+  {
+    "scene": "balance",
+    "title": "Then divide both sides",
+    "caption": "Two equal groups share a total of eight.",
+    "text": "Divide both sides by two. One copy of the unknown equals four. That reasoning still applies when the next equation uses different numbers.",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "Then divide both sides",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "divide",
+    "id": "34"
+  },
+  {
+    "scene": "practice_cards",
+    "title": "A small check before moving on",
+    "caption": "Pause and explain one step in your own words.",
+    "text": "Explain why three is subtracted from both sides. If your only reason is that the chatbot said so, return to the meaning of equality.",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "A small check before moving on",
+    "reference_range": [
+      175,
+      300
+    ],
+    "labels": [
+      "WHY SUBTRACT THREE?",
+      "WHY BOTH SIDES?",
+      "WHAT STAYS EQUAL?"
+    ],
+    "hold": 4,
+    "id": "35"
+  },
+  {
+    "scene": "step2",
+    "text": "Step two. Hide the answer. Close the screen. Take a fresh sheet, and explain the method from memory.",
+    "caption": "Step two. Hide the answer.",
+    "purpose": "Second numbered medallion; a large gloved hand shuts the computer.",
+    "reference_range": [
+      438,
+      526
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "14",
+    "id": "36"
+  },
+  {
+    "scene": "retrieve",
+    "text": "Ada subtracts three from both sides. Then she divides both sides by two. The number is four. Each step has a reason.",
+    "caption": "Explain why each step works.",
+    "purpose": "An overhead page reveals the reasoning one step at a time.",
+    "reference_range": [
+      528,
+      655
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "15",
+    "id": "37"
+  },
+  {
+    "scene": "reading",
+    "title": "A missing step tells you where to look",
+    "caption": "Use the smallest useful piece of help.",
+    "text": "Suppose Ada cannot explain the division. She can reopen that step, study its reason, and retry. She need not replace her entire attempt with a copied solution.",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "A missing step tells you where to look",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "gap",
+    "id": "38"
+  },
+  {
+    "scene": "error_work",
+    "title": "A mistake worth finding",
+    "caption": "Check the operation, not just the final number.",
+    "text": "If she subtracts three on the left but forgets the right, the work can still look orderly. Substituting her proposed answer into the original equation exposes the mistake.",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "A mistake worth finding",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "wrong",
+    "id": "39"
+  },
+  {
+    "scene": "feedback",
+    "text": "Check the work. Put four back into the original equation. Two times four, plus three, is eleven. If something fails, correct it.",
+    "caption": "Check. Correct. Try again.",
+    "purpose": "Ada substitutes the result into the original equation and stamps a check.",
+    "reference_range": [
+      307,
+      430
+    ],
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "reuse_short_id": "16",
+    "id": "40"
+  },
+  {
+    "scene": "error_work",
+    "title": "Name the error, then retry",
+    "caption": "Repair the reason that produced the mistake.",
+    "text": "Useful feedback names the error: apply the same operation to both sides. Ada corrects that step and tries another equation. A green check tells her less.",
+    "chapter": "04 \u00b7 A lesson Ada can own",
+    "purpose": "Name the error, then retry",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "correct",
+    "id": "41"
+  },
+  {
+    "scene": "step3",
+    "text": "Step three. Change the problem. New numbers are a start. A new situation checks whether you can choose the method yourself.",
+    "caption": "Step three. Change the problem.",
+    "purpose": "Third numbered medallion; the algebra sheet becomes a shop problem.",
+    "reference_range": [
+      175,
+      300
+    ],
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "reuse_short_id": "17",
+    "id": "42"
+  },
+  {
+    "scene": "transfer",
+    "text": "Two notebooks and a three dollar delivery fee cost fifteen dollars. What does one notebook cost? Ada has to build the equation before solving it.",
+    "caption": "Choose the method in a new situation.",
+    "purpose": "Two notebooks, a delivery tag and a receipt establish a real transfer example.",
+    "reference_range": [
+      528,
+      655
+    ],
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "reuse_short_id": "18",
+    "id": "43"
+  },
+  {
+    "scene": "transfer_model",
+    "title": "Build the equation first",
+    "caption": "Name the unknown before calculating.",
+    "text": "Let the unknown name one notebook's price. Two identical notebooks cost twice that amount. Delivery is charged once, adding three dollars to the total.",
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "purpose": "Build the equation first",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "build",
+    "id": "44"
+  },
+  {
+    "scene": "transfer_model",
+    "title": "The same structure, a new story",
+    "caption": "Two notebook prices plus one fee equal fifteen.",
+    "text": "Remove the three dollar delivery fee from fifteen dollars. Twelve dollars remain for two notebooks. Divide by two. The price is six dollars per notebook. This calculation follows the same equation structure.",
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "purpose": "The same structure, a new story",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "solve",
+    "id": "45"
+  },
+  {
+    "scene": "transfer_model",
+    "title": "Check against the situation",
+    "caption": "Does the answer account for every part of the cost?",
+    "text": "Two notebooks at six dollars cost twelve. Add the three dollar fee: fifteen. The check connects the calculation back to the situation in the question.",
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "purpose": "Check against the situation",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "check",
+    "id": "46"
+  },
+  {
+    "scene": "mix_cards",
+    "title": "A changed story may need a changed model",
+    "caption": "Do not apply the last procedure automatically.",
+    "text": "If delivery is charged for each notebook, the equation changes. Similar words can hide different relationships. Explain which costs repeat before choosing a calculation.",
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "purpose": "A changed story may need a changed model",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "fees",
+    "id": "47"
+  },
+  {
+    "scene": "later",
+    "text": "Come back later for another fresh problem, without the tool. That checks retention separately from what feels easy right now.",
+    "caption": "Return later. Try without the tool.",
+    "purpose": "Calendar page turns; a clean question awaits Ada with the computer closed.",
+    "reference_range": [
+      655,
+      744
+    ],
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "reuse_short_id": "19",
+    "id": "48"
+  },
+  {
+    "scene": "calendar_long",
+    "title": "Make the later check fresh",
+    "caption": "Use a new question without the worked solution beside it.",
+    "text": "Use a fresh question for the later attempt. Put the old solution away. Record what you can do independently, then decide what to revisit.",
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "purpose": "Make the later check fresh",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "return",
+    "id": "49"
+  },
+  {
+    "scene": "two_pages",
+    "title": "Compare prediction with performance",
+    "caption": "Let evidence update your confidence.",
+    "text": "Before checking, predict what you can explain. Compare that prediction with your actual work. Use the gap to choose your next practice, rather than relying on ease.",
+    "chapter": "05 \u00b7 Transfer and a later return",
+    "purpose": "Compare prediction with performance",
+    "reference_range": [
+      175,
+      300
+    ],
+    "left": [
+      "BEFORE THE ATTEMPT",
+      "What can I explain?",
+      "Make a prediction"
+    ],
+    "right": [
+      "AFTER THE ATTEMPT",
+      "What did I do?",
+      "Find the next gap"
+    ],
+    "id": "50"
+  },
+  {
+    "scene": "writing",
+    "title": "Use the same idea when writing",
+    "caption": "Choose the writing skill you want to practise.",
+    "text": "For writing, a chatbot's rewrite may improve the document. To practise argument, Ada can first state her own claim and the evidence she thinks supports it.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "Use the same idea when writing",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "claim",
+    "id": "51"
+  },
+  {
+    "scene": "writing",
+    "title": "Ask for a reader\u2019s question",
+    "caption": "Locate the weakness before accepting a rewrite.",
+    "text": "Ask which sentence is unsupported, or what a skeptical reader would question. Then revise the paragraph yourself and explain the change. Keep that decision with the writer.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "Ask for a reader\u2019s question",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "question",
+    "id": "52"
+  },
+  {
+    "scene": "writing",
+    "title": "Try another paragraph",
+    "caption": "A polished draft is useful; a new attempt tests the skill.",
+    "text": "Later, write another paragraph without those suggestions. This adapts the routine to writing; it is not evidence that these exact prompts have been experimentally validated.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "Try another paragraph",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "new",
+    "id": "53"
+  },
+  {
+    "scene": "code",
+    "title": "For code, predict before running",
+    "caption": "Explain what the program will do.",
+    "text": "For programming, explain what each line changes. Predict the result for a specific input, then run the function. Compare the execution with your prediction.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "For code, predict before running",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "trace",
+    "id": "54"
+  },
+  {
+    "scene": "code",
+    "title": "A passing example is only one case",
+    "caption": "Test the boundary your explanation depends on.",
+    "text": "This function returns the first item in a list. It works for a nonempty list. What happens with an empty one? Test the assumption behind that first success.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "A passing example is only one case",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "empty",
+    "id": "55"
+  },
+  {
+    "scene": "code",
+    "title": "Make and explain the repair",
+    "caption": "A new requirement creates another independent attempt.",
+    "text": "She adds an explicit check for an empty list. She explains what each branch returns. Then she tests a new requirement on her own, instead of simply accepting a patch.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "Make and explain the repair",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "repair",
+    "id": "56"
+  },
+  {
+    "scene": "evidence_board",
+    "title": "The tool\u2019s explanation also needs checking",
+    "caption": "Use the relevant source, calculation or test.",
+    "text": "A clear explanation can be wrong. Check equations by substitution, code with suitable tests, and factual claims against reliable sources. The system's confidence is not independent verification.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "The tool\u2019s explanation also needs checking",
+    "reference_range": [
+      175,
+      300
+    ],
+    "lines": [
+      "CHECK THE CLAIM",
+      "Calculate or execute",
+      "Consult the source"
+    ],
+    "aside": "Confidence is not a verification method",
+    "tone": "blue",
+    "id": "57"
+  },
+  {
+    "scene": "two_pages",
+    "title": "Support can remove the wrong obstacle",
+    "caption": "Keep the target skill clear.",
+    "text": "Language or accessibility support can free attention for the target skill. Practise that skill independently where appropriate; do not demand that every useful support disappear.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "Support can remove the wrong obstacle",
+    "reference_range": [
+      175,
+      300
+    ],
+    "left": [
+      "USEFUL SUPPORT",
+      "Readable language",
+      "Accessible material"
+    ],
+    "right": [
+      "TARGET SKILL",
+      "Explain the idea",
+      "Make the decision"
+    ],
+    "id": "58"
+  },
+  {
+    "scene": "two_pages",
+    "title": "Sometimes the goal is the finished product",
+    "caption": "Decide what you need from this session.",
+    "text": "Sometimes a finished product is the goal. That is a different choice. Decide what to delegate, what to verify, and which capability you want to retain.",
+    "chapter": "06 \u00b7 Beyond mathematics",
+    "purpose": "Sometimes the goal is the finished product",
+    "reference_range": [
+      175,
+      300
+    ],
+    "left": [
+      "PRODUCTION SESSION",
+      "Finish the task",
+      "Verify the output"
+    ],
+    "right": [
+      "LEARNING SESSION",
+      "Practise the skill",
+      "Verify the next attempt"
+    ],
+    "id": "59"
+  },
+  {
+    "scene": "practice_cards",
+    "title": "Turn the idea into one small session",
+    "caption": "Choose a skill, a question and a later check.",
+    "text": "Choose one skill to retain. Pick a suitable question and the help needed to begin. Reserve a fresh question for a later independent attempt.",
+    "chapter": "07 \u00b7 Your next session",
+    "purpose": "Turn the idea into one small session",
+    "reference_range": [
+      175,
+      300
+    ],
+    "labels": [
+      "ONE TARGET SKILL",
+      "ONE SUITABLE QUESTION",
+      "ONE LATER CHECK"
+    ],
+    "id": "60"
+  },
+  {
+    "scene": "summary",
+    "text": "Attempt with suitable guidance. Hide, explain, and check. Change the problem, then return later. Keep the next independent attempt in view.",
+    "caption": "Attempt. Explain. Check. Transfer. Return.",
+    "purpose": "Pull back from the detail into the three-step manual card.",
+    "reference_range": [
+      744,
+      878
+    ],
+    "chapter": "07 \u00b7 Your next session",
+    "reuse_short_id": "20",
+    "id": "61"
+  },
+  {
+    "scene": "practice_log",
+    "title": "Keep a useful practice record",
+    "caption": "Record the help, the gap and the next attempt.",
+    "text": "Record your attempt, the help used, the error corrected, and what you could do later. Look for progress in your own work, not the number of chatbot messages.",
+    "chapter": "07 \u00b7 Your next session",
+    "purpose": "Keep a useful practice record",
+    "reference_range": [
+      175,
+      300
+    ],
+    "mode": "log",
+    "id": "62"
+  },
+  {
+    "scene": "caution",
+    "text": "This is a practical check, not a universally proven recipe. The right amount of help depends on the learner and the task.",
+    "caption": "Match the help to the learner and the task.",
+    "purpose": "Tip ribbon makes the practical limits explicit.",
+    "reference_range": [
+      655,
+      744
+    ],
+    "chapter": "07 \u00b7 Your next session",
+    "reuse_short_id": "21",
+    "id": "63"
+  },
+  {
+    "scene": "closing",
+    "text": "A finished page is useful. A skill you can use again is something more. What can you do when the answer is gone?",
+    "caption": "What can you do when the answer is gone?",
+    "purpose": "Return to Ada and a new successful page, then close into a circular end card.",
+    "reference_range": [
+      878,
+      960
+    ],
+    "chapter": "07 \u00b7 Your next session",
+    "reuse_short_id": "22",
+    "id": "64"
+  }
+]

@@ -14,7 +14,7 @@ function stampValue(c,value,x,y,t,color=P.teal){floatIn(c,x,y,t,()=>{star(c,0,0,
 function topSheet(c,t,lines,shown=10){sheet(c,960,540,{s:1.35,rot:-.035,lines,progress:shown,title:'ADA’S OWN WORK'});pencil(c,1340,780,1.2);book(c,480,600,.8,P.blue)}
 function chatBubble(c,x,y,width,lines,color=P.paper){rect(c,x,y,width,lines.length*52+42,color,22,{w:3.3,seed:12});cel(c,[[x+35,y+lines.length*52+38],[x+10,y+lines.length*52+72],[x+77,y+lines.length*52+38]],color,{w:2.8});lines.forEach((l,i)=>label(c,l,x+width/2,y+51+i*52,{size:34,align:'center',max:width-44}))}
 
-function paintScene(c,shot,frame){
+export function paintScene(c,shot,frame){
   const t=(frame-shot.start)/24,q=Math.floor(t*12)/12,d=(shot.end-shot.start)/24
   const action=(shot.action-shot.start)/24,a=q-action,u=smooth((q-.5)/.55)
   const scene=shot.scene,color=colors[scene]

@@ -7,6 +7,8 @@ herself. The film moves from research evidence to a worked learning example.
 
 ## Watch and inspect
 
+- [Expanded seven-chapter edition](editions/long/README.md): guided algebra,
+  transfer, writing, programming and later independent practice.
 - [Final MP4](media/Does-AI-Help-You-Learn-Midcentury.mp4)
 - [English SRT](media/narration.en.srt) and [WebVTT](media/narration.en.vtt)
 - [Verification and limits](QA.md), [release hashes](release.json), [credits](CREDITS.md)
