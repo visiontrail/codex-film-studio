@@ -1,6 +1,6 @@
 import {W,H,INK,clamp,lerp,smooth,ease,hash,line,rr,oval,path,text,fitText,transformed,star,command,fuse,stamp} from './primitives.mjs';
 import {palettes,background,finish,mediumObject,materialPass} from './materials.mjs';
-import {hero} from './characters.mjs';
+import {hero,localContact} from './characters.mjs';
 import {blot,brush} from './brush.mjs';
 export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  let m=s.medium,p=palettes[m],dur=(s.end-s.start)/30,u=clamp(lt/dur),tick=Math.floor(lt*s.character_fps)/s.character_fps,pu=clamp(tick/dur),a=smooth((pu-.28)/.42),done=u>.76;
@@ -18,6 +18,7 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  if(['jump','carry','collect'].includes(s.action))hx=lerp(110,380,a);
  if(s.action==='jump')jump=Math.sin(a*Math.PI)*183;
  if(s.action==='carry'){hy=690-Math.sin(a*8*Math.PI)*5;lean=.1*Math.sin(a*5)}
+ if(s.action==='crack')hx=235;
  if(!s.success&&done){arm=.85;lean=-.15}
  const item=(x,y,scale=1,kind=s.object,rot=0)=>transformed(g,x,y,scale,rot,()=>mediumObject(g,m,0,0,1,kind));
  const bowl=(x=354,y=651)=>{
@@ -45,7 +46,9 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  case 'press':item(357,658,1.3);transformed(g,355,lerp(390,600,a<.7?a/.7:lerp(1,.25,(a-.7)/.3)),1,0,()=>{rr(g,-15,-70,30,66,4,p.hero,p.ink,3);rr(g,-62,-10,124,27,4,p.object,p.ink,4)});if(a>.6)bits(355,680,18,p.object,65);break;
  case 'roll':item(355,666,1.35,'dough');item(355+Math.sin(a*12)*42,633,1.4,'rollingpin');break;
  case 'cut':case 'crack':{
-  let split=smooth((a-.55)/.25);if(a<.62)item(355,647,1.3);else {g.save();g.beginPath();g.rect(250-split*30,550,104,170);g.clip();item(355-split*30,647,1.3);g.restore();g.save();g.beginPath();g.rect(355+split*30,550,150,170);g.clip();item(355+split*30,647,1.3);g.restore()}
+  let split=smooth((a-.55)/.25),kind=s.action==='crack'&&s.object==='seed'?'seedpod':s.object;
+  if(a<.62)item(355,647,1.3,kind);else {g.save();g.beginPath();g.rect(250-split*30,550,104,170);g.clip();item(355-split*30,647,1.3,kind);g.restore();g.save();g.beginPath();g.rect(355+split*30,550,150,170);g.clip();item(355+split*30,647,1.3,kind);g.restore()}
+  if(kind==='seedpod'&&split>.25)for(let i=0;i<3;i++)item(350+i*6,647+split*(30+i*8),.20,'seed');
   if(s.action==='cut'){let ky=lerp(396,644,clamp(a*1.4));path(g,[[344,ky-90],[364,ky-90],[364,ky+30],[344,ky+12]],p.paper,p.ink,3);rr(g,342,ky-137,24,52,5,p.accent,p.ink,3)}
   if(!s.success&&a>.6){bits(355,640,26,p.object,125*split);item(470+split*70,665+split*105,.45,'crumb',split*6);text(g,'CRUNCH.',350,390,26,p.accent,null,0,'serif')}break;
  }
@@ -71,27 +74,48 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  }
  case 'tie':item(365,615,1.5);line(g,[[300,lerp(510,610,a)],[417,lerp(710,610,a)]],p.accent,6);if(done){g.beginPath();g.ellipse(350,597,20,12,-.5,0,6.28);g.ellipse(382,597,20,12,.5,0,6.28);g.strokeStyle=p.accent;g.lineWidth=6;g.stroke();line(g,[[365,608],[345,648]],p.accent,5);line(g,[[365,608],[385,644]],p.accent,5)}break;
  case 'carry':item(hx+70,551,.8);rr(g,390,570,90,147,4,null,p.ink,4);text(g,'GOAL',434,548,23,p.ink,null,0,'Arial');break;
- case 'plant':
-  item(350,670,1.4,'pot');item(350,lerp(390,628,a),.7,'seed');if(done){line(g,[[350,635],[350,lerp(635,525,smooth((u-.76)/.15))]],p.ink,5);oval(g,333,552,23,10,p.ground,p.ink,2);oval(g,369,569,23,10,p.ground,p.ink,2)}break;
- case 'bend':
-  transformed(g,355,690,1,a<.6?a*.5:.3,()=>item(0,-75,1.7,'stake',Math.PI/2));if(a>.6){item(395+120*(a-.6),590+150*(a-.6),.8,'stick',a*5);bits(355,600,8,p.object,40);text(g,'SNAP.',350,380,29,p.ink,null,0,'serif')}break;
+ case 'plant':{
+  let drop=smooth((a-.18)/.82);item(350,670,1.4,'pot');
+  if(!done)item(lerp(300,350,drop),lerp(480,628,drop),.7,'seed');
+  if(done){let grow=smooth((u-.76)/.15);line(g,[[350,635],[350,lerp(635,525,grow)]],p.ink,5);if(grow>.2){oval(g,333,lerp(635,552,grow),23*grow,10*grow,p.ground,p.ink,2);oval(g,369,lerp(635,569,grow),23*grow,10*grow,p.ground,p.ink,2)}}break;
+ }
+ case 'bend':{
+  const broken=smooth((a-.6)/.4);
+  transformed(g,355,690,1,Math.min(a*.5,.3),()=>{
+   g.save();g.beginPath();g.rect(-25,-100,50,165);g.clip();item(0,-75,1.7,'stake',Math.PI/2);g.restore();
+   transformed(g,broken*65,-100+broken*45,1,broken*1.2,()=>{g.save();g.beginPath();g.rect(-25,-160,50,160);g.clip();item(0,25,1.7,'stake',Math.PI/2);g.restore()});
+  });
+  if(a>.6){bits(355,600,8,p.object,40);text(g,'SNAP.',350,380,29,p.ink,null,0,'serif')}break;
+ }
  default:item(350,630,1.3);
  }
  // Put the performer in front of scenery but behind the action cue.
- let target=null;
- if(s.action==='scoop')target=[lerp(270,350,a)-48,lerp(490,605,a)-Math.sin(a*Math.PI)*50];
- if(s.action==='pour')target=[304,456];
+ let target=null,leftTarget=null;
+ const point=(x,y,dx,dy,rotation)=>[x+dx*Math.cos(rotation)-dy*Math.sin(rotation),y+dx*Math.sin(rotation)+dy*Math.cos(rotation)];
+ if(s.action==='scoop')target=point(lerp(270,350,a),lerp(490,605,a)-Math.sin(a*Math.PI)*50,-48,0,-.5+a);
+ if(s.action==='pour')target=point(304,456,0,-45,-a*1.35);
  if(s.action==='stir')target=[355+Math.sin(Math.sin(a*18)*.55)*92,604-Math.cos(Math.sin(a*18)*.55)*92];
- if(s.action==='roll')target=[355+Math.sin(a*12)*42-70,633];
+ if(s.action==='roll')target=[355+Math.sin(a*12)*42-85.4,633];
  if(s.action==='cut')target=[355,lerp(396,644,clamp(a*1.4))-115];
- if(s.action==='fan')target=[258,576];
- if(s.action==='carry')target=[hx+65,590];
+ if(s.action==='fan')target=point(258,496,0,80,Math.sin(a*18)*.35);
+ if(s.action==='carry')target=[hx+70,551+.8*(s.object==='tree'||s.object==='flower'?38:27)];
  if(s.action==='catch')target=[305,642];
  if(s.action==='press')target=[355,lerp(390,600,a<.7?a/.7:lerp(1,.25,(a-.7)/.3))-55];
  if(s.action==='fold')target=[lerp(225,315,smooth(a)),lerp(560,646,smooth(a))];
  if(s.action==='sprinkle')target=[290,400];
  if(s.action==='tie')target=[300,lerp(510,610,a)];
- if(m!=='blueprint')hero(g,m,hx,hy,hs,{arm,lean,jump,target:target?[(target[0]-hx)/hs,(target[1]-hy+jump)/hs]:null,face:!s.success&&done?'shock':'happy'},film.hero);
+ if(s.action==='crack'){
+  const split=smooth((a-.55)/.25),grip=s.object==='seed'?38:24;
+  leftTarget=[355-split*30-grip,637];target=[355+split*30+grip,637];
+ }
+ if(s.action==='plant'){
+  const release=smooth((a-.18)/.28);target=[lerp(300,hx+95,release),lerp(480,hy-100,release)];
+ }
+ if(s.action==='bend'){
+  const contact=point(355,690,0,-125,Math.min(a*.5,.3)),release=smooth((a-.6)/.25);
+  target=[lerp(contact[0],hx+100,release),lerp(contact[1],hy-135,release)];
+ }
+ if(m!=='blueprint')hero(g,m,hx,hy,hs,{arm,lean,jump,target:target?localContact(target,hx,hy,hs,lean,jump):null,leftTarget:leftTarget?localContact(leftTarget,hx,hy,hs,lean,jump):null,face:!s.success&&done?'shock':'happy'},film.hero);
  if(done&&s.success){for(let i=0;i<5;i++){let an=i*1.25;star(g,358+Math.cos(an)*95,535+Math.sin(an)*90,8+hash(i)*5,p.accent)}}
  g.restore();
  if(m==='blueprint'){

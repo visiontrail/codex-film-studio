@@ -81,7 +81,22 @@ export function mediumObject(g,m,x,y,scale,kind,variant=0){
  else if(['flour','soil','compost'].includes(kind)){path(g,[[-38,22],[-29,-41],[23,-47],[39,21]],p.paper,p.ink,lw);rr(g,-26,-22,52,29,2,p.object,p.ink,2);text(g,kind==='flour'?'F':'S',0,-7,23,p.ink,null)}
  else if(['milk','water','bucket','pot'].includes(kind)){path(g,[[-37,-23],[37,-23],[26,35],[-26,35]],p.object,p.ink,lw);el(0,-23,37,10,m==='ink'?p.hero:'#66b6d2');if(kind!=='pot'){g.beginPath();g.arc(0,-16,29,Math.PI,Math.PI*2);g.strokeStyle=p.ink;g.lineWidth=4;g.stroke()}}
  else if(kind==='tree'||kind==='flower'||kind==='hedge'||kind==='vine'){line(g,[[0,38],[0,-50]],p.ink,7);for(let i=0;i<5;i++){let a=i*2.4;el(Math.cos(a)*30,-47+Math.sin(a)*24,23,15,kind==='flower'?p.accent:p.ground)}if(kind==='tree'){el(0,-73,42,30,p.ground);el(-25,-48,35,26,p.ground);el(30,-44,35,26,p.ground)}}
- else if(kind==='oven'||kind==='sprinkler'){rect(-49,-51,98,91,p.hero);rect(-38,-25,76,52,p.ink);el(28,-39,6,6,p.accent);el(-28,-39,6,6,p.object);line(g,[[-24,-2],[24,-2]],p.object,3)}
+ else if(kind==='oven'){rect(-49,-51,98,91,p.hero);rect(-38,-25,76,52,p.ink);el(28,-39,6,6,p.accent);el(-28,-39,6,6,p.object);line(g,[[-24,-2],[24,-2]],p.object,3)}
+ else if(kind==='sprinkler'){
+  // Irrigation controller, valve and hose; distinct from an oven front.
+  rect(-38,-55,76,63,p.paper,4);rect(-27,-43,54,22,p.ground,1);
+  text(g,'06:00',0,-32,12,p.ink,null,0,'monospace');el(-19,-7,4,4,p.accent);el(18,-7,4,4,p.accent);
+  line(g,[[0,8],[0,28],[43,28],[43,41]],p.ink,6);line(g,[[-13,17],[13,17]],p.accent,5);
+  line(g,[[43,41],[43,51],[23,63],[-35,63],[-56,48],[-56,30]],p.ink,4);
+  line(g,[[-67,28],[-45,28]],p.ink,5);
+  for(let i=0;i<5;i++)line(g,[[-56,25],[-78+i*11,-6-Math.sin(i/4*Math.PI)*20]],p.accent,2);
+ }
+ else if(kind==='seedpod'){
+  path(g,[[-43,-8],[-30,-25],[10,-30],[43,-8],[27,14],[-13,16]],p.ground,p.ink,lw);
+  line(g,[[0,-28],[3,-16],[-2,-5],[2,14]],p.ink,2);
+  for(let i=0;i<4;i++)line(g,[[-30+i*18,-17],[-24+i*18,6]],p.paper,2);
+  line(g,[[41,-8],[51,-18]],p.ink,3);
+ }
  else if(['box','shelter','tray','fence'].includes(kind)){rect(-52,-26,104,53,p.object,2);path(g,[[-52,-26],[-31,-48],[71,-48],[52,-26]],p.paper,p.ink,3);if(kind==='box'){line(g,[[0,-45],[0,26]],p.accent,10);line(g,[[-52,0],[52,0]],p.accent,10)}}
  else if(kind==='snail'){el(0,0,33,25,p.object);el(30,18,35,10,p.ground);line(g,[[50,15],[57,-15]],p.ink,3);el(57,-15,5,5,p.accent);g.beginPath();g.arc(0,0,15,0,5);g.strokeStyle=p.ink;g.stroke()}
  else if(kind==='puddle'){el(0,12,56,13,'#67b3c9');line(g,[[-25,10],[15,10]],p.paper,2)}

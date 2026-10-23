@@ -1,6 +1,12 @@
 import {line,rr,oval,path,text,transformed,INK,hash} from './primitives.mjs';
 import {palettes} from './materials.mjs';
 import {inkFigure} from './brush.mjs';
+// Convert a scene contact into the same local space used by the performer.
+// Subtracting translation alone makes a held tool drift whenever the body leans.
+export function localContact(point,x,y,scale,lean=0,jump=0){
+ const dx=(point[0]-x)/scale,dy=(point[1]-y+jump)/scale,c=Math.cos(lean),s=Math.sin(lean);
+ return [c*dx+s*dy,-s*dx+c*dy];
+}
 // Common identity: two pointed tufts, short cap, a single red chest button.
 // The silhouette is reconstructed in each medium, not a bitmap filter.
 export function hero(g,m,x,y,scale,pose={},role='baker'){
@@ -26,12 +32,13 @@ export function hero(g,m,x,y,scale,pose={},role='baker'){
   oval(g,-23,26,22,9,m==='pixel'?'#ef8457':light,p.ink,lw);oval(g,28,26,22,9,m==='pixel'?'#ef8457':light,p.ink,lw);
   path(g,[[-32,-85],[32,-85],[38,-17],[-38,-17]],body,p.ink,lw);
   path(g,[[19,-81],[32,-85],[38,-17],[19,-17]],m==='blueprint'?p.hero:p.ground,null);
-  line(g,[[-28,-77],[-59,-48-arm*48],[-68,-48-arm*48]],p.ink,lw+9);
-  line(g,[[-28,-77],[-59,-48-arm*48],[-68,-48-arm*48]],body,lw+3);
+  let left=pose.leftTarget||[-69,-48-arm*48],leftElbow=pose.leftTarget?[(-28+left[0])*.5,-70+(left[1]+70)*.45]:[-59,-48-arm*48],leftEnd=pose.leftTarget||[-68,-48-arm*48];
+  line(g,[[-28,-77],leftElbow,leftEnd],p.ink,lw+9);
+  line(g,[[-28,-77],leftElbow,leftEnd],body,lw+3);
   let hand=target||[72,-58-arm*55],elbow=[(30+hand[0])*.5,-70+(hand[1]+70)*.45];
   line(g,[[30,-78],elbow,hand],p.ink,lw+9);
   line(g,[[30,-78],elbow,hand],body,lw+3);
-  oval(g,-69,-48-arm*48,11,10,skin,p.ink,lw);oval(g,hand[0],hand[1],12,10,skin,p.ink,lw);
+  oval(g,left[0],left[1],11,10,skin,p.ink,lw);oval(g,hand[0],hand[1],12,10,skin,p.ink,lw);
   oval(g,0,-119,39,35,skin,p.ink,lw);
   path(g,[[-34,-139],[-32,-162],[-11,-148],[9,-148],[33,-164],[36,-139]],p.hero,p.ink,lw);
   rr(g,-33,-149,67,17,5,role==='baker'?light:p.ground,p.ink,lw);
