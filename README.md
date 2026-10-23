@@ -49,7 +49,7 @@ cd codex-film-studio
 Open this folder in Codex and ask:
 
 > Use the whiteboard style to make a three-minute film about how solar panels
-> work. Create it in films/solar-panels. Draw people and objects when they help
+> work. Create it outside this library in ../codex-film-studio-projects/solar-panels. Draw people and objects when they help
 > explain an idea. Use English narration and deliver a 1080p MP4. Inspect the
 > rendered result and repair problems before showing me the film.
 
@@ -106,7 +106,7 @@ produce different file bytes.
 python3 scripts/new_film.py my-film --style whiteboard
 ```
 
-Open `films/my-film` in Codex. See [TECHNIQUE.md](TECHNIQUE.md) for the file map,
+Open `../codex-film-studio-projects/my-film` in Codex. See [TECHNIQUE.md](TECHNIQUE.md) for the file map,
 speech setup and rendering commands. The starter contains the sample story
 as editable code; Codex must adapt its narration **and** illustrations.
 
@@ -114,6 +114,22 @@ as editable code; Codex must adapt its narration **and** illustrations.
 
 Each entry in `styles.json` points to its own guide, prompt, poster, demo and
 working template. See [Contributing a style](CONTRIBUTING.md).
+
+## Reusable methods
+
+[Art collage](methods/art-collage/README.md) contains visual and motion rules,
+portrait input contracts, material primitives and [frame-review tools](scripts/frame_review/README.md).
+Its starter has no example story, narration, character or brand asset:
+
+```sh
+python3 scripts/new_film.py my-film --method art-collage --output /path/to/my-film
+```
+
+Specific real people require portraits supplied by the new film's user. The
+reference person's likeness is optional; material, composition and motion are
+reviewed separately. Keep each new production outside this library. Contribute
+only reusable methods/tools or empty inputs back to the repository. Existing
+published demos remain legacy reference material.
 
 ## The public showcase
 

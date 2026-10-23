@@ -1,11 +1,24 @@
 # Codex Film Studio
 
-A growing collection of film styles with editable, working examples. Start
-with `styles.json` to find the available styles.
+A library of reusable film methods and styles. Start with `styles.json` for
+registered styles, or `methods/` for subject-independent production methods.
+
+New contributions must be methodology, generic tools or empty input contracts.
+Do not add a requested example's narration, claims, portraits, brand assets,
+story-specific scene code, films or review records to this library. Keep each
+production in an external project directory. Existing published demo assets are
+legacy content; do not silently rewrite or remove unrelated work.
+
+Reference-person likeness is not a required style property. A specific real
+person requires a portrait supplied by the user of the new production. Preserve
+that portrait's identity while adapting its paper/print treatment; do not carry
+a previous production's cast into a reusable method.
 
 For a film request, read `DIRECTOR.md`, `TECHNIQUE.md` and the selected
 `styles/<id>/STYLE.md`. Use `scripts/new_film.py <name> --style <id>` to make
-an independent working copy in `films/`. Keep the published example intact.
+an independent working copy outside the repository. Its default location is
+`../codex-film-studio-projects/<name>`; `--output` selects another external path.
+Use `--method art-collage` for an empty collage starter. Keep published examples intact.
 The repo-local `codex-film` skill describes this workflow.
 
 For an exact sample rebuild, use the released demo inputs and existing

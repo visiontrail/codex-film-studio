@@ -44,7 +44,7 @@ cd codex-film-studio
 在 Codex 中打开这个目录，粘贴：
 
 > 阅读仓库的 AGENTS.md 和白板风格说明。用白板讲解风格制作一个三分钟的
-> “太阳能电池如何工作”视频，放到 films/solar-panels。需要人物和具体对象
+> “太阳能电池如何工作”视频，放到仓库外的 ../codex-film-studio-projects/solar-panels。需要人物和具体对象
 > 的地方画出简笔画。使用英文配音，输出 1080p MP4。自行检查并修复画面和
 > 动作问题，完成后再让我看。
 
@@ -86,7 +86,7 @@ python3 scripts/serve.py
 python3 scripts/new_film.py my-film --style whiteboard
 ```
 
-然后用 Codex 打开 `films/my-film`。它是独立工作副本，不会修改风格样片。
+然后用 Codex 打开 `../codex-film-studio-projects/my-film`。它位于方法库之外，不会修改风格样片。
 修改主题必须同时修改脚本和画面，不能只替换字幕。
 
 新增风格的目录规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
@@ -107,3 +107,13 @@ python3 scripts/new_film.py my-film --style whiteboard
 代码和文档采用 [MIT](LICENSE)，原创样片与剧照采用
 [CC BY 4.0](MEDIA-LICENSE.md)。素材出处和许可证见
 [CREDITS.md](styles/whiteboard/studio/CREDITS.md)。
+
+## 可复用方法
+
+[艺术拼贴方法](methods/art-collage/README.md)提供材质、构图、动作、人物输入约定和逐帧审看工具，空白起步目录不包含具体选题、台词、人物图或品牌素材。
+
+```sh
+python3 scripts/new_film.py my-film --method art-collage --output /path/to/my-film
+```
+
+指定真实人物时，由后续使用者提供肖像。参考片人物长相不作为必须一致的风格属性；材质、构图、排版和动作分别检查。新制作项目全部放在仓库外，只把通用方法、工具和空白输入约定贡献回方法库。既有发布样片保留为历史参考。
