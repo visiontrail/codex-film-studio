@@ -24,7 +24,7 @@ export class Wax {
  begin(frame){this.letters.resetTransform();this.letters.clearRect(0,0,W,H);this.strokeIndex=0;this.strokeBudget=Infinity;this.frame=Math.floor(frame/2);this.ctx.resetTransform();this.ctx.clearRect(0,0,W,H);this.ctx.setTransform(1.5,0,0,1.5,0,0);}
  rnd(s){return hash(s,this.frame%7,33)}
  line(points,color=C.ink,width=3,pressure=.97,seed=1){
-  const available=this.strokeBudget-this.strokeIndex++;if(available<=0||points.length<2)return;if(available<1)points=points.slice(0,Math.max(2,Math.ceil(points.length*available)));const c=this.ctx;c.save();c.strokeStyle=color;c.globalAlpha=pressure;c.lineWidth=width;c.lineJoin='round';c.lineCap='round';c.beginPath();
+  const available=this.strokeBudget-this.strokeIndex++;if(available<=0||points.length<2)return;if(available<1)points=points.slice(0,Math.max(2,Math.ceil(points.length*available)));const c=this.ctx;c.save();c.strokeStyle=color;c.globalAlpha=pressure;c.lineWidth=width*(color===C.ink&&width<=6?(this.contourScale??1):1);c.lineJoin='round';c.lineCap='round';c.beginPath();
   points.forEach(([x,y],i)=>{const dx=(hash(i,seed,this.frame%5)-.5)*.75,dy=(hash(i+32,seed,this.frame%5)-.5)*.75;i?c.lineTo(x+dx,y+dy):c.moveTo(x+dx,y+dy)});c.stroke();c.restore();
  }
  curve(points,color=C.ink,width=3,pressure=.97){this.line(points,color,width,pressure,17)}
@@ -33,15 +33,28 @@ export class Wax {
   const c=this.ctx;let xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
   c.save();this.path(points);c.clip();c.globalAlpha=1;c.globalCompositeOperation='destination-out';c.fillStyle='#fff';c.fillRect(x0-2,y0-2,x1-x0+4,y1-y0+4);c.globalCompositeOperation='source-over';
   if(color){
-   c.fillStyle=color;c.globalAlpha=.19;if(this.strokeIndex<this.strokeBudget)c.fillRect(x0,y0,x1-x0,(y1-y0)*progress);
+   const pressure=({[C.yellow]:1.18,[C.peach]:1.13,[C.orange]:1.04,[C.green]:.78,[C.red]:.83,[C.blue]:.90,[C.purple]:.92})[color]??.96;
+   c.fillStyle=color;c.globalAlpha=.19*pressure;if(this.strokeIndex<this.strokeBudget)c.fillRect(x0,y0,x1-x0,(y1-y0)*progress);
    let ii=0;for(let y=y0-45;y<y1+50;y+=6.5){
     let yy=y+(hash(ii,seed)-.5)*3;let end=x0+(x1-x0+15)*clamp(progress*1.1);if(y>y0+(y1-y0)*progress+40)break;
     const pts=[];for(let x=x0-12;x<end+10;x+=8)pts.push([x,yy+(x-x0)*.2+(hash(ii,Math.round(x),seed)-.5)*2]);
-    this.line(pts,color,7.8+(hash(ii,seed+6)-.5)*2.2,.58+hash(ii,seed+2)*.25,seed+ii);ii++;
+    this.line(pts,color,7.8+(hash(ii,seed+6)-.5)*2.2,(.58+hash(ii,seed+2)*.25)*pressure,seed+ii);ii++;
    }
-   for(let y=y0-50;y<y1+50;y+=13){let pts=[[x0-8,y+20],[x1+10,y-(x1-x0)*.28]];this.line(pts,color,3.7,.24,seed+31)}
+   for(let y=y0-50;y<y1+50;y+=13){let pts=[[x0-8,y+20],[x1+10,y-(x1-x0)*.28]];this.line(pts,color,3.7,.24*pressure,seed+31)}
   }
-  c.restore();if(outline)this.line([...points,points[0]],C.ink,2.8,.96,seed);
+  c.restore();
+  // Short wax passes cross selected edges; they keep large fill shapes from
+  // looking perfectly clipped, without obscuring small facial features.
+  if(color&&x1-x0>55&&y1-y0>45&&this.strokeIndex<this.strokeBudget){
+   for(let i=0;i<points.length;i++){
+    const a=points[i],b=points[(i+1)%points.length],len=Math.hypot(b[0]-a[0],b[1]-a[1]);
+    for(let j=0;j<Math.floor(len/25);j++){
+     const q=(j+.45)/Math.max(1,Math.floor(len/25)),x=a[0]+(b[0]-a[0])*q,y=a[1]+(b[1]-a[1])*q;
+     if(hash(j+i*29,seed)>.48)this.line([[x-2,y-1],[x+3+hash(j,seed)*2,y+1.2]],color,2.2,.42,seed+i+j);
+    }
+   }
+  }
+  if(outline)this.line([...points,points[0]],C.ink,2.8,.96,seed);
  }
  ellipse(x,y,rx,ry,color,seed=1,outline=true){let pts=[];for(let i=0;i<60;i++){let a=i/60*Math.PI*2,noise=1+(hash(i,seed)-.5)*.024;pts.push([x+Math.cos(a)*rx*noise,y+Math.sin(a)*ry*noise]);}this.shape(pts,color,seed,outline);}
  rect(x,y,w,h,color,seed=1,outline=true){this.shape([[x,y],[x+w,y+.9],[x+w+1,y+h],[x-1,y+h-1]],color,seed,outline)}
@@ -50,11 +63,15 @@ export class Wax {
   const visible=Math.ceil(text.length*clamp(reveal));for(let i=0;i<text.length;i++){let w=c.measureText(text[i]).width;if(i<visible){c.save();c.translate(x+dx,y+(hash(i,71)-.5)*1.2);c.rotate((hash(i,18)-.5)*.025);c.fillStyle=color;c.globalAlpha=.99;c.fillText(text[i],0,0);this.letters.setTransform(c.getTransform());this.letters.font=c.font;this.letters.fillStyle=color;this.letters.globalAlpha=.82;this.letters.fillText(text[i],0,0);c.restore()}dx+=w;}c.restore();
  }
 }
-export function composite(wax,paper,out){
+export function composite(wax,paper,out,cameraScale=1){
  const c=out.getContext('2d'),ink=wax.ctx.getImageData(0,0,W,H).data,im=c.createImageData(W,H),d=im.data,p=paper.p,t=paper.tooth;
- for(let i=0;i<W*H;i++){let j=i*4,a=ink[j+3]/255,threshold=.97-a*.86,cover=ease((t[i]-threshold+.07)/.14)*Math.min(1,a*1.65);
+ const xx=Float32Array.from({length:W},(_,x)=>(x-W/2)/cameraScale+W/2),yy=Float32Array.from({length:H},(_,y)=>(y-H/2)/cameraScale+H/2);
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){let i=y*W+x,j=i*4,sx=xx[x],sy=yy[y],x0=Math.floor(sx),y0=Math.floor(sy),u=sx-x0,v=sy-y0;
+  const i0=y0*W+x0,i1=y0*W+Math.min(W-1,x0+1),i2=Math.min(H-1,y0+1)*W+x0,i3=Math.min(H-1,y0+1)*W+Math.min(W-1,x0+1);
+  const sample=(arr,k,stride=1)=>(arr[i0*stride+k]*(1-u)+arr[i1*stride+k]*u)*(1-v)+(arr[i2*stride+k]*(1-u)+arr[i3*stride+k]*u)*v;
+  const tooth=sample(t,0),a=ink[j+3]/255,threshold=.97-a*.86,cover=ease((tooth-threshold+.07)/.14)*Math.min(1,a*1.65);
   // Pigment is deposited on raised fibres. Wax never erases the paper relief.
-  for(let k=0;k<3;k++){const pigment=ink[j+k]*(.92+t[i]*.12);d[j+k]=p[j+k]*(1-cover)+pigment*cover;}
+  for(let k=0;k<3;k++){const pigment=ink[j+k]*(.92+tooth*.12);d[j+k]=sample(p,k,4)*(1-cover)+pigment*cover;}
   d[j+3]=255;
  }
  c.putImageData(im,0,0);c.drawImage(wax.letterCanvas,0,0);return out;
