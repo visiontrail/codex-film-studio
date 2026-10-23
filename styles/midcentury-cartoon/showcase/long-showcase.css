@@ -196,10 +196,11 @@ small,.eyebrow {
   flex-shrink:0;
 }
 
-.brand-star {
-  font-size:44px;
-  color:var(--brick);
-  line-height:1;
+.studio-mark {
+  width:44px;
+  height:44px;
+  display:block;
+  flex-shrink:0;
 }
 
 .main-nav {
@@ -781,8 +782,9 @@ html[lang=zh-CN] h2 {
   .wordmark {
     font-size:12px;
   }
-  .brand-star {
-    font-size:35px;
+  .studio-mark {
+    width:35px;
+    height:35px;
   }
   main {
     padding:0 18px;

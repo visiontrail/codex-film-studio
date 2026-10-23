@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="An illustrated film about learning with AI. Watch the seven-chapter story, explore its sources and make your own Mid-century Cartoon film.">
   <title>Does AI Help You Learn—or Just Finish? · Mid-century Cartoon</title>
-  <link rel="stylesheet" href="/styles/midcentury-cartoon/showcase/long-showcase.css">
-  <script type="module" src="/styles/midcentury-cartoon/showcase/long-showcase.mjs"></script>
+  <link rel="stylesheet" href="/styles/midcentury-cartoon/showcase/long-showcase.css?v=offset-frames-1">
+  <script type="module" src="/styles/midcentury-cartoon/showcase/long-showcase.mjs?v=offset-frames-1"></script>
 </head>
 <body>
   <a class="skip-link" data-section="film" href="/styles/midcentury-cartoon/showcase/long.html#film" data-zh="跳至影片">Skip to film</a>
   <header class="masthead">
-    <a class="wordmark" href="/" aria-label="Codex Film Studio catalog"><span class="brand-star" aria-hidden="true">✳</span><span>CODEX<br>FILM STUDIO</span></a>
+    <a class="wordmark" href="/" aria-label="Codex Film Studio catalog"><img class="studio-mark" src="/styles/midcentury-cartoon/identity/studio-mark.svg" alt="" width="44" height="44" aria-hidden="true"><span>CODEX<br>FILM STUDIO</span></a>
     <nav class="main-nav" aria-label="Main navigation" data-aria-zh="主导航">
       <a data-section="film" href="/styles/midcentury-cartoon/showcase/long.html#film" data-zh="看影片">The film</a>
       <a data-section="make" href="/styles/midcentury-cartoon/showcase/long.html#make" data-zh="开始创作">Make a film</a>
@@ -41,11 +41,11 @@
         <p class="film-meta"><span>1080P</span><span>24 FPS</span><span data-zh="英文旁白">ENGLISH NARRATION</span></p>
       </div>
       <figure class="screen">
-        <video id="film-player" controls playsinline preload="metadata" poster="review/stills/03-title.png" aria-label="Does AI Help You Learn—or Just Finish?" data-aria-zh="AI 帮你学会了，还是只帮你做完了？">
-          <source src="media/Does-AI-Help-You-Learn-Midcentury-Long.mp4" type="video/mp4">
+        <video id="film-player" controls playsinline preload="metadata" poster="review/stills/03-title.png?v=offset-frames-1" aria-label="Does AI Help You Learn—or Just Finish?" data-aria-zh="AI 帮你学会了，还是只帮你做完了？">
+          <source src="media/Does-AI-Help-You-Learn-Midcentury-Long.mp4?v=offset-frames-1" type="video/mp4">
           <track kind="subtitles" src="media/narration.en.vtt" srclang="en" label="English (verbatim)">
         </video>
-        <figcaption><span data-zh="暖纸、套色与一点爵士。让人物把道理演出来。">Warm paper, printed color and a little jazz. Ideas put into action.</span><a href="media/Does-AI-Help-You-Learn-Midcentury-Long.mp4" download data-zh="下载影片 ↗">Download film ↗</a></figcaption>
+        <figcaption><span data-zh="暖纸、套色与一点爵士。让人物把道理演出来。">Warm paper, printed color and a little jazz. Ideas put into action.</span><a href="media/Does-AI-Help-You-Learn-Midcentury-Long.mp4?v=offset-frames-1" download data-zh="下载影片 ↗">Download film ↗</a></figcaption>
       </figure>
       <div class="player-controls">
         <button type="button" id="play" disabled data-zh="播放 / 暂停">Play / pause</button>
@@ -91,10 +91,10 @@ cd codex-film-studio</code></pre></li>
         <input id="scrub" type="range" min="0" value="0" disabled aria-label="Comparison frame" data-aria-zh="对照帧号">
         <div class="pair"><figure><figcaption id="refLabel">LemoLab · Meet Pip</figcaption><img id="ref" alt="Indexed reference frame" data-alt-zh="参考片的指定帧" width="640" height="360"></figure><figure><figcaption id="newLabel" data-zh="本片 · Ada">This film · Ada</figcaption><img id="new" alt="Indexed final film frame" data-alt-zh="本片的指定帧" width="640" height="360"></figure></div><p id="purpose" class="muted" role="status"></p>
       </details>
-      <details class="review-notes"><summary data-zh="检查覆盖范围与保留记录">Review coverage & retained records</summary><p data-zh="15,012 帧已做连续缩略图对照，关键动作与文字另做原尺寸检查。这不等于每帧均以原分辨率检查。最终文件通过解码、旁白文本、字幕和播放检查；主观听审未完成，完整限制见 QA 记录。">All 15,012 frames were examined in consecutive thumbnail comparisons, with selected actions and text inspected at native resolution. This is not native-resolution inspection of every frame. Decode, narration-text, subtitle and playback checks passed; subjective listening was not completed. See the QA record for the full limits.</p><nav class="resource-links"><a href="QA.md" data-zh="QA 检查记录 ↗">QA record ↗</a><a href="release.json" data-zh="交付文件校验值 ↗">Release checksums ↗</a><a href="review/comparison/frames.csv" data-zh="逐帧测量数据 ↗">Frame measurements ↗</a><a href="review/comparison/summary.json" data-zh="配对方法 ↗">Pairing method ↗</a><a href="/styles/midcentury-cartoon/showcase/motion.html" data-zh="动作检查片段 ↗">Motion review ↗</a></nav></details>
+      <details class="review-notes"><summary data-zh="检查覆盖范围与保留记录">Review coverage & retained records</summary><p data-zh="本次双画格改版对全部 15,012 帧做了前后差异检查，并人工查看 65 个镜头及关键原尺寸细节。原版的连续缩略图检查单独保留，不将其当作新版的逐帧人工检查。新版通过解码与播放检查，原配音和配乐逐音频包保持一致；完整范围见 QA 记录。">The Offset Frames revision compares all 15,012 frames before and after the change, with manual review of 65 shots and selected native-resolution details. The original consecutive thumbnail review is retained separately; it is not claimed as manual review of every revised frame. The new export passes decode and playback checks, with the original voice and score preserved packet for packet. See the QA record for the full scope.</p><nav class="resource-links"><a href="QA.md" data-zh="QA 检查记录 ↗">QA record ↗</a><a href="release.json" data-zh="交付文件校验值 ↗">Release checksums ↗</a><a href="review/comparison/frames.csv" data-zh="逐帧测量数据 ↗">Frame measurements ↗</a><a href="review/comparison/summary.json" data-zh="配对方法 ↗">Pairing method ↗</a><a href="/styles/midcentury-cartoon/showcase/motion.html" data-zh="动作检查片段 ↗">Motion review ↗</a></nav></details>
     </section>
     <footer>
-      <div class="footer-main"><a class="wordmark" href="/"><span class="brand-star" aria-hidden="true">✳</span><span>CODEX<br>FILM STUDIO</span></a><p><span data-zh="制作工具：">Made with</span> <a href="https://github.com/visiontrail/codex-film-studio" target="_blank" rel="noopener noreferrer">Codex Film Studio</a>.<br><a href="CREDITS.md" data-zh="署名与许可 ↗">Credits & licenses ↗</a></p><p><span data-zh="为">Made for</span> <a href="https://x.com/LeoGuoLabs" target="_blank" rel="noopener noreferrer">LeoGuoLabs</a><br><span data-zh="2026 · 长篇版">2026 · Long edition</span></p></div>
+      <div class="footer-main"><a class="wordmark" href="/"><img class="studio-mark" src="/styles/midcentury-cartoon/identity/studio-mark.svg" alt="" width="44" height="44" aria-hidden="true"><span>CODEX<br>FILM STUDIO</span></a><p><span data-zh="制作工具：">Made with</span> <a href="https://github.com/visiontrail/codex-film-studio" target="_blank" rel="noopener noreferrer">Codex Film Studio</a>.<br><a href="CREDITS.md" data-zh="署名与许可 ↗">Credits & licenses ↗</a></p><p><span data-zh="为">Made for</span> <a href="https://x.com/LeoGuoLabs" target="_blank" rel="noopener noreferrer">LeoGuoLabs</a><br><span data-zh="2026 · 长篇版">2026 · Long edition</span></p></div>
       <p class="source-credit"><span data-zh="风格与风格库灵感：">Style and style-library inspiration: </span><a href="https://x.com/lemomo_ai" target="_blank" rel="noopener noreferrer">Lemomo / LemoLab (@lemomo_ai)</a> · <a href="https://github.com/lemomo-ai/lemo-opuscar" target="_blank" rel="noopener noreferrer">lemo-opuscar</a> · <span data-zh="参考影片：Meet Pip — Mid-century Cartoon。">Reference film: Meet Pip — Mid-century Cartoon.</span></p>
       <p class="colophon" data-zh="原创 Ada 插画与动画 · Chatterbox 旁白 · 原创合成配乐。字体、参考材料及品牌标记的署名与许可见 Credits。">Original Ada illustration and animation · Chatterbox narration · original synthesized music. Font, reference and brand-mark attribution and licenses are recorded in Credits.</p>
       <a class="back-top" data-section="film" href="/styles/midcentury-cartoon/showcase/long.html#film" data-zh="回到影片 ↑">Back to the film ↑</a>

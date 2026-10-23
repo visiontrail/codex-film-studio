@@ -102,7 +102,7 @@ function renderComparison() {
   $('#scrub').value = frame
   $('#shot').value = shot.id
   $('#ref').src = `review/reference/frames/${String(reference).padStart(6, '0')}.jpg`
-  $('#new').src = `review/final/frames/${String(frame).padStart(6, '0')}.jpg`
+  $('#new').src = `review/final/frames/${String(frame).padStart(6, '0')}.jpg?v=offset-frames-1`
   $('#refLabel').textContent = `LemoLab · Meet Pip · ${text('frame', '帧')} ${reference} · ${(reference / 24).toFixed(3)} s`
   $('#newLabel').textContent = `${text('This film', '本片')} · ${text('frame', '帧')} ${frame} · ${(frame / timeline.fps).toFixed(3)} s`
   $('#purpose').textContent = `${text('Shot note (original English)', '镜头说明（影片英文原文）')}: ${shot.purpose}`
