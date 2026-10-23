@@ -19,12 +19,14 @@ Document dependencies and recorded-audio alternatives for narration.
 
 Set `guide`, `readme` where present, `prompt`, `template`, `template_kind`,
 `status`, bilingual status notes and `capabilities` in `styles.json`.
-Add `description_zh` for the Chinese atlas and `preview` for a repository-relative
-image path. Set `preview_kind` to `frame` only for an actual released film frame;
-use `schematic` for a subject-independent style sketch. Missing previews remain
-listed with a placeholder. Keep new artwork generic and retain its license;
-do not use a new production's private stills or reference-project artwork as a
-style preview. See [README artwork notes](docs/readme/README.md).
+Add `description_zh` for the Chinese atlas, plus `preview` and `preview_zh` for
+the localized image paths. Set `preview_kind` to `frame` for a screenshot from
+an actual generated film; this is independent of full-film publication. Record
+the source file, exact frame/time and hashes in `docs/readme/frames.json`.
+Only add production screenshots when requested by the user, with their source
+credits. Missing previews remain listed with a placeholder. A generic style
+sketch uses `schematic` and must be labelled accordingly. See
+[README artwork notes](docs/readme/README.md).
 
 | Status | Required meaning |
 | --- | --- |

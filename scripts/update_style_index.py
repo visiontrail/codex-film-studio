@@ -29,10 +29,11 @@ def render_gallery(catalog, language='en', prefix=''):
         description = entry.get('description_zh', entry['description']) if zh else entry['description']
         state = catalog['statuses'][entry['status']]['name_zh' if zh else 'name']
         guide = escape(prefix + entry['guide'], quote=True)
-        preview = entry.get('preview', entry.get('poster'))
+        preview = entry.get('preview_zh') if zh else entry.get('preview')
+        preview = preview or entry.get('preview', entry.get('poster'))
         if preview:
             kind = entry.get('preview_kind', 'schematic')
-            label = ('风格示意' if zh else 'style sketch') if kind == 'schematic' else ('样片剧照' if zh else 'film frame')
+            label = ('风格示意' if zh else 'style sketch') if kind == 'schematic' else ('影片截图' if zh else 'film frame')
             visual = (f'<a href="{guide}"><img src="{escape(prefix + preview, quote=True)}" '
                       f'alt="{escape(name)} — {label}" width="320"></a>')
         else:
@@ -48,6 +49,8 @@ def render_gallery(catalog, language='en', prefix=''):
             availability = '<a href="https://visiontrail.github.io/codex-film-studio/">' + ('▶ 在线播放' if zh else '▶ Watch online') + '</a>'
         elif local_pages:
             availability = '<a href="' + escape(prefix + 'docs/pages.md#local-style-catalog', quote=True) + '">' + ('本地影片与审阅页' if zh else 'Local films & review pages') + '</a>'
+        elif entry.get('preview_kind') == 'frame':
+            availability = '<a href="' + escape(prefix + 'docs/readme/README.md#frame-sources', quote=True) + '">' + ('本地影片截图' if zh else 'Local film frame') + '</a>'
         else:
             availability = '尚无样片' if zh else 'No sample yet'
         lines += [
@@ -84,8 +87,9 @@ def render(catalog):
         '已有本地影片网页、公开样片与新影片验收分别记录。', '',
         render_summary(catalog, 'en'), '',
         '## Visual index / 风格一览', '',
-        'Whiteboard uses a released film frame. Other previews are original schematic',
-        'style sketches, not frames from completed films. 白板使用已发布剧照；其余为通用风格示意。', '',
+        'Every preview is a decoded frame from a generated film, with a localized label',
+        'outside the original image. 每种风格均展示实际影片截图；图注单独翻译，画面保留原语言。',
+        'A displayed frame does not change package completion or full-film publication.', '',
         render_gallery(catalog, prefix='../'), '',
         '## Capabilities / 能力与网页', '',
         '| Style / 风格 | Package / 完成状态 | Renderer / 场景渲染工程 | Showcase / 网页 |',

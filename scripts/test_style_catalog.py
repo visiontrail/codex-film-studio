@@ -1,5 +1,6 @@
 """Integration checks for the catalog, isolated projects and local media routes."""
 from http.server import ThreadingHTTPServer
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -32,9 +33,13 @@ class CatalogTests(unittest.TestCase):
                     self.assertTrue((ROOT / entry[key]).exists(), key)
                 if entry.get('preview'):
                     self.assertTrue((ROOT / entry['preview']).is_file())
+                    self.assertTrue((ROOT / entry['preview_zh']).is_file())
                     self.assertIn(entry['preview_kind'], ['frame', 'schematic'])
                     if entry['preview_kind'] == 'frame':
-                        self.assertTrue(entry['capabilities']['published_demo'])
+                        frames = json.loads((ROOT / 'docs/readme/frames.json').read_text())['frames']
+                        source = next(item for item in frames if item['style'] == entry['id'])
+                        image = ROOT / source['image']
+                        self.assertEqual(hashlib.sha256(image.read_bytes()).hexdigest(), source['image_sha256'])
                 self.assertTrue(entry["capabilities"]["project_creation"])
                 if entry["capabilities"]["published_demo"]:
                     self.assertEqual(entry["status"], "demo-ready")

@@ -3,10 +3,12 @@
 **为下一个故事，找到它的画面语言。** 选一种风格，用 Codex 把叙事、画面、
 镜头和声音放到同一条时间轴上，做成影片。
 
-![Codex Film Studio — 用代码做影片的风格手册](docs/readme/cover.svg)
+![Codex Film Studio — 用代码做影片的风格手册](docs/readme/cover-zh.png)
 
 [**浏览全部风格 ↓**](#风格手册) · [观看样片](#放映室) ·
 [开始创作](#制作你的影片) · [English](README.md)
+
+[**打开风格片库 ↗**](https://visiontrail.github.io/codex-film-studio/?lang=zh)
 
 <!-- style-summary:start -->
 
@@ -23,7 +25,7 @@
 
 <table>
 <tr>
-<td width="38%" valign="middle"><a href="styles/whiteboard/STYLE.md"><img src="styles/whiteboard/poster.png" alt="白板讲解 — 样片剧照" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/whiteboard/STYLE.md"><img src="docs/readme/previews/whiteboard.zh.jpg" alt="白板讲解 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>01 / <code>whiteboard</code></sub>
 <h3>白板讲解</h3>
@@ -34,18 +36,18 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/art-collage.svg" alt="艺术拼贴 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/previews/art-collage.zh.jpg" alt="艺术拼贴 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>02 / <code>art-collage</code></sub>
 <h3>艺术拼贴</h3>
 <sub>Art Collage</sub>
 <p>纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。</p>
-<p><b>创作起步包</b> · 尚无样片</p>
+<p><b>创作起步包</b> · <a href="docs/readme/README.md#frame-sources">本地影片截图</a></p>
 <sub><a href="styles/art-collage/STYLE.md">风格说明</a> · <a href="styles/art-collage/prompt.txt">提示词</a> · <a href="styles/art-collage/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/crayon-book/STYLE.md"><img src="docs/readme/crayon-book.svg" alt="蜡笔绘本 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/crayon-book/STYLE.md"><img src="docs/readme/previews/crayon-book.zh.jpg" alt="蜡笔绘本 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>03 / <code>crayon-book</code></sub>
 <h3>蜡笔绘本</h3>
@@ -56,7 +58,7 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/midcentury-cartoon/STYLE.md"><img src="docs/readme/midcentury-cartoon.svg" alt="50 年代平涂卡通 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/midcentury-cartoon/STYLE.md"><img src="docs/readme/previews/midcentury-cartoon.zh.jpg" alt="50 年代平涂卡通 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>04 / <code>midcentury-cartoon</code></sub>
 <h3>50 年代平涂卡通</h3>
@@ -67,7 +69,7 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/readme/satellite-briefing.svg" alt="卫星影像／地理简报 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/readme/previews/satellite-briefing.zh.jpg" alt="卫星影像／地理简报 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>05 / <code>satellite-briefing</code></sub>
 <h3>卫星影像／地理简报</h3>
@@ -78,7 +80,7 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/scifi-sitcom/STYLE.md"><img src="docs/readme/scifi-sitcom.svg" alt="科幻情景喜剧卡通 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/scifi-sitcom/STYLE.md"><img src="docs/readme/previews/scifi-sitcom.zh.jpg" alt="科幻情景喜剧卡通 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>06 / <code>scifi-sitcom</code></sub>
 <h3>科幻情景喜剧卡通</h3>
@@ -92,8 +94,9 @@
 
 <!-- style-atlas:end -->
 
-<sub>白板使用已发布样片的剧照；其余预览为不含具体故事的原创风格示意。
-本地影片与审阅页通过<a href="#打开本地工作室">本地工作室</a>访问，需要保留项目中的资源。</sub>
+<sub>六种风格均使用实际生成影片的截图；中文图版翻译画面外的标题与图注，影片画面保留原语言。
+<a href="docs/readme/README.md#frame-sources">截图来源与署名</a>。
+本地影片与审阅页通过<a href="#打开本地工作室">本地工作室</a>访问。</sub>
 
 [比较各风格的能力与完成情况 →](styles/README.md)
 
@@ -101,7 +104,7 @@
 
 ### Does AI Help You Learn—or Just Finish?
 
-[![已发布白板影片：人物、土耳其国旗与学习成绩对比](styles/whiteboard/poster.png)](https://visiontrail.github.io/codex-film-studio/)
+[![已发布白板影片：回答与独立思考](docs/readme/previews/whiteboard.zh.jpg)](https://visiontrail.github.io/codex-film-studio/)
 
 借助 AI 完成任务，是否等于真正掌握？移动的马克笔、手写文字、线条人物和
 具体物体在一块持续保留内容的白板上，逐步展开这个问题。
@@ -243,7 +246,8 @@ Git 包含源码、字体和乐器采样；影片、配音 WAV 与时间数据�
 [LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) 启发，
 作者为 [@lemomo_ai](https://x.com/lemomo_ai)。
 
-代码、文档与风格示意图采用 [MIT](LICENSE)；原创样片和影片剧照采用
-[CC BY 4.0](MEDIA-LICENSE.md)。字体与乐器采样保留各自许可，详见
-[素材出处](styles/whiteboard/studio/CREDITS.md)。
+代码、文档与版式采用 [MIT](LICENSE)；原创样片和影片剧照采用
+[CC BY 4.0](MEDIA-LICENSE.md)。截图中的素材保留各自的
+[来源与署名](docs/readme/README.md#frame-sources)，字体与乐器采样保留各自许可。
+白板样片的[素材出处](styles/whiteboard/studio/CREDITS.md)。
 [README 设计参考与插图说明](docs/readme/README.md)。

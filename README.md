@@ -3,10 +3,12 @@
 **A visual language for your next film.** Choose a style, bring a story, and build
 it with Codex: picture, narration, camera and sound on one timeline.
 
-![Codex Film Studio — a field guide to films made with code](docs/readme/cover.svg)
+![Codex Film Studio — a field guide to films made with code](docs/readme/cover-en.png)
 
 [**Explore the styles ↓**](#the-style-atlas) · [Watch a film](#the-screening-room) ·
 [Start creating](#make-your-film) · [简体中文](README.zh-CN.md)
+
+[**Open the style library ↗**](https://visiontrail.github.io/codex-film-studio/)
 
 <!-- style-summary:start -->
 
@@ -23,7 +25,7 @@ visual rules, or take the prompt and project files into your own production.
 
 <table>
 <tr>
-<td width="38%" valign="middle"><a href="styles/whiteboard/STYLE.md"><img src="styles/whiteboard/poster.png" alt="Whiteboard Explainer — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/whiteboard/STYLE.md"><img src="docs/readme/previews/whiteboard.en.jpg" alt="Whiteboard Explainer — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>01 / <code>whiteboard</code></sub>
 <h3>Whiteboard Explainer</h3>
@@ -34,18 +36,18 @@ visual rules, or take the prompt and project files into your own production.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/art-collage.svg" alt="Art Collage — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/previews/art-collage.en.jpg" alt="Art Collage — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>02 / <code>art-collage</code></sub>
 <h3>Art Collage</h3>
 <sub>艺术拼贴</sub>
 <p>Paper cutouts, layered typography and physical collage motion.</p>
-<p><b>Authoring starter</b> · No sample yet</p>
+<p><b>Authoring starter</b> · <a href="docs/readme/README.md#frame-sources">Local film frame</a></p>
 <sub><a href="styles/art-collage/STYLE.md">Style guide</a> · <a href="styles/art-collage/prompt.txt">Prompt</a> · <a href="styles/art-collage/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/crayon-book/STYLE.md"><img src="docs/readme/crayon-book.svg" alt="Crayon Picture Book — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/crayon-book/STYLE.md"><img src="docs/readme/previews/crayon-book.en.jpg" alt="Crayon Picture Book — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>03 / <code>crayon-book</code></sub>
 <h3>Crayon Picture Book</h3>
@@ -56,7 +58,7 @@ visual rules, or take the prompt and project files into your own production.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/midcentury-cartoon/STYLE.md"><img src="docs/readme/midcentury-cartoon.svg" alt="Mid-century Cartoon — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/midcentury-cartoon/STYLE.md"><img src="docs/readme/previews/midcentury-cartoon.en.jpg" alt="Mid-century Cartoon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>04 / <code>midcentury-cartoon</code></sub>
 <h3>Mid-century Cartoon</h3>
@@ -67,7 +69,7 @@ visual rules, or take the prompt and project files into your own production.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/readme/satellite-briefing.svg" alt="Satellite Briefing — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/readme/previews/satellite-briefing.en.jpg" alt="Satellite Briefing — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>05 / <code>satellite-briefing</code></sub>
 <h3>Satellite Briefing</h3>
@@ -78,7 +80,7 @@ visual rules, or take the prompt and project files into your own production.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/scifi-sitcom/STYLE.md"><img src="docs/readme/scifi-sitcom.svg" alt="Sci-Fi Sitcom Toon — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="styles/scifi-sitcom/STYLE.md"><img src="docs/readme/previews/scifi-sitcom.en.jpg" alt="Sci-Fi Sitcom Toon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>06 / <code>scifi-sitcom</code></sub>
 <h3>Sci-Fi Sitcom Toon</h3>
@@ -92,9 +94,10 @@ visual rules, or take the prompt and project files into your own production.
 
 <!-- style-atlas:end -->
 
-<sub>Whiteboard shows a released film frame. The other previews are original,
-subject-free style sketches. Local films and review pages open through the
-<a href="#open-the-local-studio">local studio</a> and need their retained project files.</sub>
+<sub>All six previews are actual frames from generated films, with localized labels outside
+the original picture. Film text retains its original language.
+<a href="docs/readme/README.md#frame-sources">Frame sources and credits</a>.
+Local films and review pages open through the <a href="#open-the-local-studio">local studio</a>.</sub>
 
 [Compare capabilities and completion details →](styles/README.md)
 
@@ -252,7 +255,8 @@ By **[LeoGuoLabs](https://x.com/LeoGuoLabs)**, built with Codex. Style-library
 inspiration: [LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)
 by [@lemomo_ai](https://x.com/lemomo_ai).
 
-Code, documentation and schematic previews: [MIT](LICENSE). Original sample films
-and film stills: [CC BY 4.0](MEDIA-LICENSE.md). Fonts and instrument recordings
-retain their own licenses; see [credits](styles/whiteboard/studio/CREDITS.md).
+Code, documentation and layout: [MIT](LICENSE). Original sample films and stills:
+[CC BY 4.0](MEDIA-LICENSE.md). Screenshot materials retain their
+[frame-source credits](docs/readme/README.md#frame-sources); fonts and instruments
+retain their own licenses. See [sample credits](styles/whiteboard/studio/CREDITS.md).
 [README design references and artwork notes](docs/readme/README.md).

@@ -10,12 +10,13 @@ package completion and showcase availability. Shared workflows live in `methods/
 
 ## Visual index / 风格一览
 
-Whiteboard uses a released film frame. Other previews are original schematic
-style sketches, not frames from completed films. 白板使用已发布剧照；其余为通用风格示意。
+Every preview is a decoded frame from a generated film, with a localized label
+outside the original image. 每种风格均展示实际影片截图；图注单独翻译，画面保留原语言。
+A displayed frame does not change package completion or full-film publication.
 
 <table>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/whiteboard/STYLE.md"><img src="../styles/whiteboard/poster.png" alt="Whiteboard Explainer — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="../styles/whiteboard/STYLE.md"><img src="../docs/readme/previews/whiteboard.en.jpg" alt="Whiteboard Explainer — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>01 / <code>whiteboard</code></sub>
 <h3>Whiteboard Explainer</h3>
@@ -26,18 +27,18 @@ style sketches, not frames from completed films. 白板使用已发布剧照；�
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/art-collage/STYLE.md"><img src="../docs/readme/art-collage.svg" alt="Art Collage — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="../styles/art-collage/STYLE.md"><img src="../docs/readme/previews/art-collage.en.jpg" alt="Art Collage — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>02 / <code>art-collage</code></sub>
 <h3>Art Collage</h3>
 <sub>艺术拼贴</sub>
 <p>Paper cutouts, layered typography and physical collage motion.</p>
-<p><b>Authoring starter</b> · No sample yet</p>
+<p><b>Authoring starter</b> · <a href="../docs/readme/README.md#frame-sources">Local film frame</a></p>
 <sub><a href="../styles/art-collage/STYLE.md">Style guide</a> · <a href="../styles/art-collage/prompt.txt">Prompt</a> · <a href="../styles/art-collage/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/crayon-book/STYLE.md"><img src="../docs/readme/crayon-book.svg" alt="Crayon Picture Book — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="../styles/crayon-book/STYLE.md"><img src="../docs/readme/previews/crayon-book.en.jpg" alt="Crayon Picture Book — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>03 / <code>crayon-book</code></sub>
 <h3>Crayon Picture Book</h3>
@@ -48,7 +49,7 @@ style sketches, not frames from completed films. 白板使用已发布剧照；�
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/midcentury-cartoon/STYLE.md"><img src="../docs/readme/midcentury-cartoon.svg" alt="Mid-century Cartoon — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="../styles/midcentury-cartoon/STYLE.md"><img src="../docs/readme/previews/midcentury-cartoon.en.jpg" alt="Mid-century Cartoon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>04 / <code>midcentury-cartoon</code></sub>
 <h3>Mid-century Cartoon</h3>
@@ -59,7 +60,7 @@ style sketches, not frames from completed films. 白板使用已发布剧照；�
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/satellite-briefing/STYLE.md"><img src="../docs/readme/satellite-briefing.svg" alt="Satellite Briefing — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="../styles/satellite-briefing/STYLE.md"><img src="../docs/readme/previews/satellite-briefing.en.jpg" alt="Satellite Briefing — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>05 / <code>satellite-briefing</code></sub>
 <h3>Satellite Briefing</h3>
@@ -70,7 +71,7 @@ style sketches, not frames from completed films. 白板使用已发布剧照；�
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/scifi-sitcom/STYLE.md"><img src="../docs/readme/scifi-sitcom.svg" alt="Sci-Fi Sitcom Toon — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="../styles/scifi-sitcom/STYLE.md"><img src="../docs/readme/previews/scifi-sitcom.en.jpg" alt="Sci-Fi Sitcom Toon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>06 / <code>scifi-sitcom</code></sub>
 <h3>Sci-Fi Sitcom Toon</h3>
