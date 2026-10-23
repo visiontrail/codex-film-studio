@@ -39,11 +39,12 @@ establish that an arbitrary render matches a reference.
   highlights and broad tonal bands to avoid periodic wood stripes. Preserve contact and continuity through
   the turn rather than treating the image as a flat wipe.
 
-`lib/material.mjs` provides deterministic canvas primitives and wax/paper
-compositing. `lib/desk.mjs` provides an independent wood material and spread
+`starter/lib/material.mjs` provides deterministic canvas primitives and wax/paper
+compositing. `starter/lib/desk.mjs` provides an independent wood material and spread
 lighting. They have no scene or character knowledge. Copy them into an external
-project, install the dependency from `package.json` there, and author the
-production-specific composition separately.
+project, install the dependencies from `starter/package.json` there, and author the
+production-specific composition separately. In a generated working copy, these
+files are at `lib/` and `package.json`, without the `starter/` prefix.
 
 ## Paper calibration from a blank sample
 
@@ -64,6 +65,36 @@ wax-tooth field still controls pigment deposition. Include the map in render
 cache keys. Compare the encoded result, since grading, scaling and compression
 change fine texture. Matched statistics and low spatial correlation are process
 checks, not proof of identical perceived style.
+
+## Independent pigment and stroke controls
+
+`paperTexture({reliefMap, reliefGain, toothScale})` keeps the visible paper and
+original contour tooth unchanged while `toothScale` adjusts the coloured-wax
+sampling scale. Its default is 1. Test finer grain against the same picture at
+native resolution; making all marks finer can accidentally clean up the dark
+contours as well. `Wax.pigmentLift` defaults to 0 and changes coloured-pigment
+pressure without replacing the draw-on paths.
+
+Set `Wax.formedHatching = true` to vary pass direction and pressure by stable
+shape seed. `withHatch(angleInRadians, draw)` chooses a deliberate direction for
+a form, restoring the previous direction afterward. The clipping boundary stays
+in object space and the pen rotates within it. Extend rotated pass bounds far
+enough to cover the whole form. Keep seeds independent of moving positions so a
+hand or prop does not change pigment pressure while it moves.
+
+`Wax.organicContours = true` adds gradual stroke-width variation along indigo
+contours. `Wax.protectSmallMarks = true` increases pressure on small dark marks;
+check pupils, nostrils and mouth shapes at their displayed sizes instead of
+eroding them as heavily as a large coloured field. These options are off by
+default. Their native-resolution and encoded motion proof belongs to the new
+production; the toolkit supplies no universal material acceptance setting.
+
+For drawing reveals, `Wax.reveal(key, progress, draw)` measures each group and
+keeps its contour and pigment budgets separate. Use a stable key and unchanging
+stroke topology for the group. There is no solid colour rectangle underneath an
+unfinished hatch. Register licensed font bytes with `registerWaxFont` and the
+Canvas font registry to trace partial letters along paths; unregistered fonts
+fall back to whole glyphs and require a separate lettering solution.
 
 ## Direction and timing
 

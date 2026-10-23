@@ -107,3 +107,11 @@ strokes. Use coherent irregular bends and interrupted pressure for directional
 materials such as wood, rather than uniform full-width parallel lines. Check
 the result in a moving encoded sequence as well as stills. A material trial is
 not accepted merely because its pixel statistics moved toward a reference.
+
+Separate visible paper relief, pigment grain and contour erosion. One shared
+noise mask can make faces, clothing, foliage and small marks look equally worn.
+Choose pigment granularity at native output scale, use stable form-specific
+pressure and drawing direction, and retain enough pigment in small identifying
+marks. Pressure seeds must follow object identity, never the changing position
+of a moving hand or prop. Check the rotated fill bounds as well as the texture:
+a directional change must not leave an unintended unpainted wedge in the form.
