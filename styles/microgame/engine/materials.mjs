@@ -30,7 +30,7 @@ export function background(g,m,createCanvas,cache){
  if(m==='swiss'){
   for(let x=35;x<W;x+=39)line(g,[[x,230],[x,760]],'#c6c4bc',.6);
   for(let y=230;y<780;y+=39)line(g,[[35,y],[505,y]],'#c6c4bc',.6);
-  text(g,'ACTION /',35,233,23,p.ink,null,0,'Arial','left');line(g,[[35,275],[505,275]],p.ink,3);return;
+  return;
  }
  if(m==='pixel'){
   for(let i=0;i<45;i++){let x=Math.floor(hash(i*17)*135)*4,y=Math.floor((250+hash(i*31)*400)/4)*4;g.fillStyle=i%3?'#e4d4a4':'#66abc5';g.fillRect(x,y,4,4)}
@@ -42,6 +42,19 @@ export function background(g,m,createCanvas,cache){
   if(m==='crayon'||m==='woodcut')for(let i=0;i<1600;i++){let x=hash(i*7)*W,y=hash(i*13)*H;line(q,[[x,y],[x+4+hash(i)*13,y-3]],'#6858390b',1)}
   cache.set(key,tex);
  }g.drawImage(tex,0,0);
+}
+
+// Indexed colours remove the antialiased fringe before nearest-neighbour enlargement.
+export const pixelPalette=['#101025','#1c1e39','#424782','#777db8','#b4b7dc','#f4d2a2','#e35851','#ed8d3c','#53b3c4','#b6ded7','#f4ecc9','#895f53','#a7a0a1','#6b667f','#dd8094','#fffaf0'];
+const pixelRGB=pixelPalette.map(hex=>[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)));
+export function indexPixelBuffer(g){
+ const img=g.getImageData(0,0,g.canvas.width,g.canvas.height),d=img.data;
+ for(let i=0;i<d.length;i+=4){
+  let best=pixelRGB[0],distance=Infinity;
+  for(const c of pixelRGB){const v=2*(d[i]-c[0])**2+3*(d[i+1]-c[1])**2+(d[i+2]-c[2])**2;if(v<distance){distance=v;best=c}}
+  d[i]=best[0];d[i+1]=best[1];d[i+2]=best[2];
+ }
+ g.putImageData(img,0,0);
 }
 export function finish(g,m,createCanvas,cache){
  if(m==='crayon'){

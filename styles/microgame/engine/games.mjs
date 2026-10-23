@@ -118,6 +118,13 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  if(m!=='blueprint')hero(g,m,hx,hy,hs,{arm,lean,jump,target:target?localContact(target,hx,hy,hs,lean,jump):null,leftTarget:leftTarget?localContact(leftTarget,hx,hy,hs,lean,jump):null,face:!s.success&&done?'shock':'happy'},film.hero);
  if(done&&s.success){for(let i=0;i<5;i++){let an=i*1.25;star(g,358+Math.cos(an)*95,535+Math.sin(an)*90,8+hash(i)*5,p.accent)}}
  g.restore();
+ if(m==='swiss'){
+  const title=s.command.replace(/[!.]+$/,'').toLowerCase()+'.';
+  g.save();g.font='900 78px Arial';const width=g.measureText(title).width;
+  g.font=`900 ${Math.min(78,78*470/Math.max(1,width))}px Arial`;g.fillStyle=p.ink;g.textAlign='left';g.textBaseline='alphabetic';g.fillText(title,35,282);g.restore();
+  const rules={roll:'move the pin across.',cut:'hand to blade.',carry:'hold it steady.',jump:'clear the obstacle.',catch:'meet the falling object.'};
+  text(g,`rule ${s.game} / ${rules[s.action]||'one clear move.'}`,35,315,16,p.ink,null,0,'Arial','left');
+ }
  if(m==='blueprint'){
   rr(g,35,292,127,163,2,p.paper,p.ink,2);hero(g,m,98,425,.62,{arm:.4+arm},film.hero);
   line(g,[[188,305],[465,305]],p.ink,1);line(g,[[188,299],[188,311]],p.ink,1);line(g,[[465,299],[465,311]],p.ink,1);text(g,'DETAIL A / 2 : 1',327,287,13,p.ink,null,0,'monospace');
