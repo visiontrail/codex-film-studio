@@ -3,7 +3,10 @@
 ## Working copy
 
 Run `python3 scripts/new_film.py <name> --style whiteboard` from the repository
-root. All following commands run inside `films/<name>` unless stated otherwise.
+root. The default destination is `../codex-film-studio-projects/<name>`; use
+`--output /absolute/external/path` to choose another location. Destinations
+inside the library, including through a symlink, are rejected. All following
+commands run inside that external project unless stated otherwise.
 Install dependencies with `npm ci`, create a Python virtual environment and
 install `requirements.txt`. FFmpeg must be on PATH.
 

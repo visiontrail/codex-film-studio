@@ -1,0 +1,8 @@
+{
+  "subject": null,
+  "audience": null,
+  "language": null,
+  "reference_file": null,
+  "delivery": {"width": 1920, "height": 1080, "fps": 25},
+  "identity_policy": "Specific real people require user-supplied portraits; reference-person likeness is not a style-matching requirement."
+}
