@@ -1,0 +1,16 @@
+{
+  "film_sha256": null,
+  "reference_sha256": null,
+  "frame_count": null,
+  "automated_checks": [],
+  "thumbnail_observations": [],
+  "native_frame_observations": [],
+  "motion_playback": [],
+  "audio_listening": [],
+  "carried_observations": [],
+  "defects": [],
+  "style_decision": null,
+  "review_confidence": null,
+  "unverified": [],
+  "user_acceptance": null
+}

@@ -42,6 +42,17 @@ python3 methods/scifi-sitcom/new_project.py my-film
 新项目创建在仓库外，提供自己的选题后继续创作。方法包与上方已发布样片的
 风格目录分开，具体使用方法和验证范围见包内说明。
 
+## Mid-century Cartoon 制作方法
+
+[50 年代平涂卡通方法包](methods/midcentury-cartoon/README.md)提炼套色偏移、
+断续墨线、两帧一姿态、手部动作、教学镜头与冷爵士声音语言。包含空白项目
+创建器、通用 Canvas 工具、Chatterbox 音频合同、短片/长篇编排和逐帧审查
+规则，可为新的主题独立创作。
+
+```sh
+python3 methods/midcentury-cartoon/new_project.py my-film
+```
+
 ## 通过 Codex 使用
 
 ```sh

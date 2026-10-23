@@ -27,6 +27,16 @@ finishing with help and doing the work alone.
 
 ## Reusable production methods
 
+[Mid-century Cartoon](methods/midcentury-cartoon/README.md) preserves misregistered
+flat colour, broken ink, held character poses, purposeful hand actions and a
+cool-jazz sound palette. Its subject-empty starter includes Canvas primitives,
+an audio-led frame timeline, Chatterbox contracts and explicit every-frame
+review rules for short or chaptered films:
+
+```sh
+python3 methods/midcentury-cartoon/new_project.py my-film
+```
+
 [Satellite Briefing](methods/satellite-briefing/README.md) provides geographic
 camera and measurement rules, local map/scan treatment, an optional verified
 YouTube-footage workflow, Chatterbox timing contracts and frame-review criteria.
