@@ -245,6 +245,27 @@
       "preview": "docs/readme/previews/scifi-sitcom.en.jpg",
       "preview_kind": "frame",
       "preview_zh": "docs/readme/previews/scifi-sitcom.zh.jpg"
+    },
+    {
+      "id": "art-deco",
+      "name": "Art Deco",
+      "name_zh": "装饰艺术",
+      "description": "Black lacquer, graded brass, faceted figures and spatial mechanical motion.",
+      "description_zh": "黑漆、渐变黄铜、切面人物与具有空间感的机械动效。",
+      "status": "toolkit-ready",
+      "status_note": "Original drawing and figure toolkit with a blank input contract; new scenes, narration and renderer must be authored.",
+      "status_note_zh": "已有独立绘制工具、人物骨架与空白输入合同；新场景、旁白与渲染器仍需编写。",
+      "guide": "styles/art-deco/STYLE.md",
+      "readme": "styles/art-deco/README.md",
+      "prompt": "styles/art-deco/prompt.txt",
+      "template": "styles/art-deco/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": []
     }
   ]
 }
