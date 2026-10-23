@@ -21,6 +21,19 @@
 [12 分钟长版](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
 [风格说明](styles/whiteboard/STYLE.md)
 
+## 科幻情景喜剧制作方法
+
+[Sci-Fi Sitcom Toon 方法包](methods/scifi-sitcom/README.md)保存可复用的绘画、
+角色表演、镜头、声音和审查规则，附空白项目创建器及通用描边、时间轴代码。
+它不预置上一部影片的主题、人物、国家、统计数字或台词。
+
+```sh
+python3 methods/scifi-sitcom/new_project.py my-film
+```
+
+新项目创建在仓库外，提供自己的选题后继续创作。方法包与上方已发布样片的
+风格目录分开，具体使用方法和验证范围见包内说明。
+
 ## 通过 Codex 使用
 
 ```sh
