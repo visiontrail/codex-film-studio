@@ -27,6 +27,15 @@ finishing with help and doing the work alone.
 
 ## Reusable production methods
 
+[Satellite Briefing](methods/satellite-briefing/README.md) provides geographic
+camera and measurement rules, local map/scan treatment, an optional verified
+YouTube-footage workflow, Chatterbox timing contracts and frame-review criteria.
+Its external starter contains empty inputs and tested geographic helpers:
+
+```sh
+python3 methods/satellite-briefing/new_project.py my-film
+```
+
 [Sci-Fi Sitcom Toon](methods/scifi-sitcom/README.md) provides subject-independent
 drawing, acting, camera, sound and review rules, an empty project creator, and
 generic ink/timeline helpers. It includes no inherited story, cast, country,
