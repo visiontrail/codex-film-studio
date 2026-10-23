@@ -172,3 +172,18 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  else {g.strokeStyle=gold(g,-60,-80,120,100);g.lineWidth=4;g.beginPath();g.arc(0,-12,49,Math.PI,0);g.stroke();for(const side of [-1,1]){ellipse(g,side*45,-6,6.5,19,'#57401c');ellipse(g,side*46,-6,4.2,14,'#100e0a')}}
  g.restore();if(pose==='consider')drawArm(right);g.restore();
 }
+
+// A cylindrical brass conduit with a wall shadow and a transverse highlight.
+export function brassTube(g,points,width){
+ if(points.length<2||width<=0)return;
+ g.save();g.lineJoin='round';g.lineCap='butt';
+ g.translate(13,15);g.filter='blur(7px)';path(g,points);g.strokeStyle='rgba(0,0,0,.55)';g.lineWidth=width+7;g.stroke();g.filter='none';g.translate(-13,-15);
+ path(g,points);g.strokeStyle='#b8a069';g.lineWidth=width+2;g.stroke();
+ for(let i=1;i<points.length;i++){
+  const a=points[i-1],b=points[i],dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy);if(length===0)continue;const nx=-dy/length,ny=dx/length;
+  const shade=g.createLinearGradient(a[0]-nx*width/2,a[1]-ny*width/2,a[0]+nx*width/2,a[1]+ny*width/2);
+  for(const [stop,color] of [[0,'#584322'],[.2,'#af9458'],[.38,'#f1dfaa'],[.55,'#a58b4f'],[1,'#302717']])shade.addColorStop(stop,color);
+  path(g,[a,b]);g.strokeStyle=shade;g.lineWidth=width;g.stroke();
+ }
+ g.restore();
+}
