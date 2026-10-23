@@ -48,3 +48,5 @@ Caption intervals come from the actual accepted audio, not equal fractions of a 
 6. Freeze the material system and make a new story with it. Record its own review; an earlier successful film does not validate a new film.
 
 Palette, edge and frame-difference metrics help locate discrepancies. They do not constitute a perceptual similarity percentage or proof of exact style equivalence. State the actual inspection resolution and the limits of listening access.
+
+Profile walking is available through `person(..., {pose: "walk", turn: -1 | 1})`. Use it for lateral travel; keep camera targets on the traveling subject through large scale changes. A close hand insert must have a continuous sleeve extending into the character or beyond the frame.
