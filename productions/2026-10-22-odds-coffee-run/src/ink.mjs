@@ -3,11 +3,12 @@ export const INK='#1b1422', WHITE='#fffaf0';
 export const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 export const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
 export class Ink {
- constructor(ctx,frame){this.c=ctx;this.frame=frame;this.phase=Math.floor(frame/2)%3;this.m=[1,0,0,1,0,0];this.stack=[]}
+ constructor(ctx,frame){this.c=ctx;this.frame=frame;this.phase=Math.floor(frame/2)%3;this.m=[1,0,0,1,0,0];this.stack=[];this.inkScale=1}
  push(x=0,y=0,sx=1,sy=sx,a=0){this.stack.push([...this.m]);let [A,B,C,D,E,F]=this.m,c=Math.cos(a),s=Math.sin(a);this.m=[(A*c+C*s)*sx,(B*c+D*s)*sx,(-A*s+C*c)*sy,(-B*s+D*c)*sy,A*x+C*y+E,B*x+D*y+F]}
  pop(){this.m=this.stack.pop()}
  point([x,y]){let[a,b,c,d,e,f]=this.m;return[a*x+c*y+e,b*x+d*y+f]}
  poly(points,fill=null,stroke=INK,width=7,closed=true,boil=1){
+  width*=this.inkScale;boil*=this.inkScale;
   let pts=points.map(p=>this.point(p));if(!pts.length)return;let arr=[],dist=0,seed=(pts[0][0]*.007+pts[0][1]*.011);
   for(let i=0;i<pts.length-(closed?0:1);i++){let a=pts[i],b=pts[(i+1)%pts.length],dx=b[0]-a[0],dy=b[1]-a[1],len=Math.hypot(dx,dy),n=Math.max(1,Math.ceil(len/9));
    for(let j=0;j<n;j++){let t=j/n,arc=dist+len*t;let jitter=boil*(1.15*Math.sin(arc*.053+this.phase*2.1+seed)+.45*Math.sin(arc*.13+this.phase*3.2));arr.push([a[0]+dx*t-dy/(len||1)*jitter,a[1]+dy*t+dx/(len||1)*jitter]);}dist+=len}

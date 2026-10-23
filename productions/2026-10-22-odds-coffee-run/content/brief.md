@@ -10,6 +10,10 @@ Reference: LemoLab, Coffee Run / Sci-Fi Sitcom Toon, supplied local MP4. Style g
 
 The supplied transcript is not authoritative. Omit unverifiable global market estimates and operational criminal details. Correct the Woolmer allegation, Turkey's account-versus-betting distinction, and Hanson's sentence using primary records. Draw referenced real people, brands and flags with recognizable identifying details; retain an explicit factual caption for criminal-history portraits. Do not depict fictional actions as documentary footage.
 
+User clarification, 2026-10-23: frame comparison primarily evaluates style for the new subject. Compare drawing, color, character design, acting, camera/edit vocabulary and typography. Do not require identical props, factual content, framing coordinates or runtime. The detailed acceptance contract is in `style-acceptance.md`.
+
+Case selection is specific to this story. Turkey comes from lines 16–18 of the supplied betting transcript and is corrected against the TFF announcement of 27 October 2025. It is not a default country, a required example or a style property. Future subjects must choose their own supported countries, people, institutions and statistics; never transplant these numbers under a different flag.
+
 Delivery: film MP4, English SRT and speech script, editable sources, synthesized original score/foley, full decoded-frame metrics and atlases for reference and final, representative full-resolution comparisons, review findings and revisions. Automated coverage and visual inspection coverage will be reported separately. No claim of mathematical or perceptual 100% identity follows from a successful encode or an atlas.
 
 Resource coordination: before every FFmpeg process, wait until no other FFmpeg is running, and hold a shared file lock during this project's invocation. Continue non-FFmpeg work while another film encodes.

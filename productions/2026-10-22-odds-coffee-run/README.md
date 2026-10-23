@@ -6,9 +6,13 @@ This production is self-contained in this folder. No FrontierTechSN application 
 
 ## Current state
 
-A complete Pocket TTS v8 edition is available at `media/the-house-gets-coffee.mp4`, also retained as `media/the-house-gets-coffee-pocket-v8.mp4`. It runs 5:28.708 at 1920×1080 / 24 fps: 7,889 frames, 95 shots and 51 English dialogue lines. Marius voices Bo; Javert voices Qin. All 7,889 frames of this exact export were visually inspected in 247 paired thumbnail pages, with 33 additional native-size decoded samples. Full decode, audio signal checks and browser playback through the natural end passed. Revision 18 revises home staging, Qin's lean, panic mouths and parlay scenery, and preserves the existing portal through departure. All encoded audio packets and timestamps are unchanged from v5. Remaining differences in line weight during shrinking, staging, acting and pacing are documented in `content/review-report.md`; this is the current review version, with style identity still unaccepted.
+The completed Pocket TTS v9 edition is available at `media/the-house-gets-coffee.mp4`, byte-identical to `media/the-house-gets-coffee-pocket-v9.mp4`. It runs 5:28.708 at 1920×1080 / 24 fps: 7,889 frames, 95 shots and 51 English dialogue lines. Marius voices Bo; Javert voices Qin. Revision 19 fixes dense outlines on shrinking actors, cash-label legibility and pool framing. The qualitative style review passes under the user's clarification that the new subject is compared for drawing and animation language, not identical story content.
 
-The current file SHA-256 is `5f49feb8a901d1f0126b4ed46d87be16447ef8c3c2fdfa32c5a3f033ea091984`. Pocket v1, v2, v4 and v5 remain with their own complete inspection records. Rejected v3, v6 and v7 are retained with explicitly partial inspection coverage.
+All-frame thumbnail coverage consists of 35 changed pages newly viewed plus 212 pages byte-identical to the already viewed v8 pages, covering all 7,889 frames. Native coverage comprises 36 decoded images: 11 new/changed samples inspected plus 25 byte-identical prior samples; the Turkey sample was additionally reopened. Full decode, audio signal checks and natural-end browser playback passed. Audio listening is not established by these checks. Exact hashes and coverage are recorded in `content/review-report.md`.
+
+The current file SHA-256 is `c19a012b992322aa691962fad0055a36327a8413ae41010fb61c156c99eed45c`. Earlier exports and their actual inspection coverage are retained. No numerical “100% identical” claim is made.
+
+Country, person, brand and statistic choices belong to this story. The Turkey example comes from the supplied transcript and its TFF source; it is not a reusable default or a style requirement. Future films must choose cases from their own subject and evidence.
 
 The earlier 5:16.5 Chatterbox edition remains at `media/the-house-gets-coffee-chatterbox.mp4`.
 
@@ -19,7 +23,7 @@ The earlier 5:16.5 Chatterbox edition remains at `media/the-house-gets-coffee-ch
 - `content/sources.md`: source ledger and corrections to the supplied input.
 - `content/reference-analysis.md`: reference inspection coverage and revision ledger.
 - `content/accepted-takes.json`: source and ASR hashes for all 51 selected Pocket takes.
-- `content/review-report.md`: export identity, review coverage, findings and outstanding work.
+- `content/review-report.md`: export identity, review coverage, findings and delivery decision.
 - `content/timeline.json`: integer-frame edit, speech envelopes and captions. Its `draft` field is authoritative.
 - `src/`: original vector geometry, cast, worlds, camera and caption drawing.
 - `scripts/`: independent TTS, alignment, sound synthesis, rendering, frame comparison and delivery checks.

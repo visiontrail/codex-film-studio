@@ -75,7 +75,7 @@ export function props(g,world,line,t){let shot=line.shot,id=line.id;
   if(shot==='coins'){
    for(let j=0;j<2;j++){let ph=ease((t-.45-j*.7)/1.4);if(ph<1){let xx=1095+ph*310,yy=565-Math.sin(ph*Math.PI)*130;g.push(xx,yy,1,1,(1-ph)*.18);g.rect(-52,-29,104,58,'#cae1a4',INK,4,5);g.text('$100',0,3,27,INK,{font:'VT323'});g.pop()}}
    let payoutAt=line.beats?.payout??2.6,payout=ease((t-payoutAt)/1.2);if(t>payoutAt){g.push(1450+payout*235,612-Math.sin(payout*Math.PI)*105,1,1,payout*.13);g.rect(-64,-35,128,70,'#f4e1b5',INK,4,5);g.text('$190',0,2,34,INK,{font:'VT323'});g.pop()}
-   g.text('$200 IN',1200,390,48,WHITE,{stroke:INK});g.text('$190 OUT',1610,390,48,WHITE,{stroke:INK});if(t>(line.beats?.keep??3.7))g.text('THE TILL KEEPS $10',1420,810,36,'#ffe08e',{stroke:INK});
+   g.rect(1050,295,745,76,'#eee0b6',INK,5,9);g.text('$200 IN',1200,335,40,INK,{font:'VT323'});g.text('$190 OUT',1610,335,40,INK,{font:'VT323'});if(t>(line.beats?.keep??3.7))g.text('THE TILL KEEPS $10',1420,752,36,'#ffe08e',{stroke:INK});
   }
 
  }else if(world==='parlay'){

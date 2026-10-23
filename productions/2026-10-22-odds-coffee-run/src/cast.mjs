@@ -44,6 +44,9 @@ function assistantArm(g,side,reach,color,point,pose){
  return {x:hx,y:hy};
 }
 export function character(g,kind,x,y,scale=1,opts={}){
+ const previousInk=g.inkScale;
+ // Preserve the usual screen-space stroke, thinning only during tiny portal poses.
+ g.inkScale*=Math.min(1,Math.max(.12,scale/.65));
  let t=opts.still?0:(opts.time||0),pose=Math.floor(t*12)/12,emotion=opts.emotion||'deadpan',talk=opts.talk||0,panic=emotion==='panic',gesture=opts.gesture||0;
  let breath=opts.still?0:Math.sin(pose*2.3)*.007;let jitter=panic?Math.sin(pose*89)*2.7:0;g.push(x+jitter,y,scale*(1-breath),scale*(1+breath),opts.angle||0);
  if(kind==='qin'){
@@ -116,7 +119,7 @@ export function character(g,kind,x,y,scale=1,opts={}){
   if(opts.prop==='phone'){g.rect(rightHand.x-14,rightHand.y-52,32,57,'#46444f',INK,5,5);g.rect(rightHand.x-9,rightHand.y-42,22,32,'#8de1d8',null,0)}
   g.pop();
  }
- g.pop()
+ g.pop();g.inkScale=previousInk;
 }
 export function portal(g,x,y,r,t,alpha=1){let c=g.c;c.save();c.globalAlpha=alpha;g.ellipse(x,y,r*.86,r*1.18,'#caff731c',null,0);g.ellipse(x,y,r*.79,r*1.1,'#b8ff5a28',null,0);
  let pts=Array.from({length:120},(_,i)=>{let a=i/120*Math.PI*2,rr=r*(1+.034*Math.sin(a*9+t*2)+.02*Math.cos(a*13));return[x+Math.cos(a)*rr*.75,y+Math.sin(a)*rr]});g.poly(pts,'#45dc3c',INK,7);

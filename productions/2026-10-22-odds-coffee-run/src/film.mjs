@@ -10,6 +10,7 @@ export function drawFilm(ctx,frame,timeline,width=1920){ctx.clearRect(0,0,ctx.ca
   if(['bo','qin'].includes(line.shot))cam={x:line.shot==='bo'?boX:qinX-40,y:line.shot==='bo'?(line.emotion==='panic'?590:580):470,z:2.7};
   if(['phone'].includes(line.shot))cam={x:boX+22,y:650,z:2.8};
   if(['board','machine','coins','gates','pool','referee','turkey','woolmer','brands','asia','flags','debt','hanson','reveal'].includes(line.shot))cam={x:world==='home'?1400:1410,y:['hanson','woolmer'].includes(line.shot)?490:510,z:1.36};
+  if(line.shot==='pool')cam={x:1380,y:650,z:1.36};
   if(line.shot==='portal')cam={x:850,y:565,z:1.30};
   cam.z*=1+Math.min(.035,local*.0025);
   if(line.emotion==='panic'&&local<.8){cam.x+=Math.sin(frame*4)*4;cam.y+=Math.cos(frame*3)*2}
