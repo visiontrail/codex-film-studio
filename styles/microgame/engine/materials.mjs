@@ -57,6 +57,10 @@ export function mediumObject(g,m,x,y,scale,kind,variant=0){
   }else if(['cream','icing','dough','crumb','puddle','cookie'].includes(kind)){
    blot(g,0,5,kind==='crumb'?12:48,kind==='crumb'?9:19,101);
    for(let i=0;i<6;i++)blot(g,-39+hash(i+13)*78,-3+hash(i+7)*21,8+hash(i)*10,9,110+i);
+  }else if(kind==='stick'||kind==='stake'){
+   brush(g,[[-65,1],[-5,-3],[64,0]],13,120);brush(g,[[-64,1],[60,-2]],4,121,'#9b9a80');
+  }else if(kind==='tree'||kind==='flower'){
+   brush(g,[[0,34],[0,-62]],8,123);for(let i=0;i<5;i++){let a=i*2.4;brush(g,[[0,10],[Math.cos(a)*30,-45+Math.sin(a)*24]],3,124+i);blot(g,Math.cos(a)*30,-45+Math.sin(a)*24,27,18,129+i)}
   }else if(kind==='egg'||kind==='seed'){
    brushArc(g,0,-8,kind==='egg'?24:15,kind==='egg'?33:24,0,6.28,5,122);brushArc(g,3,-7,15,26,-1.2,.9,8,125,'#9ca08e');
   }else{

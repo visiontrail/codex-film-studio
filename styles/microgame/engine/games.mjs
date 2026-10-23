@@ -6,7 +6,7 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  let m=s.medium,p=palettes[m],dur=(s.end-s.start)/30,u=clamp(lt/dur),tick=Math.floor(lt*s.character_fps)/s.character_fps,pu=clamp(tick/dur),a=smooth((pu-.28)/.42),done=u>.76;
  background(g,m,createCanvas,cache);
  g.save();
- const sceneZoom=m==='ink'?1.5:m==='swiss'?1.15:m==='blueprint'?1.20:1.0; g.translate(270,620);g.scale(sceneZoom,sceneZoom);g.translate(-270,-620);
+ const sceneZoom=m==='ink'&&['pour','stir'].includes(s.action)?1.5:m==='swiss'?1.15:m==='blueprint'?1.20:1.0; g.translate(270,620);g.scale(sceneZoom,sceneZoom);g.translate(-270,-620);
  let floor=720;
  if(m!=='terminal'&&m!=='pixel'){g.fillStyle=p.ground;g.fillRect(0,floor,W,60);line(g,[[0,floor],[W,floor]],p.ink,m==='blueprint'?2:4)}
  if(m==='crayon'){for(let i=0;i<70;i++)line(g,[[i*10-40,775],[i*10+25,723]],p.paper,2);oval(g,454,300,35,35,p.object,p.ink,2);for(let i=0;i<12;i++){let an=i/12*6.28;line(g,[[454+Math.cos(an)*43,300+Math.sin(an)*43],[454+Math.cos(an)*57,300+Math.sin(an)*57]],p.object,2)}}
@@ -96,8 +96,6 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  finish(g,m,createCanvas,cache);
  materialPass(g,m,cache);
  if(!options.noHud){
-  if(m==='terminal')text(g,`TASK ${String(s.game).padStart(2,'0')}  /  ${film.hero.toUpperCase()}`,270,794,15,p.ink,null,0,'monospace');
-  else {text(g,`${String(s.game).padStart(2,'0')} / ${film.gameLabel||'MICROGAME'}`,270,794,15,p.ink,null,0,m==='blueprint'?'monospace':'Arial');}
   fuse(g,options.timerProgress??u,dur*s.bpm/60,options.timerTime??lt);command(g,s.command,lt,[.73,.60,.45][s.round]);
  }
 }
