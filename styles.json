@@ -247,6 +247,26 @@
       "preview_zh": "docs/readme/previews/scifi-sitcom.zh.jpg"
     },
     {
+      "id": "microgame",
+      "name": "Microgame Frenzy",
+      "name_zh": "极速微游戏",
+      "description": "Rapid command-action-result games with changing materials, lives and accelerating rhythm.",
+      "description_zh": "命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。",
+      "status": "toolkit-ready",
+      "status_note": "Independent material and motion helpers; scene direction, audio and delivery require production-specific work. No accepted demo.",
+      "status_note_zh": "已有独立材质与动作工具；镜头、音频和交付需在制作项目中完成，暂无已验收样片。",
+      "guide": "styles/microgame/STYLE.md",
+      "readme": "styles/microgame/README.md",
+      "template": "styles/microgame/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": []
+    },
+    {
       "id": "art-deco",
       "name": "Art Deco",
       "name_zh": "装饰艺术",
