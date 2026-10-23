@@ -123,20 +123,25 @@ def audit(args: argparse.Namespace) -> dict:
     nonmonotonic_timestamps: list[int] = []
     repeated_frames = 0
     missing_pts = 0
-    sheet = Image.new("RGB", (1600, 1040), "#1b1b1b")
+    cells_per_sheet = args.sheet_columns * args.sheet_rows
+    cell_width, cell_height = args.thumb_width, args.thumb_height + 18
+    sheet_size = (cell_width * args.sheet_columns, cell_height * args.sheet_rows)
+    sheet = Image.new("RGB", sheet_size, "#1b1b1b")
     sheet_draw = ImageDraw.Draw(sheet)
     font = ImageFont.load_default()
     dimensions: set[tuple[int, int]] = set()
 
     def save_sheet(last_frame: int) -> None:
-        first_frame = (last_frame // 100) * 100
+        first_frame = (last_frame // cells_per_sheet) * cells_per_sheet
         relative = f"contact-sheets/frames-{first_frame:07d}-{last_frame:07d}.jpg"
         sheet.save(output / relative, quality=92, subsampling=0)
         sheets.append({
             "path": relative, "first_frame": first_frame, "last_frame": last_frame,
             "frame_count": last_frame - first_frame + 1,
-            "columns": 10, "rows": 10, "cell_width": 160, "cell_height": 104,
-            "image_width": 160, "image_height": 90, "label_height": 14,
+            "columns": args.sheet_columns, "rows": args.sheet_rows,
+            "cell_width": cell_width, "cell_height": cell_height,
+            "image_width": args.thumb_width, "image_height": args.thumb_height,
+            "label_height": 18,
             "image_obscured_by_label": False,
             "order": "left-to-right, then top-to-bottom",
         })
@@ -209,15 +214,22 @@ def audit(args: argparse.Namespace) -> dict:
                     "frame_index": index, "timestamp_seconds": seconds,
                     "score": score, "rgb_diff": rgb_diff, "histogram_diff": hist_diff,
                 })
-            cell = index % 100
-            x, y = (cell % 10) * 160, (cell // 10) * 104
-            thumb = ImageOps.contain(image, (160, 90), Image.Resampling.LANCZOS)
-            sheet.paste(thumb, (x + (160 - thumb.width) // 2, y + 14 + (90 - thumb.height) // 2))
-            sheet_draw.rectangle((x, y, x + 159, y + 12), fill="#111111")
+            if args.save_frames:
+                frame_dir = output / "all-frames"
+                frame_dir.mkdir(exist_ok=True)
+                retained = image
+                if args.frame_width and image.width > args.frame_width:
+                    retained = image.resize((args.frame_width, round(image.height * args.frame_width / image.width)), Image.Resampling.LANCZOS)
+                retained.save(frame_dir / f"frame-{index:07d}.jpg", quality=94, subsampling=0)
+            cell = index % cells_per_sheet
+            x, y = (cell % args.sheet_columns) * cell_width, (cell // args.sheet_columns) * cell_height
+            thumb = ImageOps.contain(image, (args.thumb_width, args.thumb_height), Image.Resampling.LANCZOS)
+            sheet.paste(thumb, (x + (cell_width - thumb.width) // 2, y + 18 + (args.thumb_height - thumb.height) // 2))
+            sheet_draw.rectangle((x, y, x + cell_width - 1, y + 16), fill="#111111")
             sheet_draw.text((x + 3, y + 1), f"F{index:07d}  {seconds:.3f}s", font=font, fill="white")
-            if cell == 99:
+            if cell == cells_per_sheet - 1:
                 save_sheet(index)
-                sheet = Image.new("RGB", (1600, 1040), "#1b1b1b")
+                sheet = Image.new("RGB", sheet_size, "#1b1b1b")
                 sheet_draw = ImageDraw.Draw(sheet)
             previous_rgb, previous_histogram, previous_time = rgb, current_histogram, seconds
             if (index + 1) % 1000 == 0:
@@ -226,7 +238,7 @@ def audit(args: argparse.Namespace) -> dict:
     count = len(records)
     if not count:
         raise ValueError("No video frames decoded")
-    if count % 100:
+    if count % cells_per_sheet:
         save_sheet(count - 1)
     if nonmonotonic_timestamps:
         raise ValueError(f"Nonmonotonic decoded timestamps at frames {nonmonotonic_timestamps[:10]}")
@@ -300,6 +312,10 @@ def audit(args: argparse.Namespace) -> dict:
             "automated_decode": {"frames": count, "first": 0, "last": count - 1},
             "contact_sheet_generation": {"frames": count, "gaps": [], "duplicates": []},
             "native_resolution_selected_frames": sorted(saved),
+            "retained_all_frames": {"count": count if args.save_frames else 0,
+                                    "directory": "all-frames" if args.save_frames else None,
+                                    "maximum_width": args.frame_width or None,
+                                    "format": "JPEG quality 94; not lossless source pixels"},
             "actual_visual_review": "not_recorded",
             "actual_audio_listening": "not_recorded",
             "style_equivalence": "not_assessed_by_this_script",
@@ -334,6 +350,12 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--min-shot-seconds", type=float, default=0.35)
     result.add_argument("--cut-context", type=int, default=2)
     result.add_argument("--fallback-fps", type=float, default=24.0)
+    result.add_argument("--sheet-columns", type=int, default=10)
+    result.add_argument("--sheet-rows", type=int, default=10)
+    result.add_argument("--thumb-width", type=int, default=160)
+    result.add_argument("--thumb-height", type=int, default=90)
+    result.add_argument("--save-frames", action="store_true", help="Retain every decoded frame as indexed JPEG")
+    result.add_argument("--frame-width", type=int, default=0, help="Optional maximum retained-frame width; 0 preserves dimensions")
     return result
 
 
@@ -342,6 +364,8 @@ def main() -> int:
     args = cli.parse_args()
     if args.video_stream < 0 or args.metric_width < 2 or args.cut_context < 1:
         cli.error("stream must be nonnegative, metric-width >= 2, cut-context >= 1")
+    if min(args.sheet_columns, args.sheet_rows, args.thumb_width, args.thumb_height) < 1 or args.frame_width < 0:
+        cli.error("sheet dimensions must be positive and frame-width nonnegative")
     numeric = (args.edge_threshold, args.cut_diff, args.cut_hist, args.cut_diff_strong)
     if any(not math.isfinite(value) or not 0 <= value <= 1 for value in numeric):
         cli.error("metric thresholds must be finite values between 0 and 1")
