@@ -62,3 +62,17 @@ The timeline needs `fps` and `scenes` with `start` frames; optional score notes
 use seconds in `start` and `duration`. Short windows locate seams; also listen
 to a full phrase on either side. Read the [continuity method](../../methods/drawn-story-continuity.md)
 for interpretation. These measurements do not approve musical or audible continuity.
+
+## Preserve accepted audio
+
+For a picture-only revision, copy the accepted encoded audio stream and verify
+it with PyAV. This checks codec configuration, every packet payload and timestamp,
+and the fully decoded samples. Exit status is nonzero if any identity check fails.
+
+```sh
+python check_audio_identity.py /path/to/accepted.mp4 /path/to/candidate.mp4 --output /path/to/project/review/audio-identity.json
+```
+
+The file hashes identify both exports; their video streams may differ. Carry
+forward only the scope of a documented prior listening approval. Data identity
+does not create a listening review that never took place.

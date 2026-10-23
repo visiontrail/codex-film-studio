@@ -91,3 +91,19 @@ Bind observations to the exact export hash. A decoded file, ASR transcript,
 loudness result or generated contact sheet is not perceptual approval. Preserve
 specific user feedback as an observed defect in the external production and
 use it to revise both the implementation and these reusable rules.
+
+When a user confirms a particular quality, record their exact reply, its scope
+and the export hash. Keep that separate from agent listening or visual review;
+confirmation of smooth transitions does not certify every other audio property.
+For later picture-only revisions, copy the accepted encoded audio stream rather
+than remixing or re-encoding it. Compare packet payload hashes, packet timing,
+codec configuration and duration before carrying that acceptance forward.
+
+For material adjustments, compare the same drawing at native output resolution
+with paper, lighting and camera fixed. Test a small range of pressure values
+before changing the whole film. Pigment pressure can reduce excessive bare-paper
+gaps without thickening dark contours; it must still follow the actual drawing
+strokes. Use coherent irregular bends and interrupted pressure for directional
+materials such as wood, rather than uniform full-width parallel lines. Check
+the result in a moving encoded sequence as well as stills. A material trial is
+not accepted merely because its pixel statistics moved toward a reference.
