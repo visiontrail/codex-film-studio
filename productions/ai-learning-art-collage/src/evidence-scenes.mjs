@@ -19,7 +19,7 @@ const cue = (p, start, span = .18) => ease(clamp((p - start) / span))
 function field(g, color) {
   g.fillStyle = color; g.fillRect(0, 0, 1920, 1080)
   g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = .55
-  g.drawImage(PAPER, 0, 0); g.restore()
+  g.drawImage(PAPER, 0, 0, 1920, 1080); g.restore()
 }
 
 function cut(g, name, x, y, width, rotation = 0, alpha = 1) {

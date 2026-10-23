@@ -24,7 +24,7 @@ function portrait(g, pose, x, y, width, rotation = 0) {
 function coloredField(g, color) {
   g.fillStyle = color; g.fillRect(0, 0, 1920, 1080)
   g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = .62
-  g.drawImage(PAPER, 0, 0); g.restore()
+  g.drawImage(PAPER, 0, 0, 1920, 1080); g.restore()
 }
 
 function strip(g, text, x, y, width, { size = 44, rot = 0, fill = '#e7d7b9', color = C.ink } = {}) {

@@ -68,3 +68,16 @@ image observations only; it neither invents a new visual review nor inherits
 motion playback, listening or a style-equivalence verdict.
 
 No palette, motion or hash statistic is a percentage of artistic similarity.
+
+## V10 full-frame material correction
+
+Native encoded V9 frames1362/2278/3536 exposed a source-size regression: the
+new1672×941paper was drawn without an explicit destination size by two field
+helpers, creating straight untextured strips. V9 is preserved as a rejected
+candidate; its partial visual reviews are not final acceptance.
+
+V10 scales those two full-frame draws to1920×1080 and corrects the unused base
+helper in the same way. Three native source frames were opened after repair;
+the strips are absent and text remains clear. Full encoded rendering and actual
+frame review are required before delivering V10. No narration, subtitle, clock,
+figure, formula or motion was changed.

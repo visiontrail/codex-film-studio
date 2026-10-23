@@ -28,7 +28,7 @@ export function paperTexture(w=1920,h=1080,seed=54){
 // Versioned generated scan: stable physical fibres, shared by paper objects.
 // It is required for reproducibility; missing source assets must fail loudly.
 export const PAPER=await loadImage(new URL('../assets/generated/paper-fiber-v9.png',import.meta.url).pathname)
-export function base(g,color=null){g.drawImage(PAPER,0,0);if(color){g.save();g.globalCompositeOperation='multiply';g.globalAlpha=.25;g.fillStyle=color;g.fillRect(0,0,W,H);g.restore()}}
+export function base(g,color=null){g.drawImage(PAPER,0,0,W,H);if(color){g.save();g.globalCompositeOperation='multiply';g.globalAlpha=.25;g.fillStyle=color;g.fillRect(0,0,W,H);g.restore()}}
 export function tornPath(g,w,h,seed=1,rag=4){
  const r=rng(seed)
  // Large hand-torn sheets have long uneven tears with small fibres. Small

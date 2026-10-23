@@ -2,7 +2,7 @@
 
 独立制作的英语艺术拼贴解释视频：46 段旁白，1920 × 1080，25 fps。没有新建 FrontierTechSN Task，也没有沿用 lemo-opuscar 的代码或工作流；仅研究了它的制作经验。参考片是 101 academy 的[《拼拼貼貼成藝術》](https://www.youtube.com/watch?v=04UfoNpOQdw)，参考画面、图像与配乐不进入新片。
 
-本文件说明输入、重建方法和证据边界，不是最终验收证书。当前46段旁白及7段局部修订已合并，共1657词；纯旁白554.86秒，完整时间轴586.48秒、14662帧。V7、V8完整MP4分别保留在 `delivery/` 和 `delivery/v8/`；V9正在替换纸面材质并重新渲染。版本状态以 `content/delivery-status.json` 为准。所有版本均未发布。`opening-v2-*`、`opening-v4-*` 和 `media/full-v5-draft-picture.mp4` 是历史试片或草稿。
+本文件说明输入、重建方法和证据边界，不是最终验收证书。当前46段旁白及7段局部修订已合并，共1657词；纯旁白554.86秒，完整时间轴586.48秒、14662帧。V7、V8完整MP4分别保留在 `delivery/` 和 `delivery/v8/`；V9保留新纸面材质，但编码检查发现未缩放贴图产生硬边，已拒绝；V10修复后正在重新渲染。版本状态以 `content/delivery-status.json` 为准。所有版本均未发布。`opening-v2-*`、`opening-v4-*` 和 `media/full-v5-draft-picture.mp4` 是历史试片或草稿。
 
 ## 文件与权威来源
 

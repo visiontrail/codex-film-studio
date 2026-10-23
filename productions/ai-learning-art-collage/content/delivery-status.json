@@ -1,7 +1,7 @@
 {
   "title": "Does AI Help You Learn—or Just Finish?",
   "latest_complete_candidate": "v8",
-  "work_in_progress": "v9 paper material revision",
+  "work_in_progress": "V10 full-frame texture scaling repair and complete encoded review",
   "duration_seconds": 586.48,
   "frames": 14662,
   "width": 1920,
@@ -19,12 +19,19 @@
     "v8": {
       "file": "delivery/v8/Does-AI-Help-You-Learn-or-Just-Finish.mp4",
       "sha256": "72b242d358e281433c380051f43009dbc8db36083542d5f29e0441147fd36afc",
-      "actual_review_status": "changed-frame assignments being completed",
-      "playback_observations": "review/v8-playback/observations.json"
+      "actual_review_status": "All14662frames covered:3750 newly opened thumbnail frames plus10912 strict pixel/PTS inherited-only frames; selected native comparisons.",
+      "playback_observations": "review/v8-playback/observations.json",
+      "actual_review": "review/v8-visual-review-coverage.json",
+      "actual_review_sha256": "fc646204a7b7d40addf648da2b802ac9557af48c294a504f68830667f9dfcd7c"
     },
     "v9": {
-      "render_work": "media/render-final-v9-chunks",
-      "status": "rendering, not reviewed"
+      "file": "delivery/v9/Does-AI-Help-You-Learn-or-Just-Finish.mp4",
+      "sha256": "912780a7e29d1c28bf43f79a291ac3a07635756472806c06cec815ebf216f81a",
+      "status": "Rejected: unscaled1672x941paper in two field helpers leaves right/bottom seams. Partial actual review only. Preserved for traceability."
+    },
+    "v10": {
+      "render_work": "media/render-final-v10-chunks",
+      "status": "Rendering after native source repair checks; no encoded acceptance yet."
     }
   },
   "review_boundary": "Actual every-frame reviews use 160x90 cells with selected native 1920x1080 checks. Automated metrics are not artistic similarity percentages.",
