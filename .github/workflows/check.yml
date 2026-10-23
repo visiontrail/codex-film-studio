@@ -36,6 +36,8 @@ jobs:
           python-version: '3.11'
       - name: Test packaging
         run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Check generated style documentation
+        run: python3 scripts/update_style_index.py --check
       - name: Install renderer
         working-directory: styles/whiteboard/studio
         run: npm ci

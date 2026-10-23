@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 
 from new_film import ROOT, create
 from serve_styles import handler_for, resolve_resource
-from update_style_index import render
+from update_style_index import render, render_gallery, render_summary, replace_block
 
 
 class CatalogTests(unittest.TestCase):
@@ -30,6 +30,11 @@ class CatalogTests(unittest.TestCase):
                 self.assertEqual(entry["guide"], f"styles/{entry['id']}/STYLE.md")
                 for key in ["guide", "prompt", "template"]:
                     self.assertTrue((ROOT / entry[key]).exists(), key)
+                if entry.get('preview'):
+                    self.assertTrue((ROOT / entry['preview']).is_file())
+                    self.assertIn(entry['preview_kind'], ['frame', 'schematic'])
+                    if entry['preview_kind'] == 'frame':
+                        self.assertTrue(entry['capabilities']['published_demo'])
                 self.assertTrue(entry["capabilities"]["project_creation"])
                 if entry["capabilities"]["published_demo"]:
                     self.assertEqual(entry["status"], "demo-ready")
@@ -41,6 +46,10 @@ class CatalogTests(unittest.TestCase):
                     if page["access"] == "local":
                         self.assertIn(f'/_projects/{page["id"]}/', (ROOT / page["page"]).read_text())
         self.assertEqual((ROOT / "styles/README.md").read_text(), render(catalog))
+        for filename, language in [('README.md', 'en'), ('README.zh-CN.md', 'zh')]:
+            document = (ROOT / filename).read_text()
+            self.assertEqual(document, replace_block(document, 'style-atlas', render_gallery(catalog, language)))
+            self.assertEqual(document, replace_block(document, 'style-summary', render_summary(catalog, language)))
 
     def test_all_styles_create_independent_projects_without_showcases(self):
         entries = json.loads((ROOT / "styles.json").read_text())["styles"]

@@ -6,6 +6,9 @@ creator, readable index and local showcase server. `methods/` is reserved for
 workflows shared by multiple styles. Style-specific drawing and sound rules stay
 with the style, including when they are described as a production method.
 
+Both root READMEs also present every registered style in a visual atlas generated
+from this catalog. Keep their summary and atlas blocks in sync with the readable index.
+
 ## Package structure
 
 Provide `STYLE.md`, `README.md`, `prompt.txt` and a subject-empty `starter/` with
@@ -16,6 +19,12 @@ Document dependencies and recorded-audio alternatives for narration.
 
 Set `guide`, `readme` where present, `prompt`, `template`, `template_kind`,
 `status`, bilingual status notes and `capabilities` in `styles.json`.
+Add `description_zh` for the Chinese atlas and `preview` for a repository-relative
+image path. Set `preview_kind` to `frame` only for an actual released film frame;
+use `schematic` for a subject-independent style sketch. Missing previews remain
+listed with a placeholder. Keep new artwork generic and retain its license;
+do not use a new production's private stills or reference-project artwork as a
+style preview. See [README artwork notes](docs/readme/README.md).
 
 | Status | Required meaning |
 | --- | --- |
@@ -46,7 +55,8 @@ showcase pages are legacy examples; preserve their sources and licenses.
 
 ## Validate
 
-Run `python3 scripts/update_style_index.py` after changing the catalog. Check:
+Run `python3 scripts/update_style_index.py` after changing the catalog to update
+the detailed index and both README atlases. Check:
 
 ```sh
 python3 scripts/update_style_index.py --check

@@ -6,6 +6,84 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
+**6 styles** · 1 published sample · 4 authoring starters · 1 material toolkit
+
+## Visual index / 风格一览
+
+Whiteboard uses a released film frame. Other previews are original schematic
+style sketches, not frames from completed films. 白板使用已发布剧照；其余为通用风格示意。
+
+<table>
+<tr>
+<td width="38%" valign="middle"><a href="../styles/whiteboard/STYLE.md"><img src="../styles/whiteboard/poster.png" alt="Whiteboard Explainer — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>01 / <code>whiteboard</code></sub>
+<h3>Whiteboard Explainer</h3>
+<sub>白板讲解</sub>
+<p>One persistent board, handwritten ideas, moving markers and story-driven line characters.</p>
+<p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/">▶ Watch online</a></p>
+<sub><a href="../styles/whiteboard/STYLE.md">Style guide</a> · <a href="../styles/whiteboard/prompt.txt">Prompt</a> · <a href="../styles/whiteboard/studio">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="../styles/art-collage/STYLE.md"><img src="../docs/readme/art-collage.svg" alt="Art Collage — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>02 / <code>art-collage</code></sub>
+<h3>Art Collage</h3>
+<sub>艺术拼贴</sub>
+<p>Paper cutouts, layered typography and physical collage motion.</p>
+<p><b>Authoring starter</b> · No sample yet</p>
+<sub><a href="../styles/art-collage/STYLE.md">Style guide</a> · <a href="../styles/art-collage/prompt.txt">Prompt</a> · <a href="../styles/art-collage/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="../styles/crayon-book/STYLE.md"><img src="../docs/readme/crayon-book.svg" alt="Crayon Picture Book — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>03 / <code>crayon-book</code></sub>
+<h3>Crayon Picture Book</h3>
+<sub>蜡笔绘本</sub>
+<p>Wax pigment, textured paper, hand-drawn reveals and physical book motion.</p>
+<p><b>Material toolkit</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="../styles/crayon-book/STYLE.md">Style guide</a> · <a href="../styles/crayon-book/prompt.txt">Prompt</a> · <a href="../styles/crayon-book/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="../styles/midcentury-cartoon/STYLE.md"><img src="../docs/readme/midcentury-cartoon.svg" alt="Mid-century Cartoon — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>04 / <code>midcentury-cartoon</code></sub>
+<h3>Mid-century Cartoon</h3>
+<sub>50 年代平涂卡通</sub>
+<p>Misregistered flat colour, broken ink, held poses and jazz.</p>
+<p><b>Authoring starter</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="../styles/midcentury-cartoon/STYLE.md">Style guide</a> · <a href="../styles/midcentury-cartoon/prompt.txt">Prompt</a> · <a href="../styles/midcentury-cartoon/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="../styles/satellite-briefing/STYLE.md"><img src="../docs/readme/satellite-briefing.svg" alt="Satellite Briefing — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>05 / <code>satellite-briefing</code></sub>
+<h3>Satellite Briefing</h3>
+<sub>卫星影像／地理简报</sub>
+<p>Geographic camera, satellite imagery and measured annotations.</p>
+<p><b>Authoring starter</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="../styles/satellite-briefing/STYLE.md">Style guide</a> · <a href="../styles/satellite-briefing/prompt.txt">Prompt</a> · <a href="../styles/satellite-briefing/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="../styles/scifi-sitcom/STYLE.md"><img src="../docs/readme/scifi-sitcom.svg" alt="Sci-Fi Sitcom Toon — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>06 / <code>scifi-sitcom</code></sub>
+<h3>Sci-Fi Sitcom Toon</h3>
+<sub>科幻情景喜剧卡通</sub>
+<p>Flat cartoon drawing, contrasting performances and spatial comedy.</p>
+<p><b>Authoring starter</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="../styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="../styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="../styles/scifi-sitcom/starter">Project files</a></sub>
+</td>
+</tr>
+</table>
+
+## Capabilities / 能力与网页
+
 | Style / 风格 | Package / 完成状态 | Renderer / 场景渲染工程 | Showcase / 网页 |
 | --- | --- | --- | --- |
 | [白板讲解 / Whiteboard Explainer](whiteboard/STYLE.md) | 已发布样片 (`demo-ready`) | Included / 已有 | [Short and long published samples](whiteboard/studio/index.html) |

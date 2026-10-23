@@ -41,7 +41,10 @@
           "page": "styles/whiteboard/studio/index.html",
           "access": "release"
         }
-      ]
+      ],
+      "description_zh": "一块持续保留内容的白板，用手写文字、移动马克笔和线条人物逐步解释想法。",
+      "preview": "styles/whiteboard/poster.png",
+      "preview_kind": "frame"
     },
     {
       "id": "art-collage",
@@ -61,7 +64,10 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": []
+      "showcases": [],
+      "description_zh": "纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。",
+      "preview": "docs/readme/art-collage.svg",
+      "preview_kind": "schematic"
     },
     {
       "id": "crayon-book",
@@ -98,7 +104,10 @@
           "project": "../codex-film-studio-projects/crayon-book-film",
           "source_page": "review/compare.html"
         }
-      ]
+      ],
+      "description_zh": "蜡质笔触与暖纸纹理，逐笔显现的绘画配合真实的绘本翻页。",
+      "preview": "docs/readme/crayon-book.svg",
+      "preview_kind": "schematic"
     },
     {
       "id": "midcentury-cartoon",
@@ -143,7 +152,10 @@
           "project": "productions/ai-learning-midcentury",
           "source_page": "editions/long/review/motion.html"
         }
-      ]
+      ],
+      "description_zh": "柔和套色、微微错位的墨线与停格姿态，配合清楚的教学表演和爵士节奏。",
+      "preview": "docs/readme/midcentury-cartoon.svg",
+      "preview_kind": "schematic"
     },
     {
       "id": "satellite-briefing",
@@ -188,7 +200,10 @@
           "project": "productions/singapore-satellite-briefing",
           "source_page": "review/comparison.html"
         }
-      ]
+      ],
+      "description_zh": "以地理镜头连接真实卫星影像，用克制的标注解释位置、尺度与空间关系。",
+      "preview": "docs/readme/satellite-briefing.svg",
+      "preview_kind": "schematic"
     },
     {
       "id": "scifi-sitcom",
@@ -220,7 +235,10 @@
             "reference/coffee-run.mp4"
           ]
         }
-      ]
+      ],
+      "description_zh": "粗墨线、平涂阴影与反差表演，用反应镜头和空间变化组织喜剧节奏。",
+      "preview": "docs/readme/scifi-sitcom.svg",
+      "preview_kind": "schematic"
     }
   ]
 }

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Satellite Briefing — schematic style sketch</title>
+  <desc id="desc">An abstract geographic composition with contour lines, graticule, a target bracket and a route. This is a schematic, not satellite imagery or measured data.</desc>
+  <defs><pattern id="grid" width="64" height="60" patternUnits="userSpaceOnUse"><path d="M64 0H0V60" fill="none" stroke="#d9e0c8" stroke-opacity=".12"/></pattern></defs>
+  <rect width="640" height="360" fill="#172e32"/>
+  <path d="M0 55 91 21l96 44 40 93 116 15 31 60-41 127H0" fill="#446155"/>
+  <path d="m640 29-78 39-12 83-74 37-32 96 43 76h153" fill="#344e48"/>
+  <g fill="none" stroke="#87937b" stroke-width="1.5" opacity=".6"><path d="M0 87q107-84 159 18t134 96q75-7 34 159"/><path d="M0 120q89-68 127 9t135 100q61 28 20 131"/><path d="M0 157q80-47 100 0t108 99q59 41 14 104"/><path d="M0 197q51-27 88 11t64 83l-14 69"/><path d="M640 99q-66 21-75 103t-57 158m132-207q-41 22-42 91t-45 116"/></g>
+  <rect width="640" height="360" fill="url(#grid)"/>
+  <path d="m138 234 83-55 117 46 133-89" fill="none" stroke="#e6bd76" stroke-width="3" stroke-dasharray="6 5"/>
+  <g fill="#eee9d9"><circle cx="138" cy="234" r="5"/><circle cx="471" cy="136" r="5"/></g>
+  <path d="M448 124v-12h17m29 12v-12h-17m-29 36v12h17m29-12v12h-17" fill="none" stroke="#eee9d9" stroke-width="2"/>
+  <path d="M489 117 526 88h65" fill="none" stroke="#eee9d9" stroke-width="1.5"/>
+  <text x="526" y="79" fill="#eee9d9" font-family="monospace" font-size="13">TARGET</text>
+  <path d="M32 291v9h102v-9M83 294v6" fill="none" stroke="#eee9d9" stroke-width="2"/>
+  <text x="32" y="36" fill="#acbfb5" font-family="monospace" font-size="13" letter-spacing="2">SCHEMATIC / NO GEO DATA</text>
+  <text x="32" y="343" fill="#acbfb5" font-family="monospace" font-size="13" letter-spacing="2">LOCATE / OBSERVE / ANNOTATE</text>
+</svg>

@@ -1,169 +1,258 @@
 # Codex Film Studio
 
-**Choose a style. Bring a story. Make a film with Codex.**
+**A visual language for your next film.** Choose a style, bring a story, and build
+it with Codex: picture, narration, camera and sound on one timeline.
 
-A growing library of film styles, with explicit completion status, reusable
-rules and project starters. All styles live in `styles/`; shared production
-workflows live in `methods/`. Existing films and local projects are preserved.
+![Codex Film Studio — a field guide to films made with code](docs/readme/cover.svg)
 
-[Watch the films online](https://visiontrail.github.io/codex-film-studio/) ·
-[简体中文](README.zh-CN.md) · [Make a film](#make-a-film-with-codex) ·
-[Rebuild the sample](#rebuild-the-whiteboard-sample) · [Releases](https://github.com/visiontrail/codex-film-studio/releases)
+[**Explore the styles ↓**](#the-style-atlas) · [Watch a film](#the-screening-room) ·
+[Start creating](#make-your-film) · [简体中文](README.zh-CN.md)
 
-## The styles
+<!-- style-summary:start -->
 
-Start with the [complete style catalog](styles/README.md) or run:
+**6 styles** · 1 published sample · 4 authoring starters · 1 material toolkit
+
+<!-- style-summary:end -->
+
+## The style atlas
+
+Explore different ways to draw, move and tell a story. Open a preview for its
+visual rules, or take the prompt and project files into your own production.
+
+<!-- style-atlas:start -->
+
+<table>
+<tr>
+<td width="38%" valign="middle"><a href="styles/whiteboard/STYLE.md"><img src="styles/whiteboard/poster.png" alt="Whiteboard Explainer — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>01 / <code>whiteboard</code></sub>
+<h3>Whiteboard Explainer</h3>
+<sub>白板讲解</sub>
+<p>One persistent board, handwritten ideas, moving markers and story-driven line characters.</p>
+<p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/">▶ Watch online</a></p>
+<sub><a href="styles/whiteboard/STYLE.md">Style guide</a> · <a href="styles/whiteboard/prompt.txt">Prompt</a> · <a href="styles/whiteboard/studio">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/art-collage.svg" alt="Art Collage — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>02 / <code>art-collage</code></sub>
+<h3>Art Collage</h3>
+<sub>艺术拼贴</sub>
+<p>Paper cutouts, layered typography and physical collage motion.</p>
+<p><b>Authoring starter</b> · No sample yet</p>
+<sub><a href="styles/art-collage/STYLE.md">Style guide</a> · <a href="styles/art-collage/prompt.txt">Prompt</a> · <a href="styles/art-collage/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/crayon-book/STYLE.md"><img src="docs/readme/crayon-book.svg" alt="Crayon Picture Book — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>03 / <code>crayon-book</code></sub>
+<h3>Crayon Picture Book</h3>
+<sub>蜡笔绘本</sub>
+<p>Wax pigment, textured paper, hand-drawn reveals and physical book motion.</p>
+<p><b>Material toolkit</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="styles/crayon-book/STYLE.md">Style guide</a> · <a href="styles/crayon-book/prompt.txt">Prompt</a> · <a href="styles/crayon-book/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/midcentury-cartoon/STYLE.md"><img src="docs/readme/midcentury-cartoon.svg" alt="Mid-century Cartoon — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>04 / <code>midcentury-cartoon</code></sub>
+<h3>Mid-century Cartoon</h3>
+<sub>50 年代平涂卡通</sub>
+<p>Misregistered flat colour, broken ink, held poses and jazz.</p>
+<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="styles/midcentury-cartoon/STYLE.md">Style guide</a> · <a href="styles/midcentury-cartoon/prompt.txt">Prompt</a> · <a href="styles/midcentury-cartoon/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/readme/satellite-briefing.svg" alt="Satellite Briefing — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>05 / <code>satellite-briefing</code></sub>
+<h3>Satellite Briefing</h3>
+<sub>卫星影像／地理简报</sub>
+<p>Geographic camera, satellite imagery and measured annotations.</p>
+<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="styles/satellite-briefing/STYLE.md">Style guide</a> · <a href="styles/satellite-briefing/prompt.txt">Prompt</a> · <a href="styles/satellite-briefing/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/scifi-sitcom/STYLE.md"><img src="docs/readme/scifi-sitcom.svg" alt="Sci-Fi Sitcom Toon — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>06 / <code>scifi-sitcom</code></sub>
+<h3>Sci-Fi Sitcom Toon</h3>
+<sub>科幻情景喜剧卡通</sub>
+<p>Flat cartoon drawing, contrasting performances and spatial comedy.</p>
+<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="styles/scifi-sitcom/starter">Project files</a></sub>
+</td>
+</tr>
+</table>
+
+<!-- style-atlas:end -->
+
+<sub>Whiteboard shows a released film frame. The other previews are original,
+subject-free style sketches. Local films and review pages open through the
+<a href="#open-the-local-studio">local studio</a> and need their retained project files.</sub>
+
+[Compare capabilities and completion details →](styles/README.md)
+
+## The screening room
+
+### Does AI Help You Learn—or Just Finish?
+
+[![Released whiteboard film: people, a Turkish flag and learning scoreboards](styles/whiteboard/poster.png)](https://visiontrail.github.io/codex-film-studio/)
+
+A whiteboard film about the difference between completing a task with AI and
+understanding it on your own. Moving markers, handwritten ideas and line-drawn
+people build the argument on one continuous board.
+
+[**▶ Watch with subtitles and chapters**](https://visiontrail.github.io/codex-film-studio/) ·
+[3-minute MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
+[12-minute MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
+[Sample notes](styles/whiteboard/DEMO.md)
+
+## Make your film
+
+### 1 / Choose a starting point
 
 ```sh
+git clone https://github.com/visiontrail/codex-film-studio.git
+cd codex-film-studio
 python3 scripts/new_film.py --list
 python3 scripts/new_film.py my-film --style midcentury-cartoon
 ```
 
-The catalog includes **whiteboard, art-collage, crayon-book, midcentury-cartoon,
-satellite-briefing and scifi-sitcom**. Each uses the same command. Completion
-is recorded as a published sample, an authoring starter or a material toolkit;
-the catalog also lists whether a renderer and local showcase pages exist.
+Every style uses `--style <id>`. Your independent working copy goes to
+`../codex-film-studio-projects/my-film`; use `--output /absolute/external/path`
+for another destination. Existing directories are preserved.
 
-Open all existing showcase pages from one local entrypoint:
+### 2 / Bring the story
+
+Open the new project in Codex. Give it a subject, audience, language and length:
+
+> Make a three-minute film about how solar panels work. Use this project's style
+> guide. Draw people and objects when they explain an idea. Use English narration
+> and deliver a 1080p MP4. Inspect the rendered stills and motion, listen to the
+> soundtrack, and repair observed problems before showing me the result.
+
+The repository's [`codex-film` skill](.agents/skills/codex-film/SKILL.md) coordinates
+the workflow. It reads three guides:
+
+| Read | What it brings to the film |
+| --- | --- |
+| [DIRECTOR.md](DIRECTOR.md) | Story, camera, rhythm and performance |
+| [TECHNIQUE.md](TECHNIQUE.md) | Rendering, narration, music and mixing |
+| The selected `STYLE.md` | Drawing, materials and motion |
+
+### 3 / Build, review, deliver
+
+Write the narration and scenes, record or generate the voice, then render and
+review the film. The [shared methods](methods/README.md) cover production and
+review; each style adds its own rules.
+
+Whiteboard includes an editable sample renderer. The other packages provide
+blank inputs and reusable helpers; their new scenes and renderers need authoring.
+Crayon Picture Book currently provides a material toolkit. A new subject needs
+its own narration, drawings, motion and audio review.
+
+For new narration, use your own Chatterbox-compatible service or recorded WAVs.
+Replaying the released whiteboard sample uses the supplied audio and requires
+no TTS credentials. Requirements: **Node.js 20+, Python 3.11+, FFmpeg**; see the
+selected project for additional dependencies. Use WSL on Windows.
+
+## Open the local studio
 
 ```sh
 python3 scripts/serve_styles.py --port 8249
 ```
 
-Open **http://127.0.0.1:8249/**. The pages live under their style package and read
-media from the retained projects. See the [local showcase guide](docs/pages.md#local-style-catalog)
-for dependencies and the difference between local and published pages.
+Open **http://127.0.0.1:8249/** to browse all registered styles and their existing
+players, compositions and review pages. Local showcases read media, fonts and
+review data from the retained projects in `styles.json`; a fresh clone marks
+missing resources. See the [local showcase guide](docs/pages.md#local-style-catalog).
 
-### Published sample · Whiteboard Explainer
-
-[![Whiteboard: learners, a Turkish flag and two scoreboards](styles/whiteboard/poster.png)](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4)
-
-**Does AI Help You Learn—or Just Finish?**
-
-Floating markers draw a story on one persistent board. Handwritten notes,
-people, laptops, books and a Turkish flag explain the difference between
-finishing with help and doing the work alone.
-
-[Watch / download 3-minute film](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
-[12-minute edition](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
-[Style guide](styles/whiteboard/STYLE.md) · [Sample details](styles/whiteboard/DEMO.md)
-
-## Shared production methods
-
-[methods/](methods/README.md) contains the common production and review workflows.
-Style-specific paper, crayon, cartoon, geography and performance rules live with
-the corresponding style. Existing external projects are independent copies.
-
-## Make a film with Codex
-
-```sh
-git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio
-```
-
-Open this folder in Codex and ask:
-
-> Use the whiteboard style to make a three-minute film about how solar panels
-> work. Create it outside this library in ../codex-film-studio-projects/solar-panels. Draw people and objects when they help
-> explain an idea. Use English narration and deliver a 1080p MP4. Inspect the
-> rendered result and repair problems before showing me the film.
-
-The repository includes `AGENTS.md` and a repo-local
-[`codex-film` skill](.agents/skills/codex-film/SKILL.md). You can also explicitly
-ask Codex to read that file. The style prompt is available separately in
-[`styles/whiteboard/prompt.txt`](styles/whiteboard/prompt.txt).
-
-Codex creates a working copy, writes the story, adapts the composition,
-generates or imports narration, then renders the film. New narration needs
-your own Chatterbox-compatible service or WAV recordings. The included sample
-can be rebuilt with its released narration, without TTS credentials.
-
-## Rebuild the whiteboard sample
-
-Requirements: **Node.js 20+, Python 3.11+, FFmpeg**. Tested on Apple Silicon
-macOS with Node 24 and FFmpeg 8. The sample replay also has a Linux CI smoke
-check. Native Windows is not supported by the speech client; use WSL.
+<details>
+<summary><b>Rebuild the released whiteboard sample</b></summary>
 
 From the repository root:
 
 ```sh
-# Download the original sample narration, timing and finished video.
 python3 scripts/fetch_demo.py --edition short
 cd styles/whiteboard/studio
 npm ci
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 
-# A quick picture preview, then a complete rebuild with voice and sound.
+# Picture preview, then the full film with narration, music and marker sounds.
 node scripts/render.mjs --start 0 --end 8 --width 960 --out media/preview.mp4
 .venv/bin/python scripts/build.py --skip-atlases
 python3 scripts/serve.py
 ```
 
-Open **http://127.0.0.1:8246/**. The final file is
+Open **http://127.0.0.1:8246/**. The complete output is
 `styles/whiteboard/studio/media/does-ai-help-you-learn-3min.mp4`.
-Rendering time depends on your machine. The preview is picture-only; the
-complete build mixes narration, music and marker sounds.
 
 For both editions, run `python3 scripts/fetch_demo.py --edition all` from the
-repository root. Add `--edition long` to the studio's render/build commands.
-The long output is `editions/long/media/does-ai-help-you-learn-long.mp4`.
+repository root. Add `--edition long` to the studio's render/build commands;
+the long output is `editions/long/media/does-ai-help-you-learn-long.mp4`.
 
-Git contains source, fonts and instrument samples. MP4s, narration WAVs and
-timing data are downloaded from the versioned Release and checked against
-SHA-256 hashes. Cloning alone does not download the films. Rebuilding preserves
-the composition and input audio; different renderer/encoder versions can
-produce different file bytes.
+Git contains source, fonts and instrument samples. Films, narration WAVs and
+timing data come from the versioned Release, checked against SHA-256 hashes.
+Cloning alone does not download films. A rebuild preserves the composition and
+input audio; renderer and encoder versions can change the output bytes.
 
-## Make your own working copy
+Tested on Apple Silicon macOS with Node 24 and FFmpeg 8. A Linux CI smoke check
+renders a short picture preview. The speech client requires WSL on Windows.
 
-```sh
-python3 scripts/new_film.py my-film --style <id>
-# Optional destination; it must not already exist and must be outside this library.
-python3 scripts/new_film.py my-film --style <id> --output /absolute/path/my-film
-```
+</details>
 
-Open `../codex-film-studio-projects/my-film` in Codex. Read its `README.md`,
-`STYLE.md`, `prompt.txt` and available workflow/review guides. Supply the subject,
-audience, language and duration. The command prepares a project; authoring,
-narration and rendering follow in that project.
+<details>
+<summary><b>Host the published showcase</b></summary>
 
-The whiteboard studio contains its legacy sample composition as editable code.
-Other styles supply blank inputs and helpers; scenes and rendering must be
-written for the new subject. Crayon Book currently supplies material tools and
-an input contract. New films always need their own picture, motion and audio review.
+The [public site](https://visiontrail.github.io/codex-film-studio/) currently plays
+the two released whiteboard editions, with subtitles and chapters.
 
-The former `methods/<style>/` packages now live in `styles/<style>/`. Use the
-unified command above. `--method <id>` remains a deprecated alias for saved
-commands. No old project must be recreated to continue using it.
+For a fork, select **Settings → Pages → Source → GitHub Actions**, then run
+**Deploy film showcase** in Actions. Pushing to `main` also triggers deployment.
+The builder downloads checksum-pinned Release assets and publishes an explicit
+set of player files. See [deployment and local preview](docs/pages.md).
 
-## Add a style
+Local style pages and production directories are separate from this published
+site. Publishing another film requires an explicit request.
 
-Register every visual style in `styles.json`, including those without a published
-sample. Record actual completion and capabilities, then regenerate the readable
-index with `python3 scripts/update_style_index.py`. See [CONTRIBUTING.md](CONTRIBUTING.md).
+</details>
 
-Specific real people require portraits supplied for the new film. Keep production
-media and private records in the external project; contribute reusable rules,
-tools and blank inputs to the library. Existing samples and showcase pages remain
-available as reference material.
+## Grow the library
 
-## The public showcase
+All visual styles live in `styles/<id>/`; [styles.json](styles.json) records their
+completion and capabilities. Shared workflows belong in `methods/`.
 
-The [GitHub Pages site](https://visiontrail.github.io/codex-film-studio/) plays
-both sample editions with subtitles, chapters and links to the getting-started
-guides. The Pages workflow deploys updates pushed to `main`.
+Contribute reusable visual rules, generic tools and blank inputs. Keep each film's
+story, portraits, media and review records in its external project. Specific real
+people need portraits supplied for that new film. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-To host a fork, select **Settings → Pages → Source → GitHub Actions**, then
-run **Deploy film showcase** in Actions. The build downloads the pinned Release
-assets, verifies their SHA-256 hashes and publishes only the player assets.
-See [the deployment guide](docs/pages.md) for local preview and customization.
+After registering a style, run `python3 scripts/update_style_index.py` to update
+both README atlases and the detailed catalog. `--check` detects drift.
 
-## Credits and license
+<details>
+<summary>Continuing an older project</summary>
 
-By **LeoGuoLabs**, built with Codex. Inspired by the style-library approach of
-[LemoLab's lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar).
+The former `methods/<style>/` packages now live under `styles/<style>/`.
+`--method <id>` remains a deprecated alias for `--style <id>`. Existing projects
+are independent copies and can continue in place. Published examples and retained
+showcase entrypoints keep their original compositions.
 
-Original code and documentation: [MIT](LICENSE). Our sample films and stills:
-[CC BY 4.0](MEDIA-LICENSE.md). Fonts and instrument recordings retain their
-own licenses; see [credits](styles/whiteboard/studio/CREDITS.md).
+</details>
+
+## Credits & license
+
+By **[LeoGuoLabs](https://x.com/LeoGuoLabs)**, built with Codex. Style-library
+inspiration: [LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)
+by [@lemomo_ai](https://x.com/lemomo_ai).
+
+Code, documentation and schematic previews: [MIT](LICENSE). Original sample films
+and film stills: [CC BY 4.0](MEDIA-LICENSE.md). Fonts and instrument recordings
+retain their own licenses; see [credits](styles/whiteboard/studio/CREDITS.md).
+[README design references and artwork notes](docs/readme/README.md).

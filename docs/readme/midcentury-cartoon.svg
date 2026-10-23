@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Mid-century Cartoon — schematic style sketch</title>
+  <desc id="desc">Generic flat forms on a muted teal ground: a misregistered arch, coral circle, mustard triangle and atomic star.</desc>
+  <defs><pattern id="paper" width="23" height="19" patternUnits="userSpaceOnUse"><path d="m3 5 3 1m10 7h2" stroke="#263b35" stroke-opacity=".12"/></pattern></defs>
+  <rect width="640" height="360" fill="#70938a"/>
+  <path d="M0 282q164-35 325-13 157 18 315-3v94H0" fill="#e8dbb5"/>
+  <path d="M82 274V158a89 89 0 0 1 178 0v116" fill="#e4c069"/>
+  <path d="M76 268V153a89 89 0 0 1 178 0v115" fill="none" stroke="#373a32" stroke-width="4" stroke-dasharray="178 3 260 4"/>
+  <circle cx="317" cy="198" r="80" fill="#cc725b"/>
+  <circle cx="311" cy="194" r="80" fill="none" stroke="#373a32" stroke-width="4" stroke-dasharray="158 3 212 4"/>
+  <path d="m394 272 73-151 91 151z" fill="#f2e7cb"/>
+  <path d="m388 267 73-151 91 151z" fill="none" stroke="#373a32" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m470 45 4 31 26-15-18 26 32 5-31 7 15 28-25-20-6 32-7-32-27 15 18-25-31-6 31-5-13-28 23 18z" fill="#f1e8cd"/>
+  <path d="M51 284h96m12-1h8m209-2h81m11 0h9m80 2h31" fill="none" stroke="#6c735c" stroke-width="2"/>
+  <rect width="640" height="360" fill="url(#paper)"/>
+  <text x="32" y="343" fill="#5c624d" font-family="monospace" font-size="13" letter-spacing="2">FLAT COLOUR / OFFSET INK / HELD POSES</text>
+</svg>

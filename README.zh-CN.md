@@ -1,73 +1,176 @@
 # Codex Film Studio
 
-**选一个风格，带一个故事，用 Codex 做成视频。**
+**为下一个故事，找到它的画面语言。** 选一种风格，用 Codex 把叙事、画面、
+镜头和声音放到同一条时间轴上，做成影片。
 
-这是一个会持续扩展的视频风格库。所有视觉风格统一放在 `styles/`，
-逐项标注完成状态；`methods/` 保存跨风格通用的制作和审查流程。
+![Codex Film Studio — 用代码做影片的风格手册](docs/readme/cover.svg)
 
-[在线展示与播放](https://visiontrail.github.io/codex-film-studio/) ·
-[English](README.md) · [下载样片](https://github.com/visiontrail/codex-film-studio/releases/tag/v0.1.0)
+[**浏览全部风格 ↓**](#风格手册) · [观看样片](#放映室) ·
+[开始创作](#制作你的影片) · [English](README.md)
 
-## 所有风格与完成状态
+<!-- style-summary:start -->
 
-[统一风格目录](styles/README.md)包含白板、艺术拼贴、蜡笔绘本、50 年代平涂卡通、
-卫星影像／地理简报、科幻情景喜剧卡通。所有风格使用同一创建命令：
+**6 种风格** · 1 种已发布样片 · 4 种创作起步包 · 1 种材质工具包
+
+<!-- style-summary:end -->
+
+## 风格手册
+
+从笔触、纸张到卡通表演和地理镜头，在这里比较每一种风格。
+点击预览了解视觉规则，或直接打开提示词与创作工程。
+
+<!-- style-atlas:start -->
+
+<table>
+<tr>
+<td width="38%" valign="middle"><a href="styles/whiteboard/STYLE.md"><img src="styles/whiteboard/poster.png" alt="白板讲解 — 样片剧照" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>01 / <code>whiteboard</code></sub>
+<h3>白板讲解</h3>
+<sub>Whiteboard Explainer</sub>
+<p>一块持续保留内容的白板，用手写文字、移动马克笔和线条人物逐步解释想法。</p>
+<p><b>已发布样片</b> · <a href="https://visiontrail.github.io/codex-film-studio/">▶ 在线播放</a></p>
+<sub><a href="styles/whiteboard/STYLE.md">风格说明</a> · <a href="styles/whiteboard/prompt.txt">提示词</a> · <a href="styles/whiteboard/studio">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/art-collage.svg" alt="艺术拼贴 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>02 / <code>art-collage</code></sub>
+<h3>艺术拼贴</h3>
+<sub>Art Collage</sub>
+<p>纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。</p>
+<p><b>创作起步包</b> · 尚无样片</p>
+<sub><a href="styles/art-collage/STYLE.md">风格说明</a> · <a href="styles/art-collage/prompt.txt">提示词</a> · <a href="styles/art-collage/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/crayon-book/STYLE.md"><img src="docs/readme/crayon-book.svg" alt="蜡笔绘本 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>03 / <code>crayon-book</code></sub>
+<h3>蜡笔绘本</h3>
+<sub>Crayon Picture Book</sub>
+<p>蜡质笔触与暖纸纹理，逐笔显现的绘画配合真实的绘本翻页。</p>
+<p><b>材质工具包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
+<sub><a href="styles/crayon-book/STYLE.md">风格说明</a> · <a href="styles/crayon-book/prompt.txt">提示词</a> · <a href="styles/crayon-book/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/midcentury-cartoon/STYLE.md"><img src="docs/readme/midcentury-cartoon.svg" alt="50 年代平涂卡通 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>04 / <code>midcentury-cartoon</code></sub>
+<h3>50 年代平涂卡通</h3>
+<sub>Mid-century Cartoon</sub>
+<p>柔和套色、微微错位的墨线与停格姿态，配合清楚的教学表演和爵士节奏。</p>
+<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
+<sub><a href="styles/midcentury-cartoon/STYLE.md">风格说明</a> · <a href="styles/midcentury-cartoon/prompt.txt">提示词</a> · <a href="styles/midcentury-cartoon/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/readme/satellite-briefing.svg" alt="卫星影像／地理简报 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>05 / <code>satellite-briefing</code></sub>
+<h3>卫星影像／地理简报</h3>
+<sub>Satellite Briefing</sub>
+<p>以地理镜头连接真实卫星影像，用克制的标注解释位置、尺度与空间关系。</p>
+<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
+<sub><a href="styles/satellite-briefing/STYLE.md">风格说明</a> · <a href="styles/satellite-briefing/prompt.txt">提示词</a> · <a href="styles/satellite-briefing/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="styles/scifi-sitcom/STYLE.md"><img src="docs/readme/scifi-sitcom.svg" alt="科幻情景喜剧卡通 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>06 / <code>scifi-sitcom</code></sub>
+<h3>科幻情景喜剧卡通</h3>
+<sub>Sci-Fi Sitcom Toon</sub>
+<p>粗墨线、平涂阴影与反差表演，用反应镜头和空间变化组织喜剧节奏。</p>
+<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
+<sub><a href="styles/scifi-sitcom/STYLE.md">风格说明</a> · <a href="styles/scifi-sitcom/prompt.txt">提示词</a> · <a href="styles/scifi-sitcom/starter">创作工程</a></sub>
+</td>
+</tr>
+</table>
+
+<!-- style-atlas:end -->
+
+<sub>白板使用已发布样片的剧照；其余预览为不含具体故事的原创风格示意。
+本地影片与审阅页通过<a href="#打开本地工作室">本地工作室</a>访问，需要保留项目中的资源。</sub>
+
+[比较各风格的能力与完成情况 →](styles/README.md)
+
+## 放映室
+
+### Does AI Help You Learn—or Just Finish?
+
+[![已发布白板影片：人物、土耳其国旗与学习成绩对比](styles/whiteboard/poster.png)](https://visiontrail.github.io/codex-film-studio/)
+
+借助 AI 完成任务，是否等于真正掌握？移动的马克笔、手写文字、线条人物和
+具体物体在一块持续保留内容的白板上，逐步展开这个问题。
+
+[**▶ 在线播放 · 字幕与章节**](https://visiontrail.github.io/codex-film-studio/) ·
+[3 分钟 MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
+[12 分钟 MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
+[样片说明](styles/whiteboard/DEMO.md)
+
+## 制作你的影片
+
+### 1 / 选择起点
 
 ```sh
+git clone https://github.com/visiontrail/codex-film-studio.git
+cd codex-film-studio
 python3 scripts/new_film.py --list
 python3 scripts/new_film.py my-film --style midcentury-cartoon
 ```
 
-目录标明“已发布样片”“创作起步包”“材质工具包”，同时列出渲染工程和已有网页。
-这描述风格包的完成情况；每一部新影片仍须独立创作和审查。
+所有风格使用同一个 `--style <id>` 命令。独立工程默认放在仓库外的
+`../codex-film-studio-projects/my-film`，也可用 `--output /绝对路径/新项目`
+指定其他外部目录。已有目标目录会保留，不会覆盖。
 
-已有播放与审阅网页集中在各自的风格目录中，通过统一入口打开：
+### 2 / 带入故事
+
+在 Codex 中打开新项目，提供选题、观众、语言和时长，例如：
+
+> 按本项目的风格说明，制作一个三分钟的“太阳能电池如何工作”视频。
+> 需要人物和具体对象解释的地方画出来。使用英文配音，输出 1080p MP4。
+> 检查渲染后的静帧和动作，试听声音，修复实际发现的问题后再让我看。
+
+仓库的 [`codex-film` 技能](.agents/skills/codex-film/SKILL.md)组织制作流程，
+会阅读三份说明：
+
+| 阅读 | 在影片中的作用 |
+| --- | --- |
+| [DIRECTOR.md](DIRECTOR.md) | 故事、镜头、节奏和表演 |
+| [TECHNIQUE.md](TECHNIQUE.md) | 渲染、配音、音乐和混音 |
+| 所选风格的 `STYLE.md` | 绘画、材质和动作规则 |
+
+### 3 / 制作、审查、交付
+
+创作旁白与场景，录制或生成配音，再渲染与审查影片。
+[通用制作方法](methods/README.md)负责共用流程；各风格说明补充自己的视觉与声音要求。
+
+白板保留可编辑的样片渲染工程；其他风格提供空白输入和通用工具，需要为新选题
+编写场景与渲染器。蜡笔绘本目前是材质工具包。每部新影片都要创作自己的旁白、
+画面和动作，并进行声音审查。
+
+新配音可接入自己的 Chatterbox 兼容服务，或按段提供 WAV 录音。
+复现白板样片使用发布时的音频，无需 TTS 密钥。基本环境为
+**Node.js 20+、Python 3.11+、FFmpeg**，额外依赖见所选项目说明；Windows 使用 WSL。
+白板样片的字体与字幕面向英文，中文制作需要重新配置字形和排版。
+
+## 打开本地工作室
 
 ```sh
 python3 scripts/serve_styles.py --port 8249
 ```
 
-访问 **http://127.0.0.1:8249/**。网页读取保留项目里的影片、字体和审阅数据，
-详细说明见[本地网页说明](docs/pages.md#local-style-catalog)。原项目及其输出继续保留。
+访问 **http://127.0.0.1:8249/**，集中浏览风格包及已有的播放器、实时构图和审阅页。
+本地网页读取 `styles.json` 所登记保留项目里的影片、字体和审阅数据；新克隆会标记
+缺失资源。详见[本地网页说明](docs/pages.md#local-style-catalog)。
 
-[通用制作方法](methods/README.md)提供共用的故事、音频、时间轴与审查流程；
-每种风格自己的材质、绘画、镜头和声音规则都在 `styles/<id>/`。
+<details>
+<summary><b>复现已发布的白板样片</b></summary>
 
-## 已发布样片 · 白板讲解
-
-[![白板上的人物、土耳其国旗和学习成绩对比](styles/whiteboard/poster.png)](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4)
-
-**Does AI Help You Learn—or Just Finish?**
-
-在一块持续保留内容的白板上，用移动的马克笔、手写文字、线条人物和
-电脑、课本、国旗等具体对象，讲清“借助 AI 完成”和“独立掌握”的区别。
-
-[3 分钟样片](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
-[12 分钟长版](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
-[风格说明](styles/whiteboard/STYLE.md)
-
-## 通过 Codex 使用
-
-```sh
-git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio
-```
-
-在 Codex 中打开这个目录，粘贴：
-
-> 阅读仓库的 AGENTS.md 和白板风格说明。用白板讲解风格制作一个三分钟的
-> “太阳能电池如何工作”视频，放到仓库外的 ../codex-film-studio-projects/solar-panels。需要人物和具体对象
-> 的地方画出简笔画。使用英文配音，输出 1080p MP4。自行检查并修复画面和
-> 动作问题，完成后再让我看。
-
-仓库包含 `.agents/skills/codex-film/SKILL.md`，也可以明确让 Codex 阅读它。
-白板样片的手写字体和字幕布局面向英文；制作中文白板片需要配置中文字形和排版。
-其他风格按各自说明选择字体与配音，影片语言以新项目要求为准。
-
-## 先复现现有样片
-
-需要 Node.js 20+、Python 3.11+ 和 FFmpeg。macOS 已验证；Linux 有样片预览
-CI 检查。Windows 请使用 WSL。
+从仓库根目录执行：
 
 ```sh
 python3 scripts/fetch_demo.py --edition short
@@ -75,63 +178,72 @@ cd styles/whiteboard/studio
 npm ci
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
+
+# 先生成画面预览，再完整合成配音、音乐和笔触音效。
 node scripts/render.mjs --start 0 --end 8 --width 960 --out media/preview.mp4
 .venv/bin/python scripts/build.py --skip-atlases
 python3 scripts/serve.py
 ```
 
-打开 **http://127.0.0.1:8246/**。最终视频位于该工作目录的
-`media/does-ai-help-you-learn-3min.mp4`。预览命令只生成画面，完整构建会合成
-配音、音乐和笔触音效。生成时间取决于机器性能。
+打开 **http://127.0.0.1:8246/**。完整输出位于
+`styles/whiteboard/studio/media/does-ai-help-you-learn-3min.mp4`。
 
-在仓库根目录执行 `python3 scripts/fetch_demo.py --edition all` 可下载两版
-样片及配音。长版构建命令添加 `--edition long`，输出在
+在仓库根目录执行 `python3 scripts/fetch_demo.py --edition all` 下载两版样片及配音。
+长版构建命令添加 `--edition long`，输出在
 `editions/long/media/does-ai-help-you-learn-long.mp4`。
 
-克隆只下载源码、字体和乐器采样；视频和配音从 Release 下载并校验哈希。
-复现现有样片无需 TTS 密钥。改写脚本后，需要自己的 Chatterbox 兼容服务
-或按段提供 WAV 配音，详见 [制作方法](TECHNIQUE.md)。
+Git 包含源码、字体和乐器采样；影片、配音 WAV 与时间数据从固定版本的 Release
+下载并校验 SHA-256。克隆本身不会下载影片。复现保留原构图与输入音频；不同的
+渲染器和编码器版本可能生成不同的文件字节。
 
-## 新建影片与扩展风格
+已在 Apple Silicon macOS、Node 24 和 FFmpeg 8 上验证。Linux CI 会渲染一段
+画面预览；Windows 的语音客户端使用 WSL。
 
-```sh
-python3 scripts/new_film.py my-film --style <id>
-```
+</details>
 
-然后用 Codex 打开 `../codex-film-studio-projects/my-film`，阅读生成的 README、STYLE、
-prompt 和制作审查说明，提供选题、观众、语言和时长。可用 `--output` 指定其他外部目录；
-已有目标目录会被拒绝覆盖。创建命令负责准备工程，随后继续创作、配音和渲染。
+<details>
+<summary><b>部署公开展示页</b></summary>
 
-白板保留可编辑的样片工程；其他风格提供空白输入和通用工具，需要为新选题编写场景与
-渲染器。蜡笔绘本目前是材质工具包。修改主题必须同时修改叙事和画面。
-
-原 `methods/<style>/` 已迁入 `styles/<style>/`；所有新项目使用 `--style <id>`。
-旧的 `--method <id>` 参数保留为兼容别名。已创建的项目拥有独立副本，可继续使用。
-
-新增风格的目录规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
-## GitHub Pages 展示页
-
-[在线展示页](https://visiontrail.github.io/codex-film-studio/) 支持三分钟和
-十二分钟样片切换、英文字幕、章节跳转，以及仓库和使用说明入口。
-推送到 `main` 后，GitHub Actions 会自动构建并部署。
+[公开展示页](https://visiontrail.github.io/codex-film-studio/)目前播放白板的两个已发布
+版本，支持字幕与章节。
 
 部署自己的 fork：在 **Settings → Pages → Source** 选择 **GitHub Actions**，
-然后在 Actions 中运行 **Deploy film showcase**。构建会下载并校验 Release
-样片，只发布播放器需要的文件。预览命令及修改方法见 [部署说明](docs/pages.md)。
+然后在 Actions 中运行 **Deploy film showcase**。推送到 `main` 也会触发部署。
+构建会下载并校验固定版本的 Release 资源，只发布明确列出的播放器文件。
+详见[部署与本地预览说明](docs/pages.md)。
 
-由 LeoGuoLabs 使用 Codex 制作。风格库的组织方式参考
-[LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)。
+本地风格网页和制作目录与公开站点分别管理。发布其他影片需要明确请求。
 
-代码和文档采用 [MIT](LICENSE)，原创样片与剧照采用
-[CC BY 4.0](MEDIA-LICENSE.md)。素材出处和许可证见
-[CREDITS.md](styles/whiteboard/studio/CREDITS.md)。
+</details>
 
-## 扩展与维护
+## 扩展这个风格库
 
-无论有没有发布样片，视觉风格都登记到 `styles.json`，按实际内容标注完成状态和能力。
-修改索引后执行 `python3 scripts/update_style_index.py` 同步可读目录，贡献规范见
-[CONTRIBUTING.md](CONTRIBUTING.md)。
+所有视觉风格位于 `styles/<id>/`，由 [styles.json](styles.json)记录完成状态与能力；
+跨风格通用流程放在 `methods/`。
 
-新影片的选题、人物、配音、成片和审阅记录放到外部项目；向库内贡献通用规则、工具和
-空白输入。指定真实人物时使用新项目提供的肖像。已有样片和网页保留为历史参考。
+向库内贡献可复用的视觉规则、通用工具和空白输入。每部影片的故事、肖像、媒体与
+审阅记录放在外部项目。指定真实人物时，使用为新影片提供的肖像。
+目录规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+登记风格后，运行 `python3 scripts/update_style_index.py`，同步中英文首页和详细目录。
+使用 `--check` 检查是否遗漏更新。
+
+<details>
+<summary>继续使用旧项目</summary>
+
+原 `methods/<style>/` 已迁入 `styles/<style>/`，`--method <id>` 保留为
+`--style <id>` 的兼容别名。已创建的项目是独立副本，可以原地继续。
+已发布样片和保留的展示入口维持原有构图。
+
+</details>
+
+## 来源与许可
+
+由 **[LeoGuoLabs](https://x.com/LeoGuoLabs)** 使用 Codex 制作。风格库的组织方式受到
+[LemoLab / lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) 启发，
+作者为 [@lemomo_ai](https://x.com/lemomo_ai)。
+
+代码、文档与风格示意图采用 [MIT](LICENSE)；原创样片和影片剧照采用
+[CC BY 4.0](MEDIA-LICENSE.md)。字体与乐器采样保留各自许可，详见
+[素材出处](styles/whiteboard/studio/CREDITS.md)。
+[README 设计参考与插图说明](docs/readme/README.md)。

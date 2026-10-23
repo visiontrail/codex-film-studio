@@ -1,10 +1,78 @@
 #!/usr/bin/env python3
-"""Generate the readable style catalog from styles.json; --check detects drift."""
+"""Sync the style catalog and bilingual README galleries; --check detects drift."""
 import argparse
+from html import escape
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def render_summary(catalog, language):
+    entries = catalog['styles']
+    counts = {status: sum(e['status'] == status for e in entries)
+              for status in catalog['statuses']}
+    if language == 'zh':
+        return (f"**{len(entries)} 种风格** · {counts['demo-ready']} 种已发布样片 · "
+                f"{counts['starter-ready']} 种创作起步包 · {counts['toolkit-ready']} 种材质工具包")
+    return (f"**{len(entries)} styles** · {counts['demo-ready']} published sample · "
+            f"{counts['starter-ready']} authoring starters · {counts['toolkit-ready']} material toolkit")
+
+
+def render_gallery(catalog, language='en', prefix=''):
+    """GitHub-safe HTML: images and links work without CSS or JavaScript."""
+    zh = language == 'zh'
+    lines = ['<table>']
+    for number, entry in enumerate(catalog['styles'], 1):
+        name = entry['name_zh'] if zh else entry['name']
+        other_name = entry['name'] if zh else entry['name_zh']
+        description = entry.get('description_zh', entry['description']) if zh else entry['description']
+        state = catalog['statuses'][entry['status']]['name_zh' if zh else 'name']
+        guide = escape(prefix + entry['guide'], quote=True)
+        preview = entry.get('preview', entry.get('poster'))
+        if preview:
+            kind = entry.get('preview_kind', 'schematic')
+            label = ('风格示意' if zh else 'style sketch') if kind == 'schematic' else ('样片剧照' if zh else 'film frame')
+            visual = (f'<a href="{guide}"><img src="{escape(prefix + preview, quote=True)}" '
+                      f'alt="{escape(name)} — {label}" width="320"></a>')
+        else:
+            visual = '预览待补充' if zh else 'Preview to come'
+        actions = [
+            (entry['guide'], '风格说明' if zh else 'Style guide'),
+            (entry['prompt'], '提示词' if zh else 'Prompt'),
+            (entry['template'], '创作工程' if zh else 'Project files'),
+        ]
+        links = ' · '.join(f'<a href="{escape(prefix + path, quote=True)}">{label}</a>' for path, label in actions)
+        local_pages = [p for p in entry.get('showcases', []) if p['access'] == 'local']
+        if entry['capabilities']['published_demo']:
+            availability = '<a href="https://visiontrail.github.io/codex-film-studio/">' + ('▶ 在线播放' if zh else '▶ Watch online') + '</a>'
+        elif local_pages:
+            availability = '<a href="' + escape(prefix + 'docs/pages.md#local-style-catalog', quote=True) + '">' + ('本地影片与审阅页' if zh else 'Local films & review pages') + '</a>'
+        else:
+            availability = '尚无样片' if zh else 'No sample yet'
+        lines += [
+            '<tr>',
+            f'<td width="38%" valign="middle">{visual}</td>',
+            '<td width="62%" valign="top">',
+            f'<sub>{number:02d} / <code>{escape(entry["id"])}</code></sub>',
+            f'<h3>{escape(name)}</h3>',
+            f'<sub>{escape(other_name)}</sub>',
+            f'<p>{escape(description)}</p>',
+            f'<p><b>{escape(state)}</b> · {availability}</p>',
+            f'<sub>{links}</sub>',
+            '</td>', '</tr>',
+        ]
+    lines += ['</table>']
+    return '\n'.join(lines)
+
+
+def replace_block(document, name, content):
+    start, end = f'<!-- {name}:start -->', f'<!-- {name}:end -->'
+    if document.count(start) != 1 or document.count(end) != 1:
+        raise ValueError(f'Expected exactly one {name} block')
+    before, remainder = document.split(start)
+    _, after = remainder.split(end)
+    return f'{before}{start}\n\n{content}\n\n{end}{after}'
 
 
 def render(catalog):
@@ -14,6 +82,12 @@ def render(catalog):
         'package completion and showcase availability. Shared workflows live in `methods/`.', '',
         '所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；',
         '已有本地影片网页、公开样片与新影片验收分别记录。', '',
+        render_summary(catalog, 'en'), '',
+        '## Visual index / 风格一览', '',
+        'Whiteboard uses a released film frame. Other previews are original schematic',
+        'style sketches, not frames from completed films. 白板使用已发布剧照；其余为通用风格示意。', '',
+        render_gallery(catalog, prefix='../'), '',
+        '## Capabilities / 能力与网页', '',
         '| Style / 风格 | Package / 完成状态 | Renderer / 场景渲染工程 | Showcase / 网页 |',
         '| --- | --- | --- | --- |',
     ]
@@ -61,15 +135,24 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
-    target = ROOT / 'styles/README.md'
-    expected = render(json.loads((ROOT / 'styles.json').read_text()))
+    catalog = json.loads((ROOT / 'styles.json').read_text())
+    outputs = {ROOT / 'styles/README.md': render(catalog)}
+    for filename, language in [('README.md', 'en'), ('README.zh-CN.md', 'zh')]:
+        target = ROOT / filename
+        expected = replace_block(target.read_text(encoding='utf-8'), 'style-summary', render_summary(catalog, language))
+        outputs[target] = replace_block(expected, 'style-atlas', render_gallery(catalog, language))
+    stale = []
+    for target, expected in outputs.items():
+        if args.check:
+            if not target.is_file() or target.read_text(encoding='utf-8') != expected:
+                stale.append(str(target.relative_to(ROOT)))
+        else:
+            target.write_text(expected, encoding='utf-8')
+            print(f'Updated {target.relative_to(ROOT)}')
+    if stale:
+        raise SystemExit(f'Style documentation is stale ({", ".join(stale)}). Run python3 scripts/update_style_index.py')
     if args.check:
-        if not target.is_file() or target.read_text() != expected:
-            raise SystemExit('Style index is stale. Run python3 scripts/update_style_index.py')
-        print('Style index matches styles.json.')
-    else:
-        target.write_text(expected, encoding='utf-8')
-        print('Updated styles/README.md')
+        print('Style catalog and both README galleries match styles.json.')
 
 
 if __name__ == '__main__':
