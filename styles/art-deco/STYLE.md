@@ -50,3 +50,5 @@ Caption intervals come from the actual accepted audio, not equal fractions of a 
 Palette, edge and frame-difference metrics help locate discrepancies. They do not constitute a perceptual similarity percentage or proof of exact style equivalence. State the actual inspection resolution and the limits of listening access.
 
 Profile walking is available through `person(..., {pose: "walk", turn: -1 | 1})`. Use it for lateral travel; keep camera targets on the traveling subject through large scale changes. A close hand insert must have a continuous sleeve extending into the character or beyond the frame.
+
+Portrait inserts should retain recognizable architecture with shallow depth of field. Render the background to an offscreen layer, blur that layer, and keep the face and clothing edges sharp. Metallic fasteners use directional or radial highlights without the light halo used for electric bulbs.
