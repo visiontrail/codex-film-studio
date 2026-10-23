@@ -5,7 +5,8 @@ export const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 export const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
 function hash(x,y,s=0){let n=Math.imul(x+71,374761393)^Math.imul(y+131,668265263)^Math.imul(s+3,2246822519);n=Math.imul(n^(n>>>13),1274126177);return ((n^(n>>>16))>>>0)/4294967295;}
 function grid(x,y,step,s){let xx=x/step,yy=y/step,i=Math.floor(xx),j=Math.floor(yy),u=ease(xx-i),v=ease(yy-j);return (hash(i,j,s)*(1-u)+hash(i+1,j,s)*u)*(1-v)+(hash(i,j+1,s)*(1-u)+hash(i+1,j+1,s)*u)*v;}
-export function paperTexture(){
+export function paperTexture({reliefMap=null,reliefGain=1}={}){
+ if(reliefMap&&reliefMap.length!==W*H)throw new Error('Paper relief dimensions must match the canvas');
  const canvas=createCanvas(W,H),ctx=canvas.getContext('2d'),im=ctx.createImageData(W,H),p=im.data,tooth=new Float32Array(W*H);
  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
   const i=y*W+x;let n=grid(x,y,1.7,3)*.45+grid(x,y,4,5)*.32+grid(x,y,12,9)*.23;
@@ -13,7 +14,7 @@ export function paperTexture(){
   const fibre=(grid(x/5,y,2,12)-.5)*8;
   const rad=((x-W*.5)/(W*.65))**2+((y-H*.48)/(H*.85))**2;
   const shade=1-.16*rad;
-  const relief=(n-.5)*27+ridge*33+fibre*1.25+(hash(x,y)-.5)*43;
+  const relief=reliefMap?reliefMap[i]*reliefGain:(n-.5)*27+ridge*33+fibre*1.25+(hash(x,y)-.5)*43;
   for(let k=0;k<3;k++)p[4*i+k]=[234,229,217][k]*shade+relief;
   p[4*i+3]=255;tooth[i]=clamp((n-.28)*1.85+(hash(x,y,4)-.5)*.12);
  }

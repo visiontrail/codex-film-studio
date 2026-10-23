@@ -1,1 +1,0 @@
-{"name":"odds-coffee-run","private":true,"version":"1.0.0","type":"module","scripts":{"stills":"node scripts/render.mjs --stills","render":"node scripts/render.mjs"},"dependencies":{"@napi-rs/canvas":"^0.1.80"}}

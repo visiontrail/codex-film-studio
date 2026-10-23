@@ -1,7 +1,0 @@
-node_modules/
-media/
-review/
-reference/
-__pycache__/
-.env
-.venv/

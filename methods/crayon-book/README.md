@@ -40,6 +40,26 @@ lighting. They have no scene or character knowledge. Copy them into an external
 project, install the dependency from `package.json` there, and author the
 production-specific composition separately.
 
+## Paper calibration from a blank sample
+
+When a procedural grain looks like sand instead of paper, isolate a genuinely
+blank reference area or frame and compare several texture scales before tuning.
+With Python, NumPy, SciPy and Pillow installed, `scripts/synthesize_paper.py`
+accepts a reference image and an output path. It removes slow illumination,
+smooths the power spectrum, randomizes spatial phase and iteratively matches the
+relief histogram. The resulting little-endian float32 map has new spatial
+structure. Record the reference license, image hash, seed, output hash and any
+render gain in the external production. Keep both input and generated assets
+outside this library.
+
+Load the map as a `Float32Array` and pass it to
+`paperTexture({reliefMap, reliefGain})`. Its dimensions must match the canvas;
+the gain defaults to 1. The map controls visible paper relief; the separate
+wax-tooth field still controls pigment deposition. Include the map in render
+cache keys. Compare the encoded result, since grading, scaling and compression
+change fine texture. Matched statistics and low spatial correlation are process
+checks, not proof of identical perceived style.
+
 ## Direction and timing
 
 Resolve the source identity before writing. Record the intended audience,
