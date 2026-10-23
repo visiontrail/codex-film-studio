@@ -117,17 +117,20 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
  else{g.strokeStyle=gold(g,-50,-85,100,100);g.lineWidth=4;g.beginPath();g.arc(-3,-12,47,Math.PI,Math.PI*1.95);g.stroke();ellipse(g,-18,-4,9,20,'#57401c');ellipse(g,-18,-4,6,15,'#100e0a')}
  g.restore();g.restore();
 }
-export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null}={}){
+export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null,bodyLean=0,planted=false}={}){
  if(h<=0)return;
  if(pose==='walk'&&turn){walkingProfile(g,x,y,h,t,turn,greenUniform);return;}
  const tt=Math.floor(t*12)/12,phase=tt*7,walking=pose==='walk',walk=walking?Math.sin(phase):0;
  const effort=pose==='crank'?Math.sin(tt*3):0,breath=Math.sin(tt*1.8)*1.1,col=greenUniform?'#1D6B57':'#8E1B2E',lit=greenUniform?'#569371':'#D4485C';
- g.save();g.translate(x,y);g.scale(h/700,h/700);g.translate(walking?Math.sin(phase)*3:effort*4,walking?-Math.abs(Math.sin(phase))*9:breath);
+ const rootX=planted?0:walking?Math.sin(phase)*3:effort*4,rootY=planted?0:walking?-Math.abs(Math.sin(phase))*9:breath;
+ g.save();g.translate(x,y);g.scale(h/700,h/700);g.translate(rootX,rootY);
  // Grounding, trouser planes and softly articulated knees.
  glow(g,0,-2,90,'0,0,0',.5);
  for(const side of [-1,1]){let hip=[side*20,-337],knee=[side*24+walk*53*side,-174-Math.max(0,walk*side)*25],foot=[side*26+walk*84*side,-12-Math.max(0,walk*side)*7];
  sleeve(g,[hip,knee,foot],25,'#2b2233','#625160');
  g.save();g.translate(...foot);g.fillStyle='#0b0908';g.strokeStyle='#b59857';g.lineWidth=.8;g.beginPath();g.moveTo(-12,0);g.quadraticCurveTo(-12,-7,4,-8);g.quadraticCurveTo(13,-7,22,8);g.lineTo(-12,8);g.closePath();g.fill();g.stroke();g.restore();}
+ // The upper body leans about the pelvis while planted feet stay on the floor.
+ g.save();if(bodyLean){g.translate(0,-337);g.rotate(bodyLean);g.translate(0,337)}
  // Neck precedes tunic, so no rectangular rim floats in front of the collar.
  poly(g,[[-9,-590],[12,-590],[13,-546],[-10,-546]],'#bd8c68','#eab88c',false);
  poly(g,[[-49,-552],[49,-552],[44,-491],[35,-430],[37,-337],[0,-318],[-37,-337],[-35,-430],[-44,-491]],col,lit,false);
@@ -144,7 +147,7 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  if(pose==='plant'){right=[[48,-540],[93,-448],[20,-388]];left=[[-48,-540],[-93,-448],[-20,-388]]}
  if(pose==='consider'){const q=ease(action);right=[[48,-540],[mix(64,105,q),mix(-432,-596,q)],[mix(72,38,q),mix(-330,-652,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
  if(walking){left=[[-48,-540],[-65+walk*38,-438],[-72+walk*80,-337]];right=[[48,-540],[65-walk*38,-438],[72-walk*80,-337]]}
- if(handTargets){for(let i=0;i<2;i++){if(!handTargets[i])continue;let arm=i?right:left,target=handTargets[i];arm[2]=target;let dx=target[0]-arm[0][0],dy=target[1]-arm[0][1],len=Math.hypot(dx,dy),bend=Math.sqrt(Math.max(0,105**2-len**2/4));arm[1]=[(target[0]+arm[0][0])/2-dy/len*bend*(i?-1:1),(target[1]+arm[0][1])/2+dx/len*bend*(i?-1:1)]}}
+ if(handTargets){for(let i=0;i<2;i++){if(!handTargets[i])continue;let arm=i?right:left,target=handTargets[i];if(bodyLean||planted){const dx=target[0]-rootX,dy=target[1]-rootY+337,cs=Math.cos(bodyLean),sn=Math.sin(bodyLean);target=[dx*cs+dy*sn,-dx*sn+dy*cs-337]}arm[2]=target;let dx=target[0]-arm[0][0],dy=target[1]-arm[0][1],len=Math.hypot(dx,dy),bend=Math.sqrt(Math.max(0,105**2-len**2/4));arm[1]=[(target[0]+arm[0][0])/2-dy/len*bend*(i?-1:1),(target[1]+arm[0][1])/2+dx/len*bend*(i?-1:1)]}}
  const drawArm=arm=>{sleeve(g,arm,20,col,lit);let a=Math.atan2(arm[2][1]-arm[1][1],arm[2][0]-arm[1][0])-Math.PI/2;g.save();g.translate(...arm[2]);g.rotate(a);rect(g,-10,-6,20,4,'#C9A24B','#F3D98B');g.restore();glove(g,arm[2][0]+Math.sin(-a)*8,arm[2][1]+Math.cos(a)*8,a,pose==='crank'?1:0)};
  drawArm(left);if(pose!=='consider')drawArm(right);
  g.save();g.translate(gaze*3,-621);g.rotate(headTilt+(emotion==='worry'?-0.06:0)+Math.sin(tt*.85)*.012);g.scale(.78,.78);
@@ -170,7 +173,7 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  }
  if(greenUniform){g.save();g.rotate(-.16);poly(g,[[-42,-68],[-32,-104],[26,-104],[37,-68]],'#1D6B57','#4e8d6a');ellipse(g,0,-68,47,7,'#275c43');line(g,[[-34,-96],[29,-96]],2);g.restore()}
  else {g.strokeStyle=gold(g,-60,-80,120,100);g.lineWidth=4;g.beginPath();g.arc(0,-12,49,Math.PI,0);g.stroke();for(const side of [-1,1]){ellipse(g,side*45,-6,6.5,19,'#57401c');ellipse(g,side*46,-6,4.2,14,'#100e0a')}}
- g.restore();if(pose==='consider')drawArm(right);g.restore();
+ g.restore();if(pose==='consider')drawArm(right);g.restore();g.restore();
 }
 
 // A cylindrical brass conduit with a wall shadow and a transverse highlight.
