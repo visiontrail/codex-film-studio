@@ -1,0 +1,17 @@
+[
+ {"id":"opening","scene":"farm","min":8,"lines":[["narrator","Leo the Farmer. A little farm. A very big day."]] },
+ {"id":"wake","scene":"bedroom","min":10,"lines":[["leo","Good morning, Jojo! The farm is waiting."],["jojo","Already? All right. I'm coming."]] },
+ {"id":"clothes","scene":"wardrobe","min":15,"lines":[["narrator","What do farmers wear? A raincoat? A swimsuit? Pajamas and slippers?"],["jojo","Hmm. A shirt, overalls, and boots!"]] },
+ {"id":"ready","scene":"walk","min":8,"lines":[["narrator","Now they are ready. Two friends, two buckets, and a path full of possibilities."]] },
+ {"id":"animals","scene":"animals","min":15,"lines":[["leo","Let's give the animals breakfast."],["jojo","Which ones? Cows? Horses? Pigs? Rabbits? Chickens? Goats? Ducks?"]] },
+ {"id":"feed","scene":"feeding","min":11,"lines":[["leo","Every one of them!"],["narrator","Hay for the big mouths. Grain for the little beaks. Nobody misses breakfast."]] },
+ {"id":"milk","scene":"milk","min":11,"lines":[["leo","Next, let's milk the cow."],["narrator","Jojo sits very still. Little by little, the empty pail fills up."]] },
+ {"id":"vegetables","scene":"vegetables","min":12,"lines":[["leo","Now for the vegetables."],["jojo","Pumpkins? Sweet potatoes? Carrots?"],["leo","Pumpkins and carrots, please."]] },
+ {"id":"pull","scene":"pull","min":10,"lines":[["narrator","Jojo pulls. And pulls. One more tug... Pop! A carrot! Leo lifts a pumpkin with both paws."]] },
+ {"id":"orchard","scene":"orchard","min":12,"lines":[["leo","Let's pick some fruit."],["jojo","Grapes? Apples? Pears?"],["leo","Apples and pears today."]] },
+ {"id":"pick","scene":"pick","min":9,"lines":[["narrator","Up goes Leo. Down comes an apple. Jojo catches it. And another. And another!"]] },
+ {"id":"carry","scene":"carry","min":12,"lines":[["jojo","My arms are full! How will we carry all this? A plate? A bag? A trash can?"],["leo","Try a basket and a box."]] },
+ {"id":"pack","scene":"pack","min":9,"lines":[["narrator","Apples in the box. Pears in the basket. Together, they carry the harvest home."]] },
+ {"id":"nap","scene":"nap","min":12,"lines":[["leo","And now, let's... Jojo?"],["narrator","Jojo has found one more job. A very quiet one."],["leo","A nap. Good idea."]] },
+ {"id":"end","scene":"end","min":12,"lines":[["narrator","Full baskets. Full bellies. Sleepy friends. A good day's work on the farm."]] }
+]

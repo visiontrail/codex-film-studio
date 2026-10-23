@@ -1,0 +1,9 @@
+{
+  "name": "codex-crayon-book-film",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent deterministic wax-crayon film and exhaustive frame audit",
+  "scripts": { "stills": "node scripts/render.mjs --stills" },
+  "dependencies": { "@napi-rs/canvas": "^0.1.80" }
+}

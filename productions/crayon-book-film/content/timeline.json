@@ -1,0 +1,331 @@
+{
+  "fps": 24,
+  "width": 1920,
+  "height": 1080,
+  "total_frames": 3991,
+  "scenes": [
+    {
+      "id": "opening",
+      "scene": "farm",
+      "start": 0,
+      "end": 192,
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "Leo the Farmer. A little farm. A very big day.",
+          "start": 42,
+          "end": 128,
+          "wav": "media/voice/6a3502ff9f9bb0be.wav"
+        }
+      ]
+    },
+    {
+      "id": "wake",
+      "scene": "bedroom",
+      "start": 192,
+      "end": 432,
+      "lines": [
+        {
+          "speaker": "leo",
+          "text": "Good morning, Jojo! The farm is waiting.",
+          "start": 216,
+          "end": 294,
+          "wav": "media/voice/aed57a626cc7b256.wav"
+        },
+        {
+          "speaker": "jojo",
+          "text": "Already? All right. I'm coming.",
+          "start": 308,
+          "end": 358,
+          "wav": "media/voice/9f142fec07551d59.wav"
+        }
+      ]
+    },
+    {
+      "id": "clothes",
+      "scene": "wardrobe",
+      "start": 432,
+      "end": 792,
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "What do farmers wear? A raincoat? A swimsuit? Pajamas and slippers?",
+          "start": 456,
+          "end": 579,
+          "wav": "media/voice/fd5eea5223f9cbad.wav"
+        },
+        {
+          "speaker": "jojo",
+          "text": "Hmm. A shirt, overalls, and boots!",
+          "start": 593,
+          "end": 653,
+          "wav": "media/voice/dceb8033d9073eb7.wav"
+        }
+      ]
+    },
+    {
+      "id": "ready",
+      "scene": "walk",
+      "start": 792,
+      "end": 987,
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "Now they are ready. Two friends, two buckets, and a path full of possibilities.",
+          "start": 816,
+          "end": 945,
+          "wav": "media/voice/944ea4ca5db56bc3.wav"
+        }
+      ]
+    },
+    {
+      "id": "animals",
+      "scene": "animals",
+      "start": 987,
+      "end": 1347,
+      "lines": [
+        {
+          "speaker": "leo",
+          "text": "Let's give the animals breakfast.",
+          "start": 1011,
+          "end": 1067,
+          "wav": "media/voice/fff0d189f721335a.wav"
+        },
+        {
+          "speaker": "jojo",
+          "text": "Which ones? Cows? Horses? Pigs? Rabbits? Chickens? Goats? Ducks?",
+          "start": 1081,
+          "end": 1214,
+          "wav": "media/voice/80e13ba69baf2ab5.wav"
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "scene": "feeding",
+      "start": 1347,
+      "end": 1611,
+      "lines": [
+        {
+          "speaker": "leo",
+          "text": "Every one of them!",
+          "start": 1371,
+          "end": 1408,
+          "wav": "media/voice/a2dbda9b01d9e90d.wav"
+        },
+        {
+          "speaker": "narrator",
+          "text": "Hay for the big mouths. Grain for the little beaks. Nobody misses breakfast.",
+          "start": 1422,
+          "end": 1543,
+          "wav": "media/voice/456875203739b874.wav"
+        }
+      ]
+    },
+    {
+      "id": "milk",
+      "scene": "milk",
+      "start": 1611,
+      "end": 1875,
+      "lines": [
+        {
+          "speaker": "leo",
+          "text": "Next, let's milk the cow.",
+          "start": 1635,
+          "end": 1683,
+          "wav": "media/voice/d9ec33281635df9c.wav"
+        },
+        {
+          "speaker": "narrator",
+          "text": "Jojo sits very still. Little by little, the empty pail fills up.",
+          "start": 1697,
+          "end": 1810,
+          "wav": "media/voice/f51ee36215ce8b49.wav"
+        }
+      ]
+    },
+    {
+      "id": "vegetables",
+      "scene": "vegetables",
+      "start": 1875,
+      "end": 2163,
+      "lines": [
+        {
+          "speaker": "leo",
+          "text": "Now for the vegetables.",
+          "start": 1899,
+          "end": 1944,
+          "wav": "media/voice/2ac06f842c13a626.wav"
+        },
+        {
+          "speaker": "jojo",
+          "text": "Pumpkins? Sweet potatoes? Carrots?",
+          "start": 1958,
+          "end": 2024,
+          "wav": "media/voice/6e565eb370958477.wav"
+        },
+        {
+          "speaker": "leo",
+          "text": "Pumpkins and carrots, please.",
+          "start": 2038,
+          "end": 2092,
+          "wav": "media/voice/89ef056d403ec78a.wav"
+        }
+      ]
+    },
+    {
+      "id": "pull",
+      "scene": "pull",
+      "start": 2163,
+      "end": 2403,
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "Jojo pulls. And pulls. One more tug... Pop! A carrot! Leo lifts a pumpkin with both paws.",
+          "start": 2187,
+          "end": 2350,
+          "wav": "media/voice/79a36bf2990b72aa.wav"
+        }
+      ]
+    },
+    {
+      "id": "orchard",
+      "scene": "orchard",
+      "start": 2403,
+      "end": 2691,
+      "lines": [
+        {
+          "speaker": "leo",
+          "text": "Let's pick some fruit.",
+          "start": 2427,
+          "end": 2467,
+          "wav": "media/voice/6062026a9f61ab6e.wav"
+        },
+        {
+          "speaker": "jojo",
+          "text": "Grapes? Apples? Pears?",
+          "start": 2481,
+          "end": 2535,
+          "wav": "media/voice/193cf65696496eb8.wav"
+        },
+        {
+          "speaker": "leo",
+          "text": "Apples and pears today.",
+          "start": 2549,
+          "end": 2597,
+          "wav": "media/voice/297246e821ad733a.wav"
+        }
+      ]
+    },
+    {
+      "id": "pick",
+      "scene": "pick",
+      "start": 2691,
+      "end": 2907,
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "Up goes Leo. Down comes an apple. Jojo catches it. And another. And another!",
+          "start": 2715,
+          "end": 2852,
+          "wav": "media/voice/6e1f1c404c2ffe10.wav"
+        }
+      ]
+    },
+    {
+      "id": "carry",
+      "scene": "carry",
+      "start": 2907,
+      "end": 3195,
+      "lines": [
+        {
+          "speaker": "jojo",
+          "text": "My arms are full! How will we carry all this? A plate? A bag? A trash can?",
+          "start": 2931,
+          "end": 3060,
+          "wav": "media/voice/81c32a20e5c56b14.wav"
+        },
+        {
+          "speaker": "leo",
+          "text": "Try a basket and a box.",
+          "start": 3074,
+          "end": 3125,
+          "wav": "media/voice/d506afe19f2a4468.wav"
+        }
+      ]
+    },
+    {
+      "id": "pack",
+      "scene": "pack",
+      "start": 3195,
+      "end": 3411,
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "Apples in the box. Pears in the basket. Together, they carry the harvest home.",
+          "start": 3219,
+          "end": 3350,
+          "wav": "media/voice/f01d04fdd09a6ccb.wav"
+        }
+      ]
+    },
+    {
+      "id": "nap",
+      "scene": "nap",
+      "start": 3411,
+      "end": 3703,
+      "lines": [
+        {
+          "speaker": "leo",
+          "text": "And now, let's... Jojo?",
+          "start": 3435,
+          "end": 3498,
+          "wav": "media/voice/9206c42a339cd458.wav"
+        },
+        {
+          "speaker": "narrator",
+          "text": "Jojo has found one more job. A very quiet one.",
+          "start": 3512,
+          "end": 3600,
+          "wav": "media/voice/e7a113388249bd7b.wav"
+        },
+        {
+          "speaker": "leo",
+          "text": "A nap. Good idea.",
+          "start": 3614,
+          "end": 3661,
+          "wav": "media/voice/71bb01477fe3a13b.wav"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "scene": "end",
+      "start": 3703,
+      "end": 3991,
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "Full baskets. Full bellies. Sleepy friends. A good day's work on the farm.",
+          "start": 3727,
+          "end": 3859,
+          "wav": "media/voice/8a7b665322924412.wav"
+        }
+      ]
+    }
+  ],
+  "voices": {
+    "narrator": [
+      "af_heart",
+      0.9
+    ],
+    "leo": [
+      "am_michael",
+      0.94
+    ],
+    "jojo": [
+      "af_bella",
+      0.96
+    ]
+  }
+}
