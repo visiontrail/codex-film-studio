@@ -13,7 +13,16 @@ export function hand(g,x,y,s=1,point=false,color=skinA){
  g.pop()
 }
 function mouth(g,x,y,open,panic=false,smile=0){if(open<.07){g.curve([[x-19,y+smile],[x-8,y-5-smile],[x+8,y-5-smile],[x+20,y+smile]],null,INK,4);return}
- let w=13+open*(panic?15:6),h=3+open*(panic?28:14);g.ellipse(x,y,w,h,'#492234',INK,4);g.rect(x-w*.63,y-h*.68,w*1.2,Math.min(8,h*.5),WHITE,null,0,2);if(h>12)g.ellipse(x+2,y+h*.53,w*.5,h*.23,'#d77d93',null,0)}
+ const w=13+open*(panic?15:6),h=3+open*(panic?11:10);
+ if(panic){
+  // A shallow, asymmetrical open mouth leaves the jaw silhouette readable.
+  g.curve([[x-w,y],[x-w*.55,y-h*1.2],[x+w*.2,y-h*1.15],[x+w,y],[x+w*.6,y+h*.7],[x-w*.55,y+h*.7],[x-w,y]],'#492234',INK,4,true);
+  g.c.save();g.c.clip();g.ellipse(x+2,y+h*.65,w*.37,h*.18,'#d77d93',null,0);g.c.restore();
+ }else{
+  g.ellipse(x,y,w,h,'#492234',INK,4);g.c.save();g.c.clip();
+  if(open>.7)g.rect(x-w*.63,y-h*.68,w*1.2,Math.min(6,h*.4),WHITE,null,0,2);
+  if(h>10)g.ellipse(x+2,y+h*.65,w*.45,h*.2,'#d77d93',null,0);g.c.restore();
+ }}
 function eyes(g,x,y,kind,t,emotion,dir=1){let blink=((Math.floor(t*12)+(kind==='qin'?11:33))%63<2);let lid=kind==='qin'?!['panic','shock'].includes(emotion):['deadpan','tired','blank'].includes(emotion);let panic=['panic','shock'].includes(emotion);let rx=kind==='qin'?22:25,ry=kind==='qin'?22:25;
  for(let i=0;i<2;i++){let cx=x+(kind==='qin'?(i?24:-23):(i?32:-31)),cy=y+(i?-2:0);if(kind==='bo'){g.ellipse(cx,cy,33,33,shadeB,INK,5);g.ellipse(cx,cy,29,29,'#deedf2',null,0);if(blink)g.ellipse(cx,cy,25,25,skinB,INK,3)}g.ellipse(cx,cy,rx,blink?2:ry,WHITE,INK,kind==='bo'?3:4);if(!blink){g.ellipse(cx+dir*6+(panic?Math.sin(t*65+i)*2:0),cy+3,kind==='bo'?2.4:3.4,kind==='bo'?2.4:4,INK,null,0);if(lid){g.curve([[cx-rx,cy],[cx-rx,cy-ry*1.34],[cx+rx,cy-ry*1.34],[cx+rx,cy],[cx+rx*.3,cy-2],[cx-rx*.4,cy+2],[cx-rx,cy]],kind==='qin'?skinA:skinB,null,0,true);g.ellipse(cx,cy,rx,ry,null,INK,5);g.line([[cx-rx,cy+2],[cx+rx,cy-2]],INK,5)}}}
  if(kind==='bo')g.line([[x-1,y-4],[x+2,y-4]],INK,5);
@@ -38,16 +47,20 @@ export function character(g,kind,x,y,scale=1,opts={}){
  let t=opts.still?0:(opts.time||0),pose=Math.floor(t*12)/12,emotion=opts.emotion||'deadpan',talk=opts.talk||0,panic=emotion==='panic',gesture=opts.gesture||0;
  let breath=opts.still?0:Math.sin(pose*2.3)*.007;let jitter=panic?Math.sin(pose*89)*2.7:0;g.push(x+jitter,y,scale*(1-breath),scale*(1+breath),opts.angle||0);
  if(kind==='qin'){
-  g.push(0,0,.9,1);
+  g.push(0,0,1,1,.13);g.push(0,0,.9,1);
   // Patterned socks and oversized flat slippers.
   for(let lx of [-38,31]){g.rect(lx-13,-96,25,79,'#b39bd0',INK,5,6);for(let yy=-80;yy<-25;yy+=16)g.line([[lx-12,yy],[lx+11,yy]],'#71557b',3);g.ellipse(lx-10,-9,36,15,'#dd8fb1',INK,6)}
+  g.pop();g.pop();g.push(0,0,.9,1);
+  // The relaxed hand rests in the robe; gestures emerge from behind its contour.
+  const lift=opts.flight||0,rx=50+gesture*120+lift*45,ry=-135-gesture*155-lift*225;
+  g.curve([[75,-286],[102,-286],[110,-211],[rx,ry],[rx-16,ry+12],[77,-161],[66,-228]],'#226f70',INK,6,true);hand(g,rx,ry,.8,gesture>.6);
   g.curve([[-80,-310],[-113,-250],[-103,-110],[-83,-83],[-20,-72],[44,-72],[85,-87],[98,-174],[96,-257],[62,-311]],'#278f89',INK,7,true);
   g.poly([[45,-307],[73,-290],[91,-180],[84,-86],[50,-78],[36,-241]],'#1f6667',null,0);
   g.poly([[-29,-313],[31,-316],[14,-205]],'#b99ccf',INK,4);g.line([[-55,-301],[-24,-258],[9,-208],[-5,-120]],INK,4);g.line([[32,-310],[48,-262],[20,-216]],INK,4);
   g.rect(-92,-175,178,23,'#246f73',INK,5,7);g.ellipse(-10,-162,13,12,'#267a7d',INK,4);g.poly([[-15,-154],[-32,-108],[-11,-115],[-3,-153]],'#2d7d7a',INK,4);
   g.curve([[48,-135],[18,-135],[20,-119],[18,-108]],null,'#1b4146',4);g.pop();
   // Neck and head: asymmetry, long nose, beard shadow, forehead goggles.
-  g.rect(-6,-328,32,24,skinA,INK,5,9);g.push(-10,-300,.97,1.12,-.11+(opts.headAngle||0));g.push(0,300);
+  g.rect(-6,-328,32,24,skinA,INK,5,9);g.push(-10,-300,.97,1.12,.02+(opts.headAngle||0));g.push(0,300);
   let head=[[-62,-446],[-24,-482],[53,-474],[73,-425],[92,-374],[64,-315],[20,-306],[-25,-297],[-68,-333],[-76,-383],[-84,-412],[-78,-435],[-62,-446]];
   g.curve(head,skinA,INK,7,true);g.c.save();g.c.clip();
   g.curve([[-65,-348],[-50,-359],[-30,-349],[-9,-343],[22,-359],[40,-356],[65,-335],[55,-319],[20,-310],[-24,-309],[-58,-329],[-65,-348],[-65,-348]],shadeA,null,0,true);
@@ -67,13 +80,11 @@ export function character(g,kind,x,y,scale=1,opts={}){
   g.pop();g.pop();g.pop();
   // A chest-height cup is the inventor's continuous foreground prop.
   g.push(0,0,.9,1);
-  const lift=opts.flight||0,hx=-105-18*lift,hy=-213-190*lift;
+  const hx=-105-18*lift,hy=-213-190*lift;
   g.curve([[-75,-290],[-104,-304],[-113,-260],[hx,hy],[hx+17,hy+16],[-57,-215],[-55,-250]],'#2ca099',INK,6,true);
   hand(g,hx,hy,.8);
   if(opts.prop==='remote'){g.rect(hx-18,hy-48,34,65,'#737b89',INK,5,8);g.ellipse(hx-1,hy-29,10,10,'#ed5b51',INK,3);g.line([[hx-2,hy-51],[hx-4,hy-66]],INK,4)}
   else {g.rect(hx-14,hy-43,46,58,'#e8dff1',INK,5,5);g.ellipse(hx+9,hy-43,23,6,'#74472e',INK,4);g.curve([[hx-14,hy-31],[hx-42,hy-41],[hx-42,hy+5],[hx-14,hy]],null,INK,5);g.text('ODDS?',hx+9,hy-14,9,'#78618f')}
-  const rx=105+gesture*51,ry=-112-gesture*145-lift*225;
-  g.curve([[75,-286],[102,-286],[110,-211],[rx,ry],[rx-16,ry+12],[77,-161],[66,-228]],'#226f70',INK,6,true);hand(g,rx,ry,.8,gesture>.6);
   g.pop();
  }else{
   // Helmeted nervous assistant: broad head over a narrower, compact vest.
@@ -99,7 +110,7 @@ export function character(g,kind,x,y,scale=1,opts={}){
   g.curve([[30,-365],[61,-355],[82,-323],[78,-283],[58,-283],[33,-303],[28,-331],[26,-346],[28,-355],[30,-365]],'#b84437',null,0,true);
   for(const xx of [-32,0,33])g.rect(xx-6,-359+(xx?4:0),13,31,INK,null,0,6);
   g.star(-53,-320,8,'#f4d276');eyes(g,0,-270,'bo',pose,emotion,opts.look??1);
-  g.ellipse(-1,-238,8,7,skinB,INK,3);mouth(g,0,-217,talk,panic,emotion==='relieved'?6:0);
+  g.ellipse(-1,-238,8,7,skinB,INK,3);mouth(g,0,panic?-205:-217,talk,panic,emotion==='relieved'?6:0);
   if(panic){for(const [xx,yy]of [[-61,-340],[64,-303]])g.curve([[xx,yy],[xx+8,yy+12],[xx+10,yy+24],[xx,yy+26],[xx-11,yy+27],[xx-10,yy+11],[xx,yy]],'#bce6eb',INK,3,true)}
   g.pop();g.pop();g.push(0,0,.85,1);
   if(opts.prop==='phone'){g.rect(rightHand.x-14,rightHand.y-52,32,57,'#46444f',INK,5,5);g.rect(rightHand.x-9,rightHand.y-42,22,32,'#8de1d8',null,0)}
