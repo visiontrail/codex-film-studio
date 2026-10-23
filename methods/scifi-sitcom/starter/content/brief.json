@@ -1,0 +1,11 @@
+{
+  "subject": "",
+  "audience": "",
+  "language": "",
+  "takeaway": "",
+  "duration_intent": "",
+  "delivery": {"width": 1920, "height": 1080, "fps": 24},
+  "references": [],
+  "required_identities": [],
+  "user_style_changes": []
+}

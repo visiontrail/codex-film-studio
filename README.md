@@ -25,6 +25,20 @@ finishing with help and doing the work alone.
 [12-minute edition](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
 [Style guide](styles/whiteboard/STYLE.md) · [Sample details](styles/whiteboard/DEMO.md)
 
+## Reusable production methods
+
+[Sci-Fi Sitcom Toon](methods/scifi-sitcom/README.md) provides subject-independent
+drawing, acting, camera, sound and review rules, an empty project creator, and
+generic ink/timeline helpers. It includes no inherited story, cast, country,
+statistics or dialogue. Start with its guide and supply your own subject.
+
+```sh
+python3 methods/scifi-sitcom/new_project.py my-film
+```
+
+The project is created outside the library. This is a reusable method package;
+it is separate from the released sample styles listed above.
+
 ## Make a film with Codex
 
 ```sh
