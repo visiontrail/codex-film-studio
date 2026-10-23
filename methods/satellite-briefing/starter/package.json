@@ -1,0 +1,1 @@
+{"name":"satellite-briefing-project","private":true,"type":"module","scripts":{"test":"node --test tests/geo.test.mjs"},"engines":{"node":">=20"}}

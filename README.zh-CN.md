@@ -21,6 +21,14 @@
 [12 分钟长版](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
 [风格说明](styles/whiteboard/STYLE.md)
 
+## 卫星简报制作方法
+
+[Satellite Briefing](methods/satellite-briefing/README.md) 提供地理镜头与测量规则、局部纸图和扫描效果、可选的 YouTube 实拍核验流程、Chatterbox 配音与时间轴约定，以及逐帧审阅标准。独立项目起步包包含空白输入和经过测试的地理计算工具，不携带旧影片的故事或验收结论。
+
+```sh
+python3 methods/satellite-briefing/new_project.py my-film
+```
+
 ## 科幻情景喜剧制作方法
 
 [Sci-Fi Sitcom Toon 方法包](methods/scifi-sitcom/README.md)保存可复用的绘画、
