@@ -21,7 +21,9 @@ class PortalTests(unittest.TestCase):
                     (directory / name).write_bytes(b'verified fixture')
             output = Path(temporary) / 'public-site'
             build_site(demo, output, 'portal-test')
-            self.assertIn('catalog/studio.mjs', (output / 'index.html').read_text())
+            homepage = (output / 'index.html').read_text()
+            for asset in ['catalog/studio.mjs', 'catalog/studio.css', 'catalog/hero.svg', 'catalog/mark.svg']:
+                self.assertIn(f'{asset}?v=portal-test', homepage)
             self.assertIn('showcase.mjs', (output / 'styles/whiteboard/studio/index.html').read_text())
             self.assertTrue((output / 'styles/whiteboard/studio/editions/long/media/captions.vtt').is_file())
             self.assertEqual(len(list(output.rglob('*.mp4'))), len(manifest['editions']))

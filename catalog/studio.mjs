@@ -1,5 +1,11 @@
 const REPO = 'https://github.com/visiontrail/codex-film-studio';
 const SITE = 'https://visiontrail.github.io/codex-film-studio/';
+const assetRevision = new URL(import.meta.url).searchParams.get('v');
+function assetURL(path) {
+  const url = new URL(path,location.href);
+  if (assetRevision) url.searchParams.set('v',assetRevision);
+  return url.href;
+}
 const copy = {
   en: {
     skip:'Skip to the style library', styles:'Styles', watch:'Screening room', create:'Create a film',
@@ -92,7 +98,7 @@ function pageURL(page, edition) {
 }
 function preview(entry, eager = false) {
   const path = state.frames[entry.id] ?? localized(entry,'preview') ?? entry.poster;
-  return path ? `<img src="${escape(path)}" alt="${escape(localized(entry,'name'))} — ${escape(t(entry.preview_kind === 'frame' ? 'frame' : 'sketch'))}" loading="${eager ? 'eager' : 'lazy'}">` : `<div class="preview-placeholder">${t('previewMissing')}</div>`;
+  return path ? `<img src="${escape(assetURL(path))}" alt="${escape(localized(entry,'name'))} — ${escape(t(entry.preview_kind === 'frame' ? 'frame' : 'sketch'))}" loading="${eager ? 'eager' : 'lazy'}">` : `<div class="preview-placeholder">${t('previewMissing')}</div>`;
 }
 function readPreference() {
   const query = new URLSearchParams(location.search).get('lang');
@@ -210,9 +216,9 @@ document.querySelectorAll('main section[id]').forEach(section => navObserver.obs
 setLanguage(readPreference());
 try {
   const [catalog,availability,frames] = await Promise.all([
-    fetch('styles.json').then(response => { if (!response.ok) throw new Error(`Catalog HTTP ${response.status}`); return response.json(); }),
-    fetch('catalog-availability.json').then(response => response.ok ? response.json() : null).catch(() => null),
-    fetch('docs/readme/frames.json').then(response => response.ok ? response.json() : null).catch(() => null),
+    fetch(assetURL('styles.json')).then(response => { if (!response.ok) throw new Error(`Catalog HTTP ${response.status}`); return response.json(); }),
+    fetch(assetURL('catalog-availability.json')).then(response => response.ok ? response.json() : null).catch(() => null),
+    fetch(assetURL('docs/readme/frames.json')).then(response => response.ok ? response.json() : null).catch(() => null),
   ]);
   state.catalog = catalog; if (availability) state.availability = availability;
   for (const frame of frames?.frames ?? []) state.frames[frame.style] = frame.image;

@@ -18,6 +18,10 @@ copy share the same layout; `?lang=en` / `?lang=zh` overrides the saved language
 Motion respects `prefers-reduced-motion`. No framework, CDN, remote font or
 third-party script is needed.
 
+Public builds add the commit revision to homepage asset URLs, catalog requests
+and frame previews. This avoids reusing assets from the previous deployment
+within GitHub Pages' cache window. Local previews do not require a revision.
+
 `styles.json` supplies every style's name, descriptions, readiness, preview and
 showcase paths, as it does for the READMEs. Filters add only presentation metadata
 in `catalog/studio.mjs`; an unfamiliar style still appears under All styles and

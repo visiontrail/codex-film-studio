@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from urllib.parse import urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
 STUDIO = ROOT / "styles/whiteboard/studio"
@@ -56,6 +57,15 @@ def build_site(demo_root, output, revision=""):
         destination = output / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
+    if revision:
+        # Pages caches static assets for ten minutes. A new HTML document must
+        # request the scripts and styles belonging to this deployment.
+        homepage = output / "index.html"
+        html = homepage.read_text(encoding="utf-8")
+        query = urlencode({"v": revision})
+        for asset in ["catalog/studio.css", "catalog/studio.mjs", "catalog/hero.svg", "catalog/mark.svg"]:
+            html = html.replace(f'"{asset}"', f'"{asset}?{query}"')
+        homepage.write_text(html, encoding="utf-8")
     (output / ".nojekyll").touch()
     (output / "styles.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
     (output / "docs/readme").mkdir(parents=True, exist_ok=True)
