@@ -89,12 +89,40 @@ export class Wax {
     const left=Math.min(...bounds.map(p=>p[0]))-10,right=Math.max(...bounds.map(p=>p[0]))+10,top=Math.min(...bounds.map(p=>p[1]))-12,bottom=Math.max(...bounds.map(p=>p[1]))+12;
     const formPressure=.91+hash(seed,947)*.17;
     c.save();c.translate(cx,cy);c.rotate(angle);
+    if(this.brokenHatching&&color!==C.white&&color!==C.ink){
+     // Stagger the ends and pressure of wax passes instead of spanning each
+     // shape with identical parallel bands. All seeds remain object-local.
+     const strength=typeof this.brokenHatching==='number'?clamp(this.brokenHatching):1;
+     let pass=0;
+     for(let y=top;y<bottom;y+=5.6+hash(pass,seed+41)*1.7,pass++){
+      const yy=y+(hash(pass,seed+19)-.5)*2.1;
+      const span=48+hash(pass,seed+137)*74;
+      const stagger=hash(pass,seed+151)*span;
+      let segment=0;
+      for(let start=left-stagger;start<right;start+=span*.82,segment++){
+       const stop=Math.min(right+10,start+span),stroke=[];
+       const bend=(hash(pass,segment,seed+101)-.5)*3.5;
+       for(let x=start;x<=stop+5;x+=5){
+        const q=(x-start)/Math.max(1,stop-start);
+        stroke.push([x,yy+bend*Math.sin(q*Math.PI)+(hash(pass,Math.round(x),seed+71)-.5)*1.5]);
+       }
+       const pressureVariation=(grid(segment,pass,2.2,seed+163)-.5)*.20*strength;
+       this.line(stroke,color,7.7+(hash(pass,segment,seed+6)-.5)*1.7,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment);
+      }
+     }
+     for(let pass=0;pass<Math.ceil((bottom-top)/17);pass++){
+      const y=top+pass*17+(hash(pass,seed+171)-.5)*12;
+      const start=left+hash(pass,seed+173)*(right-left),span=28+hash(pass,seed+179)*65;
+      this.line([[start,y+3],[Math.min(right+5,start+span),y-8]],color,3.4,(.13+hash(pass,seed+83)*.10)*pressure,seed+31+pass);
+     }
+    }else{
     for(let y=top,pass=0;y<bottom;y+=6.5,pass++){
      const yy=y+(hash(pass,seed+19)-.5)*3,end=left+(right-left)*clamp(progress*1.1),stroke=[];
      for(let x=left;x<=end+8;x+=8)stroke.push([x,yy+(x-left)*.025+(hash(pass,Math.round(x),seed+71)-.5)*1.6]);
      this.line(stroke,color,7.8+(hash(pass,seed+6)-.5)*2.2,(.58+hash(pass,seed+2)*.25)*pressure*formPressure,seed+pass);
     }
     for(let y=top-15,pass=0;y<bottom+15;y+=13,pass++)this.line([[left,y+10],[right,y-(right-left)*.18]],color,3.7,(.18+hash(pass,seed+83)*.12)*pressure,seed+31);
+    }
     c.restore();
    }else{
    // Pigment arrives only through directional strokes, with no flat fill reveal.

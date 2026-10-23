@@ -115,3 +115,11 @@ pressure and drawing direction, and retain enough pigment in small identifying
 marks. Pressure seeds must follow object identity, never the changing position
 of a moving hand or prop. Check the rotated fill bounds as well as the texture:
 a directional change must not leave an unintended unpainted wedge in the form.
+
+When repeated hatch bands dominate a coloured form, vary stroke length, overlap,
+endpoint placement and local pressure while keeping the intended drawing
+direction. Changing only global grain does not break long parallel bands.
+Compare small white and dark features separately: a treatment suitable for
+foliage can obscure eyes or noses. Keep the original treatment for those marks
+when the trial shows a regression. Preserve deterministic object seeds and
+recheck contour/fill budgets after changing stroke topology.

@@ -82,6 +82,15 @@ in object space and the pen rotates within it. Extend rotated pass bounds far
 enough to cover the whole form. Keep seeds independent of moving positions so a
 hand or prop does not change pigment pressure while it moves.
 
+If native-scale review reveals uniform bands across large coloured shapes,
+set `Wax.brokenHatching = true` with formed hatching enabled. It staggers short
+pass endpoints, overlaps neighbouring strokes and varies pressure locally.
+A number from 0 to 1 controls the pressure variation; 0 disables this option.
+White features and indigo marks retain the original pass model so eye whites
+and pupils do not acquire the same treatment as foliage. Review their actual
+sizes before adopting the setting. Long directional marks may be correct for
+a reference; use the option only when a held-frame comparison supports it.
+
 `Wax.organicContours = true` adds gradual stroke-width variation along indigo
 contours. `Wax.protectSmallMarks = true` increases pressure on small dark marks;
 check pupils, nostrils and mouth shapes at their displayed sizes instead of
