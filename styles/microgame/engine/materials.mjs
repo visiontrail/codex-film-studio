@@ -13,6 +13,10 @@ export const palettes={
 };
 export function background(g,m,createCanvas,cache){
  const p=palettes[m];g.fillStyle=p.paper;g.fillRect(0,0,W,H);
+ if(m==='riso'){
+  line(g,[[75,0],[75,785]],p.ink,2);line(g,[[458,0],[458,785]],p.ink,2);
+  for(let [x,y,r]of [[-9,339,91],[524,294,105]]){oval(g,x,y,r,r,'#187fa5',null);oval(g,x+13,y+13,r*.67,r*.67,'#65a55b',null);oval(g,x+20,y+9,r*.61,r*.61,'#ee648a',null);for(let i=0;i<9;i++)oval(g,x+(hash(i)-.5)*r,y+(hash(i+3)-.5)*r,2,2,'#f1c536',null)}
+ }
  if(m==='terminal'){
   text(g,'SYSTEM / READY',34,212,16,p.ink,null,0,'monospace','left');text(g,'[ ONE ACTION ]',34,242,13,p.ink,null,0,'monospace','left');
   for(let y=0;y<H;y+=4){g.fillStyle='#0003';g.fillRect(0,y,W,1)}rr(g,25,280,490,480,2,null,p.ink,2);return;
@@ -72,7 +76,7 @@ export function mediumObject(g,m,x,y,scale,kind,variant=0){
   if(kind==='cake'){rect(-54,-20,108,46);el(0,-20,54,15,'#fff1ce');for(let i=-40;i<=40;i+=20)el(i,-10,8,11,m==='ink'?p.hero:'#f18999');rect(-36,-63,72,40);el(0,-63,36,11,'#fff1ce');el(0,-80,9,9,p.accent)}
   else if(kind==='cookie'||kind==='crumb'){el(0,0,kind==='crumb'?13:39,kind==='crumb'?10:32);for(let i=0;i<8;i++)el(Math.cos(i*2.4)*24,Math.sin(i*2.4)*18,3,3,p.ink)}
   else {el(0,0,47,kind==='bread'?28:20);if(kind==='bread')for(let x=-25;x<30;x+=20)line(g,[[x,-20],[x-8,-2]],p.paper,4)}
- }else if(kind==='egg'||kind==='seed'){el(0,-8,kind==='egg'?24:15,kind==='egg'?33:24,kind==='egg'?p.paper:p.object);line(g,[[-8,-25],[-14,-12]],'#fff8',4)}
+ }else if(kind==='egg'||kind==='seed'){el(0,-8,kind==='egg'?24:15,kind==='egg'?33:24,kind==='egg'?(m==='pixel'?'#f3e6c4':p.paper):p.object);line(g,[[-8,-25],[-14,-12]],'#fff8',4)}
  else if(['flour','soil','compost'].includes(kind)){path(g,[[-38,22],[-29,-41],[23,-47],[39,21]],p.paper,p.ink,lw);rr(g,-26,-22,52,29,2,p.object,p.ink,2);text(g,kind==='flour'?'F':'S',0,-7,23,p.ink,null)}
  else if(['milk','water','bucket','pot'].includes(kind)){path(g,[[-37,-23],[37,-23],[26,35],[-26,35]],p.object,p.ink,lw);el(0,-23,37,10,m==='ink'?p.hero:'#66b6d2');if(kind!=='pot'){g.beginPath();g.arc(0,-16,29,Math.PI,Math.PI*2);g.strokeStyle=p.ink;g.lineWidth=4;g.stroke()}}
  else if(kind==='tree'||kind==='flower'||kind==='hedge'||kind==='vine'){line(g,[[0,38],[0,-50]],p.ink,7);for(let i=0;i<5;i++){let a=i*2.4;el(Math.cos(a)*30,-47+Math.sin(a)*24,23,15,kind==='flower'?p.accent:p.ground)}if(kind==='tree'){el(0,-73,42,30,p.ground);el(-25,-48,35,26,p.ground);el(30,-44,35,26,p.ground)}}
@@ -113,7 +117,7 @@ export function materialPass(g,m,cache){
    let jM=(Math.max(0,Math.min(H-1,y+1))*W+Math.max(0,Math.min(W-1,x-2)))*4;
    const platesAt=j=>{
     let r=copy[j],g=copy[j+1],b=copy[j+2];
-    if(r>210&&g>205&&b>185)return [0,0,0];
+    if(r>210&&g>205&&b>185)return [.12,.025,.015];
     if(b>r*1.12)return [.84,.06,.03];
     if(r>g*1.20&&b>g*.95)return [.02,.86,.12];
     if(g>r*1.1)return [.57,.03,.58];

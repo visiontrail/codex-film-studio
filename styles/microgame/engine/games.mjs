@@ -6,7 +6,7 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  let m=s.medium,p=palettes[m],dur=(s.end-s.start)/30,u=clamp(lt/dur),tick=Math.floor(lt*s.character_fps)/s.character_fps,pu=clamp(tick/dur),a=smooth((pu-.28)/.42),done=u>.76;
  background(g,m,createCanvas,cache);
  g.save();
- const sceneZoom=m==='ink'&&['pour','stir'].includes(s.action)?1.5:m==='swiss'?1.15:m==='blueprint'?1.20:1.0; g.translate(270,620);g.scale(sceneZoom,sceneZoom);g.translate(-270,-620);
+ const sceneZoom=m==='ink'&&['pour','stir'].includes(s.action)?1.8:m==='swiss'?1.15:m==='blueprint'?1.20:1.0; g.translate(270,620);g.scale(sceneZoom,sceneZoom);g.translate(-270,-620);
  let floor=720;
  if(m!=='terminal'&&m!=='pixel'){g.fillStyle=p.ground;g.fillRect(0,floor,W,60);line(g,[[0,floor],[W,floor]],p.ink,m==='blueprint'?2:4)}
  if(m==='crayon'){for(let i=0;i<70;i++)line(g,[[i*10-40,775],[i*10+25,723]],p.paper,2);oval(g,454,300,35,35,p.object,p.ink,2);for(let i=0;i<12;i++){let an=i/12*6.28;line(g,[[454+Math.cos(an)*43,300+Math.sin(an)*43],[454+Math.cos(an)*57,300+Math.sin(an)*57]],p.object,2)}}
@@ -85,6 +85,11 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  if(s.action==='cut')target=[355,lerp(396,644,clamp(a*1.4))-115];
  if(s.action==='fan')target=[258,576];
  if(s.action==='carry')target=[hx+65,590];
+ if(s.action==='catch')target=[305,642];
+ if(s.action==='press')target=[355,lerp(390,600,a<.7?a/.7:lerp(1,.25,(a-.7)/.3))-55];
+ if(s.action==='fold')target=[lerp(225,315,smooth(a)),lerp(560,646,smooth(a))];
+ if(s.action==='sprinkle')target=[290,400];
+ if(s.action==='tie')target=[300,lerp(510,610,a)];
  if(m!=='blueprint')hero(g,m,hx,hy,hs,{arm,lean,jump,target:target?[(target[0]-hx)/hs,(target[1]-hy+jump)/hs]:null,face:!s.success&&done?'shock':'happy'},film.hero);
  if(done&&s.success){for(let i=0;i<5;i++){let an=i*1.25;star(g,358+Math.cos(an)*95,535+Math.sin(an)*90,8+hash(i)*5,p.accent)}}
  g.restore();

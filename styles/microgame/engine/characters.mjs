@@ -14,14 +14,16 @@ export function hero(g,m,x,y,scale,pose={},role='baker'){
   }
   if(m==='swiss'){
    path(g,[[-27,-17],[-32,25],[-10,25],[-5,-15]],p.ink,null);path(g,[[5,-15],[9,25],[31,25],[28,-17]],p.ink,null);
-   rr(g,-31,-80,62,67,0,p.ink,null);oval(g,0,-116,37,37,p.ink,null);path(g,[[-30,-142],[-33,-168],[-10,-148]],p.ink,null);path(g,[[10,-148],[34,-169],[30,-142]],p.ink,null);oval(g,0,-58,11,11,p.accent,null);
-   line(g,[[-28,-75],[-62,-46-arm*40]],p.ink,15);line(g,[[28,-75],[65,-50-arm*45]],p.ink,15);oval(g,-12,-119,4,4,p.paper,null);oval(g,12,-119,4,4,p.paper,null);return;
+   rr(g,-31,-80,62,67,0,p.ink,null);oval(g,0,-116,37,37,p.ink,null);
+   if(role==='baker'){rr(g,-31,-158,62,23,0,p.ink,null);oval(g,-20,-163,17,17,p.ink,null);oval(g,1,-171,20,18,p.ink,null);oval(g,23,-161,16,16,p.ink,null);line(g,[[-25,-143],[25,-143]],p.paper,2)}else{rr(g,-28,-170,56,30,0,p.ink,null);rr(g,-48,-148,96,9,0,p.ink,null)}
+   oval(g,0,-58,11,11,p.accent,null);
+   const hand=target||[65,-50-arm*45];line(g,[[-28,-75],[-62,-46-arm*40]],p.ink,15);line(g,[[28,-75],[(28+hand[0])*.5,(-75+hand[1])*.5],hand],p.ink,15);oval(g,-12,-119,4,4,p.paper,null);oval(g,12,-119,4,4,p.paper,null);return;
   }
   let lw=m==='blueprint'?2:m==='ink'?3:4;let skin=m==='ink'?'#d4d1c6':m==='blueprint'?p.paper:m==='woodcut'?'#d0be8e':'#f3d3a7';
-  let body=m==='paper'?'#e5be63':m==='crayon'?'#87aecb':p.hero;
+  let body=m==='paper'?'#e5be63':m==='crayon'?'#87aecb':p.hero,light=m==='pixel'?'#f4e5c0':p.paper;
   // Hard side shadow and asymmetric stepping feet.
   path(g,[[-25,-25],[-30,25],[-10,25],[-3,-25]],p.ink,p.ink,lw);path(g,[[8,-25],[12,25],[34,25],[27,-25]],p.ink,p.ink,lw);
-  oval(g,-23,26,22,9,p.paper,p.ink,lw);oval(g,28,26,22,9,p.paper,p.ink,lw);
+  oval(g,-23,26,22,9,m==='pixel'?'#ef8457':light,p.ink,lw);oval(g,28,26,22,9,m==='pixel'?'#ef8457':light,p.ink,lw);
   path(g,[[-32,-85],[32,-85],[38,-17],[-38,-17]],body,p.ink,lw);
   path(g,[[19,-81],[32,-85],[38,-17],[19,-17]],m==='blueprint'?p.hero:p.ground,null);
   line(g,[[-28,-77],[-59,-48-arm*48],[-68,-48-arm*48]],p.ink,lw+9);
@@ -32,10 +34,10 @@ export function hero(g,m,x,y,scale,pose={},role='baker'){
   oval(g,-69,-48-arm*48,11,10,skin,p.ink,lw);oval(g,hand[0],hand[1],12,10,skin,p.ink,lw);
   oval(g,0,-119,39,35,skin,p.ink,lw);
   path(g,[[-34,-139],[-32,-162],[-11,-148],[9,-148],[33,-164],[36,-139]],p.hero,p.ink,lw);
-  rr(g,-33,-149,67,17,5,role==='baker'?p.paper:p.ground,p.ink,lw);
+  rr(g,-33,-149,67,17,5,role==='baker'?light:p.ground,p.ink,lw);
   if(role==='baker'){
-   oval(g,-17,-158,16,15,p.paper,p.ink,lw);oval(g,8,-164,19,18,p.paper,p.ink,lw);oval(g,25,-155,14,14,p.paper,p.ink,lw);
-   rr(g,-26,-151,53,15,2,p.paper,null);
+   oval(g,-17,-158,16,15,light,p.ink,lw);oval(g,8,-164,19,18,light,p.ink,lw);oval(g,25,-155,14,14,light,p.ink,lw);
+   rr(g,-26,-151,53,15,2,light,null);
   }else{oval(g,2,-147,48,8,p.ground,p.ink,lw);line(g,[[14,-169],[20,-177]],p.accent,4)}
   if(face==='shock'){oval(g,-13,-120,5,8,p.ink,null);oval(g,12,-120,5,8,p.ink,null);oval(g,0,-101,7,8,p.ink,null)}
   else{line(g,[[-18,-120],[-13,-125],[-8,-120]],p.ink,3);line(g,[[7,-120],[12,-125],[17,-120]],p.ink,3);g.beginPath();g.arc(0,-112,13,.20,Math.PI-.20);g.strokeStyle=p.ink;g.lineWidth=3;g.stroke()}
