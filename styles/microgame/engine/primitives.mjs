@@ -20,7 +20,7 @@ export function command(g,s,t,hold=.65){
  transformed(g,x,y,scale,-.08,()=>{if(u<.99)burst(g,0,0,246,76,'#ffc928',0,13);fitText(g,s,5,8,440,66,'#ff2e88',INK);fitText(g,s,0,0,440,66,'#fff',INK)})
 }
 export function spark(g,x,y,t,r=13){for(let i=0;i<9;i++){let a=i*2.4+t*13;line(g,[[x+Math.cos(a)*5,y+Math.sin(a)*5],[x+Math.cos(a)*(r+5*hash(i+Math.floor(t*30))),y+Math.sin(a)*(r+5*hash(i))]],i%2?'#ffb51c':'#fff8b9',3)}oval(g,x,y,5,5,'#fff9a5',null)}
-export function fuse(g,progress,beats,t){let x=48,y=842,len=417;line(g,[[x,y],[x+len,y]],'#2c1832',9);line(g,[[x,y-1],[x+len,y-1]],'#d7aa70',5);for(let i=0;i<=Math.ceil(beats);i++){let q=x+len*i/beats;if(q>x+len)continue;line(g,[[q-3,y-5],[q+3,y+5]],'#986031',2)}
- let p=x+len*clamp(progress);line(g,[[x,y],[p,y]],'#523149',6);spark(g,p,y,t);transformed(g,x+len+12,y,1,-.23,()=>{rr(g,-9,-17,18,33,3,'#ff3b3b',INK,3);path(g,[[-11,-17],[0,-29],[11,-17]],'#ffc928',INK,2)})
+export function fuse(g,progress,beats,t){let x=48,y=842,len=417,p=x+len*clamp(progress);line(g,[[p,y],[x+len,y]],'#2c1832',7);line(g,[[p,y-1],[x+len,y-1]],'#d7aa70',4);for(let i=0;i<=Math.ceil(beats);i++){let q=x+len*i/beats;if(q>x+len||q<p)continue;oval(g,q,y,3,3,'#c39359','#35283c',1.4)}
+ g.save();g.setLineDash([1,3]);line(g,[[x,y],[p,y]],'#777067',1.5);g.restore();spark(g,p,y,t);transformed(g,x+len+12,y,1,-.23,()=>{rr(g,-9,-17,18,33,3,'#ff3b3b',INK,3);path(g,[[-11,-17],[0,-29],[11,-17]],'#ffc928',INK,2)})
 }
 export function stamp(g,ok,t,x=402,y=718){let sc= t<.14?lerp(1.7,1,t/.14):1;transformed(g,x,y,sc,-.15,()=>{oval(g,0,0,55,55,ok?'#3bdc5a':'#ff3b3b',INK,6);oval(g,0,0,45,45,null,'#fff9',2);text(g,ok?'OK!':'NO!',0,2,35,'#fff',INK,6)})}

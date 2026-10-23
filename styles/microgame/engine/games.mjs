@@ -6,6 +6,7 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  let m=s.medium,p=palettes[m],dur=(s.end-s.start)/30,u=clamp(lt/dur),tick=Math.floor(lt*s.character_fps)/s.character_fps,pu=clamp(tick/dur),a=smooth((pu-.28)/.42),done=u>.76;
  background(g,m,createCanvas,cache);
  g.save();
+ if(m==='terminal'){g.shadowColor='#ffad36';g.shadowBlur=3}
  const sceneZoom=m==='ink'&&['pour','stir'].includes(s.action)?1.8:m==='swiss'?1.15:m==='blueprint'?1.20:1.0; g.translate(270,620);g.scale(sceneZoom,sceneZoom);g.translate(-270,-620);
  let floor=720;
  if(m!=='terminal'&&m!=='pixel'){g.fillStyle=p.ground;g.fillRect(0,floor,W,60);line(g,[[0,floor],[W,floor]],p.ink,m==='blueprint'?2:4)}

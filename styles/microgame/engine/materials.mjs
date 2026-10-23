@@ -18,6 +18,7 @@ export function background(g,m,createCanvas,cache){
   for(let [x,y,r]of [[-9,339,91],[524,294,105]]){oval(g,x,y,r,r,'#187fa5',null);oval(g,x+13,y+13,r*.67,r*.67,'#65a55b',null);oval(g,x+20,y+9,r*.61,r*.61,'#ee648a',null);for(let i=0;i<9;i++)oval(g,x+(hash(i)-.5)*r,y+(hash(i+3)-.5)*r,2,2,'#f1c536',null)}
  }
  if(m==='terminal'){
+  const glow=g.createRadialGradient(260,530,20,270,480,620);glow.addColorStop(0,'#211509');glow.addColorStop(1,'#050301');g.fillStyle=glow;g.fillRect(0,0,W,H);
   text(g,'SYSTEM / READY',34,212,16,p.ink,null,0,'monospace','left');text(g,'[ ONE ACTION ]',34,242,13,p.ink,null,0,'monospace','left');
   for(let y=0;y<H;y+=4){g.fillStyle='#0003';g.fillRect(0,y,W,1)}rr(g,25,280,490,480,2,null,p.ink,2);return;
  }
