@@ -5,10 +5,9 @@
 
 ![Codex Film Studio — 用代码做影片的风格手册](docs/readme/cover-zh.png)
 
-[**浏览全部风格 ↓**](#风格手册) · [观看样片](#放映室) ·
+[**打开风格片库 ↗**](https://visiontrail.github.io/codex-film-studio/?lang=zh) ·
+[风格手册 ↓](#风格手册) · [观看样片](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh) ·
 [开始创作](#制作你的影片) · [English](README.md)
-
-[**打开风格片库 ↗**](https://visiontrail.github.io/codex-film-studio/?lang=zh)
 
 <!-- style-summary:start -->
 
@@ -31,7 +30,7 @@
 <h3>白板讲解</h3>
 <sub>Whiteboard Explainer</sub>
 <p>一块持续保留内容的白板，用手写文字、移动马克笔和线条人物逐步解释想法。</p>
-<p><b>已发布样片</b> · <a href="https://visiontrail.github.io/codex-film-studio/">▶ 在线播放</a></p>
+<p><b>已发布样片</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh">▶ 在线播放</a></p>
 <sub><a href="styles/whiteboard/STYLE.md">风格说明</a> · <a href="styles/whiteboard/prompt.txt">提示词</a> · <a href="styles/whiteboard/studio">创作工程</a></sub>
 </td>
 </tr>
@@ -104,12 +103,12 @@
 
 ### Does AI Help You Learn—or Just Finish?
 
-[![已发布白板影片：回答与独立思考](docs/readme/previews/whiteboard.zh.jpg)](https://visiontrail.github.io/codex-film-studio/)
+[![已发布白板影片：回答与独立思考](docs/readme/previews/whiteboard.zh.jpg)](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh)
 
 借助 AI 完成任务，是否等于真正掌握？移动的马克笔、手写文字、线条人物和
 具体物体在一块持续保留内容的白板上，逐步展开这个问题。
 
-[**▶ 在线播放 · 字幕与章节**](https://visiontrail.github.io/codex-film-studio/) ·
+[**▶ 在线播放 · 字幕与章节**](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh) ·
 [3 分钟 MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
 [12 分钟 MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
 [样片说明](styles/whiteboard/DEMO.md)
@@ -207,12 +206,14 @@ Git 包含源码、字体和乐器采样；影片、配音 WAV 与时间数据�
 <details>
 <summary><b>部署公开展示页</b></summary>
 
-[公开展示页](https://visiontrail.github.io/codex-film-studio/)目前播放白板的两个已发布
-版本，支持字幕与章节。
+[公开风格片库](https://visiontrail.github.io/codex-film-studio/?lang=zh)集中展示六种视觉
+风格，支持搜索、分类和中英文详情。
+[白板播放器](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh)
+提供两个已发布版本，支持字幕与章节。
 
 部署自己的 fork：在 **Settings → Pages → Source** 选择 **GitHub Actions**，
 然后在 Actions 中运行 **Deploy film showcase**。推送到 `main` 也会触发部署。
-构建会下载并校验固定版本的 Release 资源，只发布明确列出的播放器文件。
+构建会下载并校验固定版本的 Release 资源，发布明确列出的首页、目录、预览图和播放器文件。
 详见[部署与本地预览说明](docs/pages.md)。
 
 本地风格网页和制作目录与公开站点分别管理。发布其他影片需要明确请求。

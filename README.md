@@ -5,10 +5,9 @@ it with Codex: picture, narration, camera and sound on one timeline.
 
 ![Codex Film Studio — a field guide to films made with code](docs/readme/cover-en.png)
 
-[**Explore the styles ↓**](#the-style-atlas) · [Watch a film](#the-screening-room) ·
+[**Open the style library ↗**](https://visiontrail.github.io/codex-film-studio/?lang=en) ·
+[Style atlas ↓](#the-style-atlas) · [Watch a film](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en) ·
 [Start creating](#make-your-film) · [简体中文](README.zh-CN.md)
-
-[**Open the style library ↗**](https://visiontrail.github.io/codex-film-studio/)
 
 <!-- style-summary:start -->
 
@@ -31,7 +30,7 @@ visual rules, or take the prompt and project files into your own production.
 <h3>Whiteboard Explainer</h3>
 <sub>白板讲解</sub>
 <p>One persistent board, handwritten ideas, moving markers and story-driven line characters.</p>
-<p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/">▶ Watch online</a></p>
+<p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en">▶ Watch online</a></p>
 <sub><a href="styles/whiteboard/STYLE.md">Style guide</a> · <a href="styles/whiteboard/prompt.txt">Prompt</a> · <a href="styles/whiteboard/studio">Project files</a></sub>
 </td>
 </tr>
@@ -105,13 +104,13 @@ Local films and review pages open through the <a href="#open-the-local-studio">l
 
 ### Does AI Help You Learn—or Just Finish?
 
-[![Released whiteboard film: people, a Turkish flag and learning scoreboards](styles/whiteboard/poster.png)](https://visiontrail.github.io/codex-film-studio/)
+[![Released whiteboard film: people, a Turkish flag and learning scoreboards](styles/whiteboard/poster.png)](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en)
 
 A whiteboard film about the difference between completing a task with AI and
 understanding it on your own. Moving markers, handwritten ideas and line-drawn
 people build the argument on one continuous board.
 
-[**▶ Watch with subtitles and chapters**](https://visiontrail.github.io/codex-film-studio/) ·
+[**▶ Watch with subtitles and chapters**](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en) ·
 [3-minute MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
 [12-minute MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
 [Sample notes](styles/whiteboard/DEMO.md)
@@ -214,13 +213,15 @@ renders a short picture preview. The speech client requires WSL on Windows.
 <details>
 <summary><b>Host the published showcase</b></summary>
 
-The [public site](https://visiontrail.github.io/codex-film-studio/) currently plays
-the two released whiteboard editions, with subtitles and chapters.
+The [public style library](https://visiontrail.github.io/codex-film-studio/?lang=en)
+brings all six visual styles together with search, filters and bilingual details.
+The [whiteboard player](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en)
+offers both released editions, with subtitles and chapters.
 
 For a fork, select **Settings → Pages → Source → GitHub Actions**, then run
 **Deploy film showcase** in Actions. Pushing to `main` also triggers deployment.
 The builder downloads checksum-pinned Release assets and publishes an explicit
-set of player files. See [deployment and local preview](docs/pages.md).
+set of homepage, catalog, preview and player files. See [deployment and local preview](docs/pages.md).
 
 Local style pages and production directories are separate from this published
 site. Publishing another film requires an explicit request.

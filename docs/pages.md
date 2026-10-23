@@ -3,10 +3,11 @@
 Site URL: <https://visiontrail.github.io/codex-film-studio/>.
 
 The source now builds a unified style library at the root and keeps the existing
-whiteboard player at `styles/whiteboard/studio/index.html`. The homepage becomes
-public on the next requested Pages deployment; changing local source does not
-publish it. Root links with `?edition=short`, `?edition=long` or `#film` continue
-to the whiteboard player.
+whiteboard player at `styles/whiteboard/studio/index.html`. The English and Chinese
+READMEs link to the homepage in their own language; film links open the player
+directly. Root links with `?edition=short`, `?edition=long` or `#film` continue to
+the whiteboard player. The deployed revision is recorded in `build-info.json`;
+changing local source alone does not publish it.
 
 ## Design and source
 

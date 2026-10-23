@@ -22,7 +22,7 @@ A displayed frame does not change package completion or full-film publication.
 <h3>Whiteboard Explainer</h3>
 <sub>白板讲解</sub>
 <p>One persistent board, handwritten ideas, moving markers and story-driven line characters.</p>
-<p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/">▶ Watch online</a></p>
+<p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en">▶ Watch online</a></p>
 <sub><a href="../styles/whiteboard/STYLE.md">Style guide</a> · <a href="../styles/whiteboard/prompt.txt">Prompt</a> · <a href="../styles/whiteboard/studio">Project files</a></sub>
 </td>
 </tr>
