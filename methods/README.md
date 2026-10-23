@@ -7,6 +7,7 @@ All visual styles and their completion status are in [the style catalog](../styl
 | --- | --- |
 | [WORKFLOW.md](WORKFLOW.md) | Brief, sources, shots, audio, frame timeline, render and delivery |
 | [REVIEW.md](REVIEW.md) | Stills, motion, listening, encoded-file verification and revision evidence |
+| [Drawn-story continuity](drawn-story-continuity.md) | Music across cuts, contour-and-colour reveals, planted poses and contact review |
 | [Director guide](../DIRECTOR.md) | Story, visible actions, pacing and audience |
 | [Frame-review tools](../scripts/frame_review/README.md) | Shared decoding, comparison and FFmpeg coordination |
 

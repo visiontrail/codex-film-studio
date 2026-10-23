@@ -29,6 +29,11 @@ establish that an arbitrary render matches a reference.
   `begin(frame)` resets their state so the caller sets them after each begin.
   A wash advances with brush bands,
   bristle variation, pooling edges and wax resistance.
+- Give every new element its own contour and pigment progress, including late
+  props, answers and lettering. Trace partial paths to an interpolated endpoint,
+  then deposit colour in directional passes. Keep position, scale and opacity
+  stable during the reveal; a fade, scale pop or flat fill is not drawing.
+  Review each group's onset, partial contour, partial pigment and finished hold.
 - A physical book ending needs a hinge, two paper surfaces, self-shadow, gutter,
   desk grain and a camera destination. Combine irregular long fibres, broken
   highlights and broad tonal bands to avoid periodic wood stripes. Preserve contact and continuity through
@@ -75,6 +80,12 @@ closer to a small action, or settle with the pose. Keep educational choice
 spreads wide enough to read. Evaluate the whole move, not only its midpoint,
 for clipped titles, lost contact points and limbs outside the frame.
 
+Default to planted actor roots and readable held poses. Avoid generic walking,
+bobbing and whole-body sway. Use small blinks, mouth shapes and necessary hand
+or prop actions, with shared contact coordinates. Begin restrained camera moves
+after the drawing settles. A full-body move is an explicit exception requiring
+continuous foot, hand, prop and sound review.
+
 `composite(wax, paper, canvas, scale, centerX, centerY)` samples the paper in
 the same camera space as the drawing. Centers use output-pixel coordinates;
 omitted centers default to the canvas center. Convert scene coordinates by
@@ -86,6 +97,18 @@ Define musical sections by narrative purpose, with explicit tempo, meter,
 harmonic progression, motif, orchestration and transition. Use variations,
 rests and a final cadence. A quiet scene should change the arrangement, not
 merely turn down an unchanged loop.
+
+Compose on one continuous beat and harmony clock. A picture cut must not restart
+a bar, truncate notes or reset the ambience. Approach new orchestration over a
+musical phrase, preserve release tails, and change tempo gradually when needed.
+Keep shared-location ambience continuous with overlapping perspective changes.
+Remove footfall loops when characters are planted. Check every transition in
+musical context as stems and as the encoded mix; numerical seam checks alone
+cannot establish perceived continuity.
+
+The shared [drawn-story continuity method](../../methods/drawn-story-continuity.md)
+details these sound, reveal and performance rules. They apply to new productions
+even when the material toolkit requires additional renderer implementation.
 
 Keep separate narration, score, ambience and event-sound stems. Place footsteps,
 contacts, material noises and character/environment sounds where the depicted

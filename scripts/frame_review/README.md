@@ -47,3 +47,18 @@ still start after the check, so use the same lock in collaborating productions.
 Review records must distinguish automated decoding, actual thumbnail inspection,
 native-resolution inspection, playback and listening. Record missing capabilities
 instead of substituting ASR or waveform metrics for listening.
+
+## Audio cut diagnostics
+
+`check_audio_seams.py` measures one-second RMS levels around each timeline cut,
+the boundary sample step and optional notes spanning the cut. It also exports
+short audition windows. Install `soundfile` and NumPy in the external environment.
+
+```sh
+python check_audio_seams.py --wav /path/to/score.wav --timeline /path/to/timeline.json --score /path/to/score.json --output /path/to/project/review/music-seams.json --clips /path/to/project/review/music-cuts
+```
+
+The timeline needs `fps` and `scenes` with `start` frames; optional score notes
+use seconds in `start` and `duration`. Short windows locate seams; also listen
+to a full phrase on either side. Read the [continuity method](../../methods/drawn-story-continuity.md)
+for interpretation. These measurements do not approve musical or audible continuity.
