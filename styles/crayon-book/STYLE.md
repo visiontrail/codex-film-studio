@@ -92,7 +92,13 @@ sizes before adopting the setting. Long directional marks may be correct for
 a reference; use the option only when a held-frame comparison supports it.
 
 `Wax.organicContours = true` adds gradual stroke-width variation along indigo
-contours. `Wax.protectSmallMarks = true` increases pressure on small dark marks;
+contours. `Wax.contourPressure` defaults to 1 and scales pressure only on indigo
+contour strokes up to 6 scene units wide, excluding pigment passes and glyphs.
+Lower values expose more paper tooth inside the line. Choose the value from
+native-resolution comparisons of broad outlines, fine limbs and internal face
+marks; excess erosion can turn a closed contour into a broken silhouette.
+Keep the value constant over time. This is a material setting, not a reveal
+opacity envelope. `Wax.protectSmallMarks = true` increases pressure on small dark marks;
 check pupils, nostrils and mouth shapes at their displayed sizes instead of
 eroding them as heavily as a large coloured field. These options are off by
 default. Their native-resolution and encoded motion proof belongs to the new

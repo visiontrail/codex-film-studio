@@ -52,7 +52,11 @@ export class Wax {
   if(available<1){
    const lengths=points.slice(1).map((p,i)=>Math.hypot(p[0]-points[i][0],p[1]-points[i][1]));let remaining=lengths.reduce((a,b)=>a+b,0)*available,partial=[points[0]];
    for(let i=0;i<lengths.length;i++){if(remaining>=lengths[i]){partial.push(points[i+1]);remaining-=lengths[i];}else{const q=remaining/Math.max(.0001,lengths[i]);partial.push([points[i][0]+(points[i+1][0]-points[i][0])*q,points[i][1]+(points[i+1][1]-points[i][1])*q]);break;}}points=partial;
-  }const c=this.ctx;c.save();c.strokeStyle=color;c.globalAlpha=clamp(pressure);c.lineWidth=width*(color===C.ink&&width<=6?(this.contourScale??1):1);c.lineJoin='round';c.lineCap='round';c.beginPath();
+  }const c=this.ctx;c.save();c.strokeStyle=color;
+  // Contour pressure controls tooth exposure without eroding dark pigment
+  // fills or glyphs. It is constant through a reveal, never a fade envelope.
+  const contourPressure=color===C.ink&&width<=6&&!this.filling?(this.contourPressure??1):1;
+  c.globalAlpha=clamp(pressure*contourPressure);c.lineWidth=width*(color===C.ink&&width<=6?(this.contourScale??1):1);c.lineJoin='round';c.lineCap='round';c.beginPath();
   const hand=points.map(([x,y],i)=>[x+(hash(i,seed,this.frame%5)-.5)*.75,y+(hash(i+32,seed,this.frame%5)-.5)*.75]);
   if(this.organicContours&&color===C.ink&&width<=6){
    const baseWidth=c.lineWidth;

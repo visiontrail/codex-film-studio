@@ -123,3 +123,12 @@ Compare small white and dark features separately: a treatment suitable for
 foliage can obscure eyes or noses. Keep the original treatment for those marks
 when the trial shows a regression. Preserve deterministic object seeds and
 recheck contour/fill budgets after changing stroke topology.
+
+Inspect reference and candidate at the same native output scale before deciding
+that a texture is too coarse or smooth. A reduced contact tile is useful for
+sequence coverage but cannot judge line tooth. If the coloured wax already
+matches and only contours look too clean, adjust contour deposition separately.
+Do not weaken pupils, lettering or the entire picture to distress an outline.
+Test fine limbs and drawing-stage frames as well as large closed shapes, and
+hold material pressure constant throughout the reveal. Preserve the accepted
+movie until the encoded candidate passes its own visual review.
