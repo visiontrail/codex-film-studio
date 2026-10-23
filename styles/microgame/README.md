@@ -11,6 +11,11 @@ story, narration, provider jobs or films are packaged in this library.
 - `engine/frame_audit.py`: complete encoded-frame ledger and sequential atlases.
 - `engine/ffmpeg_gate.py`: shared FFmpeg serialization without killing other work.
 
+The pixel material exports `indexPixelBuffer(context)` for palette quantization
+before enlargement. The action renderer adds Swiss headline and rule typography.
+Run `node --test engine/characters.test.mjs engine/materials.test.mjs` to check
+contact transforms and palette closure; inspect rendered motion separately.
+
 Author your composition, camera, story-specific transformations, audio and final
 export in the production project. The toolkit has no accepted published demo.
 See `STYLE.md` for review criteria. Python audit requires OpenCV, NumPy and

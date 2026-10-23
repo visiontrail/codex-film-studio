@@ -23,6 +23,12 @@ black/white/red geometry. A common texture laid over the same vector scene is
 insufficient. Framing also changes by task: close-ups for tiny consequential
 actions, technical inserts for mechanisms, wider frames for trajectories.
 
+For Swiss scenes, put a large lowercase action word and a short rule on the
+grid. Keep them clear of the working hand and object after the command retreats.
+For pixel scenes, quantize the small drawing buffer to an explicit palette
+before nearest-neighbour enlargement; downscaling alone retains intermediate
+antialias colours. Check both at the encoded output resolution.
+
 Keep two or three identity marks recognizable when the character is redrawn.
 Make hands touch tools and make the manipulated object move from that contact.
 Do not use decorative arm motion as a substitute for performing the action.
