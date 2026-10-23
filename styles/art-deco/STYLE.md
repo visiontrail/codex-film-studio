@@ -52,3 +52,7 @@ Palette, edge and frame-difference metrics help locate discrepancies. They do no
 Profile walking is available through `person(..., {pose: "walk", turn: -1 | 1})`. Use it for lateral travel; keep camera targets on the traveling subject through large scale changes. A close hand insert must have a continuous sleeve extending into the character or beyond the frame.
 
 Portrait inserts should retain recognizable architecture with shallow depth of field. Render the background to an offscreen layer, blur that layer, and keep the face and clothing edges sharp. Metallic fasteners use directional or radial highlights without the light halo used for electric bulbs.
+
+Faces use a curved cheek and jaw enclosing one clipped shadow plane. Keep the upper eyelid stronger than the lower contour; make surprise, concern and determination visibly distinct. A hand-to-headgear reaction needs shoulder anticipation, an elbow bend and a wrist that remains connected when drawn in front of the head. The toolkit's `consider` pose exposes that action through `action` from zero to one.
+
+Ivory fans retain a light outer edge, scalloped folds, fine brass ribs and a double pivot. A radial arrangement can pair each large outward-facing fan with a small inward-facing fan, then add faint counter-rotating inner rings. Derive the portrait camera fit from the projected outer fan envelopes at every tilt, including the magnified near side. Fitting pivot positions alone can still crop the petals. Inspect the transition into and out of the formation as well as the overhead endpoint.
