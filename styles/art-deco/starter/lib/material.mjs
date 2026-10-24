@@ -104,19 +104,19 @@ export function fanPair(g,r,opening,{tilt=1,fixture=false,layer='all'}={}){
 }
 // A shallow stage figure beneath a raised pair; the plan-view cap takes over on tilt.
 export function fanFigure(g,x,y,unit,tilt,rotation,opening=1){
- const h=(1-tilt)*unit*4,lift=ease((opening-.2)/.8),anchor=[x+unit*1.30*(1-tilt),y-h*(.73+.22*lift)],alpha=1-ease((tilt-.55)/.30);
+ const h=(1-tilt)*unit*4,lift=ease((opening-.2)/.8),anchor=[x+unit*.85*(1-tilt),y-h*(.73+.22*lift)],alpha=1-ease((tilt-.55)/.30);
  if(alpha<=0)return anchor;
  const facing=x<540?-1:1;
  const fw=unit/70,fh=.94*fw,reveal=ease((tilt-.30)/.35);
  const point=(v)=>[anchor[0]-Math.sin(rotation)*v*fh,anchor[1]+Math.cos(rotation)*v*fh];
  const targets=[point(-12*reveal),point(18*reveal)];
  g.save();g.globalAlpha*=alpha;g.translate(x,y);g.scale(facing,1);g.translate(-x,-y);
- const w=unit*.23;
- g.beginPath();g.moveTo(x-w*.48,y-h*.75);g.quadraticCurveTo(x-w*.34,y-h*.5,x-w,y-9);
+ const w=unit*.34;
+ g.beginPath();g.moveTo(x-w*.325,y-h*.75);g.quadraticCurveTo(x-w*.23,y-h*.5,x-w,y-9);
  g.quadraticCurveTo(x-w*.8,y+4,x+w*.8,y);g.quadraticCurveTo(x+w*1.1,y-4,x+w*.8,y-14);
- g.lineTo(x+w*.37,y-h*.75);g.closePath();g.fillStyle='#e9ddba';g.fill();
+ g.lineTo(x+w*.25,y-h*.75);g.closePath();g.fillStyle='#e9ddba';g.fill();
  g.save();g.clip();g.fillStyle='#a29b80';g.fillRect(x,y-h,w*2,h+5);g.restore();
- for(let k=0;k<3;k++){g.fillStyle='#9b8a5c';g.fillRect(x-w*.42,y-h*.70+k*unit*.07,w*.80,unit*.034)}
+ for(let k=0;k<3;k++){g.fillStyle='#9b8a5c';g.fillRect(x-unit*.097,y-h*.70+k*unit*.07,unit*.184,unit*.034)}
  g.strokeStyle='#dfb78d';g.lineWidth=unit*.09;g.lineCap='round';g.beginPath();g.moveTo(x,y-h*.78);g.lineTo(x,y-h*.83);g.stroke();
  ellipse(g,x,y-h*.89,unit*.115,unit*.20,'#eac396',false);
  const headY=y-h*.89;
@@ -215,9 +215,9 @@ export function radialFloor(g,P,{radius=5.7,rotation=0}={}){
  for(let i=0;i<48;i++){
   const a=i*tau/48+rotation,b=(i+1)*tau/48+rotation;
   if(i%2===0){const points=[P(Math.cos(a)*.5,0,Math.sin(a)*.5)];for(let j=0;j<=4;j++){const q=mix(a,b,j/4);points.push(P(Math.cos(q)*radius,0,Math.sin(q)*radius))}points.push(P(Math.cos(b)*.5,0,Math.sin(b)*.5));path(g,points,true);g.fillStyle='#252010';g.fill();}
-  line(g,[P(Math.cos(a)*.5,0,Math.sin(a)*.5),P(Math.cos(a)*radius,0,Math.sin(a)*radius)],i%2?.65:1,0,false,i%2?.42:.65);
+  line(g,[P(Math.cos(a)*.5,0,Math.sin(a)*.5),P(Math.cos(a)*radius,0,Math.sin(a)*radius)],i%2?1:1.4,0,false,i%2?.65:.9);
  }
- for(const r of [1.45,2.9,4.35,radius])line(g,ring(r),r===radius?2.2:1,0,true,.9);
+ for(const r of [radius*.25,radius*.5,radius*.75,radius])line(g,ring(r),r===radius?2.2:1.2,0,true,.9);
 }
 export function room(g,t,{live=true,greenUniform=false,dolly=0}={}){
 backdrop(g,t,'room');let P=camera({z:-10+dolly*.4,y:3.2,ty:2.8,tz:12,f:1120,cy:840});
