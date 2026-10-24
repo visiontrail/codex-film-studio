@@ -120,6 +120,12 @@ function glove(g,x,y,angle=0,grip=0){
  g.strokeStyle='rgba(100,70,35,.3)';g.lineWidth=.5;for(let i=0;i<3;i++){g.beginPath();g.moveTo(-4+i*3,5);g.quadraticCurveTo(-5+i*3,11,-2+i*3,14-grip*3);g.stroke()}g.restore();
 }
 function metalButton(g,x,y,r=2.4){const z=g.createRadialGradient(x-r*.4,y-r*.5,r*.1,x,y,r);z.addColorStop(0,'#fff4d2');z.addColorStop(.3,'#e8cf85');z.addColorStop(.75,'#b29347');z.addColorStop(1,'#6f5220');ellipse(g,x,y,r,r,z,false)}
+function characterNeck(g,profile=false){
+ g.save();g.beginPath();g.moveTo(-9,-583);g.lineTo(12,-583);g.lineTo(12,-548);g.bezierCurveTo(12,-535,-9,-535,-9,-548);g.closePath();
+ g.fillStyle='#f0c399';g.fill();g.clip();
+ g.fillStyle='#bc8865';g.fillRect(profile?0:4,-584,14,56);
+ g.fillStyle='#f7d596';g.fillRect(-8,-584,2.2,56);g.restore();
+}
 function walkingProfile(g,x,y,h,t,direction,greenUniform){
  const tt=Math.floor(t*12)/12,phase=tt*7,stride=Math.sin(phase),col=greenUniform?'#1D6B57':'#8E1B2E',lit=greenUniform?'#569371':'#D4485C';
  g.save();g.translate(x,y);g.scale((direction<0?-1:1)*h/700,h/700);g.translate(0,-Math.abs(stride)*7);
@@ -134,9 +140,9 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
  poly(g,[[-25,-548],[24,-551],[33,-493],[25,-430],[33,-333],[-20,-322],[-33,-430]],col,lit,false);
  line(g,[[-25,-548],[-32,-430],[-20,-322],[33,-333]],1.2);
  if(!greenUniform)for(let i=0;i<6;i++)metalButton(g,24,-512+i*29,2.2);
- poly(g,[[-7,-574],[12,-572],[13,-548],[-9,-546]],'#bd8c68','#eab88c',false);
+ characterNeck(g,true);
  sleeve(g,arm(1),20,col,lit);glove(g,...arm(1)[2],0);
- g.save();g.translate(5,-606);g.scale(.78,.78);
+ g.save();g.translate(5,-606);g.scale(.72,.78);
  // A continuous forehead, nose, mouth and jaw silhouette, facing the travel direction.
  g.fillStyle='#eab88c';g.beginPath();g.moveTo(-31,-42);g.bezierCurveTo(-19,-83,29,-78,36,-44);g.lineTo(40,-13);g.lineTo(55,0);g.quadraticCurveTo(56,6,39,7);g.lineTo(40,29);g.quadraticCurveTo(32,48,11,52);g.lineTo(-17,30);g.closePath();g.fill();
  poly(g,[[-31,-42],[-3,-53],[5,24],[11,52],[-17,30]],'#a5684a','#bd8663',false);
@@ -190,31 +196,32 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  g.save();g.translate(...foot);g.fillStyle='#0b0908';g.strokeStyle='#b59857';g.lineWidth=.8;g.beginPath();g.moveTo(-12,0);g.quadraticCurveTo(-12,-7,4,-8);g.quadraticCurveTo(13,-7,22,8);g.lineTo(-12,8);g.closePath();g.fill();g.stroke();g.restore();}
  // The upper body leans about the pelvis while planted feet stay on the floor.
  g.save();if(bodyLean){g.translate(0,-337);g.rotate(bodyLean);g.translate(0,337)}
- // Neck precedes tunic, so no rectangular rim floats in front of the collar.
- poly(g,[[-9,-576],[12,-576],[13,-546],[-10,-546]],'#bd8c68','#eab88c',false);
+ // The neck overlaps the collar with a rounded lower edge and lit side plane.
  poly(g,[[-49,-552],[49,-552],[44,-491],[35,-430],[37,-337],[0,-318],[-37,-337],[-35,-430],[-44,-491]],col,lit,false);
  poly(g,[[4,-550],[43,-550],[35,-337],[0,-318]],col,col,false);
  line(g,[[-48,-548],[-34,-431],[-36,-336],[0,-319],[37,-336]],1.1);
  if(greenUniform){poly(g,[[-25,-522],[25,-522],[32,-339],[-32,-339]],'#1D6B57','#49896c',false);line(g,[[-24,-522],[-35,-550]],3);line(g,[[24,-522],[35,-550]],3);line(g,[[-26,-402],[-26,-368],[26,-368],[26,-402]],.8);for(const s of [-1,1])metalButton(g,s*24,-514,2.4)}
  else{line(g,[[0,-537],[0,-326]],1);for(let row=0;row<6;row++)for(let s of [-1,1])metalButton(g,s*(19-row*.7),-511+row*29,2.4);poly(g,[[-35,-551],[-10,-554],[0,-533],[-22,-538]],'#6a1928','#b74151');poly(g,[[35,-551],[10,-554],[0,-533],[22,-538]],'#6a1928','#b74151');}
+ characterNeck(g);
  for(const side of [-1,1]){g.save();g.translate(side*45,-550);g.rotate(side*.17);path(g,[[-14,-5],[15,-5],[13,6],[-14,3]],true);g.fillStyle=gold(g,-14,-5,29,11);g.fill();g.restore()}
  let left=[[-48,-540],[-64,-432],[-72,-330]],right=[[48,-540],[64,-432],[72,-330]];
- if(pose==='listen'){const q=ease(action);right=[[48,-540],[mix(64,105,q),mix(-432,-527,q)],[mix(72,49,q),mix(-330,-599,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
+ if(pose==='listen'){const q=ease(action);right=[[48,-540],[mix(64,105,q),mix(-432,-527,q)],[mix(72,46,q),mix(-330,-599,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
  if(pose==='reach'){right=[[48,-540],[110,-503],[181,-502+Math.sin(tt*2)*2]];left=[[-48,-540],[-71,-443],[-40,-399]]}
  if(pose==='crank'){let a=tt*3;right=[[48,-540],[105,-465],[132+34*Math.cos(a),-410+34*Math.sin(a)]];left=[[-48,-540],[-74,-451],[-49,-398]]}
  if(pose==='lift'){left=[[-48,-540],[-94,-591],[-84,-683]];right=[[48,-540],[94,-591],[84,-683]]}
  if(pose==='plant'){right=[[48,-540],[93,-448],[20,-388]];left=[[-48,-540],[-93,-448],[-20,-388]]}
- if(pose==='consider'){const q=ease(action);right=[[48,-540],[mix(64,105,q),mix(-432,-596,q)],[mix(72,38,q),mix(-330,-638,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
+ if(pose==='consider'){const q=ease(action);right=[[48,-540],[mix(64,105,q),mix(-432,-596,q)],[mix(72,35,q),mix(-330,-638,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
  if(walking){left=[[-48,-540],[-65+walk*38,-438],[-72+walk*80,-337]];right=[[48,-540],[65-walk*38,-438],[72-walk*80,-337]]}
  if(handTargets){for(let i=0;i<2;i++){if(!handTargets[i])continue;let arm=i?right:left,target=handTargets[i];if(bodyLean||planted){const dx=target[0]-rootX,dy=target[1]-rootY+337,cs=Math.cos(bodyLean),sn=Math.sin(bodyLean);target=[dx*cs+dy*sn,-dx*sn+dy*cs-337]}arm[2]=target;let dx=target[0]-arm[0][0],dy=target[1]-arm[0][1],len=Math.hypot(dx,dy),bend=Math.sqrt(Math.max(0,105**2-len**2/4)),bendSide=elbowSides?.[i]??(i?-1:1);arm[1]=[(target[0]+arm[0][0])/2-dy/len*bend*bendSide,(target[1]+arm[0][1])/2+dx/len*bend*bendSide]}}
  const drawArm=arm=>{sleeve(g,arm,20,col,lit);let a=Math.atan2(arm[2][1]-arm[1][1],arm[2][0]-arm[1][0])-Math.PI/2;g.save();g.translate(...arm[2]);g.rotate(a);rect(g,-10,-6,20,4,'#C9A24B','#F3D98B');g.restore();glove(g,arm[2][0]+Math.sin(-a)*8,arm[2][1]+Math.cos(a)*8,a,pose==='crank'?1:0)};
  drawArm(left);if(pose!=='consider')drawArm(right);
- g.save();g.translate(gaze*3,-607);g.rotate(headTilt+(emotion==='worry'?-0.06:0)+Math.sin(tt*.85)*.012);g.scale(.78,.78);
+ g.save();g.translate(gaze*3,-607);g.rotate(headTilt+(emotion==='worry'?-0.06:0)+Math.sin(tt*.85)*.012);g.scale(.72,.78);
  if(back){ellipse(g,0,-13,44,62,'#10100b',false)}else{
  // A curved cheek/jaw silhouette contains one hard directional shadow plane.
  const facePath=()=>{g.beginPath();g.moveTo(-42,-24);g.bezierCurveTo(-45,-62,-24,-78,1,-76);g.bezierCurveTo(32,-76,45,-52,44,-18);g.bezierCurveTo(43,18,29,48,6,53);g.quadraticCurveTo(-2,56,-15,49);g.bezierCurveTo(-35,38,-42,13,-42,-24);g.closePath()};
  facePath();g.fillStyle='#f0c399';g.fill();
  g.save();g.clip();path(g,[[6,-80],[60,-80],[60,80],[16,80],[6,-15]],true);g.fillStyle='#bc8865';g.fill();g.restore();
+ g.save();facePath();g.clip();g.beginPath();g.moveTo(-42,-20);g.bezierCurveTo(-43,15,-27,46,-8,52);g.strokeStyle='#ffe2ab';g.lineWidth=3;g.stroke();g.restore();
  // Ears, hair cap and two engraved lit-edge strands.
  for(const side of [-1,1]){ellipse(g,side*40,-9,4.7,15,side<0?'#d7a581':'#a86e50',false)}
  g.fillStyle='#0b0807';g.beginPath();g.moveTo(-41,15);g.bezierCurveTo(-54,-6,-48,-64,-23,-79);g.bezierCurveTo(1,-98,37,-81,46,-52);g.lineTo(42,-12);g.quadraticCurveTo(33,-42,14,-54);g.quadraticCurveTo(-7,-49,-25,-29);g.lineTo(-32,14);g.closePath();g.fill();
@@ -227,9 +234,10 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  else {const narrow=emotion==='determined'?clamp(expression):0,opening=emotion==='surprise'?1.12:emotion==='determined'?mix(.72,.22,narrow):1,lower=mix(6,1.8,narrow);g.fillStyle='#fff0d4';g.moveTo(ex-10,eyeY);g.bezierCurveTo(ex-5,eyeY-10*opening,ex+5,eyeY-10*opening,ex+10,eyeY);g.quadraticCurveTo(ex,eyeY+lower,ex-10,eyeY);g.fill();
  if(expression>0){g.save();g.clip();ellipse(g,ex+gaze*3,eyeY-1,3.7,4,'#291d15',false);ellipse(g,ex+gaze*3-1,eyeY-3,1.1,1.2,C.ivory,false);g.restore()}
  g.beginPath();g.moveTo(ex-10,eyeY);g.bezierCurveTo(ex-5,eyeY-10*opening,ex+5,eyeY-10*opening,ex+10,eyeY);g.lineWidth=2.9;g.lineCap='round';g.stroke();
- if(expression<=0){ellipse(g,ex+gaze*3,eyeY-1,3.7,4,'#291d15',false);ellipse(g,ex+gaze*3-1,eyeY-3,1.1,1.2,C.ivory,false)}}
+ if(expression<=0){ellipse(g,ex+gaze*3,eyeY-1,3.7,4,'#291d15',false);ellipse(g,ex+gaze*3-1,eyeY-3,1.1,1.2,C.ivory,false)}
+ g.beginPath();g.moveTo(ex-6,eyeY+lower*.5);g.quadraticCurveTo(ex,eyeY+lower*.8,ex+6,eyeY+lower*.4);g.lineWidth=1.5;g.strokeStyle='#b98260';g.stroke();g.strokeStyle='#28170f';}
  let worry=emotion==='worry'?-side*5:emotion==='determined'?side*mix(4,6.5,clamp(expression)):0,raise=emotion==='surprise'?5:0;g.lineCap='round';g.lineWidth=3.1+.7*clamp(expression);g.beginPath();g.moveTo(ex-10,eyeY-20+worry-raise);g.quadraticCurveTo(ex,eyeY-24-raise,ex+9,eyeY-20-worry-raise);g.stroke();}
- g.strokeStyle='#85543a';g.lineWidth=1.7;g.beginPath();g.moveTo(3,-7);g.lineTo(0,13);g.quadraticCurveTo(4,16,9,14);g.stroke();
+ g.strokeStyle='#85543a';g.lineWidth=1.7;g.beginPath();g.moveTo(3,-20);g.lineTo(9,13);g.quadraticCurveTo(5,17,-1,15);g.stroke();
  if(emotion==='surprise'){ellipse(g,3,32,4.8,7.5,'#843b2c',false);g.strokeStyle='#b67452';g.lineWidth=1.2;g.stroke()}
  else if(expression>0&&(emotion==='smile'||emotion==='relief')){
   g.beginPath();g.moveTo(-7,31);g.quadraticCurveTo(3,34,13,30);g.quadraticCurveTo(4,44,-7,31);g.closePath();g.fillStyle='#713326';g.fill();
