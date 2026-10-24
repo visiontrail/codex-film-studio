@@ -11,6 +11,13 @@ export function rr(g,x,y,w,h,r,fill,stroke=INK,lw=4){g.beginPath();g.roundRect(x
 export function oval(g,x,y,rx,ry,fill,stroke=INK,lw=4){g.beginPath();g.ellipse(x,y,Math.abs(rx),Math.abs(ry),0,0,Math.PI*2);if(fill){g.fillStyle=fill;g.fill()}if(stroke){g.strokeStyle=stroke;g.lineWidth=lw;g.stroke()}}
 export function text(g,s,x,y,size=32,fill='#fff',stroke=null,lw=5,font='Titan One',align='center'){g.font=`${size}px "${font}"`;g.textAlign=align;g.textBaseline='middle';g.lineJoin='round';if(stroke){g.strokeStyle=stroke;g.lineWidth=lw;g.strokeText(s,x,y)}g.fillStyle=fill;g.fillText(s,x,y)}
 export function fitText(g,s,x,y,max,size=38,fill='#fff',stroke=INK,font='Titan One'){g.font=`${size}px "${font}"`;const width=g.measureText(s).width;text(g,s,x,y,Math.min(size,size*max/Math.max(1,width)),fill,stroke,6,font)}
+export function replaySlate(g,sourceSeconds){
+ const centiseconds=Math.max(0,Math.floor(sourceSeconds*100)),pad=v=>String(v).padStart(2,'0');
+ const clock=`${pad(Math.floor(centiseconds/6000))}:${pad(Math.floor(centiseconds/100)%60)}.${pad(centiseconds%100)}`;
+ g.fillStyle='#101010';g.fillRect(0,0,W,72);g.fillRect(0,910,W,50);
+ g.font='bold 25px Arial';g.textAlign='left';g.textBaseline='middle';g.fillStyle='#fff';g.fillText('instant replay',25,35);
+ oval(g,205,35,6,6,'#df1831',null);text(g,`0.5×  ◀◀  ${clock}`,516,35,14,'#fff',null,0,'Arial','right');
+}
 export function toonBox(g,x,y,w,h,r,color,shade){rr(g,x+3,y+5,w,h,r,shade,INK,5);rr(g,x,y,w-2,h-4,r,color,INK,4);line(g,[[x+13,y+10],[x+w-18,y+10]],'#fff5',3)}
 export function burst(g,x,y,rx,ry,fill,rot=0,n=12){let p=[];for(let i=0;i<n*2;i++){let a=i*Math.PI/n+rot;let k=i%2?.62:1;p.push([x+Math.cos(a)*rx*k,y+Math.sin(a)*ry*k])}path(g,p,fill,INK,4)}
 export function star(g,x,y,r,color){burst(g,x,y,r,r,color,-Math.PI/2,5)}

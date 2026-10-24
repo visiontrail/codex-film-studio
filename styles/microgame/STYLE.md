@@ -22,6 +22,9 @@ misregistered colour plates, indexed pixel buffers, technical line systems, and
 black/white/red geometry. A common texture laid over the same vector scene is
 insufficient. Framing also changes by task: close-ups for tiny consequential
 actions, technical inserts for mechanisms, wider frames for trajectories.
+In terminal scenes, build the working objects and readouts from characters as
+well as the performer. Preserve role-specific headwear and hand/tool contact;
+amber vector icons beside an ASCII figure do not reproduce the same material.
 
 For Swiss scenes, put a large lowercase action word and a short rule on the
 grid. Keep them clear of the working hand and object after the command retreats.
@@ -67,6 +70,8 @@ the embedded screen. At acceleration, reels of past game frames stop one per
 beat. A failure changes the life counter and has a physical consequence. Replay
 important failures with a frozen timer. A final challenge combines past media
 and uses a previous failure as its solution.
+Replay uses a black broadcast strip, a red record dot, half-speed indication
+and a source-time readout that advances with the replayed action.
 
 Use a continuous rhythmic score with medium-specific instruments and foley.
 Leave a real quiet interval before the final impact. Short commands need

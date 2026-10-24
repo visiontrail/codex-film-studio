@@ -7,6 +7,7 @@ story, narration, provider jobs or films are packaged in this library.
 - `engine/materials.mjs`: separate palettes, material response and generic props.
 - `engine/characters.mjs`: performer and stage-host drawing helpers.
 - `engine/blueprint.mjs`: thin contours, hidden lines, supported assemblies and leader notes.
+- `engine/terminal.mjs`: character-built performers, props, readouts and contacting hands.
 - `engine/collage.mjs`: coloured print plates, paper scenery and scored foreground planes.
 - `engine/brush.mjs`: pressure-shaped bristles, dry gaps, wet edges and ink figures.
 - `engine/games.mjs`: deterministic action construction; requires authored inputs.

@@ -2,6 +2,7 @@ import {hash,line,rr,text,oval,path,W,H,clamp} from './primitives.mjs';
 import {brush,brushArc,blot} from './brush.mjs';
 import {blueprintObject} from './blueprint.mjs';
 import {pixelLandscape} from './pixel.mjs';
+import {terminalObject} from './terminal.mjs';
 export const palettes={
  crayon:{paper:'#f6f0dc',ink:'#34446c',hero:'#80a7d9',accent:'#dc5940',ground:'#739b68',object:'#f3c65e'},
  ink:{paper:'#eee9dc',ink:'#282c2d',hero:'#a7a7a0',accent:'#c34834',ground:'#b4b2a7',object:'#777d78'},
@@ -72,6 +73,7 @@ export function finish(g,m,createCanvas,cache){
 }
 export function mediumObject(g,m,x,y,scale,kind,variant=0){
  const p=palettes[m];g.save();g.translate(x,y);g.scale(scale,scale);let lw=m==='blueprint'?2:4;
+ if(m==='terminal'&&terminalObject(g,kind,p)){g.restore();return}
  if(m==='blueprint'&&blueprintObject(g,kind,p)){g.restore();return}
  const rect=(a,b,w,h,c=p.object,r=5)=>rr(g,a,b,w,h,r,c,p.ink,lw), el=(a,b,rx,ry,c=p.object)=>oval(g,a,b,rx,ry,c,p.ink,lw);
  if(m==='ink'){

@@ -3,6 +3,7 @@ import {palettes,background,finish,mediumObject,materialPass} from './materials.
 import {hero,localContact} from './characters.mjs';
 import {blot,brush} from './brush.mjs';
 import {blueprintPressFrame,blueprintNotes} from './blueprint.mjs';
+import {terminalMeter,terminalFan} from './terminal.mjs';
 export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  let m=s.medium,p=palettes[m],dur=(s.end-s.start)/30,u=clamp(lt/dur),tick=Math.floor(lt*s.character_fps)/s.character_fps,pu=clamp(tick/dur),a=smooth((pu-.28)/.42),done=u>.76;
  const pressTravel=a<.85?smooth(a/.65):lerp(1,.25,(a-.85)/.15);
@@ -48,6 +49,7 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
   if(!s.success&&a>.62){let sp=smooth((a-.62)/.38);for(let i=0;i<13;i++){let xx=lerp(350,80+i*33,sp),yy=lerp(635,610+Math.sin(i*2)*90,sp);if(m==='ink')blot(g,xx,yy,sp*(20+hash(i)*30),sp*(20+hash(i+8)*20),150+i);else oval(g,xx,yy,sp*(20+hash(i)*30),sp*(20+hash(i+8)*20),p.accent,null)}if(m==='ink')blot(g,350,704,120*sp,20*sp,174);else oval(g,350,704,120*sp,20*sp,p.accent,null)}break;
  }
  case 'meter':{
+  if(m==='terminal'){terminalMeter(g,done?.72:.1+.85*Math.abs(Math.sin(a*3.4)),done,p);item(222,609,.6);break}
   rr(g,285,345,160,330,12,p.paper,p.ink,4);for(let i=0;i<11;i++){let y=625-i*24;line(g,[[315,y],[i%5?338:360,y]],p.ink,2)}
   rr(g,376,355,40,296,4,p.ground,p.ink,2);let value=done?.72:.1+.85*Math.abs(Math.sin(a*3.4));g.fillStyle=p.accent;g.fillRect(381,645-value*280,30,value*280);rr(g,369,423,54,29,2,null,p.accent,4);text(g,done?'LOCK':'CHECK',365,320,26,p.ink,null,0,m==='terminal'?'monospace':'Arial');item(222,609,.6);break;
  }
@@ -70,6 +72,11 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  case 'stack':
   for(let i=0;i<4;i++){let pr=clamp(a*4-i);item(362+Math.sin(a*10+i)*3,lerp(300,670-i*55,ease(pr)),.8,s.object);if(pr<.001)break}break;
  case 'fan':
+  if(m==='terminal'){
+   item(368,640,1.1);transformed(g,310,496,1,Math.sin(a*18)*.35,()=>terminalFan(g,p));
+   for(let i=0;i<4;i++)text(g,'~ ~ >',420+15*Math.sin(a*30),480+i*32,20,p.ink,null,0,'monospace');
+   break;
+  }
   item(368,640,1.1);transformed(g,258,496,1,Math.sin(a*18)*.35,()=>{path(g,[[0,80],[-49,-25],[10,-57],[65,-15]],p.paper,p.ink,3);for(let i=0;i<6;i++)line(g,[[0,80],[-49+i*22,-25-Math.sin(i/5*Math.PI)*30]],p.ink,1) });
   for(let i=0;i<4;i++){let yy=480+i*32;line(g,[[300,yy],[360+20*Math.sin(a*30),yy-10],[440,yy]],p.ink,2)}break;
  case 'jump':item(300,698,.85);break;
@@ -113,7 +120,8 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  if(s.action==='stir')target=[355+Math.sin(Math.sin(a*18)*.55)*92,604-Math.cos(Math.sin(a*18)*.55)*92];
  if(s.action==='roll')target=[355+Math.sin(a*12)*42-85.4,633];
  if(s.action==='cut')target=[355,lerp(396,644,clamp(a*1.4))-115];
- if(s.action==='fan')target=point(258,496,0,80,Math.sin(a*18)*.35);
+ if(s.action==='fan')target=point(m==='terminal'?310:258,496,0,80,Math.sin(a*18)*.35);
+ if(s.action==='meter'&&m==='terminal')target=[222,589];
  if(s.action==='carry')target=[hx+70,551+.8*(s.object==='tree'||s.object==='flower'?38:27)];
  if(s.action==='catch')target=[305,642];
  if(s.action==='press')target=[355,pressY-55];
