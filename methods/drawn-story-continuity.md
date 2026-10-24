@@ -170,6 +170,28 @@ small facial marks, white features and dark identifying shapes. Compare a large
 circle, an angular form and a grip at native size, then the complete draw-on
 sequence. A rougher finished still does not prove a continuous pigment reveal.
 
+## Occlusion follows the drawn material
+
+When a pale foreground drawing shows unwanted background lines, first isolate
+the compositing operation with two overlapping primitives at the actual scene
+transform. A correct result at the canvas origin does not establish correct
+translated or rotated clipping. Compare the background, isolated foreground,
+overlap and partial drawing stages before increasing pigment density.
+
+For a stroke-by-stroke reveal, remove the lower layer only along strokes already
+drawn. Clearing the whole silhouette can create a blank cutout before the colour
+arrives. If transformed erasure misbehaves, capture the visible stroke paths and
+their matrices, erase their device-space footprints under the retained shape
+clip, and replay the same pigment. Preserve pressure, drawing order and reveal
+budgets. State which transforms the footprint implementation supports; multiplying
+line width by one scale factor does not handle arbitrary affine transforms.
+
+Check empty, contour-only, partial-pigment and completed states, plus deterministic
+seeking. Compare isolated pigment to detect unintended material changes, allowing
+only explicitly measured rasterization differences. Inspect a full encoded reveal
+and fine foreground features; a primitive overlap test does not certify every
+production frame or establish perceptual style equivalence.
+
 ## Continuous material through a physical transition
 
 Separate base material, local wear and illumination. A washed-out page edge

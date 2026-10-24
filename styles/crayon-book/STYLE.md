@@ -130,6 +130,24 @@ the drawing: compare native-size trials and reject a setting that removes the
 reference's directional marks. Keep the value fixed during a reveal and clear
 cached reveal counts when changing material settings for an experiment.
 
+For overlapping drawings, `Wax.strokeOcclusion = true` removes lower-layer
+marks only beneath the pigment strokes that have actually been revealed. It
+queues each visible stroke with its transform, erases its footprint in device
+coordinates, then replays its original colour and pressure inside the shape
+clip. The contour-only stage keeps the interior visible; there is no early
+solid silhouette or opacity ramp. This also avoids background ghosts observed
+with transformed `destination-out` operations in the Canvas runtime.
+
+The option is off by default to preserve existing compositions. Its device-space
+stroke width supports translation, rotation, reflection and uniform scaling;
+nonuniform scaling or shear requires a different footprint implementation.
+Replaying a captured matrix can slightly change antialiasing at stroke edges.
+Test translated overlapping primitives, partial reveals and out-of-order seeks,
+then inspect the encoded drawing sequence. Check fine eyes, light features and
+dark footwear separately: removing lower-layer pigment may expose more paper
+tooth than the old accidental overprint. Gaps between wax strokes intentionally
+retain the lower layer; this option does not make every closed shape opaque.
+
 `Wax.organicContours = true` adds gradual stroke-width variation along indigo
 contours. `Wax.contourPressure` defaults to 1 and scales pressure only on indigo
 contour strokes up to 6 scene units wide, excluding pigment passes and glyphs.

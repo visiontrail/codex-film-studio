@@ -68,12 +68,18 @@ export class Wax {
   const contourPressure=color===C.ink&&width<=6&&!this.filling?(this.contourPressure??1):1;
   c.globalAlpha=clamp(pressure*contourPressure);c.lineWidth=width*(color===C.ink&&width<=6?(this.contourScale??1):1);c.lineJoin='round';c.lineCap='round';c.beginPath();
   const hand=points.map(([x,y],i)=>[x+(hash(i,seed,this.frame%5)-.5)*.75,y+(hash(i+32,seed,this.frame%5)-.5)*.75]);
+  const stroke=(path,strokeWidth)=>{
+   if(this.surfaceStrokes&&this.filling){
+    const m=c.getTransform();
+    this.surfaceStrokes.push({path,width:strokeWidth,color,alpha:c.globalAlpha,matrix:[m.a,m.b,m.c,m.d,m.e,m.f]});
+   }else{c.lineWidth=strokeWidth;c.beginPath();path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
+  };
   if(this.organicContours&&color===C.ink&&width<=6){
    const baseWidth=c.lineWidth;
    for(let i=1;i<hand.length;i++){
-    c.lineWidth=baseWidth*(.73+grid(i,seed,5,619)*.54);c.beginPath();c.moveTo(...hand[i-1]);c.lineTo(...hand[i]);c.stroke();
+    stroke([hand[i-1],hand[i]],baseWidth*(.73+grid(i,seed,5,619)*.54));
    }
-  }else{hand.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
+  }else stroke(hand,c.lineWidth);
   c.restore();
  }
  curve(points,color=C.ink,width=3,pressure=.97){this.line(points,color,width,pressure,17)}
@@ -100,7 +106,9 @@ export class Wax {
    }points=edge;
   }
   const c=this.ctx;let xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
-  c.save();this.path(points);c.clip();c.globalAlpha=1;c.globalCompositeOperation='destination-out';c.fillStyle='#fff';c.fillRect(x0-2,y0-2,x1-x0+4,y1-y0+4);c.globalCompositeOperation='source-over';
+  c.save();this.path(points);c.clip();
+  if(!this.strokeOcclusion){c.globalAlpha=1;c.globalCompositeOperation='destination-out';c.fillStyle='#fff';c.fillRect(x0-2,y0-2,x1-x0+4,y1-y0+4);c.globalCompositeOperation='source-over';}
+  this.surfaceStrokes=this.strokeOcclusion?[]:null;
   if(color&&!this.outlineOnly){
    this.filling=true;
    const smallMark=this.protectSmallMarks&&color===C.ink&&x1-x0<=28&&y1-y0<=36;
@@ -160,6 +168,22 @@ export class Wax {
    }
    for(let y=y0-50;y<y1+50;y+=13){let pts=[[x0-8,y+20],[x1+10,y-(x1-x0)*.28]];this.line(pts,color,3.7,.24*pressure,seed+31)}
    }
+  }
+  if(this.surfaceStrokes){
+   const strokes=this.surfaceStrokes;this.surfaceStrokes=null;
+   c.save();c.resetTransform();c.globalAlpha=1;c.globalCompositeOperation='destination-out';c.lineCap='round';c.lineJoin='round';
+   // Erase only where a visible pigment stroke has actually passed. Device
+   // coordinates avoid transformed destination-out leaving background ghosts.
+   for(const s of strokes){
+    const [a,b,cc,d,e,f]=s.matrix;c.lineWidth=s.width*Math.hypot(a,b);c.beginPath();
+    s.path.forEach(([x,y],i)=>{const xx=a*x+cc*y+e,yy=b*x+d*y+f;i?c.lineTo(xx,yy):c.moveTo(xx,yy);});c.stroke();
+   }
+   c.globalCompositeOperation='source-over';
+   for(const s of strokes){
+    c.setTransform(...s.matrix);c.globalAlpha=s.alpha;c.strokeStyle=s.color;c.lineWidth=s.width;c.beginPath();
+    s.path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();
+   }
+   c.restore();
   }
   this.filling=false;c.restore();
   // Short wax passes cross selected edges; they keep large fill shapes from
