@@ -119,6 +119,17 @@ and pupils do not acquire the same treatment as foliage. Review their actual
 sizes before adopting the setting. Long directional marks may be correct for
 a reference; use the option only when a held-frame comparison supports it.
 
+If neighbouring passes form excessively regular light/dark bands, try
+`Wax.hatchOverlap` between 0 and 1 with formed and broken hatching enabled.
+It broadens the existing directional wax strokes; the default 0 keeps the
+previous drawing. Positive values also allow larger indigo fills to use the
+broken-pass model, while white fills and small indigo features keep their
+existing treatment. The size boundary is 28 by 36 scene units, so verify the
+actual displayed feature sizes after transforms. Excess overlap can flatten
+the drawing: compare native-size trials and reject a setting that removes the
+reference's directional marks. Keep the value fixed during a reveal and clear
+cached reveal counts when changing material settings for an experiment.
+
 `Wax.organicContours = true` adds gradual stroke-width variation along indigo
 contours. `Wax.contourPressure` defaults to 1 and scales pressure only on indigo
 contour strokes up to 6 scene units wide, excluding pigment passes and glyphs.

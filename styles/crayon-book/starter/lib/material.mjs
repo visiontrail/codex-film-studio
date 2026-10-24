@@ -113,7 +113,8 @@ export class Wax {
     const left=Math.min(...bounds.map(p=>p[0]))-10,right=Math.max(...bounds.map(p=>p[0]))+10,top=Math.min(...bounds.map(p=>p[1]))-12,bottom=Math.max(...bounds.map(p=>p[1]))+12;
     const formPressure=.91+hash(seed,947)*.17;
     c.save();c.translate(cx,cy);c.rotate(angle);
-    if(this.brokenHatching&&color!==C.white&&color!==C.ink){
+    const overlap=clamp(this.hatchOverlap??0),largeInk=color===C.ink&&(x1-x0>28||y1-y0>36);
+    if(this.brokenHatching&&color!==C.white&&(color!==C.ink||(overlap>0&&largeInk))){
      // Stagger the ends and pressure of wax passes instead of spanning each
      // shape with identical parallel bands. All seeds remain object-local.
      const strength=typeof this.brokenHatching==='number'?clamp(this.brokenHatching):1;
@@ -131,7 +132,9 @@ export class Wax {
         stroke.push([x,yy+bend*Math.sin(q*Math.PI)+(hash(pass,Math.round(x),seed+71)-.5)*1.5]);
        }
        const pressureVariation=(grid(segment,pass,2.2,seed+163)-.5)*.20*strength;
-       this.line(stroke,color,7.7+(hash(pass,segment,seed+6)-.5)*1.7,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment);
+       // A broader wax side overlaps adjacent passes without painting an
+       // undercoat. Small identifying marks retain their original pen model.
+       this.line(stroke,color,7.7+overlap*5+(hash(pass,segment,seed+6)-.5)*1.7,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment);
       }
      }
      for(let pass=0;pass<Math.ceil((bottom-top)/17);pass++){

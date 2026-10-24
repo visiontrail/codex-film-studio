@@ -133,6 +133,15 @@ foliage can obscure eyes or noses. Keep the original treatment for those marks
 when the trial shows a regression. Preserve deterministic object seeds and
 recheck contour/fill budgets after changing stroke topology.
 
+Distinguish dry-grain holes from regular gaps between adjacent pen passes.
+The latter may need a wider wax footprint or greater overlap, rather than more
+pigment everywhere. Test a modest range with pressure and paper held fixed;
+too much overlap erases the directional evidence of drawing. Broad dark fills
+may need the same pass model as coloured areas, while small identifying dark
+marks remain protected. Check size thresholds after the scene transforms.
+Changing pass topology invalidates measured reveal counts: use a fresh renderer
+or clear that cache before comparing partially drawn trials.
+
 Repeated props need stable individual drawings. Keep a common design, but vary
 their local contour, hatch direction and pressure with an explicit identity key.
 Nest component keys under their parent object and reuse them across shots.
