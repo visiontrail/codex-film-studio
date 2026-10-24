@@ -6,12 +6,12 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
-**6 styles** · 1 published sample · 4 authoring starters · 1 material toolkit
+**9 styles** · 1 published sample · 5 authoring starters · 3 material toolkit
 
 ## Visual index / 风格一览
 
-Every preview is a decoded frame from a generated film, with a localized label
-outside the original image. 每种风格均展示实际影片截图；图注单独翻译，画面保留原语言。
+Available film previews are decoded frames, with a localized label
+outside the original image. 已有影片预览采用实际截图；缺少预览的风格保留占位说明。
 A displayed frame does not change package completion or full-film publication.
 
 <table>
@@ -81,6 +81,39 @@ A displayed frame does not change package completion or full-film publication.
 <sub><a href="../styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="../styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="../styles/scifi-sitcom/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle">Preview to come</td>
+<td width="62%" valign="top">
+<sub>07 / <code>microgame</code></sub>
+<h3>Microgame Frenzy</h3>
+<sub>极速微游戏</sub>
+<p>Rapid command-action-result games with changing materials, lives and accelerating rhythm.</p>
+<p><b>Material toolkit</b> · No sample yet</p>
+<sub><a href="../styles/microgame/STYLE.md">Style guide</a> · <a href="../styles/microgame/prompt.txt">Prompt</a> · <a href="../styles/microgame/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle">Preview to come</td>
+<td width="62%" valign="top">
+<sub>08 / <code>art-deco</code></sub>
+<h3>Art Deco</h3>
+<sub>装饰艺术</sub>
+<p>Black lacquer, graded brass, faceted figures and spatial mechanical motion.</p>
+<p><b>Material toolkit</b> · No sample yet</p>
+<sub><a href="../styles/art-deco/STYLE.md">Style guide</a> · <a href="../styles/art-deco/prompt.txt">Prompt</a> · <a href="../styles/art-deco/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle">Preview to come</td>
+<td width="62%" valign="top">
+<sub>09 / <code>caption-news</code></sub>
+<h3>Caption News</h3>
+<sub>字幕新闻</sub>
+<p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
+<p><b>Authoring starter</b> · No sample yet</p>
+<sub><a href="../styles/caption-news/STYLE.md">Style guide</a> · <a href="../styles/caption-news/prompt.txt">Prompt</a> · <a href="../styles/caption-news/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 ## Capabilities / 能力与网页
@@ -93,6 +126,9 @@ A displayed frame does not change package completion or full-film publication.
 | [50 年代平涂卡通 / Mid-century Cartoon](midcentury-cartoon/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Short film](midcentury-cartoon/showcase/index.html) · [Long film](midcentury-cartoon/showcase/long.html) · [Long-film motion review](midcentury-cartoon/showcase/motion.html) |
 | [卫星影像／地理简报 / Satellite Briefing](satellite-briefing/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Singapore film](satellite-briefing/showcase/index.html) · [Live composition](satellite-briefing/showcase/composition.html) · [Frame comparison](satellite-briefing/showcase/comparison.html) |
 | [科幻情景喜剧卡通 / Sci-Fi Sitcom Toon](scifi-sitcom/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [The House Gets Coffee](scifi-sitcom/showcase/index.html) |
+| [极速微游戏 / Microgame Frenzy](microgame/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
+| [装饰艺术 / Art Deco](art-deco/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
+| [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | — |
 
 ## What is complete / 已完成什么
 
@@ -102,6 +138,9 @@ A displayed frame does not change package completion or full-film publication.
 - **midcentury-cartoon** — 已有空白项目、套色与时间轴工具、制作和音频审查规范；需编写场景与渲染器。 Blank inputs, print/timeline helpers and style-specific workflow, audio and review guides; author scenes and renderer.
 - **satellite-briefing** — 已有空白项目、地理计算工具、实拍与审查流程；需编写影像渲染与剪辑。 Blank inputs, geographic helpers and footage/review guides; author imagery renderer and edit.
 - **scifi-sitcom** — 已有空白项目、描边与时间轴工具、制作和审查流程；需创作角色、场景与渲染器。 Blank inputs, ink/timeline helpers and workflow/review guides; author cast, scenes and renderer.
+- **microgame** — 已有独立材质与动作工具；镜头、音频和交付需在制作项目中完成，暂无已验收样片。 Independent material and motion helpers; scene direction, audio and delivery require production-specific work. No accepted demo.
+- **art-deco** — 已有独立绘制工具、人物骨架与空白输入合同；新场景、旁白与渲染器仍需编写。 Original drawing and figure toolkit with a blank input contract; new scenes, narration and renderer must be authored.
+- **caption-news** — 已有空白输入、确定性字幕动效工具和通用方法；需为新选题编写场景、渲染与音频。 Blank authoring inputs, deterministic caption helpers and shared methods; author new scenes, renderer and audio.
 
 `demo-ready` includes a released sample and editable renderer. `starter-ready`
 provides blank authoring inputs, guides and helpers. `toolkit-ready` provides

@@ -18,6 +18,11 @@ the story. Use the user's requested language and duration. For whiteboard,
 account for its English lettering limitation before using a different script;
 other styles follow their own typography rules.
 
+Each fresh project includes `methods/README.md` and the common review tools.
+Apply reference adaptation, media selection and revision guidance when relevant,
+including in other visual styles. Keep the new brief authoritative; no fixed
+story count, cast, runtime or previous production's acceptance is inherited.
+
 Return only generic methods, tools and empty input contracts to this library.
 Keep all story-specific material and per-production review in the external
 project. For a specific real person, request a user-supplied portrait; matching

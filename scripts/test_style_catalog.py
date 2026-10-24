@@ -67,6 +67,14 @@ class CatalogTests(unittest.TestCase):
                     self.assertTrue((result / "STYLE.md").is_file())
                     self.assertTrue((result / "prompt.txt").is_file())
                     self.assertFalse((result / "showcase").exists())
+                    for name in ["README.md", "reference-adaptation.md", "media-selection.md",
+                                 "revision-delivery.md", "WORKFLOW.md", "REVIEW.md"]:
+                        method = result / "methods" / name
+                        self.assertTrue(method.is_file(), name)
+                        for link in re.findall(r"\]\(([^)]+)\)", method.read_text()):
+                            if not link.startswith(("https://", "http://", "#")):
+                                self.assertTrue((method.parent / link.split("#")[0]).exists(), (name, link))
+                    self.assertTrue((result / "tools/frame_review/ffmpeg_gate.py").is_file())
                     if entry["template_kind"] == "blank":
                         for name in ["README.md", "WORKFLOW.md", "REVIEW.md", "METHOD.md"]:
                             self.assertTrue((result / name).is_file(), name)

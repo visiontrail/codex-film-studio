@@ -1,0 +1,5 @@
+Create an original microgame film from the supplied brief. Read STYLE.md and
+methods/README.md. Author a new command-action-result sequence, visuals, renderer
+and sound for this production. Use one frame timeline and select material helpers
+as needed. Inspect actions, transitions and the encoded delivery; keep this film's
+story, assets and review records in its independent project.

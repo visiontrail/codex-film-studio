@@ -7,6 +7,11 @@ voice from the request; ask only for choices that materially affect the film.
 For factual stories, write a short source ledger before drawing. Keep study
 populations, comparisons and limitations with the claims they qualify.
 
+Use the shared methods for [reference adaptation](methods/reference-adaptation.md),
+[media selection](methods/media-selection.md) and [revision delivery](methods/revision-delivery.md)
+when those decisions arise. They apply across styles; set the medium, motion,
+duration and verification requirements from this film's brief.
+
 Read the selected style guide. Plan a few connected visual ideas, not a sequence
 of decorated captions. People should do something: operate a tool, hesitate,
 try again, or discover a result. Use recognizable objects and place cues when

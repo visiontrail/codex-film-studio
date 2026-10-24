@@ -2,11 +2,14 @@
 
 1. Fill the new project's brief: subject, audience, language, duration, delivery
    dimensions and the question the viewer should be able to answer.
-2. Read `STYLE.md`. Record source claims, reference intervals, asset permissions
+2. Read `STYLE.md` and use [reference adaptation](reference-adaptation.md) when
+   a reference is supplied. Record source claims, reference intervals, asset permissions
    and any required identities in the external production. A specific real
    person uses a portrait supplied for that project.
 3. Write a new story and shots. Give each shot a visible action or relationship,
-   a camera destination and a readable hold. Create new drawings for the subject.
+   a camera destination and a readable hold. Choose drawings, recorded media,
+   generated imagery or diagrams for that purpose. Use [media selection](media-selection.md)
+   to inspect actual source intervals and reframe them around the subject.
 4. Generate narration through a configured service, or import recordings.
    Preserve original WAVs and source hashes; measure them before locking timing.
    Keep credentials and provider job records in the external project.
@@ -21,6 +24,10 @@
 8. Follow `REVIEW.md` and deliver the actual MP4 with editable sources and the
    scope of verification. Keep new media, sources and review records in the
    external project. Publication requires the user's request.
+
+For a compilation or changed brief, follow [revision and delivery](revision-delivery.md).
+Rebuild the edit around the new viewing experience, renew affected evidence and
+promote only subject-independent lessons to this library.
 
 A starter creates files and tools; authoring the scenes, narration and renderer
 is part of the film project. A prior sample's acceptance does not accept a new film.

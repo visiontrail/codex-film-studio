@@ -34,6 +34,7 @@ def project_text(text):
             .replace("starter/content/", "content/").replace("starter/lib/", "lib/")
             .replace("../../scripts/frame_review", "tools/frame_review")
             .replace("../scripts/frame_review", "tools/frame_review")
+            .replace("../../methods/", "methods/")
             .replace("../../CONTRIBUTING.md",
                      "https://github.com/visiontrail/codex-film-studio/blob/main/CONTRIBUTING.md")
             .replace("../../LICENSE", "LICENSE"))
@@ -84,8 +85,28 @@ def create(name, style, root=ROOT, output=None):
             (destination / target).write_text(project_text(path.read_text()), encoding="utf-8")
         else:
             shutil.copy2(path, destination / target)
-    if blank:
-        shutil.copytree(review_tools, destination / "tools/frame_review", ignore=IGNORE)
+    methods = root / "methods"
+    if methods.is_dir():
+        # Every style receives the shared decisions, including sample-based projects.
+        shutil.copytree(methods, destination / "methods", ignore=IGNORE)
+        for path in (destination / "methods").rglob("*.md"):
+            text = path.read_text(encoding="utf-8")
+            text = text.replace("../scripts/frame_review", "../tools/frame_review")
+            text = text.replace("`scripts/frame_review/", "`../tools/frame_review/")
+            text = text.replace("(../styles/README.md)",
+                                "(https://github.com/visiontrail/codex-film-studio/blob/main/styles/README.md)")
+            path.write_text(text, encoding="utf-8")
+        # Root workflow/review copies have a different base directory from methods/.
+        for source_path, target in copies:
+            if source_path.parent == methods:
+                path = destination / target
+                text = path.read_text(encoding="utf-8")
+                for method in methods.glob("*.md"):
+                    text = text.replace(f"]({method.name})", f"](methods/{method.name})")
+                path.write_text(text, encoding="utf-8")
+        review_tools = root / "scripts/frame_review"
+        if review_tools.is_dir():
+            shutil.copytree(review_tools, destination / "tools/frame_review", ignore=IGNORE)
     return destination
 
 

@@ -1,0 +1,6 @@
+Create an original film from the supplied subject and delivery brief. Read STYLE.md,
+methods/README.md, WORKFLOW.md and REVIEW.md. Use the Caption News hierarchy and
+motion grammar with the requested motion intensity. Author new sources, script,
+assets, shots, renderer and audio; keep one frame timeline. Validate source meaning,
+readability, motion, encoded delivery and actual playback. Keep all production
+material and acceptance evidence in this independent project.

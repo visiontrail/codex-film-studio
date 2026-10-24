@@ -1,0 +1,10 @@
+node_modules/
+.venv/
+media/
+assets/
+review/
+reference/
+.env
+.env.*
+__pycache__/
+*.pyc

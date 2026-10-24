@@ -11,7 +11,7 @@
 
 <!-- style-summary:start -->
 
-**6 种风格** · 1 种已发布样片 · 4 种创作起步包 · 1 种材质工具包
+**9 种风格** · 1 种已发布样片 · 5 种创作起步包 · 3 种材质工具包
 
 <!-- style-summary:end -->
 
@@ -89,6 +89,39 @@
 <sub><a href="styles/scifi-sitcom/STYLE.md">风格说明</a> · <a href="styles/scifi-sitcom/prompt.txt">提示词</a> · <a href="styles/scifi-sitcom/starter">创作工程</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle">预览待补充</td>
+<td width="62%" valign="top">
+<sub>07 / <code>microgame</code></sub>
+<h3>极速微游戏</h3>
+<sub>Microgame Frenzy</sub>
+<p>命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。</p>
+<p><b>材质工具包</b> · 尚无样片</p>
+<sub><a href="styles/microgame/STYLE.md">风格说明</a> · <a href="styles/microgame/prompt.txt">提示词</a> · <a href="styles/microgame/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle">预览待补充</td>
+<td width="62%" valign="top">
+<sub>08 / <code>art-deco</code></sub>
+<h3>装饰艺术</h3>
+<sub>Art Deco</sub>
+<p>黑漆、渐变黄铜、切面人物与具有空间感的机械动效。</p>
+<p><b>材质工具包</b> · 尚无样片</p>
+<sub><a href="styles/art-deco/STYLE.md">风格说明</a> · <a href="styles/art-deco/prompt.txt">提示词</a> · <a href="styles/art-deco/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle">预览待补充</td>
+<td width="62%" valign="top">
+<sub>09 / <code>caption-news</code></sub>
+<h3>字幕新闻</h3>
+<sub>Caption News</sub>
+<p>大字号字幕、黄色重点、账本式图表与有节奏的入场动效。</p>
+<p><b>创作起步包</b> · 尚无样片</p>
+<sub><a href="styles/caption-news/STYLE.md">风格说明</a> · <a href="styles/caption-news/prompt.txt">提示词</a> · <a href="styles/caption-news/starter">创作工程</a></sub>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->
@@ -149,6 +182,8 @@ python3 scripts/new_film.py my-film --style midcentury-cartoon
 
 创作旁白与场景，录制或生成配音，再渲染与审查影片。
 [通用制作方法](methods/README.md)负责共用流程；各风格说明补充自己的视觉与声音要求。
+每个新项目都携带参考适配、素材选择与重剪交付方法。具体脚本、事实、素材和
+单片验收结果留在制作项目，不进入通用方法。
 
 白板保留可编辑的样片渲染工程；其他风格提供空白输入和通用工具，需要为新选题
 编写场景与渲染器。蜡笔绘本目前是材质工具包。每部新影片都要创作自己的旁白、

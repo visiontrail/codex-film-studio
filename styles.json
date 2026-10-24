@@ -264,7 +264,8 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": []
+      "showcases": [],
+      "prompt": "styles/microgame/prompt.txt"
     },
     {
       "id": "art-deco",
@@ -279,6 +280,27 @@
       "readme": "styles/art-deco/README.md",
       "prompt": "styles/art-deco/prompt.txt",
       "template": "styles/art-deco/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": []
+    },
+    {
+      "id": "caption-news",
+      "name": "Caption News",
+      "name_zh": "字幕新闻",
+      "description": "Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.",
+      "description_zh": "大字号字幕、黄色重点、账本式图表与有节奏的入场动效。",
+      "status": "starter-ready",
+      "status_note": "Blank authoring inputs, deterministic caption helpers and shared methods; author new scenes, renderer and audio.",
+      "status_note_zh": "已有空白输入、确定性字幕动效工具和通用方法；需为新选题编写场景、渲染与音频。",
+      "guide": "styles/caption-news/STYLE.md",
+      "readme": "styles/caption-news/README.md",
+      "prompt": "styles/caption-news/prompt.txt",
+      "template": "styles/caption-news/starter",
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,

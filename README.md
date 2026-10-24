@@ -11,7 +11,7 @@ it with Codex: picture, narration, camera and sound on one timeline.
 
 <!-- style-summary:start -->
 
-**6 styles** · 1 published sample · 4 authoring starters · 1 material toolkit
+**9 styles** · 1 published sample · 5 authoring starters · 3 material toolkit
 
 <!-- style-summary:end -->
 
@@ -89,11 +89,44 @@ visual rules, or take the prompt and project files into your own production.
 <sub><a href="styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="styles/scifi-sitcom/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle">Preview to come</td>
+<td width="62%" valign="top">
+<sub>07 / <code>microgame</code></sub>
+<h3>Microgame Frenzy</h3>
+<sub>极速微游戏</sub>
+<p>Rapid command-action-result games with changing materials, lives and accelerating rhythm.</p>
+<p><b>Material toolkit</b> · No sample yet</p>
+<sub><a href="styles/microgame/STYLE.md">Style guide</a> · <a href="styles/microgame/prompt.txt">Prompt</a> · <a href="styles/microgame/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle">Preview to come</td>
+<td width="62%" valign="top">
+<sub>08 / <code>art-deco</code></sub>
+<h3>Art Deco</h3>
+<sub>装饰艺术</sub>
+<p>Black lacquer, graded brass, faceted figures and spatial mechanical motion.</p>
+<p><b>Material toolkit</b> · No sample yet</p>
+<sub><a href="styles/art-deco/STYLE.md">Style guide</a> · <a href="styles/art-deco/prompt.txt">Prompt</a> · <a href="styles/art-deco/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle">Preview to come</td>
+<td width="62%" valign="top">
+<sub>09 / <code>caption-news</code></sub>
+<h3>Caption News</h3>
+<sub>字幕新闻</sub>
+<p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
+<p><b>Authoring starter</b> · No sample yet</p>
+<sub><a href="styles/caption-news/STYLE.md">Style guide</a> · <a href="styles/caption-news/prompt.txt">Prompt</a> · <a href="styles/caption-news/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->
 
-<sub>All six previews are actual frames from generated films, with localized labels outside
+<sub>Available film previews are actual frames from generated films, with localized labels outside
 the original picture. Film text retains its original language.
 <a href="docs/readme/README.md#frame-sources">Frame sources and credits</a>.
 Local films and review pages open through the <a href="#open-the-local-studio">local studio</a>.</sub>
@@ -152,7 +185,9 @@ the workflow. It reads three guides:
 
 Write the narration and scenes, record or generate the voice, then render and
 review the film. The [shared methods](methods/README.md) cover production and
-review; each style adds its own rules.
+review; each style adds its own rules. Every new working copy includes these
+methods, including reference adaptation, media selection and revision delivery.
+Production scripts, facts, assets and acceptance results stay in the film project.
 
 Whiteboard includes an editable sample renderer. The other packages provide
 blank inputs and reusable helpers; their new scenes and renderers need authoring.

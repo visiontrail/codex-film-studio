@@ -15,6 +15,13 @@ production pipeline. Their package status is separate from existing local
 showcase films. Use `python3 scripts/serve_styles.py` from the library root to
 open the unified catalog and retained showcase pages.
 
+Every new working copy includes `methods/` and `tools/frame_review/`. Read
+`methods/README.md` to select reference adaptation, media selection, continuity
+or revision guidance as needed. Style-specific workflow files remain in place;
+the common methods supplement them. Production facts and acceptance records do
+not enter these shared copies. Existing projects are preserved and are not
+silently updated when the library changes.
+
 ## Whiteboard sample implementation
 
 The commands and paths below apply to the whiteboard studio.
