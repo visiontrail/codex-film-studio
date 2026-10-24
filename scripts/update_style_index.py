@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+SITE = 'https://visiontrail.github.io/codex-film-studio/'
 
 
 def render_summary(catalog, language):
@@ -30,7 +31,8 @@ def render_gallery(catalog, language='en', prefix=''):
         state = catalog['statuses'][entry['status']]['name_zh' if zh else 'name']
         guide = escape(prefix + entry['guide'], quote=True)
         landing = entry.get('landing', {}).get('page')
-        preview_target = escape(prefix + landing + '?lang=' + language, quote=True) if landing else guide
+        landing_url = SITE + landing + '?lang=' + language if landing else None
+        preview_target = escape(landing_url, quote=True) if landing_url else guide
         preview = entry.get('preview_zh') if zh else entry.get('preview')
         preview = preview or entry.get('preview', entry.get('poster'))
         if preview:
@@ -46,8 +48,8 @@ def render_gallery(catalog, language='en', prefix=''):
             (entry['template'], '创作工程' if zh else 'Project files'),
         ]
         if landing:
-            actions.insert(0, (landing + '?lang=' + language, '独立风格页' if zh else 'Style page'))
-        links = ' · '.join(f'<a href="{escape(prefix + path, quote=True)}">{label}</a>' for path, label in actions)
+            actions.insert(0, (landing_url, '独立风格页' if zh else 'Style page'))
+        links = ' · '.join(f'<a href="{escape(path if path.startswith("https://") else prefix + path, quote=True)}">{label}</a>' for path, label in actions)
         local_pages = [p for p in entry.get('showcases', []) if p['access'] == 'local']
         if entry['capabilities']['published_demo']:
             player = 'https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=' + ('zh' if zh else 'en')
@@ -105,7 +107,7 @@ def render(catalog):
         state = catalog['statuses'][entry['status']]
         page_links = [f"[{p['title']}]({p['page'].removeprefix('styles/')}{'#' + p['anchor'] if p.get('anchor') else ''})" for p in entry.get('showcases', [])]
         if entry.get('landing'):
-            page_links.insert(0, f"[Style page / 独立风格页]({entry['landing']['page'].removeprefix('styles/')})")
+            page_links.insert(0, f"[Style page / 独立风格页]({SITE + entry['landing']['page']})")
         pages = ' · '.join(page_links) or '—'
         renderer = 'Included / 已有' if entry['capabilities']['scene_renderer'] else 'Author per project / 需按选题编写'
         lines.append(f"| [{entry['name_zh']} / {entry['name']}]({relative}) | {state['name_zh']} (`{entry['status']}`) | {renderer} | {pages} |")
