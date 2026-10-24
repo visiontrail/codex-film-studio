@@ -17,6 +17,24 @@ export function lightBeam(g,from,to,nearWidth,farWidth,{color='244,220,165',stre
  path(g,[[-nearWidth/2,0],[nearWidth/2,0],[farWidth/2,length],[-farWidth/2,length]],true);g.clip();
  const fade=g.createLinearGradient(0,0,0,length);fade.addColorStop(0,`rgba(${color},${strength})`);fade.addColorStop(.7,`rgba(${color},${strength*.72})`);fade.addColorStop(1,`rgba(${color},0)`);g.fillStyle=fade;g.fillRect(-Math.max(nearWidth,farWidth)/2,0,Math.max(nearWidth,farWidth),length);g.restore();
 }
+// Apply to the defocused set before drawing the sharp figure. Keep the key on one side.
+export function portraitLighting(g,t,{resolved=false,origin=[920,-120]}={}){
+ g.save();
+ const negative=g.createLinearGradient(0,0,1080,0);
+ negative.addColorStop(0,'rgba(3,8,13,.48)');negative.addColorStop(.55,'rgba(3,8,13,.18)');negative.addColorStop(1,'rgba(3,8,13,0)');
+ g.fillStyle=negative;g.fillRect(0,0,1080,1920);
+ const floor=g.createLinearGradient(0,850,0,1920);
+ floor.addColorStop(0,'rgba(6,7,8,0)');floor.addColorStop(1,'rgba(6,7,8,.48)');
+ g.fillStyle=floor;g.fillRect(0,850,1080,1070);
+ if(resolved){
+  glow(g,1030,630,1050,'244,192,89',.28);
+  const drift=Math.sin(t*.22)*18;
+  lightBeam(g,origin,[300+drift,1870],90,500,{strength:.13});
+  lightBeam(g,[origin[0]-530,origin[1]-100],[70-drift,1850],45,230,{color:'198,208,192',strength:.08});
+  lightBeam(g,[origin[0]+200,origin[1]-70],[1030-drift,1800],35,290,{strength:.065});
+ }
+ g.restore();
+}
 export function bulb(g,x,y,on=1,r=4){
  if(on<=0){ellipse(g,x,y,r,r,'#17120a');return;}
  const energy=Math.min(1.45,on);
