@@ -61,9 +61,14 @@ export function projectedRadialAngle(P,x,z){const c=P(0,0,0),q=P(x,0,z);return M
 export function radialBeat(t,p,index,{bpm=116,count=8}={}){
  const tt=Math.floor(t*12)/12,beat=tt*bpm/60,bloom=ease((p-.04-index*.009)/.20),pulse=.5+.5*Math.cos(tau*beat);
  const pairing=ease((p-.48)/.14)*(1-ease((p-.86)/.12));
- return {opening:.16+.84*bloom*mix(.4,1,pulse),
-  angle:index*tau/count+t*.13+(index%2?1:-1)*.18*pairing*Math.sin(beat*Math.PI*.5),
-  radius:3.6+.22*Math.sin(beat*Math.PI*.5)*pairing};
+ const resolve=ease((p-.72)/.25),arrival=ease((p-.72-(index%2)*.025)/.22),step=tau/count;
+ const orbit=index*step+t*.13+(index%2?1:-1)*.18*pairing*Math.sin(beat*Math.PI*.5);
+ // Finish the phrase: paired sectors settle, and one pair separates in depth.
+ const grouped=(Math.floor(index/2)*2+.5)*step+t*.13+(index<2?0:(index%2?1:-1)*step*.15);
+ return {opening:mix(.16+.84*bloom*mix(.4,1,pulse),1,resolve),
+  angle:mix(orbit,grouped,arrival),
+  radius:mix(3.6+.22*Math.sin(beat*Math.PI*.5)*pairing,index===0?1.1:index===1?3.2:3.6,arrival),
+  resolve};
 }
 export function radialFloor(g,P,{radius=5.7,rotation=0}={}){
  const ring=(r)=>Array.from({length:97},(_,i)=>P(Math.cos(i*tau/96)*r,0,Math.sin(i*tau/96)*r));
