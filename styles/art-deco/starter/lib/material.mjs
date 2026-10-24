@@ -149,15 +149,15 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
 }
 export function reactionActing(t,p,{beat='concern',greenUniform=false}={}){
  const tt=Math.floor(t*12)/12,q=t>0?p*tt/t:0,ramp=(a,d)=>ease((tt-a)/d),phase=(a,d)=>ease((q-a)/d);
- const state={pose:'stand',emotion:'calm',gaze:0,action:0,headTilt:0,bodyLean:0};
+ const state={pose:'stand',emotion:'calm',gaze:0,action:0,headTilt:0,bodyLean:0,expression:1};
  if(beat==='listen'){
   const up=ramp(.25,.3),release=phase(.65,.15);
   return {...state,pose:'listen',emotion:q<.2?'calm':q<.6?'surprise':'worry',action:up*(1-release),
    gaze:mix(-.35,.65,phase(.18,.13))-.9*release,headTilt:.12*up-.19*release,bodyLean:-.025*up+.04*release};
  }
  if(beat==='concern'||beat==='remember'){
-  const remembering=beat==='remember',up=ramp(remembering?1.1:.72,.32),release=phase(.67,.15);
-  const emotion=remembering?(tt<.4?'calm':tt<.95?'surprise':q<.6?'worry':'calm'):(tt<.72?'surprise':q<.48?'worry':'determined');
+  const remembering=beat==='remember',up=ramp(remembering?.65:.25,.32),release=ramp(remembering?1.75:1.05,.33);
+  const emotion=remembering?(tt<.4?'calm':tt<1.5?'surprise':tt<2.25?'worry':'calm'):(tt<1.25?'surprise':'determined');
   return {...state,pose:'consider',emotion,action:up*(1-release),
    gaze:.45-.95*phase(.21,.12)+.85*phase(.49,.1)-.35*release,
    headTilt:.09*up-.17*ramp(1.5,.3)+.11*release,bodyLean:.045*up-.055*release};
@@ -170,13 +170,13 @@ export function reactionActing(t,p,{beat='concern',greenUniform=false}={}){
  }
  if(beat==='relief'){
   const tip=ramp(.32,.28)*(1-ramp(1.15,.32)),look=phase(.25,.14),returnLook=phase(.69,.15);
-  return {...state,pose:greenUniform?'consider':'listen',emotion:tt<.55||(q>.62&&q<.80)?'relief':'smile',
+  return {...state,pose:greenUniform?'consider':'listen',emotion:tt<.24?'surprise':tt<.75||(q>.62&&q<.80)?'relief':'smile',
    action:greenUniform?tip:1-ramp(.7,.4),gaze:.45-.9*look+.45*returnLook,
    headTilt:.09*tip-.035*look+.04*returnLook,bodyLean:.025*tip-.018*look+.018*returnLook};
  }
  return state;
 }
-export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null,bodyLean=0,planted=false,elbowSides=null}={}){
+export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null,bodyLean=0,planted=false,elbowSides=null,expression=0}={}){
  if(h<=0)return;
  if(pose==='walk'&&turn){walkingProfile(g,x,y,h,t,turn,greenUniform);return;}
  const tt=Math.floor(t*12)/12,phase=tt*7,walking=pose==='walk',walk=walking?Math.sin(phase):0;
@@ -224,10 +224,17 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  for(const side of [-1,1]){let ex=side*18+gaze*2;
  g.strokeStyle='#28170f';g.lineWidth=1.8;g.beginPath();
  if(blink||emotion==='relief'){g.moveTo(ex-9,eyeY);g.quadraticCurveTo(ex,eyeY-5,ex+9,eyeY);g.stroke()}
- else {const opening=emotion==='surprise'?1.12:emotion==='determined'?.72:1;g.fillStyle='#fff0d4';g.moveTo(ex-10,eyeY);g.bezierCurveTo(ex-5,eyeY-10*opening,ex+5,eyeY-10*opening,ex+10,eyeY);g.quadraticCurveTo(ex,eyeY+6,ex-10,eyeY);g.fill();g.beginPath();g.moveTo(ex-10,eyeY);g.bezierCurveTo(ex-5,eyeY-10*opening,ex+5,eyeY-10*opening,ex+10,eyeY);g.lineWidth=2.9;g.lineCap='round';g.stroke();ellipse(g,ex+gaze*3,eyeY-1,3.7,4,'#291d15',false);ellipse(g,ex+gaze*3-1,eyeY-3,1.1,1.2,C.ivory,false)}
- let worry=emotion==='worry'?-side*5:emotion==='determined'?side*4:0,raise=emotion==='surprise'?5:0;g.lineCap='round';g.lineWidth=3.1;g.beginPath();g.moveTo(ex-10,eyeY-20+worry-raise);g.quadraticCurveTo(ex,eyeY-24-raise,ex+9,eyeY-20-worry-raise);g.stroke();}
+ else {const narrow=emotion==='determined'?clamp(expression):0,opening=emotion==='surprise'?1.12:emotion==='determined'?mix(.72,.22,narrow):1,lower=mix(6,1.8,narrow);g.fillStyle='#fff0d4';g.moveTo(ex-10,eyeY);g.bezierCurveTo(ex-5,eyeY-10*opening,ex+5,eyeY-10*opening,ex+10,eyeY);g.quadraticCurveTo(ex,eyeY+lower,ex-10,eyeY);g.fill();
+ if(expression>0){g.save();g.clip();ellipse(g,ex+gaze*3,eyeY-1,3.7,4,'#291d15',false);ellipse(g,ex+gaze*3-1,eyeY-3,1.1,1.2,C.ivory,false);g.restore()}
+ g.beginPath();g.moveTo(ex-10,eyeY);g.bezierCurveTo(ex-5,eyeY-10*opening,ex+5,eyeY-10*opening,ex+10,eyeY);g.lineWidth=2.9;g.lineCap='round';g.stroke();
+ if(expression<=0){ellipse(g,ex+gaze*3,eyeY-1,3.7,4,'#291d15',false);ellipse(g,ex+gaze*3-1,eyeY-3,1.1,1.2,C.ivory,false)}}
+ let worry=emotion==='worry'?-side*5:emotion==='determined'?side*mix(4,6.5,clamp(expression)):0,raise=emotion==='surprise'?5:0;g.lineCap='round';g.lineWidth=3.1+.7*clamp(expression);g.beginPath();g.moveTo(ex-10,eyeY-20+worry-raise);g.quadraticCurveTo(ex,eyeY-24-raise,ex+9,eyeY-20-worry-raise);g.stroke();}
  g.strokeStyle='#85543a';g.lineWidth=1.7;g.beginPath();g.moveTo(3,-7);g.lineTo(0,13);g.quadraticCurveTo(4,16,9,14);g.stroke();
  if(emotion==='surprise'){ellipse(g,3,32,4.8,7.5,'#843b2c',false);g.strokeStyle='#b67452';g.lineWidth=1.2;g.stroke()}
+ else if(expression>0&&(emotion==='smile'||emotion==='relief')){
+  g.beginPath();g.moveTo(-7,31);g.quadraticCurveTo(3,34,13,30);g.quadraticCurveTo(4,44,-7,31);g.closePath();g.fillStyle='#713326';g.fill();
+  g.save();g.clip();g.beginPath();g.moveTo(-7,31);g.quadraticCurveTo(3,34,13,30);g.lineWidth=2;g.strokeStyle=C.ivory;g.stroke();g.restore();
+ }
  else{g.strokeStyle='#824734';g.lineWidth=2.5;g.beginPath();g.moveTo(-6,32);g.quadraticCurveTo(2,emotion==='smile'||emotion==='relief'?41:emotion==='worry'?26:32,12,31);g.stroke();}
  }
  if(greenUniform){g.save();g.rotate(-.16);poly(g,[[-42,-68],[-32,-104],[26,-104],[37,-68]],'#1D6B57','#4e8d6a');ellipse(g,0,-68,47,7,'#275c43');line(g,[[-34,-96],[29,-96]],2);g.restore()}
