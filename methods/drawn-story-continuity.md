@@ -215,6 +215,22 @@ with the hinge, and remove the moving self-shadow continuously as the leaf
 settles. Inspect consecutive native-resolution frames across that handoff;
 checking only the midpoint and final pose can miss a brightness jump.
 
+A pullback from an illustration reveals an existing physical page. Keep the
+image, paper, cover, hinge and desk in one scene coordinate system and move one
+camera around them. Independently shrinking the image while the book remains
+stationary produces a floating-card effect. Match the page and image aspect
+ratios when the initial full-frame drawing must remain uncropped. Check that
+the first camera transform reproduces the preceding frame, and that the final
+crop stays inside the available background. Render at output resolution after
+applying the camera; repeatedly shrinking and enlarging a precomposited image
+can soften the drawing during the reveal.
+
+Treat paper tint, light and shadow as separate controls. Layering several brown
+shadows can darken the whole page while leaving the gutter relatively weak.
+Compare representative blank patches across the spread, preserve the grain,
+and share the chosen lighting model between the moving reverse and settled
+leaf. Patch colours are diagnostic evidence, not a perceptual similarity score.
+
 For a local picture repair, preserve earlier encoded GOPs when the splice
 boundary permits it. Before inheriting an earlier visual review, decode and
 compare every reused frame and its timestamp, bind both source file hashes,

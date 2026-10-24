@@ -52,9 +52,13 @@ regional abrasion. All three layers share surface coordinates and fixed seeds.
 Judge the result against a native-resolution desk crop, then through a camera
 move. Removing every bright scratch can make illustrated wood look artificially
 smooth; keep localized dry marks without tracing each groove with a highlight.
-`shadeSpread(context, x, y, pageWidth, height, {tableLight})` adds a fixed warm
+`shadeSpread(context, x, y, pageWidth, height, {tableLight, paperLight})` adds a fixed warm
 light pool with asymmetric edge falloff; `tableLight` defaults to 0. Compare
 paper illumination separately from the underlying paper colour and relief.
+The optional `paperLight: true` selects an alternative tint/illumination/falloff
+model; it replaces the older `tableLight` model rather than stacking with it.
+Use this when accumulated brown overlays make the centre of a blank spread
+too dark. Inspect several paper patches and the encoded grain, not only a mean.
 Use the same shaded reverse surface during a page turn and after it settles,
 and reverse the texture coordinate order when the page faces away. Inspect
 the last turning frame and first settled frame for brightness and grain jumps.
@@ -62,6 +66,21 @@ These controls have no scene or character knowledge. Copy them into an external
 project, install the dependencies from `starter/package.json` there, and author the
 production-specific composition separately. In a generated working copy, these
 files are at `lib/` and `package.json`, without the `starter/` prefix.
+
+`starter/lib/book-camera.mjs` frames a drawing on a fixed physical page. Pass
+`bookCamera(progress, {width, height, page: {x, y, width, height}})` and apply
+the returned scale and translation to the complete book/desk scene before
+drawing it. Keep the illustration inside its page rectangle throughout the
+move. The camera pulls back, holds for the turn and pushes toward that page;
+`revealEnd`, `pushStart` and `finalScale` control those phases. A page with the
+output aspect ratio covers the initial viewport exactly; other ratios use a
+cover crop. Page bounds must fit inside the scene and final scale must be at
+least one. Camera centres are constrained to prevent empty canvas edges;
+choose framing that avoids hitting that constraint during a smooth move.
+Do not shrink an independently composited image while leaving its paper and
+hinge stationary. Inspect the first moving frame, the middle of the pullback,
+the page settlement and the final crop at native resolution. Run the generic
+`scripts/check_book_camera.mjs` in the working copy to check camera geometry.
 
 For pigment that looks too neatly clipped, `Wax.edgeScumble` accepts a fixed
 strength from 0 to 1; its default is 0 and retains the earlier edge treatment.

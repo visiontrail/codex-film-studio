@@ -119,8 +119,22 @@ function layeredDesk(paper,{meander,wear}){
  return {canvas,p:ctx.getImageData(0,0,W,H).data,tooth:paper.tooth};
 }
 
-export function shadeSpread(c,bx,by,pw,bh,{tableLight=0}={}){
+export function shadeSpread(c,bx,by,pw,bh,{tableLight=0,paperLight=false}={}){
  c.save();c.beginPath();c.rect(bx,by,pw*2,bh);c.clip();
+ if(paperLight){
+  // Tint, illumination and falloff are independent. Bright paper near the
+  // spine should not inherit several broad brown shadow overlays.
+  c.fillStyle='rgba(230,180,100,.18)';c.fillRect(bx,by,pw*2,bh);
+  const pool=c.createLinearGradient(bx,0,bx+pw*2,0);
+  for(const [at,alpha] of [[0,0],[.12,0],[.25,.16],[.40,.55],[.49,.22],[.56,.50],[.66,.26],[.84,0],[1,0]])pool.addColorStop(at,`rgba(255,205,115,${alpha})`);
+  c.globalCompositeOperation='screen';c.fillStyle=pool;c.fillRect(bx,by,pw*2,bh);c.globalCompositeOperation='source-over';
+  const falloff=c.createLinearGradient(bx,0,bx+pw*2,0);
+  for(const [at,alpha] of [[0,.33],[.10,.20],[.25,.02],[.40,0],[.52,0],[.68,.06],[.84,.20],[1,.34]])falloff.addColorStop(at,`rgba(52,34,20,${alpha})`);
+  c.fillStyle=falloff;c.fillRect(bx,by,pw*2,bh);
+  const depth=c.createLinearGradient(0,by,0,by+bh);
+  depth.addColorStop(0,'rgba(61,40,23,.03)');depth.addColorStop(.28,'rgba(61,40,23,0)');depth.addColorStop(1,'rgba(61,40,23,.06)');
+  c.fillStyle=depth;c.fillRect(bx,by,pw*2,bh);
+ }else{
  c.fillStyle='rgba(187,141,77,.09)';c.fillRect(bx,by,pw*2,bh);
  const light=c.createRadialGradient(bx+pw*1.36,by+bh*.44,15,bx+pw*1.36,by+bh*.44,pw*.95);
  light.addColorStop(0,'rgba(255,225,165,.27)');light.addColorStop(.45,'rgba(223,191,137,.08)');light.addColorStop(1,'rgba(62,39,21,.29)');
@@ -135,6 +149,7 @@ export function shadeSpread(c,bx,by,pw,bh,{tableLight=0}={}){
   const depth=c.createLinearGradient(0,by,0,by+bh);
   depth.addColorStop(0,`rgba(61,40,23,${.03*tableLight})`);depth.addColorStop(.28,'rgba(61,40,23,0)');depth.addColorStop(1,`rgba(61,40,23,${.12*tableLight})`);
   c.fillStyle=depth;c.fillRect(bx,by,pw*2,bh);
+ }
  }
  const gutter=c.createLinearGradient(bx+pw-54,0,bx+pw+54,0);
  gutter.addColorStop(0,'rgba(61,43,26,0)');gutter.addColorStop(.34,'rgba(61,43,26,.07)');gutter.addColorStop(.49,'rgba(61,43,26,.30)');gutter.addColorStop(.53,'rgba(61,43,26,.23)');gutter.addColorStop(.76,'rgba(61,43,26,.06)');gutter.addColorStop(1,'rgba(61,43,26,0)');

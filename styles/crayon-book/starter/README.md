@@ -13,3 +13,8 @@ Use `Wax.reveal(key, progress, draw)` for each independent contour/colour group.
 Register a licensed font with `registerWaxFont(name, bytes)` as well as the
 Canvas font registry when letters need continuous path drawing. Configure
 material options using `STYLE.md`; choose values from native-resolution proofs.
+
+For a physical book reveal, keep the drawing attached to its page and use
+`lib/book-camera.mjs` to move the whole desk/book scene. Run
+`node scripts/check_book_camera.mjs` for the geometry checks; inspect encoded
+motion and surface lighting separately.
