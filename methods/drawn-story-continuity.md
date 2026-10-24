@@ -132,3 +132,26 @@ Do not weaken pupils, lettering or the entire picture to distress an outline.
 Test fine limbs and drawing-stage frames as well as large closed shapes, and
 hold material pressure constant throughout the reveal. Preserve the accepted
 movie until the encoded candidate passes its own visual review.
+
+## Continuous material through a physical transition
+
+Separate base material, local wear and illumination. A washed-out page edge
+may be a light-field error even when the paper colour is correct; inspect the
+centre, edges and gutter before changing the whole drawing palette. On wood,
+vary the density and contrast of coherent fibres over broad regions instead
+of increasing the same speckle everywhere. Keep material variation fixed in
+surface space during camera moves.
+
+A turning leaf and its settled surface must share the same texture orientation
+and light treatment. Reverse sampling order on the back face, carry the gutter
+with the hinge, and remove the moving self-shadow continuously as the leaf
+settles. Inspect consecutive native-resolution frames across that handoff;
+checking only the midpoint and final pose can miss a brightness jump.
+
+For a local picture repair, preserve earlier encoded GOPs when the splice
+boundary permits it. Before inheriting an earlier visual review, decode and
+compare every reused frame and its timestamp, bind both source file hashes,
+and explicitly record the inherited range. Review all newly encoded frames
+and the splice boundary. A stream-copy command alone is insufficient evidence.
+`scripts/frame_review/check_video_prefix_identity.py` checks the decoded prefix
+and writes per-frame hashes and timestamp comparisons to an external report.

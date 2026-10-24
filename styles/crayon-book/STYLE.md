@@ -41,7 +41,16 @@ establish that an arbitrary render matches a reference.
 
 `starter/lib/material.mjs` provides deterministic canvas primitives and wax/paper
 compositing. `starter/lib/desk.mjs` provides an independent wood material and spread
-lighting. They have no scene or character knowledge. Copy them into an external
+lighting. `deskTexture(paper, {meander, wear})` can bend long fibres and vary
+local ridge density and contrast; `wear` defaults to 0. Use a fixed seed and
+compare both sparse and dense regions rather than adding uniform white noise.
+`shadeSpread(context, x, y, pageWidth, height, {tableLight})` adds a fixed warm
+light pool with asymmetric edge falloff; `tableLight` defaults to 0. Compare
+paper illumination separately from the underlying paper colour and relief.
+Use the same shaded reverse surface during a page turn and after it settles,
+and reverse the texture coordinate order when the page faces away. Inspect
+the last turning frame and first settled frame for brightness and grain jumps.
+These controls have no scene or character knowledge. Copy them into an external
 project, install the dependencies from `starter/package.json` there, and author the
 production-specific composition separately. In a generated working copy, these
 files are at `lib/` and `package.json`, without the `starter/` prefix.
