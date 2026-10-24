@@ -123,7 +123,36 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
  else{g.strokeStyle=gold(g,-50,-85,100,100);g.lineWidth=4;g.beginPath();g.arc(-3,-12,47,Math.PI,Math.PI*1.95);g.stroke();ellipse(g,-18,-4,9,20,'#57401c');ellipse(g,-18,-4,6,15,'#100e0a')}
  g.restore();g.restore();
 }
-export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null,bodyLean=0,planted=false}={}){
+export function reactionActing(t,p,{beat='concern',greenUniform=false}={}){
+ const tt=Math.floor(t*12)/12,q=t>0?p*tt/t:0,ramp=(a,d)=>ease((tt-a)/d),phase=(a,d)=>ease((q-a)/d);
+ const state={pose:'stand',emotion:'calm',gaze:0,action:0,headTilt:0,bodyLean:0};
+ if(beat==='listen'){
+  const up=ramp(.25,.3),release=phase(.65,.15);
+  return {...state,pose:'listen',emotion:q<.2?'calm':q<.6?'surprise':'worry',action:up*(1-release),
+   gaze:mix(-.35,.65,phase(.18,.13))-.9*release,headTilt:.12*up-.19*release,bodyLean:-.025*up+.04*release};
+ }
+ if(beat==='concern'||beat==='remember'){
+  const remembering=beat==='remember',up=ramp(remembering?1.1:.72,.32),release=phase(.67,.15);
+  const emotion=remembering?(tt<.4?'calm':tt<.95?'surprise':q<.6?'worry':'calm'):(tt<.72?'surprise':q<.48?'worry':'determined');
+  return {...state,pose:'consider',emotion,action:up*(1-release),
+   gaze:.45-.95*phase(.21,.12)+.85*phase(.49,.1)-.35*release,
+   headTilt:.09*up-.17*ramp(1.5,.3)+.11*release,bodyLean:.045*up-.055*release};
+ }
+ if(beat==='discover'){
+  const turn=phase(.18,.12),point=phase(.48,.12),settle=phase(.8,.15);
+  return {...state,emotion:q<.18?'calm':q<.38?'surprise':'determined',
+   gaze:mix(-.3,.9,turn),headTilt:-.06+.13*turn-.025*settle,bodyLean:.05*turn,
+   handTargets:[null,[mix(70,165,point),mix(-334,-510,point)]],elbowSides:[1,1]};
+ }
+ if(beat==='relief'){
+  const tip=ramp(.32,.28)*(1-ramp(1.15,.32)),look=phase(.25,.14),returnLook=phase(.69,.15);
+  return {...state,pose:greenUniform?'consider':'listen',emotion:tt<.55?'relief':'smile',
+   action:greenUniform?tip:1-ramp(.7,.4),gaze:.45-.9*look+.45*returnLook,
+   headTilt:.09*tip-.035*look+.04*returnLook,bodyLean:.025*tip-.018*look+.018*returnLook};
+ }
+ return state;
+}
+export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null,bodyLean=0,planted=false,elbowSides=null}={}){
  if(h<=0)return;
  if(pose==='walk'&&turn){walkingProfile(g,x,y,h,t,turn,greenUniform);return;}
  const tt=Math.floor(t*12)/12,phase=tt*7,walking=pose==='walk',walk=walking?Math.sin(phase):0;
@@ -153,7 +182,7 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  if(pose==='plant'){right=[[48,-540],[93,-448],[20,-388]];left=[[-48,-540],[-93,-448],[-20,-388]]}
  if(pose==='consider'){const q=ease(action);right=[[48,-540],[mix(64,105,q),mix(-432,-596,q)],[mix(72,38,q),mix(-330,-652,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
  if(walking){left=[[-48,-540],[-65+walk*38,-438],[-72+walk*80,-337]];right=[[48,-540],[65-walk*38,-438],[72-walk*80,-337]]}
- if(handTargets){for(let i=0;i<2;i++){if(!handTargets[i])continue;let arm=i?right:left,target=handTargets[i];if(bodyLean||planted){const dx=target[0]-rootX,dy=target[1]-rootY+337,cs=Math.cos(bodyLean),sn=Math.sin(bodyLean);target=[dx*cs+dy*sn,-dx*sn+dy*cs-337]}arm[2]=target;let dx=target[0]-arm[0][0],dy=target[1]-arm[0][1],len=Math.hypot(dx,dy),bend=Math.sqrt(Math.max(0,105**2-len**2/4));arm[1]=[(target[0]+arm[0][0])/2-dy/len*bend*(i?-1:1),(target[1]+arm[0][1])/2+dx/len*bend*(i?-1:1)]}}
+ if(handTargets){for(let i=0;i<2;i++){if(!handTargets[i])continue;let arm=i?right:left,target=handTargets[i];if(bodyLean||planted){const dx=target[0]-rootX,dy=target[1]-rootY+337,cs=Math.cos(bodyLean),sn=Math.sin(bodyLean);target=[dx*cs+dy*sn,-dx*sn+dy*cs-337]}arm[2]=target;let dx=target[0]-arm[0][0],dy=target[1]-arm[0][1],len=Math.hypot(dx,dy),bend=Math.sqrt(Math.max(0,105**2-len**2/4)),bendSide=elbowSides?.[i]??(i?-1:1);arm[1]=[(target[0]+arm[0][0])/2-dy/len*bend*bendSide,(target[1]+arm[0][1])/2+dx/len*bend*bendSide]}}
  const drawArm=arm=>{sleeve(g,arm,20,col,lit);let a=Math.atan2(arm[2][1]-arm[1][1],arm[2][0]-arm[1][0])-Math.PI/2;g.save();g.translate(...arm[2]);g.rotate(a);rect(g,-10,-6,20,4,'#C9A24B','#F3D98B');g.restore();glove(g,arm[2][0]+Math.sin(-a)*8,arm[2][1]+Math.cos(a)*8,a,pose==='crank'?1:0)};
  drawArm(left);if(pose!=='consider')drawArm(right);
  g.save();g.translate(gaze*3,-621);g.rotate(headTilt+(emotion==='worry'?-0.06:0)+Math.sin(tt*.85)*.012);g.scale(.78,.78);
