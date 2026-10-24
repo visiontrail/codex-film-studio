@@ -28,3 +28,7 @@ atlases without sampling. Use `--expect-frames` to catch truncated exports. Keep
 a separate inspection log bound to the source hash; generating an atlas does not
 mean anyone has looked at it. The FFmpeg gate accepts an executable and arguments,
 for example `python engine/ffmpeg_gate.py ffmpeg ...`.
+
+`pixel.mjs` supplies a grid-authored performer and an indexed night landscape.
+It uses stepped silhouettes, clustered light/shadow planes and a dithered
+terrain edge; hand contacts remain in the caller-provided local coordinates.

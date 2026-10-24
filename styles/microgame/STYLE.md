@@ -29,6 +29,9 @@ For pixel scenes, quantize the small drawing buffer to an explicit palette
 before nearest-neighbour enlargement; downscaling alone retains intermediate
 antialias colours. Use an ordered stipple whose sparse rows alternate their
 filled columns, and align its top surface with the character contact plane.
+Draw the performer from square clusters, stepped contours, short solid limbs
+and hard light/shadow planes. Extend the ground to the frame edge and vary its
+horizon while preserving a flat contact pad beneath standing feet.
 For blueprint inserts, let the working mechanism occupy the main field while
 keeping the character in a separate small inset; check the whole action,
 including travelling parts, at the larger scale. Use separate fine contour,

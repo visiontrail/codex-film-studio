@@ -1,6 +1,7 @@
 import {line,rr,oval,path,text,transformed,INK,hash} from './primitives.mjs';
 import {palettes} from './materials.mjs';
 import {inkFigure} from './brush.mjs';
+import {pixelFigure} from './pixel.mjs';
 // Convert a scene contact into the same local space used by the performer.
 // Subtracting translation alone makes a held tool drift whenever the body leans.
 export function localContact(point,x,y,scale,lean=0,jump=0){
@@ -13,6 +14,7 @@ export function hero(g,m,x,y,scale,pose={},role='baker'){
  const p=palettes[m],target=pose.target,arm=pose.arm||0,lean=pose.lean||0,jump=pose.jump||0,face=pose.face||'happy';
  transformed(g,x,y-jump,scale,lean,()=>{
   if(m==='ink'){inkFigure(g,pose,role);return}
+  if(m==='pixel'){pixelFigure(g,pose,role);return}
   if(m==='terminal'){
    let rows=['  /\\_/\\  ',' /  __  \\ ','|  o  o  |',' \\  __  / ','   |@@|   ',arm>0?' \\ |[]| / ':' --|[]|-- ','   /  \\   '];
    rows.forEach((r,i)=>text(g,r,0,-143+i*21,22,p.ink,null,0,'monospace'));

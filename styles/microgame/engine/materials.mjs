@@ -1,6 +1,7 @@
 import {hash,line,rr,text,oval,path,W,H,clamp} from './primitives.mjs';
 import {brush,brushArc,blot} from './brush.mjs';
 import {blueprintObject} from './blueprint.mjs';
+import {pixelLandscape} from './pixel.mjs';
 export const palettes={
  crayon:{paper:'#f6f0dc',ink:'#34446c',hero:'#80a7d9',accent:'#dc5940',ground:'#739b68',object:'#f3c65e'},
  ink:{paper:'#eee9dc',ink:'#282c2d',hero:'#a7a7a0',accent:'#c34834',ground:'#b4b2a7',object:'#777d78'},
@@ -41,18 +42,7 @@ export function background(g,m,createCanvas,cache){
   for(let y=230;y<780;y+=39)line(g,[[35,y],[505,y]],'#c6c4bc',.6);
   return;
  }
- if(m==='pixel'){
-  for(let i=0;i<45;i++){let x=Math.floor(hash(i*17)*135)*4,y=Math.floor((250+hash(i*31)*400)/4)*4;g.fillStyle=i%3?'#e4d4a4':'#66abc5';g.fillRect(x,y,4,4)}
-  // Work in grid indices: an offset y modulo cell width can make every cell
-  // take the same colour. The bright lip meets the feet; stipple fades below it.
-  g.fillStyle='#6b667f';g.fillRect(0,720,W,72);
-  g.fillStyle='#b4b7dc';g.fillRect(0,720,W,4);
-  for(let row=0;row<7;row++)for(let col=0;col<Math.ceil(W/4);col++){
-   const threshold=(row&1?[3,1]:[0,2])[col&1] / 4;
-   if(threshold<1-row/7){g.fillStyle=row<3?'#a7a0a1':'#777db8';g.fillRect(col*4,724+row*4,4,4)}
-  }
-  for(let i=0;i<12;i++){g.fillStyle='#424782';g.fillRect(Math.floor(hash(i*19)*130)*4,760+(i%3)*8,8+(i%3)*4,4)}return;
- }
+ if(m==='pixel'){pixelLandscape(g,hash);return}
  let key='texture-'+m,tex=cache.get(key);
  if(!tex){tex=createCanvas(W,H);let q=tex.getContext('2d');
   for(let i=0;i<14000;i++){let x=hash(i*11)*W,y=hash(i*7)*H;q.fillStyle=i%2?'#4a392310':'#ffffff22';q.fillRect(x,y,.5+hash(i)*1.5,.7+hash(i*3)*1.5)}
