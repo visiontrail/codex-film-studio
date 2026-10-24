@@ -46,6 +46,23 @@ subject as well as the platform's text-safe region. Keep the explanation legible
 without letting panels hide the main action for most of the shot. Actual source
 documents retain their aspect ratio and enough context to support the claim.
 
+## Recheck source framing in alternate editions
+
+Return to the retained source when changing aspect ratio. A crop accepted for one
+viewport does not establish a safe crop in another. Review each camera change
+and the interpolated panel sizes: a wider view may expose a broadcast timer,
+source inset or partially clipped label that was outside the earlier crop.
+Distinguish an on-location display from an editorial overlay. If a second timer
+would confuse the event clock, choose a source-space crop that preserves the
+action and required source marks; do not repaint or invent source evidence.
+
+Assign document and inset shapes by their reading role. A short, wide excerpt
+usually belongs in a shallow card, alongside another useful panel, rather than
+in a tall card with tiny centred text. Reflow authored captions using the actual
+new width and font metrics. Preserve the source document's words and aspect
+ratio, and inspect the final encode at native size for legibility. Keep the
+edition's crop records separate while retaining the original source-time map.
+
 ## Verify the primary medium honestly
 
 If the brief calls for a medium to dominate, report separate measurements:
