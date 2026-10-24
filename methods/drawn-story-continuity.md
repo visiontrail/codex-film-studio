@@ -124,6 +124,16 @@ foliage can obscure eyes or noses. Keep the original treatment for those marks
 when the trial shows a regression. Preserve deterministic object seeds and
 recheck contour/fill budgets after changing stroke topology.
 
+Repeated props need stable individual drawings. Keep a common design, but vary
+their local contour, hatch direction and pressure with an explicit identity key.
+Nest component keys under their parent object and reuse them across shots.
+Do not derive this identity from screen position, current time or call order:
+that would change the material when an object moves or the scene is rearranged.
+Protect grip coordinates, feet and identifying facial details. Compare a row
+of repeated objects, then the same object at several times; variation must
+reduce copying without introducing animation or identity drift. Verify scoped
+state restoration and reveal budgets after adding these variants.
+
 Inspect reference and candidate at the same native output scale before deciding
 that a texture is too coarse or smooth. A reduced contact tile is useful for
 sequence coverage but cannot judge line tooth. If the coloured wax already

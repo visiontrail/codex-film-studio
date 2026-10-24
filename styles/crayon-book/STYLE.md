@@ -113,6 +113,23 @@ eroding them as heavily as a large coloured field. These options are off by
 default. Their native-resolution and encoded motion proof belongs to the new
 production; the toolkit supplies no universal material acceptance setting.
 
+Repeated objects should share a design without sharing every pen mark. Wrap a
+repeated drawing in `Wax.withVariant(stableKey, draw)` to give it a stable
+identity. The key changes local hatch, pressure and contour seeds, and adds
+small smooth displacements inside larger shapes while preserving their bounding
+extremes. Nested keys distinguish components within an object. Keys must not
+contain the current frame, moving coordinates or draw-order counters; retain
+the same key when an object returns. Leave identifying facial marks and exact
+contact geometry outside a variant scope unless separately reviewed.
+
+The scope restores its previous seed even when drawing throws. A null or zero
+key inherits the current scope. Set `Wax.variantStrength = 0` before drawing to
+disable variant scopes for a controlled baseline; 1 uses the normal shape
+variation. Calls outside a variant scope retain the original material. Compare
+both repeated objects and a return to the same object, then recheck draw-on
+budgets and out-of-order seeks. Different seeds alone do not establish a better
+hand-drawn result; inspect the rendered silhouettes and pigment.
+
 For drawing reveals, `Wax.reveal(key, progress, draw)` measures each group and
 keeps its contour and pigment budgets separate. Use a stable key and unchanging
 stroke topology for the group. There is no solid colour rectangle underneath an

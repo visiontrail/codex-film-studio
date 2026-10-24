@@ -47,7 +47,17 @@ export class Wax {
   }finally{Object.assign(this,saved);}
  }
  rnd(s){return hash(s,this.frame%7,33)}
+ // Stable identity belongs to an object, not its screen position or draw order.
+ // Nested keys give repeated objects distinct marks without temporal reseeding.
+ withVariant(key,draw){
+  if(key===0||key==null||(this.variantStrength??1)===0)return draw();
+  const previous=this.variantSeed??0;let seed=previous||2166136261;
+  for(const code of String(key))seed=Math.imul(seed^code.charCodeAt(0),16777619)>>>0;
+  this.variantSeed=seed||1;try{return draw();}finally{this.variantSeed=previous;}
+ }
+ seedFor(seed){return this.variantSeed?Math.floor(hash(seed,this.variantSeed,1823)*2147483647):seed;}
  line(points,color=C.ink,width=3,pressure=.97,seed=1){
+  seed=this.seedFor(seed);
   const available=this.filling?this.fillBudget-this.fillIndex++:this.strokeBudget-this.strokeIndex++;if(this.outlineOnly){color=C.ink;width=Math.min(width,2.8);}if(this.measuring||available<=0||points.length<2)return;
   if(available<1){
    const lengths=points.slice(1).map((p,i)=>Math.hypot(p[0]-points[i][0],p[1]-points[i][1]));let remaining=lengths.reduce((a,b)=>a+b,0)*available,partial=[points[0]];
@@ -70,6 +80,16 @@ export class Wax {
  withHatch(angle,draw){const previous=this.hatchAngle;this.hatchAngle=angle;try{return draw();}finally{this.hatchAngle=previous;}}
  path(points){const c=this.ctx;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();}
  shape(points,color,seed=1,outline=true,progress=1){
+  seed=this.seedFor(seed);
+  if(this.variantSeed){
+   const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),left=Math.min(...xs),top=Math.min(...ys),width=Math.max(...xs)-left,height=Math.max(...ys)-top;
+   // Keep the bounding box and contact extremes fixed. Only interior contour
+   // positions wander, with a low-frequency field rather than vertex noise.
+   if(width>28&&height>28){
+    const amplitude=Math.min(width,height)*.08*clamp(this.variantStrength??1);
+    points=points.map(([x,y])=>{const u=(x-left)/width,v=(y-top)/height;return [x+Math.sin(u*Math.PI)*(grid(u*4,v*3,1,seed)-.5)*amplitude,y+Math.sin(v*Math.PI)*(grid(u*3,v*4,1,seed+31)-.5)*amplitude];});
+   }
+  }
   const boundary=points;
   // Larger polygons follow a softly wandering hand instead of ruler-straight
   // edges. Tiny facial features keep their original geometry.
@@ -154,7 +174,7 @@ export class Wax {
   this.filling=false;
   if(outline)this.line([...points,points[0]],C.ink,2.8,.96,seed);
  }
- ellipse(x,y,rx,ry,color,seed=1,outline=true){let pts=[];for(let i=0;i<60;i++){let a=i/60*Math.PI*2,noise=1+(hash(i,seed)-.5)*.024;pts.push([x+Math.cos(a)*rx*noise,y+Math.sin(a)*ry*noise]);}this.shape(pts,color,seed,outline);}
+ ellipse(x,y,rx,ry,color,seed=1,outline=true){let pts=[],jitterSeed=this.seedFor(seed);for(let i=0;i<60;i++){let a=i/60*Math.PI*2,noise=1+(hash(i,jitterSeed)-.5)*.024;pts.push([x+Math.cos(a)*rx*noise,y+Math.sin(a)*ry*noise]);}this.shape(pts,color,seed,outline);}
  rect(x,y,w,h,color,seed=1,outline=true){this.shape([[x,y],[x+w,y+.9],[x+w+1,y+h],[x-1,y+h-1]],color,seed,outline)}
  text(text,x,y,size=40,color=C.ink,font='Patrick Hand',align='left',reveal=1){
   if(this.measuring)return;let c=this.ctx;c.save();c.font=`${size}px "${font}"`;let total=c.measureText(text).width,dx=align==='center'?-total/2:align==='right'?-total:0;
