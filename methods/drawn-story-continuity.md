@@ -143,6 +143,15 @@ Test fine limbs and drawing-stage frames as well as large closed shapes, and
 hold material pressure constant throughout the reveal. Preserve the accepted
 movie until the encoded candidate passes its own visual review.
 
+When colour ends exactly at every contour, inspect whether edge marks are being
+sampled by individual polygon segments. Dense curves can silently receive none
+when every segment is shorter than the sampling interval. Sample cumulative
+perimeter length instead, keep dry passes aligned with local hatching, and
+limit their reach so silhouettes and contact points stay readable. Preserve
+small facial marks, white features and dark identifying shapes. Compare a large
+circle, an angular form and a grip at native size, then the complete draw-on
+sequence. A rougher finished still does not prove a continuous pigment reveal.
+
 ## Continuous material through a physical transition
 
 Separate base material, local wear and illumination. A washed-out page edge

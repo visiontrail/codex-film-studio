@@ -55,6 +55,16 @@ project, install the dependencies from `starter/package.json` there, and author 
 production-specific composition separately. In a generated working copy, these
 files are at `lib/` and `package.json`, without the `starter/` prefix.
 
+For pigment that looks too neatly clipped, `Wax.edgeScumble` accepts a fixed
+strength from 0 to 1; its default is 0 and retains the earlier edge treatment.
+It places short dry passes along the whole perimeter, using arc length rather
+than vertex count or individual segment length. This makes dense circular
+outlines and sparse polygons both eligible for boundary overruns. Marks follow
+the form's hatch direction and stable seed. Small coloured marks, white features
+and indigo shapes retain their original treatment. Inspect faces, grip contacts,
+silhouettes and partial colour stages before enabling it for a production.
+The strength is material pressure/extent, never a time-based opacity entrance.
+
 ## Paper calibration from a blank sample
 
 When a procedural grain looks like sand instead of paper, isolate a genuinely

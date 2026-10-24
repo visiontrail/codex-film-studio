@@ -163,12 +163,31 @@ export class Wax {
   // looking perfectly clipped, without obscuring small facial features.
   if(color&&!this.outlineOnly&&x1-x0>55&&y1-y0>45&&this.fillIndex<this.fillBudget){
    this.filling=true;
+   const scumble=clamp(this.edgeScumble??0);
+   if(scumble>0&&color!==C.white&&color!==C.ink){
+    // Arc-length sampling works on circles as well as long polygon edges.
+    // An object-local seed keeps the same dry overruns through the reveal.
+    const lengths=boundary.map((a,i)=>{const b=boundary[(i+1)%boundary.length];return Math.hypot(b[0]-a[0],b[1]-a[1]);});
+    const perimeter=lengths.reduce((sum,n)=>sum+n,0),spacing=7.5;
+    const angle=this.hatchAngle??(hash(seed,Math.round(x1-x0+y1-y0),913)-.5)*.9;
+    let edge=0,edgeStart=0;
+    for(let mark=0,distance=spacing*.35;distance<perimeter;mark++,distance+=spacing){
+     while(edge<lengths.length-1&&edgeStart+lengths[edge]<distance){edgeStart+=lengths[edge];edge++;}
+     const a=boundary[edge],b=boundary[(edge+1)%boundary.length],q=(distance-edgeStart)/Math.max(.001,lengths[edge]);
+     if(hash(mark,seed,227)<.18)continue;
+     const x=a[0]+(b[0]-a[0])*q,y=a[1]+(b[1]-a[1])*q;
+     const direction=angle+(hash(mark,seed,229)-.5)*.35,dx=Math.cos(direction),dy=Math.sin(direction);
+     const before=(1.5+hash(mark,seed,233)*2.5)*scumble,after=(2+hash(mark,seed,239)*3.5)*scumble;
+     this.line([[x-dx*before,y-dy*before],[x+dx*after,y+dy*after]],color,(2.6+hash(mark,seed,241)*2.2)*scumble,.52+hash(mark,seed,251)*.18,seed+mark*17);
+    }
+   }else{
    for(let i=0;i<boundary.length;i++){
     const a=boundary[i],b=boundary[(i+1)%boundary.length],len=Math.hypot(b[0]-a[0],b[1]-a[1]);
     for(let j=0;j<Math.floor(len/25);j++){
      const q=(j+.45)/Math.max(1,Math.floor(len/25)),x=a[0]+(b[0]-a[0])*q,y=a[1]+(b[1]-a[1])*q;
      if(hash(j+i*29,seed)>.48)this.line([[x-2,y-1],[x+3+hash(j,seed)*2,y+1.2]],color,2.2,.42,seed+i+j);
     }
+   }
    }
   }
   this.filling=false;
