@@ -151,10 +151,17 @@ export function radialMotionTime(t,p){
 export function radialTilt(progress,{cut=.328}={}){
  return progress<cut?mix(0,.14,ease(progress/cut)):1;
 }
+// Shallow synchronized aperture changes, followed by a resolved open hold.
+export function radialFanOpening(progress,{cut=.328,cycles=11.6625,depth=.28,phase=.39}={}){
+ if(progress<cut)return 1;
+ const pulse=1-depth*.5*(1-Math.cos(tau*cycles*(progress-cut)+phase));
+ return mix(pulse,1,ease((progress-.72)/.20));
+}
 export function radialBeat(t,p,index,{bpm=116,count=8}={}){
  const tt=Math.floor(t*12)/12,beat=tt*bpm/60,phase=t>0?p*tt/t:0,step=tau/count;
  const openingOrder=(index*(count===12?5:3))%count,delay=.01+openingOrder/Math.max(1,count-1)*.22;
- const opening=index===0?1:mix(.2,1,ease((phase-delay)/.075));
+ const bloom=index===0?1:mix(.2,1,ease((phase-delay)/.075));
+ const opening=bloom*radialFanOpening(p);
  const pairing=ease((p-.48)/.14)*(1-ease((p-.86)/.12));
  const resolve=ease((p-.72)/.20),arrival=ease((p-.72-(index%2)*.015)/.18);
  const orbit=index*step+t*.13+(index%2?1:-1)*.18*pairing*Math.sin(beat*Math.PI*.5);
