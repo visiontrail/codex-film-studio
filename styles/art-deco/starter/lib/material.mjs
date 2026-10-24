@@ -56,6 +56,25 @@ export function moon(g,x=820,y=330,r=88){ellipse(g,x,y,r,r,'#c8b77e',false);elli
 export function vignette(g){let z=g.createRadialGradient(540,880,320,540,930,1130);z.addColorStop(0,'rgba(0,0,0,0)');z.addColorStop(1,'rgba(0,0,0,.38)');g.fillStyle=z;g.fillRect(0,0,1080,1920)}
 export function camera({x=0,y=2,z=-8,tx=0,ty=2.5,tz=7,f=900,cy=950}={}){let dx=tx-x,dy=ty-y,dz=tz-z,ln=Math.hypot(dx,dy,dz);let forward=[dx/ln,dy/ln,dz/ln],right=[forward[2],0,-forward[0]],rn=Math.hypot(...right);right=right.map(v=>v/rn);let up=[forward[1]*right[2]-forward[2]*right[1],forward[2]*right[0]-forward[0]*right[2],forward[0]*right[1]-forward[1]*right[0]];return (X,Y,Z)=>{let d=[X-x,Y-y,Z-z],depth=d.reduce((a,v,i)=>a+v*forward[i],0);return [540+f*d.reduce((a,v,i)=>a+v*right[i],0)/depth,cy-f*d.reduce((a,v,i)=>a+v*up[i],0)/depth,f/depth]}}
 export function ppoly(g,P,pts,base,light){poly(g,pts.map(v=>P(...v).slice(0,2)),base,light)}
+// Screen-space orientation must follow the projected radius, not the world angle.
+export function projectedRadialAngle(P,x,z){const c=P(0,0,0),q=P(x,0,z);return Math.atan2(q[1]-c[1],q[0]-c[0])+Math.PI/2}
+export function radialBeat(t,p,index,{bpm=116,count=8}={}){
+ const tt=Math.floor(t*12)/12,beat=tt*bpm/60,bloom=ease((p-.04-index*.009)/.20),pulse=.5+.5*Math.cos(tau*beat);
+ const pairing=ease((p-.48)/.14)*(1-ease((p-.86)/.12));
+ return {opening:.16+.84*bloom*mix(.4,1,pulse),
+  angle:index*tau/count+t*.13+(index%2?1:-1)*.18*pairing*Math.sin(beat*Math.PI*.5),
+  radius:3.6+.22*Math.sin(beat*Math.PI*.5)*pairing};
+}
+export function radialFloor(g,P,{radius=5.7,rotation=0}={}){
+ const ring=(r)=>Array.from({length:97},(_,i)=>P(Math.cos(i*tau/96)*r,0,Math.sin(i*tau/96)*r));
+ path(g,ring(radius),true);g.fillStyle='#080705';g.fill();
+ for(let i=0;i<48;i++){
+  const a=i*tau/48+rotation,b=(i+1)*tau/48+rotation;
+  if(i%2===0){const points=[P(Math.cos(a)*.5,0,Math.sin(a)*.5)];for(let j=0;j<=4;j++){const q=mix(a,b,j/4);points.push(P(Math.cos(q)*radius,0,Math.sin(q)*radius))}points.push(P(Math.cos(b)*.5,0,Math.sin(b)*.5));path(g,points,true);g.fillStyle='#252010';g.fill();}
+  line(g,[P(Math.cos(a)*.5,0,Math.sin(a)*.5),P(Math.cos(a)*radius,0,Math.sin(a)*radius)],i%2?.65:1,0,false,i%2?.42:.65);
+ }
+ for(const r of [1.45,2.9,4.35,radius])line(g,ring(r),r===radius?2.2:1,0,true,.9);
+}
 export function room(g,t,{live=true,greenUniform=false,dolly=0}={}){
 backdrop(g,t,'room');let P=camera({z:-10+dolly*.4,y:3.2,ty:2.8,tz:12,f:1120,cy:840});
 ppoly(g,P,[[-7,0,-8],[7,0,-8],[7,0,20],[-7,0,20]],'#0d0c08','#2d271b');
