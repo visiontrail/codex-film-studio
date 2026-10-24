@@ -17,9 +17,11 @@ export function blueprintPressFrame(g,platenY,p){
 }
 
 export function blueprintNotes(g,s,p,platenY){
- const label=(word,x,y,size=12,align='left')=>text(g,word,x,y,size,p.ink,null,0,'Arial',align);
+ // Register the OFL Architects Daughter face before drawing. Its irregular
+ // single-pen lettering belongs to the same material as the construction lines.
+ const label=(word,x,y,size=12,align='left')=>text(g,word,x,y,size,p.ink,null,0,'Architects Daughter',align);
  const leader=(word,x,y,points,align='left')=>{
-  label(word,x,y,11,align);line(g,points,p.ink,.8);
+  label(word,x,y,12,align);line(g,points,p.ink,.8);
   const end=points.at(-1);oval(g,end[0],end[1],2,2,p.ink,null);
  };
  const titles={press:'COMPRESSION ASSEMBLY',dial:'CONTROL ASSEMBLY',align:'ALIGNMENT STUDY'};

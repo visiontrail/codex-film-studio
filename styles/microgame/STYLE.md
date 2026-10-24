@@ -46,6 +46,9 @@ leader notes, a scale rail and a drawing title block. Anchor compression to
 the support surface and move the platen to the actual deformed top surface;
 follow moving parts with their leader endpoints. Reserve separate space for
 the operator inset so it cannot collide with numbered study rows.
+Use hand-lettered technical annotations instead of a regular UI face. Register
+the OFL-licensed Architects Daughter font under that family name before using
+the blueprint helper, and retain its licence with the production's font asset.
 
 Keep two or three identity marks recognizable when the character is redrawn.
 Make hands touch tools and make the manipulated object move from that contact.
@@ -72,6 +75,9 @@ important failures with a frozen timer. A final challenge combines past media
 and uses a previous failure as its solution.
 Replay uses a black broadcast strip, a red record dot, half-speed indication
 and a source-time readout that advances with the replayed action.
+Frame each replay around the failed contact and its consequence. Account for
+the source scene's existing camera scale; check its beginning, impact and end
+so enlarging a failure does not crop away the broken or spilled object.
 
 Use a continuous rhythmic score with medium-specific instruments and foley.
 Leave a real quiet interval before the final impact. Short commands need
