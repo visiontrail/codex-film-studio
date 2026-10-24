@@ -153,6 +153,22 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
  else{g.strokeStyle=gold(g,-50,-85,100,100);g.lineWidth=4;g.beginPath();g.arc(-3,-12,47,Math.PI,Math.PI*1.95);g.stroke();ellipse(g,-18,-4,9,20,'#57401c');ellipse(g,-18,-4,6,15,'#100e0a')}
  g.restore();g.restore();
 }
+function foreheadSweepArm(progress){
+ const q=clamp(progress),upperLength=Math.hypot(16,108),lowerLength=Math.hypot(8,102);
+ const dx=35-48,dy=-638+540,d=Math.hypot(dx,dy);
+ const finalUpper=Math.atan2(dy,dx)+Math.acos((upperLength**2+d*d-lowerLength**2)/(2*upperLength*d))+tau;
+ const finalElbow=[48+Math.cos(finalUpper)*upperLength,-540+Math.sin(finalUpper)*upperLength];
+ const finalLower=Math.atan2(-638-finalElbow[1],35-finalElbow[0])+tau;
+ // The elbow crosses the chest, rises over the head, then opens to the touch.
+ // Fixed segment lengths keep the broad sweep attached without stretching.
+ const keys=[[0,Math.atan2(108,16),Math.atan2(102,8)],[.36,210*Math.PI/180,110*Math.PI/180],
+  [.58,250*Math.PI/180,145*Math.PI/180],[.77,285*Math.PI/180,180*Math.PI/180],[1,finalUpper,finalLower]];
+ let i=1;while(i<keys.length-1&&q>keys[i][0])i++;
+ const a=keys[i-1],b=keys[i],u=(q-a[0])/(b[0]-a[0]);
+ const upper=mix(a[1],b[1],u),lower=mix(a[2],b[2],u);
+ const elbow=[48+Math.cos(upper)*upperLength,-540+Math.sin(upper)*upperLength];
+ return [[48,-540],elbow,[elbow[0]+Math.cos(lower)*lowerLength,elbow[1]+Math.sin(lower)*lowerLength]];
+}
 export function reactionActing(t,p,{beat='concern',greenUniform=false}={}){
  const tt=Math.floor(t*12)/12,q=t>0?p*tt/t:0,ramp=(a,d)=>ease((tt-a)/d),phase=(a,d)=>ease((q-a)/d);
  const state={pose:'stand',emotion:'calm',gaze:0,action:0,headTilt:0,bodyLean:0,expression:1};
@@ -162,11 +178,11 @@ export function reactionActing(t,p,{beat='concern',greenUniform=false}={}){
    gaze:mix(-.35,.65,phase(.18,.13))-.9*release,headTilt:.12*up-.19*release,bodyLean:-.025*up+.04*release};
  }
  if(beat==='concern'||beat==='remember'){
-  const remembering=beat==='remember',up=ramp(remembering?.65:.25,.32),release=ramp(remembering?1.75:1.05,.33);
-  const emotion=remembering?(tt<.4?'calm':tt<1.5?'surprise':tt<2.25?'worry':'calm'):(tt<1.25?'surprise':'determined');
-  return {...state,pose:'consider',emotion,action:up*(1-release),
+  const remembering=beat==='remember',up=ramp(remembering?.8:.65,.42),release=ramp(remembering?1.8:1.5,.33);
+  const emotion=remembering?(tt<.4?'calm':tt<1.5?'surprise':tt<2.25?'worry':'calm'):(tt<1.35?'surprise':'determined');
+  return {...state,pose:'consider',emotion,action:up*(1-release),foreheadSweep:true,
    gaze:.45-.95*phase(.21,.12)+.85*phase(.49,.1)-.35*release,
-   headTilt:.09*up-.17*ramp(1.5,.3)+.11*release,bodyLean:.045*up-.055*release};
+   headTilt:.09*up-.17*ramp(1.5,.3)+.11*release,bodyLean:-.025*up+.015*release};
  }
  if(beat==='discover'){
   const turn=phase(.18,.12),point=phase(.48,.12),settle=phase(.8,.15);
@@ -177,12 +193,12 @@ export function reactionActing(t,p,{beat='concern',greenUniform=false}={}){
  if(beat==='relief'){
   const tip=ramp(.32,.28)*(1-ramp(1.15,.32)),look=phase(.25,.14),returnLook=phase(.69,.15);
   return {...state,pose:greenUniform?'consider':'listen',emotion:tt<.24?'surprise':tt<.75||(q>.62&&q<.80)?'relief':'smile',
-   action:greenUniform?tip:1-ramp(.7,.4),gaze:.45-.9*look+.45*returnLook,
-   headTilt:.09*tip-.035*look+.04*returnLook,bodyLean:.025*tip-.018*look+.018*returnLook};
+   action:greenUniform?tip:1-ramp(.7,.4),foreheadSweep:greenUniform,gaze:.45-.9*look+.45*returnLook,
+   headTilt:.09*tip-.035*look+.04*returnLook,bodyLean:(greenUniform?-.025:.025)*tip-.018*look+.018*returnLook};
  }
  return state;
 }
-export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null,bodyLean=0,planted=false,elbowSides=null,expression=0}={}){
+export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm',gaze=0,back=false,turn=0,action=1,headTilt=0,handTargets=null,bodyLean=0,planted=false,elbowSides=null,expression=0,foreheadSweep=false}={}){
  if(h<=0)return;
  if(pose==='walk'&&turn){walkingProfile(g,x,y,h,t,turn,greenUniform);return;}
  const tt=Math.floor(t*12)/12,phase=tt*7,walking=pose==='walk',walk=walking?Math.sin(phase):0;
@@ -210,7 +226,7 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  if(pose==='crank'){let a=tt*3;right=[[48,-540],[105,-465],[132+34*Math.cos(a),-410+34*Math.sin(a)]];left=[[-48,-540],[-74,-451],[-49,-398]]}
  if(pose==='lift'){left=[[-48,-540],[-94,-591],[-84,-683]];right=[[48,-540],[94,-591],[84,-683]]}
  if(pose==='plant'){right=[[48,-540],[93,-448],[20,-388]];left=[[-48,-540],[-93,-448],[-20,-388]]}
- if(pose==='consider'){const q=ease(action);right=[[48,-540],[mix(64,105,q),mix(-432,-596,q)],[mix(72,35,q),mix(-330,-638,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
+ if(pose==='consider'){const q=ease(action);right=foreheadSweep?foreheadSweepArm(action):[[48,-540],[mix(64,105,q),mix(-432,-596,q)],[mix(72,35,q),mix(-330,-638,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
  if(walking){left=[[-48,-540],[-65+walk*38,-438],[-72+walk*80,-337]];right=[[48,-540],[65-walk*38,-438],[72-walk*80,-337]]}
  if(handTargets){for(let i=0;i<2;i++){if(!handTargets[i])continue;let arm=i?right:left,target=handTargets[i];if(bodyLean||planted){const dx=target[0]-rootX,dy=target[1]-rootY+337,cs=Math.cos(bodyLean),sn=Math.sin(bodyLean);target=[dx*cs+dy*sn,-dx*sn+dy*cs-337]}arm[2]=target;let dx=target[0]-arm[0][0],dy=target[1]-arm[0][1],len=Math.hypot(dx,dy),bend=Math.sqrt(Math.max(0,105**2-len**2/4)),bendSide=elbowSides?.[i]??(i?-1:1);arm[1]=[(target[0]+arm[0][0])/2-dy/len*bend*bendSide,(target[1]+arm[0][1])/2+dx/len*bend*bendSide]}}
  const drawArm=arm=>{sleeve(g,arm,20,col,lit);let a=Math.atan2(arm[2][1]-arm[1][1],arm[2][0]-arm[1][0])-Math.PI/2;g.save();g.translate(...arm[2]);g.rotate(a);rect(g,-10,-6,20,4,'#C9A24B','#F3D98B');g.restore();glove(g,arm[2][0]+Math.sin(-a)*8,arm[2][1]+Math.cos(a)*8,a,pose==='crank'?1:0)};
