@@ -234,7 +234,7 @@ export class Wax {
 }
 export function composite(wax,paper,out,cameraScale=1,cameraCenterX=W/2,cameraCenterY=H/2){
  const c=out.getContext('2d'),ink=wax.ctx.getImageData(0,0,W,H).data,im=c.createImageData(W,H),d=im.data,p=paper.p,t=paper.tooth;
- const pigmentLift=wax.pigmentLift??0;
+ const pigmentLift=wax.pigmentLift??0,pigmentResidue=clamp(wax.pigmentResidue??0);
  const xx=Float32Array.from({length:W},(_,x)=>clamp((x-W/2)/cameraScale+cameraCenterX,0,W-1)),yy=Float32Array.from({length:H},(_,y)=>clamp((y-H/2)/cameraScale+cameraCenterY,0,H-1));
  for(let y=0;y<H;y++)for(let x=0;x<W;x++){let i=y*W+x,j=i*4,sx=xx[x],sy=yy[y],x0=Math.floor(sx),y0=Math.floor(sy),u=sx-x0,v=sy-y0;
   const i0=y0*W+x0,i1=y0*W+Math.min(W-1,x0+1),i2=Math.min(H-1,y0+1)*W+x0,i3=Math.min(H-1,y0+1)*W+Math.min(W-1,x0+1);
@@ -244,7 +244,10 @@ export function composite(wax,paper,out,cameraScale=1,cameraCenterX=W/2,cameraCe
   // paper-white features. Its reveal still comes from actual hatch strokes.
   const peak=Math.max(ink[j],ink[j+1],ink[j+2]),chroma=peak-Math.min(ink[j],ink[j+1],ink[j+2]);
   const coloured=peak>110&&chroma>35,lift=coloured?pigmentLift:0,tooth=sample(coloured?(paper.pigmentTooth??t):t,0);
-  const threshold=.97-a*.86-lift,cover=ease((tooth-threshold+.07)/.14)*Math.min(1,a*1.65);
+  const threshold=.97-a*.86-lift;let cover=ease((tooth-threshold+.07)/.14)*Math.min(1,a*1.65);
+  // A thin wax deposit remains in low fibres only where a coloured stroke
+  // has already passed. Blank paper and indigo/white marks are unchanged.
+  if(coloured&&pigmentResidue>0)cover+=(1-cover)*a*pigmentResidue;
   // Pigment is deposited on raised fibres. Wax never erases the paper relief.
   for(let k=0;k<3;k++){const pigment=ink[j+k]*(.92+tooth*.12);d[j+k]=sample(p,k,4)*(1-cover)+pigment*cover;}
   d[j+3]=255;

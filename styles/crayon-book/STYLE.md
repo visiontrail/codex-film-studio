@@ -94,6 +94,15 @@ native resolution; making all marks finer can accidentally clean up the dark
 contours as well. `Wax.pigmentLift` defaults to 0 and changes coloured-pigment
 pressure without replacing the draw-on paths.
 
+`Wax.pigmentResidue` accepts a constant value from 0 to 1, defaulting to 0.
+It leaves a thin coloured wax deposit in low paper fibres underneath strokes
+that have already been drawn. Use it when exposed-paper pits look too harsh;
+it adjusts their contrast without flattening the paper relief. It does not
+fill the undrawn interior of a shape. White and indigo marks keep their original
+compositing. Compare several strengths at native size, then inspect an encoded
+contour-to-colour sequence. Check that blank paper and the contour-only stage
+remain identical and that the completed colour still shows directional marks.
+
 Set `Wax.formedHatching = true` to vary pass direction and pressure by stable
 shape seed. `withHatch(angleInRadians, draw)` chooses a deliberate direction for
 a form, restoring the previous direction afterward. The clipping boundary stays

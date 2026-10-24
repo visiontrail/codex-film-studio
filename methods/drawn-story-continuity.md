@@ -108,6 +108,15 @@ materials such as wood, rather than uniform full-width parallel lines. Check
 the result in a moving encoded sequence as well as stills. A material trial is
 not accepted merely because its pixel statistics moved toward a reference.
 
+When paper-white holes look too stark inside coloured wax, test a thin residual
+deposit in the low fibres beneath existing strokes. Keep the undrawn interior
+empty and retain the same stroke coverage; do not put a solid undercoat behind
+an incomplete reveal. Hold the deposit strength constant over time. Compare
+blank paper, a contour-only frame, partial pigment and a finished hold, with
+white and dark identifying features checked separately. A softer grain is
+useful only if the directional drawing marks remain visible in the encoded
+result; pixel changes alone do not establish an improvement.
+
 Separate visible paper relief, pigment grain and contour erosion. One shared
 noise mask can make faces, clothing, foliage and small marks look equally worn.
 Choose pigment granularity at native output scale, use stable form-specific
