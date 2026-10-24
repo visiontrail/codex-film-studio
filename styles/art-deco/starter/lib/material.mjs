@@ -11,6 +11,12 @@ export function poly(g,p,base='#332717',light='#80652e',rim=true){let xs=p.map(v
 export function rect(g,x,y,w,h,base='#20180e',light='#6a5325'){poly(g,[[x,y],[x+w,y],[x+w,y+h],[x,y+h]],base,light)}
 export function ellipse(g,x,y,rx,ry,fill=C.gold,stroke=true){g.beginPath();g.ellipse(x,y,Math.abs(rx),Math.abs(ry),0,0,tau);g.fillStyle=fill;g.fill();if(stroke){g.strokeStyle=gold(g,x-rx,y-ry,rx*2,ry*2);g.lineWidth=1.5;g.stroke()}}
 export function glow(g,x,y,r,color='245,206,110',strength=.25){const z=g.createRadialGradient(x,y,0,x,y,r);z.addColorStop(0,`rgba(${color},${strength})`);z.addColorStop(1,`rgba(${color},0)`);g.fillStyle=z;g.fillRect(x-r,y-r,2*r,2*r)}
+export function lightBeam(g,from,to,nearWidth,farWidth,{color='244,220,165',strength=.12}={}){
+ const dx=to[0]-from[0],dy=to[1]-from[1],length=Math.hypot(dx,dy);if(!length||nearWidth<0||farWidth<=0)return;
+ g.save();g.translate(...from);g.rotate(Math.atan2(dy,dx)-Math.PI/2);
+ path(g,[[-nearWidth/2,0],[nearWidth/2,0],[farWidth/2,length],[-farWidth/2,length]],true);g.clip();
+ const fade=g.createLinearGradient(0,0,0,length);fade.addColorStop(0,`rgba(${color},${strength})`);fade.addColorStop(.7,`rgba(${color},${strength*.72})`);fade.addColorStop(1,`rgba(${color},0)`);g.fillStyle=fade;g.fillRect(-Math.max(nearWidth,farWidth)/2,0,Math.max(nearWidth,farWidth),length);g.restore();
+}
 export function bulb(g,x,y,on=1,r=4){
  if(on<=0){ellipse(g,x,y,r,r,'#17120a');return;}
  const energy=Math.min(1.45,on);
