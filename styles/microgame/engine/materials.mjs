@@ -34,8 +34,7 @@ export function background(g,m,createCanvas,cache){
   for(let y=0;y<H;y+=18)line(g,[[0,y],[W,y]],y%90===0?'#9dbde11a':'#9dbde10a',1);
   line(g,[[493,358],[493,785]],'#e1eff680',.65);
   for(let i=0;i<7;i++){const y=370+i*65;line(g,[[488,y],[498,y]],'#e1eff680',.65);text(g,String(7-i),506,y,10,'#e1eff6a0',null,0,'monospace')}
-  text(g,'UNITS / mm',421,895,10,p.ink,null,0,'monospace');
-  text(g,'FIG. 08 / MOTION STUDY',47,220,15,p.ink,null,0,'monospace','left');return;
+  return;
  }
  if(m==='swiss'){
   for(let x=35;x<W;x+=39)line(g,[[x,230],[x,760]],'#c6c4bc',.6);

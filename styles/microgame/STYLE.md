@@ -38,6 +38,11 @@ including travelling parts, at the larger scale. Use separate fine contour,
 internal and hidden lines instead of scaling a thick icon outline. Keep
 dimension labels clear of the fuse and draw confirmation in the same
 technical vocabulary. Check these at the encoded output resolution.
+Use an assembly view with connected supports and controls, action-specific
+leader notes, a scale rail and a drawing title block. Anchor compression to
+the support surface and move the platen to the actual deformed top surface;
+follow moving parts with their leader endpoints. Reserve separate space for
+the operator inset so it cannot collide with numbered study rows.
 
 Keep two or three identity marks recognizable when the character is redrawn.
 Make hands touch tools and make the manipulated object move from that contact.

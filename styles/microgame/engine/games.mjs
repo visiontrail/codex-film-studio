@@ -2,10 +2,13 @@ import {W,H,INK,clamp,lerp,smooth,ease,hash,line,rr,oval,path,text,fitText,trans
 import {palettes,background,finish,mediumObject,materialPass} from './materials.mjs';
 import {hero,localContact} from './characters.mjs';
 import {blot,brush} from './brush.mjs';
+import {blueprintPressFrame,blueprintNotes} from './blueprint.mjs';
 export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  let m=s.medium,p=palettes[m],dur=(s.end-s.start)/30,u=clamp(lt/dur),tick=Math.floor(lt*s.character_fps)/s.character_fps,pu=clamp(tick/dur),a=smooth((pu-.28)/.42),done=u>.76;
  const pressTravel=a<.85?smooth(a/.65):lerp(1,.25,(a-.85)/.15);
- const pressY=lerp(390,s.object==='dough'?623:600,pressTravel);
+ const blueprintCompression=1-(s.object==='dough'?.25:.18)*smooth((a-.65)/.15);
+ const pressEnd=m==='blueprint'?684-(s.object==='dough'?52:89.7)*blueprintCompression-17:s.object==='dough'?623:600;
+ const pressY=lerp(m==='blueprint'?476:390,pressEnd,pressTravel);
  background(g,m,createCanvas,cache);
  g.save();
  if(m==='terminal'){g.shadowColor='#ffad36';g.shadowBlur=3}
@@ -13,7 +16,7 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  if(m==='blueprint'){
   // Keep the operator in the separate inset and give the working mechanism
   // the dominant technical-detail view, with room for the dimension rail.
-  g.translate(316,515);g.scale(1.65,1.65);g.translate(-355,-540);
+  g.translate(282,520);g.scale(1.8,1.8);g.translate(-355,-550);
  }else{g.translate(270,620);g.scale(sceneZoom,sceneZoom);g.translate(-270,-620)}
  let floor=720;
  if(m!=='terminal'&&m!=='pixel'&&m!=='blueprint'){g.fillStyle=p.ground;g.fillRect(0,floor,W,60);line(g,[[0,floor],[W,floor]],p.ink,m==='blueprint'?2:4)}
@@ -51,8 +54,9 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  case 'stir':bowl();item(354,638,.7);transformed(g,355,604,1,Math.sin(a*18)*.55,()=>{line(g,[[0,-132],[0,35]],p.ink,10);line(g,[[-2,-132],[-2,35]],p.object,5)});if(a>.2)for(let i=0;i<6;i++){let ang=a*16+i;oval(g,355+Math.cos(ang)*46,631+Math.sin(ang)*13,4,3,p.accent,null)}break;
  case 'catch':item(365,lerp(342,608,ease(a)),.9,s.object,a*1.8);line(g,[[276,642],[460,642]],p.ink,7);rr(g,305,652,133,40,5,p.hero,p.ink,3);if(done)star(g,435,575,18,p.accent);break;
  case 'press':
-  g.save();g.translate(357,658);g.scale(1,s.object==='dough'?1-.25*smooth((a-.6)/.15):1);item(0,0,1.3);g.restore();
-  transformed(g,355,pressY,1,0,()=>{rr(g,-15,-70,30,66,4,p.hero,p.ink,m==='blueprint'?1:3);rr(g,-62,-10,124,27,4,p.object,p.ink,m==='blueprint'?1.2:4);if(m==='blueprint'){line(g,[[-10,-62],[-10,-17]],p.ink,.6);line(g,[[-55,10],[55,10]],p.ink,.6)}});if(a>.65)bits(355,m==='blueprint'?658:680,18,p.object,m==='blueprint'?38:65);break;
+  if(m==='blueprint')blueprintPressFrame(g,pressY,p);
+  g.save();g.translate(357,m==='blueprint'?684-(s.object==='dough'?26:28.6)*blueprintCompression:658);g.scale(1,m==='blueprint'?blueprintCompression:s.object==='dough'?1-.25*smooth((a-.6)/.15):1);item(0,0,1.3);g.restore();
+  transformed(g,355,pressY,1,0,()=>{rr(g,-15,-70,30,66,4,p.hero,p.ink,m==='blueprint'?1:3);rr(g,-62,-10,124,27,4,p.object,p.ink,m==='blueprint'?1.2:4);if(m==='blueprint'){line(g,[[-10,-62],[-10,-17]],p.ink,.6);line(g,[[-55,10],[55,10]],p.ink,.6)}});if(a>.65&&m!=='blueprint')bits(355,680,18,p.object,65);break;
  case 'roll':item(355,666,1.35,'dough');item(355+Math.sin(a*12)*42,633,1.4,'rollingpin');break;
  case 'cut':case 'crack':{
   let split=smooth((a-.55)/.25),kind=s.action==='crack'&&s.object==='seed'?'seedpod':s.object;
@@ -70,14 +74,17 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
   for(let i=0;i<4;i++){let yy=480+i*32;line(g,[[300,yy],[360+20*Math.sin(a*30),yy-10],[440,yy]],p.ink,2)}break;
  case 'jump':item(300,698,.85);break;
  case 'dial':{
-  item(360,628,1.5);oval(g,355,441,68,68,p.paper,p.ink,m==='blueprint'?1.1:4);for(let i=0;i<11;i++){let an=-2.5+i*.5;line(g,[[355+Math.cos(an)*50,441+Math.sin(an)*50],[355+Math.cos(an)*59,441+Math.sin(an)*59]],p.ink,m==='blueprint'?.7:2)}let angle=lerp(-2.5,1.0,a);line(g,[[355,441],[355+Math.cos(angle)*48,441+Math.sin(angle)*48]],p.accent,m==='blueprint'?1.8:6);oval(g,355,441,m==='blueprint'?3:8,m==='blueprint'?3:8,p.ink,null);break;
+  const cy=m==='blueprint'?470:441;
+  item(360,m==='blueprint'?610:628,m==='blueprint'?1.3:1.5);
+  if(m==='blueprint')line(g,[[355,535],[355,550]],p.ink,1.2);
+  oval(g,355,cy,68,68,p.paper,p.ink,m==='blueprint'?1.1:4);for(let i=0;i<11;i++){let an=-2.5+i*.5;line(g,[[355+Math.cos(an)*50,cy+Math.sin(an)*50],[355+Math.cos(an)*59,cy+Math.sin(an)*59]],p.ink,m==='blueprint'?.7:2)}let angle=lerp(-2.5,1.0,a);line(g,[[355,cy],[355+Math.cos(angle)*48,cy+Math.sin(angle)*48]],p.accent,m==='blueprint'?1.8:6);oval(g,355,cy,m==='blueprint'?3:8,m==='blueprint'?3:8,p.ink,null);break;
  }
  case 'fold':{
   let q=smooth(a);path(g,[[285,603],[430,603],[430,696],[285,696]],p.object,p.ink,3);path(g,[[285,603],[lerp(225,315,q),lerp(560,646,q)],[lerp(370,460,q),lerp(560,646,q)],[430,603]],p.paper,p.ink,3);path(g,[[285,696],[lerp(238,310,q),lerp(740,665,q)],[lerp(383,455,q),lerp(740,665,q)],[430,696]],p.hero,p.ink,3);break;
  }
  case 'sprinkle':item(355,652,1.3,s.object==='seed'?'soil':'cake');item(290,400,.7,'flour',-.7);for(let i=0;i<30;i++){let v=(a*3+hash(i))%1;let xx=305+(hash(i*3)-.5)*100;oval(g,xx+v*60,440+v*210,3,5,i%2?p.accent:p.object,null)}break;
  case 'align':
-  for(let i=0;i<3;i++){item(lerp(260+hash(i)*170,355,a),475+i*83,.6,s.object,lerp((hash(i)-.5)*.7,0,a))}g.setLineDash([6,6]);line(g,[[355,350],[355,720]],p.accent,m==='blueprint'?.8:2);g.setLineDash([]);break;
+  for(let i=0;i<3;i++){item(lerp(m==='blueprint'?310+hash(i)*90:260+hash(i)*170,355,a),475+i*(m==='blueprint'?95:83),m==='blueprint'?.85:.6,s.object,lerp((hash(i)-.5)*.7,0,a))}g.setLineDash([6,6]);line(g,[[355,m==='blueprint'?440:350],[355,720]],p.accent,m==='blueprint'?.8:2);g.setLineDash([]);break;
  case 'balance':{
   let angle=Math.sin(a*14)*(1-a)*.3;transformed(g,355,600,1,angle,()=>{line(g,[[-90,50],[90,50]],p.ink,8);item(0,0,1.15)});path(g,[[355,654],[329,717],[383,717]],p.accent,p.ink,3);break;
  }
@@ -135,10 +142,10 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
   text(g,`rule ${s.game} / ${rules[s.action]||'one clear move.'}`,35,315,16,p.ink,null,0,'Arial','left');
  }
  if(m==='blueprint'){
-  rr(g,35,292,127,163,2,p.paper,p.ink,2);hero(g,m,98,425,.62,{arm:.4+arm},film.hero);
-  text(g,'DETAIL A / 2:1',414,220,12,p.ink,null,0,'monospace');
-  if(done&&s.success)transformed(g,98,492,1,-.1,()=>{rr(g,-28,-18,56,36,1,null,p.accent,1.5);text(g,'OK',0,0,24,p.accent,null,0,'monospace')});
-  g.setLineDash([5,5]);line(g,[[316,332],[316,787]],p.ink,1);g.setLineDash([]);
+  hero(g,m,57,919,.34,{arm:.4+arm},film.hero);
+  blueprintNotes(g,s,p,pressY);
+  if(done&&s.success)transformed(g,172,901,1,-.1,()=>{rr(g,-28,-18,56,36,1,null,p.accent,1.5);text(g,'OK',0,0,24,p.accent,null,0,'monospace')});
+  if(s.action!=='align'){g.setLineDash([5,5]);line(g,[[282,275],[282,790]],p.ink,.65);g.setLineDash([])}
  }
  finish(g,m,createCanvas,cache);
  materialPass(g,m,cache);

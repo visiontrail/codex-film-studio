@@ -1,5 +1,53 @@
 import {line,rr,oval,path,text} from './primitives.mjs';
 
+// A compression assembly supplies a continuous structure around the moving
+// platen. All geometry is in the action's coordinates, so contact survives zoom.
+export function blueprintPressFrame(g,platenY,p){
+ const edge=(pts,w=.8)=>line(g,pts,p.ink,w);
+ rr(g,255,402,200,27,3,p.paper,p.ink,1.1);
+ rr(g,255,429,12,255,1,p.paper,p.ink,1.1);
+ rr(g,443,429,12,255,1,p.paper,p.ink,1.1);
+ rr(g,246,684,218,14,1,p.paper,p.ink,1.1);
+ for(const x of [261,449]){oval(g,x,415,3,3,null,p.ink,.7);edge([[x,438],[x,674]],.5)}
+ edge([[348,429],[348,platenY-10]]);edge([[362,429],[362,platenY-10]]);
+ for(let y=434;y<platenY-13;y+=7)edge([[348,y],[362,y-4]],.55);
+ g.save();g.setLineDash([3,4]);edge([[255,705],[455,705]],.5);g.restore();
+ edge([[255,701],[255,709]],.5);edge([[455,701],[455,709]],.5);
+ text(g,'200',355,714,8,p.ink,null,0,'monospace');
+}
+
+export function blueprintNotes(g,s,p,platenY){
+ const label=(word,x,y,size=12,align='left')=>text(g,word,x,y,size,p.ink,null,0,'Arial',align);
+ const leader=(word,x,y,points,align='left')=>{
+  label(word,x,y,11,align);line(g,points,p.ink,.8);
+  const end=points.at(-1);oval(g,end[0],end[1],2,2,p.ink,null);
+ };
+ const titles={press:'COMPRESSION ASSEMBLY',dial:'CONTROL ASSEMBLY',align:'ALIGNMENT STUDY'};
+ const rules={press:'LOWER TO CONTACT',dial:'TURN TO THE MARK',align:'BRING ALL THREE TO AXIS'};
+ label(titles[s.action]||'MOTION STUDY',39,215,19);
+ label(rules[s.action]||'ONE CONTROLLED MOVE',40,243,12);
+ if(s.action==='press'){
+  leader('GUIDE / A',423,329,[[421,340],[438,356],[451,356]],'right');
+  leader('TRAVEL',39,473,[[40,485],[78,485],[102,508]]);
+  leader('PLATEN',462,587,[[452,600],[425,600],[394,520+(platenY-550)*1.8]],'right');
+ }else if(s.action==='dial'){
+  leader('INDEX / 01',454,295,[[446,307],[409,307],[365,342]],'right');
+  leader('CONTROL',38,516,[[40,529],[81,529],[s.object==='sprinkler'?202:176,553]]);
+  leader(s.object==='sprinkler'?'OUTLET':'CHAMBER',464,762,[[458,748],[432,724],s.object==='sprinkler'?[392,724]:[405,692]],'right');
+ }else if(s.action==='align'){
+  leader('CENTRE LINE',443,296,[[437,308],[391,308],[282,325]],'right');
+  for(let i=0;i<3;i++){
+   label(String(i+1).padStart(2,'0'),48,385+i*171,15);
+   line(g,[[72,385+i*171],[103,385+i*171]],p.ink,.65);
+  }
+ }
+ // The drawing title block sits below the timer, outside the moving mechanism.
+ rr(g,266,888,228,49,0,null,p.ink,.8);
+ line(g,[[266,912],[494,912]],p.ink,.6);
+ label(`DWG ${s.command.replace(/[!.]/g,'')}-${String(s.game).padStart(2,'0')}`,275,901,11);
+ label('DETAIL A / 2:1',275,925,10);label('UNITS mm',485,925,10,'right');
+}
+
 // Technical objects use contour, internal and hidden lines independently.
 // Sizes are object-local; the scene can enlarge them without heavy icon rims.
 export function blueprintObject(g,kind,p){
@@ -43,7 +91,9 @@ export function blueprintObject(g,kind,p){
    edge([[-48,-14],[48,-14]]);edge([[-48,13],[48,13]]);
   }
  }else return false;
- hidden(()=>edge([[-65,46],[65,46]]));edge([[-65,41],[-65,52]]);edge([[65,41],[65,52]]);
- text(g,'120',0,54,9,p.ink,null,0,'monospace');
+ if(!['dough','soil','flour','compost'].includes(kind)){
+  hidden(()=>edge([[-65,46],[65,46]]));edge([[-65,41],[-65,52]]);edge([[65,41],[65,52]]);
+  text(g,'120',0,54,9,p.ink,null,0,'monospace');
+ }
  return true;
 }

@@ -6,7 +6,7 @@ story, narration, provider jobs or films are packaged in this library.
 - `engine/primitives.mjs`: outlined toon shapes, command typography and fuse.
 - `engine/materials.mjs`: separate palettes, material response and generic props.
 - `engine/characters.mjs`: performer and stage-host drawing helpers.
-- `engine/blueprint.mjs`: thin technical contours, hidden lines and object details.
+- `engine/blueprint.mjs`: thin contours, hidden lines, supported assemblies and leader notes.
 - `engine/collage.mjs`: coloured print plates, paper scenery and scored foreground planes.
 - `engine/brush.mjs`: pressure-shaped bristles, dry gaps, wet edges and ink figures.
 - `engine/games.mjs`: deterministic action construction; requires authored inputs.
