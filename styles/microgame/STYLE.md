@@ -27,7 +27,14 @@ For Swiss scenes, put a large lowercase action word and a short rule on the
 grid. Keep them clear of the working hand and object after the command retreats.
 For pixel scenes, quantize the small drawing buffer to an explicit palette
 before nearest-neighbour enlargement; downscaling alone retains intermediate
-antialias colours. Check both at the encoded output resolution.
+antialias colours. Use an ordered stipple whose sparse rows alternate their
+filled columns, and align its top surface with the character contact plane.
+For blueprint inserts, let the working mechanism occupy the main field while
+keeping the character in a separate small inset; check the whole action,
+including travelling parts, at the larger scale. Use separate fine contour,
+internal and hidden lines instead of scaling a thick icon outline. Keep
+dimension labels clear of the fuse and draw confirmation in the same
+technical vocabulary. Check these at the encoded output resolution.
 
 Keep two or three identity marks recognizable when the character is redrawn.
 Make hands touch tools and make the manipulated object move from that contact.

@@ -6,6 +6,7 @@ story, narration, provider jobs or films are packaged in this library.
 - `engine/primitives.mjs`: outlined toon shapes, command typography and fuse.
 - `engine/materials.mjs`: separate palettes, material response and generic props.
 - `engine/characters.mjs`: performer and stage-host drawing helpers.
+- `engine/blueprint.mjs`: thin technical contours, hidden lines and object details.
 - `engine/brush.mjs`: pressure-shaped bristles, dry gaps, wet edges and ink figures.
 - `engine/games.mjs`: deterministic action construction; requires authored inputs.
 - `engine/frame_audit.py`: complete encoded-frame ledger and sequential atlases.
@@ -14,7 +15,7 @@ story, narration, provider jobs or films are packaged in this library.
 The pixel material exports `indexPixelBuffer(context)` for palette quantization
 before enlargement. The action renderer adds Swiss headline and rule typography.
 Run `node --test engine/characters.test.mjs engine/materials.test.mjs` to check
-contact transforms and palette closure; inspect rendered motion separately.
+contact transforms, palette closure and ordered ground stipple; inspect rendered motion separately.
 
 Author your composition, camera, story-specific transformations, audio and final
 export in the production project. The toolkit has no accepted published demo.

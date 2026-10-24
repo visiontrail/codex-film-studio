@@ -1,12 +1,13 @@
 import {hash,line,rr,text,oval,path,W,H,clamp} from './primitives.mjs';
 import {brush,brushArc,blot} from './brush.mjs';
+import {blueprintObject} from './blueprint.mjs';
 export const palettes={
  crayon:{paper:'#f6f0dc',ink:'#34446c',hero:'#80a7d9',accent:'#dc5940',ground:'#739b68',object:'#f3c65e'},
  ink:{paper:'#eee9dc',ink:'#282c2d',hero:'#a7a7a0',accent:'#c34834',ground:'#b4b2a7',object:'#777d78'},
  terminal:{paper:'#120e08',ink:'#ffd57a',hero:'#ffb344',accent:'#fff3bc',ground:'#4a2d0e',object:'#e99f31'},
  riso:{paper:'#faf0d5',ink:'#265d9e',hero:'#f06487',accent:'#e92d69',ground:'#6eaf97',object:'#f0c343'},
  pixel:{paper:'#18264c',ink:'#0b1329',hero:'#46b3c5',accent:'#fa6671',ground:'#6a536a',object:'#f8cc69'},
- blueprint:{paper:'#164c85',ink:'#d3edff',hero:'#4381b3',accent:'#ee665a',ground:'#3072a8',object:'#2c679f'},
+ blueprint:{paper:'#234779',ink:'#e1eff6',hero:'#2b5180',accent:'#ee665a',ground:'#234779',object:'#234779'},
  swiss:{paper:'#f6f4ec',ink:'#171c1b',hero:'#171c1b',accent:'#e30613',ground:'#d4d3cb',object:'#e30613'},
  paper:{paper:'#efe0c8',ink:'#392e43',hero:'#d97549',accent:'#cb3c45',ground:'#688c79',object:'#e9b953'},
  woodcut:{paper:'#eadfbc',ink:'#253f3c',hero:'#707d63',accent:'#ad4831',ground:'#73836a',object:'#b19663'}
@@ -23,9 +24,17 @@ export function background(g,m,createCanvas,cache){
   for(let y=0;y<H;y+=4){g.fillStyle='#0003';g.fillRect(0,y,W,1)}rr(g,25,280,490,480,2,null,p.ink,2);return;
  }
  if(m==='blueprint'){
-  for(let x=0;x<W;x+=18)line(g,[[x,0],[x,H]],x%90===0?'#70b1d64d':'#70b1d61a',1);
-  for(let y=0;y<H;y+=18)line(g,[[0,y],[W,y]],y%90===0?'#70b1d64d':'#70b1d61a',1);
-  line(g,[[58,295],[58,725],[490,725]],p.ink,1);text(g,'FIG. 08 / MOTION STUDY',47,220,15,p.ink,null,0,'monospace','left');return;
+  let wash=cache.get('blueprint-paper');
+  if(!wash){wash=createCanvas(W,H);const q=wash.getContext('2d');
+   for(let y=0;y<H;y++){q.fillStyle=`rgba(130,163,196,${.008+.015*hash(y/7)})`;q.fillRect(0,y,W,1)}
+   for(let i=0;i<18000;i++){q.fillStyle=i%2?'#cedced08':'#0b173b0a';q.fillRect(hash(i*17)*W,hash(i*11)*H,1+hash(i)*2,1)}
+   cache.set('blueprint-paper',wash)}g.drawImage(wash,0,0);
+  for(let x=0;x<W;x+=18)line(g,[[x,0],[x,H]],x%90===0?'#9dbde11a':'#9dbde10a',1);
+  for(let y=0;y<H;y+=18)line(g,[[0,y],[W,y]],y%90===0?'#9dbde11a':'#9dbde10a',1);
+  line(g,[[493,358],[493,785]],'#e1eff680',.65);
+  for(let i=0;i<7;i++){const y=370+i*65;line(g,[[488,y],[498,y]],'#e1eff680',.65);text(g,String(7-i),506,y,10,'#e1eff6a0',null,0,'monospace')}
+  text(g,'UNITS / mm',421,895,10,p.ink,null,0,'monospace');
+  text(g,'FIG. 08 / MOTION STUDY',47,220,15,p.ink,null,0,'monospace','left');return;
  }
  if(m==='swiss'){
   for(let x=35;x<W;x+=39)line(g,[[x,230],[x,760]],'#c6c4bc',.6);
@@ -34,7 +43,15 @@ export function background(g,m,createCanvas,cache){
  }
  if(m==='pixel'){
   for(let i=0;i<45;i++){let x=Math.floor(hash(i*17)*135)*4,y=Math.floor((250+hash(i*31)*400)/4)*4;g.fillStyle=i%3?'#e4d4a4':'#66abc5';g.fillRect(x,y,4,4)}
-  for(let y=740;y<790;y+=8)for(let x=0;x<W;x+=8){g.fillStyle=(x+y)%16?'#7b6c81':'#a2958f';g.fillRect(x,y,8,8)}return;
+  // Work in grid indices: an offset y modulo cell width can make every cell
+  // take the same colour. The bright lip meets the feet; stipple fades below it.
+  g.fillStyle='#6b667f';g.fillRect(0,720,W,72);
+  g.fillStyle='#b4b7dc';g.fillRect(0,720,W,4);
+  for(let row=0;row<7;row++)for(let col=0;col<Math.ceil(W/4);col++){
+   const threshold=(row&1?[3,1]:[0,2])[col&1] / 4;
+   if(threshold<1-row/7){g.fillStyle=row<3?'#a7a0a1':'#777db8';g.fillRect(col*4,724+row*4,4,4)}
+  }
+  for(let i=0;i<12;i++){g.fillStyle='#424782';g.fillRect(Math.floor(hash(i*19)*130)*4,760+(i%3)*8,8+(i%3)*4,4)}return;
  }
  let key='texture-'+m,tex=cache.get(key);
  if(!tex){tex=createCanvas(W,H);let q=tex.getContext('2d');
@@ -66,6 +83,7 @@ export function finish(g,m,createCanvas,cache){
 }
 export function mediumObject(g,m,x,y,scale,kind,variant=0){
  const p=palettes[m];g.save();g.translate(x,y);g.scale(scale,scale);let lw=m==='blueprint'?2:4;
+ if(m==='blueprint'&&blueprintObject(g,kind,p)){g.restore();return}
  const rect=(a,b,w,h,c=p.object,r=5)=>rr(g,a,b,w,h,r,c,p.ink,lw), el=(a,b,rx,ry,c=p.object)=>oval(g,a,b,rx,ry,c,p.ink,lw);
  if(m==='ink'){
   if(['milk','water','bucket','pot'].includes(kind)){
