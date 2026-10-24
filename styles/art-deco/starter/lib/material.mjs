@@ -60,7 +60,11 @@ export function fan(g,x,y,r,open=1,rot=0,color=C.emerald,{folded=false,pivot=tru
   g.beginPath();g.moveTo(0,0);g.lineTo(Math.cos(a)*r*.96,Math.sin(a)*r*.96);
   g.quadraticCurveTo(Math.cos(m)*r*1.055,Math.sin(m)*r*1.055,Math.cos(b)*r*.96,Math.sin(b)*r*.96);g.closePath();
   const shade=g.createLinearGradient(0,0,Math.cos(m)*r,Math.sin(m)*r);
-  shade.addColorStop(0,ivory?(folded?'#756e54':'#bba45e'):color);shade.addColorStop(folded?.56:.4,ivory?(folded?'#d8cc9e':'#e0cf9d'):i%2?'#6e895d':'#8b713b');shade.addColorStop(1,ivory?(folded?'#eee3b6':'#f3e6bd'):color);
+  if(ivory&&folded){
+   for(const [stop,value] of [[0,'#36290f'],[.2,'#79633e'],[.4,'#c0ac80'],[.55,'#d3be97'],[1,'#f2e2be']])shade.addColorStop(stop,value);
+  }else{
+   shade.addColorStop(0,ivory?'#bba45e':color);shade.addColorStop(.4,ivory?'#e0cf9d':i%2?'#6e895d':'#8b713b');shade.addColorStop(1,ivory?'#f3e6bd':color);
+  }
   g.fillStyle=shade;g.fill();
   if(folded){
    g.save();g.clip();
@@ -68,7 +72,7 @@ export function fan(g,x,y,r,open=1,rot=0,color=C.emerald,{folded=false,pivot=tru
    fold.addColorStop(0,'rgba(94,79,46,.10)');fold.addColorStop(.44,'rgba(255,249,218,.025)');fold.addColorStop(.57,'rgba(255,249,218,.11)');fold.addColorStop(1,'rgba(94,79,46,.025)');
    g.fillStyle=fold;g.fillRect(-r*1.06,-r*1.06,r*2.12,r*2.12);g.restore();
   }
-  g.strokeStyle=ivory?'#b69a4d':'#b09850';g.lineWidth=.9;g.stroke();
+  g.strokeStyle=ivory?'#b69a4d':'#b09850';g.lineWidth=folded?r*.012:.9;g.stroke();
  }
  if(pivot){ellipse(g,0,0,r*.065,r*.065,ivory?'#f5e2aa':C.gold);ellipse(g,0,0,r*.044,r*.044,'#1b160d')}g.restore();
 }
@@ -203,7 +207,7 @@ export function radialBeat(t,p,index,{bpm=116,count=8}={}){
    }
   }
  }
- return {opening,angle:angle*Math.PI/180,radius:radius*3.6/380,resolve};
+ return {opening,angle:angle*Math.PI/180,radius:radius*3.6/380,resolve,scale:index===1?mix(1,.87,resolve):1};
 }
 export function radialFloor(g,P,{radius=5.7,rotation=0}={}){
  const ring=(r)=>Array.from({length:97},(_,i)=>P(Math.cos(i*tau/96)*r,0,Math.sin(i*tau/96)*r));
