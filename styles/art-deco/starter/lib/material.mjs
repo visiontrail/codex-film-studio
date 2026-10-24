@@ -76,16 +76,23 @@ export function camera({x=0,y=2,z=-8,tx=0,ty=2.5,tz=7,f=900,cy=950}={}){let dx=t
 export function ppoly(g,P,pts,base,light){poly(g,pts.map(v=>P(...v).slice(0,2)),base,light)}
 // Screen-space orientation must follow the projected radius, not the world angle.
 export function projectedRadialAngle(P,x,z){const c=P(0,0,0),q=P(x,0,z);return Math.atan2(q[1]-c[1],q[0]-c[0])+Math.PI/2}
+// Decelerate secondary movement through the final phrase, then hold its endpoint.
+export function radialMotionTime(t,p){
+ if(p<=.72)return t;
+ const q=clamp((p-.72)/.20);
+ return t/p*(.72+.20*(q-q*q/2));
+}
 export function radialBeat(t,p,index,{bpm=116,count=8}={}){
  const tt=Math.floor(t*12)/12,beat=tt*bpm/60,bloom=ease((p-.04-index*.009)/.20),pulse=.5+.5*Math.cos(tau*beat);
  const pairing=ease((p-.48)/.14)*(1-ease((p-.86)/.12));
- const resolve=ease((p-.72)/.25),arrival=ease((p-.72-(index%2)*.025)/.22),step=tau/count;
+ const resolve=ease((p-.72)/.20),arrival=ease((p-.72-(index%2)*.015)/.18),step=tau/count;
  const orbit=index*step+t*.13+(index%2?1:-1)*.18*pairing*Math.sin(beat*Math.PI*.5);
- // Finish the phrase: paired sectors settle, and one pair separates in depth.
- const grouped=(Math.floor(index/2)*2+.5)*step+t*.13+(index<2?0:(index%2?1:-1)*step*.15);
+ // Two pivots share the upper ray; the other sectors keep alternating open gaps.
+ // The final orientation is independent of clip duration and no longer orbits.
+ const grouped=index<2?Math.PI/2:Math.PI/2+(index-.5)*step+(index%2?1:-1)*step/6;
  return {opening:mix(.16+.84*bloom*mix(.4,1,pulse),1,resolve),
   angle:mix(orbit,grouped,arrival),
-  radius:mix(3.6+.22*Math.sin(beat*Math.PI*.5)*pairing,index===0?1.1:index===1?3.2:3.6,arrival),
+  radius:mix(3.6+.22*Math.sin(beat*Math.PI*.5)*pairing,index===0?1.1:index===1?2.5:3.6,arrival),
   resolve};
 }
 export function radialFloor(g,P,{radius=5.7,rotation=0}={}){
