@@ -41,9 +41,17 @@ establish that an arbitrary render matches a reference.
 
 `starter/lib/material.mjs` provides deterministic canvas primitives and wax/paper
 compositing. `starter/lib/desk.mjs` provides an independent wood material and spread
-lighting. `deskTexture(paper, {meander, wear})` can bend long fibres and vary
+lighting. `deskTexture(paper, {meander, wear, layered})` can bend long fibres and vary
 local ridge density and contrast; `wear` defaults to 0. Use a fixed seed and
 compare both sparse and dense regions rather than adding uniform white noise.
+When fine highlights form a regular striped pattern, `layered: true` provides
+an alternative built from broad pigment ribbons, pressure-varying dark fibres
+and independently masked worn catches. It defaults to false and leaves the
+earlier material unchanged. `meander` bends its fibres and `wear` varies its
+regional abrasion. All three layers share surface coordinates and fixed seeds.
+Judge the result against a native-resolution desk crop, then through a camera
+move. Removing every bright scratch can make illustrated wood look artificially
+smooth; keep localized dry marks without tracing each groove with a highlight.
 `shadeSpread(context, x, y, pageWidth, height, {tableLight})` adds a fixed warm
 light pool with asymmetric edge falloff; `tableLight` defaults to 0. Compare
 paper illumination separately from the underlying paper colour and relief.

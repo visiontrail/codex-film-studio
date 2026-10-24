@@ -201,6 +201,14 @@ vary the density and contrast of coherent fibres over broad regions instead
 of increasing the same speckle everywhere. Keep material variation fixed in
 surface space during camera moves.
 
+Build wood at three scales: broad pigment bands, directional fibres, and small
+abrasion marks. Give highlights a separate pressure mask from the dark grooves;
+outlining every groove with a bright neighbour creates regular stripes even
+when the paths bend. Compare quiet and worn regions at native size. Reducing
+all fine contrast can overcorrect the problem into blurred wood, so retain
+localized dry catches. Texture statistics help identify the scale of a defect,
+but a closer variance or colour mean does not establish a closer visual style.
+
 A turning leaf and its settled surface must share the same texture orientation
 and light treatment. Reverse sampling order on the back face, carry the gutter
 with the hinge, and remove the moving self-shadow continuously as the leaf

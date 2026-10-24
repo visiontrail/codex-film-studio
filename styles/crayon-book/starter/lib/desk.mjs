@@ -9,7 +9,8 @@ function field(x,y,sx,sy,seed=0){
 
 // Long fibres have irregular spacing, bends and broken highlights. Several
 // independent scales prevent a periodic sine pattern or a striped wallpaper.
-export function deskTexture(paper,{meander=false,wear=0}={}){
+export function deskTexture(paper,{meander=false,wear=0,layered=false}={}){
+ if(layered)return layeredDesk(paper,{meander,wear});
  const canvas=createCanvas(W,H),ctx=canvas.getContext('2d'),im=ctx.createImageData(W,H),d=im.data;
  const drift=(x,y)=>meander?(field(x,y,570,310,311)-.5)*61+(field(x,y,210,110,337)-.5)*10:0;
  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
@@ -59,6 +60,61 @@ export function deskTexture(paper,{meander=false,wear=0}={}){
  for(const [row,seed] of [[254,17],[570,29],[870,43]]){
   ctx.beginPath();for(let x=0;x<=W;x+=12){const y=row+Math.sin(x/330+seed)*4+(field(x,row,80,50,seed)-.5)*3;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}
   ctx.strokeStyle='rgba(44,23,12,.48)';ctx.lineWidth=1.6;ctx.stroke();
+ }
+ return {canvas,p:ctx.getImageData(0,0,W,H).data,tooth:paper.tooth};
+}
+
+// Broad pigment ribbons establish the wood; fine grooves and worn catches
+// belong to that same surface. No pattern or seed depends on the video frame.
+function layeredDesk(paper,{meander,wear}){
+ const canvas=createCanvas(W,H),ctx=canvas.getContext('2d'),im=ctx.createImageData(W,H),d=im.data;
+ const drift=(x,y)=>meander?(field(x,y,690,260,311)-.5)*27+(field(x,y,240,120,337)-.5)*5:0;
+ const warp=(x,y)=>y+x*.012+drift(x,y)+(field(x,y,490,120,36)-.5)*12;
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+  const j=(y*W+x)*4,v=warp(x,y),region=field(x,y,370,130,401);
+  const ribbons=(field(x,v,530,43,8)-.5)*112+(field(x,v,210,13,83)-.5)*31;
+  const grain=(field(x,v,250,2.9,23)-.5)*36+(field(x,v,43,.9,71)-.5)*17;
+  const grainPressure=.65+field(x,y,230,70,127)*.55;
+  const radial=((x-1030)/1290)**2+((y-510)/880)**2;
+  const light=1.05-.29*radial+.10*Math.exp(-(((x-1090)/500)**2+((y-220)/370)**2));
+  const value=ribbons+grain*grainPressure+(noise(x,y)-.5)*10-wear*(1-region)*9;
+  for(let k=0;k<3;k++)d[j+k]=[136,94,52][k]*light+value*[1,.83,.61][k];
+  d[j+3]=255;
+ }
+ ctx.putImageData(im,0,0);
+ ctx.lineCap='round';
+ for(let row=-20,index=0;row<H+30;row+=3+noise(index++,93)*15){
+  const curve=x=>row-x*.012-drift(x,row)+(field(x,row,340,55,104)-.5)*9;
+  // Short neighbouring segments share a path but vary continuously in pressure.
+  // Highlights use an independent mask: they do not outline every dark groove.
+  for(let x=-20;x<W+20;x+=14){
+   const pressure=field(x,row,190,38,118),catching=field(x,row,93,27,77);
+   const a=Math.max(0,pressure-.23)*.40;
+   ctx.beginPath();ctx.moveTo(x,curve(x));ctx.lineTo(x+14,curve(x+14));
+   ctx.strokeStyle=`rgba(50,28,13,${a})`;ctx.lineWidth=.5+noise(index,127)*1.5;ctx.stroke();
+   if(catching>.51){
+    ctx.beginPath();ctx.moveTo(x,curve(x)-1.2);ctx.lineTo(x+14,curve(x+14)-1.2);
+    ctx.strokeStyle=`rgba(219,179,121,${(catching-.51)*.55})`;ctx.lineWidth=.6;ctx.stroke();
+   }
+  }
+ }
+ const surface=ctx.getImageData(0,0,W,H),pixels=surface.data;
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+  const j=(y*W+x)*4,v=warp(x,y),region=field(x,y,330,95,401);
+  const ridge=field(x,v,88,2.1,201),clump=field(x,y,3.1,1.6,227);
+  const threshold=.63-wear*(region-.5)*.12;
+  if(ridge>threshold&&clump>.57&&noise(x,y+88)>.40){
+   const a=Math.min(.78,((ridge-threshold)*1.7+.33)*(.85+region*.45));
+   for(let k=0;k<3;k++)pixels[j+k]=pixels[j+k]*(1-a)+[224,190,143][k]*a;
+  }
+ }
+ ctx.putImageData(surface,0,0);
+ for(const [row,seed] of [[254,17],[570,29],[870,43]]){
+  for(let x=0;x<W;x+=16){
+   const curve=u=>row+(field(u,row,370,80,seed)-.5)*6;
+   ctx.beginPath();ctx.moveTo(x,curve(x));ctx.lineTo(x+16,curve(x+16));
+   ctx.strokeStyle=`rgba(44,23,12,${.2+field(x,row,150,50,seed)*.28})`;ctx.lineWidth=1.4;ctx.stroke();
+  }
  }
  return {canvas,p:ctx.getImageData(0,0,W,H).data,tooth:paper.tooth};
 }
