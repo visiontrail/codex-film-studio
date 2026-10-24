@@ -134,14 +134,15 @@ export function mediumObject(g,m,x,y,scale,kind,variant=0){
 
 // Material response is computed over the actual colour/coverage buffer before HUD.
 // Unlike an overlay texture, white paper holes only remove deposited pigment.
-export function materialPass(g,m,cache){
+export function materialPass(g,m,cache,dimensions=null){
+ const width=dimensions?.width??W,height=dimensions?.height??H;
  if(!['crayon','ink','riso'].includes(m))return;
- const img=g.getImageData(0,0,W,H),src=img.data,copy=m==='riso'?new Uint8ClampedArray(src):null;
- let key='grain-field',field=cache.get(key);
- if(!field){field=new Float32Array(W*H);let seed=348321;for(let i=0;i<field.length;i++){seed=(Math.imul(seed,1664525)+1013904223)|0;field[i]=(seed>>>0)/4294967295}cache.set(key,field)}
+ const img=g.getImageData(0,0,width,height),src=img.data,copy=m==='riso'?new Uint8ClampedArray(src):null;
+ let key=dimensions?`grain-field-${width}x${height}`:'grain-field',field=cache.get(key);
+ if(!field){field=new Float32Array(width*height);let seed=348321;for(let i=0;i<field.length;i++){seed=(Math.imul(seed,1664525)+1013904223)|0;field[i]=(seed>>>0)/4294967295}cache.set(key,field)}
  const paper=m==='ink'?[239,235,222]:m==='riso'?[247,241,218]:[246,240,220];
- for(let y=0;y<H;y++)for(let x=0;x<W;x++){
-  const i=(y*W+x)*4,n=field[y*W+x];let r=src[i],gg=src[i+1],b=src[i+2];
+ for(let y=0;y<height;y++)for(let x=0;x<width;x++){
+  const i=(y*width+x)*4,n=field[y*width+x];let r=src[i],gg=src[i+1],b=src[i+2];
   if(m==='crayon'){
    let dark=255-Math.min(r,gg,b),hatch=(x*.82+y*.59)%7;
    let hole=n>.76||hatch<.90;let amount=dark>43?(hole?.66:.05):.03;
@@ -151,8 +152,8 @@ export function materialPass(g,m,cache){
    if(!isRed){let lum=(r+gg+b)/3,pressure=clamp((238-lum)/215);let dry=n>.965&&pressure>.65;let density=pressure*(dry?.48:1)*(0.94+n*.10);for(let k=0;k<3;k++)src[i+k]=paper[k]*(1-density)+[31,34,31][k]*density+(n-.5)*3}
   }else{
    // Each plate samples a different offset and has its own rotated screen.
-   let jB=(Math.max(0,Math.min(H-1,y-1))*W+Math.max(0,Math.min(W-1,x+2)))*4;
-   let jM=(Math.max(0,Math.min(H-1,y+1))*W+Math.max(0,Math.min(W-1,x-2)))*4;
+   let jB=(Math.max(0,Math.min(height-1,y-1))*width+Math.max(0,Math.min(width-1,x+2)))*4;
+   let jM=(Math.max(0,Math.min(height-1,y+1))*width+Math.max(0,Math.min(width-1,x-2)))*4;
    const platesAt=j=>{
     let r=copy[j],g=copy[j+1],b=copy[j+2];
     if(r>210&&g>205&&b>185)return [.12,.025,.015];

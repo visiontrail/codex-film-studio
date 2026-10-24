@@ -25,3 +25,14 @@ test('indexed pixel output contains only palette colours and preserves alpha',()
  }
  const first=data.slice();indexPixelBuffer(g);assert.deepEqual(data,first);
 });
+
+test('material response covers a landscape buffer and isolates its grain cache',async()=>{
+ const {materialPass}=await import('./materials.mjs'),cache=new Map();
+ for(const [width,height]of [[96,54],[54,96]]){
+  const data=new Uint8ClampedArray(width*height*4);for(let i=0;i<data.length;i+=4)data.set([20,30,40,173],i);
+  let written=false;const g={getImageData(x,y,w,h){assert.equal(w,width);assert.equal(h,height);return {data}},putImageData(img,x,y){assert.equal(img.data.length,width*height*4);assert.equal(x,0);assert.equal(y,0);written=true}};
+  materialPass(g,'crayon',cache,{width,height});assert.ok(written);
+  for(const i of [0,(width-1)*4,(width*height-1)*4]){assert.notDeepEqual([...data.slice(i,i+3)],[20,30,40]);assert.equal(data[i+3],173)}
+ }
+ assert.notStrictEqual(cache.get('grain-field-96x54'),cache.get('grain-field-54x96'));
+});

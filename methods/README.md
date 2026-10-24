@@ -9,6 +9,7 @@ All visual styles and their completion status are in [the style catalog](../styl
 | [REVIEW.md](REVIEW.md) | Stills, motion, listening, encoded-file verification and revision evidence |
 | [Reference adaptation](reference-adaptation.md) | Transfer visual functions, motion grammar and aspect-ratio hierarchy |
 | [Media selection](media-selection.md) | Inspect used intervals, preserve source meaning and verify the primary medium |
+| [Aspect-ratio editions](aspect-ratio-editions.md) | Recompose actions and UI, isolate caches and verify each delivery shape |
 | [Revision and delivery](revision-delivery.md) | Re-edit, invalidate affected evidence and retain one authoritative delivery |
 | [Drawn-story continuity](drawn-story-continuity.md) | Music across cuts, contour-and-colour reveals, planted poses and contact review |
 | [Director guide](../DIRECTOR.md) | Story, visible actions, pacing and audience |

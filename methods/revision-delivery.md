@@ -3,6 +3,7 @@
 Apply this method to revisions, compilations, alternate aspect ratios and new
 editions. The current brief defines the deliverable count, runtime, format and
 content boundaries. Keep prior accepted versions and their evidence identifiable.
+For a new delivery shape, use [aspect-ratio editions](aspect-ratio-editions.md).
 
 ## Re-edit around the new viewing experience
 

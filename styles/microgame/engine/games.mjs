@@ -10,18 +10,20 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  const blueprintCompression=1-(s.object==='dough'?.25:.18)*smooth((a-.65)/.15);
  const pressEnd=m==='blueprint'?684-(s.object==='dough'?52:89.7)*blueprintCompression-17:s.object==='dough'?623:600;
  const pressY=lerp(m==='blueprint'?476:390,pressEnd,pressTravel);
- background(g,m,createCanvas,cache);
+ if(options.background)options.background(g,m);else background(g,m,createCanvas,cache);
  g.save();
  if(m==='terminal'){g.shadowColor='#ffad36';g.shadowBlur=3}
  const sceneZoom=m==='ink'&&['pour','stir'].includes(s.action)?1.8:m==='swiss'?1.15:1.0;
- if(m==='blueprint'){
+ if(options.camera){
+  const c=options.camera;g.translate(c.x,c.y);g.scale(c.scale,c.scale);g.translate(-c.focusX,-c.focusY);
+ }else if(m==='blueprint'){
   // Keep the operator in the separate inset and give the working mechanism
   // the dominant technical-detail view, with room for the dimension rail.
   g.translate(282,520);g.scale(1.8,1.8);g.translate(-355,-550);
  }else{g.translate(270,620);g.scale(sceneZoom,sceneZoom);g.translate(-270,-620)}
- let floor=720;
- if(m!=='terminal'&&m!=='pixel'&&m!=='blueprint'){g.fillStyle=p.ground;g.fillRect(0,floor,W,60);line(g,[[0,floor],[W,floor]],p.ink,m==='blueprint'?2:4)}
- if(m==='crayon'){for(let i=0;i<70;i++)line(g,[[i*10-40,775],[i*10+25,723]],p.paper,2);oval(g,454,300,35,35,p.object,p.ink,2);for(let i=0;i<12;i++){let an=i/12*6.28;line(g,[[454+Math.cos(an)*43,300+Math.sin(an)*43],[454+Math.cos(an)*57,300+Math.sin(an)*57]],p.object,2)}}
+ let floor=720;const ground=options.groundBounds||{left:0,right:W,depth:60};
+ if(m!=='terminal'&&m!=='pixel'&&m!=='blueprint'){g.fillStyle=p.ground;g.fillRect(ground.left,floor,ground.right-ground.left,ground.depth);line(g,[[ground.left,floor],[ground.right,floor]],p.ink,m==='blueprint'?2:4)}
+ if(m==='crayon'){for(let i=options.groundBounds?Math.floor(ground.left/10):0;i<(options.groundBounds?Math.ceil(ground.right/10):70);i++)line(g,[[i*10-40,775],[i*10+25,723]],p.paper,2);oval(g,454,300,35,35,p.object,p.ink,2);for(let i=0;i<12;i++){let an=i/12*6.28;line(g,[[454+Math.cos(an)*43,300+Math.sin(an)*43],[454+Math.cos(an)*57,300+Math.sin(an)*57]],p.object,2)}}
  if(m==='ink'){brush(g,[[35,748],[190,741],[350,746],[508,738]],7,27);rr(g,450,290,31,43,2,p.accent,null);text(g,'02',465,312,18,p.paper,null,0,'Titan One')}
  if(m==='woodcut'){for(let i=0;i<7;i++){let xx=i*90;path(g,[[xx-60,717],[xx+25,583],[xx+110,717]],p.ground,p.ink,1);for(let j=0;j<8;j++)line(g,[[xx-30+j*10,704],[xx+25+j*3,620+j*9]],p.paper,1)}}
  // A wide, legible play area. Early poses on 8 fps; camera/UI remain continuous.
@@ -142,21 +144,20 @@ export function drawGame(g,s,lt,film,createCanvas,cache,options={}){
  if(m!=='blueprint')hero(g,m,hx,hy,hs,{arm,lean,jump,target:target?localContact(target,hx,hy,hs,lean,jump):null,leftTarget:leftTarget?localContact(leftTarget,hx,hy,hs,lean,jump):null,face:!s.success&&done?'shock':'happy'},film.hero);
  if(done&&s.success&&m!=='blueprint'){for(let i=0;i<5;i++){let an=i*1.25;star(g,358+Math.cos(an)*95,535+Math.sin(an)*90,8+hash(i)*5,p.accent)}}
  g.restore();
- if(m==='swiss'){
+ if(m==='swiss'&&!options.noAnnotations){
   const title=s.command.replace(/[!.]+$/,'').toLowerCase()+'.';
   g.save();g.font='900 78px Arial';const width=g.measureText(title).width;
   g.font=`900 ${Math.min(78,78*470/Math.max(1,width))}px Arial`;g.fillStyle=p.ink;g.textAlign='left';g.textBaseline='alphabetic';g.fillText(title,35,282);g.restore();
   const rules={roll:'move the pin across.',cut:'hand to blade.',carry:'hold it steady.',jump:'clear the obstacle.',catch:'meet the falling object.'};
   text(g,`rule ${s.game} / ${rules[s.action]||'one clear move.'}`,35,315,16,p.ink,null,0,'Arial','left');
  }
- if(m==='blueprint'){
+ if(m==='blueprint'&&!options.noAnnotations){
   hero(g,m,57,919,.34,{arm:.4+arm},film.hero);
   blueprintNotes(g,s,p,pressY);
   if(done&&s.success)transformed(g,172,901,1,-.1,()=>{rr(g,-28,-18,56,36,1,null,p.accent,1.5);text(g,'OK',0,0,24,p.accent,null,0,'monospace')});
   if(s.action!=='align'){g.setLineDash([5,5]);line(g,[[282,275],[282,790]],p.ink,.65);g.setLineDash([])}
  }
- finish(g,m,createCanvas,cache);
- materialPass(g,m,cache);
+ if(options.finish)options.finish(g,m);else {finish(g,m,createCanvas,cache);materialPass(g,m,cache)}
  if(!options.noHud){
   fuse(g,options.timerProgress??u,dur*s.bpm/60,options.timerTime??lt);command(g,s.command,lt,[.73,.60,.45][s.round]);
  }

@@ -60,6 +60,27 @@ Check that the background has comparable visual density to the reference while
 the working silhouette, command, status panel and fuse remain readable.
 Do not use decorative arm motion as a substitute for performing the action.
 
+## Landscape editions
+
+`engine/widescreen.mjs` supplies an independent 16:9 layout vocabulary: uniform
+action cameras, a wide fuse and replay strip, viewport-sized material passes,
+technical annotations and a printed climax background. The portrait helpers
+remain the default. Story-specific stage furniture, shot layout and action
+selection belong to the production.
+
+`drawGame` accepts optional `camera`, `background`, `groundBounds`, `finish`,
+`noAnnotations` and `noHud` fields. The camera moves the action and its contacts
+together; callbacks place the background and annotations in viewport coordinates.
+The caller supplies a surface at the intended material resolution, runs the
+material pass over that whole surface, then places the HUD. Pixel scenes still
+use the indexed small buffer before nearest-neighbour enlargement.
+
+For each delivery shape, recompose the show stage and embedded screen, return
+and trigger zooms, reel windows, montage cards and climax panels. Keep the source
+aspect ratio of inserted scenes through every transition. Check the complete
+host silhouette and route blueprint leaders outside their labels. Follow the
+shared [aspect-ratio method](../../methods/aspect-ratio-editions.md).
+
 ## Timing and sound
 
 Use an integer-frame timeline shared by shots, commands, actions, score, voice
