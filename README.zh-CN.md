@@ -112,21 +112,21 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle">预览待补充</td>
+<td width="38%" valign="middle"><a href="styles/caption-news/showcase/index.html?lang=zh"><img src="styles/caption-news/showcase/preview.svg" alt="字幕新闻 — 风格示意" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>09 / <code>caption-news</code></sub>
 <h3>字幕新闻</h3>
 <sub>Caption News</sub>
 <p>大字号字幕、黄色重点、账本式图表与有节奏的入场动效。</p>
-<p><b>创作起步包</b> · 尚无样片</p>
-<sub><a href="styles/caption-news/STYLE.md">风格说明</a> · <a href="styles/caption-news/prompt.txt">提示词</a> · <a href="styles/caption-news/starter">创作工程</a></sub>
+<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
+<sub><a href="styles/caption-news/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/caption-news/STYLE.md">风格说明</a> · <a href="styles/caption-news/prompt.txt">提示词</a> · <a href="styles/caption-news/starter">创作工程</a></sub>
 </td>
 </tr>
 </table>
 
 <!-- style-atlas:end -->
 
-<sub>六种风格均使用实际生成影片的截图；中文图版翻译画面外的标题与图注，影片画面保留原语言。
+<sub>影片截图与原创风格示意分别标注；截图图版翻译画面外的标题与图注，影片画面保留原语言。
 <a href="docs/readme/README.md#frame-sources">截图来源与署名</a>。
 本地影片与审阅页通过<a href="#打开本地工作室">本地工作室</a>访问。</sub>
 
@@ -241,7 +241,7 @@ Git 包含源码、字体和乐器采样；影片、配音 WAV 与时间数据�
 <details>
 <summary><b>部署公开展示页</b></summary>
 
-[公开风格片库](https://visiontrail.github.io/codex-film-studio/?lang=zh)集中展示六种视觉
+[公开风格片库](https://visiontrail.github.io/codex-film-studio/?lang=zh)集中展示全部已注册的视觉
 风格，支持搜索、分类和中英文详情。
 [白板播放器](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh)
 提供两个已发布版本，支持字幕与章节。

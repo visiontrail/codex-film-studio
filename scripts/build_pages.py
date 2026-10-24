@@ -31,6 +31,10 @@ def build_site(demo_root, output, revision=""):
     ])
     catalog = json.loads((ROOT / "styles.json").read_text())
     for style in catalog["styles"]:
+        # A generic style landing page can ship independently of its local film.
+        # Only these explicitly registered sources enter the public artifact.
+        if landing := style.get("landing"):
+            files.extend((ROOT / name, name) for name in [landing["page"], *landing["assets"]])
         for key in ["preview", "preview_zh", "poster"]:
             if style.get(key):
                 files.append((ROOT / style[key], style[key]))
@@ -66,6 +70,14 @@ def build_site(demo_root, output, revision=""):
         for asset in ["catalog/studio.css", "catalog/studio.mjs", "catalog/hero.svg", "catalog/mark.svg"]:
             html = html.replace(f'"{asset}"', f'"{asset}?{query}"')
         homepage.write_text(html, encoding="utf-8")
+        for style in catalog["styles"]:
+            if landing := style.get("landing"):
+                page = output / landing["page"]
+                html = page.read_text(encoding="utf-8")
+                for asset in landing["assets"]:
+                    if Path(asset).parent == Path(landing["page"]).parent:
+                        html = html.replace(f'"{Path(asset).name}"', f'"{Path(asset).name}?{query}"')
+                page.write_text(html, encoding="utf-8")
     (output / ".nojekyll").touch()
     (output / "styles.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
     (output / "docs/readme").mkdir(parents=True, exist_ok=True)

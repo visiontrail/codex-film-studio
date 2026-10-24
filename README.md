@@ -112,22 +112,22 @@ visual rules, or take the prompt and project files into your own production.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle">Preview to come</td>
+<td width="38%" valign="middle"><a href="styles/caption-news/showcase/index.html?lang=en"><img src="styles/caption-news/showcase/preview.svg" alt="Caption News — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>09 / <code>caption-news</code></sub>
 <h3>Caption News</h3>
 <sub>字幕新闻</sub>
 <p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
-<p><b>Authoring starter</b> · No sample yet</p>
-<sub><a href="styles/caption-news/STYLE.md">Style guide</a> · <a href="styles/caption-news/prompt.txt">Prompt</a> · <a href="styles/caption-news/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="styles/caption-news/showcase/index.html?lang=en">Style page</a> · <a href="styles/caption-news/STYLE.md">Style guide</a> · <a href="styles/caption-news/prompt.txt">Prompt</a> · <a href="styles/caption-news/starter">Project files</a></sub>
 </td>
 </tr>
 </table>
 
 <!-- style-atlas:end -->
 
-<sub>Available film previews are actual frames from generated films, with localized labels outside
-the original picture. Film text retains its original language.
+<sub>Film frames and original style studies are labelled separately. Film previews retain
+the original picture and language, with localized labels outside the image.
 <a href="docs/readme/README.md#frame-sources">Frame sources and credits</a>.
 Local films and review pages open through the <a href="#open-the-local-studio">local studio</a>.</sub>
 
@@ -249,7 +249,7 @@ renders a short picture preview. The speech client requires WSL on Windows.
 <summary><b>Host the published showcase</b></summary>
 
 The [public style library](https://visiontrail.github.io/codex-film-studio/?lang=en)
-brings all six visual styles together with search, filters and bilingual details.
+brings all registered visual styles together with search, filters and bilingual details.
 The [whiteboard player](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en)
 offers both released editions, with subtitles and chapters.
 

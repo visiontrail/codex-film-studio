@@ -29,12 +29,14 @@ def render_gallery(catalog, language='en', prefix=''):
         description = entry.get('description_zh', entry['description']) if zh else entry['description']
         state = catalog['statuses'][entry['status']]['name_zh' if zh else 'name']
         guide = escape(prefix + entry['guide'], quote=True)
+        landing = entry.get('landing', {}).get('page')
+        preview_target = escape(prefix + landing + '?lang=' + language, quote=True) if landing else guide
         preview = entry.get('preview_zh') if zh else entry.get('preview')
         preview = preview or entry.get('preview', entry.get('poster'))
         if preview:
             kind = entry.get('preview_kind', 'schematic')
             label = ('风格示意' if zh else 'style sketch') if kind == 'schematic' else ('影片截图' if zh else 'film frame')
-            visual = (f'<a href="{guide}"><img src="{escape(prefix + preview, quote=True)}" '
+            visual = (f'<a href="{preview_target}"><img src="{escape(prefix + preview, quote=True)}" '
                       f'alt="{escape(name)} — {label}" width="320"></a>')
         else:
             visual = '预览待补充' if zh else 'Preview to come'
@@ -43,6 +45,8 @@ def render_gallery(catalog, language='en', prefix=''):
             (entry['prompt'], '提示词' if zh else 'Prompt'),
             (entry['template'], '创作工程' if zh else 'Project files'),
         ]
+        if landing:
+            actions.insert(0, (landing + '?lang=' + language, '独立风格页' if zh else 'Style page'))
         links = ' · '.join(f'<a href="{escape(prefix + path, quote=True)}">{label}</a>' for path, label in actions)
         local_pages = [p for p in entry.get('showcases', []) if p['access'] == 'local']
         if entry['capabilities']['published_demo']:
@@ -88,8 +92,8 @@ def render(catalog):
         '已有本地影片网页、公开样片与新影片验收分别记录。', '',
         render_summary(catalog, 'en'), '',
         '## Visual index / 风格一览', '',
-        'Available film previews are decoded frames, with a localized label',
-        'outside the original image. 已有影片预览采用实际截图；缺少预览的风格保留占位说明。',
+        'Film frames and original style studies are labelled separately.',
+        '影片截图与原创风格示意分别标注；缺少预览的风格保留占位说明。',
         'A displayed frame does not change package completion or full-film publication.', '',
         render_gallery(catalog, prefix='../'), '',
         '## Capabilities / 能力与网页', '',
@@ -99,7 +103,10 @@ def render(catalog):
     for entry in catalog['styles']:
         relative = entry.get('readme', entry['guide']).removeprefix('styles/')
         state = catalog['statuses'][entry['status']]
-        pages = ' · '.join(f"[{p['title']}]({p['page'].removeprefix('styles/')})" for p in entry.get('showcases', [])) or '—'
+        page_links = [f"[{p['title']}]({p['page'].removeprefix('styles/')}{'#' + p['anchor'] if p.get('anchor') else ''})" for p in entry.get('showcases', [])]
+        if entry.get('landing'):
+            page_links.insert(0, f"[Style page / 独立风格页]({entry['landing']['page'].removeprefix('styles/')})")
+        pages = ' · '.join(page_links) or '—'
         renderer = 'Included / 已有' if entry['capabilities']['scene_renderer'] else 'Author per project / 需按选题编写'
         lines.append(f"| [{entry['name_zh']} / {entry['name']}]({relative}) | {state['name_zh']} (`{entry['status']}`) | {renderer} | {pages} |")
     lines += ['', '## What is complete / 已完成什么', '']

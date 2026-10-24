@@ -32,6 +32,9 @@ class PortalTests(unittest.TestCase):
             availability = json.loads((output / 'catalog-availability.json').read_text())
             self.assertEqual(availability['mode'], 'public')
             for style in public_catalog['styles']:
+                if landing := style.get('landing'):
+                    for name in [landing['page'], *landing['assets']]:
+                        self.assertTrue((output / name).is_file(), name)
                 for key in ['preview', 'preview_zh', 'poster']:
                     if style.get(key):
                         self.assertTrue((output / style[key]).is_file())
@@ -40,7 +43,14 @@ class PortalTests(unittest.TestCase):
                         self.assertNotIn(private_key, page)
                     self.assertEqual(availability['pages'][page['id']], page['access'] == 'release')
                     if page['access'] == 'local':
-                        self.assertFalse((output / page['page']).exists())
+                        # A generic style page may ship without its local media.
+                        self.assertEqual((output / page['page']).exists(),
+                                         page['page'] == style.get('landing', {}).get('page'))
+            caption = output / 'styles/caption-news/showcase/index.html'
+            self.assertIn('showcase.mjs?v=portal-test', caption.read_text())
+            self.assertFalse((output / '_projects').exists())
+            self.assertFalse((output / 'productions').exists())
+            self.assertFalse(list(output.rglob('combined-delivery-manifest.json')))
             for frame in json.loads((output / 'docs/readme/frames.json').read_text())['frames']:
                 self.assertTrue((output / frame['image']).is_file())
                 self.assertEqual(set(frame), {'style', 'image'})

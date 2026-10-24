@@ -29,14 +29,14 @@ const copy = {
     copy:'Copy', copied:'Command copied', copyFailed:'Select and copy the command below.', footerTagline:'A visual language for your next film.',
     source:'Source & documentation ↗', previewCredits:'Preview credits ↗', inspiration:'With inspiration from', noResults:'No styles match. Try another name or category.',
     sketch:'STYLE STUDY', frame:'FILM FRAME', previewMissing:'Preview to come', available:'Available locally', localOnly:'Local project',
-    publicSample:'Watch the sample', noFilm:'No player yet', localPages:'Local showcase', guide:'Style guide', prompt:'Style prompt', files:'Project files',
+    publicSample:'Watch the sample', noFilm:'No player yet', localPages:'Local showcase', stylePage:'Explore the style ↗', guide:'Style guide', prompt:'Style prompt', files:'Project files',
     openPages:'Films & showcase pages', startStyle:'Create in this style', localHelp:'These pages read media from retained production projects. To open them on your machine, run:',
     missingProject:'The retained project is unavailable on this machine.', noShowcase:'A film page is not available for this style yet. Explore the guide and tools to create your own.',
     loadFailed:'The collection could not be loaded. Reload the page or open the style guide.',
     publicNote:'Local films and review pages open from the studio on your machine. Run from the repository:',
     localNote:'Local showcases use retained project files. Availability is checked on this machine. A preview frame does not mean the complete film is published.',
     previous:'Previous showcases', next:'Next showcases', close:'Close style details', copyCommand:'Copy project command', filterLabel:'Filter styles',
-    whiteboard:'Short and long published samples', 'crayon-film':'Leo the Farmer', 'crayon-comparison':'Frame comparison',
+    whiteboard:'Short and long published samples', 'crayon-film':'Leo the Farmer', 'crayon-comparison':'Frame comparison', 'caption-news-film':'Combined editorial film',
     'midcentury-short':'Short film', 'midcentury-long':'Long film', 'midcentury-motion':'Long-film motion review',
     'satellite-film':'Singapore film', 'satellite-composition':'Live composition', 'satellite-comparison':'Frame comparison', 'scifi-review':'The House Gets Coffee',
   },
@@ -62,14 +62,14 @@ const copy = {
     copy:'复制', copied:'命令已复制', copyFailed:'请选择下方命令并复制。', footerTagline:'为下一个故事，找到自己的视觉语言。',
     source:'源码与文档 ↗', previewCredits:'预览素材署名 ↗', inspiration:'灵感参考', noResults:'没有匹配的风格，试试其他名称或分类。',
     sketch:'风格示意', frame:'样片剧照', previewMissing:'预览待补充', available:'本机可用', localOnly:'本地项目',
-    publicSample:'可观看样片', noFilm:'暂无播放器', localPages:'本地展示页', guide:'风格说明', prompt:'风格提示词', files:'创作工程',
+    publicSample:'可观看样片', noFilm:'暂无播放器', localPages:'本地展示页', stylePage:'独立风格页 ↗', guide:'风格说明', prompt:'风格提示词', files:'创作工程',
     openPages:'影片与展示页面', startStyle:'用这个风格创作', localHelp:'这些页面从保留的制作项目中读取影片素材。请在本机运行：',
     missingProject:'本机暂未找到保留的项目文件。', noShowcase:'这个风格尚未提供可打开的影片页面，可以从说明和工具开始创作。',
     loadFailed:'风格目录暂时无法加载，请刷新页面，或前往风格说明。',
     publicNote:'本地影片与审阅页面需要在自己的电脑中打开。请在仓库根目录运行：',
     localNote:'本地展示读取保留项目的文件，可用状态根据本机文件检查。展示剧照不代表完整影片已发布。',
     previous:'上一组展示', next:'下一组展示', close:'关闭风格详情', copyCommand:'复制项目创建命令', filterLabel:'筛选风格',
-    whiteboard:'短版与长版发布样片', 'crayon-film':'农夫 Leo', 'crayon-comparison':'逐帧对照',
+    whiteboard:'短版与长版发布样片', 'crayon-film':'农夫 Leo', 'crayon-comparison':'逐帧对照', 'caption-news-film':'字幕新闻合并版影片',
     'midcentury-short':'短片', 'midcentury-long':'长片', 'midcentury-motion':'长片运动审阅',
     'satellite-film':'新加坡影片', 'satellite-composition':'实时构图', 'satellite-comparison':'逐帧对照', 'scifi-review':'The House Gets Coffee',
   },
@@ -79,6 +79,7 @@ const copy = {
 const categories = {
   whiteboard:['drawn'], 'art-collage':['material'], 'crayon-book':['drawn','material'],
   'midcentury-cartoon':['animation','drawn'], 'satellite-briefing':['geography'], 'scifi-sitcom':['animation'],
+  'caption-news':['animation','material'],
 };
 const state = { catalog:null, frames:{}, availability:{mode:'public', pages:{}}, language:'en', filter:'all', query:'', detail:null };
 const $ = selector => document.querySelector(selector);
@@ -94,6 +95,7 @@ function pageURL(page, edition) {
   const url = usePublicSample ? new URL(SITE) : new URL(page.page, new URL('./',location.href));
   url.searchParams.set('lang', state.language);
   if (edition) url.searchParams.set('edition', edition);
+  if (page.anchor) url.hash = page.anchor;
   return url.href;
 }
 function preview(entry, eager = false) {
@@ -133,7 +135,7 @@ function renderStyles() {
   $('#style-grid').innerHTML = entries.map((entry,i) => {
     const pages = entry.showcases ?? [], hasLocal = pages.some(p => p.access === 'local');
     const filmLabel = entry.capabilities.published_demo ? 'publicSample' : hasLocal ? 'localPages' : 'noFilm';
-    return `<article class="style-card" style="--delay:${i*.035}s"><button type="button" class="card-open" data-style="${escape(entry.id)}" aria-label="${escape(localized(entry,'name'))}"><div class="card-art">${preview(entry)}<span class="card-index">${String(state.catalog.styles.indexOf(entry)+1).padStart(2,'0')}</span><span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-heading"><h3>${escape(localized(entry,'name'))}</h3><span aria-hidden="true">↗</span></div><p class="card-description">${escape(localized(entry,'description'))}</p></button><div class="card-meta"><span>${escape(localized(state.catalog.statuses[entry.status],'name'))}</span><span class="${entry.capabilities.published_demo ? 'published' : ''}">${t(filmLabel)}</span></div></article>`;
+    return `<article class="style-card" style="--delay:${i*.035}s"><button type="button" class="card-open" data-style="${escape(entry.id)}" aria-label="${escape(localized(entry,'name'))}"><div class="card-art">${preview(entry)}<span class="card-index">${String(state.catalog.styles.indexOf(entry)+1).padStart(2,'0')}</span><span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-heading"><h3>${escape(localized(entry,'name'))}</h3><span aria-hidden="true">↗</span></div><p class="card-description">${escape(localized(entry,'description'))}</p></button><div class="card-meta"><span>${escape(localized(state.catalog.statuses[entry.status],'name'))}</span><span class="${entry.capabilities.published_demo ? 'published' : ''}">${t(filmLabel)}</span>${entry.landing ? `<a href="${escape(pageURL(entry.landing))}">${t('stylePage')}</a>` : ''}</div></article>`;
   }).join('') || `<p class="empty-state">${t('noResults')}</p>`;
 }
 function renderScreening() {
@@ -154,10 +156,11 @@ function renderDetail() {
   const entry = state.catalog.styles.find(s => s.id === state.detail);
   if (!entry) return;
   const pages = entry.showcases ?? [], missing = pages.some(p => !isAvailable(p));
-  const links = pages.map(page => isAvailable(page)
+  const landingLink = entry.landing ? `<a href="${escape(pageURL(entry.landing))}">${t('stylePage')}</a>` : '';
+  const links = landingLink + pages.map(page => isAvailable(page)
     ? `<a href="${escape(pageURL(page))}">${escape(pageTitle(page))}<span aria-hidden="true">↗</span></a>`
     : `<button type="button" disabled>${escape(pageTitle(page))} · ${t('localOnly')}</button>`).join('');
-  $('#style-detail').innerHTML = `<div class="detail-art">${preview(entry,true)}<span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span></div><div class="detail-copy"><p class="eyebrow">${escape(entry.id.toUpperCase().replaceAll('-',' / '))}</p><h2 id="detail-title">${escape(localized(entry,'name'))}</h2><p class="detail-description">${escape(localized(entry,'description'))}</p><div class="detail-status"><strong>${escape(localized(state.catalog.statuses[entry.status],'name'))}</strong>${escape(localized(entry,'status_note'))}</div><h3>${t('openPages')}</h3><div class="detail-pages">${links}</div>${!pages.length ? `<p class="local-help">${t('noShowcase')}</p>` : ''}${missing ? `<p class="local-help">${state.availability.mode === 'local' ? t('missingProject') : t('localHelp')}</p><div class="command"><code>python3 scripts/serve_styles.py --port 8249</code><button type="button" data-copy="python3 scripts/serve_styles.py --port 8249">${t('copy')}</button></div>` : ''}<div class="detail-links"><a href="${repoLink(entry.guide)}" target="_blank" rel="noopener noreferrer">${t('guide')} ↗</a><a href="${repoLink(entry.prompt)}" target="_blank" rel="noopener noreferrer">${t('prompt')} ↗</a><a href="${REPO}/tree/main/${entry.template}" target="_blank" rel="noopener noreferrer">${t('files')} ↗</a></div><h3>${t('startStyle')}</h3><div class="command"><code>${escape(commandFor(entry.id))}</code><button type="button" data-copy="${escape(commandFor(entry.id))}">${t('copy')}</button></div></div>`;
+  $('#style-detail').innerHTML = `<div class="detail-art" data-preview-kind="${escape(entry.preview_kind ?? 'schematic')}">${preview(entry,true)}<span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span></div><div class="detail-copy"><p class="eyebrow">${escape(entry.id.toUpperCase().replaceAll('-',' / '))}</p><h2 id="detail-title">${escape(localized(entry,'name'))}</h2><p class="detail-description">${escape(localized(entry,'description'))}</p><div class="detail-status"><strong>${escape(localized(state.catalog.statuses[entry.status],'name'))}</strong>${escape(localized(entry,'status_note'))}</div><h3>${t('openPages')}</h3><div class="detail-pages">${links}</div>${!pages.length ? `<p class="local-help">${t('noShowcase')}</p>` : ''}${missing ? `<p class="local-help">${state.availability.mode === 'local' ? t('missingProject') : t('localHelp')}</p><div class="command"><code>python3 scripts/serve_styles.py --port 8249</code><button type="button" data-copy="python3 scripts/serve_styles.py --port 8249">${t('copy')}</button></div>` : ''}<div class="detail-links"><a href="${repoLink(entry.guide)}" target="_blank" rel="noopener noreferrer">${t('guide')} ↗</a><a href="${repoLink(entry.prompt)}" target="_blank" rel="noopener noreferrer">${t('prompt')} ↗</a><a href="${REPO}/tree/main/${entry.template}" target="_blank" rel="noopener noreferrer">${t('files')} ↗</a></div><h3>${t('startStyle')}</h3><div class="command"><code>${escape(commandFor(entry.id))}</code><button type="button" data-copy="${escape(commandFor(entry.id))}">${t('copy')}</button></div></div>`;
 }
 function openStyle(id) {
   state.detail = id; renderDetail();

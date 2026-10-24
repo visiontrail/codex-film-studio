@@ -18,8 +18,10 @@ These project READMEs were reviewed for information architecture:
 | [D2](https://github.com/d2lang/d2) | Put concrete examples near the introduction and layer detailed documentation |
 | [Manim](https://github.com/3b1b/manim) | Connect a minimal working command to examples and deeper usage |
 
-The cover layout and copy are original. The thumbnail images now come from
-this project's generated films, as requested; no reference-film frames are used.
+The cover layout and copy are original. Film thumbnails come from this project's
+generated films; no reference-film frames are used. Caption News uses an original,
+subject-independent SVG typography study in `styles/caption-news/showcase/preview.svg`,
+labelled `schematic` in the registry. It is not a decoded film frame.
 
 ## Frame sources
 

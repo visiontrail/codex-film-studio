@@ -307,7 +307,34 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": []
+      "showcases": [
+        {
+          "id": "caption-news-film",
+          "title": "Combined editorial film",
+          "page": "styles/caption-news/showcase/index.html",
+          "anchor": "screening",
+          "access": "local",
+          "project": "productions/caption-news-week-2026-10-23",
+          "source_page": "media/caption-news-combined.mp4"
+        }
+      ],
+      "preview": "styles/caption-news/showcase/preview.svg",
+      "preview_zh": "styles/caption-news/showcase/preview.svg",
+      "preview_kind": "schematic",
+      "landing": {
+        "page": "styles/caption-news/showcase/index.html",
+        "assets": [
+          "styles/caption-news/showcase/showcase.css",
+          "styles/caption-news/showcase/showcase.mjs",
+          "styles/caption-news/showcase/preview.svg",
+          "styles/caption-news/starter/lib/caption.mjs",
+          "styles/caption-news/STYLE.md",
+          "styles/caption-news/prompt.txt",
+          "methods/reference-adaptation.md",
+          "methods/media-selection.md",
+          "methods/revision-delivery.md"
+        ]
+      }
     }
   ]
 }

@@ -33,6 +33,14 @@ Style details show all available showcase links, guides, prompts and the project
 creation command. Readiness describes the reusable package. A displayed frame,
 a retained local film and a published sample remain separate states.
 
+Caption News also has a standalone bilingual style page at
+`styles/caption-news/showcase/index.html`, linked from both README galleries and
+the collection. Its original typography study works without a production folder.
+The local screening room reads the current combined delivery manifest, film,
+poster and chapters from the retained project; none of that content is embedded
+in the reusable page or starter. The `landing.page` and `landing.assets` fields
+explicitly allow the generic page and its dependencies into the Pages build.
+
 ## Local style catalog
 
 From the repository root:
@@ -47,7 +55,8 @@ project. Missing projects have disabled showcase links and setup instructions.
 
 Mid-century Cartoon has short/long players and motion review. Satellite Briefing
 has a player, live composition and frame comparison. Sci-Fi Sitcom has its review
-player, and Crayon Book has its player and frame comparison. Their HTML lives in
+player, Crayon Book has its player and frame comparison, and Caption News has a
+chapter-enabled screening room in its independent style page. Their HTML lives in
 `styles/<id>/showcase/`; whiteboard retains `styles/whiteboard/studio/`.
 
 Each local `showcases` entry records a repository-relative `project` and original
@@ -80,9 +89,11 @@ use `--output /path/to/a/new-folder` for another preview build.
 
 The builder copies an explicit list: the homepage, catalog, preview artwork and
 existing whiteboard player with its checksum-verified `v0.1.0` sample assets.
+It also includes explicitly registered generic style landing pages and assets.
 It omits local production paths from the public catalog. Local showcases remain
 discoverable in style details, with instructions to open them locally. Their
-films, review pages, working audio and provider settings are not packaged.
+films, production-specific review pages, working audio and provider settings are
+not packaged. A generic landing page can be included while its film remains local.
 `build-info.json` retains the source revision and released video hashes.
 
 Assets use relative paths, including under a project URL such as

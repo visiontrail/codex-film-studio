@@ -10,8 +10,8 @@ package completion and showcase availability. Shared workflows live in `methods/
 
 ## Visual index / 风格一览
 
-Available film previews are decoded frames, with a localized label
-outside the original image. 已有影片预览采用实际截图；缺少预览的风格保留占位说明。
+Film frames and original style studies are labelled separately.
+影片截图与原创风格示意分别标注；缺少预览的风格保留占位说明。
 A displayed frame does not change package completion or full-film publication.
 
 <table>
@@ -104,14 +104,14 @@ A displayed frame does not change package completion or full-film publication.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle">Preview to come</td>
+<td width="38%" valign="middle"><a href="../styles/caption-news/showcase/index.html?lang=en"><img src="../styles/caption-news/showcase/preview.svg" alt="Caption News — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>09 / <code>caption-news</code></sub>
 <h3>Caption News</h3>
 <sub>字幕新闻</sub>
 <p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
-<p><b>Authoring starter</b> · No sample yet</p>
-<sub><a href="../styles/caption-news/STYLE.md">Style guide</a> · <a href="../styles/caption-news/prompt.txt">Prompt</a> · <a href="../styles/caption-news/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<sub><a href="../styles/caption-news/showcase/index.html?lang=en">Style page</a> · <a href="../styles/caption-news/STYLE.md">Style guide</a> · <a href="../styles/caption-news/prompt.txt">Prompt</a> · <a href="../styles/caption-news/starter">Project files</a></sub>
 </td>
 </tr>
 </table>
@@ -128,7 +128,7 @@ A displayed frame does not change package completion or full-film publication.
 | [科幻情景喜剧卡通 / Sci-Fi Sitcom Toon](scifi-sitcom/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [The House Gets Coffee](scifi-sitcom/showcase/index.html) |
 | [极速微游戏 / Microgame Frenzy](microgame/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
 | [装饰艺术 / Art Deco](art-deco/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
-| [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | — |
+| [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page / 独立风格页](caption-news/showcase/index.html) · [Combined editorial film](caption-news/showcase/index.html#screening) |
 
 ## What is complete / 已完成什么
 
