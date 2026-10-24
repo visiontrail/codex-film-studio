@@ -157,19 +157,53 @@ export function radialFanOpening(progress,{cut=.328,cycles=11.6625,depth=.28,pha
  const pulse=1-depth*.5*(1-Math.cos(tau*cycles*(progress-cut)+phase));
  return mix(pulse,1,clamp(settle));
 }
+// Polar arrival curves calibrated from visible pivots, independent of story content.
+// The ring turns clockwise, adjacent groups cross, then two groups travel inward.
+const radialArrivalKeys=[0,2,4,6,8,11,14,16,17,18,20,24,28,32];
+const radialClockwise=[33.3,33.1,24,16.7,6,-15.6,-46.8,-73.2,-85.5,-96.5,-114.6,-137.4,-147.3,-150];
+const radialCounter=[78.3,77.9,78.5,81.7,87.8,104.1,131.4,157.1,169.6,208.3,188.7,164,153,150];
+const radialNearAngle=[-56.7,-57.4,-56.8,-54.3,-49,-34.1,-9.2,14.1,25.4,35.9,53.1,76,87.1,90];
+const radialFarAngle=[-101.7,-105.6,-111,-117.6,-127.3,-147.5,-176,-205.8,-211.4,-221.3,-237.3,-258.3,-267.3,-270];
+const radialRingRadius=[328,328,330,332,334,340,349,356,360,363,369,376,379,380];
+const radialNearRadius=[328,325,321,315,305,282,245,213,198,184,161,132,119,116];
+const radialFarRadius=[328,327,326,324,322,314,303,287,285,283,279,266,261,260];
+function radialCurve(values,q){
+ if(q<=0)return values[0];
+ for(let i=1;i<radialArrivalKeys.length;i++)if(q<=radialArrivalKeys[i]){
+  const p=(q-radialArrivalKeys[i-1])/(radialArrivalKeys[i]-radialArrivalKeys[i-1]);
+  return mix(values[i-1],values[i],p);
+ }
+ return values.at(-1);
+}
 export function radialBeat(t,p,index,{bpm=116,count=8}={}){
- const tt=Math.floor(t*12)/12,beat=tt*bpm/60,phase=t>0?p*tt/t:0,step=tau/count;
+ const tt=Math.floor(t*12)/12,phase=t>0?p*tt/t:0,step=360/count;
  const openingOrder=(index*(count===12?5:3))%count,delay=.01+openingOrder/Math.max(1,count-1)*.22;
  const bloom=index===0?1:mix(.2,1,ease((phase-delay)/.075));
- const opening=bloom*radialFanOpening(p,{settle:index<2?ease((p-.72)/.20):0});
- const pairing=ease((p-.48)/.14)*(1-ease((p-.86)/.12));
- const resolve=ease((p-.72)/.20),arrival=ease((p-.72-(index%2)*.015)/.18);
- const orbit=index*step+t*.13+(index%2?1:-1)*.18*pairing*Math.sin(beat*Math.PI*.5);
- const grouped=index<2?Math.PI/2:Math.PI/2+(index-.5)*step+(index%2?1:-1)*step/6;
- return {opening,
-  angle:mix(orbit,grouped,arrival),
-  radius:mix(3.6+.22*Math.sin(beat*Math.PI*.5)*pairing,index===0?1.1:index===1?2.5:3.6,arrival),
-  resolve};
+ const q=145*p-100,resolve=ease(q/32);
+ const opening=bloom*radialFanOpening(p,{settle:index<2?resolve:0});
+ const seeds=[count-2,count-3,...Array.from({length:count-3},(_,i)=>i),count-1];
+ const seed=seeds[index],early=33.3-1.073622*q+seed*step;
+ let angle=early,radius=328;
+ if(q>=0){
+  if(index<2){
+   const values=index===0?radialNearAngle:radialFarAngle;
+   const originalStart=index===0?-56.7:-101.7;
+   const adaptedStart=33.3+seed*step-360;
+   angle=radialCurve(values,q)+(adaptedStart-originalStart)*(1-resolve);
+   radius=radialCurve(index===0?radialNearRadius:radialFarRadius,q);
+  }else{
+   angle=seed%2===0?radialCurve(radialClockwise,q)+seed*step:
+    radialCurve(radialCounter,q)+(step-45)+(seed-1)*step-(seed===count-1?2*step*clamp(q-17):0);
+   radius=radialCurve(radialRingRadius,q);
+   if(count!==8){
+    const target=90+(index-.5)*step+(index%2?1:-1)*step/6;
+    const arrival=ease((q-17)/15),endAngle=seed%2===0?-150+seed*step:150+(step-45)+(seed-1)*step-(seed===count-1?2*step:0);
+    const adjusted=target+360*Math.round((endAngle-target)/360);
+    angle+=arrival*(adjusted-endAngle);
+   }
+  }
+ }
+ return {opening,angle:angle*Math.PI/180,radius:radius*3.6/380,resolve};
 }
 export function radialFloor(g,P,{radius=5.7,rotation=0}={}){
  const ring=(r)=>Array.from({length:97},(_,i)=>P(Math.cos(i*tau/96)*r,0,Math.sin(i*tau/96)*r));
