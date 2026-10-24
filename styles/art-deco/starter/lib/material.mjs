@@ -35,6 +35,24 @@ export function portraitLighting(g,t,{resolved=false,origin=[920,-120]}={}){
  }
  g.restore();
 }
+// Portrait stage lighting preserves the high lamp row and long cool cones of the source.
+export function stageLighting(g,t,{starsVisible=true}={}){
+ const ground=g.createLinearGradient(0,0,0,1920);
+ ground.addColorStop(0,'#080b10');ground.addColorStop(.55,'#0c151b');ground.addColorStop(1,'#142824');
+ g.fillStyle=ground;g.fillRect(0,0,1080,1920);
+ if(starsVisible)for(let i=0;i<55;i++){
+  const x=(i*337.217+45)%1080,y=(i*179.523+40)%1520;
+  const alpha=.32+.18*(1+Math.sin(t*.3+i))/2;
+  if(i%5===0){glow(g,x,y,13,'243,230,188',alpha*.16);sparkle(g,x,y,4+i%3,alpha)}
+  else{g.save();g.globalAlpha*=alpha;ellipse(g,x,y,1.2,1.2,'#d7cfb5',false);g.restore()}
+ }
+ for(let i=0;i<9;i++){
+  const x=80+i*115,y=125;
+  lightBeam(g,[x,y],[x+Math.sin(t*.27+i)*240,2180],32,270,{color:'191,208,199',strength:.105});
+  glow(g,x,y,90,'176,156,103',.20);
+  g.save();g.globalAlpha*=.82;ellipse(g,x,y,17,17,'#968e70',false);g.restore();
+ }
+}
 export function bulb(g,x,y,on=1,r=4){
  if(on<=0){ellipse(g,x,y,r,r,'#17120a');return;}
  const energy=Math.min(1.45,on);
