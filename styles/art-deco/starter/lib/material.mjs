@@ -87,7 +87,7 @@ export function fanPair(g,r,opening,{tilt=1,fixture=false,layer='all'}={}){
  fan(g,0,-r*.12*reveal,r,opening,0,C.ivory,{folded:true,pivot:false});
  }
  if(layer==='surfaces')return;
- fan(g,0,r*.18*reveal,r*.36,opening,Math.PI,C.ivory,{folded:true,pivot:false});
+ g.save();g.globalAlpha*=reveal;fan(g,0,r*.18*reveal,r*.36,opening,Math.PI,C.ivory,{folded:true,pivot:false});g.restore();
  g.save();g.globalAlpha*=reveal;
  if(!fixture)ellipse(g,0,-r*.035,r*.115,r*.12,'#e4bd91',false);
  const cap=g.createRadialGradient(-r*.028,-r*.04,r*.01,0,0,r*.095);
@@ -99,22 +99,23 @@ export function fanPair(g,r,opening,{tilt=1,fixture=false,layer='all'}={}){
  g.restore();
 }
 // A shallow stage figure beneath a raised pair; the plan-view cap takes over on tilt.
-export function fanFigure(g,x,y,unit,tilt,rotation){
- const h=(1-tilt)*unit*4,anchor=[x,y-h*.73],alpha=1-ease((tilt-.55)/.30);
+export function fanFigure(g,x,y,unit,tilt,rotation,opening=1){
+ const h=(1-tilt)*unit*4,lift=ease((opening-.2)/.8),anchor=[x+unit*1.30*(1-tilt),y-h*(.73+.22*lift)],alpha=1-ease((tilt-.55)/.30);
  if(alpha<=0)return anchor;
- const fw=unit/70,fh=mix(.48,.94,tilt)*fw,reveal=ease((tilt-.30)/.35);
+ const facing=x<540?-1:1;
+ const fw=unit/70,fh=.94*fw,reveal=ease((tilt-.30)/.35);
  const point=(v)=>[anchor[0]-Math.sin(rotation)*v*fh,anchor[1]+Math.cos(rotation)*v*fh];
  const targets=[point(-12*reveal),point(18*reveal)];
- g.save();g.globalAlpha*=alpha;
+ g.save();g.globalAlpha*=alpha;g.translate(x,y);g.scale(facing,1);g.translate(-x,-y);
  const w=unit*.23;
  g.beginPath();g.moveTo(x-w*.48,y-h*.75);g.quadraticCurveTo(x-w*.34,y-h*.5,x-w,y-9);
  g.quadraticCurveTo(x-w*.8,y+4,x+w*.8,y);g.quadraticCurveTo(x+w*1.1,y-4,x+w*.8,y-14);
  g.lineTo(x+w*.37,y-h*.75);g.closePath();g.fillStyle='#e9ddba';g.fill();
  g.save();g.clip();g.fillStyle='#a29b80';g.fillRect(x,y-h,w*2,h+5);g.restore();
  for(let k=0;k<3;k++){g.fillStyle='#9b8a5c';g.fillRect(x-w*.42,y-h*.70+k*unit*.07,w*.80,unit*.034)}
- g.strokeStyle='#dfb78d';g.lineWidth=unit*.09;g.lineCap='round';g.beginPath();g.moveTo(x,y-h*.78);g.lineTo(x,y-h*.88);g.stroke();
- ellipse(g,x,y-h*.94,unit*.115,unit*.20,'#eac396',false);
- const headY=y-h*.94;
+ g.strokeStyle='#dfb78d';g.lineWidth=unit*.09;g.lineCap='round';g.beginPath();g.moveTo(x,y-h*.78);g.lineTo(x,y-h*.83);g.stroke();
+ ellipse(g,x,y-h*.89,unit*.115,unit*.20,'#eac396',false);
+ const headY=y-h*.89;
  g.fillStyle='#1a1710';g.beginPath();g.moveTo(x-unit*.11,headY+unit*.17);
  g.bezierCurveTo(x-unit*.18,headY+unit*.05,x-unit*.18,headY-unit*.24,x,headY-unit*.24);
  g.quadraticCurveTo(x+unit*.12,headY-unit*.24,x+unit*.12,headY-unit*.10);
@@ -128,7 +129,7 @@ export function fanFigure(g,x,y,unit,tilt,rotation){
   g.beginPath();g.moveTo(...start);g.quadraticCurveTo((start[0]+end[0])/2+side*unit*.12,(start[1]+end[1])/2+unit*.10,...end);
   g.strokeStyle='#b58c60';g.lineWidth=unit*.065;g.stroke();g.strokeStyle='#eed3a7';g.lineWidth=unit*.034;g.stroke();
  }
- g.restore();return anchor;
+ g.restore();return [x+(anchor[0]-x)*facing,anchor[1]];
 }
 export function text(g,s,x,y,size=48,font='Limelight',color=null,align='center'){g.font=`${size}px "${font}"`;g.textAlign=align;g.textBaseline='middle';g.fillStyle=color||gold(g,x-size*2,y-size,size*4,size*2);g.fillText(s,x,y)}
 export function plaque(g,s,x,y,w=800,size=44,p=1){g.save();g.translate(x,y);g.scale(ease(p),1);const h=100;let pts=[[-w/2,-h/2],[-w/2+25,-h/2],[-w/2+25,-h/2-15],[w/2-25,-h/2-15],[w/2-25,-h/2],[w/2,-h/2],[w/2,h/2],[w/2-25,h/2],[w/2-25,h/2+15],[-w/2+25,h/2+15],[-w/2+25,h/2],[-w/2,h/2]];poly(g,pts,C.black,'#191209');g.save();g.scale(.973,.84);line(g,pts,1,0,true);g.restore();text(g,s,0,0,size);g.restore()}
@@ -146,15 +147,19 @@ export function radialMotionTime(t,p){
  const q=clamp((p-.72)/.20);
  return t/p*(.72+.20*(q-q*q/2));
 }
+// The stage holds an oblique view before a single cut into plan view.
+export function radialTilt(progress,{cut=.328}={}){
+ return progress<cut?mix(0,.14,ease(progress/cut)):1;
+}
 export function radialBeat(t,p,index,{bpm=116,count=8}={}){
- const tt=Math.floor(t*12)/12,beat=tt*bpm/60,bloom=ease((p-.04-index*.009)/.20),pulse=.5+.5*Math.cos(tau*beat);
+ const tt=Math.floor(t*12)/12,beat=tt*bpm/60,phase=t>0?p*tt/t:0,step=tau/count;
+ const openingOrder=(index*(count===12?5:3))%count,delay=.01+openingOrder/Math.max(1,count-1)*.22;
+ const opening=index===0?1:mix(.2,1,ease((phase-delay)/.075));
  const pairing=ease((p-.48)/.14)*(1-ease((p-.86)/.12));
- const resolve=ease((p-.72)/.20),arrival=ease((p-.72-(index%2)*.015)/.18),step=tau/count;
+ const resolve=ease((p-.72)/.20),arrival=ease((p-.72-(index%2)*.015)/.18);
  const orbit=index*step+t*.13+(index%2?1:-1)*.18*pairing*Math.sin(beat*Math.PI*.5);
- // Two pivots share the upper ray; the other sectors keep alternating open gaps.
- // The final orientation is independent of clip duration and no longer orbits.
  const grouped=index<2?Math.PI/2:Math.PI/2+(index-.5)*step+(index%2?1:-1)*step/6;
- return {opening:mix(.16+.84*bloom*mix(.4,1,pulse),1,resolve),
+ return {opening,
   angle:mix(orbit,grouped,arrival),
   radius:mix(3.6+.22*Math.sin(beat*Math.PI*.5)*pairing,index===0?1.1:index===1?2.5:3.6,arrival),
   resolve};
