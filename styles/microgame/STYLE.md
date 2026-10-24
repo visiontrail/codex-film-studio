@@ -38,6 +38,12 @@ technical vocabulary. Check these at the encoded output resolution.
 
 Keep two or three identity marks recognizable when the character is redrawn.
 Make hands touch tools and make the manipulated object move from that contact.
+
+For the mixed-media climax, combine large coloured print plates with paper
+scenery and a receding scored foreground. Keep technical construction marks
+local to the mechanism so a blueprint grid does not flatten the whole scene.
+Check that the background has comparable visual density to the reference while
+the working silhouette, command, status panel and fuse remain readable.
 Do not use decorative arm motion as a substitute for performing the action.
 
 ## Timing and sound
