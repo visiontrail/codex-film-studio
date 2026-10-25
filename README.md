@@ -112,7 +112,7 @@ visual rules, or take the prompt and project files into your own production.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en"><img src="styles/caption-news/showcase/preview.svg" alt="Caption News — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening"><img src="docs/readme/previews/caption-news.en.jpg" alt="Caption News — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>09 / <code>caption-news</code></sub>
 <h3>Caption News</h3>

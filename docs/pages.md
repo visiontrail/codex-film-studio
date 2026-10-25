@@ -42,6 +42,8 @@ captions, chapters and credits. `public_assets` points to a checksum-pinned Rele
 archive and an explicit file list; the builder verifies it before including media
 in Pages. No production-specific content is copied into new-film starters or
 methods. `landing.page` and `landing.assets` allow the generic page dependencies.
+Its README and collection preview cards use actual film frames. The registry’s
+`preview_showcase` routes those images directly to the `screening` player anchor.
 
 ## Local style catalog
 

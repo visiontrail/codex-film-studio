@@ -326,9 +326,9 @@
           "source_page": "media/caption-news-combined.mp4"
         }
       ],
-      "preview": "styles/caption-news/showcase/preview.svg",
-      "preview_zh": "styles/caption-news/showcase/preview.svg",
-      "preview_kind": "schematic",
+      "preview": "docs/readme/previews/caption-news.en.jpg",
+      "preview_zh": "docs/readme/previews/caption-news.zh.jpg",
+      "preview_kind": "frame",
       "landing": {
         "page": "styles/caption-news/showcase/index.html",
         "assets": [
@@ -343,7 +343,8 @@
           "methods/revision-delivery.md"
         ]
       },
-      "public_assets": "styles/caption-news/demo-assets.json"
+      "public_assets": "styles/caption-news/demo-assets.json",
+      "preview_showcase": "caption-news-preview"
     }
   ]
 }

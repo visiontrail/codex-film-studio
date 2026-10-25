@@ -79,6 +79,7 @@ def main():
     parser.add_argument('--latin-font', type=Path)
     parser.add_argument('--display-font', type=Path)
     parser.add_argument('--cjk-font', type=Path)
+    parser.add_argument('--style', help='Regenerate one style preview without changing the covers.')
     args = parser.parse_args()
     fonts = {
         'latin': find_font(args.latin_font, [ROOT/'productions/ai-learning-midcentury/assets/fonts/Jost.ttf', '/System/Library/Fonts/Supplemental/Arial.ttf', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf']),
@@ -86,11 +87,13 @@ def main():
         'cjk': find_font(args.cjk_font, ['/System/Library/Fonts/Supplemental/Songti.ttc', '/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc', 'C:/Windows/Fonts/msyh.ttc']),
     }
     catalog = json.loads((ROOT/'styles.json').read_text())['styles']
-    if len(catalog) > 6:
-        raise ValueError('Cover currently has six slots; update its layout before adding more styles.')
     records = {item['style']: item for item in json.loads((ART/'frames.json').read_text())['frames']}
+    entries = [(ordinal, entry) for ordinal, entry in enumerate(catalog, 1)
+               if entry['id'] in records and (not args.style or entry['id'] == args.style)]
+    if args.style and not entries:
+        raise ValueError(f'No retained film frame for style: {args.style}')
     sources = []
-    for ordinal, entry in enumerate(catalog, 1):
+    for ordinal, entry in entries:
         record = records[entry['id']]
         with Image.open(ROOT/record['image']) as decoded:
             source = decoded.convert('RGB')
@@ -100,9 +103,11 @@ def main():
         (ART/'previews').mkdir(exist_ok=True)
         for language in ('en', 'zh'):
             preview(source, entry, ordinal, language, fonts).save(ART/f'previews/{entry["id"]}.{language}.jpg', quality=94, subsampling=0)
-    for language in ('en', 'zh'):
-        cover(sources, language, fonts).save(ART/f'cover-{language}.png', optimize=True)
-    print('Updated bilingual covers and film-frame previews.')
+    if not args.style:
+        # Keep the existing six-slot covers; additional styles join the atlas.
+        for language in ('en', 'zh'):
+            cover(sources[:6], language, fonts).save(ART/f'cover-{language}.png', optimize=True)
+    print('Updated bilingual film-frame previews' + (' and covers.' if not args.style else '.'))
 
 
 if __name__ == '__main__':

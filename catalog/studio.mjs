@@ -103,6 +103,16 @@ function preview(entry, eager = false) {
   const path = state.frames[entry.id] ?? localized(entry,'preview') ?? entry.poster;
   return path ? `<img src="${escape(assetURL(path))}" alt="${escape(localized(entry,'name'))} — ${escape(t(entry.preview_kind === 'frame' ? 'frame' : 'sketch'))}" loading="${eager ? 'eager' : 'lazy'}">` : `<div class="preview-placeholder">${t('previewMissing')}</div>`;
 }
+function previewPage(entry) {
+  return entry.showcases?.find(page => page.id === entry.preview_showcase);
+}
+function previewAction(entry, contents, className = '') {
+  const page = previewPage(entry);
+  const label = escape(localized(entry,'name'));
+  return page
+    ? `<a class="${className}" href="${escape(pageURL(page))}" aria-label="${label}">${contents}</a>`
+    : `<button type="button" class="${className}" data-style="${escape(entry.id)}" aria-label="${label}">${contents}</button>`;
+}
 function readPreference() {
   const query = new URLSearchParams(location.search).get('lang');
   if (['en','zh'].includes(query)) return query;
@@ -136,7 +146,7 @@ function renderStyles() {
   $('#style-grid').innerHTML = entries.map((entry,i) => {
     const pages = entry.showcases ?? [], hasLocal = pages.some(p => p.access === 'local');
     const filmLabel = pages.some(p => p.access === 'release') ? 'publicSample' : hasLocal ? 'localPages' : 'noFilm';
-    return `<article class="style-card" style="--delay:${i*.035}s"><button type="button" class="card-open" data-style="${escape(entry.id)}" aria-label="${escape(localized(entry,'name'))}"><div class="card-art">${preview(entry)}<span class="card-index">${String(state.catalog.styles.indexOf(entry)+1).padStart(2,'0')}</span><span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-heading"><h3>${escape(localized(entry,'name'))}</h3><span aria-hidden="true">↗</span></div><p class="card-description">${escape(localized(entry,'description'))}</p></button><div class="card-meta"><span>${escape(localized(state.catalog.statuses[entry.status],'name'))}</span><span class="${entry.capabilities.published_demo ? 'published' : ''}">${t(filmLabel)}</span>${entry.landing ? `<a href="${escape(pageURL(entry.landing))}">${t('stylePage')}</a>` : ''}</div></article>`;
+    return `<article class="style-card" style="--delay:${i*.035}s">${previewAction(entry,`<div class="card-art">${preview(entry)}<span class="card-index">${String(state.catalog.styles.indexOf(entry)+1).padStart(2,'0')}</span><span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-heading"><h3>${escape(localized(entry,'name'))}</h3><span aria-hidden="true">↗</span></div><p class="card-description">${escape(localized(entry,'description'))}</p>`,'card-open')}<div class="card-meta"><span>${escape(localized(state.catalog.statuses[entry.status],'name'))}</span><span class="${entry.capabilities.published_demo ? 'published' : ''}">${t(filmLabel)}</span>${entry.landing ? `<a href="${escape(pageURL(entry.landing))}">${t('stylePage')}</a>` : ''}</div></article>`;
   }).join('') || `<p class="empty-state">${t('noResults')}</p>`;
 }
 function renderScreening() {
@@ -147,8 +157,8 @@ function renderScreening() {
   }
   const localStyles = state.catalog.styles.filter(s => s.showcases?.some(p => p.access === 'local'));
   $('#showcase-shelf').innerHTML = localStyles.map(entry => {
-    const page = entry.showcases.find(p => p.access === 'local');
-    return `<article class="showcase-card"><button type="button" data-style="${escape(entry.id)}"><div class="showcase-art">${preview(entry)}<span>${t(isAvailable(page) ? 'available' : 'localOnly')}</span></div><h4>${escape(pageTitle(page))}</h4><p>${escape(localized(entry,'name'))} · ${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</p></button></article>`;
+    const page = previewPage(entry) ?? entry.showcases.find(p => p.access === 'local');
+    return `<article class="showcase-card">${previewAction(entry,`<div class="showcase-art">${preview(entry)}<span>${t(page.access === 'release' ? 'publicSample' : isAvailable(page) ? 'available' : 'localOnly')}</span></div><h4>${escape(pageTitle(page))}</h4><p>${escape(localized(entry,'name'))} · ${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</p>`)}</article>`;
   }).join('');
   $('#screening-note').innerHTML = state.availability.mode === 'local' ? t('localNote') : `${t('publicNote')} <code>python3 scripts/serve_styles.py</code>`;
   requestAnimationFrame(updateShelfControls);
@@ -161,7 +171,7 @@ function renderDetail() {
   const links = landingLink + pages.map(page => isAvailable(page)
     ? `<a href="${escape(pageURL(page))}">${escape(pageTitle(page))}<span aria-hidden="true">↗</span></a>`
     : `<button type="button" disabled>${escape(pageTitle(page))} · ${t('localOnly')}</button>`).join('');
-  $('#style-detail').innerHTML = `<div class="detail-art" data-preview-kind="${escape(entry.preview_kind ?? 'schematic')}">${preview(entry,true)}<span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span></div><div class="detail-copy"><p class="eyebrow">${escape(entry.id.toUpperCase().replaceAll('-',' / '))}</p><h2 id="detail-title">${escape(localized(entry,'name'))}</h2><p class="detail-description">${escape(localized(entry,'description'))}</p><h3>${t('openPages')}</h3><div class="detail-pages">${links}</div>${!pages.length ? `<p class="local-help">${t('noShowcase')}</p>` : ''}${missing ? `<p class="local-help">${state.availability.mode === 'local' ? t('missingProject') : t('localHelp')}</p><div class="command"><code>python3 scripts/serve_styles.py --port 8249</code><button type="button" data-copy="python3 scripts/serve_styles.py --port 8249">${t('copy')}</button></div>` : ''}<div class="detail-links"><a href="${repoLink(entry.guide)}" target="_blank" rel="noopener noreferrer">${t('guide')} ↗</a><a href="${repoLink(entry.prompt)}" target="_blank" rel="noopener noreferrer">${t('prompt')} ↗</a><a href="${REPO}/tree/main/${entry.template}" target="_blank" rel="noopener noreferrer">${t('files')} ↗</a></div><h3>${t('startStyle')}</h3><div class="command"><code>${escape(commandFor(entry.id))}</code><button type="button" data-copy="${escape(commandFor(entry.id))}">${t('copy')}</button></div></div>`;
+  $('#style-detail').innerHTML = `<div class="detail-art" data-preview-kind="${escape(entry.preview_kind ?? 'schematic')}">${previewPage(entry) ? previewAction(entry,preview(entry,true),'preview-player') : preview(entry,true)}<span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span></div><div class="detail-copy"><p class="eyebrow">${escape(entry.id.toUpperCase().replaceAll('-',' / '))}</p><h2 id="detail-title">${escape(localized(entry,'name'))}</h2><p class="detail-description">${escape(localized(entry,'description'))}</p><h3>${t('openPages')}</h3><div class="detail-pages">${links}</div>${!pages.length ? `<p class="local-help">${t('noShowcase')}</p>` : ''}${missing ? `<p class="local-help">${state.availability.mode === 'local' ? t('missingProject') : t('localHelp')}</p><div class="command"><code>python3 scripts/serve_styles.py --port 8249</code><button type="button" data-copy="python3 scripts/serve_styles.py --port 8249">${t('copy')}</button></div>` : ''}<div class="detail-links"><a href="${repoLink(entry.guide)}" target="_blank" rel="noopener noreferrer">${t('guide')} ↗</a><a href="${repoLink(entry.prompt)}" target="_blank" rel="noopener noreferrer">${t('prompt')} ↗</a><a href="${REPO}/tree/main/${entry.template}" target="_blank" rel="noopener noreferrer">${t('files')} ↗</a></div><h3>${t('startStyle')}</h3><div class="command"><code>${escape(commandFor(entry.id))}</code><button type="button" data-copy="${escape(commandFor(entry.id))}">${t('copy')}</button></div></div>`;
 }
 function openStyle(id) {
   state.detail = id; renderDetail();

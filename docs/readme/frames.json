@@ -103,6 +103,37 @@
       "image": "docs/readme/frames/scifi-sitcom.jpg",
       "image_sha256": "430dff62c4fb42e63b3a6ec0d5956c1620a11b4cd6ab7c2d4fb46689aa6b54f5",
       "treatment": "Decoded source frame; full composition retained and resized. Localized labels are outside the image."
+    },
+    {
+      "style": "caption-news",
+      "source_video": "https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/media/film.mp4",
+      "source_sha256": "33b499f1f1fb2206a40771126aeee066089c3aabab448ca612908c63470584d6",
+      "title": "Caption News · Full film preview",
+      "title_zh": "字幕新闻 · 完整影片预览",
+      "seconds": 6.0,
+      "frame": 180,
+      "fps": "30",
+      "native_dimensions": [
+        720,
+        1280
+      ],
+      "samples": [
+        {
+          "seconds": 6,
+          "frame": 180
+        },
+        {
+          "seconds": 88,
+          "frame": 2640
+        },
+        {
+          "seconds": 145,
+          "frame": 4350
+        }
+      ],
+      "image": "docs/readme/frames/caption-news.jpg",
+      "image_sha256": "d96e7c9b0c19cd677f6821dd846109015eab3fa6c2ea9d1438170d6023b7156f",
+      "treatment": "Three decoded frames arranged side by side. Each full portrait composition is retained, uniformly resized and separated by narrow dark padding. No captions or picture regions are repainted."
     }
   ]
 }

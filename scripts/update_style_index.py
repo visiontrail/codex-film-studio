@@ -32,7 +32,11 @@ def render_gallery(catalog, language='en', prefix=''):
         guide = escape(prefix + entry['guide'], quote=True)
         landing = entry.get('landing', {}).get('page')
         landing_url = SITE + landing + '?lang=' + language if landing else None
-        preview_target = escape(landing_url, quote=True) if landing_url else guide
+        preview_page = next((p for p in entry.get('showcases', [])
+                             if p['id'] == entry.get('preview_showcase')), None)
+        preview_url = (SITE + preview_page['page'] + '?lang=' + language
+                       + ('#' + preview_page['anchor'] if preview_page.get('anchor') else '')) if preview_page else landing_url
+        preview_target = escape(preview_url, quote=True) if preview_url else guide
         preview = entry.get('preview_zh') if zh else entry.get('preview')
         preview = preview or entry.get('preview', entry.get('poster'))
         if preview:

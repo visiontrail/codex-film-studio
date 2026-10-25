@@ -19,14 +19,16 @@ These project READMEs were reviewed for information architecture:
 | [Manim](https://github.com/3b1b/manim) | Connect a minimal working command to examples and deeper usage |
 
 The cover layout and copy are original. Film thumbnails come from this project's
-generated films; no reference-film frames are used. Caption News uses an original,
-subject-independent SVG typography study in `styles/caption-news/showcase/preview.svg`,
-labelled `schematic` in the registry. It is not a decoded film frame.
+generated films; no reference-film frames are used. Caption News uses three actual
+frames from its published web preview, arranged side by side. The type study on
+its independent style page remains separately labelled as an original study.
 
 ## Frame sources
 
-All six images were decoded from the existing MP4s. Each 1920×1080 frame was
-resized as a complete composition to 1440×810. The English and Chinese preview
+The first six images were decoded from existing landscape MP4s. Each 1920×1080
+frame was resized as a complete composition to 1440×810. Caption News retains
+three complete 720×1280 portrait frames in a 1440×810 strip, with narrow dark
+padding and no replacement text. The English and Chinese preview
 cards add their own labels below that picture; the source image itself retains
 its original text. Both covers use these same six frames in registry order.
 
@@ -38,6 +40,7 @@ its original text. Both covers use these same six frames in registry order.
 | Mid-century Cartoon | Does AI Help You Learn—or Just Finish? | 00:13 |
 | Satellite Briefing | Singapore · Three Days, Three Routes | 00:06 |
 | Sci-Fi Sitcom Toon | The House Gets Coffee · Pocket V9 | 00:20 |
+| Caption News | Published complete web preview | 00:06 / 01:28 / 02:25 |
 
 [frames.json](frames.json) records each source filename, video SHA-256, exact
 frame/time, native dimensions and retained image SHA-256. Source movies and
@@ -62,6 +65,8 @@ Credits retained from the production records:
   LemoLab's [lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar), by
   [@lemomo_ai](https://x.com/lemomo_ai). These are the new productions' frames.
 
+Caption News footage and reporting credits remain in the [film source notes](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/media/credits.html).
+
 Code, documentation and layout use MIT. The screenshots retain the source
 materials' credits above; this does not relicense third-party marks, characters
 or imagery. Font files are not included in these rendered images.
@@ -72,7 +77,7 @@ Set `preview`, `preview_zh`, `preview_kind` and `description_zh` in `styles.json
 An actual generated film screenshot uses `frame`, whether the full film is
 published or retained locally. A style without a preview remains listed.
 
-The repository retains the six decoded source JPEGs in `frames/`, so rebuilding
+The repository retains decoded source JPEGs in `frames/`, so rebuilding
 the image layouts needs no original MP4, private project or service credential.
 Install Pillow in your Python environment, then run from the repository root:
 
@@ -82,11 +87,18 @@ python3 scripts/update_style_index.py
 python3 scripts/update_style_index.py --check
 ```
 
+Use `python3 scripts/build_readme_artwork.py --style caption-news` to regenerate
+only that style’s bilingual previews, preserving both covers and other styles.
+`preview_showcase` in `styles.json` selects the destination for preview images;
+the README, collection card, screening shelf and detail image link directly to
+the selected player anchor.
+
 The artwork builder discovers common local Latin and CJK fonts; alternatively
 provide `--latin-font /path/body.ttf --display-font /path/display.ttf
 --cjk-font /path/chinese.ttf`. Fonts affect text metrics, so inspect regenerated
-images. The current cover has six slots; adding more styles requires extending
-that layout. English and Chinese covers are PNGs, with the Chinese title and
+images. The current cover retains its first six frame slots; additional frames
+join the atlas. Changing that cover selection or layout is a separate edit.
+English and Chinese covers are PNGs, with the Chinese title and
 labels rendered directly into the image. Preview labels are likewise separate
 English and Chinese image files.
 
