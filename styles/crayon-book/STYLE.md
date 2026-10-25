@@ -92,6 +92,29 @@ and indigo shapes retain their original treatment. Inspect faces, grip contacts,
 silhouettes and partial colour stages before enabling it for a production.
 The strength is material pressure/extent, never a time-based opacity entrance.
 
+## Soft forms without added motion
+
+Use `lib/contours.mjs` only on forms whose hard polygon corners are visibly
+unwanted. `roundCorners(points, radius, {closed, steps})` creates sampled
+quadratic corners; `closed: false` preserves both original endpoints exactly.
+The radius is limited by adjacent edge lengths. Apply the same path to the
+inner and outer strokes of a limb, and keep grip and foot coordinates shared
+with their props. Preserve intentional corners in architecture and tools.
+Do not resample already dense curves merely to make every form smoother.
+
+`Wax.withHatchFlow(strength, draw)` bends neighbouring broken hatch passes with
+a fixed field in local surface coordinates. It requires formed and broken
+hatching; strength is clamped to 0–1 and defaults to 0. Use it selectively where
+straight parallel passes flatten a rounded form. The field follows the object's
+stable seed and is not animated. Nested calls restore the previous setting,
+even if drawing throws. Keep separate pressure, direction and contour controls.
+
+Inspect partial contours, partial pigment, completed silhouettes and contact
+poses at native resolution. Clear measured reveal counts after changing paths.
+Check arbitrary seeking and encoded motion; a smoother still alone is not an
+acceptance result. Run `node scripts/check_soft_forms.mjs` for endpoint, bounds,
+determinism and scoped-state checks.
+
 ## Paper calibration from a blank sample
 
 When a procedural grain looks like sand instead of paper, isolate a genuinely

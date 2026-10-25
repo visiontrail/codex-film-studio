@@ -84,6 +84,7 @@ export class Wax {
  }
  curve(points,color=C.ink,width=3,pressure=.97){this.line(points,color,width,pressure,17)}
  withHatch(angle,draw){const previous=this.hatchAngle;this.hatchAngle=angle;try{return draw();}finally{this.hatchAngle=previous;}}
+ withHatchFlow(strength,draw){const previous=this.hatchFlow;this.hatchFlow=clamp(strength);try{return draw();}finally{this.hatchFlow=previous;}}
  path(points){const c=this.ctx;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();}
  shape(points,color,seed=1,outline=true,progress=1){
   seed=this.seedFor(seed);
@@ -120,6 +121,11 @@ export class Wax {
     const co=Math.cos(angle),si=Math.sin(angle),bounds=points.map(([x,y])=>[(x-cx)*co+(y-cy)*si,-(x-cx)*si+(y-cy)*co]);
     const left=Math.min(...bounds.map(p=>p[0]))-10,right=Math.max(...bounds.map(p=>p[0]))+10,top=Math.min(...bounds.map(p=>p[1]))-12,bottom=Math.max(...bounds.map(p=>p[1]))+12;
     const formPressure=.91+hash(seed,947)*.17;
+    // Neighbouring passes share a stable, gently curved field. This changes
+    // local drawing direction rather than moving the form or adding noise.
+    const flow=clamp(this.hatchFlow??0);
+    const offset=(x,y)=>flow*(Math.sin((x-left)/Math.max(1,right-left)*Math.PI)*9
+      +(grid(x,y,64,seed+257)-.5)*12);
     c.save();c.translate(cx,cy);c.rotate(angle);
     const overlap=clamp(this.hatchOverlap??0),largeInk=color===C.ink&&(x1-x0>28||y1-y0>36);
     if(this.brokenHatching&&color!==C.white&&(color!==C.ink||(overlap>0&&largeInk))){
@@ -137,7 +143,7 @@ export class Wax {
        const bend=(hash(pass,segment,seed+101)-.5)*3.5;
        for(let x=start;x<=stop+5;x+=5){
         const q=(x-start)/Math.max(1,stop-start);
-        stroke.push([x,yy+bend*Math.sin(q*Math.PI)+(hash(pass,Math.round(x),seed+71)-.5)*1.5]);
+        stroke.push([x,yy+offset(x,yy)+bend*Math.sin(q*Math.PI)+(hash(pass,Math.round(x),seed+71)-.5)*1.5]);
        }
        const pressureVariation=(grid(segment,pass,2.2,seed+163)-.5)*.20*strength;
        // A broader wax side overlaps adjacent passes without painting an

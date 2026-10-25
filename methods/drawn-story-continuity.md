@@ -170,6 +170,21 @@ small facial marks, white features and dark identifying shapes. Compare a large
 circle, an angular form and a grip at native size, then the complete draw-on
 sequence. A rougher finished still does not prove a continuous pigment reveal.
 
+## Shape softness is independent of movement
+
+Repair angular soft forms in their drawing geometry. Round selected corners
+within their adjacent segments, preserving the endpoints of open limbs and
+shared contact anchors. Use the same curve for paired inner and outer strokes.
+Leave intentional structural corners intact. An organic silhouette may combine
+several fixed spatial rhythms; repeating equal lobes often looks stamped.
+
+Curving neighbouring pigment passes can describe rounded volume without moving
+the object. Keep that field in surface coordinates with stable seeds. Do not
+animate its phase or increase whole-body motion to disguise stiff drawings.
+Compare contour-only and partly coloured frames as well as the finished pose;
+path resampling can change reveal counts, mark spacing and fine line texture.
+Recheck deterministic seeking, contact coordinates and the full encoded sequence.
+
 ## Occlusion follows the drawn material
 
 When a pale foreground drawing shows unwanted background lines, first isolate

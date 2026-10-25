@@ -18,3 +18,8 @@ For a physical book reveal, keep the drawing attached to its page and use
 `lib/book-camera.mjs` to move the whole desk/book scene. Run
 `node scripts/check_book_camera.mjs` for the geometry checks; inspect encoded
 motion and surface lighting separately.
+
+For selected soft contours, use `lib/contours.mjs`; open paths preserve their
+contact endpoints. `Wax.withHatchFlow` adds fixed curvature to broken pigment
+passes. Run `node scripts/check_soft_forms.mjs` and inspect the partial draw-on
+stages before adopting either control.
