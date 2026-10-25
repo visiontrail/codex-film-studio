@@ -62,6 +62,15 @@ folder and 1080p master remain external. README previews link directly to the sc
 opens the shared style dialog, with a separate link to the full style page. The style remains an
 authoring starter: publishing a preview does not supply a reusable scene renderer.
 
+Animated Line Chart Comedy has a bilingual independent page at
+`styles/line-chart-comedy/showcase/index.html`. Its original, schematic chart study
+lets visitors play, pause, scrub and jump between line reveal, event annotation,
+close-up and pullback. The page starts paused and needs no external fonts, media
+or production data. The registry provides English/Chinese preview artwork and a
+`landing` entry for the Collection and README galleries. It remains an authoring
+starter, with no published film registered. Only its generic page, assets and
+guides enter the Pages build.
+
 ## Local style catalog
 
 From the repository root:

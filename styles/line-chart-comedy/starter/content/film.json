@@ -1,0 +1,13 @@
+{
+  "title": "",
+  "language": "",
+  "delivery": {"width": 1920, "height": 1080, "fps": 60, "duration_frames": null},
+  "metric": {"name": "", "unit": "", "basis": "", "territory_policy": "", "interpolation": "", "linking_method": ""},
+  "sources": [],
+  "series": [],
+  "events": [],
+  "camera_keys": [],
+  "voice_cues": [],
+  "music_cues": [],
+  "review": {"decoded_frame_count": null, "visually_inspected_ranges": [], "native_frame_indices": [], "playback_ranges": [], "audio_listening_ranges": []}
+}

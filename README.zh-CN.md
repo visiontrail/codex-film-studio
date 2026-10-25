@@ -31,7 +31,7 @@
 
 <!-- style-summary:start -->
 
-**9 种风格** · 1 种已发布样片 · 5 种创作起步包 · 3 种材质工具包
+**10 种风格** · 1 种已发布样片 · 6 种创作起步包 · 3 种材质工具包
 
 <!-- style-summary:end -->
 
@@ -142,6 +142,17 @@
 <p>大字号字幕、黄色重点、账本式图表与有节奏的入场动效。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh#screening">完整影片预览</a> · <a href="styles/caption-news/STYLE.md">风格说明</a> · <a href="styles/caption-news/prompt.txt">提示词</a> · <a href="styles/caption-news/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh"><img src="styles/line-chart-comedy/showcase/preview.zh.svg" alt="动态折线图喜剧 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>10 / <code>line-chart-comedy</code></sub>
+<h3>动态折线图喜剧</h3>
+<sub>Animated Line Chart Comedy</sub>
+<p>克制的图表界面，以生长折线、端点角色、事件卡片与漫画动作讲述数据变化。</p>
+<p><b>创作起步包</b> · 尚无样片</p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/line-chart-comedy/STYLE.md">风格说明</a> · <a href="styles/line-chart-comedy/prompt.txt">提示词</a> · <a href="styles/line-chart-comedy/starter">创作工程</a></sub>
 </td>
 </tr>
 </table>

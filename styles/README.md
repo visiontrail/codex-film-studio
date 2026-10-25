@@ -6,7 +6,7 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
-**9 styles** · 1 published sample · 5 authoring starters · 3 material toolkit
+**10 styles** · 1 published sample · 6 authoring starters · 3 material toolkit
 
 ## Visual index / 风格一览
 
@@ -118,6 +118,17 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">Full film preview</a> · <a href="../styles/caption-news/STYLE.md">Style guide</a> · <a href="../styles/caption-news/prompt.txt">Prompt</a> · <a href="../styles/caption-news/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en"><img src="../styles/line-chart-comedy/showcase/preview.en.svg" alt="Animated Line Chart Comedy — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>10 / <code>line-chart-comedy</code></sub>
+<h3>Animated Line Chart Comedy</h3>
+<sub>动态折线图喜剧</sub>
+<p>A quiet chart interface with growing lines, expressive endpoint tokens, event cards and comic motion accents.</p>
+<p><b>Authoring starter</b> · No sample yet</p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en">Style page</a> · <a href="../styles/line-chart-comedy/STYLE.md">Style guide</a> · <a href="../styles/line-chart-comedy/prompt.txt">Prompt</a> · <a href="../styles/line-chart-comedy/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 ## Capabilities / 能力与网页
@@ -133,6 +144,7 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 | [极速微游戏 / Microgame Frenzy](microgame/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
 | [装饰艺术 / Art Deco](art-deco/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
 | [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en) · [Full film preview](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening) |
+| [动态折线图喜剧 / Animated Line Chart Comedy](line-chart-comedy/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en) |
 
 ## What is complete / 已完成什么
 
@@ -145,6 +157,7 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 - **microgame** — 已有独立材质与动作工具；镜头、音频和交付需在制作项目中完成，暂无已验收样片。 Independent material and motion helpers; scene direction, audio and delivery require production-specific work. No accepted demo.
 - **art-deco** — 已有独立绘制工具、人物骨架与空白输入合同；新场景、旁白与渲染器仍需编写。 Original drawing and figure toolkit with a blank input contract; new scenes, narration and renderer must be authored.
 - **caption-news** — 已有空白输入、确定性字幕动效工具和通用方法；需为新选题编写场景、渲染与音频。 Blank authoring inputs, deterministic caption helpers and shared methods; author new scenes, renderer and audio.
+- **line-chart-comedy** — 已有空白数据与时间轴约定、参考分析方法和通用审查工具；需为新主题编写渲染器与配乐。 Blank data/timeline contract, reference-analysis method and generic review tools; author the scene renderer and score.
 
 `demo-ready` includes a released sample and editable renderer. `starter-ready`
 provides blank authoring inputs, guides and helpers. `toolkit-ready` provides

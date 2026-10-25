@@ -75,6 +75,7 @@ const categories = {
   whiteboard:['drawn'], 'art-collage':['material'], 'crayon-book':['drawn','material'],
   'midcentury-cartoon':['animation','drawn'], 'satellite-briefing':['geography'], 'scifi-sitcom':['animation'],
   'caption-news':['animation','material'],
+  'line-chart-comedy':['animation'],
 };
 const state = { catalog:null, frames:{}, availability:{mode:'public', pages:{}}, language:'en', filter:'all', query:'', detail:null };
 const $ = selector => document.querySelector(selector);

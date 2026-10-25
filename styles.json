@@ -376,6 +376,40 @@
       },
       "public_assets": "styles/caption-news/demo-assets.json",
       "preview_showcase": "caption-news-preview"
+    },
+    {
+      "id": "line-chart-comedy",
+      "name": "Animated Line Chart Comedy",
+      "name_zh": "动态折线图喜剧",
+      "description": "A quiet chart interface with growing lines, expressive endpoint tokens, event cards and comic motion accents.",
+      "description_zh": "克制的图表界面，以生长折线、端点角色、事件卡片与漫画动作讲述数据变化。",
+      "status": "starter-ready",
+      "status_note": "Blank data/timeline contract, reference-analysis method and generic review tools; author the scene renderer and score.",
+      "status_note_zh": "已有空白数据与时间轴约定、参考分析方法和通用审查工具；需为新主题编写渲染器与配乐。",
+      "guide": "styles/line-chart-comedy/STYLE.md",
+      "readme": "styles/line-chart-comedy/README.md",
+      "prompt": "styles/line-chart-comedy/prompt.txt",
+      "template": "styles/line-chart-comedy/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": [],
+      "preview": "styles/line-chart-comedy/showcase/preview.en.svg",
+      "preview_zh": "styles/line-chart-comedy/showcase/preview.zh.svg",
+      "preview_kind": "schematic",
+      "landing": {
+        "page": "styles/line-chart-comedy/showcase/index.html",
+        "assets": [
+          "styles/line-chart-comedy/showcase/showcase.css",
+          "styles/line-chart-comedy/showcase/showcase.mjs",
+          "styles/line-chart-comedy/STYLE.md",
+          "styles/line-chart-comedy/prompt.txt",
+          "styles/line-chart-comedy/PROVENANCE.md"
+        ]
+      }
     }
   ]
 }
