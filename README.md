@@ -118,7 +118,7 @@ visual rules, or take the prompt and project files into your own production.
 <h3>Caption News</h3>
 <sub>字幕新闻</sub>
 <p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
-<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en">Style page</a> · <a href="styles/caption-news/STYLE.md">Style guide</a> · <a href="styles/caption-news/prompt.txt">Prompt</a> · <a href="styles/caption-news/starter">Project files</a></sub>
 </td>
 </tr>

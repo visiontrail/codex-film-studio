@@ -55,6 +55,8 @@ def catalog_availability(root, catalog):
         for page in style.get('showcases', []):
             if page['access'] == 'local':
                 pages[page['id']] = (root / page['project'] / page['source_page']).is_file()
+            elif page.get('media_manifest'):
+                pages[page['id']] = (root / page['media_manifest']).is_file()
             else:
                 studio = root / 'styles/whiteboard/studio'
                 pages[page['id']] = all((studio / path).is_file() for path in [

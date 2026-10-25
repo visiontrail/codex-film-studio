@@ -18,20 +18,24 @@ configured voice service, then measure and align the audio in that project.
 
 Read [the starter guide](starter/README.md). Choose a licensed font and a renderer
 suited to the new composition; the helpers need only a current Node.js runtime.
-The package includes no finished scene renderer or published demonstration.
+The starter contains no finished scene renderer. A separately published film
+preview is available on the style page.
 
 ## Explore the style
 
 Open the library's `styles/caption-news/showcase/index.html` for an original type study,
-visual rules, bilingual navigation and a local screening room. From the library
+visual rules, bilingual navigation and a screening room. Watch the
+[complete online film preview](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html#screening).
+For local production playback, from the library
 root, run `python3 scripts/serve_styles.py --port 8249`, then open
 <http://127.0.0.1:8249/styles/caption-news/showcase/index.html>.
 
-The page reads film metadata, chapters and media from the retained project
-registered in `styles.json`. The generic page also works in a public build;
-without local media it shows setup instructions. Its original schematic preview
-is not a frame from a film. The page and retained film are excluded from new-film
-starters, and the film is not included in the Pages artifact.
+The public build downloads a checksum-pinned Release bundle containing the
+complete web preview, poster, captions, chapters and credits. Local playback can
+still use the retained production registered in `styles.json`. The original
+schematic artwork is labelled separately from the video. Production-specific
+media and metadata stay in the Release bundle and Pages artifact; they are not
+copied into new-film starters or reusable methods.
 
 Reference influence: the editorial visual grammar of
 [lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)'s Caption News style.

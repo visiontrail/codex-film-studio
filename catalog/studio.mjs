@@ -36,7 +36,7 @@ const copy = {
     publicNote:'Local films and review pages open from the studio on your machine. Run from the repository:',
     localNote:'Local showcases use retained project files. Availability is checked on this machine. A preview frame does not mean the complete film is published.',
     previous:'Previous showcases', next:'Next showcases', close:'Close style details', copyCommand:'Copy project command', filterLabel:'Filter styles',
-    whiteboard:'Short and long published samples', 'crayon-film':'Leo the Farmer', 'crayon-comparison':'Frame comparison', 'caption-news-film':'Combined editorial film',
+    whiteboard:'Short and long published samples', 'crayon-film':'Leo the Farmer', 'crayon-comparison':'Frame comparison', 'caption-news-film':'Combined editorial film', 'caption-news-preview':'Full film preview',
     'midcentury-short':'Short film', 'midcentury-long':'Long film', 'midcentury-motion':'Long-film motion review',
     'satellite-film':'Singapore film', 'satellite-composition':'Live composition', 'satellite-comparison':'Frame comparison', 'scifi-review':'The House Gets Coffee',
   },
@@ -69,7 +69,7 @@ const copy = {
     publicNote:'本地影片与审阅页面需要在自己的电脑中打开。请在仓库根目录运行：',
     localNote:'本地展示读取保留项目的文件，可用状态根据本机文件检查。展示剧照不代表完整影片已发布。',
     previous:'上一组展示', next:'下一组展示', close:'关闭风格详情', copyCommand:'复制项目创建命令', filterLabel:'筛选风格',
-    whiteboard:'短版与长版发布样片', 'crayon-film':'农夫 Leo', 'crayon-comparison':'逐帧对照', 'caption-news-film':'字幕新闻合并版影片',
+    whiteboard:'短版与长版发布样片', 'crayon-film':'农夫 Leo', 'crayon-comparison':'逐帧对照', 'caption-news-film':'字幕新闻合并版影片', 'caption-news-preview':'完整影片预览',
     'midcentury-short':'短片', 'midcentury-long':'长片', 'midcentury-motion':'长片运动审阅',
     'satellite-film':'新加坡影片', 'satellite-composition':'实时构图', 'satellite-comparison':'逐帧对照', 'scifi-review':'The House Gets Coffee',
   },
@@ -92,7 +92,7 @@ const pageTitle = page => t(page.id) === page.id ? page.title : t(page.id);
 const isAvailable = page => page.access === 'release' || state.availability.pages[page.id] === true;
 function pageURL(page, edition) {
   const usePublicSample = page.access === 'release' && state.availability.mode === 'local' && state.availability.pages[page.id] === false;
-  const url = usePublicSample ? new URL(SITE) : new URL(page.page, new URL('./',location.href));
+  const url = usePublicSample ? new URL(page.page,SITE) : new URL(page.page, new URL('./',location.href));
   url.searchParams.set('lang', state.language);
   if (edition) url.searchParams.set('edition', edition);
   if (page.anchor) url.hash = page.anchor;
@@ -134,7 +134,7 @@ function renderStyles() {
   $('#style-count').textContent = state.language === 'zh' ? `${total} 种视觉语言 · 无限种故事${count !== total ? ` · 显示 ${count} 种` : ''}` : `${total} visual languages. Endless stories.${count !== total ? ` · ${count} shown` : ''}`;
   $('#style-grid').innerHTML = entries.map((entry,i) => {
     const pages = entry.showcases ?? [], hasLocal = pages.some(p => p.access === 'local');
-    const filmLabel = entry.capabilities.published_demo ? 'publicSample' : hasLocal ? 'localPages' : 'noFilm';
+    const filmLabel = pages.some(p => p.access === 'release') ? 'publicSample' : hasLocal ? 'localPages' : 'noFilm';
     return `<article class="style-card" style="--delay:${i*.035}s"><button type="button" class="card-open" data-style="${escape(entry.id)}" aria-label="${escape(localized(entry,'name'))}"><div class="card-art">${preview(entry)}<span class="card-index">${String(state.catalog.styles.indexOf(entry)+1).padStart(2,'0')}</span><span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-heading"><h3>${escape(localized(entry,'name'))}</h3><span aria-hidden="true">↗</span></div><p class="card-description">${escape(localized(entry,'description'))}</p></button><div class="card-meta"><span>${escape(localized(state.catalog.statuses[entry.status],'name'))}</span><span class="${entry.capabilities.published_demo ? 'published' : ''}">${t(filmLabel)}</span>${entry.landing ? `<a href="${escape(pageURL(entry.landing))}">${t('stylePage')}</a>` : ''}</div></article>`;
   }).join('') || `<p class="empty-state">${t('noResults')}</p>`;
 }

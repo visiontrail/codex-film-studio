@@ -36,10 +36,12 @@ a retained local film and a published sample remain separate states.
 Caption News also has a standalone bilingual style page at
 `styles/caption-news/showcase/index.html`, linked from both README galleries and
 the collection. Its original typography study works without a production folder.
-The local screening room reads the current combined delivery manifest, film,
-poster and chapters from the retained project; none of that content is embedded
-in the reusable page or starter. The `landing.page` and `landing.assets` fields
-explicitly allow the generic page and its dependencies into the Pages build.
+The local screening room can read the current combined delivery from the retained
+project. Public playback uses a separately published web preview, with poster,
+captions, chapters and credits. `public_assets` points to a checksum-pinned Release
+archive and an explicit file list; the builder verifies it before including media
+in Pages. No production-specific content is copied into new-film starters or
+methods. `landing.page` and `landing.assets` allow the generic page dependencies.
 
 ## Local style catalog
 
@@ -88,12 +90,14 @@ downloaded Release archives. The builder refuses to overwrite an existing output
 use `--output /path/to/a/new-folder` for another preview build.
 
 The builder copies an explicit list: the homepage, catalog, preview artwork and
-existing whiteboard player with its checksum-verified `v0.1.0` sample assets.
+existing whiteboard player with its checksum-verified `v0.1.0` sample assets and
+the approved Caption News preview from `caption-news-preview-v1` Release assets.
 It also includes explicitly registered generic style landing pages and assets.
 It omits local production paths from the public catalog. Local showcases remain
 discoverable in style details, with instructions to open them locally. Their
-films, production-specific review pages, working audio and provider settings are
-not packaged. A generic landing page can be included while its film remains local.
+unpublished films, production-specific review pages, working audio and provider
+settings are not packaged. An approved film preview enters Pages only through its
+pinned public Release bundle; no retained production directory is copied.
 `build-info.json` retains the source revision and released video hashes.
 
 Assets use relative paths, including under a project URL such as

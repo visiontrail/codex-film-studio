@@ -118,7 +118,7 @@
 <h3>字幕新闻</h3>
 <sub>Caption News</sub>
 <p>大字号字幕、黄色重点、账本式图表与有节奏的入场动效。</p>
-<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/caption-news/STYLE.md">风格说明</a> · <a href="styles/caption-news/prompt.txt">提示词</a> · <a href="styles/caption-news/starter">创作工程</a></sub>
 </td>
 </tr>

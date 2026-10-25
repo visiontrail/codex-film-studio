@@ -51,8 +51,10 @@ def render_gallery(catalog, language='en', prefix=''):
             actions.insert(0, (landing_url, '独立风格页' if zh else 'Style page'))
         links = ' · '.join(f'<a href="{escape(path if path.startswith("https://") else prefix + path, quote=True)}">{label}</a>' for path, label in actions)
         local_pages = [p for p in entry.get('showcases', []) if p['access'] == 'local']
-        if entry['capabilities']['published_demo']:
-            player = 'https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=' + ('zh' if zh else 'en')
+        public_pages = [p for p in entry.get('showcases', []) if p['access'] == 'release']
+        if public_pages:
+            page = public_pages[0]
+            player = SITE + page['page'] + '?lang=' + language + ('#' + page['anchor'] if page.get('anchor') else '')
             availability = '<a href="' + player + '">' + ('▶ 在线播放' if zh else '▶ Watch online') + '</a>'
         elif local_pages:
             availability = '<a href="' + escape(prefix + 'docs/pages.md#local-style-catalog', quote=True) + '">' + ('本地影片与审阅页' if zh else 'Local films & review pages') + '</a>'

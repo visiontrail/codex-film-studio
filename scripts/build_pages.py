@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the style library homepage and verified public whiteboard showcase."""
+"""Build the style library and checksum-verified public sample previews."""
 import argparse
 import json
 from pathlib import Path
@@ -7,14 +7,39 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import urllib.request
 from urllib.parse import urlencode
+from fetch_demo import sha, unpack
 
 ROOT = Path(__file__).resolve().parents[1]
 STUDIO = ROOT / "styles/whiteboard/studio"
 
 
-def build_site(demo_root, output, revision=""):
+def fetch_showcase_bundle(manifest, destination, asset_dir=None):
+    """Install a pinned public preview archive, separate from production sources."""
+    asset = manifest['archive']
+    destination.mkdir(parents=True, exist_ok=False)
+    archive = destination.parent / asset['name']
+    if asset_dir:
+        shutil.copyfile(asset_dir / asset['name'], archive)
+    else:
+        request = urllib.request.Request(asset['url'], headers={'User-Agent': 'codex-film-studio'})
+        with urllib.request.urlopen(request, timeout=120) as response, archive.open('wb') as handle:
+            shutil.copyfileobj(response, handle)
+    if archive.stat().st_size != asset['bytes'] or sha(archive) != asset['sha256']:
+        raise ValueError(f"Release checksum mismatch: {asset['name']}")
+    unpack(archive, destination)
+    actual = {str(p.relative_to(destination)) for p in destination.rglob('*') if p.is_file()}
+    if actual != set(manifest['files']):
+        raise ValueError('Public preview archive differs from the approved file list')
+    return destination
+
+
+def build_site(demo_root, output, revision="", published_roots=None):
     """Copy only the files needed by the public player, never a whole studio."""
+    if output.exists():
+        raise FileExistsError(output)
+    published_roots = published_roots or {}
     source_files = [
         "index.html", "showcase.css", "showcase.mjs", "showcase-i18n.mjs",
         "fonts/ArchitectsDaughter-Regular.ttf", "src/comparison.mjs",
@@ -24,13 +49,20 @@ def build_site(demo_root, output, revision=""):
     player_prefix = "styles/whiteboard/studio/"
     files = [(STUDIO / name, player_prefix + name) for name in source_files]
     # Keep the portal independent of the retained local productions. Only generic
-    # library artwork and the existing public sample enter the Pages artifact.
+    # library artwork and approved Release samples enter the Pages artifact.
     files.extend((ROOT / name, name) for name in [
         "index.html", "catalog/studio.css", "catalog/studio.mjs",
         "catalog/hero.svg", "catalog/mark.svg",
     ])
     catalog = json.loads((ROOT / "styles.json").read_text())
     for style in catalog["styles"]:
+        if style.get('public_assets'):
+            bundle = json.loads((ROOT / style['public_assets']).read_text())
+            source = published_roots.get(style['id'])
+            if source is None:
+                raise FileNotFoundError(f"Verified public preview required: {style['id']}")
+            files.extend((source / name, str(Path(style['landing']['page']).parent / name))
+                         for name in bundle['files'])
         # A generic style landing page can ship independently of its local film.
         # Only these explicitly registered sources enter the public artifact.
         if landing := style.get("landing"):
@@ -93,6 +125,8 @@ def build_site(demo_root, output, revision=""):
         "revision": revision,
         "release": manifest["release"],
         "videos": {edition: entry["video"] for edition, entry in manifest["editions"].items()},
+        "previews": {style['id']: json.loads((ROOT / style['public_assets']).read_text())['archive']
+                     for style in catalog['styles'] if style.get('public_assets')},
     }, indent=2) + "\n")
     print(f"Built {len(files)} public assets in {output}")
 
@@ -112,7 +146,14 @@ def main():
         if args.asset_dir:
             command.extend(["--asset-dir", str(args.asset_dir.resolve())])
         subprocess.run(command, check=True)
-        build_site(demo_root, args.output.resolve(), args.revision)
+        published_roots = {}
+        for style in json.loads((ROOT / 'styles.json').read_text())['styles']:
+            if style.get('public_assets'):
+                bundle = json.loads((ROOT / style['public_assets']).read_text())
+                print(f"Downloading verified {style['id']} preview…", flush=True)
+                published_roots[style['id']] = fetch_showcase_bundle(
+                    bundle, Path(temporary) / style['id'], args.asset_dir)
+        build_site(demo_root, args.output.resolve(), args.revision, published_roots)
 
 
 if __name__ == "__main__":

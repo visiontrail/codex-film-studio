@@ -309,6 +309,14 @@
       },
       "showcases": [
         {
+          "id": "caption-news-preview",
+          "title": "Full film preview",
+          "page": "styles/caption-news/showcase/index.html",
+          "anchor": "screening",
+          "access": "release",
+          "media_manifest": "styles/caption-news/showcase/media/manifest.json"
+        },
+        {
           "id": "caption-news-film",
           "title": "Combined editorial film",
           "page": "styles/caption-news/showcase/index.html",
@@ -334,7 +342,8 @@
           "methods/media-selection.md",
           "methods/revision-delivery.md"
         ]
-      }
+      },
+      "public_assets": "styles/caption-news/demo-assets.json"
     }
   ]
 }
