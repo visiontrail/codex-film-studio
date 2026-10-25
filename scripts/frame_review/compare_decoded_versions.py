@@ -18,6 +18,11 @@ import time
 
 import av
 
+try:
+    from .frame_color import COLOR_POLICY, rgb_frame
+except ImportError:
+    from frame_color import COLOR_POLICY, rgb_frame
+
 
 def write_json(path: Path, data: object) -> None:
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -89,7 +94,7 @@ def inspect_frame(frame, index: int, width: int, height: int, fps: Fraction) -> 
     timestamp = frame.pts * time_base if frame.pts is not None and time_base else None
     duration_pts = getattr(frame, "duration", None)
     duration = duration_pts * time_base if duration_pts and time_base else None
-    pixels = frame.to_ndarray(format="rgb24")
+    pixels = rgb_frame(frame).to_ndarray()
     # C-order bytes exclude the padded decoder line stride; all RGB pixels count.
     pixel_hash = hashlib.sha256(pixels.tobytes(order="C")).hexdigest()
     expected = Fraction(index, 1) / fps
@@ -257,6 +262,7 @@ def compare(args: argparse.Namespace) -> dict:
     verified_ranges = candidates.select("candidate") if inheritance_valid else []
     summary = {
         "schema": "decoded-video-identity-v1",
+        "color_conversion": COLOR_POLICY,
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "inputs": inputs, "streams": stream_info,
         "contract": {"width": args.width, "height": args.height, "fps": str(fps),

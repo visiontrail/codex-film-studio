@@ -29,6 +29,11 @@ import time
 from urllib.parse import quote
 
 import av
+
+try:
+    from .frame_color import COLOR_POLICY, rgb_frame
+except ImportError:
+    from frame_color import COLOR_POLICY, rgb_frame
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
@@ -145,7 +150,7 @@ def stream_info(stream):
 
 def measure(frame, width=320):
     height = max(2, round(frame.height * width / frame.width))
-    pixels = frame.reformat(width=width, height=height, format='rgb24').to_ndarray()
+    pixels = rgb_frame(frame, width=width, height=height).to_ndarray()
     rgb = pixels.astype(np.float32) / 255
     luma = rgb @ np.array([.2126, .7152, .0722], dtype=np.float32)
     gx = np.diff(luma, axis=1, append=luma[:, -1:])
@@ -405,7 +410,7 @@ def compare(args):
             stream = container.streams.video[0]; stream.thread_type = 'AUTO'
             for index, frame in enumerate(container.decode(stream)):
                 if index in wanted:
-                    picture = frame.to_image().convert('RGB')
+                    picture = rgb_frame(frame).to_image().convert('RGB')
                     sample = ImageOps.pad(picture, (args.large_width, round(args.large_width * 9 / 16)), Image.Resampling.LANCZOS, color='#171717')
                     sample_path = output / 'sample-frames' / f'{name}-{index:07d}.png'
                     sample.save(sample_path, compress_level=3)
@@ -448,7 +453,7 @@ def compare(args):
         'trial_is_final_validation': False,
     }
     assert len(rows) == sum(s['pairs'] for s in sheets)
-    report = {'schema_version': 1, 'created_at_utc': datetime.now(timezone.utc).isoformat(),
+    report = {'schema_version': 1, 'color_conversion': COLOR_POLICY, 'created_at_utc': datetime.now(timezone.utc).isoformat(),
               'purpose': args.purpose, 'final_acceptance': 'not_claimed',
               'trial_warning': 'Historical silent trial only; not final-video validation.' if args.purpose == 'trial' else None,
               'inputs': inputs, 'decoder': {'name': 'PyAV', 'version': av.__version__, 'ffmpeg_subprocesses': 0},

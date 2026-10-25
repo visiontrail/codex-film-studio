@@ -76,3 +76,7 @@ python check_audio_identity.py /path/to/accepted.mp4 /path/to/candidate.mp4 --ou
 The file hashes identify both exports; their video streams may differ. Carry
 forward only the scope of a documented prior listening approval. Data identity
 does not create a listening review that never took place.
+
+## Color conversion
+
+RGB evidence uses explicit declared SDR YUV matrix and range conversion, with full-range RGB output. This avoids PyAV/swscale default conversions that can apply BT.601 coefficients to BT.709-tagged frames. Unsupported or unspecified matrix/range metadata stops the audit; resolve it from source evidence before continuing. HDR tone mapping and ICC color management are outside this helper. Recreate visual evidence and review it again when the conversion policy changes; older color judgments cannot inherit through pixel comparisons made with a different policy.

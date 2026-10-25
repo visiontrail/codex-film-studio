@@ -13,6 +13,11 @@ import sys
 import time
 
 import av
+
+try:
+    from .frame_color import COLOR_POLICY, rgb_frame
+except ImportError:
+    from frame_color import COLOR_POLICY, rgb_frame
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
@@ -167,7 +172,7 @@ def audit(args: argparse.Namespace) -> dict:
         writer = csv.DictWriter(csv_file, fieldnames=CSV_FIELDS)
         writer.writeheader()
         for index, frame in enumerate(container.decode(stream)):
-            image = frame.to_image().convert("RGB")
+            image = rgb_frame(frame).to_image().convert("RGB")
             dimensions.add(image.size)
             metric_height = max(2, round(image.height * args.metric_width / image.width))
             small = image.resize((args.metric_width, metric_height), Image.Resampling.BILINEAR)
@@ -270,7 +275,7 @@ def audit(args: argparse.Namespace) -> dict:
         stream.thread_type = "AUTO"
         for index, frame in enumerate(container.decode(stream)):
             if index in targets:
-                image = frame.to_image().convert("RGB")
+                image = rgb_frame(frame).to_image().convert("RGB")
                 for relative in targets[index]:
                     image.save(output / relative)
                 saved.add(index)
@@ -296,6 +301,7 @@ def audit(args: argparse.Namespace) -> dict:
     summary = {
         "schema_version": 1,
         "input": str(source), "input_sha256": source_hash, "output": str(output),
+        "color_conversion": COLOR_POLICY,
         "decoder": {"tool": "PyAV", "version": av.__version__, "ffmpeg_subprocesses": 0},
         "stream": metadata, "decoded_frame_count": count,
         "first_timestamp_seconds": records[0]["timestamp_seconds"],
