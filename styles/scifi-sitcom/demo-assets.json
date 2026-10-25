@@ -1,0 +1,21 @@
+{
+  "release": "style-showcases-v1",
+  "archive": {
+    "name": "scifi-sitcom-showcase-v1.tar.gz",
+    "bytes": 55229783,
+    "sha256": "9313399e97b7a658bcd394e19b921a5b9f2cf96ac231fe8f5f75f87db2da9d7b",
+    "url": "https://github.com/visiontrail/codex-film-studio/releases/download/style-showcases-v1/scifi-sitcom-showcase-v1.tar.gz"
+  },
+  "mounts": {
+    "scifi-review": "_assets"
+  },
+  "files": [
+    "_assets/content/review-report.md",
+    "_assets/content/script.json",
+    "_assets/content/timeline.json",
+    "_assets/media/pocket-builtin-audition/L001.wav",
+    "_assets/media/pocket-builtin-audition/L002.wav",
+    "_assets/media/the-house-gets-coffee.mp4",
+    "_assets/reference/coffee-run.mp4"
+  ]
+}

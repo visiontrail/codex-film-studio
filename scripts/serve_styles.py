@@ -18,7 +18,7 @@ spec.loader.exec_module(media_server)
 
 def local_pages(catalog):
     return {page['id']: page for style in catalog['styles']
-            for page in style.get('showcases', []) if page['access'] == 'local'}
+            for page in style.get('showcases', []) if page.get('project')}
 
 
 def resolve_resource(url, root, catalog):
@@ -53,7 +53,7 @@ def catalog_availability(root, catalog):
     pages = {}
     for style in catalog['styles']:
         for page in style.get('showcases', []):
-            if page['access'] == 'local':
+            if page.get('project'):
                 pages[page['id']] = (root / page['project'] / page['source_page']).is_file()
             elif page.get('media_manifest'):
                 pages[page['id']] = (root / page['media_manifest']).is_file()

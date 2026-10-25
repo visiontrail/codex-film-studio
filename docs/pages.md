@@ -104,11 +104,12 @@ python3 scripts/serve_styles.py --port 8249
 Open **http://127.0.0.1:8249/** for the homepage. The server's
 `catalog-availability.json` checks the actual entry file for each retained local
 project. Local page links use the current local server, including a custom port.
-On the public homepage and in README files they point to
-`http://127.0.0.1:8249/` and are labelled as local pages. Start the server before
-following those links. Missing projects show setup instructions in the dialog;
-the HTML entrance remains accessible, but its film requires the retained media.
-Local page links never point to unpublished paths under GitHub Pages.
+Published players also work online. Crayon Book, Mid-century Cartoon, Satellite
+Briefing and Sci-Fi Sitcom expose all nine existing entrances in both modes:
+the catalog server reads retained originals, while Pages uses checksum-pinned
+`style-showcases-v1` Release bundles. README previews and the public collection
+open the online editions; explicit local-preview links use port 8249. A local
+catalog with a missing production falls back to the published edition.
 
 Mid-century Cartoon has short/long players and motion review. Satellite Briefing
 has a player, live composition and frame comparison. Sci-Fi Sitcom has its review
@@ -144,16 +145,24 @@ Open <http://127.0.0.1:8248/>. Add `--asset-dir /path/to/release-files` to reuse
 downloaded Release archives. The builder refuses to overwrite an existing output;
 use `--output /path/to/a/new-folder` for another preview build.
 
-The builder copies an explicit list: the homepage, catalog, preview artwork and
-existing whiteboard player with its checksum-verified `v0.1.0` sample assets and
-the approved Caption News preview from `caption-news-preview-v1` Release assets.
-It also includes explicitly registered generic style landing pages and assets.
-It omits local production paths from the public catalog. Local showcases remain
-discoverable in style details, with instructions to open them locally. Their
-unpublished films, production-specific review pages, working audio and provider
-settings are not packaged. An approved film preview enters Pages only through its
-pinned public Release bundle; no retained production directory is copied.
-`build-info.json` retains the source revision and released video hashes.
+The builder copies an explicit list of homepage assets, registered pages and
+verified Release bundles. It includes the existing Whiteboard, Caption News and
+Art Collage previews plus all nine Crayon Book, Mid-century Cartoon, Satellite
+Briefing and Sci-Fi Sitcom pages. Production media and story-specific composition
+dependencies stay in Release archives, outside Git source and new-film starters.
+
+Each new bundle lists its exact files and maps retained `_projects/<id>/` routes
+to one shared `_assets/` directory per style. The builder rewrites those routes,
+root navigation and style links for `--base-path` (default `/codex-film-studio/`).
+Use `--base-path /` for a root-hosted preview, or the fork's repository path for
+a different GitHub Pages project. It removes private production paths from the
+public catalog. `build-info.json` records the revision and pinned archive hashes.
+
+The online films are H.264/AAC previews up to 1280 × 720. Frame comparison keeps
+every indexed frame; web frame images and Crayon Book review stills are compressed
+for delivery. Local original media and historical review records are preserved.
+The online-edition notice distinguishes these proxies from the reviewed masters.
+This publication does not constitute a new full-film visual or listening review.
 
 Assets use relative paths, including under a project URL such as
 `/codex-film-studio/`. The player keeps its own relative media paths, subtitles,

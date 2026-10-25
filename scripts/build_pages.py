@@ -2,14 +2,16 @@
 """Build the style library and checksum-verified public sample previews."""
 import argparse
 import json
-from pathlib import Path
+import re
+from pathlib import Path, PurePosixPath
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 import urllib.request
 from urllib.parse import urlencode
-from fetch_demo import sha, unpack
+from fetch_demo import sha
 
 ROOT = Path(__file__).resolve().parents[1]
 STUDIO = ROOT / "styles/whiteboard/studio"
@@ -28,14 +30,57 @@ def fetch_showcase_bundle(manifest, destination, asset_dir=None):
             shutil.copyfileobj(response, handle)
     if archive.stat().st_size != asset['bytes'] or sha(archive) != asset['sha256']:
         raise ValueError(f"Release checksum mismatch: {asset['name']}")
-    unpack(archive, destination)
+    # A showcase may contain fonts, images and scripts as well as media. Verify
+    # its entire allowlist before extracting; the whiteboard input unpacker only
+    # accepts files under media/ and cannot install these preview bundles.
+    with tarfile.open(archive, 'r:gz') as tar:
+        members = tar.getmembers()
+        names = [member.name for member in members]
+        if len(names) != len(set(names)) or set(names) != set(manifest['files']):
+            raise ValueError('Public preview archive differs from the approved file list')
+        for member in members:
+            path = PurePosixPath(member.name)
+            if (path.is_absolute() or '..' in path.parts or not path.parts
+                    or str(path) != member.name or not member.isfile()):
+                raise ValueError(f'Unsupported preview archive entry: {member.name}')
+        for member in members:
+            target = destination / member.name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with tar.extractfile(member) as source, target.open('wb') as handle:
+                shutil.copyfileobj(source, handle)
     actual = {str(p.relative_to(destination)) for p in destination.rglob('*') if p.is_file()}
     if actual != set(manifest['files']):
         raise ValueError('Public preview archive differs from the approved file list')
     return destination
 
 
-def build_site(demo_root, output, revision="", published_roots=None):
+def rewrite_public_routes(text, mounts, base_path):
+    """Map retained-project URLs to verified assets under any Pages subpath."""
+    prefix = '/' + base_path.strip('/') + '/' if base_path.strip('/') else '/'
+    for route, destination in mounts.items():
+        text = text.replace(f'/_projects/{route}/', prefix + destination.rstrip('/') + '/')
+    text = re.sub(r'''(["'(])/(styles/)''', lambda m: m[1] + prefix + m[2], text)
+    text = re.sub(r'''(["'])/\1''', lambda m: m[1] + prefix + m[1], text)
+    return text
+
+
+def prepare_public_document(text, mounts, base_path, web_preview=False):
+    text = rewrite_public_routes(text, mounts, base_path)
+    if not web_preview:
+        return text
+    home = '/' + base_path.strip('/') + '/' if base_path.strip('/') else '/'
+    notice = ('<aside style="padding:10px 18px;background:#eee7d8;color:#343258;'
+              'font:14px/1.6 system-ui">'
+              f'<a style="color:inherit" href="{home}">All styles / 全部风格</a> · Online edition · '
+              'Films and review images are web previews. Full-resolution originals '
+              'and review records remain in the local production. '
+              '线上版为网络预览，原始分辨率素材和审阅记录保留在本地工程。</aside>')
+    if '<body' in text:
+        return re.sub(r'(<body[^>]*>)', lambda m: m[0] + notice, text, count=1)
+    return text.replace('</style>', '</style>' + notice, 1)
+
+
+def build_site(demo_root, output, revision="", published_roots=None, base_path="/codex-film-studio/"):
     """Copy only the files needed by the public player, never a whole studio."""
     if output.exists():
         raise FileExistsError(output)
@@ -55,12 +100,18 @@ def build_site(demo_root, output, revision="", published_roots=None):
         "catalog/hero.svg", "catalog/mark.svg",
     ])
     catalog = json.loads((ROOT / "styles.json").read_text())
+    mounts = {}
+    public_pages = []
     for style in catalog["styles"]:
         if style.get('public_assets'):
             bundle = json.loads((ROOT / style['public_assets']).read_text())
             source = published_roots.get(style['id'])
             if source is None:
                 raise FileNotFoundError(f"Verified public preview required: {style['id']}")
+            mounts.update({key: str(Path(style['landing']['page']).parent / value)
+                           for key, value in bundle.get('mounts', {}).items()})
+            if bundle.get('mounts'):
+                public_pages.extend(p['page'] for p in style.get('showcases', []))
             files.extend((source / name, str(Path(style['landing']['page']).parent / name))
                          for name in bundle['files'])
         # A generic style landing page can ship independently of its local film.
@@ -70,6 +121,8 @@ def build_site(demo_root, output, revision="", published_roots=None):
         for key in ["preview", "preview_zh", "poster"]:
             if style.get(key):
                 files.append((ROOT / style[key], style[key]))
+        if style.get("landing"):
+            style["landing"].pop("project", None)
         for page in style.get("showcases", []):
             for private_key in ["project", "source_page", "linked_files"]:
                 page.pop(private_key, None)
@@ -93,6 +146,18 @@ def build_site(demo_root, output, revision="", published_roots=None):
         destination = output / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
+    # Legacy players use origin-root routes and retained-project base URLs.
+    # Rebase only the newly released pages and assets; local sources stay intact.
+    for path in output.rglob('*'):
+        if path.suffix in {'.html', '.css', '.mjs'} and path.is_file():
+            original = path.read_text(encoding='utf-8')
+            relative = str(path.relative_to(output))
+            web_preview = path.suffix == '.html' and (
+                relative in public_pages or any(relative.startswith(prefix.rstrip('/') + '/')
+                                                for prefix in mounts.values()))
+            rewritten = prepare_public_document(original, mounts, base_path, web_preview)
+            if rewritten != original:
+                path.write_text(rewritten, encoding='utf-8')
     if revision:
         # Pages caches static assets for ten minutes. A new HTML document must
         # request the scripts and styles belonging to this deployment.
@@ -135,6 +200,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / ".site")
     parser.add_argument("--asset-dir", type=Path, help="Use locally downloaded Release files.")
+    parser.add_argument("--base-path", default="/codex-film-studio/", help="Public URL prefix; use / for a root site.")
     parser.add_argument("--revision", default="", help="Source commit recorded in build-info.json.")
     args = parser.parse_args()
     if args.output.exists():
@@ -153,7 +219,7 @@ def main():
                 print(f"Downloading verified {style['id']} preview…", flush=True)
                 published_roots[style['id']] = fetch_showcase_bundle(
                     bundle, Path(temporary) / style['id'], args.asset_dir)
-        build_site(demo_root, args.output.resolve(), args.revision, published_roots)
+        build_site(demo_root, args.output.resolve(), args.revision, published_roots, args.base_path)
 
 
 if __name__ == "__main__":

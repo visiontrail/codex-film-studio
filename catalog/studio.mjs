@@ -21,7 +21,7 @@ const copy = {
     screeningAside:'Watch the films. Explore what made them.', publishedFilm:'PUBLISHED FILM',
     filmTitle:'Does AI help you learn—<br>or just finish?', filmDescription:'A continuous board. A moving marker. An argument that builds, one drawing at a time.',
     shortFilm:'3-minute film', longFilm:'12-minute film', filmSubtitle:'English narration · Subtitles & chapters',
-    moreFromStudio:'More from the studio', localLabel:'LOCAL SHOWCASES',
+    moreFromStudio:'More from the studio', localLabel:'FILMS & SHOWCASES',
     createEyebrow:'YOUR TURN IN THE DIRECTOR’S CHAIR', createLine1:'Bring the story.', createLine2:'Make it yours.',
     createDescription:'Choose a visual language. Bring your subject, audience and point of view. Build picture, voice and sound on one shared timeline.',
     readGuide:'Read the getting-started guide', step1Title:'Find a style that fits.', step1Text:'Explore its materials, movement and storytelling rules.',
@@ -34,7 +34,7 @@ const copy = {
     openPages:'Films & showcase pages', startStyle:'Create in this style', localHelp:'These pages read media from retained production projects. To open them on your machine, run:',
     missingProject:'The retained project is unavailable on this machine.', noShowcase:'A film page is not available for this style yet. Explore the guide and tools to create your own.',
     loadFailed:'The collection could not be loaded. Reload the page or open the style guide.',
-    publicNote:'Local films and review pages open from the studio on your machine. Run from the repository:',
+    publicNote:'Open the films and review pages online, or start the local studio:',
     localNote:'Local showcases use retained project files. Availability is checked on this machine. A preview frame does not mean the complete film is published.',
     previous:'Previous showcases', next:'Next showcases', close:'Close style details', copyCommand:'Copy project command', filterLabel:'Filter styles',
   },
@@ -51,7 +51,7 @@ const copy = {
     screeningAside:'看看影片，也看看它们如何被创作。', publishedFilm:'已发布影片',
     filmTitle:'AI 帮你学会了，<br>还是只是做完了？', filmDescription:'一块持续保留内容的白板，一支移动的笔。让论证随着画面，一步步展开。',
     shortFilm:'三分钟版', longFilm:'十二分钟完整版', filmSubtitle:'英语旁白 · 字幕与章节',
-    moreFromStudio:'更多工作室作品', localLabel:'本地展示',
+    moreFromStudio:'更多工作室作品', localLabel:'影片与展示',
     createEyebrow:'这一次，由你执导', createLine1:'带上你的故事。', createLine2:'拍出你的表达。',
     createDescription:'选一种视觉语言，带上主题、观众与观点。在同一条时间轴上，编排画面、旁白与声音。',
     readGuide:'阅读创作入门指南', step1Title:'选一种适合的画风。', step1Text:'了解它的材质、运动与叙事规则。',
@@ -64,7 +64,7 @@ const copy = {
     openPages:'影片与展示页面', startStyle:'用这个风格创作', localHelp:'这些页面从保留的制作项目中读取影片素材。请在本机运行：',
     missingProject:'本机暂未找到保留的项目文件。', noShowcase:'这个风格尚未提供可打开的影片页面，可以从说明和工具开始创作。',
     loadFailed:'风格目录暂时无法加载，请刷新页面，或前往风格说明。',
-    publicNote:'本地影片与审阅页面需要在自己的电脑中打开。请在仓库根目录运行：',
+    publicNote:'影片与审阅页面可直接在线打开，也可在仓库根目录启动本地工作室：',
     localNote:'本地展示读取保留项目的文件，可用状态根据本机文件检查。展示剧照不代表完整影片已发布。',
     previous:'上一组展示', next:'下一组展示', close:'关闭风格详情', copyCommand:'复制项目创建命令', filterLabel:'筛选风格',
   },
@@ -158,9 +158,9 @@ function renderScreening() {
     $('#featured-watch').href = pageURL(released,'short');
     $('#short-film').href = pageURL(released,'short'); $('#long-film').href = pageURL(released,'long');
   }
-  const localStyles = state.catalog.styles.filter(s => s.showcases?.some(p => p.access === 'local'));
+  const localStyles = state.catalog.styles.filter(s => s.id !== 'whiteboard' && s.showcases?.length);
   $('#showcase-shelf').innerHTML = localStyles.map(entry => {
-    const page = previewPage(entry) ?? entry.showcases.find(p => p.access === 'local');
+    const page = previewPage(entry) ?? entry.showcases.find(p => p.access === 'release') ?? entry.showcases[0];
     return `<article class="showcase-card">${previewAction(entry,`<div class="showcase-art">${preview(entry)}<span>${t(page.access === 'release' ? 'publicSample' : isAvailable(page) ? 'available' : 'localOnly')}</span></div><h4>${escape(pageTitle(page))}</h4><p>${escape(localized(entry,'name'))} · ${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</p>`)}</article>`;
   }).join('');
   $('#screening-note').innerHTML = state.availability.mode === 'local' ? t('localNote') : `${t('publicNote')} <code>python3 scripts/serve_styles.py</code>`;

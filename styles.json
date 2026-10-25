@@ -114,7 +114,7 @@
           "id": "crayon-film",
           "title": "Leo the Farmer",
           "page": "styles/crayon-book/showcase/index.html",
-          "access": "local",
+          "access": "release",
           "project": "../codex-film-studio-projects/crayon-book-film",
           "source_page": "index.html",
           "title_zh": "农夫 Leo"
@@ -123,7 +123,7 @@
           "id": "crayon-comparison",
           "title": "Frame comparison",
           "page": "styles/crayon-book/showcase/comparison.html",
-          "access": "local",
+          "access": "release",
           "project": "../codex-film-studio-projects/crayon-book-film",
           "source_page": "review/compare.html",
           "title_zh": "逐帧对照"
@@ -132,7 +132,18 @@
       "description_zh": "蜡质笔触与暖纸纹理，逐笔显现的绘画配合真实的绘本翻页。",
       "preview": "docs/readme/previews/crayon-book.en.jpg",
       "preview_kind": "frame",
-      "preview_zh": "docs/readme/previews/crayon-book.zh.jpg"
+      "preview_zh": "docs/readme/previews/crayon-book.zh.jpg",
+      "landing": {
+        "page": "styles/crayon-book/showcase/index.html",
+        "id": "crayon-film",
+        "access": "release",
+        "project": "../codex-film-studio-projects/crayon-book-film",
+        "assets": [
+          "styles/crayon-book/showcase/comparison.html"
+        ]
+      },
+      "public_assets": "styles/crayon-book/demo-assets.json",
+      "preview_showcase": "crayon-film"
     },
     {
       "id": "midcentury-cartoon",
@@ -157,7 +168,7 @@
           "id": "midcentury-short",
           "title": "Short film",
           "page": "styles/midcentury-cartoon/showcase/index.html",
-          "access": "local",
+          "access": "release",
           "project": "productions/ai-learning-midcentury",
           "source_page": "index.html",
           "title_zh": "短片"
@@ -166,7 +177,7 @@
           "id": "midcentury-long",
           "title": "Long film",
           "page": "styles/midcentury-cartoon/showcase/long.html",
-          "access": "local",
+          "access": "release",
           "project": "productions/ai-learning-midcentury",
           "source_page": "editions/long/index.html",
           "title_zh": "长片"
@@ -175,7 +186,7 @@
           "id": "midcentury-motion",
           "title": "Long-film motion review",
           "page": "styles/midcentury-cartoon/showcase/motion.html",
-          "access": "local",
+          "access": "release",
           "project": "productions/ai-learning-midcentury",
           "source_page": "editions/long/review/motion.html",
           "title_zh": "长片运动审阅"
@@ -184,7 +195,26 @@
       "description_zh": "柔和套色、微微错位的墨线与停格姿态，配合清楚的教学表演和爵士节奏。",
       "preview": "docs/readme/previews/midcentury-cartoon.en.jpg",
       "preview_kind": "frame",
-      "preview_zh": "docs/readme/previews/midcentury-cartoon.zh.jpg"
+      "preview_zh": "docs/readme/previews/midcentury-cartoon.zh.jpg",
+      "landing": {
+        "page": "styles/midcentury-cartoon/showcase/index.html",
+        "id": "midcentury-short",
+        "access": "release",
+        "project": "productions/ai-learning-midcentury",
+        "assets": [
+          "styles/midcentury-cartoon/README.md",
+          "styles/midcentury-cartoon/STYLE.md",
+          "styles/midcentury-cartoon/identity/studio-mark.svg",
+          "styles/midcentury-cartoon/showcase/long-showcase.css",
+          "styles/midcentury-cartoon/showcase/long-showcase.mjs",
+          "styles/midcentury-cartoon/showcase/long.html",
+          "styles/midcentury-cartoon/showcase/motion.html",
+          "styles/midcentury-cartoon/starter/AUDIO.md",
+          "styles/midcentury-cartoon/starter/WORKFLOW.md"
+        ]
+      },
+      "public_assets": "styles/midcentury-cartoon/demo-assets.json",
+      "preview_showcase": "midcentury-short"
     },
     {
       "id": "satellite-briefing",
@@ -209,7 +239,7 @@
           "id": "satellite-film",
           "title": "Singapore film",
           "page": "styles/satellite-briefing/showcase/index.html",
-          "access": "local",
+          "access": "release",
           "project": "productions/singapore-satellite-briefing",
           "source_page": "watch.html",
           "title_zh": "新加坡影片"
@@ -218,7 +248,7 @@
           "id": "satellite-composition",
           "title": "Live composition",
           "page": "styles/satellite-briefing/showcase/composition.html",
-          "access": "local",
+          "access": "release",
           "project": "productions/singapore-satellite-briefing",
           "source_page": "index.html",
           "title_zh": "实时构图"
@@ -227,7 +257,7 @@
           "id": "satellite-comparison",
           "title": "Frame comparison",
           "page": "styles/satellite-briefing/showcase/comparison.html",
-          "access": "local",
+          "access": "release",
           "project": "productions/singapore-satellite-briefing",
           "source_page": "review/comparison.html",
           "title_zh": "逐帧对照"
@@ -236,7 +266,23 @@
       "description_zh": "以地理镜头连接真实卫星影像，用克制的标注解释位置、尺度与空间关系。",
       "preview": "docs/readme/previews/satellite-briefing.en.jpg",
       "preview_kind": "frame",
-      "preview_zh": "docs/readme/previews/satellite-briefing.zh.jpg"
+      "preview_zh": "docs/readme/previews/satellite-briefing.zh.jpg",
+      "landing": {
+        "page": "styles/satellite-briefing/showcase/index.html",
+        "id": "satellite-film",
+        "access": "release",
+        "project": "productions/singapore-satellite-briefing",
+        "assets": [
+          "styles/satellite-briefing/README.md",
+          "styles/satellite-briefing/showcase/comparison.html",
+          "styles/satellite-briefing/showcase/composition.html",
+          "styles/satellite-briefing/showcase/orbit.mjs",
+          "styles/satellite-briefing/showcase/showcase.css",
+          "styles/satellite-briefing/showcase/showcase.mjs"
+        ]
+      },
+      "public_assets": "styles/satellite-briefing/demo-assets.json",
+      "preview_showcase": "satellite-film"
     },
     {
       "id": "scifi-sitcom",
@@ -261,7 +307,7 @@
           "id": "scifi-review",
           "title": "The House Gets Coffee",
           "page": "styles/scifi-sitcom/showcase/index.html",
-          "access": "local",
+          "access": "release",
           "project": "productions/2026-10-22-odds-coffee-run",
           "source_page": "review.html",
           "linked_files": [
@@ -273,7 +319,16 @@
       "description_zh": "粗墨线、平涂阴影与反差表演，用反应镜头和空间变化组织喜剧节奏。",
       "preview": "docs/readme/previews/scifi-sitcom.en.jpg",
       "preview_kind": "frame",
-      "preview_zh": "docs/readme/previews/scifi-sitcom.zh.jpg"
+      "preview_zh": "docs/readme/previews/scifi-sitcom.zh.jpg",
+      "landing": {
+        "page": "styles/scifi-sitcom/showcase/index.html",
+        "id": "scifi-review",
+        "access": "release",
+        "project": "productions/2026-10-22-odds-coffee-run",
+        "assets": []
+      },
+      "public_assets": "styles/scifi-sitcom/demo-assets.json",
+      "preview_showcase": "scifi-review"
     },
     {
       "id": "microgame",

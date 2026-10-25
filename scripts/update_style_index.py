@@ -40,6 +40,9 @@ def page_actions(entry, language='en'):
             if page['access'] == 'local':
                 title += '（本地）' if zh else ' (local)'
             actions.append((page_url(page, language), title))
+    if primary.get('project') and primary.get('access') == 'release':
+        local = {**primary, 'access': 'local'}
+        actions.append((page_url(local, language), '本地预览' if zh else 'Local preview'))
     return actions
 
 
@@ -48,9 +51,9 @@ def render_summary(catalog, language):
     counts = {status: sum(e['status'] == status for e in entries)
               for status in catalog['statuses']}
     if language == 'zh':
-        return (f"**{len(entries)} 种风格** · {counts['demo-ready']} 种已发布样片 · "
+        return (f"**{len(entries)} 种风格** · {counts['demo-ready']} 种完整样片工程 · "
                 f"{counts['starter-ready']} 种创作起步包 · {counts['toolkit-ready']} 种材质工具包")
-    return (f"**{len(entries)} styles** · {counts['demo-ready']} published sample · "
+    return (f"**{len(entries)} styles** · {counts['demo-ready']} complete demo kit · "
             f"{counts['starter-ready']} authoring starters · {counts['toolkit-ready']} material toolkit")
 
 
@@ -171,8 +174,8 @@ def render(catalog):
         'The HTML entrypoints are in each style package. Local showcases read media,',
         'fonts and review data from the retained projects listed in `styles.json`.',
         'A fresh clone without those projects shows their missing-resource status.',
-        'Whiteboard uses its existing Release download workflow. Local pages are not',
-        'automatically published or copied into new-film starters.', '',
+        'Published style pages also work online with pinned Release assets. Retained projects',
+        'provide the original local media. Neither is copied into new-film starters.', '',
         '## Previous paths / 旧路径', '',
         'The five former `methods/<style>/` packages moved to `styles/<style>/`.',
         'Use `scripts/new_film.py --style <id>` for all of them. `--method <id>` remains',

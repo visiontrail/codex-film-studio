@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from build_pages import ROOT, build_site, fetch_showcase_bundle
+from build_pages import ROOT, build_site, fetch_showcase_bundle, rewrite_public_routes
 from fetch_demo import sha
 from serve_styles import catalog_availability, resolve_resource
 
@@ -50,6 +50,7 @@ class PortalTests(unittest.TestCase):
                 if landing := style.get('landing'):
                     for name in [landing['page'], *landing['assets']]:
                         self.assertTrue((output / name).is_file(), name)
+                self.assertNotIn('project', style.get('landing', {}))
                 for key in ['preview', 'preview_zh', 'poster']:
                     if style.get(key):
                         self.assertTrue((output / style[key]).is_file())
@@ -72,6 +73,16 @@ class PortalTests(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 build_site(demo, output)
 
+    def test_released_routes_work_at_root_and_under_project_path(self):
+        source = '<base href="/_projects/film/editions/long/"><a href="/">Home</a><a href="/styles/example/index.html">Style</a>'
+        mounts = {'film': 'styles/example/showcase/_assets'}
+        for base in ['/', '/codex-film-studio/']:
+            result = rewrite_public_routes(source, mounts, base)
+            self.assertNotIn('/_projects/', result)
+            self.assertIn(f'<base href="{base}styles/example/showcase/_assets/editions/long/">', result)
+            self.assertIn(f'<a href="{base}">', result)
+            self.assertIn(f'href="{base}styles/example/index.html"', result)
+
     def test_preview_download_verifies_checksum_and_approved_contents(self):
         import io
         import tarfile
@@ -82,14 +93,44 @@ class PortalTests(unittest.TestCase):
             with tarfile.open(archive, 'w:gz') as tar:
                 entry = tarfile.TarInfo('media/film.mp4'); entry.size = 4
                 tar.addfile(entry, io.BytesIO(b'film'))
+                entry = tarfile.TarInfo('_assets/fonts/sample.ttf'); entry.size = 4
+                tar.addfile(entry, io.BytesIO(b'font'))
             manifest = {'archive': {'name': archive.name, 'bytes': archive.stat().st_size,
-                                    'sha256': sha(archive)}, 'files': ['media/film.mp4']}
+                                    'sha256': sha(archive)},
+                        'files': ['media/film.mp4', '_assets/fonts/sample.ttf']}
             stage = fetch_showcase_bundle(manifest, root / 'verified', assets)
             self.assertEqual((stage / 'media/film.mp4').read_bytes(), b'film')
+            self.assertEqual((stage / '_assets/fonts/sample.ttf').read_bytes(), b'font')
             manifest['archive']['sha256'] = '0' * 64
             with self.assertRaisesRegex(ValueError, 'checksum'):
                 fetch_showcase_bundle(manifest, root / 'bad', assets)
             self.assertFalse((root / 'bad/media/film.mp4').exists())
+
+    def test_preview_archive_rejects_unapproved_and_unsafe_entries(self):
+        import io
+        import tarfile
+        for kind in ['unlisted', 'traversal', 'absolute', 'symlink', 'duplicate']:
+            with self.subTest(kind=kind), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                assets = root / 'assets'; assets.mkdir()
+                archive = assets / 'preview.tar.gz'
+                name = {'traversal': '../escaped', 'absolute': '/escaped'}.get(kind, '_assets/file')
+                with tarfile.open(archive, 'w:gz') as tar:
+                    entry = tarfile.TarInfo(name)
+                    if kind == 'symlink':
+                        entry.type = tarfile.SYMTYPE; entry.linkname = '../escaped'
+                        tar.addfile(entry)
+                    else:
+                        entry.size = 4
+                        tar.addfile(entry, io.BytesIO(b'file'))
+                        if kind == 'duplicate':
+                            tar.addfile(entry, io.BytesIO(b'file'))
+                manifest = {'archive': {'name': archive.name, 'bytes': archive.stat().st_size,
+                                        'sha256': sha(archive)},
+                            'files': [] if kind == 'unlisted' else [name]}
+                with self.assertRaises(ValueError):
+                    fetch_showcase_bundle(manifest, root / 'verified', assets)
+                self.assertFalse(list((root / 'verified').rglob('*')))
 
     def test_local_availability_checks_entry_file_and_routes_portal_assets(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -102,7 +143,10 @@ class PortalTests(unittest.TestCase):
                                                   'project': 'project', 'source_page': 'watch.html'}]}]}
             self.assertFalse(catalog_availability(root, catalog)['pages']['film'])
             (root / 'project/watch.html').write_text('player')
+            catalog['styles'][0]['showcases'][0]['access'] = 'release'
             self.assertTrue(catalog_availability(root, catalog)['pages']['film'])
+            self.assertEqual(resolve_resource('/_projects/film/watch.html', root, catalog),
+                             (root / 'project/watch.html').resolve())
             self.assertEqual(resolve_resource('/', root, catalog), (root / 'index.html').resolve())
             self.assertEqual(resolve_resource('/catalog/studio.css', root, catalog), (root / 'catalog/studio.css').resolve())
             (root / 'private.txt').write_text('private')

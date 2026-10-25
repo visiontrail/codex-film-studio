@@ -31,7 +31,7 @@
 
 <!-- style-summary:start -->
 
-**10 种风格** · 1 种已发布样片 · 6 种创作起步包 · 3 种材质工具包
+**10 种风格** · 1 种完整样片工程 · 6 种创作起步包 · 3 种材质工具包
 
 <!-- style-summary:end -->
 
@@ -41,6 +41,9 @@
 `http://127.0.0.1:8249/`：请先在仓库根目录运行
 `python3 scripts/serve_styles.py --port 8249`，并保留对应制作项目。
 详见[本地启动说明](docs/pages.md#local-style-catalog)。
+
+蜡笔绘本、50 年代平涂卡通、卫星影像／地理简报、科幻情景喜剧卡通的
+9 个播放器与审阅入口均提供线上和本地版本。线上使用网络预览素材，本地保留原片。
 
 <!-- style-atlas:start -->
 
@@ -68,47 +71,47 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=zh"><img src="docs/readme/previews/crayon-book.zh.jpg" alt="蜡笔绘本 — 影片截图" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=zh"><img src="docs/readme/previews/crayon-book.zh.jpg" alt="蜡笔绘本 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>03 / <code>crayon-book</code></sub>
 <h3>蜡笔绘本</h3>
 <sub>Crayon Picture Book</sub>
 <p>蜡质笔触与暖纸纹理，逐笔显现的绘画配合真实的绘本翻页。</p>
-<p><b>材质工具包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=zh">本地风格页</a> · <a href="http://127.0.0.1:8249/styles/crayon-book/showcase/comparison.html?lang=zh">逐帧对照（本地）</a> · <a href="styles/crayon-book/STYLE.md">风格说明</a> · <a href="styles/crayon-book/prompt.txt">提示词</a> · <a href="styles/crayon-book/starter">创作工程</a></sub>
+<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/comparison.html?lang=zh">逐帧对照</a> · <a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/crayon-book/STYLE.md">风格说明</a> · <a href="styles/crayon-book/prompt.txt">提示词</a> · <a href="styles/crayon-book/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=zh"><img src="docs/readme/previews/midcentury-cartoon.zh.jpg" alt="50 年代平涂卡通 — 影片截图" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=zh"><img src="docs/readme/previews/midcentury-cartoon.zh.jpg" alt="50 年代平涂卡通 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>04 / <code>midcentury-cartoon</code></sub>
 <h3>50 年代平涂卡通</h3>
 <sub>Mid-century Cartoon</sub>
 <p>柔和套色、微微错位的墨线与停格姿态，配合清楚的教学表演和爵士节奏。</p>
-<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=zh">本地风格页</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/long.html?lang=zh">长片（本地）</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/motion.html?lang=zh">长片运动审阅（本地）</a> · <a href="styles/midcentury-cartoon/STYLE.md">风格说明</a> · <a href="styles/midcentury-cartoon/prompt.txt">提示词</a> · <a href="styles/midcentury-cartoon/starter">创作工程</a></sub>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/long.html?lang=zh">长片</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/motion.html?lang=zh">长片运动审阅</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/midcentury-cartoon/STYLE.md">风格说明</a> · <a href="styles/midcentury-cartoon/prompt.txt">提示词</a> · <a href="styles/midcentury-cartoon/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=zh"><img src="docs/readme/previews/satellite-briefing.zh.jpg" alt="卫星影像／地理简报 — 影片截图" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=zh"><img src="docs/readme/previews/satellite-briefing.zh.jpg" alt="卫星影像／地理简报 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>05 / <code>satellite-briefing</code></sub>
 <h3>卫星影像／地理简报</h3>
 <sub>Satellite Briefing</sub>
 <p>以地理镜头连接真实卫星影像，用克制的标注解释位置、尺度与空间关系。</p>
-<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=zh">本地风格页</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/composition.html?lang=zh">实时构图（本地）</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/comparison.html?lang=zh">逐帧对照（本地）</a> · <a href="styles/satellite-briefing/STYLE.md">风格说明</a> · <a href="styles/satellite-briefing/prompt.txt">提示词</a> · <a href="styles/satellite-briefing/starter">创作工程</a></sub>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/composition.html?lang=zh">实时构图</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/comparison.html?lang=zh">逐帧对照</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/satellite-briefing/STYLE.md">风格说明</a> · <a href="styles/satellite-briefing/prompt.txt">提示词</a> · <a href="styles/satellite-briefing/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=zh"><img src="docs/readme/previews/scifi-sitcom.zh.jpg" alt="科幻情景喜剧卡通 — 影片截图" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=zh"><img src="docs/readme/previews/scifi-sitcom.zh.jpg" alt="科幻情景喜剧卡通 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>06 / <code>scifi-sitcom</code></sub>
 <h3>科幻情景喜剧卡通</h3>
 <sub>Sci-Fi Sitcom Toon</sub>
 <p>粗墨线、平涂阴影与反差表演，用反应镜头和空间变化组织喜剧节奏。</p>
-<p><b>创作起步包</b> · <a href="docs/pages.md#local-style-catalog">本地影片与审阅页</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=zh">本地风格页</a> · <a href="styles/scifi-sitcom/STYLE.md">风格说明</a> · <a href="styles/scifi-sitcom/prompt.txt">提示词</a> · <a href="styles/scifi-sitcom/starter">创作工程</a></sub>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=zh">独立风格页</a> · <a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/scifi-sitcom/STYLE.md">风格说明</a> · <a href="styles/scifi-sitcom/prompt.txt">提示词</a> · <a href="styles/scifi-sitcom/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -284,7 +287,8 @@ Git 包含源码、字体和乐器采样；影片、配音 WAV 与时间数据�
 构建会下载并校验固定版本的 Release 资源，发布明确列出的首页、目录、预览图和播放器文件。
 详见[部署与本地预览说明](docs/pages.md)。
 
-本地风格网页和制作目录与公开站点分别管理。发布其他影片需要明确请求。
+公开展示页通过校验过的 Release 资源包播放网络预览，本地页面继续使用保留工程的原片。
+发布其他影片需要明确请求。
 
 </details>
 

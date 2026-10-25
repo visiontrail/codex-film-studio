@@ -31,13 +31,15 @@
 
 <!-- style-summary:start -->
 
-**10 styles** · 1 published sample · 6 authoring starters · 3 material toolkit
+**10 styles** · 1 complete demo kit · 6 authoring starters · 3 material toolkit
 
 <!-- style-summary:end -->
 
 Explore different ways to draw, move and tell a story. Open a style page or its
 film preview, or take the prompt and project files into your own production.
-Every existing player and review page is linked below. **Local page** links use
+The four Crayon Book, Mid-century Cartoon, Satellite Briefing and Sci-Fi Sitcom
+showcases, including all nine player and review entrances, work online and locally.
+**Local preview** links use
 `http://127.0.0.1:8249/`: first run `python3 scripts/serve_styles.py --port 8249`
 from the repository with the retained projects available. See the
 [local setup guide](docs/pages.md#local-style-catalog).
@@ -68,47 +70,47 @@ from the repository with the retained projects available. See the
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=en"><img src="docs/readme/previews/crayon-book.en.jpg" alt="Crayon Picture Book — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=en"><img src="docs/readme/previews/crayon-book.en.jpg" alt="Crayon Picture Book — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>03 / <code>crayon-book</code></sub>
 <h3>Crayon Picture Book</h3>
 <sub>蜡笔绘本</sub>
 <p>Wax pigment, textured paper, hand-drawn reveals and physical book motion.</p>
-<p><b>Material toolkit</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=en">Local style page</a> · <a href="http://127.0.0.1:8249/styles/crayon-book/showcase/comparison.html?lang=en">Frame comparison (local)</a> · <a href="styles/crayon-book/STYLE.md">Style guide</a> · <a href="styles/crayon-book/prompt.txt">Prompt</a> · <a href="styles/crayon-book/starter">Project files</a></sub>
+<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=en">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/comparison.html?lang=en">Frame comparison</a> · <a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=en">Local preview</a> · <a href="styles/crayon-book/STYLE.md">Style guide</a> · <a href="styles/crayon-book/prompt.txt">Prompt</a> · <a href="styles/crayon-book/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en"><img src="docs/readme/previews/midcentury-cartoon.en.jpg" alt="Mid-century Cartoon — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=en"><img src="docs/readme/previews/midcentury-cartoon.en.jpg" alt="Mid-century Cartoon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>04 / <code>midcentury-cartoon</code></sub>
 <h3>Mid-century Cartoon</h3>
 <sub>50 年代平涂卡通</sub>
 <p>Misregistered flat colour, broken ink, held poses and jazz.</p>
-<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en">Local style page</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/long.html?lang=en">Long film (local)</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/motion.html?lang=en">Long-film motion review (local)</a> · <a href="styles/midcentury-cartoon/STYLE.md">Style guide</a> · <a href="styles/midcentury-cartoon/prompt.txt">Prompt</a> · <a href="styles/midcentury-cartoon/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=en">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/long.html?lang=en">Long film</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/motion.html?lang=en">Long-film motion review</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en">Local preview</a> · <a href="styles/midcentury-cartoon/STYLE.md">Style guide</a> · <a href="styles/midcentury-cartoon/prompt.txt">Prompt</a> · <a href="styles/midcentury-cartoon/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en"><img src="docs/readme/previews/satellite-briefing.en.jpg" alt="Satellite Briefing — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=en"><img src="docs/readme/previews/satellite-briefing.en.jpg" alt="Satellite Briefing — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>05 / <code>satellite-briefing</code></sub>
 <h3>Satellite Briefing</h3>
 <sub>卫星影像／地理简报</sub>
 <p>Geographic camera, satellite imagery and measured annotations.</p>
-<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en">Local style page</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/composition.html?lang=en">Live composition (local)</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/comparison.html?lang=en">Frame comparison (local)</a> · <a href="styles/satellite-briefing/STYLE.md">Style guide</a> · <a href="styles/satellite-briefing/prompt.txt">Prompt</a> · <a href="styles/satellite-briefing/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=en">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/composition.html?lang=en">Live composition</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/comparison.html?lang=en">Frame comparison</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en">Local preview</a> · <a href="styles/satellite-briefing/STYLE.md">Style guide</a> · <a href="styles/satellite-briefing/prompt.txt">Prompt</a> · <a href="styles/satellite-briefing/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en"><img src="docs/readme/previews/scifi-sitcom.en.jpg" alt="Sci-Fi Sitcom Toon — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=en"><img src="docs/readme/previews/scifi-sitcom.en.jpg" alt="Sci-Fi Sitcom Toon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>06 / <code>scifi-sitcom</code></sub>
 <h3>Sci-Fi Sitcom Toon</h3>
 <sub>科幻情景喜剧卡通</sub>
 <p>Flat cartoon drawing, contrasting performances and spatial comedy.</p>
-<p><b>Authoring starter</b> · <a href="docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en">Local style page</a> · <a href="styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="styles/scifi-sitcom/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=en">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=en">Style page</a> · <a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en">Local preview</a> · <a href="styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="styles/scifi-sitcom/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -291,8 +293,8 @@ For a fork, select **Settings → Pages → Source → GitHub Actions**, then ru
 The builder downloads checksum-pinned Release assets and publishes an explicit
 set of homepage, catalog, preview and player files. See [deployment and local preview](docs/pages.md).
 
-Local style pages and production directories are separate from this published
-site. Publishing another film requires an explicit request.
+Published pages use verified web-preview bundles; local pages keep using the
+retained production originals. Publishing another film requires an explicit request.
 
 </details>
 
