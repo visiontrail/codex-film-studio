@@ -29,8 +29,13 @@ in search. `docs/readme/frames.json` supplies undecorated film frames when prese
 with the registry preview as a fallback. [Preview credits](readme/README.md)
 remain with those images. The hero is an original, subject-independent SVG.
 
-Style details show all available showcase links, guides, prompts and the project
-creation command. Readiness describes the reusable package. A displayed frame,
+Every Collection card opens the same style-detail layout, including Caption News.
+Cards with an existing page also have a separate, direct page link. The primary
+page is the registered `landing`, otherwise the first released showcase, otherwise
+the first local showcase. Style details show that primary entrance, all other
+distinct showcase pages, guides, prompts and the project creation command.
+The bilingual READMEs and style index use the same page-selection rules.
+Readiness describes the reusable package. A displayed frame,
 a retained local film and a published sample remain separate states.
 
 Caption News also has a standalone bilingual style page at
@@ -43,7 +48,9 @@ archive and an explicit file list; the builder verifies it before including medi
 in Pages. No production-specific content is copied into new-film starters or
 methods. `landing.page` and `landing.assets` allow the generic page dependencies.
 Its README and collection preview cards use actual film frames. The registry’s
-`preview_showcase` routes those images directly to the `screening` player anchor.
+`preview_showcase` routes README images, screening-shelf previews and the image
+inside its detail dialog to the `screening` player anchor. The Collection card
+opens the dialog, and its separate page link opens the complete style page.
 
 Art Collage has a bilingual independent page at
 `styles/art-collage/showcase/index.html`. Its original paper-and-type study,
@@ -51,8 +58,8 @@ visual rules and project starter are generic library sources. The full V11 film
 is published as a 720p web preview with eight chapters, English captions, a
 transcript, research notes and credits. Film-specific text and media come from
 the checksum-pinned `art-collage-preview-v1` Release bundle; the production
-folder and 1080p master remain external. Both README galleries and the All
-styles preview link directly to the screening room. The style remains an
+folder and 1080p master remain external. README previews link directly to the screening room. Its Collection card
+opens the shared style dialog, with a separate link to the full style page. The style remains an
 authoring starter: publishing a preview does not supply a reusable scene renderer.
 
 ## Local style catalog
@@ -65,7 +72,12 @@ python3 scripts/serve_styles.py --port 8249
 
 Open **http://127.0.0.1:8249/** for the homepage. The server's
 `catalog-availability.json` checks the actual entry file for each retained local
-project. Missing projects have disabled showcase links and setup instructions.
+project. Local page links use the current local server, including a custom port.
+On the public homepage and in README files they point to
+`http://127.0.0.1:8249/` and are labelled as local pages. Start the server before
+following those links. Missing projects show setup instructions in the dialog;
+the HTML entrance remains accessible, but its film requires the retained media.
+Local page links never point to unpublished paths under GitHub Pages.
 
 Mid-century Cartoon has short/long players and motion review. Satellite Briefing
 has a player, live composition and frame comparison. Sci-Fi Sitcom has its review

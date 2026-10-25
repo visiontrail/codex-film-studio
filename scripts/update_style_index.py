@@ -4,9 +4,43 @@ import argparse
 from html import escape
 import json
 from pathlib import Path
+from urllib.parse import urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = 'https://visiontrail.github.io/codex-film-studio/'
+LOCAL_SITE = 'http://127.0.0.1:8249/'
+
+
+def style_page(entry):
+    pages = entry.get('showcases', [])
+    return (entry.get('landing') or next((p for p in pages if p['access'] == 'release'), None)
+            or next(iter(pages), None))
+
+
+def page_url(page, language='en'):
+    base = LOCAL_SITE if page.get('access') == 'local' else SITE
+    return (base + page['page'] + '?' + urlencode({'lang': language})
+            + ('#' + page['anchor'] if page.get('anchor') else ''))
+
+
+def page_actions(entry, language='en'):
+    """Link every distinct page; prefer a release over the same local player."""
+    zh = language == 'zh'
+    primary = style_page(entry)
+    if not primary:
+        return []
+    key = lambda p: (p['page'], p.get('anchor', ''))
+    pages = {key(p): p for p in sorted(entry.get('showcases', []),
+                                     key=lambda p: p['access'] == 'release')}
+    label = ('本地风格页' if zh else 'Local style page') if primary.get('access') == 'local' else ('独立风格页' if zh else 'Style page')
+    actions = [(page_url(primary, language), label)]
+    for page in pages.values():
+        if key(page) != key(primary):
+            title = page.get('title_zh', page['title']) if zh else page['title']
+            if page['access'] == 'local':
+                title += '（本地）' if zh else ' (local)'
+            actions.append((page_url(page, language), title))
+    return actions
 
 
 def render_summary(catalog, language):
@@ -30,12 +64,11 @@ def render_gallery(catalog, language='en', prefix=''):
         description = entry.get('description_zh', entry['description']) if zh else entry['description']
         state = catalog['statuses'][entry['status']]['name_zh' if zh else 'name']
         guide = escape(prefix + entry['guide'], quote=True)
-        landing = entry.get('landing', {}).get('page')
-        landing_url = SITE + landing + '?lang=' + language if landing else None
+        primary = style_page(entry)
         preview_page = next((p for p in entry.get('showcases', [])
                              if p['id'] == entry.get('preview_showcase')), None)
-        preview_url = (SITE + preview_page['page'] + '?lang=' + language
-                       + ('#' + preview_page['anchor'] if preview_page.get('anchor') else '')) if preview_page else landing_url
+        preview_target_page = preview_page or primary
+        preview_url = page_url(preview_target_page, language) if preview_target_page else None
         preview_target = escape(preview_url, quote=True) if preview_url else guide
         preview = entry.get('preview_zh') if zh else entry.get('preview')
         preview = preview or entry.get('preview', entry.get('poster'))
@@ -46,19 +79,17 @@ def render_gallery(catalog, language='en', prefix=''):
                       f'alt="{escape(name)} — {label}" width="320"></a>')
         else:
             visual = '预览待补充' if zh else 'Preview to come'
-        actions = [
+        actions = page_actions(entry, language) + [
             (entry['guide'], '风格说明' if zh else 'Style guide'),
             (entry['prompt'], '提示词' if zh else 'Prompt'),
             (entry['template'], '创作工程' if zh else 'Project files'),
         ]
-        if landing:
-            actions.insert(0, (landing_url, '独立风格页' if zh else 'Style page'))
-        links = ' · '.join(f'<a href="{escape(path if path.startswith("https://") else prefix + path, quote=True)}">{label}</a>' for path, label in actions)
+        links = ' · '.join(f'<a href="{escape(path if path.startswith(("https://", "http://")) else prefix + path, quote=True)}">{escape(label)}</a>' for path, label in actions)
         local_pages = [p for p in entry.get('showcases', []) if p['access'] == 'local']
         public_pages = [p for p in entry.get('showcases', []) if p['access'] == 'release']
         if public_pages:
             page = public_pages[0]
-            player = SITE + page['page'] + '?lang=' + language + ('#' + page['anchor'] if page.get('anchor') else '')
+            player = page_url(page, language)
             availability = '<a href="' + player + '">' + ('▶ 在线播放' if zh else '▶ Watch online') + '</a>'
         elif local_pages:
             availability = '<a href="' + escape(prefix + 'docs/pages.md#local-style-catalog', quote=True) + '">' + ('本地影片与审阅页' if zh else 'Local films & review pages') + '</a>'
@@ -103,6 +134,9 @@ def render(catalog):
         'Film frames and original style studies are labelled separately.',
         '影片截图与原创风格示意分别标注；缺少预览的风格保留占位说明。',
         'A displayed frame does not change package completion or full-film publication.', '',
+        'Local page links use `http://127.0.0.1:8249/`. Start the catalog with',
+        '`python3 scripts/serve_styles.py --port 8249` and keep the retained projects available.',
+        '本地页面入口需要先启动上述服务，并保留对应制作项目；公开页面可以直接访问。', '',
         render_gallery(catalog, prefix='../'), '',
         '## Capabilities / 能力与网页', '',
         '| Style / 风格 | Package / 完成状态 | Renderer / 场景渲染工程 | Showcase / 网页 |',
@@ -111,9 +145,7 @@ def render(catalog):
     for entry in catalog['styles']:
         relative = entry.get('readme', entry['guide']).removeprefix('styles/')
         state = catalog['statuses'][entry['status']]
-        page_links = [f"[{p['title']}]({p['page'].removeprefix('styles/')}{'#' + p['anchor'] if p.get('anchor') else ''})" for p in entry.get('showcases', [])]
-        if entry.get('landing'):
-            page_links.insert(0, f"[Style page / 独立风格页]({SITE + entry['landing']['page']})")
+        page_links = [f'[{label}]({url})' for url, label in page_actions(entry)]
         pages = ' · '.join(page_links) or '—'
         renderer = 'Included / 已有' if entry['capabilities']['scene_renderer'] else 'Author per project / 需按选题编写'
         lines.append(f"| [{entry['name_zh']} / {entry['name']}]({relative}) | {state['name_zh']} (`{entry['status']}`) | {renderer} | {pages} |")

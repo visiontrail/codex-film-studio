@@ -14,16 +14,20 @@ Film frames and original style studies are labelled separately.
 影片截图与原创风格示意分别标注；缺少预览的风格保留占位说明。
 A displayed frame does not change package completion or full-film publication.
 
+Local page links use `http://127.0.0.1:8249/`. Start the catalog with
+`python3 scripts/serve_styles.py --port 8249` and keep the retained projects available.
+本地页面入口需要先启动上述服务，并保留对应制作项目；公开页面可以直接访问。
+
 <table>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/whiteboard/STYLE.md"><img src="../docs/readme/previews/whiteboard.en.jpg" alt="Whiteboard Explainer — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en"><img src="../docs/readme/previews/whiteboard.en.jpg" alt="Whiteboard Explainer — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>01 / <code>whiteboard</code></sub>
 <h3>Whiteboard Explainer</h3>
 <sub>白板讲解</sub>
 <p>One persistent board, handwritten ideas, moving markers and story-driven line characters.</p>
 <p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en">▶ Watch online</a></p>
-<sub><a href="../styles/whiteboard/STYLE.md">Style guide</a> · <a href="../styles/whiteboard/prompt.txt">Prompt</a> · <a href="../styles/whiteboard/studio">Project files</a></sub>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en">Style page</a> · <a href="../styles/whiteboard/STYLE.md">Style guide</a> · <a href="../styles/whiteboard/prompt.txt">Prompt</a> · <a href="../styles/whiteboard/studio">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -34,51 +38,51 @@ A displayed frame does not change package completion or full-film publication.
 <sub>艺术拼贴</sub>
 <p>Paper cutouts, layered typography and physical collage motion.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en">Style page</a> · <a href="../styles/art-collage/STYLE.md">Style guide</a> · <a href="../styles/art-collage/prompt.txt">Prompt</a> · <a href="../styles/art-collage/starter">Project files</a></sub>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">Art Collage · Full film</a> · <a href="../styles/art-collage/STYLE.md">Style guide</a> · <a href="../styles/art-collage/prompt.txt">Prompt</a> · <a href="../styles/art-collage/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/crayon-book/STYLE.md"><img src="../docs/readme/previews/crayon-book.en.jpg" alt="Crayon Picture Book — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=en"><img src="../docs/readme/previews/crayon-book.en.jpg" alt="Crayon Picture Book — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>03 / <code>crayon-book</code></sub>
 <h3>Crayon Picture Book</h3>
 <sub>蜡笔绘本</sub>
 <p>Wax pigment, textured paper, hand-drawn reveals and physical book motion.</p>
 <p><b>Material toolkit</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="../styles/crayon-book/STYLE.md">Style guide</a> · <a href="../styles/crayon-book/prompt.txt">Prompt</a> · <a href="../styles/crayon-book/starter">Project files</a></sub>
+<sub><a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=en">Local style page</a> · <a href="http://127.0.0.1:8249/styles/crayon-book/showcase/comparison.html?lang=en">Frame comparison (local)</a> · <a href="../styles/crayon-book/STYLE.md">Style guide</a> · <a href="../styles/crayon-book/prompt.txt">Prompt</a> · <a href="../styles/crayon-book/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/midcentury-cartoon/STYLE.md"><img src="../docs/readme/previews/midcentury-cartoon.en.jpg" alt="Mid-century Cartoon — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en"><img src="../docs/readme/previews/midcentury-cartoon.en.jpg" alt="Mid-century Cartoon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>04 / <code>midcentury-cartoon</code></sub>
 <h3>Mid-century Cartoon</h3>
 <sub>50 年代平涂卡通</sub>
 <p>Misregistered flat colour, broken ink, held poses and jazz.</p>
 <p><b>Authoring starter</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="../styles/midcentury-cartoon/STYLE.md">Style guide</a> · <a href="../styles/midcentury-cartoon/prompt.txt">Prompt</a> · <a href="../styles/midcentury-cartoon/starter">Project files</a></sub>
+<sub><a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en">Local style page</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/long.html?lang=en">Long film (local)</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/motion.html?lang=en">Long-film motion review (local)</a> · <a href="../styles/midcentury-cartoon/STYLE.md">Style guide</a> · <a href="../styles/midcentury-cartoon/prompt.txt">Prompt</a> · <a href="../styles/midcentury-cartoon/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/satellite-briefing/STYLE.md"><img src="../docs/readme/previews/satellite-briefing.en.jpg" alt="Satellite Briefing — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en"><img src="../docs/readme/previews/satellite-briefing.en.jpg" alt="Satellite Briefing — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>05 / <code>satellite-briefing</code></sub>
 <h3>Satellite Briefing</h3>
 <sub>卫星影像／地理简报</sub>
 <p>Geographic camera, satellite imagery and measured annotations.</p>
 <p><b>Authoring starter</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="../styles/satellite-briefing/STYLE.md">Style guide</a> · <a href="../styles/satellite-briefing/prompt.txt">Prompt</a> · <a href="../styles/satellite-briefing/starter">Project files</a></sub>
+<sub><a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en">Local style page</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/composition.html?lang=en">Live composition (local)</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/comparison.html?lang=en">Frame comparison (local)</a> · <a href="../styles/satellite-briefing/STYLE.md">Style guide</a> · <a href="../styles/satellite-briefing/prompt.txt">Prompt</a> · <a href="../styles/satellite-briefing/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/scifi-sitcom/STYLE.md"><img src="../docs/readme/previews/scifi-sitcom.en.jpg" alt="Sci-Fi Sitcom Toon — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en"><img src="../docs/readme/previews/scifi-sitcom.en.jpg" alt="Sci-Fi Sitcom Toon — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>06 / <code>scifi-sitcom</code></sub>
 <h3>Sci-Fi Sitcom Toon</h3>
 <sub>科幻情景喜剧卡通</sub>
 <p>Flat cartoon drawing, contrasting performances and spatial comedy.</p>
 <p><b>Authoring starter</b> · <a href="../docs/pages.md#local-style-catalog">Local films & review pages</a></p>
-<sub><a href="../styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="../styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="../styles/scifi-sitcom/starter">Project files</a></sub>
+<sub><a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en">Local style page</a> · <a href="../styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="../styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="../styles/scifi-sitcom/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -111,7 +115,7 @@ A displayed frame does not change package completion or full-film publication.
 <sub>字幕新闻</sub>
 <p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en">Style page</a> · <a href="../styles/caption-news/STYLE.md">Style guide</a> · <a href="../styles/caption-news/prompt.txt">Prompt</a> · <a href="../styles/caption-news/starter">Project files</a></sub>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">Full film preview</a> · <a href="../styles/caption-news/STYLE.md">Style guide</a> · <a href="../styles/caption-news/prompt.txt">Prompt</a> · <a href="../styles/caption-news/starter">Project files</a></sub>
 </td>
 </tr>
 </table>
@@ -120,15 +124,15 @@ A displayed frame does not change package completion or full-film publication.
 
 | Style / 风格 | Package / 完成状态 | Renderer / 场景渲染工程 | Showcase / 网页 |
 | --- | --- | --- | --- |
-| [白板讲解 / Whiteboard Explainer](whiteboard/STYLE.md) | 已发布样片 (`demo-ready`) | Included / 已有 | [Short and long published samples](whiteboard/studio/index.html) |
-| [艺术拼贴 / Art Collage](art-collage/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page / 独立风格页](https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html) · [Art Collage · Full film](art-collage/showcase/index.html#film) |
-| [蜡笔绘本 / Crayon Picture Book](crayon-book/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | [Leo the Farmer](crayon-book/showcase/index.html) · [Frame comparison](crayon-book/showcase/comparison.html) |
-| [50 年代平涂卡通 / Mid-century Cartoon](midcentury-cartoon/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Short film](midcentury-cartoon/showcase/index.html) · [Long film](midcentury-cartoon/showcase/long.html) · [Long-film motion review](midcentury-cartoon/showcase/motion.html) |
-| [卫星影像／地理简报 / Satellite Briefing](satellite-briefing/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Singapore film](satellite-briefing/showcase/index.html) · [Live composition](satellite-briefing/showcase/composition.html) · [Frame comparison](satellite-briefing/showcase/comparison.html) |
-| [科幻情景喜剧卡通 / Sci-Fi Sitcom Toon](scifi-sitcom/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [The House Gets Coffee](scifi-sitcom/showcase/index.html) |
+| [白板讲解 / Whiteboard Explainer](whiteboard/STYLE.md) | 已发布样片 (`demo-ready`) | Included / 已有 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en) |
+| [艺术拼贴 / Art Collage](art-collage/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en) · [Art Collage · Full film](https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film) |
+| [蜡笔绘本 / Crayon Picture Book](crayon-book/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | [Local style page](http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=en) · [Frame comparison (local)](http://127.0.0.1:8249/styles/crayon-book/showcase/comparison.html?lang=en) |
+| [50 年代平涂卡通 / Mid-century Cartoon](midcentury-cartoon/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Local style page](http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en) · [Long film (local)](http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/long.html?lang=en) · [Long-film motion review (local)](http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/motion.html?lang=en) |
+| [卫星影像／地理简报 / Satellite Briefing](satellite-briefing/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Local style page](http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en) · [Live composition (local)](http://127.0.0.1:8249/styles/satellite-briefing/showcase/composition.html?lang=en) · [Frame comparison (local)](http://127.0.0.1:8249/styles/satellite-briefing/showcase/comparison.html?lang=en) |
+| [科幻情景喜剧卡通 / Sci-Fi Sitcom Toon](scifi-sitcom/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Local style page](http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en) |
 | [极速微游戏 / Microgame Frenzy](microgame/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
 | [装饰艺术 / Art Deco](art-deco/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
-| [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page / 独立风格页](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html) · [Full film preview](caption-news/showcase/index.html#screening) · [Combined editorial film](caption-news/showcase/index.html#screening) |
+| [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en) · [Full film preview](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening) |
 
 ## What is complete / 已完成什么
 

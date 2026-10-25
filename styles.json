@@ -39,7 +39,8 @@
           "id": "whiteboard",
           "title": "Short and long published samples",
           "page": "styles/whiteboard/studio/index.html",
-          "access": "release"
+          "access": "release",
+          "title_zh": "短版与长版发布样片"
         }
       ],
       "description_zh": "一块持续保留内容的白板，用手写文字、移动马克笔和线条人物逐步解释想法。",
@@ -72,7 +73,8 @@
           "page": "styles/art-collage/showcase/index.html",
           "anchor": "film",
           "access": "release",
-          "media_manifest": "styles/art-collage/showcase/media/manifest.json"
+          "media_manifest": "styles/art-collage/showcase/media/manifest.json",
+          "title_zh": "艺术拼贴 · 完整影片"
         }
       ],
       "description_zh": "纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。",
@@ -114,7 +116,8 @@
           "page": "styles/crayon-book/showcase/index.html",
           "access": "local",
           "project": "../codex-film-studio-projects/crayon-book-film",
-          "source_page": "index.html"
+          "source_page": "index.html",
+          "title_zh": "农夫 Leo"
         },
         {
           "id": "crayon-comparison",
@@ -122,7 +125,8 @@
           "page": "styles/crayon-book/showcase/comparison.html",
           "access": "local",
           "project": "../codex-film-studio-projects/crayon-book-film",
-          "source_page": "review/compare.html"
+          "source_page": "review/compare.html",
+          "title_zh": "逐帧对照"
         }
       ],
       "description_zh": "蜡质笔触与暖纸纹理，逐笔显现的绘画配合真实的绘本翻页。",
@@ -155,7 +159,8 @@
           "page": "styles/midcentury-cartoon/showcase/index.html",
           "access": "local",
           "project": "productions/ai-learning-midcentury",
-          "source_page": "index.html"
+          "source_page": "index.html",
+          "title_zh": "短片"
         },
         {
           "id": "midcentury-long",
@@ -163,7 +168,8 @@
           "page": "styles/midcentury-cartoon/showcase/long.html",
           "access": "local",
           "project": "productions/ai-learning-midcentury",
-          "source_page": "editions/long/index.html"
+          "source_page": "editions/long/index.html",
+          "title_zh": "长片"
         },
         {
           "id": "midcentury-motion",
@@ -171,7 +177,8 @@
           "page": "styles/midcentury-cartoon/showcase/motion.html",
           "access": "local",
           "project": "productions/ai-learning-midcentury",
-          "source_page": "editions/long/review/motion.html"
+          "source_page": "editions/long/review/motion.html",
+          "title_zh": "长片运动审阅"
         }
       ],
       "description_zh": "柔和套色、微微错位的墨线与停格姿态，配合清楚的教学表演和爵士节奏。",
@@ -204,7 +211,8 @@
           "page": "styles/satellite-briefing/showcase/index.html",
           "access": "local",
           "project": "productions/singapore-satellite-briefing",
-          "source_page": "watch.html"
+          "source_page": "watch.html",
+          "title_zh": "新加坡影片"
         },
         {
           "id": "satellite-composition",
@@ -212,7 +220,8 @@
           "page": "styles/satellite-briefing/showcase/composition.html",
           "access": "local",
           "project": "productions/singapore-satellite-briefing",
-          "source_page": "index.html"
+          "source_page": "index.html",
+          "title_zh": "实时构图"
         },
         {
           "id": "satellite-comparison",
@@ -220,7 +229,8 @@
           "page": "styles/satellite-briefing/showcase/comparison.html",
           "access": "local",
           "project": "productions/singapore-satellite-briefing",
-          "source_page": "review/comparison.html"
+          "source_page": "review/comparison.html",
+          "title_zh": "逐帧对照"
         }
       ],
       "description_zh": "以地理镜头连接真实卫星影像，用克制的标注解释位置、尺度与空间关系。",
@@ -256,7 +266,8 @@
           "source_page": "review.html",
           "linked_files": [
             "reference/coffee-run.mp4"
-          ]
+          ],
+          "title_zh": "The House Gets Coffee"
         }
       ],
       "description_zh": "粗墨线、平涂阴影与反差表演，用反应镜头和空间变化组织喜剧节奏。",
@@ -332,7 +343,8 @@
           "page": "styles/caption-news/showcase/index.html",
           "anchor": "screening",
           "access": "release",
-          "media_manifest": "styles/caption-news/showcase/media/manifest.json"
+          "media_manifest": "styles/caption-news/showcase/media/manifest.json",
+          "title_zh": "完整影片预览"
         },
         {
           "id": "caption-news-film",
@@ -341,7 +353,8 @@
           "anchor": "screening",
           "access": "local",
           "project": "productions/caption-news-week-2026-10-23",
-          "source_page": "media/caption-news-combined.mp4"
+          "source_page": "media/caption-news-combined.mp4",
+          "title_zh": "字幕新闻合并版影片"
         }
       ],
       "preview": "docs/readme/previews/caption-news.en.jpg",
