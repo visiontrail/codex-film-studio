@@ -224,6 +224,14 @@ all fine contrast can overcorrect the problem into blurred wood, so retain
 localized dry catches. Texture statistics help identify the scale of a defect,
 but a closer variance or colour mean does not establish a closer visual style.
 
+If small catches still read as rows of bright dots, change their characteristic
+width and spacing as well as the shared fibre bend. Keep the broad colour bands,
+grooves and dry catches in the same directional field, with independent pressure
+masks. Compare several strengths at both the widest and closest camera scales:
+stronger grooves can compete with the page even when a small crop looks richer.
+Verify that a background-material repair leaves the book interior unchanged,
+and that revisiting a camera position reproduces the same grain.
+
 A turning leaf and its settled surface must share the same texture orientation
 and light treatment. Reverse sampling order on the back face, carry the gutter
 with the hinge, and remove the moving self-shadow continuously as the leaf
