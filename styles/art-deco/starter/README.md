@@ -8,4 +8,6 @@ Read `STYLE.md`, `DIRECTOR.md`, `TECHNIQUE.md`, `WORKFLOW.md` and `REVIEW.md` be
 
 No dependency installation or rendering happens automatically. Use a browser Canvas 2D context or a compatible raster implementation, load Limelight/Poiret One/Josefin Sans before drawing, and add a new scene interpreter for the new story. A successful primitive render is not a complete film.
 
+`lib/finishing.py` reads `content/finishing.json` with `encoding_finish(path)` and returns an FFmpeg video-filter string, extra encoder arguments and a hash-bound profile record. The supplied profile adds restrained seeded temporal luma grain after conversion from full-range BT.601 image input to limited-range BT.709 YUV420P. It is calibrated for 1080×1920 H.264 at CRF 16 with the medium preset; retain explicit BT.709 output tags and recheck the encoded texture for other formats or settings. The helper does not launch FFmpeg. Keep the returned record beside the encoded film, and use the shared gate for the actual encoder call.
+
 Store generated media, source reference files, audio and reviews locally under ignored directories. Use `tools/frame_review/ffmpeg_gate.py` before launching FFmpeg when other productions share the host. Use `tools/frame_review/audit_frames.py` for complete frame coverage, then perform and record actual visual/audio review.
