@@ -259,25 +259,46 @@ let a=Math.PI*.8+clamp(value)*Math.PI*1.4;poly(g,[[x-5,y+4],[x+Math.cos(a)*r*.78
 export function leaf(g,x,y,size,rot=0,open=1,material={}){g.save();g.translate(x,y);g.rotate(rot);g.scale(Math.max(.01,open),1);poly(g,[[0,0],[-size*.27,-size*.25],[-size*.38,-size*.63],[0,-size],[size*.38,-size*.63],[size*.27,-size*.25]],material.base||'#163f31',material.light||'#6eaa77');line(g,[[0,0],[0,-size]],1.7);for(let i=1;i<5;i++)line(g,[[-size*.27*(1-i/6),-size*i/5],[0,-size*(i/5+.1)],[size*.27*(1-i/6),-size*i/5]],.6);g.restore()}
 // Cloth keeps distinct lit and shaded planes instead of fading into near-black lacquer.
 function uniformPalette(greenUniform=false){return greenUniform?['#5e9979','#418566','#23634b','#164335']:['#ce4b55','#bc3e45','#9e2a2f','#7e1b28']}
-function garmentPanel(g,points,greenUniform=false){
+export function garmentPanel(g,points,greenUniform=false){
  const xs=points.map(p=>p[0]),left=Math.min(...xs),right=Math.max(...xs);
  const c=uniformPalette(greenUniform),shade=g.createLinearGradient(left,0,right,0);
  for(const [stop,color] of [[0,c[0]],[.49,c[1]],[.5,c[2]],[1,c[3]]])shade.addColorStop(stop,color);
  g.save();path(g,points,true);g.fillStyle=shade;g.fill();g.restore();
 }
-// Continuous tapered sleeves with round elbows; all motion quantized to twelve poses/sec.
-function sleeve(g,points,w,col,lit){
-  const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
-  g.save();g.lineCap='round';g.lineJoin='round';path(g,points);
-  g.strokeStyle='#24180d';g.lineWidth=w+3;g.stroke();
-  g.strokeStyle=gold(g,Math.min(...xs),Math.min(...ys),70,180);g.lineWidth=w+1;g.stroke();
-  let shade=g.createLinearGradient(Math.min(...xs)-w,0,Math.max(...xs)+w,0);if(col===C.burgundy||col===C.emerald){const c=uniformPalette(col===C.emerald);for(const [stop,color] of [[0,c[0]],[.36,c[1]],[.38,c[2]],[1,c[3]]])shade.addColorStop(stop,color)}else{shade.addColorStop(0,lit);shade.addColorStop(.46,col);shade.addColorStop(1,'#173f32')}
-  g.strokeStyle=shade;g.lineWidth=w-2;g.stroke();
-  if(col===C.burgundy||col===C.emerald){
-   const stripe=points.map(([x,y],i)=>{const a=points[Math.max(0,i-1)],b=points[Math.min(points.length-1,i+1)],dx=b[0]-a[0],dy=b[1]-a[1],n=Math.hypot(dx,dy)||1;return [x-dy/n*w*.24,y+dx/n*w*.24]});
-   path(g,stripe);g.lineWidth=w*.14;g.strokeStyle=gold(g,Math.min(...xs)-20,Math.min(...ys),90,220);g.stroke();
-  }
+// Fabric piping is one warm band; keep the engraved dark undercut on rigid metal only.
+export function clothTrim(g,points,w=2){
+ const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
+ const shade=g.createLinearGradient(Math.min(...xs)-w/2,Math.min(...ys),Math.max(...xs)+w/2,Math.max(...ys)+1);
+ shade.addColorStop(0,'#dbb974');shade.addColorStop(.55,'#efd394');shade.addColorStop(1,'#c6a15d');
+ g.save();path(g,points);g.lineJoin='round';g.lineCap='butt';g.lineWidth=w;g.strokeStyle=shade;g.stroke();g.restore();
+}
+// Shade each sleeve segment across its width and overlap the rounded elbow seam.
+export function clothSleeve(g,points,w,green){
+ const colors=uniformPalette(green).map(c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16)));
+ for(let i=1;i<points.length;i++){
+  const a=points[i-1],b=points[i],dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy);if(!length)continue;
+  // Continuous lighting avoids a side swap when an arm passes the key direction.
+  const key=(-.8*dy+.6*dx)/length,blend=(key+1)/2;
+  g.save();g.translate(...a);g.rotate(Math.atan2(dy,dx)-Math.PI/2);
+  const shade=g.createLinearGradient(-w/2,0,w/2,0);
+  [0,.49,.5,1].forEach((stop,j)=>{const c=colors[j].map((n,k)=>Math.round(mix(n,colors[3-j][k],blend)));shade.addColorStop(stop,`rgb(${c.join(',')})`)});
+  g.beginPath();g.moveTo(0,0);g.lineTo(0,length);g.strokeStyle=shade;g.lineWidth=w;g.lineCap='round';g.stroke();
+  const edge=w*.4;
+  g.strokeStyle='#e5c582';g.lineWidth=w*.14;g.lineCap='butt';
+  g.beginPath();g.arc(0,0,edge,Math.PI,0);g.stroke();
+  for(const side of [-1,1]){g.save();g.globalAlpha*=(1+side*key)/2;g.beginPath();g.moveTo(side*edge,0);g.lineTo(side*edge,length);g.stroke();g.restore()}
   g.restore();
+ }
+}
+// Trouser planes retain their fine metallic outer edge.
+function sleeve(g,points,w,col,lit){
+ if(col===C.burgundy||col===C.emerald){clothSleeve(g,points,w,col===C.emerald);return}
+ const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
+ g.save();g.lineCap='round';g.lineJoin='round';path(g,points);
+ g.strokeStyle='#24180d';g.lineWidth=w+3;g.stroke();
+ g.strokeStyle=gold(g,Math.min(...xs),Math.min(...ys),70,180);g.lineWidth=w+1;g.stroke();
+ const shade=g.createLinearGradient(Math.min(...xs)-w,0,Math.max(...xs)+w,0);shade.addColorStop(0,lit);shade.addColorStop(.46,col);shade.addColorStop(1,'#173f32');
+ g.strokeStyle=shade;g.lineWidth=w-2;g.stroke();g.restore();
 }
 function glove(g,x,y,angle=0,grip=0){
  g.save();g.translate(x,y);g.rotate(angle);const z=g.createLinearGradient(-7,0,9,0);z.addColorStop(0,'#fff0d0');z.addColorStop(1,'#c9b691');g.fillStyle=z;g.strokeStyle='#ac9154';g.lineWidth=.7;
@@ -303,7 +324,7 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
  const arm=(side)=>[[0,-532],[-stride*side*44,-432],[stride*-side*89+10,-346]];
  sleeve(g,arm(-1),19,col,lit);glove(g,...arm(-1)[2],0);
  garmentPanel(g,[[-25,-548],[24,-551],[33,-493],[25,-430],[33,-333],[-20,-322],[-33,-430]],greenUniform);
- line(g,[[-25,-548],[-32,-430],[-20,-322],[33,-333]],1.2);
+ clothTrim(g,[[-25,-548],[-32,-430],[-20,-322],[33,-333]],2.1);
  if(!greenUniform)for(let i=0;i<6;i++)metalButton(g,24,-512+i*29,2.2);
  characterNeck(g,true);
  sleeve(g,arm(1),20,col,lit);glove(g,...arm(1)[2],0);
@@ -314,7 +335,7 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
  g.fillStyle='#0b0807';g.beginPath();g.moveTo(-29,30);g.bezierCurveTo(-55,-20,-38,-78,2,-83);g.bezierCurveTo(26,-84,42,-64,38,-45);g.quadraticCurveTo(10,-61,-8,-32);g.lineTo(-10,20);g.closePath();g.fill();
  line(g,[[-33,-12],[-30,-45],[-8,-68],[20,-70]],1);
  const blink=tt%4.3>.13&&tt%4.3<.3;line(g,[[20,-10],[29,blink?-8:-14],[37,-10]],1.5);if(!blink)ellipse(g,30,-9,3,4,'#291d15',false);line(g,[[18,-24],[36,-26]],2.4);line(g,[[28,28],[39,27]],1.8);
- if(greenUniform){poly(g,[[-37,-69],[-27,-103],[22,-102],[36,-69]],'#1D6B57','#4e8d6a');ellipse(g,3,-68,48,6,'#275c43')}
+ if(greenUniform){poly(g,[[-37,-69],[-27,-103],[22,-102],[36,-69]],'#1D6B57','#4e8d6a',false);clothTrim(g,[[-37,-69],[-27,-103],[22,-102],[36,-69]],1.5);ellipse(g,3,-68,48,6,'#275c43')}
  else{g.strokeStyle=gold(g,-50,-85,100,100);g.lineWidth=4;g.beginPath();g.arc(-3,-12,47,Math.PI,Math.PI*1.95);g.stroke();ellipse(g,-18,-4,9,20,'#57401c');ellipse(g,-18,-4,6,15,'#100e0a')}
  g.restore();g.restore();
 }
@@ -390,9 +411,9 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  g.save();if(bodyLean){g.translate(0,-337);g.rotate(bodyLean);g.translate(0,337)}
  // The neck overlaps the collar with a rounded lower edge and lit side plane.
  garmentPanel(g,[[-49,-552],[49,-552],[44,-491],[35,-430],[37,-337],[0,-318],[-37,-337],[-35,-430],[-44,-491]],greenUniform);
- line(g,[[-48,-548],[-34,-431],[-36,-336],[0,-319],[37,-336]],1.1);
- if(greenUniform){garmentPanel(g,[[-25,-522],[25,-522],[32,-339],[-32,-339]],true);line(g,[[-24,-522],[-35,-550]],3);line(g,[[24,-522],[35,-550]],3);line(g,[[-26,-402],[-26,-368],[26,-368],[26,-402]],.8);for(const s of [-1,1])metalButton(g,s*24,-514,3.0)}
- else{line(g,[[0,-537],[0,-326]],3.3);for(let row=0;row<6;row++)for(let s of [-1,1])metalButton(g,s*(19-row*.7),-511+row*29,3.4);poly(g,[[-35,-551],[-10,-554],[0,-533],[-22,-538]],'#6a1928','#b74151');poly(g,[[35,-551],[10,-554],[0,-533],[22,-538]],'#6a1928','#b74151');}
+ clothTrim(g,[[-48,-548],[-34,-431],[-36,-336],[0,-319],[37,-336]],2.1);
+ if(greenUniform){garmentPanel(g,[[-25,-522],[25,-522],[32,-339],[-32,-339]],true);clothTrim(g,[[-24,-522],[-35,-550]],3);clothTrim(g,[[24,-522],[35,-550]],3);clothTrim(g,[[-26,-402],[-26,-368],[26,-368],[26,-402]],.8);for(const s of [-1,1])metalButton(g,s*24,-514,3.0)}
+ else{clothTrim(g,[[0,-537],[0,-326]],4.2);for(let row=0;row<6;row++)for(let s of [-1,1])metalButton(g,s*(19-row*.7),-511+row*29,3.4);poly(g,[[-35,-551],[-10,-554],[0,-533],[-22,-538]],'#6a1928','#b74151',false);poly(g,[[35,-551],[10,-554],[0,-533],[22,-538]],'#6a1928','#b74151',false);clothTrim(g,[[-35,-551],[-10,-554],[0,-533],[10,-554],[35,-551]],2.1);}
  characterNeck(g);
  for(const side of [-1,1]){g.save();g.translate(side*45,-550);g.rotate(side*.17);path(g,[[-14,-5],[15,-5],[13,6],[-14,3]],true);g.fillStyle=gold(g,-14,-5,29,11);g.fill();g.restore()}
  let left=[[-48,-540],[-64,-432],[-72,-330]],right=[[48,-540],[64,-432],[72,-330]];
@@ -404,7 +425,7 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  if(pose==='consider'){const q=ease(action);right=foreheadSweep?foreheadSweepArm(action):[[48,-540],[mix(64,105,q),mix(-432,-596,q)],[mix(72,35,q),mix(-330,-638,q)]];left=[[-48,-540],[-74,-447],[-47,-393]]}
  if(walking){left=[[-48,-540],[-65+walk*38,-438],[-72+walk*80,-337]];right=[[48,-540],[65-walk*38,-438],[72-walk*80,-337]]}
  if(handTargets){for(let i=0;i<2;i++){if(!handTargets[i])continue;let arm=i?right:left,target=handTargets[i];if(bodyLean||planted){const dx=target[0]-rootX,dy=target[1]-rootY+337,cs=Math.cos(bodyLean),sn=Math.sin(bodyLean);target=[dx*cs+dy*sn,-dx*sn+dy*cs-337]}arm[2]=target;let dx=target[0]-arm[0][0],dy=target[1]-arm[0][1],len=Math.hypot(dx,dy),bend=Math.sqrt(Math.max(0,105**2-len**2/4)),bendSide=elbowSides?.[i]??(i?-1:1);arm[1]=[(target[0]+arm[0][0])/2-dy/len*bend*bendSide,(target[1]+arm[0][1])/2+dx/len*bend*bendSide]}}
- const drawArm=arm=>{sleeve(g,arm,20,col,lit);let a=Math.atan2(arm[2][1]-arm[1][1],arm[2][0]-arm[1][0])-Math.PI/2;g.save();g.translate(...arm[2]);g.rotate(a);rect(g,-10,-6,20,4,'#C9A24B','#F3D98B');g.restore();glove(g,arm[2][0]+Math.sin(-a)*8,arm[2][1]+Math.cos(a)*8,a,pose==='crank'?1:0)};
+ const drawArm=arm=>{sleeve(g,arm,20,col,lit);let a=Math.atan2(arm[2][1]-arm[1][1],arm[2][0]-arm[1][0])-Math.PI/2;g.save();g.translate(...arm[2]);g.rotate(a);g.fillStyle=gold(g,-10,-6,20,4);g.fillRect(-10,-6,20,4);g.restore();glove(g,arm[2][0]+Math.sin(-a)*8,arm[2][1]+Math.cos(a)*8,a,pose==='crank'?1:0)};
  drawArm(left);if(pose!=='consider')drawArm(right);
  g.save();g.translate(gaze*3,-607);g.rotate(headTilt+(emotion==='worry'?-0.06:0)+Math.sin(tt*.85)*.012);g.scale(.72,.78);
  if(back){ellipse(g,0,-13,44,62,'#10100b',false)}else{
@@ -436,7 +457,7 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  }
  else{g.strokeStyle='#824734';g.lineWidth=2.5;g.beginPath();g.moveTo(-6,32);g.quadraticCurveTo(2,emotion==='smile'||emotion==='relief'?41:emotion==='worry'?26:32,12,31);g.stroke();}
  }
- if(greenUniform){g.save();g.rotate(-.16);poly(g,[[-42,-68],[-32,-104],[26,-104],[37,-68]],'#1D6B57','#4e8d6a');ellipse(g,0,-68,47,7,'#275c43');line(g,[[-34,-96],[29,-96]],2);g.restore()}
+ if(greenUniform){g.save();g.rotate(-.16);poly(g,[[-42,-68],[-32,-104],[26,-104],[37,-68]],'#1D6B57','#4e8d6a',false);clothTrim(g,[[-42,-68],[-32,-104],[26,-104],[37,-68]],1.5);ellipse(g,0,-68,47,7,'#275c43');clothTrim(g,[[-34,-96],[29,-96]],2);g.restore()}
  else {g.strokeStyle=gold(g,-60,-80,120,100);g.lineWidth=4;g.beginPath();g.arc(0,-12,49,Math.PI,0);g.stroke();for(const side of [-1,1]){ellipse(g,side*45,-6,6.5,19,'#57401c');ellipse(g,side*46,-6,4.2,14,'#100e0a')}}
  g.restore();if(pose==='consider')drawArm(right);g.restore();g.restore();
 }
