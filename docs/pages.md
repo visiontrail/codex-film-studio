@@ -81,6 +81,18 @@ visitors can play, restart, scrub or select a material. The blueprint uses the r
 font; no remote media or production folder is needed. Its bilingual preview artwork is labelled as a
 style study. The package remains a material toolkit without an accepted film.
 
+Art Deco has a bilingual independent page at
+`styles/art-deco/showcase/index.html`. Its original 16-second silent Canvas study
+uses the shared Art Deco material toolkit for hinged doors, articulated figures,
+sequential lights and overhead ivory fans. It starts paused, supports playback,
+seeking, chapter jumps and replay, and pauses when hidden or offscreen. The page
+also includes palette and motion principles, project commands, a reusable prompt,
+production notes and provenance. Locally hosted OFL fonts, the toolkit module and
+all page assets are explicitly registered in `landing.assets`. English/Chinese
+schematic preview SVGs link from the Collection, root README galleries and style
+index. Art Deco remains `toolkit-ready`; this page does not publish the retained
+experimental films.
+
 ## Local style catalog
 
 From the repository root:

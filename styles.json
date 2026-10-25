@@ -329,7 +329,25 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": []
+      "showcases": [],
+      "preview": "styles/art-deco/showcase/preview.en.svg",
+      "preview_zh": "styles/art-deco/showcase/preview.zh.svg",
+      "preview_kind": "schematic",
+      "landing": {
+        "page": "styles/art-deco/showcase/index.html",
+        "assets": [
+          "styles/art-deco/showcase/showcase.css",
+          "styles/art-deco/showcase/showcase.mjs",
+          "styles/art-deco/starter/lib/material.mjs",
+          "styles/art-deco/STYLE.md",
+          "styles/art-deco/prompt.txt",
+          "styles/art-deco/PROVENANCE.md",
+          "styles/art-deco/showcase/fonts/JosefinSans.ttf",
+          "styles/art-deco/showcase/fonts/Limelight-Regular.ttf",
+          "styles/art-deco/showcase/fonts/OFL-josefinsans.txt",
+          "styles/art-deco/showcase/fonts/OFL-limelight.txt"
+        ]
+      }
     },
     {
       "id": "caption-news",

@@ -123,14 +123,14 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle">预览待补充</td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh"><img src="styles/art-deco/showcase/preview.zh.svg" alt="装饰艺术 — 风格示意" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>08 / <code>art-deco</code></sub>
 <h3>装饰艺术</h3>
 <sub>Art Deco</sub>
 <p>黑漆、渐变黄铜、切面人物与具有空间感的机械动效。</p>
 <p><b>材质工具包</b> · 尚无样片</p>
-<sub><a href="styles/art-deco/STYLE.md">风格说明</a> · <a href="styles/art-deco/prompt.txt">提示词</a> · <a href="styles/art-deco/starter">创作工程</a></sub>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/art-deco/STYLE.md">风格说明</a> · <a href="styles/art-deco/prompt.txt">提示词</a> · <a href="styles/art-deco/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>

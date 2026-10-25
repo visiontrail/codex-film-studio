@@ -76,7 +76,7 @@ const categories = {
   'midcentury-cartoon':['animation','drawn'], 'satellite-briefing':['geography'], 'scifi-sitcom':['animation'],
   'caption-news':['animation','material'],
   'microgame':['animation','material'],
-  'line-chart-comedy':['animation'],
+  'line-chart-comedy':['animation'], 'art-deco':['animation','material'],
 };
 const state = { catalog:null, frames:{}, availability:{mode:'public', pages:{}}, language:'en', filter:'all', query:'', detail:null };
 const $ = selector => document.querySelector(selector);

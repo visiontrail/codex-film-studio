@@ -123,14 +123,14 @@ from the repository with the retained projects available. See the
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle">Preview to come</td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en"><img src="styles/art-deco/showcase/preview.en.svg" alt="Art Deco — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>08 / <code>art-deco</code></sub>
 <h3>Art Deco</h3>
 <sub>装饰艺术</sub>
 <p>Black lacquer, graded brass, faceted figures and spatial mechanical motion.</p>
 <p><b>Material toolkit</b> · No sample yet</p>
-<sub><a href="styles/art-deco/STYLE.md">Style guide</a> · <a href="styles/art-deco/prompt.txt">Prompt</a> · <a href="styles/art-deco/starter">Project files</a></sub>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en">Style page</a> · <a href="styles/art-deco/STYLE.md">Style guide</a> · <a href="styles/art-deco/prompt.txt">Prompt</a> · <a href="styles/art-deco/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
