@@ -246,6 +246,16 @@ Compare representative blank patches across the spread, preserve the grain,
 and share the chosen lighting model between the moving reverse and settled
 leaf. Patch colours are diagnostic evidence, not a perceptual similarity score.
 
+Apply the physical page light to its illustration as well as its blank paper.
+Otherwise the revealed drawing can look like a cooler pasted rectangle. Test
+the light transfer on dark contours and text: a screen or coloured overlay can
+match the paper while washing out the ink. A bounded multiplicative gain field
+derived from lit versus neutral paper preserves existing dark values. Bring
+that field in smoothly with the physical reveal, starting at identity, and
+carry it with the page during the turn. Inspect adjacent frames and seek the
+same frame from different histories; a matching finished still does not prove
+a continuous handoff. Keep the old treatment available for a controlled trial.
+
 For a local picture repair, preserve earlier encoded GOPs when the splice
 boundary permits it. Before inheriting an earlier visual review, decode and
 compare every reused frame and its timestamp, bind both source file hashes,
