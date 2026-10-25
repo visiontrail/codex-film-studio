@@ -257,13 +257,21 @@ export function gear(g,x,y,r,rot=0,n=18){g.save();g.translate(x,y);g.rotate(rot)
 export function dial(g,x,y,r,value=.5,label='SIGNAL',t=0){glow(g,x,y,r*1.5,'241,204,113',.08);ellipse(g,x,y,r,r,'#161209');ellipse(g,x,y,r*.94,r*.94,'#0b0a07');for(let i=0;i<=50;i++){let a=Math.PI*.8+i*Math.PI*1.4/50;line(g,[[x+Math.cos(a)*r*.82,y+Math.sin(a)*r*.82],[x+Math.cos(a)*r*(i%5?.88:.94),y+Math.sin(a)*r*(i%5?.88:.94)]],i%5?1:2);if(i%10===0)text(g,String(i*2),x+Math.cos(a)*r*.64,y+Math.sin(a)*r*.64,r*.12,'Poiret One')}
 let a=Math.PI*.8+clamp(value)*Math.PI*1.4;poly(g,[[x-5,y+4],[x+Math.cos(a)*r*.78,y+Math.sin(a)*r*.78],[x+5,y-4]],'#bca25c','#fff4d2');ellipse(g,x,y,r*.045,r*.045,C.gold);text(g,label,x,y+r*.35,r*.12,'Josefin Sans',C.ivory)}
 export function leaf(g,x,y,size,rot=0,open=1,material={}){g.save();g.translate(x,y);g.rotate(rot);g.scale(Math.max(.01,open),1);poly(g,[[0,0],[-size*.27,-size*.25],[-size*.38,-size*.63],[0,-size],[size*.38,-size*.63],[size*.27,-size*.25]],material.base||'#163f31',material.light||'#6eaa77');line(g,[[0,0],[0,-size]],1.7);for(let i=1;i<5;i++)line(g,[[-size*.27*(1-i/6),-size*i/5],[0,-size*(i/5+.1)],[size*.27*(1-i/6),-size*i/5]],.6);g.restore()}
+// Cloth keeps distinct lit and shaded planes instead of fading into near-black lacquer.
+function uniformPalette(greenUniform=false){return greenUniform?['#5e9979','#418566','#23634b','#164335']:['#ce4b55','#bc3e45','#9e2a2f','#7e1b28']}
+function garmentPanel(g,points,greenUniform=false){
+ const xs=points.map(p=>p[0]),left=Math.min(...xs),right=Math.max(...xs);
+ const c=uniformPalette(greenUniform),shade=g.createLinearGradient(left,0,right,0);
+ for(const [stop,color] of [[0,c[0]],[.49,c[1]],[.5,c[2]],[1,c[3]]])shade.addColorStop(stop,color);
+ g.save();path(g,points,true);g.fillStyle=shade;g.fill();g.restore();
+}
 // Continuous tapered sleeves with round elbows; all motion quantized to twelve poses/sec.
 function sleeve(g,points,w,col,lit){
   const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
   g.save();g.lineCap='round';g.lineJoin='round';path(g,points);
   g.strokeStyle='#24180d';g.lineWidth=w+3;g.stroke();
   g.strokeStyle=gold(g,Math.min(...xs),Math.min(...ys),70,180);g.lineWidth=w+1;g.stroke();
-  let shade=g.createLinearGradient(Math.min(...xs)-w,0,Math.max(...xs)+w,0);shade.addColorStop(0,lit);shade.addColorStop(.46,col);shade.addColorStop(1,col==='#8E1B2E'?'#611522':'#173f32');
+  let shade=g.createLinearGradient(Math.min(...xs)-w,0,Math.max(...xs)+w,0);if(col===C.burgundy||col===C.emerald){const c=uniformPalette(col===C.emerald);for(const [stop,color] of [[0,c[0]],[.36,c[1]],[.38,c[2]],[1,c[3]]])shade.addColorStop(stop,color)}else{shade.addColorStop(0,lit);shade.addColorStop(.46,col);shade.addColorStop(1,'#173f32')}
   g.strokeStyle=shade;g.lineWidth=w-2;g.stroke();
   if(col===C.burgundy||col===C.emerald){
    const stripe=points.map(([x,y],i)=>{const a=points[Math.max(0,i-1)],b=points[Math.min(points.length-1,i+1)],dx=b[0]-a[0],dy=b[1]-a[1],n=Math.hypot(dx,dy)||1;return [x-dy/n*w*.24,y+dx/n*w*.24]});
@@ -294,7 +302,7 @@ function walkingProfile(g,x,y,h,t,direction,greenUniform){
  }
  const arm=(side)=>[[0,-532],[-stride*side*44,-432],[stride*-side*89+10,-346]];
  sleeve(g,arm(-1),19,col,lit);glove(g,...arm(-1)[2],0);
- poly(g,[[-25,-548],[24,-551],[33,-493],[25,-430],[33,-333],[-20,-322],[-33,-430]],col,lit,false);
+ garmentPanel(g,[[-25,-548],[24,-551],[33,-493],[25,-430],[33,-333],[-20,-322],[-33,-430]],greenUniform);
  line(g,[[-25,-548],[-32,-430],[-20,-322],[33,-333]],1.2);
  if(!greenUniform)for(let i=0;i<6;i++)metalButton(g,24,-512+i*29,2.2);
  characterNeck(g,true);
@@ -381,11 +389,10 @@ export function person(g,x,y,h,t,{greenUniform=false,pose='stand',emotion='calm'
  // The upper body leans about the pelvis while planted feet stay on the floor.
  g.save();if(bodyLean){g.translate(0,-337);g.rotate(bodyLean);g.translate(0,337)}
  // The neck overlaps the collar with a rounded lower edge and lit side plane.
- poly(g,[[-49,-552],[49,-552],[44,-491],[35,-430],[37,-337],[0,-318],[-37,-337],[-35,-430],[-44,-491]],col,lit,false);
- poly(g,[[4,-550],[43,-550],[35,-337],[0,-318]],col,col,false);
+ garmentPanel(g,[[-49,-552],[49,-552],[44,-491],[35,-430],[37,-337],[0,-318],[-37,-337],[-35,-430],[-44,-491]],greenUniform);
  line(g,[[-48,-548],[-34,-431],[-36,-336],[0,-319],[37,-336]],1.1);
- if(greenUniform){poly(g,[[-25,-522],[25,-522],[32,-339],[-32,-339]],'#1D6B57','#49896c',false);line(g,[[-24,-522],[-35,-550]],3);line(g,[[24,-522],[35,-550]],3);line(g,[[-26,-402],[-26,-368],[26,-368],[26,-402]],.8);for(const s of [-1,1])metalButton(g,s*24,-514,2.4)}
- else{line(g,[[0,-537],[0,-326]],1);for(let row=0;row<6;row++)for(let s of [-1,1])metalButton(g,s*(19-row*.7),-511+row*29,2.4);poly(g,[[-35,-551],[-10,-554],[0,-533],[-22,-538]],'#6a1928','#b74151');poly(g,[[35,-551],[10,-554],[0,-533],[22,-538]],'#6a1928','#b74151');}
+ if(greenUniform){garmentPanel(g,[[-25,-522],[25,-522],[32,-339],[-32,-339]],true);line(g,[[-24,-522],[-35,-550]],3);line(g,[[24,-522],[35,-550]],3);line(g,[[-26,-402],[-26,-368],[26,-368],[26,-402]],.8);for(const s of [-1,1])metalButton(g,s*24,-514,3.0)}
+ else{line(g,[[0,-537],[0,-326]],3.3);for(let row=0;row<6;row++)for(let s of [-1,1])metalButton(g,s*(19-row*.7),-511+row*29,3.4);poly(g,[[-35,-551],[-10,-554],[0,-533],[-22,-538]],'#6a1928','#b74151');poly(g,[[35,-551],[10,-554],[0,-533],[22,-538]],'#6a1928','#b74151');}
  characterNeck(g);
  for(const side of [-1,1]){g.save();g.translate(side*45,-550);g.rotate(side*.17);path(g,[[-14,-5],[15,-5],[13,6],[-14,3]],true);g.fillStyle=gold(g,-14,-5,29,11);g.fill();g.restore()}
  let left=[[-48,-540],[-64,-432],[-72,-330]],right=[[48,-540],[64,-432],[72,-330]];
