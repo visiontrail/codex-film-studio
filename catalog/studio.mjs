@@ -94,6 +94,7 @@ function pageURL(page, edition) {
   const usePublicSample = page.access === 'release' && state.availability.mode === 'local' && state.availability.pages[page.id] === false;
   const url = usePublicSample ? new URL(page.page,SITE) : new URL(page.page, new URL('./',location.href));
   url.searchParams.set('lang', state.language);
+  if (assetRevision) url.searchParams.set('v', assetRevision);
   if (edition) url.searchParams.set('edition', edition);
   if (page.anchor) url.hash = page.anchor;
   return url.href;
