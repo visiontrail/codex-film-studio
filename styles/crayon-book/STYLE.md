@@ -82,6 +82,24 @@ hinge stationary. Inspect the first moving frame, the middle of the pullback,
 the page settlement and the final crop at native resolution. Run the generic
 `scripts/check_book_camera.mjs` in the working copy to check camera geometry.
 
+`starter/lib/book-motion.mjs` separates camera and page timing. Pass
+`bookMotion(frame, {start, revealEnd, turnStart, settle, pushStart, pushEnd})`;
+all values use the same frame clock. Its `progress`, `revealEnd` and `pushStart`
+feed `bookCamera`; `light` controls the illustration's light transfer and `turn`
+controls the leaf. The camera holds during the turn and after `pushEnd`. Place
+`settle` on the accepted contact sound when audio must remain unchanged.
+
+`leafStrips(turn, {x, y, width, height}, {curl, segments})` returns a projected,
+bowed sheet in far-to-near order. Each strip has material coordinates `u`/`v`,
+projected edges `a`/`b`, a `front` flag and a self-shadow strength. Use front
+coordinates `u` to `v`, and reverse coordinates `1-v` to `1-u` on the back.
+Both faces may be visible during one frame. The helper supplies geometry, not
+a complete renderer; the caller must sample textures, shade and composite it.
+`curl` defaults to 1 and accepts 0–1.5; `segments` defaults to 240. Compare
+moderate trials at native resolution and retain fixed surface coordinates.
+Run `node scripts/check_book_motion.mjs` for generic geometry and timing checks,
+then separately inspect the encoded motion and the settled page handoff.
+
 For pigment that looks too neatly clipped, `Wax.edgeScumble` accepts a fixed
 strength from 0 to 1; its default is 0 and retains the earlier edge treatment.
 It places short dry passes along the whole perimeter, using arc length rather

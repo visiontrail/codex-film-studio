@@ -238,6 +238,23 @@ with the hinge, and remove the moving self-shadow continuously as the leaf
 settles. Inspect consecutive native-resolution frames across that handoff;
 checking only the midpoint and final pose can miss a brightness jump.
 
+Measure pullback, pre-turn hold, leaf motion, contact, push and final hold as
+separate intervals. A single normalized transition can allocate too much time
+to the turn and too little to the camera or reading hold. If audio is already
+accepted, anchor the leaf's landing to its existing contact sound and work
+backward to the turn onset. Keep the camera still through the leaf motion, then
+leave a quiet final frame after the push ends. Record visually estimated timing
+boundaries with their uncertainty rather than inventing exact source timings.
+
+For a bowed sheet, project its depth before deciding which face of each strip
+is visible. A single global front/back switch can erase one face too early.
+Paint farther strips before nearer ones, keep the hinge fixed, and let the
+middle rise independently of the free edge. Retain the front's illumination
+until its last visible strip disappears. Test both flat endpoints, the narrow
+side-on pose, partial front/back coexistence and the final material handoff at
+native size. Geometry checks do not establish natural motion; inspect every
+changed encoded frame and the complete transition at normal speed.
+
 A pullback from an illustration reveals an existing physical page. Keep the
 image, paper, cover, hinge and desk in one scene coordinate system and move one
 camera around them. Independently shrinking the image while the book remains
