@@ -100,6 +100,18 @@ moderate trials at native resolution and retain fixed surface coordinates.
 Run `node scripts/check_book_motion.mjs` for generic geometry and timing checks,
 then separately inspect the encoded motion and the settled page handoff.
 
+`starter/lib/leaf-raster.mjs` supplies an optional CPU rasterizer for opaque
+paper. `rasterizeLeaf(strips, front, back, {width, height, samples})` accepts
+`leafStrips` geometry and two `{width, height, data}` RGBA textures. It returns
+a `Uint8ClampedArray` for an output image. `samples` is the grid size per axis,
+defaults to 4, and accepts 1–4. Resolve the nearest paper surface for each
+sample, interpolate perspective-correct texture coordinates, and shade once.
+This avoids independent antialiased strip borders and overlapping shade bands.
+Use `putImageData` on a separate canvas, then composite that canvas with the
+book's camera transform. It is intended for opaque sheets, not stacked
+translucent materials. Run `node scripts/check_leaf_raster.mjs`; inspect native
+edges, texture and encoded motion separately from the synthetic tests.
+
 For pigment that looks too neatly clipped, `Wax.edgeScumble` accepts a fixed
 strength from 0 to 1; its default is 0 and retains the earlier edge treatment.
 It places short dry passes along the whole perimeter, using arc length rather

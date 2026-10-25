@@ -255,6 +255,16 @@ side-on pose, partial front/back coexistence and the final material handoff at
 native size. Geometry checks do not establish natural motion; inspect every
 changed encoded frame and the complete transition at normal speed.
 
+If a deformed page acquires regular stripes, isolate the rasterization with a
+uniform material and constant shade. Extra internal variation then indicates
+compositing or sampling, rather than paper grain. Resolve visibility before
+shading, sample the continuous material coordinates, and apply light once per
+visible sample. Supersample the outer silhouette without treating every mesh
+boundary as a new edge. Verify opaque interior coverage, subdivision stability,
+front/back orientation and occlusion, then return to the real textured sheet
+and inspect its complete motion. A zero-error synthetic plane is not evidence
+of perceptual style equivalence.
+
 A pullback from an illustration reveals an existing physical page. Keep the
 image, paper, cover, hinge and desk in one scene coordinate system and move one
 camera around them. Independently shrinking the image while the book remains
