@@ -1,10 +1,14 @@
 # Art Collage · 艺术拼贴
 
+[**Open the Art Collage page / 打开艺术拼贴独立页面 ↗**](https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html)
+
 **Package status: starter-ready / 创作起步包.** Paper materials, cutouts, typography, physical motion and review rules.
 
 This package provides reusable rules, blank inputs and generic tools. Author the
 new subject's characters, scenes, narration, renderer and sound in its own project.
-The catalog records local showcase pages separately from a published demo.
+The standalone page includes a released film preview, chapters, English captions,
+transcript, research notes and a bilingual guide to the style. This screening copy
+is separate from the blank authoring starter and does not add a scene renderer.
 
 ## Start a film
 

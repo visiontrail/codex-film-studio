@@ -35,14 +35,14 @@ visual rules, or take the prompt and project files into your own production.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/previews/art-collage.en.jpg" alt="Art Collage — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film"><img src="docs/readme/previews/art-collage.en.jpg" alt="Art Collage — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>02 / <code>art-collage</code></sub>
 <h3>Art Collage</h3>
 <sub>艺术拼贴</sub>
 <p>Paper cutouts, layered typography and physical collage motion.</p>
-<p><b>Authoring starter</b> · <a href="docs/readme/README.md#frame-sources">Local film frame</a></p>
-<sub><a href="styles/art-collage/STYLE.md">Style guide</a> · <a href="styles/art-collage/prompt.txt">Prompt</a> · <a href="styles/art-collage/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en">Style page</a> · <a href="styles/art-collage/STYLE.md">Style guide</a> · <a href="styles/art-collage/prompt.txt">Prompt</a> · <a href="styles/art-collage/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>

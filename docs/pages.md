@@ -45,6 +45,16 @@ methods. `landing.page` and `landing.assets` allow the generic page dependencies
 Its README and collection preview cards use actual film frames. The registry’s
 `preview_showcase` routes those images directly to the `screening` player anchor.
 
+Art Collage has a bilingual independent page at
+`styles/art-collage/showcase/index.html`. Its original paper-and-type study,
+visual rules and project starter are generic library sources. The full V11 film
+is published as a 720p web preview with eight chapters, English captions, a
+transcript, research notes and credits. Film-specific text and media come from
+the checksum-pinned `art-collage-preview-v1` Release bundle; the production
+folder and 1080p master remain external. Both README galleries and the All
+styles preview link directly to the screening room. The style remains an
+authoring starter: publishing a preview does not supply a reusable scene renderer.
+
 ## Local style catalog
 
 From the repository root:

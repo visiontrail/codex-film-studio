@@ -65,11 +65,29 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": [],
+      "showcases": [
+        {
+          "id": "art-collage-preview",
+          "title": "Art Collage · Full film",
+          "page": "styles/art-collage/showcase/index.html",
+          "anchor": "film",
+          "access": "release",
+          "media_manifest": "styles/art-collage/showcase/media/manifest.json"
+        }
+      ],
       "description_zh": "纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。",
       "preview": "docs/readme/previews/art-collage.en.jpg",
       "preview_kind": "frame",
-      "preview_zh": "docs/readme/previews/art-collage.zh.jpg"
+      "preview_zh": "docs/readme/previews/art-collage.zh.jpg",
+      "landing": {
+        "page": "styles/art-collage/showcase/index.html",
+        "assets": [
+          "styles/art-collage/showcase/showcase.css",
+          "styles/art-collage/showcase/showcase.mjs"
+        ]
+      },
+      "public_assets": "styles/art-collage/demo-assets.json",
+      "preview_showcase": "art-collage-preview"
     },
     {
       "id": "crayon-book",

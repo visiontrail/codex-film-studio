@@ -27,14 +27,14 @@ A displayed frame does not change package completion or full-film publication.
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="../styles/art-collage/STYLE.md"><img src="../docs/readme/previews/art-collage.en.jpg" alt="Art Collage — film frame" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film"><img src="../docs/readme/previews/art-collage.en.jpg" alt="Art Collage — film frame" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>02 / <code>art-collage</code></sub>
 <h3>Art Collage</h3>
 <sub>艺术拼贴</sub>
 <p>Paper cutouts, layered typography and physical collage motion.</p>
-<p><b>Authoring starter</b> · <a href="../docs/readme/README.md#frame-sources">Local film frame</a></p>
-<sub><a href="../styles/art-collage/STYLE.md">Style guide</a> · <a href="../styles/art-collage/prompt.txt">Prompt</a> · <a href="../styles/art-collage/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en">Style page</a> · <a href="../styles/art-collage/STYLE.md">Style guide</a> · <a href="../styles/art-collage/prompt.txt">Prompt</a> · <a href="../styles/art-collage/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -121,7 +121,7 @@ A displayed frame does not change package completion or full-film publication.
 | Style / 风格 | Package / 完成状态 | Renderer / 场景渲染工程 | Showcase / 网页 |
 | --- | --- | --- | --- |
 | [白板讲解 / Whiteboard Explainer](whiteboard/STYLE.md) | 已发布样片 (`demo-ready`) | Included / 已有 | [Short and long published samples](whiteboard/studio/index.html) |
-| [艺术拼贴 / Art Collage](art-collage/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | — |
+| [艺术拼贴 / Art Collage](art-collage/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page / 独立风格页](https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html) · [Art Collage · Full film](art-collage/showcase/index.html#film) |
 | [蜡笔绘本 / Crayon Picture Book](crayon-book/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | [Leo the Farmer](crayon-book/showcase/index.html) · [Frame comparison](crayon-book/showcase/comparison.html) |
 | [50 年代平涂卡通 / Mid-century Cartoon](midcentury-cartoon/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Short film](midcentury-cartoon/showcase/index.html) · [Long film](midcentury-cartoon/showcase/long.html) · [Long-film motion review](midcentury-cartoon/showcase/motion.html) |
 | [卫星影像／地理简报 / Satellite Briefing](satellite-briefing/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Singapore film](satellite-briefing/showcase/index.html) · [Live composition](satellite-briefing/showcase/composition.html) · [Frame comparison](satellite-briefing/showcase/comparison.html) |

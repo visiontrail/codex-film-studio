@@ -35,14 +35,14 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="styles/art-collage/STYLE.md"><img src="docs/readme/previews/art-collage.zh.jpg" alt="艺术拼贴 — 影片截图" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh#film"><img src="docs/readme/previews/art-collage.zh.jpg" alt="艺术拼贴 — 影片截图" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>02 / <code>art-collage</code></sub>
 <h3>艺术拼贴</h3>
 <sub>Art Collage</sub>
 <p>纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。</p>
-<p><b>创作起步包</b> · <a href="docs/readme/README.md#frame-sources">本地影片截图</a></p>
-<sub><a href="styles/art-collage/STYLE.md">风格说明</a> · <a href="styles/art-collage/prompt.txt">提示词</a> · <a href="styles/art-collage/starter">创作工程</a></sub>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh#film">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/art-collage/STYLE.md">风格说明</a> · <a href="styles/art-collage/prompt.txt">提示词</a> · <a href="styles/art-collage/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
