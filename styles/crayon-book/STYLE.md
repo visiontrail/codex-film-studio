@@ -308,6 +308,13 @@ an invented artistic similarity percentage. Use a separate defect log and
 re-render each observed mismatch. Only verified identical frame ranges can
 inherit earlier pixel-level observations.
 
+Declare the actual YUV matrix and signal range in each export. Generate RGB
+review images using those declared values rather than a decoder's default.
+Resolve missing metadata from the encoder configuration and controlled colour
+patches before comparing paper or pigment colours. A metadata-only repair
+still needs new display-colour review and playback, even when all YUV samples
+and accepted audio remain identical.
+
 Verify the encoded delivery file: complete decode, frame count and timing,
 dimensions, audio streams and loudness, start/end and seeking in the intended
 player. Serve local video with byte-range support. Bind evidence to the exact

@@ -253,3 +253,18 @@ and explicitly record the inherited range. Review all newly encoded frames
 and the splice boundary. A stream-copy command alone is insufficient evidence.
 `scripts/frame_review/check_video_prefix_identity.py` checks the decoded prefix
 and writes per-frame hashes and timestamp comparisons to an external report.
+
+## Colour interpretation is part of the evidence
+
+Specify the RGB-to-YUV matrix and signal range during encoding, then write the
+same values into the bitstream and container. A resolution alone does not tell
+a reviewer which matrix was used. When an older file has unspecified metadata,
+verify the actual encoder conversion with known colour patches and an explicit
+conversion before adding labels; do not guess a matrix from the picture size.
+
+A metadata-only repair can preserve every decoded YUV sample and timestamp,
+while still changing how a player interprets those samples. Verify the complete
+sample sequence and accepted audio identity, then regenerate RGB comparisons
+with the declared matrix and range. Repeat playback on the repaired file.
+Do not inherit an earlier display-colour observation solely from YUV identity.
+Include colour conversion policy and exact file hashes in the review record.
