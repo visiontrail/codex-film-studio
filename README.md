@@ -1,21 +1,39 @@
-# Codex Film Studio
+<p align="center">
+  <a href="https://visiontrail.github.io/codex-film-studio/?lang=en">
+    <img src="docs/readme/cover-en.png" alt="Codex Film Studio — Stories take shape. A collection of film styles, from whiteboard drawings to paper collage and cartoons." width="100%">
+  </a>
+</p>
 
-**A visual language for your next film.** Choose a style, bring a story, and build
-it with Codex: picture, narration, camera and sound on one timeline.
+<h1 align="center">Codex Film Studio — Stories take shape.</h1>
 
-![Codex Film Studio — a field guide to films made with code](docs/readme/cover-en.png)
+<p align="center">
+  <strong>A visual language for your next film.</strong><br>
+  Choose a style, bring a story, and build it with Codex.<br>
+  Picture, narration, camera and sound on one timeline.
+</p>
 
-[**Open the style library ↗**](https://visiontrail.github.io/codex-film-studio/?lang=en) ·
-[Style atlas ↓](#the-style-atlas) · [Watch a film](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en) ·
-[Start creating](#make-your-film) · [简体中文](README.zh-CN.md)
+<p align="center">
+  <a href="https://visiontrail.github.io/codex-film-studio/?lang=en"><strong>Open the style library ↗</strong></a> ·
+  <a href="#the-style-atlas">Explore styles</a> ·
+  <a href="#the-screening-room">Watch a film</a> ·
+  <a href="#make-your-film">Start creating</a> ·
+  <a href="CONTRIBUTING.md">Contribute</a> ·
+  <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <a href="https://x.com/LeoGuoLabs"><img src="docs/readme/follow-x.svg" alt="Follow @LeoGuoLabs on X" width="176" height="28"></a>
+</p>
+
+<br>
+
+## The style atlas
 
 <!-- style-summary:start -->
 
 **9 styles** · 1 published sample · 5 authoring starters · 3 material toolkit
 
 <!-- style-summary:end -->
-
-## The style atlas
 
 Explore different ways to draw, move and tell a story. Open a style page or its
 film preview, or take the prompt and project files into your own production.

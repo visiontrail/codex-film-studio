@@ -1,7 +1,9 @@
 # README artwork and layout
 
-The README is designed as a film-style field guide: an editorial cover, a
-numbered image-and-text atlas, a screening room and a three-step authoring path.
+The README opens with a full-width editorial cover, a centered title and short
+introduction, primary navigation and a single X profile badge. It continues as
+a film-style field guide: a numbered image-and-text atlas, a screening room and
+a three-step authoring path. English and Chinese share the same structure.
 Detailed replay and deployment instructions live in native Markdown disclosure
 blocks. The layout uses GitHub-supported HTML tables, links and images; it needs
 no custom CSS, JavaScript, remote fonts or badge service.
@@ -12,6 +14,7 @@ These project READMEs were reviewed for information architecture:
 
 | Reference | Principle studied |
 | --- | --- |
+| AutoGPT (user-supplied README screenshot) | Lead with a wide banner, then center the title, introduction, navigation and social link |
 | [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) | Make the complete style collection discoverable visually |
 | [Motion Canvas](https://github.com/motion-canvas/motion-canvas) | Separate first use from library development |
 | [Excalidraw](https://github.com/excalidraw/excalidraw) | Express the product visually and keep primary navigation direct |
@@ -104,4 +107,7 @@ English and Chinese image files.
 
 The index command regenerates the marked atlas and summary blocks in both root
 READMEs and the detailed `styles/README.md`. Edit surrounding prose normally.
+The summary sits under the atlas heading, separate from the introduction.
+`follow-x.svg` is a local badge linked to `https://x.com/LeoGuoLabs`; it does not
+fetch follower counts or depend on a remote badge service.
 New styles must meet [the contribution requirements](../../CONTRIBUTING.md).

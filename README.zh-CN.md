@@ -1,21 +1,39 @@
-# Codex Film Studio
+<p align="center">
+  <a href="https://visiontrail.github.io/codex-film-studio/?lang=zh">
+    <img src="docs/readme/cover-zh.png" alt="Codex Film Studio — 让故事成为画面。从白板、纸张拼贴到卡通表演的影片风格集。" width="100%">
+  </a>
+</p>
 
-**为下一个故事，找到它的画面语言。** 选一种风格，用 Codex 把叙事、画面、
-镜头和声音放到同一条时间轴上，做成影片。
+<h1 align="center">Codex Film Studio — 让故事成为画面</h1>
 
-![Codex Film Studio — 用代码做影片的风格手册](docs/readme/cover-zh.png)
+<p align="center">
+  <strong>为下一个故事，找到它的画面语言。</strong><br>
+  选一种风格，带上你的故事，用 Codex 做成影片。<br>
+  让画面、叙事、镜头与声音，共用一条时间轴。
+</p>
 
-[**打开风格片库 ↗**](https://visiontrail.github.io/codex-film-studio/?lang=zh) ·
-[风格手册 ↓](#风格手册) · [观看样片](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh) ·
-[开始创作](#制作你的影片) · [English](README.md)
+<p align="center">
+  <a href="https://visiontrail.github.io/codex-film-studio/?lang=zh"><strong>打开风格片库 ↗</strong></a> ·
+  <a href="#风格手册">浏览风格</a> ·
+  <a href="#放映室">观看样片</a> ·
+  <a href="#制作你的影片">开始创作</a> ·
+  <a href="CONTRIBUTING.md">参与贡献</a> ·
+  <a href="README.md">English</a>
+</p>
+
+<p align="center">
+  <a href="https://x.com/LeoGuoLabs"><img src="docs/readme/follow-x.svg" alt="在 X 关注 @LeoGuoLabs" width="176" height="28"></a>
+</p>
+
+<br>
+
+## 风格手册
 
 <!-- style-summary:start -->
 
 **9 种风格** · 1 种已发布样片 · 5 种创作起步包 · 3 种材质工具包
 
 <!-- style-summary:end -->
-
-## 风格手册
 
 从笔触、纸张到卡通表演和地理镜头，在这里比较每一种风格。
 点击独立风格页或影片预览，也可以直接打开提示词与创作工程。
