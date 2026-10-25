@@ -86,14 +86,14 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle">Preview to come</td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en"><img src="../styles/microgame/showcase/preview.en.svg" alt="Microgame Frenzy — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>07 / <code>microgame</code></sub>
 <h3>Microgame Frenzy</h3>
 <sub>极速微游戏</sub>
 <p>Rapid command-action-result games with changing materials, lives and accelerating rhythm.</p>
 <p><b>Material toolkit</b> · No sample yet</p>
-<sub><a href="../styles/microgame/STYLE.md">Style guide</a> · <a href="../styles/microgame/prompt.txt">Prompt</a> · <a href="../styles/microgame/starter">Project files</a></sub>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en">Style page</a> · <a href="../styles/microgame/STYLE.md">Style guide</a> · <a href="../styles/microgame/prompt.txt">Prompt</a> · <a href="../styles/microgame/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -141,7 +141,7 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 | [50 年代平涂卡通 / Mid-century Cartoon](midcentury-cartoon/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Local style page](http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en) · [Long film (local)](http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/long.html?lang=en) · [Long-film motion review (local)](http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/motion.html?lang=en) |
 | [卫星影像／地理简报 / Satellite Briefing](satellite-briefing/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Local style page](http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en) · [Live composition (local)](http://127.0.0.1:8249/styles/satellite-briefing/showcase/composition.html?lang=en) · [Frame comparison (local)](http://127.0.0.1:8249/styles/satellite-briefing/showcase/comparison.html?lang=en) |
 | [科幻情景喜剧卡通 / Sci-Fi Sitcom Toon](scifi-sitcom/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Local style page](http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en) |
-| [极速微游戏 / Microgame Frenzy](microgame/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
+| [极速微游戏 / Microgame Frenzy](microgame/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en) |
 | [装饰艺术 / Art Deco](art-deco/README.md) | 材质工具包 (`toolkit-ready`) | Author per project / 需按选题编写 | — |
 | [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en) · [Full film preview](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening) |
 | [动态折线图喜剧 / Animated Line Chart Comedy](line-chart-comedy/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en) |

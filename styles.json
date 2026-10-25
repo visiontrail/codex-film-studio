@@ -294,7 +294,21 @@
         "published_demo": false
       },
       "showcases": [],
-      "prompt": "styles/microgame/prompt.txt"
+      "prompt": "styles/microgame/prompt.txt",
+      "landing": {
+        "page": "styles/microgame/showcase/index.html",
+        "assets": [
+          "styles/microgame/showcase/showcase.css",
+          "styles/microgame/showcase/showcase.mjs",
+          "styles/microgame/STYLE.md",
+          "styles/microgame/prompt.txt",
+          "styles/whiteboard/studio/fonts/ArchitectsDaughter-Regular.ttf",
+          "styles/whiteboard/studio/fonts/OFL-ArchitectsDaughter.txt"
+        ]
+      },
+      "preview": "styles/microgame/showcase/preview.en.svg",
+      "preview_zh": "styles/microgame/showcase/preview.zh.svg",
+      "preview_kind": "schematic"
     },
     {
       "id": "art-deco",

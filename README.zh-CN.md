@@ -112,14 +112,14 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle">预览待补充</td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh"><img src="styles/microgame/showcase/preview.zh.svg" alt="极速微游戏 — 风格示意" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>07 / <code>microgame</code></sub>
 <h3>极速微游戏</h3>
 <sub>Microgame Frenzy</sub>
 <p>命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。</p>
 <p><b>材质工具包</b> · 尚无样片</p>
-<sub><a href="styles/microgame/STYLE.md">风格说明</a> · <a href="styles/microgame/prompt.txt">提示词</a> · <a href="styles/microgame/starter">创作工程</a></sub>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/microgame/STYLE.md">风格说明</a> · <a href="styles/microgame/prompt.txt">提示词</a> · <a href="styles/microgame/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>

@@ -1,5 +1,10 @@
 # Microgame toolkit
 
+[Open the independent style page](https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en) · [中文风格页](https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh)
+
+The page contains an original, silent interactive material study, creation steps
+and source references. It is separate from the toolkit and is not a published film.
+
 Independent Canvas 2D material, character, action and UI helpers. No example
 story, narration, provider jobs or films are packaged in this library.
 

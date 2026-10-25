@@ -71,6 +71,16 @@ or production data. The registry provides English/Chinese preview artwork and a
 starter, with no published film registered. Only its generic page, assets and
 guides enter the Pages build.
 
+Microgame Frenzy has a bilingual independent page at
+`styles/microgame/showcase/index.html`, registered through `landing` and linked
+from All Styles and both README galleries. Following the whiteboard page’s
+showcase, creation steps, prompt, build notes and reference structure, it adds
+an original 16-second silent material study: Swiss print, indexed pixels,
+character-built terminal and blueprint construction. Playback starts paused;
+visitors can play, restart, scrub or select a material. The blueprint uses the repository’s licensed Architects Daughter
+font; no remote media or production folder is needed. Its bilingual preview artwork is labelled as a
+style study. The package remains a material toolkit without an accepted film.
+
 ## Local style catalog
 
 From the repository root:
