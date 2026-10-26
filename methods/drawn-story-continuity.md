@@ -181,6 +181,21 @@ sequence. A rougher finished still does not prove a continuous pigment reveal.
 
 ## Shape softness is independent of movement
 
+An organic subject needs a designed silhouette before it needs texture. Use
+basic solids to locate masses during construction, then draw a continuous
+outer contour that connects the head, neck, trunk and supporting limbs. Give
+different subjects their own proportions, joint bends, posture and negative
+spaces; changing only ears, colour or markings on a shared body is insufficient.
+Inspect flat silhouettes without labels first. Round corners only after the
+underlying shape reads correctly: smoothing a generic template does not make
+it a convincing drawing.
+
+After a silhouette changes, revisit every composition using it. Count the full
+extent of ears, horns, tails and wings when setting spacing. Check contacts,
+foreground occlusion and text clearance at both the largest and smallest
+displayed sizes. Preserve deliberate stillness and expose the new geometry
+through the same contour-then-pigment sequence.
+
 Repair angular soft forms in their drawing geometry. Round selected corners
 within their adjacent segments, preserving the endpoints of open limbs and
 shared contact anchors. Use the same curve for paired inner and outer strokes.

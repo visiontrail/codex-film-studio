@@ -142,6 +142,14 @@ The strength is material pressure/extent, never a time-based opacity entrance.
 
 ## Soft forms without added motion
 
+Design a subject-specific silhouette instead of assembling its finished body
+from repeated ellipses and straight limb bars. Use continuous authored curves
+for the transitions between masses, with different proportions, joint bends
+and resting poses for different subjects. Small eyes or spots may remain simple,
+but the outer shape should identify the subject without a label or colour.
+Inspect a flat silhouette sheet, then the textured drawing at delivery size.
+Recheck every reused scene for changed bounds, occlusion and contact points.
+
 Use `lib/contours.mjs` only on forms whose hard polygon corners are visibly
 unwanted. `roundCorners(points, radius, {closed, steps})` creates sampled
 quadratic corners; `closed: false` preserves both original endpoints exactly.
