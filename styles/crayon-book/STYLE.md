@@ -228,6 +228,18 @@ the drawing: compare native-size trials and reject a setting that removes the
 reference's directional marks. Keep the value fixed during a reveal and clear
 cached reveal counts when changing material settings for an experiment.
 
+`Wax.hatchGesture` accepts a fixed strength from 0 to 1, defaulting to 0.
+With formed and broken hatching enabled, it extends pass lengths and varies
+spacing, bend, width and pressure over neighbouring passes. The field stays in
+form coordinates. White and indigo fills retain their existing treatment;
+small shapes receive no change, and yellow and peach receive less variation.
+Use it when a reference has coherent long marks and the current fill reads as
+short, regular segments. Greater randomness is not automatically a closer match.
+Large pressure changes can create bare-paper blotches after grain compositing;
+keep those changes restrained and compare several pigments at native size.
+Clear reveal counts between trials. Run `node scripts/check_gesture.mjs`, then
+inspect a complete encoded drawing sequence before a full export.
+
 For overlapping drawings, `Wax.strokeOcclusion = true` removes lower-layer
 marks only beneath the pigment strokes that have actually been revealed. It
 queues each visible stroke with its transform, erases its footprint in device

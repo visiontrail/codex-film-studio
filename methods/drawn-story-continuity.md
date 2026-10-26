@@ -133,6 +133,15 @@ foliage can obscure eyes or noses. Keep the original treatment for those marks
 when the trial shows a regression. Preserve deterministic object seeds and
 recheck contour/fill budgets after changing stroke topology.
 
+Match the length and grouping of the reference marks before adding more
+randomness. A hand can make long, nearly parallel strokes while varying their
+spacing and pressure together across a region. Extend those gestures with a
+stable field in form coordinates; independent noise on every short segment
+produces a different texture. Grain compositing can amplify a modest pressure
+change into a large bare-paper patch. Reject that trial, reduce the pressure
+range, and compare several colours and form sizes. A long-stroke treatment must
+still trace partially drawn paths and preserve small identifying marks.
+
 Distinguish dry-grain holes from regular gaps between adjacent pen passes.
 The latter may need a wider wax footprint or greater overlap, rather than more
 pigment everywhere. Test a modest range with pressure and paper held fixed;

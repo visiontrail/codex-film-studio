@@ -132,23 +132,30 @@ export class Wax {
      // Stagger the ends and pressure of wax passes instead of spanning each
      // shape with identical parallel bands. All seeds remain object-local.
      const strength=typeof this.brokenHatching==='number'?clamp(this.brokenHatching):1;
+     // Broad crayon gestures vary together across neighbouring passes. The
+     // field is fixed in form coordinates; small marks keep their old pen.
+     const gesture=(color===C.ink?0:clamp(this.hatchGesture??0))*clamp((Math.min(x1-x0,y1-y0)-35)/70)
+       *({[C.yellow]:.45,[C.peach]:.35}[color]??1);
      let pass=0;
-     for(let y=top;y<bottom;y+=5.6+hash(pass,seed+41)*1.7,pass++){
+     for(let y=top;y<bottom;y+=5.6+hash(pass,seed+41)*1.7+gesture*(grid(pass,0,2.7,seed+269)-.5)*3.2,pass++){
       const yy=y+(hash(pass,seed+19)-.5)*2.1;
-      const span=48+hash(pass,seed+137)*74;
+      const span=48+hash(pass,seed+137)*74+gesture*(40+hash(pass,seed+277)*90);
       const stagger=hash(pass,seed+151)*span;
       let segment=0;
       for(let start=left-stagger;start<right;start+=span*.82,segment++){
        const stop=Math.min(right+10,start+span),stroke=[];
-       const bend=(hash(pass,segment,seed+101)-.5)*3.5;
+       const bend=(hash(pass,segment,seed+101)-.5)*(3.5+gesture*3);
        for(let x=start;x<=stop+5;x+=5){
         const q=(x-start)/Math.max(1,stop-start);
         stroke.push([x,yy+offset(x,yy)+bend*Math.sin(q*Math.PI)+(hash(pass,Math.round(x),seed+71)-.5)*1.5]);
        }
-       const pressureVariation=(grid(segment,pass,2.2,seed+163)-.5)*.20*strength;
+       const pressureVariation=(grid(segment,pass,2.2,seed+163)-.5)*.20*strength
+         +gesture*(grid(segment,pass,2.7,seed+281)-.5)*.08;
        // A broader wax side overlaps adjacent passes without painting an
        // undercoat. Small identifying marks retain their original pen model.
-       this.line(stroke,color,7.7+overlap*5+(hash(pass,segment,seed+6)-.5)*1.7,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment);
+       const width=7.7+overlap*5+(hash(pass,segment,seed+6)-.5)*1.7
+         +gesture*(grid(segment,pass,2.5,seed+283)-.5)*2.5;
+       this.line(stroke,color,width,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment);
       }
      }
      for(let pass=0;pass<Math.ceil((bottom-top)/17);pass++){
