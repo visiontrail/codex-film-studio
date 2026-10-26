@@ -12,6 +12,7 @@ import tempfile
 import urllib.request
 from urllib.parse import urlencode
 from fetch_demo import sha
+from build_search import build_search, DEFAULT_ORIGIN
 
 ROOT = Path(__file__).resolve().parents[1]
 STUDIO = ROOT / "styles/whiteboard/studio"
@@ -80,7 +81,7 @@ def prepare_public_document(text, mounts, base_path, web_preview=False):
     return text.replace('</style>', '</style>' + notice, 1)
 
 
-def build_site(demo_root, output, revision="", published_roots=None, base_path="/codex-film-studio/"):
+def build_site(demo_root, output, revision="", published_roots=None, base_path="/codex-film-studio/", site_origin=DEFAULT_ORIGIN):
     """Copy only the files needed by the public player, never a whole studio."""
     if output.exists():
         raise FileExistsError(output)
@@ -97,8 +98,10 @@ def build_site(demo_root, output, revision="", published_roots=None, base_path="
     # library artwork and approved Release samples enter the Pages artifact.
     files.extend((ROOT / name, name) for name in [
         "index.html", "catalog/studio.css", "catalog/studio.mjs",
-        "catalog/hero.svg", "catalog/mark.svg",
+        "catalog/hero.svg", "catalog/mark.svg", "catalog/strings.mjs", "catalog/social-card.jpg",
     ])
+    # Public ownership proof downloaded from the owner's Search Console property.
+    files.append((ROOT / "site-verification/google4f5a2a3073124a07.html", "google4f5a2a3073124a07.html"))
     catalog = json.loads((ROOT / "styles.json").read_text())
     mounts = {}
     public_pages = []
@@ -175,6 +178,7 @@ def build_site(demo_root, output, revision="", published_roots=None, base_path="
                     if Path(asset).parent == Path(landing["page"]).parent:
                         html = html.replace(f'"{Path(asset).name}"', f'"{Path(asset).name}?{query}"')
                 page.write_text(html, encoding="utf-8")
+    build_search(output, catalog, site_origin, base_path, revision)
     (output / ".nojekyll").touch()
     (output / "styles.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
     (output / "docs/readme").mkdir(parents=True, exist_ok=True)
@@ -201,6 +205,7 @@ def main():
     parser.add_argument("--output", type=Path, default=ROOT / ".site")
     parser.add_argument("--asset-dir", type=Path, help="Use locally downloaded Release files.")
     parser.add_argument("--base-path", default="/codex-film-studio/", help="Public URL prefix; use / for a root site.")
+    parser.add_argument("--site-origin", default=DEFAULT_ORIGIN, help="Canonical HTTP(S) origin, without the project path.")
     parser.add_argument("--revision", default="", help="Source commit recorded in build-info.json.")
     args = parser.parse_args()
     if args.output.exists():
@@ -219,7 +224,7 @@ def main():
                 print(f"Downloading verified {style['id']} preview…", flush=True)
                 published_roots[style['id']] = fetch_showcase_bundle(
                     bundle, Path(temporary) / style['id'], args.asset_dir)
-        build_site(demo_root, args.output.resolve(), args.revision, published_roots, args.base_path)
+        build_site(demo_root, args.output.resolve(), args.revision, published_roots, args.base_path, args.site_origin)
 
 
 if __name__ == "__main__":

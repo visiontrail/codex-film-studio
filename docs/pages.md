@@ -178,3 +178,83 @@ evidence of a successful public deployment.
 
 To publish another film, add its approved assets and player deliberately; do not
 copy a retained production directory into the Pages output.
+
+## Search discovery (SEO and AI search)
+
+The Pages build renders the catalog and production guides into HTML before
+uploading the artifact. Search engines and readers without JavaScript receive
+real text and links. The interactive catalog then enhances that same content.
+
+- English catalog: `/`; Chinese catalog: `/zh/` (relative to the site prefix).
+- English guides: `/styles/<id>/`; Chinese guides: `/zh/styles/<id>/`.
+- Existing showcase/player URLs remain available. Their public entrypoints have
+  their own canonical metadata and links back to the new production guides.
+- Each language page has a self-canonical URL and reciprocal `en`, `zh-CN` and
+  `x-default` alternate links. `?lang=zh` catalog links resolve to `/zh/`.
+- Titles, descriptions, Open Graph, Twitter cards and a 1200×630 JPEG preview
+  are present in initial HTML. `catalog/social-card.html` is the editable source
+  for that card; render at 1200×630 and export the screenshot as JPEG.
+- Homepages use WebSite, CollectionPage and ItemList structured data. Guides use
+  WebPage and BreadcrumbList. Markup describes visible content; it does not
+  promise rich results, AI recommendations or video eligibility.
+- The guide copy in `catalog/search-content.json` summarizes the owning
+  `STYLE.md` files. Add both languages when registering a style. Keep methods
+  generic, source-linked and honest about reusable package capabilities.
+- `catalog/strings.mjs` is a JSON object exported as an ES module, shared by the
+  build and the interactive catalog. Keep the object valid JSON.
+- Displayed documentation dates come from the relevant Git content history,
+  not the current build time. Actions checks out full history for this reason.
+  Unknown legacy media modification dates are omitted from the sitemap.
+- `sitemap.xml` lists canonical public destinations only. Internal HTML inside
+  release asset bundles gets `noindex, follow` and stays out of the sitemap.
+  A missing page returns the Pages 404 status with a `noindex` error document.
+
+Run `python3 -m unittest discover -s scripts -p 'test_*.py'` before publishing.
+The search tests inspect raw HTML, language pairs, canonical URLs, schema JSON,
+internal bundle exclusions, and deployment at both a project prefix and a root
+origin. Browser review must additionally cover language navigation, search,
+no-JavaScript reading and desktop/mobile layout.
+
+### Canonical origin and crawler policy
+
+Defaults are `--site-origin https://visiontrail.github.io` and
+`--base-path /codex-film-studio/`. A custom-domain deployment can build with
+`--site-origin https://your-domain.example --base-path /`. Configuring DNS,
+GitHub Pages' custom-domain setting and redirects is a separate deployment
+change; changing these build arguments alone does not register a domain.
+
+Robots rules apply at the **origin root**. For the current project site, crawlers
+read `https://visiontrail.github.io/robots.txt`, not
+`https://visiontrail.github.io/codex-film-studio/robots.txt`. The origin-root
+URL returned HTTP 404 during the 2026-10-26 audit, so it did not block crawling.
+The generated project robots file documents the intended policy and works when
+this artifact is deployed at an origin root. It cannot override a future
+origin-wide restriction. Do not change another repository's root policy as
+part of a project-only deploy.
+
+The intended policy allows search crawlers, including OAI-SearchBot. No separate
+GPTBot training policy is introduced. Search crawling and model-training
+preferences are independent. A missing robots restriction and a successful
+HTTP fetch do not establish indexing or citation by an AI answer.
+
+### Google Search Console
+
+Use the URL-prefix property `https://visiontrail.github.io/codex-film-studio/`.
+`site-verification/google4f5a2a3073124a07.html` is the public verification document
+provided by Google for the owner's property; the build copies it to the site
+root unchanged. It is public ownership proof, not an API key. Keep it deployed
+after verification.
+
+After a successful deployment, verify that property and submit
+`https://visiontrail.github.io/codex-film-studio/sitemap.xml`. Use URL Inspection
+for the English/Chinese homepages and representative style guides. Check Page
+indexing and the Search results performance report after Google processes data.
+Track impressions, clicks, queries and landing pages; do not infer ranking or
+AI citations from deployment success. No Analytics tracker is added.
+
+References: [Google JavaScript SEO](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics),
+[localized pages](https://developers.google.com/search/docs/specialty/international/localized-versions),
+[sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap),
+[robots.txt scope](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt),
+[Google AI search guidance](https://developers.google.com/search/docs/appearance/ai-features),
+[OpenAI search crawler](https://developers.openai.com/api/docs/bots).

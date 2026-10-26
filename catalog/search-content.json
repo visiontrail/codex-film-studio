@@ -1,0 +1,42 @@
+{
+  "whiteboard": {
+    "en": {"use": "Choose Whiteboard Explainer when an argument needs to build step by step and revisit earlier ideas on one continuous surface.", "method": "Keep drawings fixed in board coordinates. Reveal contours with one chronological marker queue, then move the camera to explain relationships. Draw people, hands and tools when their actions carry the explanation.", "check": "Check pen contact, reading holds and subtitle space. Watch the final encoded film and listen to narration, marker sounds and music together."},
+    "zh": {"use": "当论证需要逐步展开，并在同一块画面中回看前面的想法时，可以选择白板讲解。", "method": "将绘画固定在白板坐标中，让马克笔按时间顺序显现轮廓，再用镜头解释图形之间的关系。人物、手和工具承担解释作用时，应把动作画出来。", "check": "检查笔尖接触、阅读停留和字幕空间，观看最终编码影片，并把旁白、笔触音效与音乐放在一起试听。"}
+  },
+  "art-collage": {
+    "en": {"use": "Choose Art Collage for a story whose ideas can be connected through paper layers, cutout objects and expressive typography.", "method": "Give paper pieces a visible material, edge and layering order. Use entrances, occlusion and replacement to explain relationships. Define characters and required identity assets for each new production.", "check": "Check readable type, cutout edges and identity consistency in stills and motion. A specific real person requires a user-supplied portrait for that production."},
+    "zh": {"use": "当故事适合用纸张层次、剪贴物体和有表现力的字体建立联系时，可以选择艺术拼贴。", "method": "让纸片具有可见的材质、边缘和遮挡顺序，以进入、遮挡和替换解释关系。每个新制作项目分别确定角色与身份素材。", "check": "在静帧和运动中检查字体可读性、剪贴边缘和身份一致性。涉及具体真实人物时，需要用户为该制作项目提供肖像。"}
+  },
+  "crayon-book": {
+    "en": {"use": "Choose Crayon Picture Book for a tactile illustrated story built from drawing reveals, wax pigment and physical page movement.", "method": "Separate paper fibres, directional wax passes and indigo contours. Keep small features readable and distinguish line drawing from colouring when the sequence calls for both.", "check": "Review pigment and paper at the encoded delivery scale. Check drawing order, page transitions, caption safe areas and deterministic frame seeking."},
+    "zh": {"use": "当故事需要逐笔绘画、蜡质颜料与真实翻页的触感时，可以选择蜡笔绘本。", "method": "分别处理纸张纤维、具有方向的蜡笔涂色和靛蓝轮廓。保持细小特征清晰；需要先勾线再上色时，应把两道显现过程分开。", "check": "在最终编码尺寸下检查颜料与纸纹，并检查绘画顺序、翻页衔接、字幕安全区和按帧定位的一致性。"}
+  },
+  "midcentury-cartoon": {
+    "en": {"use": "Choose Mid-century Cartoon for a warm instructional story in which visible character actions lead to understandable changes and results.", "method": "Use warm paper, soft complementary colours, slightly misregistered plates and broken ink. Stage meaningful hand actions and held poses, with flat shadows and clear object continuity.", "check": "Check line weight after camera moves, caption reading time and hand-to-object contact. Printed texture and decoration should leave room for the action."},
+    "zh": {"use": "当教学故事需要人物通过可见动作呈现状态变化和结果时，可以选择温暖的 50 年代平涂卡通。", "method": "使用暖纸、柔和互补色、轻微错位的套色与断续墨线。编排有意义的手部动作和停格姿态，用平面阴影保持物体的连续性。", "check": "检查镜头移动后的线宽、字幕阅读时间与手和物体的接触关系，让印刷纹理和装饰为动作留出空间。"}
+  },
+  "satellite-briefing": {
+    "en": {"use": "Choose Satellite Briefing when the explanation depends on real places, geographic scale or spatial relationships.", "method": "Use documented georeferenced imagery and one geographic camera for terrain, pins and annotations. Distinguish observations, calculated measurements and proposed routes in the text.", "check": "Verify imagery date, projection and extent. Derive scale from ground geometry, and check camera continuity and label placement throughout each move."},
+    "zh": {"use": "当解释依赖真实地点、地理尺度或空间关系时，可以选择卫星影像／地理简报。", "method": "使用有来源记录的地理配准影像，用同一地理相机组织地形、标记和注释，并在文字中区分观察、计算测量与拟议路线。", "check": "核对影像日期、投影和范围，从地面几何关系计算比例尺，检查整个移动过程中的镜头连续性和标签位置。"}
+  },
+  "scifi-sitcom": {
+    "en": {"use": "Choose Sci-Fi Sitcom Toon for a character-driven comic sequence with contrasting reactions and visible consequences.", "method": "Start from an ordinary desire, then stage opposing reactions. Use irregular dark outlines, flat fills, readable eyes, held drawings and purposeful reaction shots.", "check": "Check silhouettes, gesture changes, spatial continuity and sound timing. Choose the cast, identities and factual inputs again for each new story."},
+    "zh": {"use": "当喜剧段落由人物推动，依靠反差反应和可见后果展开时，可以选择科幻情景喜剧卡通。", "method": "从一个日常愿望开始，编排相互对照的反应。使用不规则深色轮廓、平涂色块、清楚的眼神、停格绘画与有目的的反应镜头。", "check": "检查剪影、姿态变化、空间连续性和声音时机。每个新故事都应重新确定角色、身份和事实输入。"}
+  },
+  "microgame": {
+    "en": {"use": "Choose Microgame Frenzy for a rapid sequence of commands, physical actions and outcomes connected by a recurring stage and life counter.", "method": "Construct each medium separately: crayon, ink, ASCII, printed plates or pixels. Change framing to suit the task and return to a recognisable show stage between rounds.", "check": "Check that the command, action and result remain readable as the pace increases. Material changes need their own construction, not just a texture overlay."},
+    "zh": {"use": "当故事适合由快速的命令、身体动作和结果组成，并通过固定舞台与生命计数连接时，可以选择极速微游戏。", "method": "分别构造蜡笔、水墨、ASCII、套色印刷或像素等媒介，根据任务改变景别，在关卡之间回到可辨认的节目舞台。", "check": "节奏加快时，仍需看清命令、动作和结果。不同媒介需要各自的绘制结构，不能只替换表面纹理。"}
+  },
+  "art-deco": {
+    "en": {"use": "Choose Art Deco for a film built around lacquer, brass, faceted figures, stepped architecture and causal mechanical action.", "method": "Build objects from directional planes, fine metallic edges and controlled gradients. Give figures changing poses and expressions, and stage depth for the intended aspect ratio.", "check": "Check hand contact, foot planting, gesture envelopes and camera movement. Review fine metallic lines and film grain at the final delivery resolution."},
+    "zh": {"use": "当影片以黑漆、黄铜、切面人物、阶梯建筑和具有因果关系的机械动作为核心时，可以选择装饰艺术风格。", "method": "用具有方向的明暗面、细金属边与克制的渐变构造物体。让人物的姿态和表情发生变化，并按目标画幅重新编排空间深度。", "check": "检查手部接触、落脚、完整手势范围和镜头运动，在最终交付分辨率下审阅细金属线与颗粒。"}
+  },
+  "caption-news": {
+    "en": {"use": "Choose Caption News for an editorial explanation that pairs an identifiable subject with concise large captions and source-backed graphics.", "method": "Use short thought units, selective yellow emphasis and a stable source area. Give each entrance a readable hold and exit on the shared frame timeline; preserve the units and context of charts.", "check": "Verify claims against sources, measure caption reading time and protect faces and actions. Recompose layouts for the delivery aspect ratio."},
+    "zh": {"use": "当编辑型讲解需要把明确主体、简洁大字幕和有来源的图表结合起来时，可以选择字幕新闻。", "method": "按短意群组织文字，选择性使用黄色重点，并保留稳定的来源区域。在统一帧时间轴上安排入场、阅读停留和退场，保留图表单位与上下文。", "check": "依据来源核对主张，测量字幕阅读时间，避免遮挡面孔与动作，并按交付画幅重新构图。"}
+  },
+  "line-chart-comedy": {
+    "en": {"use": "Choose Animated Line Chart Comedy when a data story benefits from growing lines, expressive endpoint characters and timed editorial events.", "method": "Keep a persistent chart card and a common transform for data, tokens and event anchors. Let motion annotate real observations while preserving units, source versions and interpolation policy.", "check": "Check chart values and scales before comic timing. Read event cards inside the actual camera frame, and distinguish interpolated animation from additional observations."},
+    "zh": {"use": "当数据故事适合通过生长折线、端点角色和定时事件卡片展开时，可以选择动态折线图喜剧。", "method": "保持持续存在的图表卡片，让数据、角色和事件锚点共用坐标变换。用动作注释真实观测，同时保留单位、来源版本与插值规则。", "check": "先核对数值与刻度，再检查喜剧节奏。事件卡片需要在实际镜头范围内完整可读，并区分插值动画与新增观测。"}
+  }
+}
