@@ -85,7 +85,7 @@ function setLanguage(language) {
   if (state.catalog) { renderStyles(); renderScreening(); if (state.detail) renderDetail(); }
 }
 function guideURL(entry) {
-  return new URL((state.language === 'zh' ? 'zh/' : '') + 'styles/' + entry.id + '/', SITE_ROOT).href;
+  return new URL(`${state.language === 'zh' ? 'zh/' : ''}styles/${entry.id}/`, SITE_ROOT).href;
 }
 function guideLink(entry) {
   return PAGE_LANGUAGE ? '<a class="card-page" href="' + escape(guideURL(entry)) + '">' + (state.language === 'zh' ? '风格与制作指南' : 'Style & production guide') + '<span aria-hidden="true">→</span></a>' : '';
