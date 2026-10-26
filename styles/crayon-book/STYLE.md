@@ -100,14 +100,21 @@ feed `bookCamera`; `light` controls the illustration's light transfer and `turn`
 controls the leaf. The camera holds during the turn and after `pushEnd`. Place
 `settle` on the accepted contact sound when audio must remain unchanged.
 
-`leafStrips(turn, {x, y, width, height}, {curl, segments})` returns a projected,
-bowed sheet in far-to-near order. Each strip has material coordinates `u`/`v`,
+`leafStrips(turn, {x, y, width, height}, {curl, segments, profile})` returns a projected
+sheet in far-to-near order. Each strip has material coordinates `u`/`v`,
 projected edges `a`/`b`, a `front` flag and a self-shadow strength. Use front
 coordinates `u` to `v`, and reverse coordinates `1-v` to `1-u` on the back.
 Both faces may be visible during one frame. The helper supplies geometry, not
 a complete renderer; the caller must sample textures, shade and composite it.
 `curl` defaults to 1 and accepts 0–1.5; `segments` defaults to 240. Compare
 moderate trials at native resolution and retain fixed surface coordinates.
+`profile` defaults to `rounded`. The optional `hinge` profile keeps depth
+monotonic toward the free edge, bends the sheet near its hinge, and delays the
+angular midpoint without moving either endpoint. This gives a straighter outer
+span than the rounded bow. Select from consecutive native frames, since global
+rotation and local curvature can look similar in a single still. Run
+`node scripts/check_leaf_profile.mjs` to check endpoints, hinge attachment,
+finite projection and visible front/back coexistence with contrasting textures.
 Run `node scripts/check_book_motion.mjs` for generic geometry and timing checks,
 then separately inspect the encoded motion and the settled page handoff.
 

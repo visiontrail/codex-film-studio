@@ -12,17 +12,19 @@ export function bookMotion(frame,timing){
   turn:smooth((frame-turnStart)/(settle-turnStart))};
 }
 
-// A ruled paper surface: the middle rises farther than the free edge. Project
-// depth before deciding which side of each strip is visible; both faces can
-// appear together near the side-on pose. Material coordinates never change.
-export function leafStrips(turn,{x,y,width,height},{curl=1,segments=240}={}){
+// Two ruled-paper profiles: a rounded bow, or a straighter outer span with
+// the bend near the hinge. Depth and transverse bend are separate controls.
+// Project before choosing the visible face; material coordinates stay fixed.
+export function leafStrips(turn,{x,y,width,height},{curl=1,segments=240,profile='rounded'}={}){
+ if(!['rounded','hinge'].includes(profile))throw new Error('Invalid leaf profile');
  if(![turn,x,y,width,height,curl,segments].every(Number.isFinite)||width<=0||height<=0
   ||curl<0||curl>1.5||!Number.isInteger(segments)||segments<16)throw new Error('Invalid leaf geometry');
- const angle=Math.PI*unit(turn),s=Math.max(0,Math.sin(angle)),co=Math.cos(angle),eye=width*1.85;
+ const progress=unit(turn),rotation=profile==='hinge'?progress-.09*Math.sin(Math.PI*progress):progress;
+ const angle=Math.PI*rotation,s=Math.max(0,Math.sin(angle)),co=Math.cos(angle),eye=width*1.85;
  const point=u=>{
-  const z=width*s*curl*(.556*u+.370*Math.sin(Math.PI*u));
+  const z=width*s*curl*(profile==='hinge'?.556*u:.556*u+.370*Math.sin(Math.PI*u));
   const scale=eye/(eye-z);
-  return {x:x+(width*co*u+width*.058*Math.sin(Math.PI*u)*s*curl)*scale,
+  return {x:x+(width*co*u+width*(profile==='hinge'?-.18:.058)*Math.sin(Math.PI*u)*s*curl)*scale,
    y:y+height/2-height/2*scale,height:height*scale,z};
  };
  const strips=[];

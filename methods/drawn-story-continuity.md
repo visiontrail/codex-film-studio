@@ -253,11 +253,19 @@ boundaries with their uncertainty rather than inventing exact source timings.
 For a bowed sheet, project its depth before deciding which face of each strip
 is visible. A single global front/back switch can erase one face too early.
 Paint farther strips before nearer ones, keep the hinge fixed, and let the
-middle rise independently of the free edge. Retain the front's illumination
+depth profile vary independently of the transverse bend. Retain the front's illumination
 until its last visible strip disappears. Test both flat endpoints, the narrow
 side-on pose, partial front/back coexistence and the final material handoff at
 native size. Geometry checks do not establish natural motion; inspect every
 changed encoded frame and the complete transition at normal speed.
+
+Judge curvature from a short consecutive sequence, including the outer edge
+and the hinge. A rounded middle bow and a straighter outer span may share a
+similar silhouette in one pose. Separate the local bend, the overall rotation
+and the perspective before changing their strength. Preserve the fixed hinge
+and contact time while testing the new profile. To check simultaneous face
+visibility, render contrasting front/back test colours and count visible
+pixels after occlusion; orientation flags alone cannot establish visibility.
 
 If a deformed page acquires regular stripes, isolate the rasterization with a
 uniform material and constant shade. Extra internal variation then indicates
