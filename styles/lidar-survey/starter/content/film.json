@@ -1,0 +1,21 @@
+{
+  "title": "",
+  "subject": "",
+  "audience": "",
+  "language": "",
+  "delivery": {"width": 1920, "height": 1080, "fps": 24, "duration_frames": null},
+  "survey": {
+    "source_url": "", "licence": "", "attribution": "", "acquired_at": "",
+    "horizontal_crs": "", "vertical_datum": "", "units": "",
+    "local_origin": null, "bounds": null, "classifications": [], "processing_steps": []
+  },
+  "measurements": [],
+  "interpretations": [],
+  "display_exaggeration": null,
+  "camera_keys": [],
+  "scan_cues": [],
+  "label_cues": [],
+  "voice_cues": [],
+  "sound_cues": [],
+  "review": {"visually_inspected_ranges": [], "playback_ranges": [], "audio_listening_ranges": []}
+}

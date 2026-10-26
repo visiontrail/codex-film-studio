@@ -19,6 +19,7 @@ const categories = {
   'caption-news':['animation','material'],
   'microgame':['animation','material'],
   'line-chart-comedy':['animation'], 'art-deco':['animation','material'],
+  'lidar-survey':['geography'],
 };
 const state = { catalog:null, frames:{}, availability:{mode:'public', pages:{}}, language:'en', filter:'all', query:'', detail:null };
 const $ = selector => document.querySelector(selector);

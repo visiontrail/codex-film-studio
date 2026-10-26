@@ -38,5 +38,17 @@
   "line-chart-comedy": {
     "en": {"use": "Choose Animated Line Chart Comedy when a data story benefits from growing lines, expressive endpoint characters and timed editorial events.", "method": "Keep a persistent chart card and a common transform for data, tokens and event anchors. Let motion annotate real observations while preserving units, source versions and interpolation policy.", "check": "Check chart values and scales before comic timing. Read event cards inside the actual camera frame, and distinguish interpolated animation from additional observations."},
     "zh": {"use": "当数据故事适合通过生长折线、端点角色和定时事件卡片展开时，可以选择动态折线图喜剧。", "method": "保持持续存在的图表卡片，让数据、角色和事件锚点共用坐标变换。用动作注释真实观测，同时保留单位、来源版本与插值规则。", "check": "先核对数值与刻度，再检查喜剧节奏。事件卡片需要在实际镜头范围内完整可读，并区分插值动画与新增观测。"}
+  },
+  "lidar-survey": {
+    "en": {
+      "use": "Choose LiDAR Survey when a spatial explanation needs measured point clouds, classified layers, terrain or an anchored cross-section.",
+      "method": "Preserve measured point positions. Move a continuous camera through the cloud, use one front to reveal the corresponding surface, and reserve amber hairlines for sections and readings. The page’s synthetic study illustrates this grammar without representing a real survey.",
+      "check": "Verify source permissions, acquisition dates, units, classification and coordinate systems. Measure on undistorted data, label interpretations and display exaggeration, then inspect the encoded points, labels and motion and listen to the mix."
+    },
+    "zh": {
+      "use": "当空间解释需要测绘点云、分类图层、地形或贴合对象的剖面时，可以选择点云测绘。",
+      "method": "保留点的实测位置，用连续镜头进入点云，让同一道前缘显现对应地表，并将琥珀色细线留给剖面与读数。本页合成示意用于展示这套语法，不对应真实测绘成果。",
+      "check": "核对来源许可、采集日期、单位、分类和坐标系统。在未经夸张的数据上测量，标明解释性描绘与显示比例变化，再检查编码后的点云、文字和运动，并试听混音。"
+    }
   }
 }

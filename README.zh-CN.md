@@ -31,7 +31,7 @@
 
 <!-- style-summary:start -->
 
-**10 种风格** · 1 种完整样片工程 · 6 种创作起步包 · 3 种材质工具包
+**11 种风格** · 1 种完整样片工程 · 7 种创作起步包 · 3 种材质工具包
 
 <!-- style-summary:end -->
 
@@ -156,6 +156,17 @@
 <p>克制的图表界面，以生长折线、端点角色、事件卡片与漫画动作讲述数据变化。</p>
 <p><b>创作起步包</b> · 尚无样片</p>
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/line-chart-comedy/STYLE.md">风格说明</a> · <a href="styles/line-chart-comedy/prompt.txt">提示词</a> · <a href="styles/line-chart-comedy/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh"><img src="styles/lidar-survey/showcase/preview.zh.svg" alt="点云测绘 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>11 / <code>lidar-survey</code></sub>
+<h3>点云测绘</h3>
+<sub>LiDAR Survey</sub>
+<p>以连续空间镜头串联测绘点云、树冠剥离、侧光地表与细线剖面，让数据逐层显现。</p>
+<p><b>创作起步包</b> · 尚无样片</p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/lidar-survey/STYLE.md">风格说明</a> · <a href="styles/lidar-survey/prompt.txt">提示词</a> · <a href="styles/lidar-survey/starter">创作工程</a></sub>
 </td>
 </tr>
 </table>

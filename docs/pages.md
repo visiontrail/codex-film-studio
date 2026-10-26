@@ -93,6 +93,19 @@ schematic preview SVGs link from the Collection, root README galleries and style
 index. Art Deco remains `toolkit-ready`; this page does not publish the retained
 experimental films.
 
+LiDAR Survey has a bilingual independent page at
+`styles/lidar-survey/showcase/index.html`, following Whiteboard's demonstration,
+creation steps, prompt, build notes and reference structure. A silent 20-second
+Canvas study shows fixed synthetic returns, canopy peeling, surface reveal, a
+section and ghosted context. The page starts paused, supports play, restart,
+seeking and chapter selection, and pauses offscreen or when hidden. All geometry
+is labelled synthetic; no measurements or observations of a real place are implied.
+The style guide and empty survey/timeline starter are registered as `starter-ready`.
+All Styles (including Geography), both root README galleries and the style index
+link to the page. Bilingual search summaries also supply its generated guide
+pages and sitemap entries. The generic page, preview SVGs, self-hosted OFL fonts and licence
+notices are included through the registry. No upstream film or survey is republished.
+
 ## Local style catalog
 
 From the repository root:

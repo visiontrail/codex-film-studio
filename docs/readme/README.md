@@ -111,3 +111,11 @@ The summary sits under the atlas heading, separate from the introduction.
 `follow-x.svg` is a local badge linked to `https://x.com/LeoGuoLabs`; it does not
 fetch follower counts or depend on a remote badge service.
 New styles must meet [the contribution requirements](../../CONTRIBUTING.md).
+
+## LiDAR Survey preview
+
+The bilingual `styles/lidar-survey/showcase/preview.*.svg` artwork is original
+synthetic geometry: muted canopy points, a stone-coloured terrain and an amber
+section. It illustrates visual grammar, not a real location or measurement.
+These style-study previews link to the independent LiDAR Survey page in both
+README galleries and the public collection. No upstream film frames are used.

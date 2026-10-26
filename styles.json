@@ -497,6 +497,45 @@
           "styles/line-chart-comedy/PROVENANCE.md"
         ]
       }
+    },
+    {
+      "id": "lidar-survey",
+      "name": "LiDAR Survey",
+      "name_zh": "点云测绘",
+      "description": "Measured point clouds, canopy peeling, raking-lit terrain and fine sections, carried by one continuous camera move.",
+      "description_zh": "以连续空间镜头串联测绘点云、树冠剥离、侧光地表与细线剖面，让数据逐层显现。",
+      "status": "starter-ready",
+      "status_note": "Style guide and blank survey/timeline contract; author the data pipeline, scene renderer and soundtrack per production.",
+      "status_note_zh": "已有风格指南与空白测绘、时间轴约定；新影片需按选题编写数据处理、场景渲染器和声音。",
+      "guide": "styles/lidar-survey/STYLE.md",
+      "readme": "styles/lidar-survey/README.md",
+      "prompt": "styles/lidar-survey/prompt.txt",
+      "template": "styles/lidar-survey/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "showcases": [],
+      "preview": "styles/lidar-survey/showcase/preview.en.svg",
+      "preview_zh": "styles/lidar-survey/showcase/preview.zh.svg",
+      "preview_kind": "schematic",
+      "landing": {
+        "page": "styles/lidar-survey/showcase/index.html",
+        "assets": [
+          "styles/lidar-survey/showcase/showcase.css",
+          "styles/lidar-survey/showcase/showcase.mjs",
+          "styles/lidar-survey/STYLE.md",
+          "styles/lidar-survey/prompt.txt",
+          "styles/lidar-survey/PROVENANCE.md",
+          "styles/lidar-survey/UPSTREAM-LICENSE.txt",
+          "styles/lidar-survey/showcase/fonts/BarlowCondensed-Light.ttf",
+          "styles/lidar-survey/showcase/fonts/IBMPlexMono-Regular.ttf",
+          "styles/lidar-survey/showcase/fonts/OFL-barlowcondensed.txt",
+          "styles/lidar-survey/showcase/fonts/OFL-ibmplexmono.txt"
+        ]
+      }
     }
   ]
 }

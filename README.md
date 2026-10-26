@@ -31,7 +31,7 @@
 
 <!-- style-summary:start -->
 
-**10 styles** · 1 complete demo kit · 6 authoring starters · 3 material toolkit
+**11 styles** · 1 complete demo kit · 7 authoring starters · 3 material toolkit
 
 <!-- style-summary:end -->
 
@@ -155,6 +155,17 @@ from the repository with the retained projects available. See the
 <p>A quiet chart interface with growing lines, expressive endpoint tokens, event cards and comic motion accents.</p>
 <p><b>Authoring starter</b> · No sample yet</p>
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en">Style page</a> · <a href="styles/line-chart-comedy/STYLE.md">Style guide</a> · <a href="styles/line-chart-comedy/prompt.txt">Prompt</a> · <a href="styles/line-chart-comedy/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en"><img src="styles/lidar-survey/showcase/preview.en.svg" alt="LiDAR Survey — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>11 / <code>lidar-survey</code></sub>
+<h3>LiDAR Survey</h3>
+<sub>点云测绘</sub>
+<p>Measured point clouds, canopy peeling, raking-lit terrain and fine sections, carried by one continuous camera move.</p>
+<p><b>Authoring starter</b> · No sample yet</p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en">Style page</a> · <a href="styles/lidar-survey/STYLE.md">Style guide</a> · <a href="styles/lidar-survey/prompt.txt">Prompt</a> · <a href="styles/lidar-survey/starter">Project files</a></sub>
 </td>
 </tr>
 </table>
