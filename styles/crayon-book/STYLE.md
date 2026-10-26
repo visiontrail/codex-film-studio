@@ -63,6 +63,16 @@ views, since smooth bright fibres can look plastic even when broad bands improve
 Run `node scripts/check_desk_material.mjs` for material invariants, then inspect
 the encoded camera move for shimmer and excessive bright-line density.
 
+Carry the selected wax settings into secondary drawing surfaces as well as the
+main illustration. A fresh pen instance with default settings can leave desk
+props thinner or more geometric than the story drawing. Copy material settings
+explicitly, without sharing canvases, reveal budgets or temporal state. Judge
+small tools at their final camera size: distinguish the handle, grip and tip,
+and use sparse lengthwise wax catches to describe a rounded side. Compare the
+original, shared-material and local-detail trials before changing production.
+Keep the book interior and camera fixed during this comparison; a stronger
+white accent is not automatically a better material match.
+
 Keep paper fibre direction separate from the direction of individual crayon
 passes. Stretching one grain field across the whole image can put identical
 slanted scratches on unrelated forms. Compare several colours and differently
