@@ -337,7 +337,15 @@
         "id": "scifi-review",
         "access": "release",
         "project": "productions/2026-10-22-odds-coffee-run",
-        "assets": []
+        "assets": [
+          "styles/scifi-sitcom/showcase/showcase.css",
+          "styles/scifi-sitcom/showcase/showcase.mjs",
+          "styles/scifi-sitcom/showcase/performance.mjs",
+          "styles/scifi-sitcom/showcase/comparison.html",
+          "styles/scifi-sitcom/showcase/fonts/LilitaOne-Regular.ttf",
+          "styles/scifi-sitcom/showcase/fonts/OFL.txt",
+          "styles/scifi-sitcom/starter/lib/ink.mjs"
+        ]
       },
       "public_assets": "styles/scifi-sitcom/demo-assets.json",
       "preview_showcase": "scifi-review"

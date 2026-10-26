@@ -107,6 +107,20 @@ link to the page. Bilingual search summaries also supply its generated guide
 pages and sitemap entries. The generic page, preview SVGs, self-hosted OFL fonts and licence
 notices are included through the registry. No upstream film or survey is republished.
 
+Sci-Fi Sitcom Toon has a bilingual independent page at
+`styles/scifi-sitcom/showcase/index.html`. Plum-black outlines, flat mint/coral/lilac
+surfaces, oversized lettering and a cartoon television frame carry the visual
+language of its style guide. The existing English film leads the page, with a
+poster, shot selection and an MP4 link. A six-second, initially paused expression
+study uses the style’s generic ink helper and two original neutral figures;
+visitors can play, pause, restart, scrub or select a reaction beat. Playback stops
+when the study leaves view or the page becomes hidden. The page also includes
+visual principles, project creation, copyable prompts, production notes and
+provenance. The former frame-review interface is retained at `comparison.html`.
+All page dependencies and the locally hosted OFL display font are registered in
+`landing.assets`. Films, reference material and timelines still come from the
+existing pinned Release bundle; the package remains `starter-ready`.
+
 ## Local style catalog
 
 From the repository root:
@@ -137,7 +151,7 @@ are registered explicitly in `landing.assets`; films remain in the pinned Releas
 The package remains `starter-ready`.
 
 Mid-century Cartoon has short/long players and motion review. Satellite Briefing
-has a player, live composition and frame comparison. Sci-Fi Sitcom has its review
+has a player, live composition and frame comparison. Sci-Fi Sitcom has its independent style page and frame-review
 player, Crayon Book has its player and frame comparison, and Caption News has a
 chapter-enabled screening room in its independent style page. Their HTML lives in
 `styles/<id>/showcase/`; whiteboard retains `styles/whiteboard/studio/`.
