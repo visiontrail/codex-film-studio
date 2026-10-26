@@ -261,6 +261,20 @@ keep those changes restrained and compare several pigments at native size.
 Clear reveal counts between trials. Run `node scripts/check_gesture.mjs`, then
 inspect a complete encoded drawing sequence before a full export.
 
+`Wax.hatchPressureDrift` accepts a fixed strength from 0 to 1, defaulting to
+0. With formed and broken hatching enabled, it varies deposited pressure along
+a pass using a field shared by neighbouring passes in the same form. Independent
+per-pass variation can disappear under overlaps; a shared field creates gradual
+changes in local density. It does not alter paper grain, outlines, pass geometry
+or stroke order. White, indigo and very small shapes retain their old pressure.
+Keep the gradient anchored to the full stroke while a reveal exposes only its
+prefix; recalculating it from the partial endpoint changes already drawn marks.
+Store the pressure field with queued occlusion strokes and replay it under the
+same transform. Compare several pigments and scene scales for unwanted broad
+pale patches. Run `node scripts/check_pressure.mjs`, then inspect an encoded
+contour-to-colour sequence. This control is optional; its invariants do not
+establish perceptual equivalence to a reference.
+
 For overlapping drawings, `Wax.strokeOcclusion = true` removes lower-layer
 marks only beneath the pigment strokes that have actually been revealed. It
 queues each visible stroke with its transform, erases its footprint in device

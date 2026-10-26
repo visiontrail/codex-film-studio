@@ -7,6 +7,14 @@ export const C={ink:'#343258',purple:'#805496',yellow:'#e4b83b',red:'#c75043',ro
 export const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 export const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
 function hash(x,y,s=0){let n=Math.imul(x+71,374761393)^Math.imul(y+131,668265263)^Math.imul(s+3,2246822519);n=Math.imul(n^(n>>>13),1274126177);return ((n^(n>>>16))>>>0)/4294967295;}
+function strokePaint(context,stroke){
+ const {path,color,alpha,pressureStops,pressureAxis}=stroke;
+ if(!pressureStops){context.globalAlpha=alpha;context.strokeStyle=color;return;}
+ const [first,last]=pressureAxis??[path[0],path.at(-1)],gradient=context.createLinearGradient(first[0],first[1],last[0],last[1]);
+ const rgb=[1,3,5].map(start=>parseInt(color.slice(start,start+2),16));
+ for(const [position,weight] of pressureStops)gradient.addColorStop(position,`rgba(${rgb.join(',')},${clamp(alpha*weight)})`);
+ context.globalAlpha=1;context.strokeStyle=gradient;
+}
 function grid(x,y,step,s){let xx=x/step,yy=y/step,i=Math.floor(xx),j=Math.floor(yy),u=ease(xx-i),v=ease(yy-j);return (hash(i,j,s)*(1-u)+hash(i+1,j,s)*u)*(1-v)+(hash(i,j+1,s)*(1-u)+hash(i+1,j+1,s)*u)*v;}
 export function paperTexture({reliefMap=null,reliefGain=1,toothScale=1}={}){
  if(reliefMap&&reliefMap.length!==W*H)throw new Error('Paper relief dimensions must match the canvas');
@@ -56,8 +64,9 @@ export class Wax {
   this.variantSeed=seed||1;try{return draw();}finally{this.variantSeed=previous;}
  }
  seedFor(seed){return this.variantSeed?Math.floor(hash(seed,this.variantSeed,1823)*2147483647):seed;}
- line(points,color=C.ink,width=3,pressure=.97,seed=1){
+ line(points,color=C.ink,width=3,pressure=.97,seed=1,pressureDrift=0,pressureSeed=seed){
   seed=this.seedFor(seed);
+  const pressureAxis=pressureDrift>0?[points[0],points.at(-1)]:null;
   const available=this.filling?this.fillBudget-this.fillIndex++:this.strokeBudget-this.strokeIndex++;if(this.outlineOnly){color=C.ink;width=Math.min(width,2.8);}if(this.measuring||available<=0||points.length<2)return;
   if(available<1){
    const lengths=points.slice(1).map((p,i)=>Math.hypot(p[0]-points[i][0],p[1]-points[i][1]));let remaining=lengths.reduce((a,b)=>a+b,0)*available,partial=[points[0]];
@@ -69,10 +78,16 @@ export class Wax {
   c.globalAlpha=clamp(pressure*contourPressure);c.lineWidth=width*(color===C.ink&&width<=6?(this.contourScale??1):1);c.lineJoin='round';c.lineCap='round';c.beginPath();
   const hand=points.map(([x,y],i)=>[x+(hash(i,seed,this.frame%5)-.5)*.75,y+(hash(i+32,seed,this.frame%5)-.5)*.75]);
   const stroke=(path,strokeWidth)=>{
+   // Pressure varies along an existing pass. Fixed stops belong to the full
+   // stroke, so partial reveals crop the same marks instead of stretching them.
+   const pressureStops=pressureDrift>0?Array.from({length:9},(_,k)=>{
+    const q=k/8,[a,b]=pressureAxis,x=a[0]+(b[0]-a[0])*q,y=a[1]+(b[1]-a[1])*q;
+    return [q,1+(grid(x,y,45,pressureSeed+883)-.5)*.60*pressureDrift];
+   }):null;
    if(this.surfaceStrokes&&this.filling){
     const m=c.getTransform();
-    this.surfaceStrokes.push({path,width:strokeWidth,color,alpha:c.globalAlpha,matrix:[m.a,m.b,m.c,m.d,m.e,m.f]});
-   }else{c.lineWidth=strokeWidth;c.beginPath();path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
+    this.surfaceStrokes.push({path,width:strokeWidth,color,alpha:c.globalAlpha,pressureStops,pressureAxis,matrix:[m.a,m.b,m.c,m.d,m.e,m.f]});
+   }else{strokePaint(c,{path,color,alpha:c.globalAlpha,pressureStops,pressureAxis});c.lineWidth=strokeWidth;c.beginPath();path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
   };
   if(this.organicContours&&color===C.ink&&width<=6){
    const baseWidth=c.lineWidth;
@@ -155,7 +170,8 @@ export class Wax {
        // undercoat. Small identifying marks retain their original pen model.
        const width=7.7+overlap*5+(hash(pass,segment,seed+6)-.5)*1.7
          +gesture*(grid(segment,pass,2.5,seed+283)-.5)*2.5;
-       this.line(stroke,color,width,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment);
+       const pressureDrift=(color===C.ink?0:clamp(this.hatchPressureDrift??0))*clamp((Math.min(x1-x0,y1-y0)-35)/70);
+       this.line(stroke,color,width,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment,pressureDrift,seed);
       }
      }
      for(let pass=0;pass<Math.ceil((bottom-top)/17);pass++){
@@ -193,7 +209,7 @@ export class Wax {
    }
    c.globalCompositeOperation='source-over';
    for(const s of strokes){
-    c.setTransform(...s.matrix);c.globalAlpha=s.alpha;c.strokeStyle=s.color;c.lineWidth=s.width;c.beginPath();
+    c.setTransform(...s.matrix);strokePaint(c,s);c.lineWidth=s.width;c.beginPath();
     s.path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();
    }
    c.restore();
