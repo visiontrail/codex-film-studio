@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 
 from build_pages import ROOT, build_site, fetch_showcase_bundle, rewrite_public_routes
 from fetch_demo import sha
@@ -53,7 +54,13 @@ class PortalTests(unittest.TestCase):
                 self.assertNotIn('project', style.get('landing', {}))
                 for key in ['preview', 'preview_zh', 'poster']:
                     if style.get(key):
-                        self.assertTrue((output / style[key]).is_file())
+                        with self.subTest(style=style['id'], asset=key):
+                            preview = output / style[key]
+                            self.assertTrue(preview.is_file())
+                            if preview.suffix == '.svg':
+                                # A copied file can still fail to decode in an <img>.
+                                self.assertEqual(ET.parse(preview).getroot().tag,
+                                                 '{http://www.w3.org/2000/svg}svg')
                 for page in style.get('showcases', []):
                     for private_key in ['project', 'source_page', 'linked_files']:
                         self.assertNotIn(private_key, page)
