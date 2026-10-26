@@ -63,6 +63,12 @@ views, since smooth bright fibres can look plastic even when broad bands improve
 Run `node scripts/check_desk_material.mjs` for material invariants, then inspect
 the encoded camera move for shimmer and excessive bright-line density.
 
+Keep paper fibre direction separate from the direction of individual crayon
+passes. Stretching one grain field across the whole image can put identical
+slanted scratches on unrelated forms. Compare several colours and differently
+oriented shapes before accepting a grain change; retain a rejected trial so
+later revisions do not repeat it.
+
 `shadeSpread(context, x, y, pageWidth, height, {tableLight, paperLight})` adds a fixed warm
 light pool with asymmetric edge falloff; `tableLight` defaults to 0. Compare
 paper illumination separately from the underlying paper colour and relief.
@@ -92,6 +98,13 @@ Do not shrink an independently composited image while leaving its paper and
 hinge stationary. Inspect the first moving frame, the middle of the pullback,
 the page settlement and the final crop at native resolution. Run the generic
 `scripts/check_book_camera.mjs` in the working copy to check camera geometry.
+
+Inspect the cover and exposed sheet stack at the closest camera position as
+well as the wide spread. A small source-space offset can become a broad band
+after the push-in. Give the cover its own material colour and restrained corner
+radius; show paper thickness as a thin edge. Keep the illustrated page plane
+and hinge fixed while refining those surrounding layers, and verify that text
+and leaf registration do not change.
 
 `starter/lib/book-motion.mjs` separates camera and page timing. Pass
 `bookMotion(frame, {start, revealEnd, turnStart, settle, pushStart, pushEnd})`;
