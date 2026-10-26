@@ -6,6 +6,13 @@ This package provides reusable rules, blank inputs and generic tools. Author the
 new subject's characters, scenes, narration, renderer and sound in its own project.
 The catalog records local showcase pages separately from a published demo.
 
+## Independent style page
+
+[Open the bilingual style page](https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html).
+Watch the short or long film, explore an original hand-to-switch print study,
+and use the style notes, project command and creative prompt to start a new film.
+The retained frame comparison and motion review are linked from the page.
+
 ## Start a film
 
 From the repository root:

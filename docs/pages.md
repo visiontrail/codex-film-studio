@@ -125,6 +125,17 @@ the catalog server reads retained originals, while Pages uses checksum-pinned
 open the online editions; explicit local-preview links use port 8249. A local
 catalog with a missing production falls back to the published edition.
 
+Mid-century Cartoon has a bilingual independent page with warm paper, off-register
+colour, local OFL-licensed Alfa Slab One / Oleo Script / Jost type, a short/long
+film selector and an original silent hand-to-switch study. The study starts
+paused and supports play, pause, reset, scrubbing, action-stage selection and a
+print-registration toggle. Style grammar, project steps, a copyable prompt,
+production notes and source links follow the films. The original short-film
+frame comparison remains at `styles/midcentury-cartoon/showcase/comparison.html`;
+the long player and motion review retain their existing URLs. Generic page assets
+are registered explicitly in `landing.assets`; films remain in the pinned Release.
+The package remains `starter-ready`.
+
 Mid-century Cartoon has short/long players and motion review. Satellite Briefing
 has a player, live composition and frame comparison. Sci-Fi Sitcom has its review
 player, Crayon Book has its player and frame comparison, and Caption News has a

@@ -210,7 +210,19 @@
           "styles/midcentury-cartoon/showcase/long.html",
           "styles/midcentury-cartoon/showcase/motion.html",
           "styles/midcentury-cartoon/starter/AUDIO.md",
-          "styles/midcentury-cartoon/starter/WORKFLOW.md"
+          "styles/midcentury-cartoon/starter/WORKFLOW.md",
+          "styles/midcentury-cartoon/showcase/showcase.css",
+          "styles/midcentury-cartoon/showcase/showcase.mjs",
+          "styles/midcentury-cartoon/showcase/comparison.html",
+          "styles/midcentury-cartoon/showcase/fonts/AlfaSlabOne.ttf",
+          "styles/midcentury-cartoon/showcase/fonts/JostMedium.ttf",
+          "styles/midcentury-cartoon/showcase/fonts/OleoScript.ttf",
+          "styles/midcentury-cartoon/showcase/fonts/OFL-alfaslabone.txt",
+          "styles/midcentury-cartoon/showcase/fonts/OFL-jost.txt",
+          "styles/midcentury-cartoon/showcase/fonts/OFL-oleoscript.txt",
+          "styles/midcentury-cartoon/PROVENANCE.md",
+          "styles/midcentury-cartoon/UPSTREAM-LICENSE.txt",
+          "styles/midcentury-cartoon/starter/REVIEW.md"
         ]
       },
       "public_assets": "styles/midcentury-cartoon/demo-assets.json",
