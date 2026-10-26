@@ -156,6 +156,12 @@ player, Crayon Book has its player and frame comparison, and Caption News has a
 chapter-enabled screening room in its independent style page. Their HTML lives in
 `styles/<id>/showcase/`; whiteboard retains `styles/whiteboard/studio/`.
 
+Sci-Fi Sitcom's current player uses a separate stable-motion media filename and
+checksum-pinned bundle. Its fixed contours and settled poses replace the old
+cycling-line export; the supplied reference remains unchanged inside the optional
+reference section. The current revision record ships with the media bundle.
+Historical visual-review claims apply only to their identified older export.
+
 Each local `showcases` entry records a repository-relative `project` and original
 `source_page`. The server maps `/_projects/<showcase-id>/...` to that project,
 with byte-range support for video seeking. An explicitly listed `linked_files`
@@ -197,7 +203,9 @@ Use `--base-path /` for a root-hosted preview, or the fork's repository path for
 a different GitHub Pages project. It removes private production paths from the
 public catalog. `build-info.json` records the revision and pinned archive hashes.
 
-The online films are H.264/AAC previews up to 1280 × 720. Frame comparison keeps
+Most online films are H.264/AAC previews up to 1280 × 720. The stable-motion
+Sci-Fi Sitcom edition serves its compact 1920 × 1080 master directly, preserving
+the original AAC without another compression pass. Frame comparison keeps
 every indexed frame; web frame images and Crayon Book review stills are compressed
 for delivery. Local original media and historical review records are preserved.
 The online-edition notice distinguishes these proxies from the reviewed masters.

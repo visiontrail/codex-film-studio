@@ -320,7 +320,7 @@
           "title": "The House Gets Coffee",
           "page": "styles/scifi-sitcom/showcase/index.html",
           "access": "release",
-          "project": "productions/2026-10-22-odds-coffee-run",
+          "project": "../codex-film-studio-projects/scifi-sitcom-stable-20261026",
           "source_page": "review.html",
           "linked_files": [
             "reference/coffee-run.mp4"
@@ -336,7 +336,7 @@
         "page": "styles/scifi-sitcom/showcase/index.html",
         "id": "scifi-review",
         "access": "release",
-        "project": "productions/2026-10-22-odds-coffee-run",
+        "project": "../codex-film-studio-projects/scifi-sitcom-stable-20261026",
         "assets": [
           "styles/scifi-sitcom/showcase/showcase.css",
           "styles/scifi-sitcom/showcase/showcase.mjs",

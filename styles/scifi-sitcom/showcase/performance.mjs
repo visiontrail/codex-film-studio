@@ -7,11 +7,10 @@ export function drawPerformance(canvas, seconds = 0) {
   if (!c) return;
   const frame = Math.floor(Math.max(0, Math.min(6, seconds)) * 24);
   const beat = seconds < 2 ? 0 : seconds < 4 ? 1 : 2;
-  const held = Math.floor(frame / 2) / 12;
   const i = new Ink(c, frame);
-  const shape = (points,fill,extra={}) => i.poly(points,{fill,width:6,boil:1.15,...extra});
-  const line = (points,width=5) => i.poly(points,{closed:false,width,boil:.6});
-  const ellipse = (x,y,rx,ry,fill,extra={}) => i.ellipse(x,y,rx,ry,{fill,width:6,boil:.8,...extra});
+  const shape = (points,fill,extra={}) => i.poly(points,{fill,width:6,roughness:1.15,...extra});
+  const line = (points,width=5) => i.poly(points,{closed:false,width,roughness:.6});
+  const ellipse = (x,y,rx,ry,fill,extra={}) => i.ellipse(x,y,rx,ry,{fill,width:6,roughness:.8,...extra});
   c.fillStyle=palette.lilac;c.fillRect(0,0,1200,540);
   shape([[0,0],[600,0],[582,540],[0,540]],palette.mint,{stroke:null});
   shape([[600,0],[1200,0],[1200,540],[582,540]],palette.coral,{stroke:null});
@@ -27,7 +26,7 @@ export function drawPerformance(canvas, seconds = 0) {
     ellipse(x+pupilX,y+pupilY,tiny?4:7,tiny?6:10,INK,{stroke:null});
     if (half) {
       const lid = Array.from({length:25},(_,n)=>{const a=Math.PI+n/24*Math.PI;return [x+Math.cos(a)*rx,y+Math.sin(a)*ry]});
-      shape(lid,skin,{width:4,boil:.4});
+      shape(lid,skin,{width:4,roughness:.4});
     }
   }
   // Calm: a tall rounded silhouette and restrained lids.
@@ -47,8 +46,8 @@ export function drawPerformance(canvas, seconds = 0) {
   i.pop();
 
   // Escalating: rounder eyes, a compact angular silhouette, then raised hands.
-  const bob = beat===2 ? Math.sin(held*7)*3 : 0;
-  i.push(900,292-bob,1,1,beat===1 ? -.06 : 0);
+  // Each reaction settles into a fixed pose; no perpetual body bob.
+  i.push(900,292,1,1,beat===1 ? -.06 : 0);
   shape([[-81,50],[-58,11],[48,11],[86,58],[109,139],[-103,139]],palette.yellow);
   shape([[49,24],[86,58],[109,139],[72,139],[63,74]],'#d5a74e',{stroke:null});
   line([[-51,45],[-25,72],[0,40],[28,72],[52,45]],4);
@@ -72,7 +71,7 @@ export function drawPerformance(canvas, seconds = 0) {
   else {
     line([[-72,-127],[-29,-143]],5);line([[29,-145],[72,-130]],5);
     ellipse(0,8,32,26,INK,{width:4});
-    shape([[-22,22],[-10,12],[10,12],[24,22],[13,28],[-11,29]],'#ec8e9d',{stroke:null,boil:.2});
+    shape([[-22,22],[-10,12],[10,12],[24,22],[13,28],[-11,29]],'#ec8e9d',{stroke:null,roughness:.2});
     for(const [x,y,dx,dy] of [[-121,-112,-22,-15],[119,-113,25,-13],[-80,-164,-9,-22],[93,-159,12,-23]])line([[x,y],[x+dx,y+dy]],5);
   }
   i.pop();

@@ -1,21 +1,21 @@
 {
-  "release": "style-showcases-v1",
+  "release": "scifi-sitcom-stable-v10",
   "archive": {
-    "name": "scifi-sitcom-showcase-v1.tar.gz",
-    "bytes": 55229783,
-    "sha256": "9313399e97b7a658bcd394e19b921a5b9f2cf96ac231fe8f5f75f87db2da9d7b",
-    "url": "https://github.com/visiontrail/codex-film-studio/releases/download/style-showcases-v1/scifi-sitcom-showcase-v1.tar.gz"
+    "name": "scifi-sitcom-stable-v10.tar.gz",
+    "bytes": 47561228,
+    "sha256": "28e5b6c4d67ba926e403316b305e64d43a937ad267bdc6cab6059e38979c25e6",
+    "url": "https://github.com/visiontrail/codex-film-studio/releases/download/scifi-sitcom-stable-v10/scifi-sitcom-stable-v10.tar.gz"
   },
   "mounts": {
     "scifi-review": "_assets"
   },
   "files": [
-    "_assets/content/review-report.md",
     "_assets/content/script.json",
+    "_assets/content/stable-motion-review.md",
     "_assets/content/timeline.json",
     "_assets/media/pocket-builtin-audition/L001.wav",
     "_assets/media/pocket-builtin-audition/L002.wav",
-    "_assets/media/the-house-gets-coffee.mp4",
+    "_assets/media/the-house-gets-coffee-stable-v10.mp4",
     "_assets/reference/coffee-run.mp4"
   ]
 }
