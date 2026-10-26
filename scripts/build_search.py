@@ -1,5 +1,5 @@
 """Static, source-backed discovery pages and metadata for the Pages artifact."""
-from html import escape, unescape
+from html import escape
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -60,8 +60,45 @@ class Head(HTMLParser):
         if self.in_title: self.title += data
 
 
+class ImplicitHead(HTMLParser):
+    """Locate an implicit body without touching script/style text or base URLs."""
+    def __init__(self, source):
+        super().__init__(); self.source = source; self.boundary = len(source); self.raw = None
+        self.lines = source.splitlines(keepends=True); self.feed(source)
+
+    def handle_starttag(self, tag, attrs):
+        if self.raw: return
+        if tag in {'script', 'style', 'title', 'noscript', 'template'}: self.raw = tag
+        elif tag not in {'html', 'head', 'base', 'link', 'meta'} and self.boundary == len(self.source):
+            line, column = self.getpos()
+            self.boundary = sum(len(x) for x in self.lines[:line - 1]) + column
+
+    def handle_endtag(self, tag):
+        if tag == self.raw: self.raw = None
+
+    def handle_data(self, data):
+        if not self.raw and data.strip() and self.boundary == len(self.source):
+            line, column = self.getpos()
+            self.boundary = sum(len(x) for x in self.lines[:line - 1]) + column
+
+
+def explicit_document(source):
+    """Some legacy players legally omit head/body tags; make a metadata slot."""
+    if re.search(r'</head\s*>', source, re.I): return source
+    boundary = ImplicitHead(source).boundary
+    prefix, body = source[:boundary], source[boundary:]
+    html = re.search(r'<html\b[^>]*>', prefix, re.I)
+    html = html[0] if html else '<html lang="en">'
+    prefix = re.sub(r'<!doctype[^>]*>|</?(?:html|head)\b[^>]*>', '', prefix, flags=re.I)
+    body = re.sub(r'</html\s*>\s*$', '', body, flags=re.I)
+    if not re.match(r'<body\b', body, re.I): body = '<body>' + body
+    if not re.search(r'</body\s*>\s*$', body, re.I): body += '</body>'
+    return '<!doctype html>' + html + '<head>' + prefix + '</head>' + body + '</html>'
+
+
 def metadata(source, title, description, url, image, lang='en', alternates=None, graph=None, noindex=False):
     # Metadata is emitted exactly once in the initial HTML response.
+    source = explicit_document(source)
     source = re.sub(r'<title\b[^>]*>.*?</title>', '', source, flags=re.I | re.S)
     source = re.sub(r'<meta\b[^>]*(?:name|property)=["\'](?:description|robots|author|og:[^"\']+|twitter:[^"\']+)["\'][^>]*>', '', source, flags=re.I)
     source = re.sub(r'<link\b[^>]*rel=["\'](?:canonical|alternate)["\'][^>]*>', '', source, flags=re.I)
@@ -83,7 +120,7 @@ def metadata(source, title, description, url, image, lang='en', alternates=None,
     if graph:
         payload = json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False).replace('<', '\\u003c')
         tags.append(f'<script type="application/ld+json">{payload}</script>')
-    return source.replace('</head>', '\n' + '\n'.join(tags) + '\n</head>', 1)
+    return re.sub(r'</head\s*>', lambda _: '\n' + '\n'.join(tags) + '\n</head>', source, count=1, flags=re.I)
 
 
 def schema(base, url, title, description, lang, date=None, items=None):
@@ -214,12 +251,12 @@ def build_search(output, catalog, origin=DEFAULT_ORIGIN, base_path='/codex-film-
             relative=path.relative_to(output).as_posix()
             if relative == route(style,'en')+'index.html': continue
             source=path.read_text()
-            if '</head>' not in source: continue
             head=Head(source); url=canonical(base,relative)
             title=head.title.strip() or style['name']+' | Codex Film Studio'
             desc=head.description.strip() or style['description']+' Explore the public showcase and production guide.'
             is_public=relative in public
-            page=metadata(source,title,desc,url,base+'catalog/social-card.jpg',noindex=not is_public)
+            language = 'zh' if re.search(r'<html[^>]*lang=[\"\']zh',source,re.I) else 'en'
+            page=metadata(source,title,desc,url,base+'catalog/social-card.jpg',lang=language,noindex=not is_public)
             if is_public:
                 backlink=f'<aside style="padding:20px;font:14px/1.8 system-ui;background:#101816;color:#f0eee3"><a style="color:inherit" href="{base+route(style,"en")}">{escape(style["name"])} — production guide</a> · <a style="color:inherit" href="{base+route(style,"zh")}">{escape(style["name_zh"])}：制作指南</a></aside>'
                 page=page.replace('</body>',backlink+'</body>',1)

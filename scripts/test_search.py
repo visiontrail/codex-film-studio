@@ -8,7 +8,7 @@ import unittest
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 
-from build_search import ROOT, build_search, site_base
+from build_search import ROOT, build_search, site_base, metadata
 
 
 class Document(HTMLParser):
@@ -97,6 +97,24 @@ class SearchTests(unittest.TestCase):
                 self.assertIn('OAI-SearchBot',(out/'robots.txt').read_text())
                 self.assertIn('noindex',(out/'404.html').read_text())
                 self.assertIn("strings.mjs?v=test-revision",(out/'catalog/studio.mjs').read_text())
+
+    def test_legacy_implicit_heads_keep_media_and_gain_head_metadata(self):
+        for name in ['crayon-book/showcase/index.html', 'midcentury-cartoon/showcase/motion.html',
+                     'satellite-briefing/showcase/comparison.html', 'scifi-sitcom/showcase/index.html']:
+            with self.subTest(name=name):
+                source=(ROOT/'styles'/name).read_text()
+                before=Document(source)
+                result=metadata(source,'A title','A description','https://films.example/sample/',
+                                'https://films.example/image.jpg')
+                after=Document(result)
+                self.assertEqual(len(after.attrs('head')),1)
+                self.assertEqual(len(after.attrs('body')),1)
+                self.assertEqual(after.attrs('base'),before.attrs('base'))
+                self.assertEqual(after.attrs('video'),before.attrs('video'))
+                self.assertEqual(after.attrs('script'),before.attrs('script'))
+                self.assertEqual(len(after.attrs('meta',name='description')),1)
+                self.assertLess(result.index('rel="canonical"'),result.index('</head>'))
+                self.assertLess(result.index('</head>'),result.index('<body>'))
 
     def test_origin_rejects_ambiguous_canonical_configuration(self):
         for origin in ['example.com','https://films.example/other','https://films.example?x=y','ftp://films.example']:
