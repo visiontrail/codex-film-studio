@@ -61,6 +61,9 @@ The final timeline holds measured dialogue placement, shots, captions, action
 events and sound cues. Author actor poses on the drawing clock and camera/prop
 movement on the output clock. Name events such as a button press or impact once,
 then let picture and sound consume the same frame. Keep silent holds explicit.
+Keep outline geometry independent of both clocks. Use fixed local-space texture,
+stable body/head holds and smooth action transitions. Do not add idle scale loops,
+camera shake or repeated nodding merely because they appeared in a reference.
 
 `lib/timeline.mjs` validates shot coverage and resolves exact boundary frames.
 It deliberately rejects the empty draft timeline. This helper does not validate

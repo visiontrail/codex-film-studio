@@ -11,7 +11,7 @@ is available when the subject benefits from it; it is not a mandatory plot.
 | Dark irregular outlines, flat fills, contained hard shadows | Exact colors, environments, clothing, props and identities |
 | Large readable eyes and silhouette-driven acting | Cast size, ages, identities, faces and relationship |
 | Contrast between restrained and escalating reactions | Which person is calm, which is anxious, and when that changes |
-| Held drawings with subtle line life; smooth camera and flying objects | Gesture, framing, duration, number of worlds and scene order |
+| Stable hand-drawn contours, readable holds and purposeful smooth motion | Gesture, framing, duration, number of worlds and scene order |
 | Readable outlined captions and purposeful retro graphics | Language, font coverage, factual content and word choices |
 | Cartoon sound coordinated with the action and room for silence | Voices, instruments, music density and delivery loudness |
 
@@ -27,12 +27,19 @@ Transform geometry into screen space before stroking so a close-up does not
 multiply the line weight. Preview at the actual delivery scale before fixing
 these values; the numbers are starting points, not a universal match score.
 
-Resample long outlines and perturb them along their normals with a low-frequency,
-deterministic displacement. Cycle three drawings on a two-frame cadence at
-24 fps. Keep fills attached to the perturbed contour. Avoid frame-random noise,
-seams between independently filled/stroked paths, and excessive corner chatter.
-The provided `Ink` helper draws in output-pixel coordinates and restores the
-Canvas context. Stable shape seeds prevent a new random drawing on each seek.
+Hand-drawn irregularity is spatial, not a reason for a still contour to move.
+Use fixed, low-frequency displacement along the path normals. Keep sampling,
+arc distance and shape seeds in local geometry so pans and zooms cannot resample
+the path or make its texture crawl. Keep fills attached to that same contour.
+The provided `Ink` helper keeps displacement and stroke width in output pixels
+and restores the Canvas context. `roughness` controls the fixed irregularity;
+the legacy `boil` argument is only an alias for that spatial amplitude.
+
+Do not cycle outline drawings, add frame-random noise, or displace a scene just
+to imitate reference wobble. A held shape must be identical at different frames
+when its pose and camera are unchanged. This stable-contour rule supersedes the
+earlier three-drawing/two-frame line-boil prescription. The reference may contain
+shake; that is an observed property, not a requirement for this style.
 
 Ordinary camera changes keep stroke weight constant. When a character becomes
 very small, reduce contour width and displacement together until its face and
@@ -53,11 +60,13 @@ to the dialogue. Different expressions should change attitude, not identity.
 Hands need clear contact with held objects; clothing and feet must support a
 lean or landing. Test silhouettes before adding details.
 
-Animate held poses and faces on twos at 24 fps. Keep the camera, portal movement
-and flying objects on the full frame clock. At another output rate, specify a
-drawing cadence deliberately; do not assume that dividing every frame number
-by two still gives the same acting rhythm. Idle movement should not erase a
-deliberate pause. Stagger gaze, hand, head and body reactions so they read.
+Hold the body and head still between actions. Avoid default breathing scale
+loops, panic translation, pupil jitter and periodic nodding. Show emotion through
+silhouette, expression and a motivated gesture that enters, holds and releases.
+Interpolate moving geometry on the full output-frame clock; discrete mouth and
+blink drawings may remain on twos at 24 fps. Drawing cadence is independent of
+outline texture and must never make the whole image tremble. At another output
+rate, select that cadence deliberately. Stagger purposeful reactions so they read.
 
 Derive mouth openings from the accepted audio envelope. Envelope motion is an
 approximation, not phoneme-perfect lip sync. Inspect visible speech starts,
@@ -69,6 +78,9 @@ Use medium two-shots to establish the relationship, hard close-ups for reactions
 and inserts when an object or mechanism must be understood. Give the audience
 time to see an absurd action before showing the response. A small push-in can
 hold attention during a quiet beat; avoid constant motion that has no purpose.
+Keep dialogue cameras locked unless a particular reveal calls for a move. Do
+not add camera shake to every strong reaction. Keep portal rims and labels
+stable; animate the transport, internal swirl or indicated action separately.
 
 Frame an insert around the object and the path of its action. Labels must clear
 both busy scenery and captions. Face size, foreground interaction and occupied

@@ -12,14 +12,16 @@ no reference film, source animation, cast artwork, font or music is redistribute
 in this method package. New productions must record the licenses of actual assets
 they obtain. A link to an asset does not grant rights beyond its license.
 
-The reusable findings are screen-space outline behavior, held drawing cadence,
+The reusable findings are stable hand-drawn contours, screen-space stroke weight,
 camera and portal continuity, contrasting performances, audio-led timing, legible
 inserts and evidence-bound revision. The new ink helper preserves those general
 mechanics without retaining any production-specific character or scene.
 
 The shared `scripts/frame_review/` tools are reused from Codex Film Studio.
 They are generic infrastructure, not LemoLab implementation. They do not issue an
-artistic acceptance verdict. This extraction adds no provider credentials, saved
+artistic acceptance verdict. Reference line boil and shake are deliberately
+excluded from the current motion contract; the earlier cycling-outline rule is
+superseded. This extraction adds no provider credentials, saved
 jobs, user portraits, prior dialogue or numerical claims.
 
 Reviewed 23 October 2026. Tool verification is recorded by tests; new-film visual

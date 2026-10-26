@@ -29,6 +29,13 @@ playback intervals, listening intervals, observations and unresolved issues.
 The blank `content/review-record.json` starts with no completed observations.
 Do not automatically set a pass when tools finish or a player starts.
 
+Include a locked-camera dialogue hold, a reaction close-up, a label-heavy insert,
+and a portal boundary in the motion checks. Fixed edges, the torso and pupils
+must not oscillate while mouths, blinks or deliberate gestures change. Compare
+consecutive encoded frames over several former boil cycles; also play the sample
+at normal speed. Check a slow camera move for texture crawl. Pixel differences
+can diagnose a supposedly static region, but cannot judge acting quality.
+
 ## Use the copied tools
 
 Read `tools/frame_review/README.md` for dependencies and input contracts. From

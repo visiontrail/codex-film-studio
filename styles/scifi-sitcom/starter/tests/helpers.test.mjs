@@ -5,12 +5,28 @@ import {createTimeline, drawingIndex} from '../lib/timeline.mjs';
 
 const points = [[0, 0], [50, 10], [25, 80]];
 
-test('held drawings and arbitrary seeks reproduce identical paths', () => {
+test('held contours remain identical across all frames and arbitrary seeks', () => {
   const path = frame => new Ink(null, frame).path(points, {seed: 7});
   assert.deepEqual(path(0), path(1));
   assert.deepEqual(path(99), path(99));
   assert.deepEqual(path(0), path(6));
-  assert.notDeepEqual(path(0), path(2));
+  for (const frame of [2, 3, 5, 24, 99, 7888]) assert.deepEqual(path(0), path(frame));
+  assert.notDeepEqual(path(0), new Ink(null, 0).path(points, {seed: 8}));
+});
+
+test('panning and zooming cannot resample or slide the contour texture', () => {
+  const shape = [[0, 0], [90, 0]];
+  const base = new Ink(null, 0).path(shape, {closed: false, seed: 7});
+  for (const scale of [0.99, 1, 1.01, 2]) {
+    const ink = new Ink(null, 1234);
+    ink.push(37, 81, scale);
+    const moved = ink.path(shape, {closed: false, seed: 7});
+    assert.equal(moved.length, base.length);
+    moved.forEach(([x, y], i) => {
+      assert.ok(Math.abs(x - (37 + base[i][0] * scale)) < 1e-10);
+      assert.ok(Math.abs(y - (81 + base[i][1])) < 1e-10);
+    });
+  }
 });
 
 test('camera transforms geometry while screen stroke remains constant', () => {

@@ -15,6 +15,12 @@ remain on the [comparison page](https://visiontrail.github.io/codex-film-studio/
 The study illustrates generic expression and timing; its figures are not a required
 cast for new productions.
 
+Contours are now stable across frames. The ink helper keeps fixed hand-drawn
+roughness without line boil, and the motion guide excludes default camera shake,
+idle squash/stretch and repeated body/head jitter. Mouths, blinks and purposeful
+actions remain animated. Existing productions must adopt these changes explicitly
+and re-render; updating the library alone does not change an exported film.
+
 ## Start a film
 
 From the repository root:

@@ -22,6 +22,12 @@ separate from reference observations. A request to reduce or restore motion
 changes the adaptation, not what the reference originally contained. Mark
 superseded decisions explicitly so an old brief cannot silently control a rebuild.
 
+For motion corrections, separate material from animation: a rough ink edge can
+stay fixed, while a character changes pose. Diagnose outline cycling, camera
+shake, idle deformation and action motion independently. Remove unwanted motion
+at its source and re-render when editable geometry exists. Screen stabilization
+cannot repair outlines that change shape inside an otherwise fixed frame.
+
 ## Map moments, not subjects
 
 Map new shots to reference intervals by purpose: an opening hook, comparison,
