@@ -8,19 +8,28 @@
   <title>LiDAR Survey — Codex Film Studio</title>
   <link rel="icon" href="../../../catalog/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="showcase.css">
+  <link rel="stylesheet" href="../../../catalog/film-screening.css">
+  <script type="module" src="../../../catalog/film-screening.mjs"></script>
   <script type="module" src="showcase.mjs"></script>
 </head>
 <body>
-  <a class="skip" href="#study" data-i18n="skip">Skip to the study</a>
+  <a class="skip" href="#films" data-i18n="skip">Skip to the films</a>
   <header class="masthead">
     <a class="brand" href="../../../index.html" data-home aria-label="Codex Film Studio"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 33 33 6M16 6h17v17M6 24 24 6" stroke="currentColor" stroke-width="2"/></svg><span>CODEX<br>FILM STUDIO</span></a>
     <nav aria-label="Main navigation" data-aria="navigation"><a href="#study" data-i18n="navStudy">The style</a><a href="#make" data-i18n="navMake">Make a film</a><a href="../../../index.html#library" data-home data-i18n="allStyles">All styles ↗</a></nav>
     <div class="languages" role="group" aria-label="Page language" data-aria="language"><button type="button" data-language="en" aria-pressed="true" lang="en">EN</button><button type="button" data-language="zh" aria-pressed="false" lang="zh-CN">中文</button></div>
   </header>
   <main>
+    <section class="final-screening" id="films" data-film-screening="media/films.json" aria-labelledby="final-film-title">
+      <div class="film-heading"><div><p class="film-kicker" data-film-en="ART DECO / THE FINISHED FILM" data-film-zh="最终成片">THE FINISHED FILM</p><h2 id="final-film-title" data-film-title>Watch the finished film.</h2></div><p class="film-meta" data-film-meta></p></div>
+      <div class="film-choices" data-film-choices role="group" aria-label="Films / 影片" hidden></div>
+      <div class="film-stage"><video id="final-film" controls playsinline preload="metadata" poster="media/film-01.jpg" src="https://github.com/visiontrail/codex-film-studio/releases/download/finished-style-films-v1/lidar-survey-film-01.mp4" aria-label="Finished film / 最终成片"></video></div>
+      <div class="film-actions"><button type="button" class="film-play" data-film-play data-film-en="▶ Play film" data-film-zh="▶ 播放成片">▶ Play film</button><a href="https://github.com/visiontrail/codex-film-studio/releases/download/finished-style-films-v1/lidar-survey-film-01.mp4" data-film-download download data-film-en="Download MP4 ↗" data-film-zh="下载 MP4 ↗">Download MP4 ↗</a><a href="media/credits.html" data-film-en="Film credits ↗" data-film-zh="影片来源与鸣谢 ↗">Film credits ↗</a><a class="study-jump" href="#study" data-film-en="Explore the interactive study ↓" data-film-zh="探索交互演示 ↓">Explore the interactive study ↓</a></div>
+      <p class="film-status" data-film-status role="status" hidden></p>
+    </section>
     <section class="hero" aria-labelledby="title">
       <div class="hero-top"><p class="eyebrow">STYLE 011 / <span data-i18n="styleName">LiDAR Survey</span></p><span class="discipline" data-i18n="discipline">POINTS → SURFACE → EVIDENCE</span></div>
-      <div class="hero-body"><h1 id="title" data-i18n="title">Read the<br><em>hidden ground.</em></h1><div class="hero-intro"><span class="cross" aria-hidden="true">+</span><p data-i18n="intro">A landscape, one return at a time. Peel away the canopy. Follow a surface into the light. Let the place reveal its shape.</p><a class="text-link" href="#study" data-i18n="explore">Explore the visual language ↘</a></div></div>
+      <div class="hero-body"><h1 id="title" data-i18n="title">Read the<br><em>hidden ground.</em></h1><div class="hero-intro"><span class="cross" aria-hidden="true">+</span><p data-i18n="intro">A landscape, one return at a time. Peel away the canopy. Follow a surface into the light. Let the place reveal its shape.</p><a class="text-link" href="#films" data-i18n="explore">Watch the films ↓</a></div></div>
     </section>
     <section class="study" id="study" aria-labelledby="study-title">
       <div class="study-bar"><h2 id="study-title" data-i18n="studyTitle">THE SURVEY WINDOW</h2><span data-i18n="studyType">SYNTHETIC STYLE STUDY / 20 SEC / SILENT</span></div>

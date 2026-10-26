@@ -11,6 +11,29 @@ from serve_styles import catalog_availability, resolve_resource
 
 
 class PortalTests(unittest.TestCase):
+    def test_external_showcase_media_uses_allowlist_and_contains_symlinks(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / 'library'; root.mkdir()
+            media_root = Path(temporary) / 'external'
+            media = media_root / 'example/media'; media.mkdir(parents=True)
+            (media / 'film.mp4').write_bytes(b'final film')
+            (media / 'films.json').write_text('{}')
+            (media / 'private.txt').write_text('not public')
+            secret = Path(temporary) / 'outside.mp4'; secret.write_bytes(b'outside')
+            (media / 'escape.mp4').symlink_to(secret)
+            (root / 'bundle.json').write_text(json.dumps({'files': [
+                'media/film.mp4', 'media/films.json', 'media/escape.mp4']}))
+            catalog = {'styles': [{'id': 'example', 'public_assets': 'bundle.json',
+                'landing': {'page': 'styles/example/showcase/index.html'},
+                'showcases': [{'id': 'example-films',
+                    'media_manifest': 'styles/example/showcase/media/films.json'}]}]}
+            prefix = '/styles/example/showcase/media/'
+            self.assertEqual(resolve_resource(prefix + 'film.mp4?v=revision', root, catalog, media_root),
+                             (media / 'film.mp4').resolve())
+            for relative in ['private.txt', 'escape.mp4', '../bundle.json', '%2e%2e/bundle.json']:
+                self.assertIsNone(resolve_resource(prefix + relative, root, catalog, media_root))
+            self.assertTrue(catalog_availability(root, catalog, media_root)['pages']['example-films'])
+
     def test_public_build_keeps_player_and_excludes_local_productions(self):
         with tempfile.TemporaryDirectory() as temporary:
             demo = Path(temporary) / 'verified-demo'

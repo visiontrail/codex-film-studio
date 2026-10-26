@@ -7,3 +7,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 html[lang=zh] .section-bar h2{font-size:16px;letter-spacing:0;line-height:1.4}@media(max-width:700px){html[lang=zh] .section-bar h2{font-size:14px}}
+
+/* The finished export leads; the interactive study remains below it. */
+.final-screening{--screen-accent:#502397;--screen-on-accent:#fff7dc}
+.hero{padding-top:30px;padding-bottom:28px}.hero h1{font-size:clamp(38px,6vw,76px)}.hero-copy .token{display:none}.hero-copy p{font-size:16px}.study{padding-top:44px;border-top:2px solid var(--ink)}

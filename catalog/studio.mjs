@@ -31,7 +31,6 @@ const commandFor = id => `python3 scripts/new_film.py my-film --style ${id}`;
 const pageTitle = page => localized(page,'title');
 const isAvailable = page => page.access === 'release' || state.availability.pages[page.id] === true;
 const stylePage = entry => entry.landing ?? entry.showcases?.find(page => page.access === 'release') ?? entry.showcases?.[0];
-const pageKey = page => `${page.page}#${page.anchor ?? ''}`;
 const stylePageLabel = page => t(page.access === 'local' ? 'localStylePage' : 'stylePage');
 function pageURL(page, edition) {
   const usePublicSample = page.access === 'release' && state.availability.mode === 'local' && state.availability.pages[page.id] === false;
@@ -125,16 +124,8 @@ function renderDetail() {
   const entry = state.catalog.styles.find(s => s.id === state.detail);
   if (!entry) return;
   const primary = stylePage(entry);
-  // Prefer the public entry when local and released films share one player.
-  const distinctPages = new Map();
-  for (const page of entry.showcases ?? []) {
-    if (!distinctPages.has(pageKey(page)) || page.access === 'release') distinctPages.set(pageKey(page),page);
-  }
-  const pages = [...distinctPages.values()];
-  const missing = pages.some(p => !isAvailable(p));
-  const primaryLink = primary ? `<a class="primary-page" href="${escape(pageURL(primary))}">${stylePageLabel(primary)}<span aria-hidden="true">↗</span></a>` : '';
-  const links = primaryLink + pages.filter(page => !primary || pageKey(page) !== pageKey(primary)).map(page =>
-    `<a href="${escape(pageURL(page))}">${escape(pageTitle(page))}${page.access === 'local' ? ` · ${t('localOnly')}` : ''}<span aria-hidden="true">↗</span></a>`).join('');
+  const missing = primary?.access === 'local' && !isAvailable(primary);
+  const links = primary ? `<a class="primary-page" href="${escape(pageURL(primary))}">${stylePageLabel(primary)}<span aria-hidden="true">↗</span></a>` : '';
   $('#style-detail').innerHTML = `<div class="detail-art" data-preview-kind="${escape(entry.preview_kind ?? 'schematic')}">${previewPage(entry) ? previewAction(entry,preview(entry,true),'preview-player') : preview(entry,true)}<span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span></div><div class="detail-copy"><p class="eyebrow">${escape(entry.id.toUpperCase().replaceAll('-',' / '))}</p><h2 id="detail-title">${escape(localized(entry,'name'))}</h2><p class="detail-description">${escape(localized(entry,'description'))}</p>${guideLink(entry)}<h3>${t('openPages')}</h3><div class="detail-pages">${links}</div>${!primary ? `<p class="local-help">${t('noShowcase')}</p>` : ''}${missing ? `<p class="local-help">${state.availability.mode === 'local' ? t('missingProject') : t('localHelp')}</p><div class="command"><code>python3 scripts/serve_styles.py --port 8249</code><button type="button" data-copy="python3 scripts/serve_styles.py --port 8249">${t('copy')}</button></div>` : ''}<div class="detail-links"><a href="${repoLink(entry.guide)}" target="_blank" rel="noopener noreferrer">${t('guide')} ↗</a><a href="${repoLink(entry.prompt)}" target="_blank" rel="noopener noreferrer">${t('prompt')} ↗</a><a href="${REPO}/tree/main/${entry.template}" target="_blank" rel="noopener noreferrer">${t('files')} ↗</a></div><h3>${t('startStyle')}</h3><div class="command"><code>${escape(commandFor(entry.id))}</code><button type="button" data-copy="${escape(commandFor(entry.id))}">${t('copy')}</button></div></div>`;
 }
 function openStyle(id) {

@@ -32,8 +32,9 @@ remain with those images. The hero is an original, subject-independent SVG.
 Every Collection card opens the same style-detail layout, including Caption News.
 Cards with an existing page also have a separate, direct page link. The primary
 page is the registered `landing`, otherwise the first released showcase, otherwise
-the first local showcase. Style details show that primary entrance, all other
-distinct showcase pages, guides, prompts and the project creation command.
+the first local showcase. Style details show only that primary entrance under Films & showcase pages,
+followed by guides, prompts and the project creation command. Comparison and
+review pages remain reachable from the individual style pages.
 The bilingual READMEs and style index use the same page-selection rules.
 Readiness describes the reusable package. A displayed frame,
 a retained local film and a published sample remain separate states.
@@ -271,3 +272,29 @@ References: [Google JavaScript SEO](https://developers.google.com/search/docs/cr
 [robots.txt scope](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt),
 [Google AI search guidance](https://developers.google.com/search/docs/appearance/ai-features),
 [OpenAI search crawler](https://developers.openai.com/api/docs/bots).
+## Finished films on style pages
+
+Every primary style page leads with a final MP4. Interactive material studies
+remain secondary. Microgame, Art Deco, Line Chart Comedy and LiDAR Survey use the shared
+`catalog/film-screening.mjs` player; film names, editions, captions and credits
+come from `media/films.json` in each external, checksum-verified media bundle.
+
+Local playback uses the same media URLs as Pages. Extract each approved bundle
+into `../codex-film-studio-projects/style-page-media/<style-id>/`, or pass
+`--media-root /absolute/path` to `scripts/serve_styles.py`. The local server only
+serves files explicitly listed in that style's `demo-assets.json`, with byte-range
+support for seeking. Generated MP4s and story metadata stay outside this library.
+New bundle archives must be uploaded to their pinned Release before publishing
+the corresponding website revision. Preparing a local build does not publish it.
+
+The builder rejects sites over a conservative 1,000,000,000-byte budget, matching
+the [GitHub Pages size limit](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
+Use complete, smaller web encodes when adding films; retain the full-resolution
+masters in the independent production. Bundle metadata reports the actual web
+encode dimensions, and the film credits identify the web copy.
+
+Large films may stream from HTTPS Release assets, with local posters, captions,
+credits and the film manifest in the verified preview archive. Their separate
+asset sizes and SHA-256 hashes are recorded in `demo-assets.json` under `videos`;
+check those assets before publishing the website. This keeps the Pages artifact
+within budget without reducing the resolution of detailed imagery.

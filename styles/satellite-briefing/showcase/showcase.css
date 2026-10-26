@@ -1157,3 +1157,6 @@ html[lang=zh-CN] .hero-subtitle {
     transition:none!important;
   }
 }
+
+/* The destination film is the primary showcase. */
+#film{padding-top:36px}#film .section-heading{margin-bottom:24px}#film video{max-height:72svh;object-fit:contain;background:#070b0e}

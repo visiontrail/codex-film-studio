@@ -114,25 +114,25 @@ from the repository with the retained projects available. See the
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en"><img src="styles/microgame/showcase/preview.en.svg" alt="Microgame Frenzy — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en#films"><img src="styles/microgame/showcase/preview.en.svg" alt="Microgame Frenzy — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>07 / <code>microgame</code></sub>
 <h3>Microgame Frenzy</h3>
 <sub>极速微游戏</sub>
 <p>Rapid command-action-result games with changing materials, lives and accelerating rhythm.</p>
-<p><b>Material toolkit</b> · No sample yet</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en">Style page</a> · <a href="styles/microgame/STYLE.md">Style guide</a> · <a href="styles/microgame/prompt.txt">Prompt</a> · <a href="styles/microgame/starter">Project files</a></sub>
+<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/microgame/STYLE.md">Style guide</a> · <a href="styles/microgame/prompt.txt">Prompt</a> · <a href="styles/microgame/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en"><img src="styles/art-deco/showcase/preview.en.svg" alt="Art Deco — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en#films"><img src="styles/art-deco/showcase/preview.en.svg" alt="Art Deco — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>08 / <code>art-deco</code></sub>
 <h3>Art Deco</h3>
 <sub>装饰艺术</sub>
 <p>Black lacquer, graded brass, faceted figures and spatial mechanical motion.</p>
-<p><b>Material toolkit</b> · No sample yet</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en">Style page</a> · <a href="styles/art-deco/STYLE.md">Style guide</a> · <a href="styles/art-deco/prompt.txt">Prompt</a> · <a href="styles/art-deco/starter">Project files</a></sub>
+<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/art-deco/STYLE.md">Style guide</a> · <a href="styles/art-deco/prompt.txt">Prompt</a> · <a href="styles/art-deco/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -147,25 +147,25 @@ from the repository with the retained projects available. See the
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en"><img src="styles/line-chart-comedy/showcase/preview.en.svg" alt="Animated Line Chart Comedy — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films"><img src="styles/line-chart-comedy/showcase/preview.en.svg" alt="Animated Line Chart Comedy — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>10 / <code>line-chart-comedy</code></sub>
 <h3>Animated Line Chart Comedy</h3>
 <sub>动态折线图喜剧</sub>
 <p>A quiet chart interface with growing lines, expressive endpoint tokens, event cards and comic motion accents.</p>
-<p><b>Authoring starter</b> · No sample yet</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en">Style page</a> · <a href="styles/line-chart-comedy/STYLE.md">Style guide</a> · <a href="styles/line-chart-comedy/prompt.txt">Prompt</a> · <a href="styles/line-chart-comedy/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/line-chart-comedy/STYLE.md">Style guide</a> · <a href="styles/line-chart-comedy/prompt.txt">Prompt</a> · <a href="styles/line-chart-comedy/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en"><img src="styles/lidar-survey/showcase/preview.en.svg" alt="LiDAR Survey — style sketch" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films"><img src="styles/lidar-survey/showcase/preview.en.svg" alt="LiDAR Survey — style sketch" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>11 / <code>lidar-survey</code></sub>
 <h3>LiDAR Survey</h3>
 <sub>点云测绘</sub>
 <p>Measured point clouds, canopy peeling, raking-lit terrain and fine sections, carried by one continuous camera move.</p>
-<p><b>Authoring starter</b> · No sample yet</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en">Style page</a> · <a href="styles/lidar-survey/STYLE.md">Style guide</a> · <a href="styles/lidar-survey/prompt.txt">Prompt</a> · <a href="styles/lidar-survey/starter">Project files</a></sub>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/lidar-survey/STYLE.md">Style guide</a> · <a href="styles/lidar-survey/prompt.txt">Prompt</a> · <a href="styles/lidar-survey/starter">Project files</a></sub>
 </td>
 </tr>
 </table>

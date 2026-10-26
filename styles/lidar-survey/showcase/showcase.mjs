@@ -2,9 +2,9 @@ const $ = selector => document.querySelector(selector);
 const en = Object.fromEntries([...document.querySelectorAll('[data-i18n]')].map(node => [node.dataset.i18n,node.innerHTML]));
 const enAria = Object.fromEntries([...document.querySelectorAll('[data-aria]')].map(node => [node.dataset.aria,node.getAttribute('aria-label')]));
 const zh = {
-  skip:'跳转到风格演示', navigation:'主导航', language:'页面语言', navStudy:'风格演示', navMake:'开始创作', allStyles:'全部风格 ↗',
+  skip:'跳转到最终成片', navigation:'主导航', language:'页面语言', navStudy:'风格演示', navMake:'开始创作', allStyles:'全部风格 ↗',
   styleName:'LiDAR Survey · 点云测绘', discipline:'点云 → 地表 → 证据', title:'层层看见，<br><em>地表的形状。</em>',
-  intro:'从一个回波进入一片空间。剥开树冠，让地形在侧光下浮现，沿着剖面看清它的起伏。', explore:'探索这套视觉语言 ↘',
+  intro:'从一个回波进入一片空间。剥开树冠，让地形在侧光下浮现，沿着剖面看清它的起伏。', explore:'观看最终成片 ↓',
   studyTitle:'测绘视窗', studyType:'合成风格示意 / 20 秒 / 无声', instrument:'LIDAR / 材质实验', dataLabel:'数据类型', synthetic:'合成示意',
   viewportNote:'仅演示造型与运动 · 不含真实测绘数据', canvas:'合成地形演示：点云、树冠剥离、地表显现和剖面。使用下方控件探索。',
   play:'播放演示 ▷', pause:'暂停 Ⅱ', replay:'重新播放 ↺', restart:'重置演示', timeline:'演示时间轴', chapters:'演示章节',

@@ -1,0 +1,19 @@
+{
+  "release": "finished-style-films-v1",
+  "archive": {
+    "name": "art-deco-finished-films-v1.tar.gz",
+    "bytes": 16957992,
+    "sha256": "923f32ac70b92297d0ef5303cccdf68d4e525c93bac002e8e1e371d70c59f380",
+    "url": "https://github.com/visiontrail/codex-film-studio/releases/download/finished-style-films-v1/art-deco-finished-films-v1.tar.gz"
+  },
+  "files": [
+    "media/credits.html",
+    "media/film-01.en.vtt",
+    "media/film-01.jpg",
+    "media/film-01.mp4",
+    "media/film-02.en.vtt",
+    "media/film-02.jpg",
+    "media/film-02.mp4",
+    "media/films.json"
+  ]
+}

@@ -1,7 +1,7 @@
 const copy = {
   en: {
     skip:'Skip to content', back:'↖ All styles', eyebrow:'THE CHART HAS A PULSE.', title:'LINES WITH<br><em>CHARACTER.</em>', name:'ANIMATED LINE CHART COMEDY',
-    intro:'A quiet chart. A very expressive cast. Let the lines carry the facts, and the little interruptions carry the personality.', start:'Make a film in this style ↗',
+    intro:'A quiet chart. A very expressive cast. Let the lines carry the facts, and the little interruptions carry the personality.', start:'Watch the finished film ↓',
     studyTitle:'A chart, with comic timing.', studyLabel:'INTERACTIVE STYLE STUDY · 14 SEC', chartTitle:'Anatomy of a line.', chartSub:'Illustrative curves · no measured values',
     seriesA:'Series A',seriesB:'Series B',seriesC:'Series C',illustration:'STYLE DEMONSTRATION',eventLabel:'A MOMENT THAT MATTERS',eventTitle:'Give change its context.',eventSub:'Enter. Settle. Leave time to read.',
     headline:'Small lines. Big personality.',noScript:'Enable JavaScript to play the study. The style guide below works without it.',play:'Play study',pause:'Pause',replay:'↻ Replay',timelineLabel:'Animation timeline',
@@ -20,7 +20,7 @@ const copy = {
   },
   zh: {
     skip:'跳到正文',back:'↖ 全部风格',eyebrow:'让图表，有一点心跳。',title:'让线条<br><em>有了表情。</em>',name:'动态折线图喜剧',
-    intro:'安静的图表，活泼的角色。让折线呈现事实，让恰到好处的小动作讲出性格。',start:'用这个风格创作 ↗',studyTitle:'让图表，懂一点喜剧节奏。',studyLabel:'交互风格示意 · 14 秒',
+    intro:'安静的图表，活泼的角色。让折线呈现事实，让恰到好处的小动作讲出性格。',start:'观看最终成片 ↓',studyTitle:'让图表，懂一点喜剧节奏。',studyLabel:'交互风格示意 · 14 秒',
     chartTitle:'一条折线的表现力。',chartSub:'示意曲线 · 不代表真实观测数据',seriesA:'序列 A',seriesB:'序列 B',seriesC:'序列 C',illustration:'风格演示',eventLabel:'一个值得停留的时刻',eventTitle:'为变化，补上背景。',eventSub:'进入、落稳，留出阅读的时间。',
     headline:'小小折线，有了表情。',noScript:'开启 JavaScript 可以播放演示；下方风格说明无需脚本即可阅读。',play:'播放演示',pause:'暂停',replay:'↻ 重播',timelineLabel:'动画时间轴',
     phase1:'让折线生长',phase2:'让重点落下',phase3:'把镜头拉近',phase4:'回到全景',caption:'用原创动效展示这套风格的基本构成。制作影片时，请使用自己的数据、主题与事件来源。',

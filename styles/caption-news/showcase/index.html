@@ -18,6 +18,19 @@
     <div class="language" role="group" aria-label="Language"><button data-language="en" aria-pressed="true">EN</button><button data-language="zh" aria-pressed="false">中文</button></div>
   </header>
   <main id="main">
+    <section class="screening section wrap" id="screening" data-project="../../../_projects/caption-news-film/">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="screenEyebrow">01 / THE SCREENING ROOM</p><h2 data-i18n="screenTitle">See it in motion.</h2></div><p data-i18n="screenIntro">Picture, captions and sound.<br>One continuous editorial rhythm.</p></div>
+      <div id="film-loading" class="availability" role="status" data-i18n="loading">Loading the film preview…</div>
+      <div id="film-empty" class="availability" hidden>
+        <span class="empty-number" aria-hidden="true">C/N</span><div><h3 data-i18n="localTitle">Screen the film locally.</h3><p id="availability-message" data-i18n="localDescription">The complete film lives in the retained production project. Open this page through the local studio to watch it.</p><code>python3 scripts/serve_styles.py --port 8249</code><a id="local-link" class="text-link" href="http://127.0.0.1:8249/styles/caption-news/showcase/index.html#screening" data-i18n="openLocal">Open the local screening room ↗</a></div>
+      </div>
+      <div class="film-layout" id="film-layout" hidden>
+        <div class="film-frame"><video id="film" controls playsinline preload="metadata" aria-label="Caption News film"></video><p class="film-meta" id="film-meta"></p></div>
+        <div class="film-details"><p class="eyebrow" data-i18n="localCopy">LOCAL SCREENING COPY</p><h3 data-i18n="chaptersTitle">One film.<br>Every chapter.</h3><p id="film-description" data-i18n="chapterHelp">Choose a chapter to jump into the film.</p><nav id="chapters" aria-label="Film chapters"></nav><div class="film-links"><a id="download-film" download data-i18n="download">Download MP4 ↗</a><a id="download-captions" download data-i18n="captions">English captions ↗</a><a id="source-notes" data-i18n="sourceNotes">Sources &amp; footage notes ↗</a></div><p id="film-error" role="status" hidden data-i18n="playError">The film could not be played. Try the MP4 download or check the retained project.</p></div>
+      </div>
+      <noscript><p><a href="media/film.mp4">Watch or download the complete film preview</a>. JavaScript enables the chapter controls.</p></noscript>
+    </section>
+
     <section class="hero wrap">
       <div class="hero-copy">
         <p class="eyebrow"><span class="square"></span> <span data-i18n="eyebrow">THE EDITORIAL SERIES / 09</span></p>
@@ -41,18 +54,6 @@
       </div>
     </section>
     <div class="strap"><div class="wrap"><span data-i18n="strap1">PICTURE FIRST.</span><span aria-hidden="true">✳</span><span data-i18n="strap2">WORDS THAT LAND.</span><span aria-hidden="true">✳</span><span data-i18n="strap3">MOTION WITH INTENT.</span></div></div>
-    <section class="screening section wrap" id="screening" data-project="../../../_projects/caption-news-film/">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="screenEyebrow">01 / THE SCREENING ROOM</p><h2 data-i18n="screenTitle">See it in motion.</h2></div><p data-i18n="screenIntro">Picture, captions and sound.<br>One continuous editorial rhythm.</p></div>
-      <div id="film-loading" class="availability" role="status" data-i18n="loading">Loading the film preview…</div>
-      <div id="film-empty" class="availability" hidden>
-        <span class="empty-number" aria-hidden="true">C/N</span><div><h3 data-i18n="localTitle">Screen the film locally.</h3><p id="availability-message" data-i18n="localDescription">The complete film lives in the retained production project. Open this page through the local studio to watch it.</p><code>python3 scripts/serve_styles.py --port 8249</code><a id="local-link" class="text-link" href="http://127.0.0.1:8249/styles/caption-news/showcase/index.html#screening" data-i18n="openLocal">Open the local screening room ↗</a></div>
-      </div>
-      <div class="film-layout" id="film-layout" hidden>
-        <div class="film-frame"><video id="film" controls playsinline preload="metadata" aria-label="Caption News film"></video><p class="film-meta" id="film-meta"></p></div>
-        <div class="film-details"><p class="eyebrow" data-i18n="localCopy">LOCAL SCREENING COPY</p><h3 data-i18n="chaptersTitle">One film.<br>Every chapter.</h3><p id="film-description" data-i18n="chapterHelp">Choose a chapter to jump into the film.</p><nav id="chapters" aria-label="Film chapters"></nav><div class="film-links"><a id="download-film" download data-i18n="download">Download MP4 ↗</a><a id="download-captions" download data-i18n="captions">English captions ↗</a><a id="source-notes" data-i18n="sourceNotes">Sources &amp; footage notes ↗</a></div><p id="film-error" role="status" hidden data-i18n="playError">The film could not be played. Try the MP4 download or check the retained project.</p></div>
-      </div>
-      <noscript><p><a href="media/film.mp4">Watch or download the complete film preview</a>. JavaScript enables the chapter controls.</p></noscript>
-    </section>
     <section class="grammar section" id="language"><div class="wrap">
       <div class="section-head"><div><p class="eyebrow" data-i18n="grammarEyebrow">02 / THE VISUAL LANGUAGE</p><h2 data-i18n="grammarTitle">Give every word a job.</h2></div><p data-i18n="grammarIntro">One subject. A clear hierarchy.<br>Room for the idea to settle.</p></div>
       <div class="principles">

@@ -76,8 +76,11 @@ def prepare_public_document(text, mounts, base_path, web_preview=False):
               'Films and review images are web previews. Full-resolution originals '
               'and review records remain in the local production. '
               '线上版为网络预览，原始分辨率素材和审阅记录保留在本地工程。</aside>')
-    if '<body' in text:
-        return re.sub(r'(<body[^>]*>)', lambda m: m[0] + notice, text, count=1)
+    # Keep the finished film first; preview provenance belongs below the player.
+    if '</body>' in text:
+        return text.replace('</body>', notice + '</body>', 1)
+    if '</main>' in text:
+        return text.replace('</main>', '</main>' + notice, 1)
     return text.replace('</style>', '</style>' + notice, 1)
 
 
@@ -99,6 +102,7 @@ def build_site(demo_root, output, revision="", published_roots=None, base_path="
     files.extend((ROOT / name, name) for name in [
         "index.html", "catalog/studio.css", "catalog/studio.mjs",
         "catalog/hero.svg", "catalog/mark.svg", "catalog/strings.mjs", "catalog/social-card.jpg",
+        "catalog/film-screening.css", "catalog/film-screening.mjs",
     ])
     # Public ownership proof downloaded from the owner's Search Console property.
     files.append((ROOT / "site-verification/google4f5a2a3073124a07.html", "google4f5a2a3073124a07.html"))
@@ -177,6 +181,8 @@ def build_site(demo_root, output, revision="", published_roots=None, base_path="
                 for asset in landing["assets"]:
                     if Path(asset).parent == Path(landing["page"]).parent:
                         html = html.replace(f'"{Path(asset).name}"', f'"{Path(asset).name}?{query}"')
+                for asset in ['film-screening.css', 'film-screening.mjs']:
+                    html = html.replace(f'"../../../catalog/{asset}"', f'"../../../catalog/{asset}?{query}"')
                 page.write_text(html, encoding="utf-8")
     build_search(output, catalog, site_origin, base_path, revision)
     (output / ".nojekyll").touch()
@@ -197,6 +203,11 @@ def build_site(demo_root, output, revision="", published_roots=None, base_path="
         "previews": {style['id']: json.loads((ROOT / style['public_assets']).read_text())['archive']
                      for style in catalog['styles'] if style.get('public_assets')},
     }, indent=2) + "\n")
+    # https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
+    total_bytes = sum(path.stat().st_size for path in output.rglob('*') if path.is_file())
+    if total_bytes > 1_000_000_000:
+        raise ValueError(f"Pages site exceeds the 1 GB budget: {total_bytes:,} bytes. "
+                         "Optimize the web previews before publishing.")
     print(f"Built {len(files)} public assets in {output}")
 
 

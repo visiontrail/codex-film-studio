@@ -7,6 +7,7 @@ const englishAria = Object.fromEntries([...document.querySelectorAll('[data-aria
 const revision = new URL(import.meta.url).searchParams.get('v');
 const assetURL = path => {const url=new URL(path,location.href);if(revision)url.searchParams.set('v',revision);return url.href;};
 const player=$('#film-player');
+zh.playFilm='▶ 播放成片';
 let language='en',model;
 const say=(en,zh)=>language==='zh'?zh:en;
 const time=s=>`${String(Math.floor(s/60)).padStart(2,'0')}:${String(Math.floor(s%60)).padStart(2,'0')}`;
@@ -44,9 +45,17 @@ async function copyText(selector){const node=$(selector);try{await navigator.cli
 function replay(){const stage=$('#specimen');stage.classList.remove('animate');requestAnimationFrame(()=>requestAnimationFrame(()=>stage.classList.add('animate')));}
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 $('#copy-prompt').addEventListener('click',()=>copyText('#prompt-text'));$('#copy-command').addEventListener('click',()=>copyText('#create-command'));$('#replay').addEventListener('click',replay);
+async function playFilm(){
+  $('#playback-message').hidden=true;
+  if(player.error)player.load();
+  try{await player.play();}catch{message('Press Play to retry, or open the MP4 download.','请点击播放重试，或打开 MP4 下载链接。');}
+}
+document.querySelectorAll('a[href="#film"], #play-film').forEach(button=>button.addEventListener('click',playFilm));
 player.addEventListener('timeupdate',activeChapter);player.addEventListener('seeked',activeChapter);player.addEventListener('error',()=>message('The film could not load. Try the MP4 download or reload this page.','影片未能加载，请尝试下载 MP4 或刷新页面。'));
+player.querySelector('source').addEventListener('error',()=>message('The film file could not load. Retry playback or open the MP4 download.','影片文件未能加载，请重试播放或打开 MP4 下载链接。'));
+player.addEventListener('playing',()=>{$('#playback-message').hidden=true;});
 setLanguage(preference(),false);replay();
 // Give every public media request the deployment revision, including direct links.
-player.poster=assetURL('media/poster.jpg');player.querySelector('source').src=assetURL('media/film.mp4');player.querySelector('track').src=assetURL('media/captions.vtt');player.load();
+if(revision){player.poster=assetURL('media/poster.jpg');player.querySelector('source').src=assetURL('media/film.mp4');player.querySelector('track').src=assetURL('media/captions.vtt');player.load();}
 $('#download-film').href=assetURL('media/film.mp4');
 try{const r=await fetch(assetURL('media/manifest.json'));if(!r.ok)throw new Error(`Manifest HTTP ${r.status}`);model=await r.json();renderFilm();renderChapters();renderSources();renderTranscript();document.body.dataset.ready='true';}catch(error){message('Chapters and research could not load. Reload the page, or open the published screening room.','章节与研究内容未能加载，请刷新页面或打开已发布的放映室。');console.error(error);}

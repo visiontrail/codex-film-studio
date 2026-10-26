@@ -115,25 +115,25 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh"><img src="styles/microgame/showcase/preview.zh.svg" alt="极速微游戏 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh#films"><img src="styles/microgame/showcase/preview.zh.svg" alt="极速微游戏 — 风格示意" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>07 / <code>microgame</code></sub>
 <h3>极速微游戏</h3>
 <sub>Microgame Frenzy</sub>
 <p>命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。</p>
-<p><b>材质工具包</b> · 尚无样片</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/microgame/STYLE.md">风格说明</a> · <a href="styles/microgame/prompt.txt">提示词</a> · <a href="styles/microgame/starter">创作工程</a></sub>
+<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/microgame/STYLE.md">风格说明</a> · <a href="styles/microgame/prompt.txt">提示词</a> · <a href="styles/microgame/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh"><img src="styles/art-deco/showcase/preview.zh.svg" alt="装饰艺术 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh#films"><img src="styles/art-deco/showcase/preview.zh.svg" alt="装饰艺术 — 风格示意" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>08 / <code>art-deco</code></sub>
 <h3>装饰艺术</h3>
 <sub>Art Deco</sub>
 <p>黑漆、渐变黄铜、切面人物与具有空间感的机械动效。</p>
-<p><b>材质工具包</b> · 尚无样片</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/art-deco/STYLE.md">风格说明</a> · <a href="styles/art-deco/prompt.txt">提示词</a> · <a href="styles/art-deco/starter">创作工程</a></sub>
+<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/art-deco/STYLE.md">风格说明</a> · <a href="styles/art-deco/prompt.txt">提示词</a> · <a href="styles/art-deco/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -148,25 +148,25 @@
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh"><img src="styles/line-chart-comedy/showcase/preview.zh.svg" alt="动态折线图喜剧 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh#films"><img src="styles/line-chart-comedy/showcase/preview.zh.svg" alt="动态折线图喜剧 — 风格示意" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>10 / <code>line-chart-comedy</code></sub>
 <h3>动态折线图喜剧</h3>
 <sub>Animated Line Chart Comedy</sub>
 <p>克制的图表界面，以生长折线、端点角色、事件卡片与漫画动作讲述数据变化。</p>
-<p><b>创作起步包</b> · 尚无样片</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/line-chart-comedy/STYLE.md">风格说明</a> · <a href="styles/line-chart-comedy/prompt.txt">提示词</a> · <a href="styles/line-chart-comedy/starter">创作工程</a></sub>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/line-chart-comedy/STYLE.md">风格说明</a> · <a href="styles/line-chart-comedy/prompt.txt">提示词</a> · <a href="styles/line-chart-comedy/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
-<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh"><img src="styles/lidar-survey/showcase/preview.zh.svg" alt="点云测绘 — 风格示意" width="320"></a></td>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films"><img src="styles/lidar-survey/showcase/preview.zh.svg" alt="点云测绘 — 风格示意" width="320"></a></td>
 <td width="62%" valign="top">
 <sub>11 / <code>lidar-survey</code></sub>
 <h3>点云测绘</h3>
 <sub>LiDAR Survey</sub>
 <p>以连续空间镜头串联测绘点云、树冠剥离、侧光地表与细线剖面，让数据逐层显现。</p>
-<p><b>创作起步包</b> · 尚无样片</p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh">独立风格页</a> · <a href="styles/lidar-survey/STYLE.md">风格说明</a> · <a href="styles/lidar-survey/prompt.txt">提示词</a> · <a href="styles/lidar-survey/starter">创作工程</a></sub>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/lidar-survey/STYLE.md">风格说明</a> · <a href="styles/lidar-survey/prompt.txt">提示词</a> · <a href="styles/lidar-survey/starter">创作工程</a></sub>
 </td>
 </tr>
 </table>

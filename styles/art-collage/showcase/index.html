@@ -18,6 +18,16 @@
     <div class="language" role="group" aria-label="Page language" data-aria="pageLanguage"><button data-lang="en" lang="en" aria-pressed="true">EN</button><button data-lang="zh" lang="zh-CN" aria-pressed="false">中文</button></div>
   </header>
   <main id="main">
+    <section class="film-section" id="film"><div class="wrap">
+      <div class="section-top"><p class="eyebrow" data-copy="filmEyebrow">01 / THE SCREENING ROOM</p><p class="micro" id="film-meta"></p></div>
+      <div class="section-heading"><h2 id="film-title" data-copy="filmTitle">An idea,<br>piece by piece.</h2><p id="film-intro" data-copy="filmIntro">Watch the visual language become a complete story.</p></div>
+      <figure class="screen"><div class="tape" aria-hidden="true"></div><video id="film-player" controls playsinline preload="metadata" poster="media/poster.jpg" aria-label="Art Collage film" data-aria="filmLabel"><source src="media/film.mp4" type="video/mp4"><track kind="subtitles" src="media/captions.vtt" srclang="en" label="English"><p data-copy="videoFallback">Use the download link to watch this film.</p></video><figcaption><span data-copy="filmStamp">ART COLLAGE / FULL FILM</span><button id="play-film" type="button" data-copy="playFilm">▶ Play film</button><a id="download-film" href="media/film.mp4" download data-copy="download">Download MP4 ↗</a></figcaption></figure>
+      <p id="playback-message" class="message" role="status" hidden></p>
+      <div class="chapter-intro"><h3 data-copy="chaptersTitle">Find your place.</h3><span class="micro" data-copy="chapterHint">CHOOSE A CHAPTER TO JUMP IN ↘</span></div><div id="chapters" class="chapters" role="group" aria-label="Film chapters" data-aria="chapters"></div>
+      <details class="transcript"><summary><span data-copy="transcript">Read the English transcript</span><span aria-hidden="true">+</span></summary><div id="transcript-content" lang="en"></div></details>
+      <noscript><p>Watch the film above or <a href="media/film.mp4">download the MP4</a>. Enable JavaScript for chapters, transcript and language controls.</p></noscript>
+    </div></section>
+
     <section class="hero wrap" id="top">
       <div class="issue"><span data-copy="issue">THE MATERIAL SERIES / 02</span><span data-copy="issueRight">A CUT ABOVE THE ORDINARY</span></div>
       <div class="hero-grid">
@@ -35,15 +45,6 @@
       </div>
       <div class="swatches"><span data-copy="palette">THE PALETTE</span><span><i style="--color:#eee8d8"></i><span data-copy="paper">Warm paper</span></span><span><i style="--color:#315847"></i><span data-copy="green">Forest ink</span></span><span><i style="--color:#b7422e"></i><span data-copy="red">Vermilion</span></span><span><i style="--color:#dfb94d"></i><span data-copy="yellow">Ochre</span></span></div>
     </section>
-    <section class="film-section" id="film"><div class="wrap">
-      <div class="section-top"><p class="eyebrow" data-copy="filmEyebrow">01 / THE SCREENING ROOM</p><p class="micro" id="film-meta"></p></div>
-      <div class="section-heading"><h2 id="film-title" data-copy="filmTitle">An idea,<br>piece by piece.</h2><p id="film-intro" data-copy="filmIntro">Watch the visual language become a complete story.</p></div>
-      <figure class="screen"><div class="tape" aria-hidden="true"></div><video id="film-player" controls playsinline preload="metadata" poster="media/poster.jpg" aria-label="Art Collage film" data-aria="filmLabel"><source src="media/film.mp4" type="video/mp4"><track kind="subtitles" src="media/captions.vtt" srclang="en" label="English"><p data-copy="videoFallback">Use the download link to watch this film.</p></video><figcaption><span data-copy="filmStamp">ART COLLAGE / FULL FILM</span><a id="download-film" href="media/film.mp4" download data-copy="download">Download MP4 ↗</a></figcaption></figure>
-      <p id="playback-message" class="message" role="status" hidden></p>
-      <div class="chapter-intro"><h3 data-copy="chaptersTitle">Find your place.</h3><span class="micro" data-copy="chapterHint">CHOOSE A CHAPTER TO JUMP IN ↘</span></div><div id="chapters" class="chapters" role="group" aria-label="Film chapters" data-aria="chapters"></div>
-      <details class="transcript"><summary><span data-copy="transcript">Read the English transcript</span><span aria-hidden="true">+</span></summary><div id="transcript-content" lang="en"></div></details>
-      <noscript><p>Watch the film above or <a href="media/film.mp4">download the MP4</a>. Enable JavaScript for chapters, transcript and language controls.</p></noscript>
-    </div></section>
     <section class="grammar wrap section" id="language"><div class="section-heading"><div><p class="eyebrow" data-copy="grammarEyebrow">02 / THE VISUAL LANGUAGE</p><h2 data-copy="grammarTitle">Everything has<br>a place. And a weight.</h2></div><p data-copy="grammarIntro">The surface, the silhouette, the overlap. Each choice changes how an idea feels.</p></div>
       <div class="principles"><article><div class="paper-stack" aria-hidden="true"><i></i><i></i><i>Aa</i></div><span class="micro">01 / MATERIAL</span><h3 data-copy="materialTitle">Paper you can feel.</h3><p data-copy="materialText">Fibres, pigment, torn edges and soft contact shadows. Texture belongs to the paper, staying with it as the camera moves.</p></article><article><div class="type-study" aria-hidden="true"><span>A</span><b>a</b><i>!</i></div><span class="micro">02 / COMPOSITION</span><h3 data-copy="typeTitle">Different pieces. One voice.</h3><p data-copy="typeText">Photographic cutouts meet clipped lettering and handwritten marks. Use scale and overlap to guide the eye; leave room for the idea to read.</p></article><article><div class="motion-study" aria-hidden="true"><i>↘</i><b>LAND.</b><span>IN → TOUCH → HOLD</span></div><span class="micro">03 / MOTION</span><h3 data-copy="motionTitle">Move with a reason.</h3><p data-copy="motionText">A card slides in, touches down and settles. A cutout interrupts it. Entrances, contact and replacement carry the story on one shared clock.</p></article></div>
     </section>

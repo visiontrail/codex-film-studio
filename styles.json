@@ -337,8 +337,8 @@
       "description": "Rapid command-action-result games with changing materials, lives and accelerating rhythm.",
       "description_zh": "命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。",
       "status": "toolkit-ready",
-      "status_note": "Independent material and motion helpers; scene direction, audio and delivery require production-specific work. No accepted demo.",
-      "status_note_zh": "已有独立材质与动作工具；镜头、音频和交付需在制作项目中完成，暂无已验收样片。",
+      "status_note": "Independent material and motion helpers; scene direction, audio and delivery require production-specific work.",
+      "status_note_zh": "已有独立材质与动作工具；镜头、音频和交付需在制作项目中完成。",
       "guide": "styles/microgame/STYLE.md",
       "readme": "styles/microgame/README.md",
       "template": "styles/microgame/starter",
@@ -348,7 +348,17 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": [],
+      "showcases": [
+        {
+          "id": "microgame-films",
+          "title": "Finished films",
+          "title_zh": "最终成片",
+          "page": "styles/microgame/showcase/index.html",
+          "anchor": "films",
+          "access": "release",
+          "media_manifest": "styles/microgame/showcase/media/films.json"
+        }
+      ],
       "prompt": "styles/microgame/prompt.txt",
       "landing": {
         "page": "styles/microgame/showcase/index.html",
@@ -363,7 +373,9 @@
       },
       "preview": "styles/microgame/showcase/preview.en.svg",
       "preview_zh": "styles/microgame/showcase/preview.zh.svg",
-      "preview_kind": "schematic"
+      "preview_kind": "schematic",
+      "public_assets": "styles/microgame/demo-assets.json",
+      "preview_showcase": "microgame-films"
     },
     {
       "id": "art-deco",
@@ -384,7 +396,17 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": [],
+      "showcases": [
+        {
+          "id": "art-deco-films",
+          "title": "Finished films",
+          "title_zh": "最终成片",
+          "page": "styles/art-deco/showcase/index.html",
+          "anchor": "films",
+          "access": "release",
+          "media_manifest": "styles/art-deco/showcase/media/films.json"
+        }
+      ],
       "preview": "styles/art-deco/showcase/preview.en.svg",
       "preview_zh": "styles/art-deco/showcase/preview.zh.svg",
       "preview_kind": "schematic",
@@ -402,7 +424,9 @@
           "styles/art-deco/showcase/fonts/OFL-josefinsans.txt",
           "styles/art-deco/showcase/fonts/OFL-limelight.txt"
         ]
-      }
+      },
+      "public_assets": "styles/art-deco/demo-assets.json",
+      "preview_showcase": "art-deco-films"
     },
     {
       "id": "caption-news",
@@ -483,7 +507,17 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": [],
+      "showcases": [
+        {
+          "id": "line-chart-comedy-films",
+          "title": "Finished films",
+          "title_zh": "最终成片",
+          "page": "styles/line-chart-comedy/showcase/index.html",
+          "anchor": "films",
+          "access": "release",
+          "media_manifest": "styles/line-chart-comedy/showcase/media/films.json"
+        }
+      ],
       "preview": "styles/line-chart-comedy/showcase/preview.en.svg",
       "preview_zh": "styles/line-chart-comedy/showcase/preview.zh.svg",
       "preview_kind": "schematic",
@@ -496,7 +530,9 @@
           "styles/line-chart-comedy/prompt.txt",
           "styles/line-chart-comedy/PROVENANCE.md"
         ]
-      }
+      },
+      "public_assets": "styles/line-chart-comedy/demo-assets.json",
+      "preview_showcase": "line-chart-comedy-films"
     },
     {
       "id": "lidar-survey",
@@ -517,7 +553,17 @@
         "scene_renderer": false,
         "published_demo": false
       },
-      "showcases": [],
+      "showcases": [
+        {
+          "id": "lidar-survey-films",
+          "title": "Finished films",
+          "title_zh": "最终成片",
+          "page": "styles/lidar-survey/showcase/index.html",
+          "anchor": "films",
+          "access": "release",
+          "media_manifest": "styles/lidar-survey/showcase/media/films.json"
+        }
+      ],
       "preview": "styles/lidar-survey/showcase/preview.en.svg",
       "preview_zh": "styles/lidar-survey/showcase/preview.zh.svg",
       "preview_kind": "schematic",
@@ -535,7 +581,9 @@
           "styles/lidar-survey/showcase/fonts/OFL-barlowcondensed.txt",
           "styles/lidar-survey/showcase/fonts/OFL-ibmplexmono.txt"
         ]
-      }
+      },
+      "public_assets": "styles/lidar-survey/demo-assets.json",
+      "preview_showcase": "lidar-survey-films"
     }
   ]
 }
