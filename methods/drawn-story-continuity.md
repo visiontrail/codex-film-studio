@@ -222,7 +222,11 @@ outlining every groove with a bright neighbour creates regular stripes even
 when the paths bend. Compare quiet and worn regions at native size. Reducing
 all fine contrast can overcorrect the problem into blurred wood, so retain
 localized dry catches. Texture statistics help identify the scale of a defect,
-but a closer variance or colour mean does not establish a closer visual style.
+but a closer variance or colour mean does not establish a closer visual style. If broad
+bands dominate, redistribute some contrast to coherent fine fibres. Give those
+fibres irregular deposition and broken edges: adding smooth bright curves alone
+can replace blurred wood with a plastic sheen. Keep the deposition mask fixed
+to the material, then inspect it during camera scaling for shimmer.
 
 If small catches still read as rows of bright dots, change their characteristic
 width and spacing as well as the shared fibre bend. Keep the broad colour bands,

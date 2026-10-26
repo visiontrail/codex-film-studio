@@ -52,6 +52,17 @@ regional abrasion. All three layers share surface coordinates and fixed seeds.
 Judge the result against a native-resolution desk crop, then through a camera
 move. Removing every bright scratch can make illustrated wood look artificially
 smooth; keep localized dry marks without tracing each groove with a highlight.
+The optional `handGrain` control defaults to 0; values within 0–1 widen and bend
+the grain and add broader dry catches. Compare several moderate strengths.
+For broad bands that overpower the finer structure, `fibreDetail` accepts 0–1
+and defaults to 0. In layered mode it reduces broad contrast, increases fine
+grooves, and adds long catches with a fixed irregular deposition mask. This
+mask breaks smooth highlights into rough marks; it is evaluated in surface
+coordinates and never reseeded by the camera. Compare the widest and closest
+views, since smooth bright fibres can look plastic even when broad bands improve.
+Run `node scripts/check_desk_material.mjs` for material invariants, then inspect
+the encoded camera move for shimmer and excessive bright-line density.
+
 `shadeSpread(context, x, y, pageWidth, height, {tableLight, paperLight})` adds a fixed warm
 light pool with asymmetric edge falloff; `tableLight` defaults to 0. Compare
 paper illumination separately from the underlying paper colour and relief.

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {deskTexture} from '../lib/desk.mjs';
+const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+const paper={tooth:new Float32Array([.25,.75])};
+const options={layered:true,meander:true,wear:1,handGrain:.6};
+const base=deskTexture(paper,options),zero=deskTexture(paper,{...options,fibreDetail:0});
+assert.equal(hash(base.p),hash(zero.p));
+const a=deskTexture(paper,{...options,fibreDetail:.57});
+const b=deskTexture(paper,{...options,fibreDetail:.57});
+assert.equal(hash(a.p),hash(b.p));assert.notEqual(hash(base.p),hash(a.p));
+assert.equal(a.canvas.width,1920);assert.equal(a.canvas.height,1080);
+assert.ok(a.p.every((v,i)=>i%4!==3||v===255));assert.equal(a.tooth,paper.tooth);
+for(const fibreDetail of [NaN,Infinity,-.1,1.1])assert.throws(()=>deskTexture(paper,{fibreDetail}));
+console.log('Six desk checks passed: default, determinism, effect, opaque coverage, tooth identity and invalid settings.');
