@@ -1,0 +1,34 @@
+{
+  "release": "newsreel-double-feature-v2",
+  "archive": {
+    "name": "newsreel-page-assets-v2.tar.gz",
+    "bytes": 316372,
+    "sha256": "00be2c8d21733f8396bb2a262e2c905cde2e65b9b18ce66df554814933138436",
+    "url": "https://github.com/visiontrail/codex-film-studio/releases/download/newsreel-double-feature-v2/newsreel-page-assets-v2.tar.gz"
+  },
+  "files": [
+    "media/credits.html",
+    "media/films.json",
+    "media/sources.md",
+    "media/subway.en.vtt",
+    "media/subway.jpg",
+    "media/subway.zh.vtt",
+    "media/weekend.en.vtt",
+    "media/weekend.jpg",
+    "media/weekend.zh.vtt"
+  ],
+  "external_media": [
+    {
+      "name": "subway.mp4",
+      "url": "https://github.com/visiontrail/codex-film-studio/releases/download/newsreel-double-feature-v2/subway.mp4",
+      "bytes": 36835297,
+      "sha256": "2395e8b11ad92db8003604ff808c68b45acb2392753453214187df769064eff2"
+    },
+    {
+      "name": "weekend.mp4",
+      "url": "https://github.com/visiontrail/codex-film-studio/releases/download/newsreel-double-feature-v2/weekend.mp4",
+      "bytes": 43104809,
+      "sha256": "8eac974cb5d19424582fda2aca30181b268a9bd96e995f3b6817ab943e0ab16f"
+    }
+  ]
+}

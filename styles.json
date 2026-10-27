@@ -604,6 +604,56 @@
       },
       "public_assets": "styles/lidar-survey/demo-assets.json",
       "preview_showcase": "lidar-survey-films"
+    },
+    {
+      "id": "newsreel",
+      "name": "Newsreel",
+      "name_zh": "复古新闻片",
+      "description": "Archival pictures, spinning headlines, nine-card montages and a voice from the projection booth.",
+      "description_zh": "档案影像、旋转头条、九张纸卡与旧时播音，让故事从放映室走来。",
+      "status": "starter-ready",
+      "status_note": "Style guide, blank inputs and review workflow; author the scene renderer and sound for each new film.",
+      "status_note_zh": "已有风格指南、空白输入和审查流程；新影片仍需编写场景渲染与声音。",
+      "guide": "styles/newsreel/STYLE.md",
+      "readme": "styles/newsreel/README.md",
+      "prompt": "styles/newsreel/prompt.txt",
+      "template": "styles/newsreel/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "preview": "styles/newsreel/showcase/preview.jpg",
+      "preview_zh": "styles/newsreel/showcase/preview.jpg",
+      "preview_kind": "frame",
+      "landing": {
+        "page": "styles/newsreel/showcase/index.html",
+        "assets": [
+          "styles/newsreel/showcase/showcase.css",
+          "styles/newsreel/showcase/showcase.mjs",
+          "styles/newsreel/showcase/study.mjs",
+          "styles/newsreel/showcase/fonts/Limelight.woff2",
+          "styles/newsreel/showcase/fonts/NewsSerif.woff2",
+          "styles/newsreel/showcase/fonts/OFL-Limelight.txt",
+          "styles/newsreel/showcase/fonts/OFL-NotoSerifSC.txt",
+          "styles/newsreel/showcase/fonts/OFL-Oswald.txt",
+          "styles/newsreel/showcase/fonts/Oswald.woff2"
+        ]
+      },
+      "public_assets": "styles/newsreel/demo-assets.json",
+      "showcases": [
+        {
+          "id": "newsreel-double-feature",
+          "title": "Newsreel · Two complete films",
+          "title_zh": "复古新闻片 · 双片放映",
+          "page": "styles/newsreel/showcase/index.html",
+          "anchor": "screening",
+          "access": "release",
+          "media_manifest": "styles/newsreel/showcase/media/films.json"
+        }
+      ],
+      "preview_showcase": "newsreel-double-feature"
     }
   ]
 }

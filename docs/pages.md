@@ -331,3 +331,22 @@ credits and the film manifest in the verified preview archive. Their separate
 asset sizes and SHA-256 hashes are recorded in `demo-assets.json` under `videos`;
 check those assets before publishing the website. This keeps the Pages artifact
 within budget without reducing the resolution of detailed imagery.
+
+## Newsreel double feature
+
+Newsreel has a bilingual standalone page at `styles/newsreel/showcase/index.html`.
+A newspaper masthead and projection-booth player lead with two complete 180-second
+720p web films. Programme selection, six chapters per film and bilingual
+transcripts come from the checksum-pinned `newsreel-double-feature-v2` Release.
+The page includes a paused-by-default Canvas study of spinning headlines, nine
+portrait cards, left-spine page turns and an iris close; playback, scrubbing,
+effect selection and film-texture controls work without production assets.
+Local OFL font subsets and all dependencies are explicitly registered. The
+library package remains an authoring starter; the 1080p masters and detailed
+production reviews remain in the independent production.
+
+The complete Newsreel MP4s stream directly from the pinned GitHub Release;
+posters, captions, chapters and credits are installed from its verified small
+archive. This keeps the existing Pages site under its 1 GB build budget without
+recompressing or removing other styles. Video byte counts and SHA-256 hashes
+are recorded in `styles/newsreel/demo-assets.json` (`external_media`).

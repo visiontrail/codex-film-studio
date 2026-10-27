@@ -1,0 +1,24 @@
+{
+  "title": "",
+  "audience": "",
+  "language": "",
+  "delivery": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "duration_frames": null
+  },
+  "sources": [],
+  "shots": [],
+  "voice_cues": [],
+  "caption_cues": [],
+  "music_cues": [],
+  "foley_cues": [],
+  "review": {
+    "decoded_frame_count": null,
+    "visually_inspected_ranges": [],
+    "native_frame_indices": [],
+    "playback_ranges": [],
+    "audio_listening_ranges": []
+  }
+}

@@ -50,5 +50,17 @@
       "method": "保留点的实测位置，用连续镜头进入点云，让同一道前缘显现对应地表，并将琥珀色细线留给剖面与读数。本页合成示意用于展示这套语法，不对应真实测绘成果。",
       "check": "核对来源许可、采集日期、单位、分类和坐标系统。在未经夸张的数据上测量，标明解释性描绘与显示比例变化，再检查编码后的点云、文字和运动，并试听混音。"
     }
+  },
+  "newsreel": {
+    "en": {
+      "use": "Choose Newsreel for archival stories, historical explainers or playful reports that benefit from printed headlines, period pacing and an energetic announcer.",
+      "method": "Use a warm monochrome film gate, paper contact shadows, nine portrait cards in a 5 + 4 arrangement, continuous card-to-picture zooms and page turns around a spine. Keep source dates explicit and synchronize picture, voice, captions and foley.",
+      "check": "Review every encoded frame for continuity and enlarge typography, paper edges and page-turn hinges. Compare matching action phases. Check playback and listening separately; an automated score is not a style verdict."
+    },
+    "zh": {
+      "use": "当档案故事、历史讲解或轻松报道适合印刷头条、年代节奏与有活力的播音时，可以选择复古新闻片。",
+      "method": "使用暖调黑白片门、纸张接触阴影、上五下四的九张竖卡、连续放大衔接和绕书脊翻页。明确资料日期，让画面、旁白、字幕与拟音保持同步。",
+      "check": "逐帧检查编码后画面的连续性，并放大查看字体、纸边和翻页轴线。按相同动作阶段对照，分别记录播放与听音；自动评分不能代替风格判断。"
+    }
   }
 }

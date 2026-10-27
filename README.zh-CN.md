@@ -31,7 +31,7 @@
 
 <!-- style-summary:start -->
 
-**11 种风格** · 1 种完整样片工程 · 7 种创作起步包 · 3 种材质工具包
+**12 种风格** · 1 种完整样片工程 · 8 种创作起步包 · 3 种材质工具包
 
 <!-- style-summary:end -->
 
@@ -167,6 +167,17 @@
 <p>以连续空间镜头串联测绘点云、树冠剥离、侧光地表与细线剖面，让数据逐层显现。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/lidar-survey/STYLE.md">风格说明</a> · <a href="styles/lidar-survey/prompt.txt">提示词</a> · <a href="styles/lidar-survey/starter">创作工程</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh#screening"><img src="styles/newsreel/showcase/preview.jpg" alt="复古新闻片 — 影片截图" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>12 / <code>newsreel</code></sub>
+<h3>复古新闻片</h3>
+<sub>Newsreel</sub>
+<p>档案影像、旋转头条、九张纸卡与旧时播音，让故事从放映室走来。</p>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh#screening">复古新闻片 · 双片放映</a> · <a href="styles/newsreel/STYLE.md">风格说明</a> · <a href="styles/newsreel/prompt.txt">提示词</a> · <a href="styles/newsreel/starter">创作工程</a></sub>
 </td>
 </tr>
 </table>

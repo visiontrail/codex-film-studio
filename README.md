@@ -31,7 +31,7 @@
 
 <!-- style-summary:start -->
 
-**11 styles** · 1 complete demo kit · 7 authoring starters · 3 material toolkit
+**12 styles** · 1 complete demo kit · 8 authoring starters · 3 material toolkit
 
 <!-- style-summary:end -->
 
@@ -166,6 +166,17 @@ from the repository with the retained projects available. See the
 <p>Measured point clouds, canopy peeling, raking-lit terrain and fine sections, carried by one continuous camera move.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">▶ Watch online</a></p>
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/lidar-survey/STYLE.md">Style guide</a> · <a href="styles/lidar-survey/prompt.txt">Prompt</a> · <a href="styles/lidar-survey/starter">Project files</a></sub>
+</td>
+</tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening"><img src="styles/newsreel/showcase/preview.jpg" alt="Newsreel — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>12 / <code>newsreel</code></sub>
+<h3>Newsreel</h3>
+<sub>复古新闻片</sub>
+<p>Archival pictures, spinning headlines, nine-card montages and a voice from the projection booth.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">Newsreel · Two complete films</a> · <a href="styles/newsreel/STYLE.md">Style guide</a> · <a href="styles/newsreel/prompt.txt">Prompt</a> · <a href="styles/newsreel/starter">Project files</a></sub>
 </td>
 </tr>
 </table>

@@ -6,7 +6,7 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
-**11 styles** · 1 complete demo kit · 7 authoring starters · 3 material toolkit
+**12 styles** · 1 complete demo kit · 8 authoring starters · 3 material toolkit
 
 ## Visual index / 风格一览
 
@@ -140,6 +140,17 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">Finished films</a> · <a href="../styles/lidar-survey/STYLE.md">Style guide</a> · <a href="../styles/lidar-survey/prompt.txt">Prompt</a> · <a href="../styles/lidar-survey/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening"><img src="../styles/newsreel/showcase/preview.jpg" alt="Newsreel — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>12 / <code>newsreel</code></sub>
+<h3>Newsreel</h3>
+<sub>复古新闻片</sub>
+<p>Archival pictures, spinning headlines, nine-card montages and a voice from the projection booth.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">Newsreel · Two complete films</a> · <a href="../styles/newsreel/STYLE.md">Style guide</a> · <a href="../styles/newsreel/prompt.txt">Prompt</a> · <a href="../styles/newsreel/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 ## Capabilities / 能力与网页
@@ -157,6 +168,7 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 | [字幕新闻 / Caption News](caption-news/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en) · [Full film preview](https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening) |
 | [动态折线图喜剧 / Animated Line Chart Comedy](line-chart-comedy/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en) · [Finished films](https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films) |
 | [点云测绘 / LiDAR Survey](lidar-survey/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en) · [Finished films](https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films) |
+| [复古新闻片 / Newsreel](newsreel/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en) · [Newsreel · Two complete films](https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening) |
 
 ## What is complete / 已完成什么
 
@@ -171,6 +183,7 @@ Local page links use `http://127.0.0.1:8249/`. Start the catalog with
 - **caption-news** — 已有空白输入、确定性字幕动效工具和通用方法；需为新选题编写场景、渲染与音频。 Blank authoring inputs, deterministic caption helpers and shared methods; author new scenes, renderer and audio.
 - **line-chart-comedy** — 已有空白数据与时间轴约定、参考分析方法和通用审查工具；需为新主题编写渲染器与配乐。 Blank data/timeline contract, reference-analysis method and generic review tools; author the scene renderer and score.
 - **lidar-survey** — 已有风格指南与空白测绘、时间轴约定；新影片需按选题编写数据处理、场景渲染器和声音。 Style guide and blank survey/timeline contract; author the data pipeline, scene renderer and soundtrack per production.
+- **newsreel** — 已有风格指南、空白输入和审查流程；新影片仍需编写场景渲染与声音。 Style guide, blank inputs and review workflow; author the scene renderer and sound for each new film.
 
 `demo-ready` includes a released sample and editable renderer. `starter-ready`
 provides blank authoring inputs, guides and helpers. `toolkit-ready` provides

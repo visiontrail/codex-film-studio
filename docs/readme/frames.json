@@ -134,6 +134,23 @@
       "image": "docs/readme/frames/caption-news.jpg",
       "image_sha256": "d96e7c9b0c19cd677f6821dd846109015eab3fa6c2ea9d1438170d6023b7156f",
       "treatment": "Three decoded frames arranged side by side. Each full portrait composition is retained, uniformly resized and separated by narrow dark padding. No captions or picture regions are repainted."
+    },
+    {
+      "style": "newsreel",
+      "source_video": "https://github.com/visiontrail/codex-film-studio/releases/download/newsreel-double-feature-v2/subway.mp4",
+      "source_sha256": "2395e8b11ad92db8003604ff808c68b45acb2392753453214187df769064eff2",
+      "title": "Under the City · Newsreel fidelity-v2",
+      "title_zh": "城市之下 · 复古新闻片修订版",
+      "seconds": 54.791666666666664,
+      "frame": 1315,
+      "fps": "24",
+      "native_dimensions": [
+        1280,
+        720
+      ],
+      "image": "styles/newsreel/showcase/preview.jpg",
+      "image_sha256": "338301b50b40613fa7a79867a7f9a0e1873432d4cbd8efb64d929a125d18b6b0",
+      "treatment": "Actual decoded web-film frame, full composition retained; no text or decoration added."
     }
   ]
 }
