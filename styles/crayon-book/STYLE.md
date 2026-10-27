@@ -60,6 +60,15 @@ grooves, and adds long catches with a fixed irregular deposition mask. This
 mask breaks smooth highlights into rough marks; it is evaluated in surface
 coordinates and never reseeded by the camera. Compare the widest and closest
 views, since smooth bright fibres can look plastic even when broad bands improve.
+For fibres that remain too continuous, `dryScumble` accepts 0–1 and defaults to
+0. In layered mode it reduces the smooth under-grain, adds small sideways
+deviations to the catches, and clusters their missing pigment at a shorter scale.
+Compare moderate strengths before the maximum: widening and brightening every
+catch can create large gold patches that compete with the drawing. Balance
+particle size, local pressure and density together; do not try to fix this by
+adding white noise over the book. Keep the paper interior and lighting fixed
+while comparing native-size stills. A selected still remains a trial until the
+encoded pullback and push-in have been inspected for shimmer and bright bands.
 Run `node scripts/check_desk_material.mjs` for material invariants, then inspect
 the encoded camera move for shimmer and excessive bright-line density.
 
