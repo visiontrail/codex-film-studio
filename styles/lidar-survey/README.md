@@ -13,6 +13,22 @@ Status: **starter-ready**. New films need their own verified survey data, scene
 renderer, narration and soundtrack. The silent browser study is not a finished
 survey film and its synthetic terrain is not a measurement of a real place.
 
-Create an external project with `python3 scripts/new_film.py my-film --style lidar-survey`
-from the repository root. Open that new folder in Codex and provide the subject,
-audience, language, duration and dataset.
+Give your Agent the subject, audience, language, duration and dataset. It creates
+the independent project and continues production in the same conversation.
+
+## Start with a prompt / 用提示词开始
+
+Open the cloned studio in your coding Agent and paste:
+
+> Use the lidar-survey style to make a [duration] film about [subject] for [audience],
+> with narration and captions in [language]. Read the studio guides, create an
+> independent project and prepare the environment yourself. Produce and review
+> the film, then deliver a 1080p MP4, editable project and actual review scope.
+
+在 Agent 中打开已克隆的工作室，直接发送：
+
+> 请用 lidar-survey 风格，为[观众]制作关于[主题]的[时长]视频，使用[语言]配音和字幕。
+> 请你自动创建独立项目、准备环境，完成制作与检查，交付 1080p MP4 和可编辑工程。
+
+For an exact sample, give the Agent its title or link and ask it to check for the
+original source project and assets first. See [reproduction](../../methods/reproduction.md).

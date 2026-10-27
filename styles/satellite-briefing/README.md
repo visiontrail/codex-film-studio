@@ -6,21 +6,22 @@ This package provides reusable rules, blank inputs and generic tools. Author the
 new subject's characters, scenes, narration, renderer and sound in its own project.
 The catalog records local showcase pages separately from a published demo.
 
-## Start a film
+## Start with a prompt / 用提示词开始
 
-From the repository root:
+Open the cloned studio in your coding Agent and paste:
 
-```sh
-python3 scripts/new_film.py my-film --style satellite-briefing
-# Choose a new external directory if needed:
-python3 scripts/new_film.py my-film --style satellite-briefing --output /absolute/path/my-film
-```
+> Use the satellite-briefing style to make a [duration] film about [subject] for [audience],
+> with narration and captions in [language]. Read the studio guides, create an
+> independent project and prepare the environment yourself. Produce and review
+> the film, then deliver a 1080p MP4, editable project and actual review scope.
 
-Open `../codex-film-studio-projects/my-film` in Codex, read its `README.md` and
-`prompt.txt`, and supply the topic, audience, language and duration. Creation does
-not install packages or contact a voice service. Existing destinations are refused.
-The working copy contains the style guide, shared production/review tools and
-available provenance/license files. It is independent of previous productions.
+在 Agent 中打开已克隆的工作室，直接发送：
+
+> 请用 satellite-briefing 风格，为[观众]制作关于[主题]的[时长]视频，使用[语言]配音和字幕。
+> 请你自动创建独立项目、准备环境，完成制作与检查，交付 1080p MP4 和可编辑工程。
+
+For an exact sample, give the Agent its title or link and ask it to check for the
+original source project and assets first. See [reproduction](../../methods/reproduction.md).
 
 ## Package contents
 

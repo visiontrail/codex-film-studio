@@ -147,7 +147,6 @@ async function copy(selector) {
   }
   $('#copy-status').textContent = copyMessage;
 }
-$('#copy-command').addEventListener('click', () => copy('#create-command'));
 $('#copy-prompt').addEventListener('click', () => copy('#creative-prompt'));
 let saved = 'en'; try { saved = localStorage.getItem('codex-film-language') || 'en'; } catch {}
 setLanguage(new URL(location.href).searchParams.get('lang') || saved);

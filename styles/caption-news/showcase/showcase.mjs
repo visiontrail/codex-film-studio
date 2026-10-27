@@ -149,10 +149,7 @@ async function loadFilm() {
   } finally { $('#film-loading').hidden = true; }
 }
 
-$('#copy-command').addEventListener('click',async () => {
-  try { await navigator.clipboard.writeText($('#create-command').textContent); $('#copy-status').textContent = t('copied'); }
-  catch { const range = document.createRange(); range.selectNodeContents($('#create-command')); const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range); $('#copy-status').textContent = t('copyFailed'); }
-});
+
 document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click',() => setLanguage(button.dataset.language)));
 const requested = new URLSearchParams(location.search).get('lang');
 let saved = 'en'; try { saved = localStorage.getItem('film-studio-language'); } catch { /* Optional preference. */ }

@@ -16,10 +16,7 @@ const zh = {
   rule3Title:'一次看清一个读数。',rule3:'用细线剖面和贴合对象的标注解释测量。数值旁保留来源与方法，显示比例的夸张也要明确标出。',
   swatch0:'背景',swatch1:'回波',swatch2:'地表',swatch3:'前缘',swatch4:'读数',
   makeEyebrow:'02 / 开始你的创作',makeTitle:'你的地点，<br>新的视角。',makeIntro:'带来一处地点、一个问题和一份测绘数据。围绕数据能够说明的内容，组织你的影片。',
-  repoLabel:'在 GITHUB 获取工程',step1Title:'打开工作室。',step1:'克隆风格库，在 Codex 中打开这个文件夹。',
-  step2Title:'建立独立工程。',step2:'在风格库之外，为影片创建独立的工作目录。',
-  step3Title:'带上数据与问题。',step3:'打开新工程，提供创作要求与数据集，核对来源，再编排画面、旁白和声音。',
-  guide:'阅读风格指南 ↗',copy:'复制命令',copied:'命令已复制',copyFailed:'请选中上方命令并复制。',
+  repoLabel:'在 GITHUB 获取工程',guide:'阅读风格指南 ↗',copy:'复制命令',copied:'命令已复制',copyFailed:'请选中上方命令并复制。',
   promptEyebrow:'试着这样对 CODEX 说',prompt:'根据我提供的地点与测绘数据，制作一部 LiDAR Survey 点云测绘影片。使用真实测得的点、清晰的树冠剥离、侧光地表和一处易读剖面，说明证据能够支持的结论。把镜头、旁白和声音放在同一条时间轴上，检查并打磨成片。',
   fullPrompt:'打开可复用提示词 ↗',packageNote:'已包含风格指南、空白测绘与时间轴约定，以及共享制作方法。新影片需要自己的数据集、渲染器和声音。',
   notesEyebrow:'03 / 制作方法',notesTitle:'从一个回波，<br>到一份依据。',
@@ -78,13 +75,10 @@ function setLanguage(value){
  preview.alt=value==='zh'?'合成地形的点云示意与琥珀色剖面线':'Synthetic terrain illustrated with muted green points and an amber section';
  const url=new URL(location.href);url.searchParams.set('lang',value);history.replaceState(null,'',url);
  try{localStorage.setItem('film-studio-language',value);}catch{}
- $('#copy-status').textContent='';sync();draw();
+ sync();draw();
 }
 document.querySelectorAll('[data-language]').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.language)));
-$('#copy').addEventListener('click',async()=>{
- try{await navigator.clipboard.writeText($('#command').textContent);$('#copy-status').textContent=t('copied');}
- catch{$('#copy-status').textContent=t('copyFailed');}
-});
+
 
 // Entirely synthetic, deterministic geometry. No geographic coordinates or
 // empirical measurements: the study demonstrates visual grammar only.

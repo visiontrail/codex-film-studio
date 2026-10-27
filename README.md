@@ -157,61 +157,64 @@
 
 ## Make your film
 
-### 1 / Choose a starting point
+### 1 / Tell your Agent what to make
 
-```sh
-git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio
-python3 scripts/new_film.py --list
-python3 scripts/new_film.py my-film --style midcentury-cartoon
-```
+Open the cloned **codex-film-studio** folder in Codex or your coding Agent.
+Paste a brief; the Agent chooses the tools, creates an independent film project
+and prepares the environment. You do not need to run setup commands.
 
-Every style uses `--style <id>`. Your independent working copy goes to
-`../codex-film-studio-projects/my-film`; use `--output /absolute/external/path`
-for another destination. Existing directories are preserved.
+> Use the Mid-century Cartoon style to make a three-minute film about [subject]
+> for [audience], with English narration and subtitles. Read the studio's guides,
+> create the project and prepare the environment yourself, then produce the
+> script, drawings, animation and sound. Review the final pictures, motion and
+> audio, fix observed problems, and deliver a 1080p MP4 and editable project.
+> Tell me what you actually checked.
 
-### 2 / Bring the story
-
-Open the new project in Codex. Give it a subject, audience, language and length:
-
-> Make a three-minute film about how solar panels work. Use this project's style
-> guide. Draw people and objects when they explain an idea. Use English narration
-> and deliver a 1080p MP4. Inspect the rendered stills and motion, listen to the
-> soundtrack, and repair observed problems before showing me the result.
-
-The repository's [`codex-film` skill](.agents/skills/codex-film/SKILL.md) coordinates
-the workflow. It reads three guides:
-
-| Read | What it brings to the film |
-| --- | --- |
-| [DIRECTOR.md](DIRECTOR.md) | Story, camera, rhythm and performance |
-| [TECHNIQUE.md](TECHNIQUE.md) | Rendering, narration, music and mixing |
-| The selected `STYLE.md` | Drawing, materials and motion |
-
-### 3 / Build, review, deliver
-
-Write the narration and scenes, record or generate the voice, then render and
-review the film. The [shared methods](methods/README.md) cover production and
-review; each style adds its own rules. Every new working copy includes these
-methods, including reference adaptation, media selection and revision delivery.
-Production scripts, facts, assets and acceptance results stay in the film project.
-
-Whiteboard includes an editable sample renderer. The other packages provide
-blank inputs and reusable helpers; their new scenes and renderers need authoring.
-Crayon Picture Book currently provides a material toolkit. A new subject needs
-its own narration, drawings, motion and audio review.
-
-For new narration, use your own Chatterbox-compatible service or recorded WAVs.
-Replaying the released whiteboard sample uses the supplied audio and requires
-no TTS credentials. Requirements: **Node.js 20+, Python 3.11+, FFmpeg**; see the
-selected project for additional dependencies. Use WSL on Windows.
-
-For local browsing, run `python3 scripts/serve_styles.py --port 8249` from the repository root with the relevant production projects available; see the [local showcase guide](docs/pages.md#local-style-catalog).
+Replace the style, subject, audience, language and duration. You can also give
+an Agent a Style page link or ask it to pick a style for your story.
 
 <details>
-<summary><b>Rebuild the released whiteboard sample</b></summary>
+<summary><b>Haven’t cloned the studio yet? Give your Agent this prompt.</b></summary>
 
-From the repository root:
+> Clone https://github.com/visiontrail/codex-film-studio.git into a new folder
+> without overwriting existing files. Read AGENTS.md and the codex-film skill,
+> then help me make a film from my brief. Handle setup and commands yourself.
+
+</details>
+
+### 2 / Or ask to recreate a sample
+
+> Recreate the [sample title or link] in the [style] style. Find the available
+> original project, assets and recorded audio. Handle project setup, rendering
+> and review, then deliver the MP4 and editable project. If original sources
+> are missing, tell me exactly what is needed; do not replace them with a new story.
+
+Exact recreation needs the original composition and inputs. The Agent can use
+the released whiteboard inputs; other samples require an available external
+source bundle. A showcase MP4 alone may not include those sources. The
+[reproduction guide](methods/reproduction.md) explains what the Agent checks.
+
+### 3 / Watch, then direct the next revision
+
+The Agent reads the [`codex-film` skill](.agents/skills/codex-film/SKILL.md),
+[DIRECTOR.md](DIRECTOR.md), [TECHNIQUE.md](TECHNIQUE.md) and the selected style
+rules, then handles the production workflow. It keeps each film in an independent
+project outside this library, preserves existing projects, and returns the film
+with its editable source and actual review coverage.
+
+Review the result and ask for changes in the same conversation: “Slow down the
+opening,” “Make the narration warmer,” or “Recompose this for a vertical screen.”
+The Agent updates picture, narration, captions and sound together.
+
+The Agent checks the required environment and available voice tools. If it needs
+a source image, a recording or access to a voice service, it names the missing
+input. For local browsing, ask it to open the studio; see the
+[local showcase guide](docs/pages.md#local-style-catalog) for technical details.
+
+<details>
+<summary><b>Agent reference: whiteboard rebuild commands</b></summary>
+
+The Agent runs these commands from the repository root:
 
 ```sh
 python3 scripts/fetch_demo.py --edition short

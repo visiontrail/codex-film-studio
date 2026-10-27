@@ -28,6 +28,20 @@ local media dependencies remain in the retained production projects; use
 new-film starters or treat a local page as a published demo.
 The repo-local `codex-film` skill describes this workflow.
 
+The human entry point is a natural-language brief in this checkout. Treat a
+request to make or recreate a film as an instruction to execute the workflow,
+not to return setup commands. Resolve the style from its name, ID, linked page
+or reference; if none is specified, choose a suitable registered style and state
+the choice. Infer a safe project name, create the external working copy yourself,
+prepare dependencies, and continue production there in the same conversation.
+Do not make the user run `new_film.py`, install packages manually, or open a
+second chat. Ask only for genuinely missing creative inputs, source assets,
+service access or required permissions. Never invent a voice service or its
+credentials. For exact replay, check source and asset availability first and
+report concrete missing inputs; a showcase MP4 is not an editable source bundle.
+Deliver the MP4 and editable project with the actual review scope, not just a
+plan or material proof.
+
 For an exact sample rebuild, use the released demo inputs and existing
 composition. For a new subject, rewrite both narration and drawings; replacing
 captions alone does not adapt the film. Keep narration, camera, captions and

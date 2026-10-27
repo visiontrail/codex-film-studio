@@ -27,7 +27,6 @@ const t = key => copy[state.language][key] ?? copy.en[key] ?? key;
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const localized = (entry, field) => state.language === 'zh' ? entry[`${field}_zh`] ?? entry[field] : entry[field];
 const repoLink = path => `${REPO}/blob/main/${path.split('/').map(encodeURIComponent).join('/')}`;
-const commandFor = id => `python3 scripts/new_film.py my-film --style ${id}`;
 const pageTitle = page => localized(page,'title');
 const isAvailable = page => page.access === 'release' || state.availability.pages[page.id] === true;
 const stylePage = entry => entry.landing ?? entry.showcases?.find(page => page.access === 'release') ?? entry.showcases?.[0];
@@ -78,7 +77,7 @@ function setLanguage(language) {
   search.placeholder = t('search'); search.setAttribute('aria-label',t('search'));
   $('.filters').setAttribute('aria-label',t('filterLabel'));
   $('#shelf-prev').setAttribute('aria-label',t('previous')); $('#shelf-next').setAttribute('aria-label',t('next'));
-  $('.dialog-close').setAttribute('aria-label',t('close')); $('#copy-starter').setAttribute('aria-label',t('copyCommand'));
+  $('.dialog-close').setAttribute('aria-label',t('close'));
   try { localStorage.setItem('film-studio-language',language); } catch { /* Private browsing can disable storage. */ }
   if (!PAGE_LANGUAGE) { const url = new URL(location.href); url.searchParams.set('lang',language); history.replaceState(null,'',url); }
   if (state.catalog) { renderStyles(); renderScreening(); if (state.detail) renderDetail(); }
@@ -117,7 +116,7 @@ function renderScreening() {
     const page = previewPage(entry) ?? entry.showcases.find(p => p.access === 'release') ?? entry.showcases[0];
     return `<article class="showcase-card">${previewAction(entry,`<div class="showcase-art">${preview(entry)}<span>${t(page.access === 'release' ? 'publicSample' : isAvailable(page) ? 'available' : 'localOnly')}</span></div><h4>${escape(pageTitle(page))}</h4><p>${escape(localized(entry,'name'))} · ${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</p>`)}</article>`;
   }).join('');
-  $('#screening-note').innerHTML = state.availability.mode === 'local' ? t('localNote') : `${t('publicNote')} <code>python3 scripts/serve_styles.py</code>`;
+  $('#screening-note').innerHTML = state.availability.mode === 'local' ? t('localNote') : t('publicNote');
   requestAnimationFrame(updateShelfControls);
 }
 function renderDetail() {
@@ -126,11 +125,11 @@ function renderDetail() {
   const primary = stylePage(entry);
   const missing = primary?.access === 'local' && !isAvailable(primary);
   const links = primary ? `<a class="primary-page" href="${escape(pageURL(primary))}">${stylePageLabel(primary)}<span aria-hidden="true">↗</span></a>` : '';
-  $('#style-detail').innerHTML = `<div class="detail-art" data-preview-kind="${escape(entry.preview_kind ?? 'schematic')}">${previewPage(entry) ? previewAction(entry,preview(entry,true),'preview-player') : preview(entry,true)}<span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span></div><div class="detail-copy"><p class="eyebrow">${escape(entry.id.toUpperCase().replaceAll('-',' / '))}</p><h2 id="detail-title">${escape(localized(entry,'name'))}</h2><p class="detail-description">${escape(localized(entry,'description'))}</p>${guideLink(entry)}<h3>${t('openPages')}</h3><div class="detail-pages">${links}</div>${!primary ? `<p class="local-help">${t('noShowcase')}</p>` : ''}${missing ? `<p class="local-help">${state.availability.mode === 'local' ? t('missingProject') : t('localHelp')}</p><div class="command"><code>python3 scripts/serve_styles.py --port 8249</code><button type="button" data-copy="python3 scripts/serve_styles.py --port 8249">${t('copy')}</button></div>` : ''}<div class="detail-links"><a href="${repoLink(entry.guide)}" target="_blank" rel="noopener noreferrer">${t('guide')} ↗</a><a href="${repoLink(entry.prompt)}" target="_blank" rel="noopener noreferrer">${t('prompt')} ↗</a><a href="${REPO}/tree/main/${entry.template}" target="_blank" rel="noopener noreferrer">${t('files')} ↗</a></div><h3>${t('startStyle')}</h3><div class="command"><code>${escape(commandFor(entry.id))}</code><button type="button" data-copy="${escape(commandFor(entry.id))}">${t('copy')}</button></div></div>`;
+  $('#style-detail').innerHTML = `<div class="detail-art" data-preview-kind="${escape(entry.preview_kind ?? 'schematic')}">${previewPage(entry) ? previewAction(entry,preview(entry,true),'preview-player') : preview(entry,true)}<span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span></div><div class="detail-copy"><p class="eyebrow">${escape(entry.id.toUpperCase().replaceAll('-',' / '))}</p><h2 id="detail-title">${escape(localized(entry,'name'))}</h2><p class="detail-description">${escape(localized(entry,'description'))}</p>${guideLink(entry)}<h3>${t('openPages')}</h3><div class="detail-pages">${links}</div>${!primary ? `<p class="local-help">${t('noShowcase')}</p>` : ''}${missing ? `<p class="local-help">${state.availability.mode === 'local' ? t('missingProject') : t('localHelp')}</p>` : ''}<div class="detail-links"><a href="${repoLink(entry.guide)}" target="_blank" rel="noopener noreferrer">${t('guide')} ↗</a><a href="${repoLink(entry.prompt)}" target="_blank" rel="noopener noreferrer">${t('prompt')} ↗</a><a href="${REPO}/tree/main/${entry.template}" target="_blank" rel="noopener noreferrer">${t('files')} ↗</a></div><h3>${t('startStyle')}</h3><film-agent-start style-id="${escape(entry.id)}" compact></film-agent-start></div>`;
 }
 function openStyle(id) {
   state.detail = id; renderDetail();
-  $('#starter-command').textContent = commandFor(id);
+  $('#create film-agent-start').setAttribute('style-id',id);
   const url = new URL(location.href); url.searchParams.set('style',id); history.replaceState(null,'',url);
   if (!$('#style-dialog').open) $('#style-dialog').showModal();
 }
@@ -139,19 +138,6 @@ function updateShelfControls() {
   const shelf = $('#showcase-shelf');
   $('#shelf-prev').disabled = shelf.scrollLeft <= 2;
   $('#shelf-next').disabled = shelf.scrollLeft + shelf.clientWidth >= shelf.scrollWidth - 2;
-}
-let toastTimer;
-async function copyCommand(text) {
-  try {
-    await navigator.clipboard.writeText(text);
-    $('#toast').textContent = t('copied');
-  } catch {
-    const command = [...document.querySelectorAll('code')].find(node => node.textContent === text);
-    if (command) { const range = document.createRange(); range.selectNodeContents(command); const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range); }
-    $('#toast').textContent = t('copyFailed');
-  }
-  clearTimeout(toastTimer); $('#toast').classList.add('visible');
-  toastTimer = setTimeout(() => $('#toast').classList.remove('visible'),2600);
 }
 document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click',event => { event.preventDefault(); setLanguage(button.dataset.language); }));
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click',() => {
@@ -162,7 +148,6 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
 $('#style-search').addEventListener('input',event => { state.query = event.target.value; if (state.catalog) renderStyles(); });
 document.addEventListener('click',event => {
   const card = event.target.closest('[data-style]'); if (card) openStyle(card.dataset.style);
-  const button = event.target.closest('[data-copy]'); if (button) copyCommand(button.dataset.copy);
 });
 $('.dialog-close').addEventListener('click',closeStyle);
 $('#style-dialog').addEventListener('click',event => {
@@ -173,7 +158,6 @@ $('#style-dialog').addEventListener('click',event => {
 $('#style-dialog').addEventListener('close',() => {
   state.detail = null; const url = new URL(location.href); url.searchParams.delete('style'); history.replaceState(null,'',url);
 });
-$('#copy-starter').addEventListener('click',() => copyCommand($('#starter-command').textContent));
 $('#shelf-prev').addEventListener('click',() => $('#showcase-shelf').scrollBy({left:-$('#showcase-shelf').clientWidth*.8,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'}));
 $('#shelf-next').addEventListener('click',() => $('#showcase-shelf').scrollBy({left:$('#showcase-shelf').clientWidth*.8,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'}));
 $('#showcase-shelf').addEventListener('scroll',updateShelfControls,{passive:true});

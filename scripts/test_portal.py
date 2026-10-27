@@ -1,9 +1,11 @@
 """Check the portal's deployment boundary and local availability reporting."""
 import json
+import re
 from pathlib import Path
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
+from urllib.parse import urljoin, urlparse
 
 from build_pages import ROOT, build_site, fetch_showcase_bundle, rewrite_public_routes
 from fetch_demo import sha
@@ -61,6 +63,19 @@ class PortalTests(unittest.TestCase):
             homepage = (output / 'index.html').read_text()
             for asset in ['catalog/studio.mjs', 'catalog/studio.css', 'catalog/hero.svg', 'catalog/mark.svg']:
                 self.assertIn(f'{asset}?v=portal-test', homepage)
+            self.assertTrue((output / 'catalog/agent-start.mjs').is_file())
+            # A <base> from a retained film must not redirect the shared entry
+            # module into that production's media directory on GitHub Pages.
+            for relative in ['index.html', 'styles/whiteboard/studio/index.html',
+                             *[s['landing']['page'] for s in catalog['styles'] if s.get('landing')]]:
+                document = (output / relative).read_text()
+                page_url = 'https://example.com/codex-film-studio/' + relative
+                base = re.search(r'<base href="([^"]+)"', document)
+                module = re.search(r'<script[^>]+src="([^"]*catalog/agent-start\.mjs[^"]*)"', document)
+                self.assertIsNotNone(module, relative)
+                resolved = urlparse(urljoin(urljoin(page_url, base[1]) if base else page_url, module[1]))
+                self.assertEqual(resolved.path, '/codex-film-studio/catalog/agent-start.mjs', relative)
+                self.assertEqual(resolved.query, 'v=portal-test', relative)
             self.assertIn('showcase.mjs', (output / 'styles/whiteboard/studio/index.html').read_text())
             self.assertTrue((output / 'styles/whiteboard/studio/editions/long/media/captions.vtt').is_file())
             self.assertEqual(len(list(output.rglob('*.mp4'))), len(manifest['editions']) + preview_movies)
@@ -104,7 +119,7 @@ class PortalTests(unittest.TestCase):
                 build_site(demo, output)
 
     def test_released_routes_work_at_root_and_under_project_path(self):
-        source = '<base href="/_projects/film/editions/long/"><a href="/">Home</a><a href="/styles/example/index.html">Style</a>'
+        source = '<base href="/_projects/film/editions/long/"><a href="/">Home</a><a href="/styles/example/index.html">Style</a><script src="/catalog/agent-start.mjs"></script>'
         mounts = {'film': 'styles/example/showcase/_assets'}
         for base in ['/', '/codex-film-studio/']:
             result = rewrite_public_routes(source, mounts, base)
@@ -112,6 +127,7 @@ class PortalTests(unittest.TestCase):
             self.assertIn(f'<base href="{base}styles/example/showcase/_assets/editions/long/">', result)
             self.assertIn(f'<a href="{base}">', result)
             self.assertIn(f'href="{base}styles/example/index.html"', result)
+            self.assertIn(f'src="{base}catalog/agent-start.mjs"', result)
 
     def test_preview_download_verifies_checksum_and_approved_contents(self):
         import io

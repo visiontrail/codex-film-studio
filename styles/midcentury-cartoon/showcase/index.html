@@ -9,6 +9,7 @@
   <link rel="icon" href="../identity/studio-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="showcase.css">
   <script type="module" src="showcase.mjs"></script>
+  <script type="module" src="../../../catalog/agent-start.mjs"></script>
 </head>
 <body>
 <a class="skip" href="#film" data-zh="跳至影片">Skip to film</a>
@@ -83,8 +84,7 @@
   </section>
 
   <section id="make" class="make-section"><div class="wrap"><div class="section-heading"><div><p class="eyebrow" data-zh="03 / 轮到你的故事">03 / YOUR TURN AT THE DRAWING TABLE</p><h2 data-zh="带来一个主题，画出一个新世界。">Your story.<br>A fresh coat of ink.</h2></div><p data-zh="从独立项目开始，重新设计人物、动作与场景。主题、观众、语言和时长，交给你决定。">Start a new project. Give it its own characters, actions and scenes. Bring the subject, audience, language and running time.</p></div>
-    <ol class="steps"><li><span class="step-number">1</span><h3 data-zh="打开工作室。">Open the studio.</h3><p data-zh="克隆风格库，在 Codex 中打开它。">Clone the style library and open it in Codex.</p><pre><code>git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio</code></pre></li><li><span class="step-number">2</span><h3 data-zh="给新片留一张白纸。">Take a fresh sheet.</h3><p data-zh="在仓库外创建独立项目，然后打开新目录。">Create an independent project outside the library, then open the new folder.</p><pre><code id="create-command">python3 scripts/new_film.py my-film --style midcentury-cartoon</code></pre><button id="copy-command" type="button" data-zh="复制命令 ↗">Copy command ↗</button></li><li><span class="step-number">3</span><h3 data-zh="把道理演出来。">Put the idea in motion.</h3><p data-zh="写分镜、编排人物动作，让旁白、镜头、字幕与声音落在同一条时间线上。">Write the scenes, stage the hand actions, and put narration, camera, captions and sound on one timeline.</p><a href="../STYLE.md" data-zh="阅读风格规范 ↗">Read the style guide ↗</a></li></ol>
+    <film-agent-start style-id="midcentury-cartoon"><p>Open this repository in your coding Agent and describe your film. / 在 Agent 中打开仓库，描述你想制作的影片。</p><blockquote>Use the midcentury-cartoon style to make a film about [subject]. Handle project setup, production and review, then deliver the MP4 and editable project. / 请用 midcentury-cartoon 风格制作关于[主题]的视频，自动完成项目创建、制作与检查，交付 MP4 和可编辑工程。</blockquote></film-agent-start>
     <div class="prompt-sheet"><div><p class="handwritten" data-zh="给导演的一张便条">A note to your director</p><span class="eyebrow" data-zh="复制到 Codex · 替换方括号内容">PASTE INTO CODEX · FILL IN THE BRACKETS</span></div><blockquote id="creative-prompt" data-zh="为 [观众] 制作一部关于 [主题] 的 Mid-century Cartoon 影片，语言为 [语言]，时长为 [时长]。使用暖纸底、柔和错位套色和棕黑墨线。创作新人物与场景，用预备、接触、结果和收势讲清动作。把旁白、镜头、字幕与爵士配乐放在同一条时间线上。检查最终画面、连续运动与声音，修复发现的问题，报告实际检查范围。">Make a Mid-century Cartoon film about [subject] for [audience], in [language], lasting [duration]. Use warm paper, softly misregistered colour and brown-black ink. Create original characters and scenes; stage each action as anticipation, contact, result and settle. Keep narration, camera, captions and jazz on one timeline. Inspect the final stills, motion and sound, repair observed problems and report what was checked.</blockquote><button id="copy-prompt" type="button" data-zh="复制创作提示词 ↗">Copy creative prompt ↗</button></div><p id="copy-status" role="status"></p>
   </div></section>
 

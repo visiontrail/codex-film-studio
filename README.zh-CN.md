@@ -157,58 +157,57 @@
 
 ## 制作你的影片
 
-### 1 / 选择起点
+### 1 / 直接告诉 Agent，你想拍什么
 
-```sh
-git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio
-python3 scripts/new_film.py --list
-python3 scripts/new_film.py my-film --style midcentury-cartoon
-```
+克隆后，在 Codex 或你使用的编程 Agent 中打开 **codex-film-studio** 文件夹。
+直接发送创作要求即可。工具选择、独立项目创建、环境准备和制作，都由 Agent 完成，
+不需要你手动执行命令。
 
-所有风格使用同一个 `--style <id>` 命令。独立工程默认放在仓库外的
-`../codex-film-studio-projects/my-film`，也可用 `--output /绝对路径/新项目`
-指定其他外部目录。已有目标目录会保留，不会覆盖。
+> 请用 Mid-century Cartoon 风格，为[目标观众]制作一部关于[主题]的三分钟视频，
+> 使用英文配音和字幕。请你读取工作室的制作指南，自动创建独立项目并准备环境，
+> 完成脚本、绘画、动画和声音。检查最终画面、运动和音轨，修复发现的问题，
+> 交付 1080p MP4 和可编辑工程，并说明实际检查范围。
 
-### 2 / 带入故事
-
-在 Codex 中打开新项目，提供选题、观众、语言和时长，例如：
-
-> 按本项目的风格说明，制作一个三分钟的“太阳能电池如何工作”视频。
-> 需要人物和具体对象解释的地方画出来。使用英文配音，输出 1080p MP4。
-> 检查渲染后的静帧和动作，试听声音，修复实际发现的问题后再让我看。
-
-仓库的 [`codex-film` 技能](.agents/skills/codex-film/SKILL.md)组织制作流程，
-会阅读三份说明：
-
-| 阅读 | 在影片中的作用 |
-| --- | --- |
-| [DIRECTOR.md](DIRECTOR.md) | 故事、镜头、节奏和表演 |
-| [TECHNIQUE.md](TECHNIQUE.md) | 渲染、配音、音乐和混音 |
-| 所选风格的 `STYLE.md` | 绘画、材质和动作规则 |
-
-### 3 / 制作、审查、交付
-
-创作旁白与场景，录制或生成配音，再渲染与审查影片。
-[通用制作方法](methods/README.md)负责共用流程；各风格说明补充自己的视觉与声音要求。
-每个新项目都携带参考适配、素材选择与重剪交付方法。具体脚本、事实、素材和
-单片验收结果留在制作项目，不进入通用方法。
-
-白板保留可编辑的样片渲染工程；其他风格提供空白输入和通用工具，需要为新选题
-编写场景与渲染器。蜡笔绘本目前是材质工具包。每部新影片都要创作自己的旁白、
-画面和动作，并进行声音审查。
-
-新配音可接入自己的 Chatterbox 兼容服务，或按段提供 WAV 录音。
-复现白板样片使用发布时的音频，无需 TTS 密钥。基本环境为
-**Node.js 20+、Python 3.11+、FFmpeg**，额外依赖见所选项目说明；Windows 使用 WSL。
-白板样片的字体与字幕面向英文，中文制作需要重新配置字形和排版。
-
-本地浏览：在仓库根目录运行 `python3 scripts/serve_styles.py --port 8249`，并保留对应制作项目；详见[本地网页说明](docs/pages.md#local-style-catalog)。
+把风格、主题、观众、语言和时长换成你的要求。也可以直接提供某个 Style 页的链接，
+或让 Agent 根据故事选择合适的风格。
 
 <details>
-<summary><b>复现已发布的白板样片</b></summary>
+<summary><b>还没有克隆？把这段话发给 Agent。</b></summary>
 
-从仓库根目录执行：
+> 请将 https://github.com/visiontrail/codex-film-studio.git 克隆到新的文件夹，
+> 不覆盖已有文件。读取 AGENTS.md 和 codex-film 技能，然后根据我的创作要求
+> 制作影片。环境准备和命令执行请你完成。
+
+</details>
+
+### 2 / 想复刻原样片，也直接说
+
+> 请原样复刻[风格]中的[样片标题或链接]。请你查找可用的原始工程、素材和配音，
+> 自动完成独立项目创建、环境准备、渲染与检查，交付 MP4 和可编辑工程。
+> 如果缺少原始工程或素材，请明确告诉我缺什么，不要用新编内容代替原片。
+
+原样复刻需要原始构图与输入素材。Agent 可使用已发布的白板样片输入；其他样片需要
+可用的外部源工程包。展示页的成片下载包可能不包含这些源文件。
+[复现方法](methods/reproduction.md)说明了 Agent 应检查的内容。
+
+### 3 / 看成片，再提出修改
+
+Agent 会读取 [`codex-film` 技能](.agents/skills/codex-film/SKILL.md)、
+[导演指南](DIRECTOR.md)、[技术指南](TECHNIQUE.md)和所选风格规范，完成制作流程。
+每部新片都放在风格库之外的独立工程中，已有项目会被保留。交付包含成片、可编辑工程
+和实际检查范围。
+
+在同一个对话里继续提出要求，例如“开头慢一点”“旁白更亲切一些”或“改成竖屏构图”。
+Agent 会一起调整画面、旁白、字幕和声音。
+
+Agent 会检查制作环境与可用的配音工具。确实需要你提供图片、录音或配音服务访问权限时，
+会说明具体缺少什么。本地浏览也可以直接让 Agent 打开工作室；技术细节见
+[本地网页说明](docs/pages.md#local-style-catalog)。
+
+<details>
+<summary><b>Agent 技术参考：白板样片重建命令</b></summary>
+
+以下命令由 Agent 在仓库根目录执行：
 
 ```sh
 python3 scripts/fetch_demo.py --edition short

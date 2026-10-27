@@ -9,6 +9,23 @@ styles actually listed. All visual styles live in `styles/<id>/`; check the
 entry's completion status, capabilities and template kind. A toolkit or starter
 requires new scenes and a renderer. `methods/` holds cross-style workflows only.
 
+## Start from the user's brief
+
+A natural-language request in this checkout is sufficient to start. The Agent
+owns setup and execution: resolve a registered style from the user's name, link
+or reference, choose a safe project name, create the external working copy,
+install documented dependencies and continue there in the same conversation.
+When the style is unspecified, choose a suitable one and explain the choice.
+Use reasonable defaults for optional creative details. Do not hand terminal
+commands back to the user, ask them to create the project, or require another
+chat. Ask only when a missing input, asset, service access or permission blocks
+the next necessary step. Report the concrete gap; never invent credentials or
+silently substitute a different reproduction. Carry the request through
+production, review and delivery of the actual MP4 and editable project.
+A starter, plan or material proof is not the finished film.
+
+## Agent execution
+
 For a new topic, create a working copy with
 `python3 scripts/new_film.py <name> --style <id>` for every style.
 Use `--list` to see the complete catalog. The destination
@@ -34,6 +51,8 @@ copy a showcase story into a blank starter.
 
 For a whiteboard sample reproduction, use `scripts/fetch_demo.py` and the existing
 composition. Released narration and timing avoid a TTS dependency for replay.
+For other exact samples, read `methods/reproduction.md` and check that the
+original editable project and inputs are available before beginning the rebuild.
 For new narration use the documented Chatterbox service or import WAVs, then
 produce independent word timing. Never invent a voice endpoint or credential.
 

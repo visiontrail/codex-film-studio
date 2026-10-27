@@ -8,7 +8,7 @@ const zh = {
   grammarOver:'01 / 这个世界的规则',grammarTitle:'材质在变。<br>成败始终可见。',grammarIntro:'每个关卡都有新的画法。角色、倒计时和动作的后果，把不同世界连成一部影片。',
   rule1Title:'让命令，先声夺人。',rule1:'大字砸入、落稳，再缩到角落。动作开始前撤去爆炸框，让操作的手与物体始终清楚可见。',rule2Title:'接触，才是动作的起点。',rule2:'手碰到工具，工具改变物体。为结果留出足够的停顿，让观众看懂发生了什么；每个动作都要真正产生作用。',rule3Title:'带着结果，回到舞台。',rule3:'熟悉的舞台与有限的生命计数连接每一关。失败留下具体后果，让角色在之后的挑战中用上学到的经验。',
   rhythmOver:'02 / 影片的节拍',rhythmTitle:'越来越快。<br>依然看得清。',rhythmText:'命令、动作和回到舞台的停留一起收紧。给每种材质不同的乐器与拟音。在最终撞击之前，留下一段真正的安静。',commandLabel:'命令',actionLabel:'动作',resultLabel:'结果',scoreNote:'供影片创作参考的节奏示意。画面、旁白、配乐和音效共用一条帧时间轴。',
-  createOver:'03 / 开始你的创作',createTitle:'你的故事。<br>全新的关卡。',createIntro:'带上主题、受众和时长。把每个想法变成一个看得见的小任务，让它有明确的动作与结果。',repoLabel:'在 GITHUB 获取项目',repoText:'视觉规则、材质工具，以及独立创作的起点。',step1Title:'获取风格库。',step1:'克隆仓库，在 Codex 中打开项目文件夹。',step2Title:'给影片一个独立空间。',step2:'创建独立制作项目，把故事、素材和输出保存在其中。',step3Title:'执导这场连锁反应。',step3:'写下命令与结果，选择材质，再编写场景与声音。观看、聆听并修改导出的影片。',copy:'复制',copied:'命令已复制。',copyFailed:'请选择上方命令并复制。',guide:'阅读风格说明 ↗',
+  createOver:'03 / 开始你的创作',createTitle:'你的故事。<br>全新的关卡。',createIntro:'带上主题、受众和时长。把每个想法变成一个看得见的小任务，让它有明确的动作与结果。',repoLabel:'在 GITHUB 获取项目',repoText:'视觉规则、材质工具，以及独立创作的起点。',copy:'复制',copied:'命令已复制。',copyFailed:'请选择上方命令并复制。',guide:'阅读风格说明 ↗',
   promptOver:'在 CODEX 中试试',promptText:'根据我提供的主题、受众和时长，创作一部原创微游戏影片。每关包含一句简短命令、一个真实作用于物体的动作和清晰的结果。关卡之间切换材质，同时保留角色的身份特征。让画面、旁白和音效共用一条时间轴。检查编码后的影片，修改完善后再交付。',promptLink:'获取通用创作提示词 ↗',
   notesOver:'04 / 工具包里有什么',notesTitle:'先构造材质。<br>再让动作发生。',status:'材质工具包',note1Title:'从这里，开始编写。',note1:'包含独立绘制、角色、动作和材质工具，以及空白输入约定。每部影片独立创作场景渲染器、旁白与配乐。',note2Title:'不同材质，不同构造。',note2:'索引像素缓冲、由字符搭起的终端、细线技术图、蜡质笔触与干湿墨迹。材质要改变绘画本身，不能只叠一层纹理。',note3Title:'一条时间轴，每一次接触。',note3:'镜头、命令和声音对齐整数帧。按交付尺寸检查手与工具的接触、回放取景和细节，再完整观看与聆听成片。',engine:'查看材质工具包 ↗',director:'导演指南 ↗',technique:'制作指南 ↗',
   sourcesOver:'05 / 参考与来源',sourcesTitle:'研究风格，独立构造。',sourcesText:'风格说明参考了 Lemomo 的 Microgame 影片与 lemo-opuscar。仓库保留的工具与本页交互演示均独立编写。',reference:'查看风格参考 ↗',referenceFilm:'原始参考影片 ↗',madeFor:'为',inspiration:'风格灵感：',top:'回到顶部 ↑',mainNav:'主导航',language:'页面语言',materials:'选择材质',sceneAria:'原创风格演示：小角色按动杠杆，使方块在四种材质中受压变形。',press:'按下',rule:'一次接触，一个结果。',success:'完成！',return:'下一关',live:'动作示意',study:'材质示意',swissName:'瑞士平面',pixelName:'索引像素',terminalName:'琥珀色终端',blueprintName:'技术蓝图'
@@ -121,10 +121,9 @@ function setLanguage(language){
   document.querySelectorAll('[data-home]').forEach(a=>{const url=new URL(a.href);url.searchParams.set('lang',language);a.href=url.href;});
   const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);
   try{localStorage.setItem('film-studio-language',language);}catch{/* Language also persists in the URL. */}
-  $('#copy-status').textContent='';render();
+  render();
 }
 document.querySelectorAll('[data-language]').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));
-$('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#command').textContent);$('#copy-status').textContent=t('copied');}catch{$('#copy-status').textContent=t('copyFailed');}});
 let saved='en';try{saved=localStorage.getItem('film-studio-language')??'en';}catch{/* Storage is optional. */}
 const requested=new URLSearchParams(location.search).get('lang');setLanguage((requested??saved)==='zh'?'zh':'en');
 

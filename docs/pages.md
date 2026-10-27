@@ -121,6 +121,19 @@ All page dependencies and the locally hosted OFL display font are registered in
 `landing.assets`. Films, reference material and timelines still come from the
 existing pinned Release bundle; the package remains `starter-ready`.
 
+## Prompt-first film creation
+
+The homepage, style detail dialogs and all twelve style pages use
+`catalog/agent-start.mjs` for the same bilingual entry point. Visitors copy a
+natural-language brief for a new film or an exact sample recreation. An optional
+setup prompt delegates cloning to the Agent. Project creation, environment setup
+and production commands belong to the Agent; visitors stay in one conversation.
+Exact replay still requires available original source inputs. The component
+preserves each page's fonts and colors, follows its language switch and offers
+manual text selection when clipboard access fails. Static prompt text remains
+available if JavaScript does not load. The Pages builder includes and versions
+the module, including routes on pages with retained-project base URLs.
+
 ## Local style catalog
 
 From the repository root:

@@ -4,11 +4,21 @@
 for large editorial captions, selective emphasis, ledger graphics and kinetic
 entrances. The scene renderer and audio pipeline must be authored per production.
 
-From the library root:
+Open the cloned studio in your coding Agent and paste:
 
-```sh
-python3 scripts/new_film.py my-film --style caption-news
-```
+> Use the caption-news style to make a [duration] film about [subject] for [audience],
+> with narration and captions in [language]. Read the studio guides, create an
+> independent project and prepare the environment yourself. Produce and review
+> the film, then deliver a 1080p MP4, editable project and actual review scope.
+
+在 Agent 中打开已克隆的工作室，直接发送：
+
+> 请用 caption-news 风格，为[观众]制作关于[主题]的[时长]视频，使用[语言]配音和字幕。
+> 请你自动创建独立项目、准备环境，完成制作与检查，交付 1080p MP4 和可编辑工程。
+
+For an exact sample, give the Agent its title or link and ask it to check for the
+original source project and assets first. See [reproduction](../../methods/reproduction.md).
+
 
 The independent project contains [the style guide](STYLE.md),
 [empty inputs](starter/INPUTS.md), [caption motion helpers](starter/lib/caption.mjs),

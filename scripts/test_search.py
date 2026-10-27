@@ -87,7 +87,13 @@ class SearchTests(unittest.TestCase):
                         self.assertIn(style['guide'],' '.join(a.get('href','') for a in guide.attrs('a')))
                         self.assertEqual(guide.attrs('link',rel='alternate',hreflang='zh-CN')[0]['href'],base+'zh/styles/'+style['id']+'/')
                         self.assertEqual(guide.attrs('link',rel='alternate',hreflang='en')[0]['href'],base+'styles/'+style['id']+'/')
-                        self.assertFalse(guide.attrs('script',type='module'))
+                        # Copy/mode controls progressively enhance a readable
+                        # prompt; crawlers and no-JS visitors still see it.
+                        self.assertEqual(guide.attrs('script',type='module'), [{
+                            'type': 'module', 'src': prefix + 'catalog/agent-start.mjs?v=test-revision'}])
+                        self.assertEqual(guide.attrs('film-agent-start')[0]['style-id'], style['id'])
+                        self.assertIn('请你自动创建项目' if lang == 'zh' else 'Handle project setup', ' '.join(guide.text))
+                        self.assertNotIn('new_film.py', target.read_text())
                         self.assertNotIn('127.0.0.1',target.read_text())
                     for attr in doc.attrs('link',rel='alternate'):
                         self.assertIn(attr['href'],urls)

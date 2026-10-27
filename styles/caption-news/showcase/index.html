@@ -9,6 +9,7 @@
   <link rel="icon" href="../../../catalog/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="showcase.css">
   <script type="module" src="showcase.mjs"></script>
+<script type="module" src="../../../catalog/agent-start.mjs"></script>
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
@@ -62,7 +63,7 @@
         <article><span class="principle-number">03</span><div class="motion-example" aria-hidden="true"><span>→</span><b>HOLD.</b><i>IN · READ · OUT</i></div><h3 data-i18n="motionTitle">Move. Land. Let it read.</h3><p data-i18n="motionText">A punch of type, a highlight wipe, then a stable hold. Set the intensity to fit the story.</p></article>
       </div>
     </div></section>
-    <section class="create section wrap" id="create"><div><p class="eyebrow" data-i18n="createEyebrow">03 / YOUR NEXT STORY</p><h2 data-i18n="createTitle">Bring the news.<br>Make your point.</h2><p data-i18n="createText">Start with a subject, an audience and a point of view. Build a new film in its own independent project.</p></div><div class="create-tools"><span class="status" data-i18n="starter">AUTHORING STARTER</span><p data-i18n="starterText">Visual rules, blank inputs and caption motion helpers. Author the scenes, renderer and audio for your own story.</p><div class="command"><code id="create-command">python3 scripts/new_film.py my-film --style caption-news</code><button id="copy-command" data-i18n="copy">Copy</button></div><p class="copy-status" id="copy-status" role="status"></p><div class="guide-links"><a href="../STYLE.md" data-i18n="guide">Style guide ↗</a><a href="../prompt.txt" data-i18n="prompt">Creative prompt ↗</a></div></div></section>
+    <section class="create section wrap" id="create"><div><p class="eyebrow" data-i18n="createEyebrow">03 / YOUR NEXT STORY</p><h2 data-i18n="createTitle">Bring the news.<br>Make your point.</h2><p data-i18n="createText">Start with a subject, an audience and a point of view. Build a new film in its own independent project.</p></div><div class="create-tools"><span class="status" data-i18n="starter">AUTHORING STARTER</span><p data-i18n="starterText">Visual rules, blank inputs and caption motion helpers. Author the scenes, renderer and audio for your own story.</p><film-agent-start style-id="caption-news" compact><p>Open this repository in your coding Agent and describe your film. / 在 Agent 中打开仓库，描述你想制作的影片。</p><blockquote>Use the caption-news style to make a film about [subject]. Handle project setup, production and review, then deliver the MP4 and editable project. / 请用 caption-news 风格制作关于[主题]的视频，自动完成项目创建、制作与检查，交付 MP4 和可编辑工程。</blockquote></film-agent-start><p class="copy-status" id="copy-status" role="status"></p><div class="guide-links"><a href="../STYLE.md" data-i18n="guide">Style guide ↗</a><a href="../prompt.txt" data-i18n="prompt">Creative prompt ↗</a></div></div></section>
   </main>
   <footer class="wrap"><a class="brand" data-home href="../../../index.html">CODEX <span>FILM STUDIO</span></a><p><span data-i18n="influence">Visual grammar inspired by</span> <a href="https://github.com/lemomo-ai/lemo-opuscar">lemo-opuscar</a>.<br><span data-i18n="independent">An independently authored style package.</span></p><a href="#main" data-i18n="top">Back to top ↑</a></footer>
 </body>

@@ -60,7 +60,7 @@ def rewrite_public_routes(text, mounts, base_path):
     prefix = '/' + base_path.strip('/') + '/' if base_path.strip('/') else '/'
     for route, destination in mounts.items():
         text = text.replace(f'/_projects/{route}/', prefix + destination.rstrip('/') + '/')
-    text = re.sub(r'''(["'(])/(styles/)''', lambda m: m[1] + prefix + m[2], text)
+    text = re.sub(r'''(["'(])/(styles/|catalog/)''', lambda m: m[1] + prefix + m[2], text)
     text = re.sub(r'''(["'])/\1''', lambda m: m[1] + prefix + m[1], text)
     return text
 
@@ -103,6 +103,7 @@ def build_site(demo_root, output, revision="", published_roots=None, base_path="
         "index.html", "catalog/studio.css", "catalog/studio.mjs",
         "catalog/hero.svg", "catalog/mark.svg", "catalog/strings.mjs", "catalog/social-card.jpg",
         "catalog/film-screening.css", "catalog/film-screening.mjs",
+        "catalog/agent-start.mjs",
     ])
     # Public ownership proof downloaded from the owner's Search Console property.
     files.append((ROOT / "site-verification/google4f5a2a3073124a07.html", "google4f5a2a3073124a07.html"))
@@ -184,6 +185,12 @@ def build_site(demo_root, output, revision="", published_roots=None, base_path="
                 for asset in ['film-screening.css', 'film-screening.mjs']:
                     html = html.replace(f'"../../../catalog/{asset}"', f'"../../../catalog/{asset}?{query}"')
                 page.write_text(html, encoding="utf-8")
+        # The shared prompt entry also appears on the legacy player and pages
+        # with an external-project <base>, so version every HTML reference.
+        for page in output.rglob('*.html'):
+            html = page.read_text(encoding='utf-8')
+            html = html.replace('catalog/agent-start.mjs"', f'catalog/agent-start.mjs?{query}"')
+            page.write_text(html, encoding='utf-8')
     build_search(output, catalog, site_origin, base_path, revision)
     (output / ".nojekyll").touch()
     (output / "styles.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")

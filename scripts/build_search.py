@@ -148,19 +148,17 @@ def home_answers(lang, date):
         heading = '如何用 Codex Film Studio 制作视频？'
         intro = 'Codex Film Studio 是由 LeoGuoLabs 维护的可复用动画与视频风格库。每种风格提供视觉规则、创作提示和项目入口；根据风格不同，还提供工具、可编辑渲染工程或公开展示。'
         qa = [('应该选择哪种风格？', '逐步解释可以从白板讲解开始；材质叙事可考虑艺术拼贴或蜡笔绘本；空间关系适合卫星影像；数据变化可用动态折线图喜剧。先阅读风格指南，再查看样片或交互示意。'),
-              ('如何开始一个新项目？', '克隆仓库后，在仓库根目录运行下方命令。脚本会在仓库之外创建独立项目；请在那里提供主题、受众、语言和画幅，编写新旁白与画面，并将声音、字幕和镜头放在同一时间轴。'),
+              ('如何开始一个新项目？', '在 Agent 中打开已克隆的仓库，直接描述主题、观众、风格、语言和时长。Agent 会创建独立项目、准备环境、制作并检查影片，再交付 MP4 和可编辑工程；尚未克隆时，也可以让 Agent 完成。'),
               ('每种风格都有可直接渲染的影片吗？', '并非如此。白板风格提供已发布样片和可编辑渲染工程，其他条目包含不同程度的起步项目或工具包。公开展示与可复用工程能力是两回事，请核对每种风格的说明。'),
               ('如何核验制作方法和素材来源？', '风格指南链接到对应的 STYLE.md、创作提示和源码历史。公开样片和参考素材应遵守各自的署名与许可；新制作的事实、角色和素材需要单独核验。')]
     else:
         heading = 'How do you make a video with Codex Film Studio?'
         intro = 'Codex Film Studio is a reusable animation and video style library maintained by LeoGuoLabs. Each style provides visual rules, an authoring prompt and a project entry point, with tools, editable rendering code or public showcases depending on the package.'
         qa = [('Which style should I choose?', 'Start with Whiteboard Explainer for a step-by-step argument, Art Collage or Crayon Picture Book for material-led storytelling, Satellite Briefing for spatial relationships, or Animated Line Chart Comedy for changing data. Read the guide, then inspect a sample or interactive study.'),
-              ('How do I start a new project?', 'Clone the repository and run the command below from its root. The script creates an independent project outside the library. Supply the subject, audience, language and aspect ratio there, write new narration and pictures, and coordinate sound, captions and camera on one timeline.'),
+              ('How do I start a new project?', 'Open the cloned repository in your coding Agent and describe the subject, audience, style, language and duration. The Agent creates the project, prepares the environment, produces and reviews the film, then delivers an MP4 and editable project. You can also ask it to clone the studio first.'),
               ('Does every style include a ready-to-render film?', 'No. Whiteboard includes released samples and an editable renderer; the other packages provide different combinations of starters and tools. A public showcase and a reusable scene renderer are separate capabilities. Check each style guide before planning production.'),
               ('Where can I verify the methods and sources?', 'Each guide links to its STYLE.md, authoring prompt and source history. Public samples and reference assets retain their own attribution and licensing requirements. Verify facts, characters and assets separately for each new production.')]
-    return f'''<section class="search-answers section-wrap" aria-labelledby="answers-title"><p class="eyebrow">CODEX FILM STUDIO / FIELD GUIDE</p><h2 id="answers-title">{heading}</h2><p class="search-intro">{intro}</p><div class="answer-grid">{''.join(f'<article><h3>{q}</h3><p>{a}</p></article>' for q, a in qa)}</div><pre><code>git clone {REPO}.git
-cd codex-film-studio
-python3 scripts/new_film.py my-film --style whiteboard</code></pre>{credit(lang,date,REPO+'/commits/main/styles.json')}</section>'''
+    return f'''<section class="search-answers section-wrap" aria-labelledby="answers-title"><p class="eyebrow">CODEX FILM STUDIO / FIELD GUIDE</p><h2 id="answers-title">{heading}</h2><p class="search-intro">{intro}</p><div class="answer-grid">{''.join(f'<article><h3>{q}</h3><p>{a}</p></article>' for q, a in qa)}</div>{credit(lang,date,REPO+'/commits/main/styles.json')}</section>'''
 
 
 def static_cards(catalog, base, lang):
@@ -177,6 +175,16 @@ def static_cards(catalog, base, lang):
 def translate_home(source, strings):
     pattern = r'<([a-z][a-z0-9]*)([^>]*\bdata-i18n="([^"]+)"[^>]*)>.*?</\1>'
     return re.sub(pattern, lambda m: f'<{m[1]}{m[2]}>{strings[m[3]]}</{m[1]}>', source, flags=re.S)
+
+
+def agent_entry(style, lang):
+    if lang == 'zh':
+        intro = '在 Agent 中打开已克隆的仓库，复制提示词并替换方括号内容。'
+        prompt = f'请用 {style} 风格，为[观众]制作关于[主题]的[时长]视频，使用[语言]配音和字幕。请你自动创建项目、准备环境、完成制作与检查，交付 MP4 和可编辑工程。'
+    else:
+        intro = 'Open the cloned repository in your coding Agent. Copy the prompt and replace the brackets.'
+        prompt = f'Use the {style} style to make a [duration] film about [subject] for [audience], with narration and captions in [language]. Handle project setup, production and review, then deliver an MP4 and editable project.'
+    return f'<film-agent-start style-id="{escape(style, quote=True)}"><p>{intro}</p><blockquote>{escape(prompt)}</blockquote></film-agent-start>'
 
 
 def render_guide(style, content, catalog, base, prefix, lang, date, revision):
@@ -196,12 +204,12 @@ def render_guide(style, content, catalog, base, prefix, lang, date, revision):
     if not showcases: showcases = '<li>' + ('暂无公开影片，请从风格指南和工具开始。' if zh else 'No public film is registered; start with the guide and tools.') + '</li>'
     method_links = [(style['guide'],'视觉规则' if zh else 'Visual rules'), (style['prompt'],'创作提示' if zh else 'Authoring prompt'), ('methods/WORKFLOW.md','制作流程' if zh else 'Production workflow'), ('methods/REVIEW.md','审阅方法' if zh else 'Review method')]
     related = ''.join(f'<a href="{base + route(other,lang)}">{escape(loc(other,"name",lang))} →</a>' for other in catalog['styles'] if other['id'] != style['id'])
-    page = f'''<!doctype html><html lang="{'zh-CN' if zh else 'en'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101816"><link rel="icon" href="{prefix}catalog/mark.svg{version}"><link rel="stylesheet" href="{prefix}catalog/studio.css{version}"></head><body class="guide-page">
+    page = f'''<!doctype html><html lang="{'zh-CN' if zh else 'en'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101816"><link rel="icon" href="{prefix}catalog/mark.svg{version}"><link rel="stylesheet" href="{prefix}catalog/studio.css{version}"><script type="module" src="{prefix}catalog/agent-start.mjs{version}"></script></head><body class="guide-page">
 <a class="skip-link" href="#guide">{'跳转到正文' if zh else 'Skip to content'}</a>
 <header class="guide-header section-wrap"><a class="footer-brand" href="{home}">CODEX FILM STUDIO<span class="live-dot"></span></a><nav aria-label="Language"><a href="{alternatives['en']}" lang="en" hreflang="en" {'aria-current="page"' if not zh else ''}>EN</a><a href="{alternatives['zh-CN']}" lang="zh-CN" hreflang="zh-CN" {'aria-current="page"' if zh else ''}>中文</a></nav></header>
 <main id="guide" class="section-wrap"><nav class="breadcrumbs" aria-label="{'面包屑导航' if zh else 'Breadcrumb'}"><a href="{home}">{'风格片库' if zh else 'Style library'}</a><span aria-hidden="true"> / </span><span>{escape(name)}</span></nav>
 <section class="guide-hero"><div><p class="eyebrow">STYLE / {escape(style['id'].upper())}</p><h1>{escape(name)}</h1><p class="guide-description">{escape(desc)}</p>{credit(lang,date,REPO+'/commits/main/'+style['guide'])}</div><figure><img src="{base+preview}" alt="{escape(name)}" fetchpriority="high"><figcaption>{('样片剧照' if zh else 'Film frame') if style.get('preview_kind') == 'frame' else ('风格示意' if zh else 'Style study')}</figcaption></figure></section>
-<div class="guide-body"><article><section><h2>{'什么时候适合使用？' if zh else 'When should you use this style?'}</h2><p>{escape(content['use'])}</p></section><section><h2>{'如何组织画面与运动？' if zh else 'How do you build the picture and motion?'}</h2><p>{escape(content['method'])}</p><p><a href="{source_url}">{'阅读完整视觉规则' if zh else 'Read the full visual rules'} ↗</a></p></section><section><h2>{'交付前需要检查什么？' if zh else 'What should you check before delivery?'}</h2><p>{escape(content['check'])}</p></section><section><h2>{'如何开始创作？' if zh else 'How do you start a production?'}</h2><p>{'克隆仓库后，在仓库根目录运行命令，创建独立制作项目。' if zh else 'After cloning the repository, run this command from its root to create an independent production.'}</p><pre><code>python3 scripts/new_film.py my-film --style {style['id']}</code></pre><p>{'默认输出到 ../codex-film-studio-projects/my-film。请在新项目中编写主题、旁白、场景和声音。' if zh else 'The default output is ../codex-film-studio-projects/my-film. Author the subject, narration, scenes and sound in that new project.'}</p></section></article>
+<div class="guide-body"><article><section><h2>{'什么时候适合使用？' if zh else 'When should you use this style?'}</h2><p>{escape(content['use'])}</p></section><section><h2>{'如何组织画面与运动？' if zh else 'How do you build the picture and motion?'}</h2><p>{escape(content['method'])}</p><p><a href="{source_url}">{'阅读完整视觉规则' if zh else 'Read the full visual rules'} ↗</a></p></section><section><h2>{'交付前需要检查什么？' if zh else 'What should you check before delivery?'}</h2><p>{escape(content['check'])}</p></section><section><h2>{'如何开始创作？' if zh else 'How do you start a production?'}</h2>{agent_entry(style['id'], lang)}</section></article>
 <aside><section><h2>{'可复用内容' if zh else 'What is included?'}</h2><p>{escape(loc(style,'status_note',lang))}</p></section><section><h2>{'观看与探索' if zh else 'Watch & explore'}</h2><ul>{showcases}</ul></section><section><h2>{'方法与依据' if zh else 'Methods & sources'}</h2><ul>{''.join(f'<li><a href="{REPO}/blob/main/{p}">{label} ↗</a></li>' for p,label in method_links)}</ul></section></aside></div>
 <section class="related-styles"><h2>{'继续探索风格' if zh else 'Explore the collection'}</h2><div>{related}</div></section></main><footer class="footer section-wrap"><a href="{home}">← {'返回风格片库' if zh else 'Back to the style library'}</a><a href="{REPO}">{'源码与文档' if zh else 'Source & documentation'} ↗</a><a href="{base}sitemap.xml">{'站点地图' if zh else 'Sitemap'}</a></footer></body></html>'''
     graph = schema(base,url,title,desc,lang,date)

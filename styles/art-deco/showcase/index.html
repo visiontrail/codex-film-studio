@@ -11,6 +11,7 @@
   <script type="module" src="showcase.mjs"></script>
   <link rel="stylesheet" href="../../../catalog/film-screening.css">
   <script type="module" src="../../../catalog/film-screening.mjs"></script>
+<script type="module" src="../../../catalog/agent-start.mjs"></script>
 </head>
 <body>
   <a class="skip" href="#study" data-i18n="skip">Skip to the style study</a>
@@ -52,8 +53,7 @@
     <section class="make" id="make" aria-labelledby="make-heading">
       <div class="section-heading"><div><p class="eyebrow" data-i18n="makeEyebrow">03 / YOUR TURN TO DIRECT</p><h2 id="make-heading" data-i18n="makeTitle">A new story.<br>A golden thread.</h2></div><p data-i18n="makeIntro">Start with the materials and figure toolkit. Bring a subject, an audience and a running time; build your own scenes, voice and score.</p></div>
       <a class="repository" href="https://github.com/visiontrail/codex-film-studio"><span><small data-i18n="repoLabel">THE PROJECT ON GITHUB</small><strong>codex-film-studio</strong></span><span aria-hidden="true">↗</span></a>
-      <ol class="steps"><li><span>01</span><h3 data-i18n="step1Title">Open the studio.</h3><p data-i18n="step1">Clone the library, then open the folder in Codex.</p><pre><code>git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio</code></pre></li><li><span>02</span><h3 data-i18n="step2Title">Give the film its own space.</h3><p data-i18n="step2">Create an independent project outside the library.</p><pre><code id="command">python3 scripts/new_film.py my-film --style art-deco</code></pre><button class="copy-command" type="button" id="copy" data-i18n="copy">Copy command</button><span class="copy-status" id="copy-status" role="status"></span></li><li><span>03</span><h3 data-i18n="step3Title">Direct the details.</h3><p data-i18n="step3">Open the new project. Develop the storyboard, stage the physical action, and refine picture and sound together.</p><a href="https://github.com/visiontrail/codex-film-studio/blob/main/styles/art-deco/STYLE.md" data-i18n="guide">Read the style guide ↗</a></li></ol>
+      <film-agent-start style-id="art-deco"><p>Open this repository in your coding Agent and describe your film. / 在 Agent 中打开仓库，描述你想制作的影片。</p><blockquote>Use the art-deco style to make a film about [subject]. Handle project setup, production and review, then deliver the MP4 and editable project. / 请用 art-deco 风格制作关于[主题]的视频，自动完成项目创建、制作与检查，交付 MP4 和可编辑工程。</blockquote></film-agent-start>
       <div class="prompt"><p class="eyebrow" data-i18n="promptEyebrow">START A CONVERSATION IN CODEX</p><blockquote data-i18n="prompt">Create a three-minute vertical Art Deco film about a subject I provide. Use black lacquer, graded brass, warm faceted figures and stepped architecture. Build clear physical actions and spatial camera moves, with original jazz and English narration. Keep image, voice and captions on one timeline, then inspect and refine the result.</blockquote><a href="https://github.com/visiontrail/codex-film-studio/blob/main/styles/art-deco/prompt.txt" data-i18n="fullPrompt">Open the reusable prompt ↗</a></div>
       <p class="package-note" data-i18n="packageNote">Included: drawing materials, articulated figures, camera helpers and a blank film contract. Each new film needs its own scene renderer, story and soundtrack. Watch the finished films above, then explore the interactive study.</p>
     </section>

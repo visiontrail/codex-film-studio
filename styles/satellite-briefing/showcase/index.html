@@ -8,6 +8,7 @@
   <title>Singapore · Satellite Briefing — Codex Film Studio</title>
   <link rel="stylesheet" href="showcase.css">
   <script type="module" src="showcase.mjs"></script>
+<script type="module" src="../../../catalog/agent-start.mjs"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#film" data-zh="跳到影片">Skip to the film</a>
@@ -59,9 +60,7 @@
       <div class="section-index mono"><span data-zh="03 / 开始你的简报">03 / YOUR NEXT BRIEFING</span><span>CODEX FILM STUDIO</span></div>
       <div class="section-heading"><h2 id="create-title" data-zh="换一个地方，\n发现新的故事。">Another place.\nAnother story.</h2><p data-zh="从一座城、一段海岸线，或一个值得解释的地理问题开始。沿用同一套视觉语言，为你的主题重新组织镜头、叙事与声音。">Begin with a city, a coastline, or a geographic question worth explaining. Use the same visual language to build a new sequence of images, narration and sound.</p></div>
       <a class="repository-link" href="https://github.com/visiontrail/codex-film-studio" target="_blank" rel="noopener noreferrer"><span><small class="mono" data-zh="在 GITHUB 获取项目">GET THE PROJECT ON GITHUB</small><strong>codex-film-studio</strong><span data-zh="风格规范、地理工具与创作起步文件。">Style guides, geographic tools and a starting point for your film.</span></span><span class="repo-arrow" aria-hidden="true">↗</span></a>
-      <ol class="start-steps"><li><span class="step-num">01</span><h3 data-zh="获取项目">Get the project</h3><p data-zh="克隆风格库，进入项目文件夹。">Clone the style library and open its folder.</p><pre><code>git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio</code></pre></li><li><span class="step-num">02</span><h3 data-zh="选择卫星简报">Choose the perspective</h3><p data-zh="创建独立的工作目录，然后在 Codex 中打开生成的项目。">Create a separate working folder, then open the generated project in Codex.</p><pre><code>python3 scripts/new_film.py my-film \
-  --style satellite-briefing</code></pre></li><li><span class="step-num">03</span><h3 data-zh="交代你的主题">Bring your story</h3><p data-zh="给出地点、受众、语言和时长。起步包提供规范与工具；镜头与渲染程序需要围绕新主题创作。">Give a place, audience, language and duration. The starter provides rules and tools; scenes and rendering are authored for your subject.</p><a href="../README.md" data-zh="阅读风格指南 ↗">Read the style guide ↗</a></li></ol>
+      <film-agent-start style-id="satellite-briefing"><p>Open this repository in your coding Agent and describe your film. / 在 Agent 中打开仓库，描述你想制作的影片。</p><blockquote>Use the satellite-briefing style to make a film about [subject]. Handle project setup, production and review, then deliver the MP4 and editable project. / 请用 satellite-briefing 风格制作关于[主题]的视频，自动完成项目创建、制作与检查，交付 MP4 和可编辑工程。</blockquote></film-agent-start>
       <div class="starter-prompt"><div class="prompt-top"><span class="mono" data-zh="发给 CODEX 的第一条简报">YOUR FIRST BRIEF TO CODEX</span><button id="copy-prompt" type="button" data-zh="复制提示词 +">Copy prompt +</button></div><blockquote id="prompt" data-zh="使用 Satellite Briefing 风格，为第一次到访的旅客制作一部两分钟的里斯本介绍。使用有来源的真实卫星影像、地理标注和经过核实的实拍片段。英文旁白、英文字幕，输出 1080p 视频。检查画面、镜头运动和声音，并在交付前修正问题。">Make a two-minute Satellite Briefing film about Lisbon for a first-time visitor. Use sourced satellite imagery, geographic annotations and verified real footage. Deliver a 1080p film with English narration and English captions. Inspect the frames, camera movement and sound, and refine the result before delivery.</blockquote><p id="copy-status" role="status"></p></div>
     </section>
 

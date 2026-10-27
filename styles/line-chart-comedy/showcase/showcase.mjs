@@ -108,7 +108,6 @@ function setLanguage(language){
   render();
 }
 document.querySelectorAll('[data-language]').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));
-$('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#command').textContent);$('#copy-status').textContent=t('copied');}catch{$('#copy-status').textContent=t('copyFailed');const range=document.createRange();range.selectNodeContents($('#command'));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);}});
 let language=new URLSearchParams(location.search).get('lang');
 if(!['en','zh'].includes(language)){try{language=localStorage.getItem('film-studio-language');}catch{}}
 setLanguage(language==='zh'?'zh':'en');

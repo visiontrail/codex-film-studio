@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../../catalog/film-screening.css">
   <script type="module" src="../../../catalog/film-screening.mjs"></script>
   <script type="module" src="showcase.mjs"></script>
+<script type="module" src="../../../catalog/agent-start.mjs"></script>
 </head>
 <body>
   <a class="skip" href="#films" data-i18n="skip">Skip to the films</a>
@@ -47,8 +48,7 @@
     <section class="make" id="make" aria-labelledby="make-title">
       <div class="section-heading"><div><p class="eyebrow" data-i18n="makeEyebrow">02 / MAKE IT YOURS</p><h2 id="make-title" data-i18n="makeTitle">Your place.<br>A new perspective.</h2></div><p data-i18n="makeIntro">Bring a site, a question and a survey. Shape a film around what the data can actually show.</p></div>
       <a class="repository" href="https://github.com/visiontrail/codex-film-studio"><span><small data-i18n="repoLabel">GET THE PROJECT ON GITHUB</small><strong>codex-film-studio</strong></span><span aria-hidden="true">↗</span></a>
-      <ol class="steps"><li><span>01</span><h3 data-i18n="step1Title">Open the studio.</h3><p data-i18n="step1">Clone the library and open the folder in Codex.</p><pre><code>git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio</code></pre></li><li><span>02</span><h3 data-i18n="step2Title">Create your project.</h3><p data-i18n="step2">Give the film its own working folder outside the library.</p><pre><code id="command">python3 scripts/new_film.py my-film --style lidar-survey</code></pre><button class="copy" id="copy" type="button" data-i18n="copy">Copy command</button><span id="copy-status" role="status"></span></li><li><span>03</span><h3 data-i18n="step3Title">Bring the evidence.</h3><p data-i18n="step3">Open the new folder. Add your brief and dataset, verify its provenance, then direct picture, voice and sound.</p><a href="../STYLE.md" data-i18n="guide">Read the style guide ↗</a></li></ol>
+      <film-agent-start style-id="lidar-survey"><p>Open this repository in your coding Agent and describe your film. / 在 Agent 中打开仓库，描述你想制作的影片。</p><blockquote>Use the lidar-survey style to make a film about [subject]. Handle project setup, production and review, then deliver the MP4 and editable project. / 请用 lidar-survey 风格制作关于[主题]的视频，自动完成项目创建、制作与检查，交付 MP4 和可编辑工程。</blockquote></film-agent-start>
       <div class="prompt"><p class="eyebrow" data-i18n="promptEyebrow">TRY THIS IN CODEX</p><blockquote data-i18n="prompt">Make a LiDAR Survey film about a place and survey dataset I provide. Use measured points, a deliberate canopy peel, a raking-lit surface and one clear section. Explain what the evidence supports. Keep camera, narration and sound on one timeline, then inspect and refine the result.</blockquote><a href="../prompt.txt" data-i18n="fullPrompt">Open the reusable prompt ↗</a></div>
       <p class="package-note" data-i18n="packageNote">Included: a style guide, a blank survey-and-timeline contract and shared production methods. Each new film needs its own dataset, renderer and soundtrack.</p>
     </section>

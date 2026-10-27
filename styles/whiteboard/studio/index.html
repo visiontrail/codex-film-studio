@@ -7,6 +7,7 @@
   <title>Codex Film Studio — Whiteboard Explainer</title>
   <link rel="stylesheet" href="showcase.css?v=edition-options-v1">
   <script type="module" src="showcase.mjs?v=edition-options-v1"></script>
+<script type="module" src="../../../catalog/agent-start.mjs"></script>
 </head>
 <body>
   <header class="masthead">
@@ -50,12 +51,7 @@
       <a class="repository-link" href="https://github.com/visiontrail/codex-film-studio" target="_blank" rel="noopener noreferrer">
         <span><small data-i18n="repoEyebrow">GET THE PROJECT ON GITHUB</small><strong>codex-film-studio</strong><span data-i18n="repoDescription">Style guides, editable examples and everything to get started.</span></span>
       </a>
-      <ol class="start-steps">
-        <li><span class="step-number">01</span><h3 data-i18n="step1Title">Clone the project.</h3><p data-i18n="step1Body">Download the repository to your computer.</p><pre><code>git clone https://github.com/visiontrail/codex-film-studio.git
-cd codex-film-studio</code></pre></li>
-        <li><span class="step-number">02</span><h3 data-i18n="step2Title">Open it in Codex.</h3><p data-i18n="step2Body">Choose the cloned folder as your project. Ask Codex to use the whiteboard style.</p><a href="https://github.com/visiontrail/codex-film-studio#make-a-film-with-codex" target="_blank" rel="noopener noreferrer" data-i18n="quickStart">Read the quick start ↗</a></li>
-        <li><span class="step-number">03</span><h3 data-i18n="step3Title">Bring your story.</h3><p data-i18n="step3Body">Give Codex a topic, audience and running time. It can adapt the drawings, narration and film to your idea.</p><a href="https://github.com/visiontrail/codex-film-studio/blob/main/README.zh-CN.md" target="_blank" rel="noopener noreferrer" data-i18n="chineseGuide">中文使用说明 ↗</a></li>
-      </ol>
+      <film-agent-start style-id="whiteboard"><p>Open this repository in your coding Agent and describe your film. / 在 Agent 中打开仓库，描述你想制作的影片。</p><blockquote>Use the whiteboard style to make a film about [subject]. Handle project setup, production and review, then deliver the MP4 and editable project. / 请用 whiteboard 风格制作关于[主题]的视频，自动完成项目创建、制作与检查，交付 MP4 和可编辑工程。</blockquote></film-agent-start>
       <div class="starter-prompt"><span class="eyebrow" data-i18n="promptEyebrow">TRY THIS IN CODEX</span><blockquote data-i18n="prompt">Make a three-minute whiteboard film about how solar panels work. Draw people and objects when they help explain an idea. Use English narration and deliver a 1080p video. Inspect and refine the result before showing me.</blockquote><p data-i18n="promptNote">To recreate this film first, ask Codex to follow the sample rebuild instructions in the README. The sample includes its recorded narration.</p></div>
     </section>
 
