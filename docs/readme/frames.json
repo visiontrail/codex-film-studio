@@ -137,10 +137,10 @@
     },
     {
       "style": "newsreel",
-      "source_video": "https://github.com/visiontrail/codex-film-studio/releases/download/newsreel-double-feature-v2/subway.mp4",
-      "source_sha256": "2395e8b11ad92db8003604ff808c68b45acb2392753453214187df769064eff2",
-      "title": "Under the City · Newsreel fidelity-v2",
-      "title_zh": "城市之下 · 复古新闻片修订版",
+      "source_video": "https://github.com/visiontrail/codex-film-studio/releases/download/newsreel-english-v3/subway.mp4",
+      "source_sha256": "fe0c25fc2891ad365309f57cda9388c7a60b7670de8a19e8abeb6863dd4ca270",
+      "title": "Under the City · Newsreel English edition v3",
+      "title_zh": "城市之下 · 复古新闻片英文版 V3",
       "seconds": 54.791666666666664,
       "frame": 1315,
       "fps": "24",
@@ -149,7 +149,7 @@
         720
       ],
       "image": "styles/newsreel/showcase/preview.jpg",
-      "image_sha256": "338301b50b40613fa7a79867a7f9a0e1873432d4cbd8efb64d929a125d18b6b0",
+      "image_sha256": "8f3255726ad8b71fd71510e4ebcbdc9dfae5d85dc120ba81bee1e2e08714ed58",
       "treatment": "Actual decoded web-film frame, full composition retained; no text or decoration added."
     }
   ]

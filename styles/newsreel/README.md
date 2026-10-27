@@ -10,7 +10,7 @@ Status: **starter-ready**. The reusable package contains blank inputs and shared
 python3 scripts/new_film.py my-film --style newsreel
 ```
 
-The independent page contains two complete 720p web films, chapters, bilingual transcripts, a silent interactive effect study and a reusable creative prompt. Production-specific media, titles and narration live in a checksum-pinned Release bundle, not in the starter. The 1080p masters and detailed production reviews remain local.
+The independent page contains two complete English-language 720p web films, chapters, bilingual transcripts, a silent interactive effect study and a reusable creative prompt. Production-specific media, titles and narration live in a checksum-pinned Release bundle, not in the starter. The 1080p masters and detailed production reviews remain local.
 
 The complete Newsreel MP4s stream directly from the pinned GitHub Release;
 posters, captions, chapters and credits are installed from its verified small

@@ -121,6 +121,6 @@ These style-study previews link to the independent LiDAR Survey page in both
 README galleries and the public collection. No upstream film frames are used.
 
 Newsreel's preview is an actual frame (1315) from the 720p web edition of
-*Under the City*, fidelity-v2, retaining the full composition without decoration.
+*Under the City*, English edition v3, retaining the full composition without decoration.
 Its source and image hashes are recorded in `frames.json`. The page credits
 LemoLab's reference and the new films' archival sources separately.

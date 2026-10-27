@@ -336,8 +336,9 @@ within budget without reducing the resolution of detailed imagery.
 
 Newsreel has a bilingual standalone page at `styles/newsreel/showcase/index.html`.
 A newspaper masthead and projection-booth player lead with two complete 180-second
-720p web films. Programme selection, six chapters per film and bilingual
-transcripts come from the checksum-pinned `newsreel-double-feature-v2` Release.
+English-language 720p web films. Programme selection, six chapters per film and bilingual
+transcripts come from the checksum-pinned `newsreel-english-v3` Release.
+The films have English narration, titles, map labels, credits and on-screen captions; the page navigation and transcripts remain bilingual.
 The page includes a paused-by-default Canvas study of spinning headlines, nine
 portrait cards, left-spine page turns and an iris close; playback, scrubbing,
 effect selection and film-texture controls work without production assets.

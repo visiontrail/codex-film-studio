@@ -9,7 +9,7 @@ A period newsreel made from archival pictures, printed headlines, paper montages
 - A nine-card montage uses portrait cards in a 5 + 4 arrangement. Deal them in sequence, then enlarge the first card into the flipbook without a position jump. The studied rhythm is 2.7 seconds for the deal and 2.1 seconds for the flipbook; adapt only with a deliberate timing decision.
 - Turn documents around the left spine with the incoming sheet underneath. Preserve occlusion and shadow through the edge-on frame.
 - Use iris, blinds, clock wipes, split views and freeze-frame pencil marks when they explain a change. Do not use every transition indiscriminately.
-- Pair display lettering with condensed subtitles. Leave a dark lower gradient and safe space for both language lines. Check the actual font's glyph coverage.
+- Pair display lettering with condensed subtitles. Leave a dark lower gradient and safe space for the requested subtitle language and line count. Check the actual font's glyph coverage.
 
 ## Sources, people and sound
 
