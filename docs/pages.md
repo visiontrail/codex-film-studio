@@ -13,7 +13,7 @@ changing local source alone does not publish it.
 
 `index.html` and `catalog/` contain the homepage. Its streaming-library layout uses
 forest black, warm white and coral, an original material-study hero, a searchable
-style collection, a screening room and an authoring path. English and Chinese
+style collection and an authoring path. English and Chinese
 copy share the same layout; `?lang=en` / `?lang=zh` overrides the saved language.
 Motion respects `prefers-reduced-motion`. No framework, CDN, remote font or
 third-party script is needed.
@@ -49,7 +49,7 @@ archive and an explicit file list; the builder verifies it before including medi
 in Pages. No production-specific content is copied into new-film starters or
 methods. `landing.page` and `landing.assets` allow the generic page dependencies.
 Its README and collection preview cards use actual film frames. The registry’s
-`preview_showcase` routes README images, screening-shelf previews and the image
+`preview_showcase` routes README images and the image
 inside its detail dialog to the `screening` player anchor. The Collection card
 opens the dialog, and its separate page link opens the complete style page.
 

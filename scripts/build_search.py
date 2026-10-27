@@ -233,7 +233,7 @@ def build_search(output, catalog, origin=DEFAULT_ORIGIN, base_path='/codex-film-
         page = page.replace('<html lang="en">', f'<html lang="{"zh-CN" if lang == "zh" else "en"}" data-site-root="{prefix}" data-page-language="{lang}">')
         # Root-based asset paths also work at /zh/ and at custom-domain deployments.
         page = re.sub(r'(href|src)="((?:catalog/|styles/)[^"]*)"', lambda m:f'{m[1]}="{prefix}{m[2]}"', page)
-        page = re.sub(r'href="(?:\./|#(library|screening|create))"', lambda m:'href="'+url+('#'+m[1] if m[1] else '')+'"', page)
+        page = re.sub(r'href="(?:\./|#(library|create))"', lambda m:'href="'+url+('#'+m[1] if m[1] else '')+'"', page)
         page = re.sub(r'<button type="button" data-language="(en|zh)"[^>]*>(.*?)</button>', lambda m:f'<a data-language="{m[1]}" href="{base + ("zh/" if m[1]=="zh" else "")}" lang="{"zh-CN" if m[1]=="zh" else "en"}" hreflang="{"zh-CN" if m[1]=="zh" else "en"}"'+(' aria-current="page"' if m[1]==lang else '')+f'>{m[2]}</a>',page)
         page = re.sub(r'(<div class="style-grid" id="style-grid"[^>]*>).*?(</div>)', lambda m:m[1]+static_cards(catalog,base,lang)+m[2],page,flags=re.S)
         page = re.sub(r'(<span id="collection-range">).*?(</span>)',rf'\g<1>01 — {len(catalog["styles"]):02}\2',page)

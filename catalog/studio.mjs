@@ -27,18 +27,16 @@ const t = key => copy[state.language][key] ?? copy.en[key] ?? key;
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const localized = (entry, field) => state.language === 'zh' ? entry[`${field}_zh`] ?? entry[field] : entry[field];
 const repoLink = path => `${REPO}/blob/main/${path.split('/').map(encodeURIComponent).join('/')}`;
-const pageTitle = page => localized(page,'title');
 const isAvailable = page => page.access === 'release' || state.availability.pages[page.id] === true;
 const stylePage = entry => entry.landing ?? entry.showcases?.find(page => page.access === 'release') ?? entry.showcases?.[0];
 const stylePageLabel = page => t(page.access === 'local' ? 'localStylePage' : 'stylePage');
-function pageURL(page, edition) {
+function pageURL(page) {
   const usePublicSample = page.access === 'release' && state.availability.mode === 'local' && state.availability.pages[page.id] === false;
   const base = page.access === 'local' && state.availability.mode !== 'local' ? LOCAL_SITE
     : usePublicSample ? SITE : SITE_ROOT;
   const url = new URL(page.page,base);
   url.searchParams.set('lang', state.language);
   if (assetRevision) url.searchParams.set('v', assetRevision);
-  if (edition) url.searchParams.set('edition', edition);
   if (page.anchor) url.hash = page.anchor;
   return url.href;
 }
@@ -76,11 +74,10 @@ function setLanguage(language) {
   const search = $('#style-search');
   search.placeholder = t('search'); search.setAttribute('aria-label',t('search'));
   $('.filters').setAttribute('aria-label',t('filterLabel'));
-  $('#shelf-prev').setAttribute('aria-label',t('previous')); $('#shelf-next').setAttribute('aria-label',t('next'));
   $('.dialog-close').setAttribute('aria-label',t('close'));
   try { localStorage.setItem('film-studio-language',language); } catch { /* Private browsing can disable storage. */ }
   if (!PAGE_LANGUAGE) { const url = new URL(location.href); url.searchParams.set('lang',language); history.replaceState(null,'',url); }
-  if (state.catalog) { renderStyles(); renderScreening(); if (state.detail) renderDetail(); }
+  if (state.catalog) { renderStyles(); if (state.detail) renderDetail(); }
 }
 function guideURL(entry) {
   return new URL(`${state.language === 'zh' ? 'zh/' : ''}styles/${entry.id}/`, SITE_ROOT).href;
@@ -105,20 +102,6 @@ function renderStyles() {
     return `<article class="style-card" style="--delay:${i*.035}s">${previewAction(entry,`<div class="card-art">${preview(entry)}<span class="card-index">${String(state.catalog.styles.indexOf(entry)+1).padStart(2,'0')}</span><span class="preview-kind">${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-heading"><h3>${escape(localized(entry,'name'))}</h3><span aria-hidden="true">↗</span></div><p class="card-description">${escape(localized(entry,'description'))}</p>`,'card-open',true)}<div class="card-meta"><span>${escape(localized(state.catalog.statuses[entry.status],'name'))}</span><span class="${entry.capabilities.published_demo ? 'published' : ''}">${t(filmLabel)}</span></div>${primary ? `<a class="card-page" href="${escape(pageURL(primary))}">${stylePageLabel(primary)}<span aria-hidden="true">↗</span></a>` : ''}${guideLink(entry)}</article>`;
   }).join('') || `<p class="empty-state">${t('noResults')}</p>`;
 }
-function renderScreening() {
-  const released = state.catalog.styles.flatMap(s => s.showcases ?? []).find(p => p.access === 'release');
-  if (released) {
-    $('#featured-watch').href = pageURL(released,'short');
-    $('#short-film').href = pageURL(released,'short'); $('#long-film').href = pageURL(released,'long');
-  }
-  const localStyles = state.catalog.styles.filter(s => s.id !== 'whiteboard' && s.showcases?.length);
-  $('#showcase-shelf').innerHTML = localStyles.map(entry => {
-    const page = previewPage(entry) ?? entry.showcases.find(p => p.access === 'release') ?? entry.showcases[0];
-    return `<article class="showcase-card">${previewAction(entry,`<div class="showcase-art">${preview(entry)}<span>${t(page.access === 'release' ? 'publicSample' : isAvailable(page) ? 'available' : 'localOnly')}</span></div><h4>${escape(pageTitle(page))}</h4><p>${escape(localized(entry,'name'))} · ${t(entry.preview_kind === 'frame' ? 'frame' : 'sketch')}</p>`)}</article>`;
-  }).join('');
-  $('#screening-note').innerHTML = state.availability.mode === 'local' ? t('localNote') : t('publicNote');
-  requestAnimationFrame(updateShelfControls);
-}
 function renderDetail() {
   const entry = state.catalog.styles.find(s => s.id === state.detail);
   if (!entry) return;
@@ -134,11 +117,6 @@ function openStyle(id) {
   if (!$('#style-dialog').open) $('#style-dialog').showModal();
 }
 function closeStyle() { $('#style-dialog').close(); }
-function updateShelfControls() {
-  const shelf = $('#showcase-shelf');
-  $('#shelf-prev').disabled = shelf.scrollLeft <= 2;
-  $('#shelf-next').disabled = shelf.scrollLeft + shelf.clientWidth >= shelf.scrollWidth - 2;
-}
 document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click',event => { event.preventDefault(); setLanguage(button.dataset.language); }));
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click',() => {
   state.filter = button.dataset.filter;
@@ -158,10 +136,6 @@ $('#style-dialog').addEventListener('click',event => {
 $('#style-dialog').addEventListener('close',() => {
   state.detail = null; const url = new URL(location.href); url.searchParams.delete('style'); history.replaceState(null,'',url);
 });
-$('#shelf-prev').addEventListener('click',() => $('#showcase-shelf').scrollBy({left:-$('#showcase-shelf').clientWidth*.8,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'}));
-$('#shelf-next').addEventListener('click',() => $('#showcase-shelf').scrollBy({left:$('#showcase-shelf').clientWidth*.8,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'}));
-$('#showcase-shelf').addEventListener('scroll',updateShelfControls,{passive:true});
-window.addEventListener('resize',updateShelfControls);
 const navObserver = new IntersectionObserver(entries => {
   for (const entry of entries) if (entry.isIntersecting) document.querySelectorAll('.main-nav a').forEach(a => a.classList.toggle('active',a.hash === `#${entry.target.id}`));
 },{rootMargin:'0px 0px -60% 0px'});
@@ -182,7 +156,7 @@ try {
   ]);
   state.catalog = catalog; if (availability) state.availability = availability;
   for (const frame of frames?.frames ?? []) state.frames[frame.style] = frame.image;
-  renderStyles(); renderScreening();
+  renderStyles();
   // Keep old root links to a specific edition or chapter working after the homepage moves.
   const params = new URLSearchParams(location.search);
   if (params.has('edition') || location.hash === '#film') {
