@@ -159,8 +159,6 @@
 the original picture and language, with localized labels outside the image.
 <a href="docs/readme/README.md#frame-sources">Frame sources and credits</a>.</sub>
 
-[Compare capabilities and completion details →](styles/README.md)
-
 ## Make your film
 
 ### 1 / Choose a starting point
