@@ -57,7 +57,7 @@ def render_summary(catalog, language):
             f"{counts['starter-ready']} authoring starters · {counts['toolkit-ready']} material toolkit")
 
 
-def render_gallery(catalog, language='en', prefix=''):
+def render_gallery(catalog, language='en', prefix='', include_resource_links=True):
     """GitHub-safe HTML: images and links work without CSS or JavaScript."""
     zh = language == 'zh'
     lines = ['<table>']
@@ -109,9 +109,10 @@ def render_gallery(catalog, language='en', prefix=''):
             f'<sub>{escape(other_name)}</sub>',
             f'<p>{escape(description)}</p>',
             f'<p><b>{escape(state)}</b> · {availability}</p>',
-            f'<sub>{links}</sub>',
-            '</td>', '</tr>',
         ]
+        if include_resource_links:
+            lines.append(f'<sub>{links}</sub>')
+        lines += ['</td>', '</tr>']
     lines += ['</table>']
     return '\n'.join(lines)
 
@@ -194,8 +195,8 @@ def main():
     outputs = {ROOT / 'styles/README.md': render(catalog)}
     for filename, language in [('README.md', 'en'), ('README.zh-CN.md', 'zh')]:
         target = ROOT / filename
-        expected = replace_block(target.read_text(encoding='utf-8'), 'style-summary', render_summary(catalog, language))
-        outputs[target] = replace_block(expected, 'style-atlas', render_gallery(catalog, language))
+        expected = target.read_text(encoding='utf-8')
+        outputs[target] = replace_block(expected, 'style-atlas', render_gallery(catalog, language, include_resource_links=False))
     stale = []
     for target, expected in outputs.items():
         if args.check:

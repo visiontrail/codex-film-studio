@@ -15,7 +15,6 @@
 <p align="center">
   <a href="https://visiontrail.github.io/codex-film-studio/?lang=zh"><strong>打开风格片库 ↗</strong></a> ·
   <a href="#风格手册">浏览风格</a> ·
-  <a href="#放映室">观看样片</a> ·
   <a href="#制作你的影片">开始创作</a> ·
   <a href="CONTRIBUTING.md">参与贡献</a> ·
   <a href="README.md">English</a>
@@ -29,22 +28,6 @@
 
 ## 风格手册
 
-<!-- style-summary:start -->
-
-**12 种风格** · 1 种完整样片工程 · 8 种创作起步包 · 3 种材质工具包
-
-<!-- style-summary:end -->
-
-从笔触、纸张到卡通表演和地理镜头，在这里比较每一种风格。
-点击独立风格页或影片预览，也可以直接打开提示词与创作工程。
-已有播放器与审阅页面的入口均列在下方。**本地页面**链接使用
-`http://127.0.0.1:8249/`：请先在仓库根目录运行
-`python3 scripts/serve_styles.py --port 8249`，并保留对应制作项目。
-详见[本地启动说明](docs/pages.md#local-style-catalog)。
-
-蜡笔绘本、50 年代平涂卡通、卫星影像／地理简报、科幻情景喜剧卡通的
-9 个播放器与审阅入口均提供线上和本地版本。线上使用网络预览素材，本地保留原片。
-
 <!-- style-atlas:start -->
 
 <table>
@@ -56,7 +39,6 @@
 <sub>Whiteboard Explainer</sub>
 <p>一块持续保留内容的白板，用手写文字、移动马克笔和线条人物逐步解释想法。</p>
 <p><b>已发布样片</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh">独立风格页</a> · <a href="styles/whiteboard/STYLE.md">风格说明</a> · <a href="styles/whiteboard/prompt.txt">提示词</a> · <a href="styles/whiteboard/studio">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -67,7 +49,6 @@
 <sub>Art Collage</sub>
 <p>纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh#film">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh#film">艺术拼贴 · 完整影片</a> · <a href="styles/art-collage/STYLE.md">风格说明</a> · <a href="styles/art-collage/prompt.txt">提示词</a> · <a href="styles/art-collage/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -78,7 +59,6 @@
 <sub>Crayon Picture Book</sub>
 <p>蜡质笔触与暖纸纹理，逐笔显现的绘画配合真实的绘本翻页。</p>
 <p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=zh">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/comparison.html?lang=zh">逐帧对照</a> · <a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/crayon-book/STYLE.md">风格说明</a> · <a href="styles/crayon-book/prompt.txt">提示词</a> · <a href="styles/crayon-book/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -89,7 +69,6 @@
 <sub>Mid-century Cartoon</sub>
 <p>柔和套色、微微错位的墨线与停格姿态，配合清楚的教学表演和爵士节奏。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=zh">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/long.html?lang=zh">长片</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/motion.html?lang=zh">长片运动审阅</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/midcentury-cartoon/STYLE.md">风格说明</a> · <a href="styles/midcentury-cartoon/prompt.txt">提示词</a> · <a href="styles/midcentury-cartoon/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -100,7 +79,6 @@
 <sub>Satellite Briefing</sub>
 <p>以地理镜头连接真实卫星影像，用克制的标注解释位置、尺度与空间关系。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=zh">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/composition.html?lang=zh">实时构图</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/comparison.html?lang=zh">逐帧对照</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/satellite-briefing/STYLE.md">风格说明</a> · <a href="styles/satellite-briefing/prompt.txt">提示词</a> · <a href="styles/satellite-briefing/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -111,7 +89,6 @@
 <sub>Sci-Fi Sitcom Toon</sub>
 <p>粗墨线、平涂阴影与反差表演，用反应镜头和空间变化组织喜剧节奏。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=zh">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=zh">独立风格页</a> · <a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=zh">本地预览</a> · <a href="styles/scifi-sitcom/STYLE.md">风格说明</a> · <a href="styles/scifi-sitcom/prompt.txt">提示词</a> · <a href="styles/scifi-sitcom/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -122,7 +99,6 @@
 <sub>Microgame Frenzy</sub>
 <p>命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。</p>
 <p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/microgame/STYLE.md">风格说明</a> · <a href="styles/microgame/prompt.txt">提示词</a> · <a href="styles/microgame/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -133,7 +109,6 @@
 <sub>Art Deco</sub>
 <p>黑漆、渐变黄铜、切面人物与具有空间感的机械动效。</p>
 <p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/art-deco/STYLE.md">风格说明</a> · <a href="styles/art-deco/prompt.txt">提示词</a> · <a href="styles/art-deco/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -144,7 +119,6 @@
 <sub>Caption News</sub>
 <p>大字号字幕、黄色重点、账本式图表与有节奏的入场动效。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh#screening">完整影片预览</a> · <a href="styles/caption-news/STYLE.md">风格说明</a> · <a href="styles/caption-news/prompt.txt">提示词</a> · <a href="styles/caption-news/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -155,7 +129,6 @@
 <sub>Animated Line Chart Comedy</sub>
 <p>克制的图表界面，以生长折线、端点角色、事件卡片与漫画动作讲述数据变化。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/line-chart-comedy/STYLE.md">风格说明</a> · <a href="styles/line-chart-comedy/prompt.txt">提示词</a> · <a href="styles/line-chart-comedy/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -166,7 +139,6 @@
 <sub>LiDAR Survey</sub>
 <p>以连续空间镜头串联测绘点云、树冠剥离、侧光地表与细线剖面，让数据逐层显现。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">最终成片</a> · <a href="styles/lidar-survey/STYLE.md">风格说明</a> · <a href="styles/lidar-survey/prompt.txt">提示词</a> · <a href="styles/lidar-survey/starter">创作工程</a></sub>
 </td>
 </tr>
 <tr>
@@ -177,7 +149,6 @@
 <sub>Newsreel</sub>
 <p>档案影像、旋转头条、九张纸卡与旧时播音，让故事从放映室走来。</p>
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh">独立风格页</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh#screening">复古新闻片 · 双片放映</a> · <a href="styles/newsreel/STYLE.md">风格说明</a> · <a href="styles/newsreel/prompt.txt">提示词</a> · <a href="styles/newsreel/starter">创作工程</a></sub>
 </td>
 </tr>
 </table>
@@ -185,24 +156,9 @@
 <!-- style-atlas:end -->
 
 <sub>影片截图与原创风格示意分别标注；截图图版翻译画面外的标题与图注，影片画面保留原语言。
-<a href="docs/readme/README.md#frame-sources">截图来源与署名</a>。
-本地影片与审阅页通过<a href="#打开本地工作室">本地工作室</a>访问。</sub>
+<a href="docs/readme/README.md#frame-sources">截图来源与署名</a>。</sub>
 
 [比较各风格的能力与完成情况 →](styles/README.md)
-
-## 放映室
-
-### Does AI Help You Learn—or Just Finish?
-
-[![已发布白板影片：回答与独立思考](docs/readme/previews/whiteboard.zh.jpg)](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh)
-
-借助 AI 完成任务，是否等于真正掌握？移动的马克笔、手写文字、线条人物和
-具体物体在一块持续保留内容的白板上，逐步展开这个问题。
-
-[**▶ 在线播放 · 字幕与章节**](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh) ·
-[3 分钟 MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
-[12 分钟 MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
-[样片说明](styles/whiteboard/DEMO.md)
 
 ## 制作你的影片
 
@@ -252,15 +208,7 @@ python3 scripts/new_film.py my-film --style midcentury-cartoon
 **Node.js 20+、Python 3.11+、FFmpeg**，额外依赖见所选项目说明；Windows 使用 WSL。
 白板样片的字体与字幕面向英文，中文制作需要重新配置字形和排版。
 
-## 打开本地工作室
-
-```sh
-python3 scripts/serve_styles.py --port 8249
-```
-
-访问 **http://127.0.0.1:8249/**，集中浏览风格包及已有的播放器、实时构图和审阅页。
-本地网页读取 `styles.json` 所登记保留项目里的影片、字体和审阅数据；新克隆会标记
-缺失资源。详见[本地网页说明](docs/pages.md#local-style-catalog)。
+本地浏览：在仓库根目录运行 `python3 scripts/serve_styles.py --port 8249`，并保留对应制作项目；详见[本地网页说明](docs/pages.md#local-style-catalog)。
 
 <details>
 <summary><b>复现已发布的白板样片</b></summary>
@@ -298,11 +246,6 @@ Git 包含源码、字体和乐器采样；影片、配音 WAV 与时间数据�
 
 <details>
 <summary><b>部署公开展示页</b></summary>
-
-[公开风格片库](https://visiontrail.github.io/codex-film-studio/?lang=zh)集中展示全部已注册的视觉
-风格，支持搜索、分类和中英文详情。
-[白板播放器](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=zh)
-提供两个已发布版本，支持字幕与章节。
 
 部署自己的 fork：在 **Settings → Pages → Source** 选择 **GitHub Actions**，
 然后在 Actions 中运行 **Deploy film showcase**。推送到 `main` 也会触发部署。

@@ -15,7 +15,6 @@
 <p align="center">
   <a href="https://visiontrail.github.io/codex-film-studio/?lang=en"><strong>Open the style library ↗</strong></a> ·
   <a href="#the-style-atlas">Explore styles</a> ·
-  <a href="#the-screening-room">Watch a film</a> ·
   <a href="#make-your-film">Start creating</a> ·
   <a href="CONTRIBUTING.md">Contribute</a> ·
   <a href="README.zh-CN.md">简体中文</a>
@@ -29,21 +28,6 @@
 
 ## The style atlas
 
-<!-- style-summary:start -->
-
-**12 styles** · 1 complete demo kit · 8 authoring starters · 3 material toolkit
-
-<!-- style-summary:end -->
-
-Explore different ways to draw, move and tell a story. Open a style page or its
-film preview, or take the prompt and project files into your own production.
-The four Crayon Book, Mid-century Cartoon, Satellite Briefing and Sci-Fi Sitcom
-showcases, including all nine player and review entrances, work online and locally.
-**Local preview** links use
-`http://127.0.0.1:8249/`: first run `python3 scripts/serve_styles.py --port 8249`
-from the repository with the retained projects available. See the
-[local setup guide](docs/pages.md#local-style-catalog).
-
 <!-- style-atlas:start -->
 
 <table>
@@ -55,7 +39,6 @@ from the repository with the retained projects available. See the
 <sub>白板讲解</sub>
 <p>One persistent board, handwritten ideas, moving markers and story-driven line characters.</p>
 <p><b>Published sample</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en">Style page</a> · <a href="styles/whiteboard/STYLE.md">Style guide</a> · <a href="styles/whiteboard/prompt.txt">Prompt</a> · <a href="styles/whiteboard/studio">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -66,7 +49,6 @@ from the repository with the retained projects available. See the
 <sub>艺术拼贴</sub>
 <p>Paper cutouts, layered typography and physical collage motion.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">Art Collage · Full film</a> · <a href="styles/art-collage/STYLE.md">Style guide</a> · <a href="styles/art-collage/prompt.txt">Prompt</a> · <a href="styles/art-collage/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -77,7 +59,6 @@ from the repository with the retained projects available. See the
 <sub>蜡笔绘本</sub>
 <p>Wax pigment, textured paper, hand-drawn reveals and physical book motion.</p>
 <p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=en">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/comparison.html?lang=en">Frame comparison</a> · <a href="http://127.0.0.1:8249/styles/crayon-book/showcase/index.html?lang=en">Local preview</a> · <a href="styles/crayon-book/STYLE.md">Style guide</a> · <a href="styles/crayon-book/prompt.txt">Prompt</a> · <a href="styles/crayon-book/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -88,7 +69,6 @@ from the repository with the retained projects available. See the
 <sub>50 年代平涂卡通</sub>
 <p>Misregistered flat colour, broken ink, held poses and jazz.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=en">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/long.html?lang=en">Long film</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/motion.html?lang=en">Long-film motion review</a> · <a href="http://127.0.0.1:8249/styles/midcentury-cartoon/showcase/index.html?lang=en">Local preview</a> · <a href="styles/midcentury-cartoon/STYLE.md">Style guide</a> · <a href="styles/midcentury-cartoon/prompt.txt">Prompt</a> · <a href="styles/midcentury-cartoon/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -99,7 +79,6 @@ from the repository with the retained projects available. See the
 <sub>卫星影像／地理简报</sub>
 <p>Geographic camera, satellite imagery and measured annotations.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=en">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/composition.html?lang=en">Live composition</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/comparison.html?lang=en">Frame comparison</a> · <a href="http://127.0.0.1:8249/styles/satellite-briefing/showcase/index.html?lang=en">Local preview</a> · <a href="styles/satellite-briefing/STYLE.md">Style guide</a> · <a href="styles/satellite-briefing/prompt.txt">Prompt</a> · <a href="styles/satellite-briefing/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -110,7 +89,6 @@ from the repository with the retained projects available. See the
 <sub>科幻情景喜剧卡通</sub>
 <p>Flat cartoon drawing, contrasting performances and spatial comedy.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=en">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=en">Style page</a> · <a href="http://127.0.0.1:8249/styles/scifi-sitcom/showcase/index.html?lang=en">Local preview</a> · <a href="styles/scifi-sitcom/STYLE.md">Style guide</a> · <a href="styles/scifi-sitcom/prompt.txt">Prompt</a> · <a href="styles/scifi-sitcom/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -121,7 +99,6 @@ from the repository with the retained projects available. See the
 <sub>极速微游戏</sub>
 <p>Rapid command-action-result games with changing materials, lives and accelerating rhythm.</p>
 <p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en#films">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/microgame/STYLE.md">Style guide</a> · <a href="styles/microgame/prompt.txt">Prompt</a> · <a href="styles/microgame/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -132,7 +109,6 @@ from the repository with the retained projects available. See the
 <sub>装饰艺术</sub>
 <p>Black lacquer, graded brass, faceted figures and spatial mechanical motion.</p>
 <p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en#films">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/art-deco/STYLE.md">Style guide</a> · <a href="styles/art-deco/prompt.txt">Prompt</a> · <a href="styles/art-deco/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -143,7 +119,6 @@ from the repository with the retained projects available. See the
 <sub>字幕新闻</sub>
 <p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">Full film preview</a> · <a href="styles/caption-news/STYLE.md">Style guide</a> · <a href="styles/caption-news/prompt.txt">Prompt</a> · <a href="styles/caption-news/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -154,7 +129,6 @@ from the repository with the retained projects available. See the
 <sub>动态折线图喜剧</sub>
 <p>A quiet chart interface with growing lines, expressive endpoint tokens, event cards and comic motion accents.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/line-chart-comedy/STYLE.md">Style guide</a> · <a href="styles/line-chart-comedy/prompt.txt">Prompt</a> · <a href="styles/line-chart-comedy/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -165,7 +139,6 @@ from the repository with the retained projects available. See the
 <sub>点云测绘</sub>
 <p>Measured point clouds, canopy peeling, raking-lit terrain and fine sections, carried by one continuous camera move.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">Finished films</a> · <a href="styles/lidar-survey/STYLE.md">Style guide</a> · <a href="styles/lidar-survey/prompt.txt">Prompt</a> · <a href="styles/lidar-survey/starter">Project files</a></sub>
 </td>
 </tr>
 <tr>
@@ -176,7 +149,6 @@ from the repository with the retained projects available. See the
 <sub>复古新闻片</sub>
 <p>Archival pictures, spinning headlines, nine-card montages and a voice from the projection booth.</p>
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
-<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">Newsreel · Two complete films</a> · <a href="styles/newsreel/STYLE.md">Style guide</a> · <a href="styles/newsreel/prompt.txt">Prompt</a> · <a href="styles/newsreel/starter">Project files</a></sub>
 </td>
 </tr>
 </table>
@@ -185,25 +157,9 @@ from the repository with the retained projects available. See the
 
 <sub>Film frames and original style studies are labelled separately. Film previews retain
 the original picture and language, with localized labels outside the image.
-<a href="docs/readme/README.md#frame-sources">Frame sources and credits</a>.
-Local films and review pages open through the <a href="#open-the-local-studio">local studio</a>.</sub>
+<a href="docs/readme/README.md#frame-sources">Frame sources and credits</a>.</sub>
 
 [Compare capabilities and completion details →](styles/README.md)
-
-## The screening room
-
-### Does AI Help You Learn—or Just Finish?
-
-[![Released whiteboard film: people, a Turkish flag and learning scoreboards](styles/whiteboard/poster.png)](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en)
-
-A whiteboard film about the difference between completing a task with AI and
-understanding it on your own. Moving markers, handwritten ideas and line-drawn
-people build the argument on one continuous board.
-
-[**▶ Watch with subtitles and chapters**](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en) ·
-[3-minute MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-3min.mp4) ·
-[12-minute MP4](https://github.com/visiontrail/codex-film-studio/releases/download/v0.1.0/does-ai-help-you-learn-long.mp4) ·
-[Sample notes](styles/whiteboard/DEMO.md)
 
 ## Make your film
 
@@ -256,16 +212,7 @@ Replaying the released whiteboard sample uses the supplied audio and requires
 no TTS credentials. Requirements: **Node.js 20+, Python 3.11+, FFmpeg**; see the
 selected project for additional dependencies. Use WSL on Windows.
 
-## Open the local studio
-
-```sh
-python3 scripts/serve_styles.py --port 8249
-```
-
-Open **http://127.0.0.1:8249/** to browse all registered styles and their existing
-players, compositions and review pages. Local showcases read media, fonts and
-review data from the retained projects in `styles.json`; a fresh clone marks
-missing resources. See the [local showcase guide](docs/pages.md#local-style-catalog).
+For local browsing, run `python3 scripts/serve_styles.py --port 8249` from the repository root with the relevant production projects available; see the [local showcase guide](docs/pages.md#local-style-catalog).
 
 <details>
 <summary><b>Rebuild the released whiteboard sample</b></summary>
@@ -304,11 +251,6 @@ renders a short picture preview. The speech client requires WSL on Windows.
 
 <details>
 <summary><b>Host the published showcase</b></summary>
-
-The [public style library](https://visiontrail.github.io/codex-film-studio/?lang=en)
-brings all registered visual styles together with search, filters and bilingual details.
-The [whiteboard player](https://visiontrail.github.io/codex-film-studio/styles/whiteboard/studio/index.html?lang=en)
-offers both released editions, with subtitles and chapters.
 
 For a fork, select **Settings → Pages → Source → GitHub Actions**, then run
 **Deploy film showcase** in Actions. Pushing to `main` also triggers deployment.
