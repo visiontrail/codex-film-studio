@@ -155,9 +155,6 @@
 
 <!-- style-atlas:end -->
 
-<sub>影片截图与原创风格示意分别标注；截图图版翻译画面外的标题与图注，影片画面保留原语言。
-<a href="docs/readme/README.md#frame-sources">截图来源与署名</a>。</sub>
-
 ## 制作你的影片
 
 ### 1 / 选择起点
