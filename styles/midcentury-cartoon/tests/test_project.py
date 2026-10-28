@@ -1,4 +1,5 @@
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -30,8 +31,13 @@ class ProjectTests(unittest.TestCase):
                          "tools/frame_review/compare_frames.py", "tools/frame_review/audit_frames.py",
                          "tools/frame_review/compare_decoded_versions.py", "tools/frame_review/ffmpeg_gate.py"]:
                 self.assertTrue((target / file).is_file(), file)
-            for extension in ["*.mp4", "*.wav", "*.ttf", "*.png"]:
+            for extension in ["*.mp4", "*.wav", "*.png"]:
                 self.assertFalse(any(target.rglob(extension)), extension)
+            fonts = json.loads((target / "fonts/manifest.json").read_text())
+            self.assertTrue(fonts)
+            for font in fonts:
+                self.assertEqual(hashlib.sha256((target / font["file"]).read_bytes()).hexdigest(), font["sha256"])
+                self.assertTrue((target / font["license"]).is_file())
             # Imported helper tests run from the generated directory with no npm install.
             result = subprocess.run(["node", "--test", "tests/helpers.test.mjs"], cwd=target,
                                     text=True, capture_output=True)

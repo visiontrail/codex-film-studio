@@ -1,0 +1,20 @@
+[
+  {
+    "file": "fonts/JosefinSans.ttf",
+    "family": "Josefin Sans",
+    "license": "fonts/OFL-josefinsans.txt",
+    "sha256": "9255abdb5f393bc51e101abbd07a716a977fd3e15472b1b84b260f426a342bfd"
+  },
+  {
+    "file": "fonts/Limelight-Regular.ttf",
+    "family": "Limelight",
+    "license": "fonts/OFL-limelight.txt",
+    "sha256": "f5bf8a9159adfc5b9c756c85d812a4fd1299b8916fefdf39ad4b24ade6d8d0cf"
+  },
+  {
+    "file": "fonts/PoiretOne-Regular.ttf",
+    "family": "Poiret One",
+    "license": "fonts/OFL-poiretone.txt",
+    "sha256": "457f2d03263f58e5a6dbcc1b607b10dff6581e7cf9c4ebdf330ec3e6772a3558"
+  }
+]
