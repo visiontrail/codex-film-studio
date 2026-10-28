@@ -151,6 +151,16 @@
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening"><img src="styles/exploded-teardown/showcase/preview.jpg" alt="Exploded Teardown — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>13 / <code>exploded-teardown</code></sub>
+<h3>Exploded Teardown</h3>
+<sub>爆炸拆解</sub>
+<p>Dark-studio objects, staggered layer separation, material close-ups and precise engineering annotations.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->

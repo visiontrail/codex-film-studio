@@ -151,6 +151,23 @@
       "image": "styles/newsreel/showcase/preview.jpg",
       "image_sha256": "8f3255726ad8b71fd71510e4ebcbdc9dfae5d85dc120ba81bee1e2e08714ed58",
       "treatment": "Actual decoded web-film frame, full composition retained; no text or decoration added."
+    },
+    {
+      "style": "exploded-teardown",
+      "source_video": "productions/satellite-teardown-20261028/delivery/inside-an-imaging-satellite.mp4",
+      "source_sha256": "9e101c5fc95ace1f8a82b5ea8c46cfcc397037bc8f207d94c1a8ff843feeba13",
+      "title": "Inside an Imaging Satellite",
+      "title_zh": "打开一颗成像卫星",
+      "seconds": 18.0,
+      "frame": 432,
+      "fps": "24",
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "image": "styles/exploded-teardown/showcase/preview.jpg",
+      "image_sha256": "e42442525e68cb5a5883872311a2b5f1489cfa341f05eef538d1380998526942",
+      "treatment": "Unaltered native-resolution encoded frame, showing the functional layer overview."
     }
   ]
 }

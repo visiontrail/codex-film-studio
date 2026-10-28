@@ -364,3 +364,19 @@ posters, captions, chapters and credits are installed from its verified small
 archive. This keeps the existing Pages site under its 1 GB build budget without
 recompressing or removing other styles. Video byte counts and SHA-256 hashes
 are recorded in `styles/newsreel/demo-assets.json` (`external_media`).
+
+## Exploded Teardown
+
+The bilingual independent page at `styles/exploded-teardown/showcase/index.html`
+uses the Whiteboard page's film-first structure, chapter navigation, prompt entry,
+build notes and reference section. Its graphite studio, warm-white type, orange
+indices and component imagery follow the Exploded Teardown visual language.
+
+The satellite and keyboard films are unchanged 1080p masters hosted in the
+`exploded-teardown-films-v1` Release, keeping Pages within its existing size
+budget. The checksum-pinned page bundle contains posters, captions, chapters,
+English transcripts, research/credit links and explicit review scope. Page
+language switching preserves film choice and playback position. All Styles,
+both README galleries and the generated search guides use the registry entry.
+The authoring starter contains an empty object/timeline contract and no film
+content or scene renderer.

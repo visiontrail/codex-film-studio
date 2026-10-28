@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "title": "",
+  "object": {
+    "name": "",
+    "sources": [],
+    "dimensions": [],
+    "illustrative_assumptions": []
+  },
+  "language": "en",
+  "fps": 24,
+  "duration_seconds": null,
+  "layers": [],
+  "shots": [],
+  "narration": [],
+  "captions": [],
+  "audio_events": [],
+  "review": {
+    "reference": "",
+    "frame_coverage": null,
+    "native_inspection": [],
+    "motion_review": null,
+    "listening_review": null
+  }
+}

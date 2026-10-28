@@ -6,7 +6,7 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
-**12 styles** · 1 complete demo kit · 8 authoring starters · 3 material toolkit
+**13 styles** · 1 complete demo kit · 9 authoring starters · 3 material toolkit
 
 ## Visual index / 风格一览
 
@@ -150,6 +150,17 @@ Ask your Agent to open local showcases and check their retained project files.
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">Newsreel · Two complete films</a> · <a href="../styles/newsreel/STYLE.md">Style guide</a> · <a href="../styles/newsreel/prompt.txt">Prompt</a> · <a href="../styles/newsreel/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening"><img src="../styles/exploded-teardown/showcase/preview.jpg" alt="Exploded Teardown — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>13 / <code>exploded-teardown</code></sub>
+<h3>Exploded Teardown</h3>
+<sub>爆炸拆解</sub>
+<p>Dark-studio objects, staggered layer separation, material close-ups and precise engineering annotations.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening">Two complete films</a> · <a href="../styles/exploded-teardown/STYLE.md">Style guide</a> · <a href="../styles/exploded-teardown/prompt.txt">Prompt</a> · <a href="../styles/exploded-teardown/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 ## Capabilities / 能力与网页
@@ -168,6 +179,7 @@ Ask your Agent to open local showcases and check their retained project files.
 | [动态折线图喜剧 / Animated Line Chart Comedy](line-chart-comedy/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en) · [Finished films](https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films) |
 | [点云测绘 / LiDAR Survey](lidar-survey/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en) · [Finished films](https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films) |
 | [复古新闻片 / Newsreel](newsreel/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en) · [Newsreel · Two complete films](https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening) |
+| [爆炸拆解 / Exploded Teardown](exploded-teardown/README.md) | 创作起步包 (`starter-ready`) | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en) · [Two complete films](https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening) |
 
 ## What is complete / 已完成什么
 
@@ -183,6 +195,7 @@ Ask your Agent to open local showcases and check their retained project files.
 - **line-chart-comedy** — 已有空白数据与时间轴约定、参考分析方法和通用审查工具；需为新主题编写渲染器与配乐。 Blank data/timeline contract, reference-analysis method and generic review tools; author the scene renderer and score.
 - **lidar-survey** — 已有风格指南与空白测绘、时间轴约定；新影片需按选题编写数据处理、场景渲染器和声音。 Style guide and blank survey/timeline contract; author the data pipeline, scene renderer and soundtrack per production.
 - **newsreel** — 已有风格指南、空白输入和审查流程；新影片仍需编写场景渲染与声音。 Style guide, blank inputs and review workflow; author the scene renderer and sound for each new film.
+- **exploded-teardown** — 已有风格指南、空白对象与时间轴约定及共享检查流程；两部成片单独发布，新题材仍需编写渲染工程。 Style guide, blank object/timeline contract and shared review workflow. Two finished films are published separately; new subjects need an authored renderer.
 
 `demo-ready` includes a released sample and editable renderer. `starter-ready`
 provides blank authoring inputs, guides and helpers. `toolkit-ready` provides

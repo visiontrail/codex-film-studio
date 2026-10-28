@@ -62,5 +62,9 @@
       "method": "使用暖调黑白片门、纸张接触阴影、上五下四的九张竖卡、连续放大衔接和绕书脊翻页。明确资料日期，让画面、旁白、字幕与拟音保持同步。",
       "check": "逐帧检查编码后画面的连续性，并放大查看字体、纸边和翻页轴线。按相同动作阶段对照，分别记录播放与听音；自动评分不能代替风格判断。"
     }
+  },
+  "exploded-teardown": {
+    "en": {"use": "Use Exploded Teardown for product explainers, hardware stories and engineering concepts where the relationship between parts is the story. The page includes a satellite and a keyboard film; choose a new object with reliable construction sources.", "method": "Begin with an assembled object in a graphite studio. Separate functional layers with staggered timing, move into material and interface close-ups, then reassemble. Use physical materials, warm key and cool rim lighting, projected leaders, Inter text and small orange indices. Keep narration, captions, camera and mechanical cues on one frame-based timeline.", "check": "Inspect the full camera path for collisions and occlusion, check labels at their actual display size, and decode the final MP4. Record consecutive-frame review coverage and native-resolution spot checks. Review playback and sound separately; ASR agreement and pixel differences cannot certify artistic equivalence."},
+    "zh": {"use": "适用于产品讲解、硬件故事，以及需要通过零件关系解释原理的工程题材。页面收录卫星与键盘两部影片；新的对象应有可靠的结构依据。", "method": "从深色摄影棚中完整的物体开始，依功能层错时展开，进入材质与接口特写，最后重新组装。采用真实材质、暖调主光、冷调轮廓光、投影引线、Inter 文字与橙色序号。旁白、字幕、镜头和机械拟音使用同一条逐帧时间轴。", "check": "检查整条镜头路径是否碰撞或遮挡，以实际展示尺寸检查标注，并解码最终 MP4。记录连续帧检查范围与原尺寸抽查；播放与声音分别检查。ASR 一致或像素差异都不能证明艺术效果完全一致。"}
   }
 }

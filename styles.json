@@ -654,6 +654,53 @@
         }
       ],
       "preview_showcase": "newsreel-double-feature"
+    },
+    {
+      "id": "exploded-teardown",
+      "name": "Exploded Teardown",
+      "name_zh": "爆炸拆解",
+      "description": "Dark-studio objects, staggered layer separation, material close-ups and precise engineering annotations.",
+      "description_zh": "深色摄影棚中的物体，以错层展开、材质特写与精确工程标注，解释内部结构。",
+      "status": "starter-ready",
+      "status_note": "Style guide, blank object/timeline contract and shared review workflow. Two finished films are published separately; new subjects need an authored renderer.",
+      "status_note_zh": "已有风格指南、空白对象与时间轴约定及共享检查流程；两部成片单独发布，新题材仍需编写渲染工程。",
+      "guide": "styles/exploded-teardown/STYLE.md",
+      "readme": "styles/exploded-teardown/README.md",
+      "prompt": "styles/exploded-teardown/prompt.txt",
+      "template": "styles/exploded-teardown/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false
+      },
+      "preview": "styles/exploded-teardown/showcase/preview.jpg",
+      "preview_zh": "styles/exploded-teardown/showcase/preview.jpg",
+      "preview_kind": "frame",
+      "landing": {
+        "page": "styles/exploded-teardown/showcase/index.html",
+        "assets": [
+          "styles/exploded-teardown/showcase/showcase.css",
+          "styles/exploded-teardown/showcase/showcase.mjs",
+          "styles/exploded-teardown/showcase/fonts/Inter.ttf",
+          "styles/exploded-teardown/showcase/fonts/JetBrainsMono.ttf",
+          "styles/exploded-teardown/showcase/fonts/OFL-inter.txt",
+          "styles/exploded-teardown/showcase/fonts/OFL-jetbrainsmono.txt"
+        ]
+      },
+      "public_assets": "styles/exploded-teardown/demo-assets.json",
+      "showcases": [
+        {
+          "id": "exploded-teardown-films",
+          "title": "Two complete films",
+          "title_zh": "两部完整影片",
+          "page": "styles/exploded-teardown/showcase/index.html",
+          "anchor": "screening",
+          "access": "release",
+          "media_manifest": "styles/exploded-teardown/showcase/media/films.json"
+        }
+      ],
+      "preview_showcase": "exploded-teardown-films"
     }
   ]
 }

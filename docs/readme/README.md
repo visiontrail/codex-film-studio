@@ -124,3 +124,12 @@ Newsreel's preview is an actual frame (1315) from the 720p web edition of
 *Under the City*, English edition v3, retaining the full composition without decoration.
 Its source and image hashes are recorded in `frames.json`. The page credits
 LemoLab's reference and the new films' archival sources separately.
+
+### Exploded Teardown
+
+The preview is frame 432 (18.000 seconds) of *Inside an Imaging Satellite*,
+showing the original illustrative satellite's six functional layers. Its hash
+and source are recorded in `frames.json`. The frame is displayed unchanged.
+Visual-method inspiration and upstream code attribution: Lemomo / LemoLab's
+[lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar). Full production credits
+are supplied with the published film.
