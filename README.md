@@ -158,7 +158,7 @@
 <h3>Exploded Teardown</h3>
 <sub>爆炸拆解</sub>
 <p>Dark-studio objects, staggered layer separation, material close-ups and precise engineering annotations.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
 </table>

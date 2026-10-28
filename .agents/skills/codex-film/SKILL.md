@@ -42,6 +42,9 @@ fonts, `scripts/render.mjs`, `src/scene.mjs`, and the empty executable timeline
 `content/production.json`. Run `npm ci` and `npm run proof` to check the material
 pipeline, then author scenes and run `npm run build`. A proof is diagnostic only.
 Microgame carries its engine; no project may depend on a separate library checkout.
+Exploded Teardown includes a Three.js assembly renderer; install its isolated
+render engine with `npm run setup-renderer` before `doctor` or `proof`. Author
+the new model and assembly JSON; the calibration object is not a sample replay.
 Use `npm run doctor` to check the environment. After authoring the timeline,
 `npm run preview -- --start FRAME --end FRAME` cuts picture, captions and sound
 to the same source interval; `npm run verify -- media/preview.mp4` rechecks the

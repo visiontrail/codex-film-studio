@@ -20,13 +20,13 @@ is not an accepted film or a claim of reference equivalence.
 5. 使用 `tools/frame_review/` 检查最终输出，填写本片的审查记录。
 
 绘画工具接受标准 Canvas 2D context，可在浏览器或兼容的 Node Canvas
-实现中使用；本包不绑定或预装渲染库、字体、转写模型或 TTS 客户端。
+实现中使用；本包已锁定 Canvas 渲染依赖并附带许可字体。转写模型与 TTS 服务按项目需要配置。
 `node --test tests/*.test.mjs` 使用 Node.js 20+ 自带测试器，无须 npm 安装。
 已附带锁定依赖的渲染、音频混合与字幕工具；完整视频仍需本次场景、音频和 FFmpeg。
 
 项目创建器附带 METHOD、PROVENANCE、两份许可和 prompt。只阅读上层
 DIRECTOR/TECHNIQUE 的通用导演和音频约定；其中白板演示专用的文件路径与
-构建命令不适用于本包。实际视频渲染与合成入口须由新项目实现。
+构建命令不适用于本包。使用已有入口编写本片场景和动作，并提供音频与素材。
 
 凭据只放环境变量或私有配置。提供者响应、参考片、图集、WAV 和影片保留
 在本外部生产目录；向方法库回馈时只提交通用改进。

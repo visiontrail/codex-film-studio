@@ -158,7 +158,7 @@
 <h3>爆炸拆解</h3>
 <sub>Exploded Teardown</sub>
 <p>深色摄影棚中的物体，以错层展开、材质特写与精确工程标注，解释内部结构。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 </td>
 </tr>
 </table>

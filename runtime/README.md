@@ -87,3 +87,7 @@ Nested `group` layers retain a shared local pivot for authored limbs and props.
 `motion.rotation: [from,to]` animates that pivot; `motion.holdFrames: 2` holds
 poses on twos while the main frame clock stays continuous. Supply your own
 geometry and identity; the runtime supplies no story cast.
+
+Exploded Teardown additionally requires `npm run setup-renderer` after `npm ci` (Linux CI: `npx playwright install --no-shell --with-deps chromium`). See its README for the 3D model contract and documented limits. Its headless engine is isolated from interactive browser profiles.
+
+Output height is the nearest even integer, with exact half-way values rounded upward in both Python and JavaScript. Thus a 16:9 source at `--width 720` exports 720×406; receipts record the actual dimensions.

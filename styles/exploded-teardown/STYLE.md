@@ -23,4 +23,4 @@ First document the object's source, dimensional assumptions and intended audienc
 
 Decode every final frame and retain a time-indexed ledger. Inspect consecutive frames, native-resolution detail, camera transitions and actual playback. Record thumbnail dimensions and exact review coverage. When comparing different subjects, map shots by function and relative phase; pixel differences are not an artistic similarity percentage. Review sound separately from ASR and technical loudness checks.
 
-The starter supplies an empty authoring contract and shared review workflow. It does not contain a scene renderer. Published sample media is supplied separately; the public MP4s are not source CAD or complete editable productions.
+The starter supplies an empty authoring contract, a Three.js PBR assembly renderer and the shared audio/export/review workflow. Its primitives and triangle-mesh input support authored new objects; subject geometry, hinges, close-up camera direction and cinematic DOF/bloom still need creative work. Published sample media is supplied separately; the public MP4s are not source CAD or complete editable productions.

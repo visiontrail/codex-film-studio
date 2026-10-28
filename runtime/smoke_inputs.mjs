@@ -36,6 +36,11 @@ if(id==='satellite-briefing')shots=[{...base,plates:[{file:plateFile,bounds:[-18
 if(id==='lidar-survey')shots=[{...base,layers:[{type:'survey',file:dataFile,surface:true,scan:-130,scanTo:130,camera:{azimuth:-.7,elevation:.55,distance:340},cameraTo:{azimuth:-.3},section:[[-110,0,10],[0,0,15],[110,0,5]]}]}];
 if(id==='line-chart-comedy')shots=[{...base,chart:{bounds:{x:80,y:65,width:450,height:180},domain:{x:[0,5],y:[0,1]},series:[{color:'#dd6f42',expression:'shock',label:'A',values:[[0,.1],[1,.3],[2,.45],[3,.35],[4,.75],[5,.9]]},{color:'#46859d',expression:'calm',label:'B',values:[[0,.7],[1,.6],[2,.5],[3,.6],[4,.35],[5,.2]]}]}}];
 if(id==='newsreel')shots=[{...base,layers:[{type:'montage',files:assets.slice(0,9).map(a=>a.file),x:105,y:20,width:430,height:250}]}];
+if(id==='exploded-teardown'){
+ const {diagnosticModel}=await import(new URL('../../lib/model.mjs',import.meta.url));
+ const model=save('calibration-assembly.json',Buffer.from(JSON.stringify(diagnosticModel())),'json');
+ shots=[{...base,assembly:{file:model}}];
+}
 if(id==='microgame')shots=['crayon','blueprint'].map((medium,i)=>({id:`medium-${i}`,start:i*3*fps,end:(i+1)*3*fps,medium,game:{medium,command:'PRESS',action:'press',object:'dough',character_fps:10,bpm:120,round:i,success:true},layers:[]}));
 // Single click at exactly 1 s and 4 s. The encoded onset is tested, not listened to.
 const rate=48000,len=rate/8,buffer=Buffer.alloc(44+len*2);buffer.write('RIFF');buffer.writeUInt32LE(buffer.length-8,4);buffer.write('WAVEfmt ',8);buffer.writeUInt32LE(16,16);buffer.writeUInt16LE(1,20);buffer.writeUInt16LE(1,22);buffer.writeUInt32LE(rate,24);buffer.writeUInt32LE(rate*2,28);buffer.writeUInt16LE(2,32);buffer.writeUInt16LE(16,34);buffer.write('data',36);buffer.writeUInt32LE(len*2,40);for(let i=0;i<len;i++)buffer.writeInt16LE(Math.round(10000*Math.sin(2*Math.PI*880*i/rate)*Math.sin(Math.PI*i/len)**2),44+i*2);

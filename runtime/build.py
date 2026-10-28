@@ -86,6 +86,16 @@ def timestamp(frame, fps, separator='.'):
     return f'{ms//3600000:02}:{ms//60000%60:02}:{ms//1000%60:02}{separator}{ms%1000:03}'
 
 
+def output_dimensions(source_width, source_height, width):
+    """Nearest even height, with exact half-way values rounded upward (JS parity)."""
+    if any(type(x) is not int or not 0 < x <= 2**53-1 for x in [source_width, source_height, width]):
+        raise ValueError('Output and source dimensions must be positive safe integers')
+    height = 2 * ((width * source_height + source_width) // (2 * source_width))
+    if width % 2 or height < 2 or height > 2**53-1:
+        raise ValueError('Output width must be even and produce a valid height')
+    return width, height
+
+
 def caption_files(plan, base):
     vtt, srt = ['WEBVTT\n'], []
     for i, cue in enumerate(plan.get('captions', []), 1):
@@ -127,10 +137,8 @@ def main():
     end = args.end if args.end is not None else min(plan['duration_frames'], start+8*plan['fps']) if args.preview else plan['duration_frames']
     if not 0 <= start < end <= plan['duration_frames']:
         raise ValueError('Require 0 <= start < end <= duration_frames')
-    width = args.width or (640 if args.preview else plan['width'])
-    height = round(width*plan['height']/plan['width']/2)*2
-    if width < 2 or width % 2 or height < 2:
-        raise ValueError('Output width must be positive and even')
+    width = args.width if args.width is not None else (640 if args.preview else plan['width'])
+    width, height = output_dimensions(plan['width'], plan['height'], width)
     if args.check:
         run(['node', ROOT/'scripts/render.mjs', '--check'] + (['--proof'] if args.proof else []), cwd=ROOT)
         print('Timeline and audio inputs valid; this does not validate visual content.')
