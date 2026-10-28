@@ -133,6 +133,15 @@ foliage can obscure eyes or noses. Keep the original treatment for those marks
 when the trial shows a regression. Preserve deterministic object seeds and
 recheck contour/fill budgets after changing stroke topology.
 
+Match the length and grouping of the reference marks before adding more
+randomness. A hand can make long, nearly parallel strokes while varying their
+spacing and pressure together across a region. Extend those gestures with a
+stable field in form coordinates; independent noise on every short segment
+produces a different texture. Grain compositing can amplify a modest pressure
+change into a large bare-paper patch. Reject that trial, reduce the pressure
+range, and compare several colours and form sizes. A long-stroke treatment must
+still trace partially drawn paths and preserve small identifying marks.
+
 Distinguish dry-grain holes from regular gaps between adjacent pen passes.
 The latter may need a wider wax footprint or greater overlap, rather than more
 pigment everywhere. Test a modest range with pressure and paper held fixed;
@@ -169,6 +178,36 @@ limit their reach so silhouettes and contact points stay readable. Preserve
 small facial marks, white features and dark identifying shapes. Compare a large
 circle, an angular form and a grip at native size, then the complete draw-on
 sequence. A rougher finished still does not prove a continuous pigment reveal.
+
+## Shape softness is independent of movement
+
+An organic subject needs a designed silhouette before it needs texture. Use
+basic solids to locate masses during construction, then draw a continuous
+outer contour that connects the head, neck, trunk and supporting limbs. Give
+different subjects their own proportions, joint bends, posture and negative
+spaces; changing only ears, colour or markings on a shared body is insufficient.
+Inspect flat silhouettes without labels first. Round corners only after the
+underlying shape reads correctly: smoothing a generic template does not make
+it a convincing drawing.
+
+After a silhouette changes, revisit every composition using it. Count the full
+extent of ears, horns, tails and wings when setting spacing. Check contacts,
+foreground occlusion and text clearance at both the largest and smallest
+displayed sizes. Preserve deliberate stillness and expose the new geometry
+through the same contour-then-pigment sequence.
+
+Repair angular soft forms in their drawing geometry. Round selected corners
+within their adjacent segments, preserving the endpoints of open limbs and
+shared contact anchors. Use the same curve for paired inner and outer strokes.
+Leave intentional structural corners intact. An organic silhouette may combine
+several fixed spatial rhythms; repeating equal lobes often looks stamped.
+
+Curving neighbouring pigment passes can describe rounded volume without moving
+the object. Keep that field in surface coordinates with stable seeds. Do not
+animate its phase or increase whole-body motion to disguise stiff drawings.
+Compare contour-only and partly coloured frames as well as the finished pose;
+path resampling can change reveal counts, mark spacing and fine line texture.
+Recheck deterministic seeking, contact coordinates and the full encoded sequence.
 
 ## Occlusion follows the drawn material
 
@@ -207,13 +246,60 @@ outlining every groove with a bright neighbour creates regular stripes even
 when the paths bend. Compare quiet and worn regions at native size. Reducing
 all fine contrast can overcorrect the problem into blurred wood, so retain
 localized dry catches. Texture statistics help identify the scale of a defect,
-but a closer variance or colour mean does not establish a closer visual style.
+but a closer variance or colour mean does not establish a closer visual style. If broad
+bands dominate, redistribute some contrast to coherent fine fibres. Give those
+fibres irregular deposition and broken edges: adding smooth bright curves alone
+can replace blurred wood with a plastic sheen. Keep the deposition mask fixed
+to the material, then inspect it during camera scaling for shimmer.
+
+If small catches still read as rows of bright dots, change their characteristic
+width and spacing as well as the shared fibre bend. Keep the broad colour bands,
+grooves and dry catches in the same directional field, with independent pressure
+masks. Compare several strengths at both the widest and closest camera scales:
+stronger grooves can compete with the page even when a small crop looks richer.
+Verify that a background-material repair leaves the book interior unchanged,
+and that revisiting a camera position reproduces the same grain.
 
 A turning leaf and its settled surface must share the same texture orientation
 and light treatment. Reverse sampling order on the back face, carry the gutter
 with the hinge, and remove the moving self-shadow continuously as the leaf
 settles. Inspect consecutive native-resolution frames across that handoff;
 checking only the midpoint and final pose can miss a brightness jump.
+
+Measure pullback, pre-turn hold, leaf motion, contact, push and final hold as
+separate intervals. A single normalized transition can allocate too much time
+to the turn and too little to the camera or reading hold. If audio is already
+accepted, anchor the leaf's landing to its existing contact sound and work
+backward to the turn onset. Keep the camera still through the leaf motion, then
+leave a quiet final frame after the push ends. Record visually estimated timing
+boundaries with their uncertainty rather than inventing exact source timings.
+
+For a bowed sheet, project its depth before deciding which face of each strip
+is visible. A single global front/back switch can erase one face too early.
+Paint farther strips before nearer ones, keep the hinge fixed, and let the
+depth profile vary independently of the transverse bend. Retain the front's illumination
+until its last visible strip disappears. Test both flat endpoints, the narrow
+side-on pose, partial front/back coexistence and the final material handoff at
+native size. Geometry checks do not establish natural motion; inspect every
+changed encoded frame and the complete transition at normal speed.
+
+Judge curvature from a short consecutive sequence, including the outer edge
+and the hinge. A rounded middle bow and a straighter outer span may share a
+similar silhouette in one pose. Separate the local bend, the overall rotation
+and the perspective before changing their strength. Preserve the fixed hinge
+and contact time while testing the new profile. To check simultaneous face
+visibility, render contrasting front/back test colours and count visible
+pixels after occlusion; orientation flags alone cannot establish visibility.
+
+If a deformed page acquires regular stripes, isolate the rasterization with a
+uniform material and constant shade. Extra internal variation then indicates
+compositing or sampling, rather than paper grain. Resolve visibility before
+shading, sample the continuous material coordinates, and apply light once per
+visible sample. Supersample the outer silhouette without treating every mesh
+boundary as a new edge. Verify opaque interior coverage, subdivision stability,
+front/back orientation and occlusion, then return to the real textured sheet
+and inspect its complete motion. A zero-error synthetic plane is not evidence
+of perceptual style equivalence.
 
 A pullback from an illustration reveals an existing physical page. Keep the
 image, paper, cover, hinge and desk in one scene coordinate system and move one
@@ -231,6 +317,16 @@ Compare representative blank patches across the spread, preserve the grain,
 and share the chosen lighting model between the moving reverse and settled
 leaf. Patch colours are diagnostic evidence, not a perceptual similarity score.
 
+Apply the physical page light to its illustration as well as its blank paper.
+Otherwise the revealed drawing can look like a cooler pasted rectangle. Test
+the light transfer on dark contours and text: a screen or coloured overlay can
+match the paper while washing out the ink. A bounded multiplicative gain field
+derived from lit versus neutral paper preserves existing dark values. Bring
+that field in smoothly with the physical reveal, starting at identity, and
+carry it with the page during the turn. Inspect adjacent frames and seek the
+same frame from different histories; a matching finished still does not prove
+a continuous handoff. Keep the old treatment available for a controlled trial.
+
 For a local picture repair, preserve earlier encoded GOPs when the splice
 boundary permits it. Before inheriting an earlier visual review, decode and
 compare every reused frame and its timestamp, bind both source file hashes,
@@ -238,3 +334,18 @@ and explicitly record the inherited range. Review all newly encoded frames
 and the splice boundary. A stream-copy command alone is insufficient evidence.
 `scripts/frame_review/check_video_prefix_identity.py` checks the decoded prefix
 and writes per-frame hashes and timestamp comparisons to an external report.
+
+## Colour interpretation is part of the evidence
+
+Specify the RGB-to-YUV matrix and signal range during encoding, then write the
+same values into the bitstream and container. A resolution alone does not tell
+a reviewer which matrix was used. When an older file has unspecified metadata,
+verify the actual encoder conversion with known colour patches and an explicit
+conversion before adding labels; do not guess a matrix from the picture size.
+
+A metadata-only repair can preserve every decoded YUV sample and timestamp,
+while still changing how a player interprets those samples. Verify the complete
+sample sequence and accepted audio identity, then regenerate RGB comparisons
+with the declared matrix and range. Repeat playback on the repaired file.
+Do not inherit an earlier display-colour observation solely from YUV identity.
+Include colour conversion policy and exact file hashes in the review record.

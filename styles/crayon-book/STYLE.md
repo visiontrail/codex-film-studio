@@ -52,6 +52,42 @@ regional abrasion. All three layers share surface coordinates and fixed seeds.
 Judge the result against a native-resolution desk crop, then through a camera
 move. Removing every bright scratch can make illustrated wood look artificially
 smooth; keep localized dry marks without tracing each groove with a highlight.
+The optional `handGrain` control defaults to 0; values within 0–1 widen and bend
+the grain and add broader dry catches. Compare several moderate strengths.
+For broad bands that overpower the finer structure, `fibreDetail` accepts 0–1
+and defaults to 0. In layered mode it reduces broad contrast, increases fine
+grooves, and adds long catches with a fixed irregular deposition mask. This
+mask breaks smooth highlights into rough marks; it is evaluated in surface
+coordinates and never reseeded by the camera. Compare the widest and closest
+views, since smooth bright fibres can look plastic even when broad bands improve.
+For fibres that remain too continuous, `dryScumble` accepts 0–1 and defaults to
+0. In layered mode it reduces the smooth under-grain, adds small sideways
+deviations to the catches, and clusters their missing pigment at a shorter scale.
+Compare moderate strengths before the maximum: widening and brightening every
+catch can create large gold patches that compete with the drawing. Balance
+particle size, local pressure and density together; do not try to fix this by
+adding white noise over the book. Keep the paper interior and lighting fixed
+while comparing native-size stills. A selected still remains a trial until the
+encoded pullback and push-in have been inspected for shimmer and bright bands.
+Run `node scripts/check_desk_material.mjs` for material invariants, then inspect
+the encoded camera move for shimmer and excessive bright-line density.
+
+Carry the selected wax settings into secondary drawing surfaces as well as the
+main illustration. A fresh pen instance with default settings can leave desk
+props thinner or more geometric than the story drawing. Copy material settings
+explicitly, without sharing canvases, reveal budgets or temporal state. Judge
+small tools at their final camera size: distinguish the handle, grip and tip,
+and use sparse lengthwise wax catches to describe a rounded side. Compare the
+original, shared-material and local-detail trials before changing production.
+Keep the book interior and camera fixed during this comparison; a stronger
+white accent is not automatically a better material match.
+
+Keep paper fibre direction separate from the direction of individual crayon
+passes. Stretching one grain field across the whole image can put identical
+slanted scratches on unrelated forms. Compare several colours and differently
+oriented shapes before accepting a grain change; retain a rejected trial so
+later revisions do not repeat it.
+
 `shadeSpread(context, x, y, pageWidth, height, {tableLight, paperLight})` adds a fixed warm
 light pool with asymmetric edge falloff; `tableLight` defaults to 0. Compare
 paper illumination separately from the underlying paper colour and relief.
@@ -82,6 +118,50 @@ hinge stationary. Inspect the first moving frame, the middle of the pullback,
 the page settlement and the final crop at native resolution. Run the generic
 `scripts/check_book_camera.mjs` in the working copy to check camera geometry.
 
+Inspect the cover and exposed sheet stack at the closest camera position as
+well as the wide spread. A small source-space offset can become a broad band
+after the push-in. Give the cover its own material colour and restrained corner
+radius; show paper thickness as a thin edge. Keep the illustrated page plane
+and hinge fixed while refining those surrounding layers, and verify that text
+and leaf registration do not change.
+
+`starter/lib/book-motion.mjs` separates camera and page timing. Pass
+`bookMotion(frame, {start, revealEnd, turnStart, settle, pushStart, pushEnd})`;
+all values use the same frame clock. Its `progress`, `revealEnd` and `pushStart`
+feed `bookCamera`; `light` controls the illustration's light transfer and `turn`
+controls the leaf. The camera holds during the turn and after `pushEnd`. Place
+`settle` on the accepted contact sound when audio must remain unchanged.
+
+`leafStrips(turn, {x, y, width, height}, {curl, segments, profile})` returns a projected
+sheet in far-to-near order. Each strip has material coordinates `u`/`v`,
+projected edges `a`/`b`, a `front` flag and a self-shadow strength. Use front
+coordinates `u` to `v`, and reverse coordinates `1-v` to `1-u` on the back.
+Both faces may be visible during one frame. The helper supplies geometry, not
+a complete renderer; the caller must sample textures, shade and composite it.
+`curl` defaults to 1 and accepts 0–1.5; `segments` defaults to 240. Compare
+moderate trials at native resolution and retain fixed surface coordinates.
+`profile` defaults to `rounded`. The optional `hinge` profile keeps depth
+monotonic toward the free edge, bends the sheet near its hinge, and delays the
+angular midpoint without moving either endpoint. This gives a straighter outer
+span than the rounded bow. Select from consecutive native frames, since global
+rotation and local curvature can look similar in a single still. Run
+`node scripts/check_leaf_profile.mjs` to check endpoints, hinge attachment,
+finite projection and visible front/back coexistence with contrasting textures.
+Run `node scripts/check_book_motion.mjs` for generic geometry and timing checks,
+then separately inspect the encoded motion and the settled page handoff.
+
+`starter/lib/leaf-raster.mjs` supplies an optional CPU rasterizer for opaque
+paper. `rasterizeLeaf(strips, front, back, {width, height, samples})` accepts
+`leafStrips` geometry and two `{width, height, data}` RGBA textures. It returns
+a `Uint8ClampedArray` for an output image. `samples` is the grid size per axis,
+defaults to 4, and accepts 1–4. Resolve the nearest paper surface for each
+sample, interpolate perspective-correct texture coordinates, and shade once.
+This avoids independent antialiased strip borders and overlapping shade bands.
+Use `putImageData` on a separate canvas, then composite that canvas with the
+book's camera transform. It is intended for opaque sheets, not stacked
+translucent materials. Run `node scripts/check_leaf_raster.mjs`; inspect native
+edges, texture and encoded motion separately from the synthetic tests.
+
 For pigment that looks too neatly clipped, `Wax.edgeScumble` accepts a fixed
 strength from 0 to 1; its default is 0 and retains the earlier edge treatment.
 It places short dry passes along the whole perimeter, using arc length rather
@@ -91,6 +171,37 @@ the form's hatch direction and stable seed. Small coloured marks, white features
 and indigo shapes retain their original treatment. Inspect faces, grip contacts,
 silhouettes and partial colour stages before enabling it for a production.
 The strength is material pressure/extent, never a time-based opacity entrance.
+
+## Soft forms without added motion
+
+Design a subject-specific silhouette instead of assembling its finished body
+from repeated ellipses and straight limb bars. Use continuous authored curves
+for the transitions between masses, with different proportions, joint bends
+and resting poses for different subjects. Small eyes or spots may remain simple,
+but the outer shape should identify the subject without a label or colour.
+Inspect a flat silhouette sheet, then the textured drawing at delivery size.
+Recheck every reused scene for changed bounds, occlusion and contact points.
+
+Use `lib/contours.mjs` only on forms whose hard polygon corners are visibly
+unwanted. `roundCorners(points, radius, {closed, steps})` creates sampled
+quadratic corners; `closed: false` preserves both original endpoints exactly.
+The radius is limited by adjacent edge lengths. Apply the same path to the
+inner and outer strokes of a limb, and keep grip and foot coordinates shared
+with their props. Preserve intentional corners in architecture and tools.
+Do not resample already dense curves merely to make every form smoother.
+
+`Wax.withHatchFlow(strength, draw)` bends neighbouring broken hatch passes with
+a fixed field in local surface coordinates. It requires formed and broken
+hatching; strength is clamped to 0–1 and defaults to 0. Use it selectively where
+straight parallel passes flatten a rounded form. The field follows the object's
+stable seed and is not animated. Nested calls restore the previous setting,
+even if drawing throws. Keep separate pressure, direction and contour controls.
+
+Inspect partial contours, partial pigment, completed silhouettes and contact
+poses at native resolution. Clear measured reveal counts after changing paths.
+Check arbitrary seeking and encoded motion; a smoother still alone is not an
+acceptance result. Run `node scripts/check_soft_forms.mjs` for endpoint, bounds,
+determinism and scoped-state checks.
 
 ## Paper calibration from a blank sample
 
@@ -156,6 +267,32 @@ actual displayed feature sizes after transforms. Excess overlap can flatten
 the drawing: compare native-size trials and reject a setting that removes the
 reference's directional marks. Keep the value fixed during a reveal and clear
 cached reveal counts when changing material settings for an experiment.
+
+`Wax.hatchGesture` accepts a fixed strength from 0 to 1, defaulting to 0.
+With formed and broken hatching enabled, it extends pass lengths and varies
+spacing, bend, width and pressure over neighbouring passes. The field stays in
+form coordinates. White and indigo fills retain their existing treatment;
+small shapes receive no change, and yellow and peach receive less variation.
+Use it when a reference has coherent long marks and the current fill reads as
+short, regular segments. Greater randomness is not automatically a closer match.
+Large pressure changes can create bare-paper blotches after grain compositing;
+keep those changes restrained and compare several pigments at native size.
+Clear reveal counts between trials. Run `node scripts/check_gesture.mjs`, then
+inspect a complete encoded drawing sequence before a full export.
+
+`Wax.hatchPressureDrift` accepts a fixed strength from 0 to 1, defaulting to
+0. With formed and broken hatching enabled, it varies deposited pressure along
+a pass using a field shared by neighbouring passes in the same form. Independent
+per-pass variation can disappear under overlaps; a shared field creates gradual
+changes in local density. It does not alter paper grain, outlines, pass geometry
+or stroke order. White, indigo and very small shapes retain their old pressure.
+Keep the gradient anchored to the full stroke while a reveal exposes only its
+prefix; recalculating it from the partial endpoint changes already drawn marks.
+Store the pressure field with queued occlusion strokes and replay it under the
+same transform. Compare several pigments and scene scales for unwanted broad
+pale patches. Run `node scripts/check_pressure.mjs`, then inspect an encoded
+contour-to-colour sequence. This control is optional; its invariants do not
+establish perceptual equivalence to a reference.
 
 For overlapping drawings, `Wax.strokeOcclusion = true` removes lower-layer
 marks only beneath the pigment strokes that have actually been revealed. It
@@ -284,6 +421,13 @@ contact sheet. Palette or edge statistics are descriptive and must not become
 an invented artistic similarity percentage. Use a separate defect log and
 re-render each observed mismatch. Only verified identical frame ranges can
 inherit earlier pixel-level observations.
+
+Declare the actual YUV matrix and signal range in each export. Generate RGB
+review images using those declared values rather than a decoder's default.
+Resolve missing metadata from the encoder configuration and controlled colour
+patches before comparing paper or pigment colours. A metadata-only repair
+still needs new display-colour review and playback, even when all YUV samples
+and accepted audio remain identical.
 
 Verify the encoded delivery file: complete decode, frame count and timing,
 dimensions, audio streams and loudness, start/end and seeking in the intended

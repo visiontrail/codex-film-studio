@@ -7,6 +7,14 @@ export const C={ink:'#343258',purple:'#805496',yellow:'#e4b83b',red:'#c75043',ro
 export const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 export const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
 function hash(x,y,s=0){let n=Math.imul(x+71,374761393)^Math.imul(y+131,668265263)^Math.imul(s+3,2246822519);n=Math.imul(n^(n>>>13),1274126177);return ((n^(n>>>16))>>>0)/4294967295;}
+function strokePaint(context,stroke){
+ const {path,color,alpha,pressureStops,pressureAxis}=stroke;
+ if(!pressureStops){context.globalAlpha=alpha;context.strokeStyle=color;return;}
+ const [first,last]=pressureAxis??[path[0],path.at(-1)],gradient=context.createLinearGradient(first[0],first[1],last[0],last[1]);
+ const rgb=[1,3,5].map(start=>parseInt(color.slice(start,start+2),16));
+ for(const [position,weight] of pressureStops)gradient.addColorStop(position,`rgba(${rgb.join(',')},${clamp(alpha*weight)})`);
+ context.globalAlpha=1;context.strokeStyle=gradient;
+}
 function grid(x,y,step,s){let xx=x/step,yy=y/step,i=Math.floor(xx),j=Math.floor(yy),u=ease(xx-i),v=ease(yy-j);return (hash(i,j,s)*(1-u)+hash(i+1,j,s)*u)*(1-v)+(hash(i,j+1,s)*(1-u)+hash(i+1,j+1,s)*u)*v;}
 export function paperTexture({reliefMap=null,reliefGain=1,toothScale=1}={}){
  if(reliefMap&&reliefMap.length!==W*H)throw new Error('Paper relief dimensions must match the canvas');
@@ -56,8 +64,9 @@ export class Wax {
   this.variantSeed=seed||1;try{return draw();}finally{this.variantSeed=previous;}
  }
  seedFor(seed){return this.variantSeed?Math.floor(hash(seed,this.variantSeed,1823)*2147483647):seed;}
- line(points,color=C.ink,width=3,pressure=.97,seed=1){
+ line(points,color=C.ink,width=3,pressure=.97,seed=1,pressureDrift=0,pressureSeed=seed){
   seed=this.seedFor(seed);
+  const pressureAxis=pressureDrift>0?[points[0],points.at(-1)]:null;
   const available=this.filling?this.fillBudget-this.fillIndex++:this.strokeBudget-this.strokeIndex++;if(this.outlineOnly){color=C.ink;width=Math.min(width,2.8);}if(this.measuring||available<=0||points.length<2)return;
   if(available<1){
    const lengths=points.slice(1).map((p,i)=>Math.hypot(p[0]-points[i][0],p[1]-points[i][1]));let remaining=lengths.reduce((a,b)=>a+b,0)*available,partial=[points[0]];
@@ -69,10 +78,16 @@ export class Wax {
   c.globalAlpha=clamp(pressure*contourPressure);c.lineWidth=width*(color===C.ink&&width<=6?(this.contourScale??1):1);c.lineJoin='round';c.lineCap='round';c.beginPath();
   const hand=points.map(([x,y],i)=>[x+(hash(i,seed,this.frame%5)-.5)*.75,y+(hash(i+32,seed,this.frame%5)-.5)*.75]);
   const stroke=(path,strokeWidth)=>{
+   // Pressure varies along an existing pass. Fixed stops belong to the full
+   // stroke, so partial reveals crop the same marks instead of stretching them.
+   const pressureStops=pressureDrift>0?Array.from({length:9},(_,k)=>{
+    const q=k/8,[a,b]=pressureAxis,x=a[0]+(b[0]-a[0])*q,y=a[1]+(b[1]-a[1])*q;
+    return [q,1+(grid(x,y,45,pressureSeed+883)-.5)*.60*pressureDrift];
+   }):null;
    if(this.surfaceStrokes&&this.filling){
     const m=c.getTransform();
-    this.surfaceStrokes.push({path,width:strokeWidth,color,alpha:c.globalAlpha,matrix:[m.a,m.b,m.c,m.d,m.e,m.f]});
-   }else{c.lineWidth=strokeWidth;c.beginPath();path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
+    this.surfaceStrokes.push({path,width:strokeWidth,color,alpha:c.globalAlpha,pressureStops,pressureAxis,matrix:[m.a,m.b,m.c,m.d,m.e,m.f]});
+   }else{strokePaint(c,{path,color,alpha:c.globalAlpha,pressureStops,pressureAxis});c.lineWidth=strokeWidth;c.beginPath();path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
   };
   if(this.organicContours&&color===C.ink&&width<=6){
    const baseWidth=c.lineWidth;
@@ -84,6 +99,7 @@ export class Wax {
  }
  curve(points,color=C.ink,width=3,pressure=.97){this.line(points,color,width,pressure,17)}
  withHatch(angle,draw){const previous=this.hatchAngle;this.hatchAngle=angle;try{return draw();}finally{this.hatchAngle=previous;}}
+ withHatchFlow(strength,draw){const previous=this.hatchFlow;this.hatchFlow=clamp(strength);try{return draw();}finally{this.hatchFlow=previous;}}
  path(points){const c=this.ctx;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();}
  shape(points,color,seed=1,outline=true,progress=1){
   seed=this.seedFor(seed);
@@ -120,29 +136,42 @@ export class Wax {
     const co=Math.cos(angle),si=Math.sin(angle),bounds=points.map(([x,y])=>[(x-cx)*co+(y-cy)*si,-(x-cx)*si+(y-cy)*co]);
     const left=Math.min(...bounds.map(p=>p[0]))-10,right=Math.max(...bounds.map(p=>p[0]))+10,top=Math.min(...bounds.map(p=>p[1]))-12,bottom=Math.max(...bounds.map(p=>p[1]))+12;
     const formPressure=.91+hash(seed,947)*.17;
+    // Neighbouring passes share a stable, gently curved field. This changes
+    // local drawing direction rather than moving the form or adding noise.
+    const flow=clamp(this.hatchFlow??0);
+    const offset=(x,y)=>flow*(Math.sin((x-left)/Math.max(1,right-left)*Math.PI)*9
+      +(grid(x,y,64,seed+257)-.5)*12);
     c.save();c.translate(cx,cy);c.rotate(angle);
     const overlap=clamp(this.hatchOverlap??0),largeInk=color===C.ink&&(x1-x0>28||y1-y0>36);
     if(this.brokenHatching&&color!==C.white&&(color!==C.ink||(overlap>0&&largeInk))){
      // Stagger the ends and pressure of wax passes instead of spanning each
      // shape with identical parallel bands. All seeds remain object-local.
      const strength=typeof this.brokenHatching==='number'?clamp(this.brokenHatching):1;
+     // Broad crayon gestures vary together across neighbouring passes. The
+     // field is fixed in form coordinates; small marks keep their old pen.
+     const gesture=(color===C.ink?0:clamp(this.hatchGesture??0))*clamp((Math.min(x1-x0,y1-y0)-35)/70)
+       *({[C.yellow]:.45,[C.peach]:.35}[color]??1);
      let pass=0;
-     for(let y=top;y<bottom;y+=5.6+hash(pass,seed+41)*1.7,pass++){
+     for(let y=top;y<bottom;y+=5.6+hash(pass,seed+41)*1.7+gesture*(grid(pass,0,2.7,seed+269)-.5)*3.2,pass++){
       const yy=y+(hash(pass,seed+19)-.5)*2.1;
-      const span=48+hash(pass,seed+137)*74;
+      const span=48+hash(pass,seed+137)*74+gesture*(40+hash(pass,seed+277)*90);
       const stagger=hash(pass,seed+151)*span;
       let segment=0;
       for(let start=left-stagger;start<right;start+=span*.82,segment++){
        const stop=Math.min(right+10,start+span),stroke=[];
-       const bend=(hash(pass,segment,seed+101)-.5)*3.5;
+       const bend=(hash(pass,segment,seed+101)-.5)*(3.5+gesture*3);
        for(let x=start;x<=stop+5;x+=5){
         const q=(x-start)/Math.max(1,stop-start);
-        stroke.push([x,yy+bend*Math.sin(q*Math.PI)+(hash(pass,Math.round(x),seed+71)-.5)*1.5]);
+        stroke.push([x,yy+offset(x,yy)+bend*Math.sin(q*Math.PI)+(hash(pass,Math.round(x),seed+71)-.5)*1.5]);
        }
-       const pressureVariation=(grid(segment,pass,2.2,seed+163)-.5)*.20*strength;
+       const pressureVariation=(grid(segment,pass,2.2,seed+163)-.5)*.20*strength
+         +gesture*(grid(segment,pass,2.7,seed+281)-.5)*.08;
        // A broader wax side overlaps adjacent passes without painting an
        // undercoat. Small identifying marks retain their original pen model.
-       this.line(stroke,color,7.7+overlap*5+(hash(pass,segment,seed+6)-.5)*1.7,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment);
+       const width=7.7+overlap*5+(hash(pass,segment,seed+6)-.5)*1.7
+         +gesture*(grid(segment,pass,2.5,seed+283)-.5)*2.5;
+       const pressureDrift=(color===C.ink?0:clamp(this.hatchPressureDrift??0))*clamp((Math.min(x1-x0,y1-y0)-35)/70);
+       this.line(stroke,color,width,(.69+pressureVariation)*pressure*formPressure,seed+pass*97+segment,pressureDrift,seed);
       }
      }
      for(let pass=0;pass<Math.ceil((bottom-top)/17);pass++){
@@ -180,7 +209,7 @@ export class Wax {
    }
    c.globalCompositeOperation='source-over';
    for(const s of strokes){
-    c.setTransform(...s.matrix);c.globalAlpha=s.alpha;c.strokeStyle=s.color;c.lineWidth=s.width;c.beginPath();
+    c.setTransform(...s.matrix);strokePaint(c,s);c.lineWidth=s.width;c.beginPath();
     s.path.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();
    }
    c.restore();
