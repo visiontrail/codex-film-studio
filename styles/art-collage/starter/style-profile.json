@@ -1,0 +1,10 @@
+{
+  "id": "art-collage",
+  "width": 1920,
+  "height": 1080,
+  "background": "#eee9df",
+  "ink": "#272321",
+  "accent": "#c45a3b",
+  "secondary": "#d7b555",
+  "font": "Jost"
+}

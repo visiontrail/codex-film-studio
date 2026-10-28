@@ -1,0 +1,20 @@
+[
+  {
+    "file": "fonts/LilitaOne.ttf",
+    "family": "Lilita One",
+    "license": "fonts/LilitaOne-OFL.txt",
+    "sha256": "f5b641c45c69d772ee4eda687bc9fda411d5cad6b0b45371491da4580cbc8d59"
+  },
+  {
+    "file": "fonts/ArchitectsDaughter.ttf",
+    "family": "Architects Daughter",
+    "license": "fonts/ArchitectsDaughter-OFL.txt",
+    "sha256": "6159718a08898e34bc1cb7354086141a5f9a70b73e54dbec27ead0d59a697359"
+  },
+  {
+    "file": "fonts/TitanOne.ttf",
+    "family": "Titan One",
+    "license": "fonts/TitanOne-OFL.txt",
+    "sha256": "563ff6de179bbd44bcd7d2a6c448d6dc3bf935834237cf1250e506e65cd86ff1"
+  }
+]

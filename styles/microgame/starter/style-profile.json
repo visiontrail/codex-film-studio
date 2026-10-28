@@ -1,0 +1,10 @@
+{
+  "id": "microgame",
+  "width": 540,
+  "height": 960,
+  "background": "#a73998",
+  "ink": "#21182e",
+  "accent": "#f2c642",
+  "secondary": "#49c3d4",
+  "font": "Lilita One"
+}

@@ -1,6 +1,11 @@
 # Satellite Briefing · 卫星影像／地理简报
 
-**Package status: starter-ready / 创作起步包.** Geographic camera, real imagery, measurements, local maps and verified footage.
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
+**Package status: renderer-ready / 可执行制作包.** Geographic camera, real imagery, measurements, local maps and verified footage.
 
 This package provides reusable rules, blank inputs and generic tools. Author the
 new subject's characters, scenes, narration, renderer and sound in its own project.

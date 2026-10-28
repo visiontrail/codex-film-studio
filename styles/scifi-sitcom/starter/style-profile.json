@@ -1,0 +1,10 @@
+{
+  "id": "scifi-sitcom",
+  "width": 1920,
+  "height": 1080,
+  "background": "#dce0c2",
+  "ink": "#1b1422",
+  "accent": "#a55970",
+  "secondary": "#7eae83",
+  "font": "Lilita One"
+}

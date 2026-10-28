@@ -1,5 +1,16 @@
 # Your sci-fi sitcom production
 
+## Executable production tools
+
+After project creation, read `PRODUCTION.md`. Run `npm ci`, then
+`npm run proof` for a labelled material diagnostic. Fill the empty
+`content/production.json`, author drawings in `src/scene.mjs`, and run
+`npm run build`. The original style helpers remain in `lib/`. Fonts and
+license notices are included in `fonts/`; no source checkout is required.
+For original-sample replay, see `methods/reproduction.md`. A material proof
+is not an accepted film or a claim of reference equivalence.
+
+
 This is an empty project. Start with [STYLE.md](STYLE.md),
 [WORKFLOW.md](WORKFLOW.md) and [REVIEW.md](REVIEW.md).
 

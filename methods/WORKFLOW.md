@@ -16,7 +16,7 @@
 5. Use one integer-frame clock with half-open shot ranges `[start, end)` for
    picture, speech, captions and event sounds. Derive state deterministically
    from the requested frame. Rebuild dependent timing when the audio changes.
-6. Implement the subject's renderer and sound mix around the supplied helpers.
+6. Author the subject's scene layers and sound mix with the supplied renderer when available; otherwise implement the renderer in the production.
    Keep narration, score, ambience and effects separately editable. Lock actual
    dependencies in the production, and coordinate FFmpeg with other local jobs.
 7. Render representative native-size stills and motion previews, inspect them,
@@ -29,5 +29,5 @@ For a compilation or changed brief, follow [revision and delivery](revision-deli
 Rebuild the edit around the new viewing experience, renew affected evidence and
 promote only subject-independent lessons to this library.
 
-A starter creates files and tools; authoring the scenes, narration and renderer
+A starter creates files and tools; authoring the scenes, narration and any missing rendering
 is part of the film project. A prior sample's acceptance does not accept a new film.

@@ -4,7 +4,7 @@
 
 Warm monochrome, spinning headlines, nine-card paper montages, left-spine page turns and period transitions. See [STYLE.md](STYLE.md) for the visual rules and [PROVENANCE.md](PROVENANCE.md) for the reference.
 
-Status: **starter-ready**. The reusable package contains blank inputs and shared production/review guidance. New scenes, rendering and audio must be authored for each production. Published previews are demonstrations, separate from this blank starter.
+Status: **renderer-ready**. The package includes pinned rendering tools, licensed fonts, warm print finishing, paper transitions, audio mixing and delivery checks. Author new scenes, sources and sound cues. See [TOOLS.md](TOOLS.md). Published previews are demonstrations, separate from this blank starter.
 
 Open the cloned studio in your coding Agent and paste:
 

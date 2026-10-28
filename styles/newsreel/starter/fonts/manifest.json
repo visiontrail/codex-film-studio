@@ -1,0 +1,20 @@
+[
+  {
+    "file": "fonts/Limelight-Regular.ttf",
+    "family": "Limelight",
+    "license": "fonts/OFL-Limelight.txt",
+    "sha256": "f5bf8a9159adfc5b9c756c85d812a4fd1299b8916fefdf39ad4b24ade6d8d0cf"
+  },
+  {
+    "file": "fonts/Oswald.ttf",
+    "family": "Oswald",
+    "license": "fonts/OFL-Oswald.txt",
+    "sha256": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817"
+  },
+  {
+    "file": "fonts/NotoSerifSC-VF.ttf",
+    "family": "News Serif",
+    "license": "fonts/OFL-NotoSerifSC.txt",
+    "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+  }
+]

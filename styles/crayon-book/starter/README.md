@@ -1,10 +1,21 @@
 # Your crayon picture-book project
 
+## Executable production tools
+
+After project creation, read `PRODUCTION.md`. Run `npm ci`, then
+`npm run proof` for a labelled material diagnostic. Fill the empty
+`content/production.json`, author drawings in `src/scene.mjs`, and run
+`npm run build`. The original style helpers remain in `lib/`. Fonts and
+license notices are included in `fonts/`; no source checkout is required.
+For original-sample replay, see `methods/reproduction.md`. A material proof
+is not an accepted film or a claim of reference equivalence.
+
+
 This project contains material tools and an empty `input-contract.json`.
 Read `STYLE.md`, `WORKFLOW.md` and `REVIEW.md`, then supply your own subject,
-characters, shots, narration, music and renderer. No film has been generated.
+characters, shots, narration and music. Extend the supplied scene renderer as needed. No film has been generated.
 
-Run `npm install` to install the Canvas and OpenType dependencies and create a local lockfile.
+Run `npm ci` to install the pinned Canvas and OpenType dependencies.
 The optional `scripts/synthesize_paper.py` needs Python, NumPy, SciPy and Pillow.
 Use the copied `tools/frame_review/` for encoded-file inspection. Keep source
 assets, provider records and outputs in this external project.

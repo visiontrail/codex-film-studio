@@ -1,14 +1,19 @@
 # Art Collage · 艺术拼贴
 
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
 [**Open the Art Collage page / 打开艺术拼贴独立页面 ↗**](https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html)
 
-**Package status: starter-ready / 创作起步包.** Paper materials, cutouts, typography, physical motion and review rules.
+**Package status: renderer-ready / 可执行制作包.** Paper materials, cutouts, typography, physical motion and review rules.
 
 This package provides reusable rules, blank inputs and generic tools. Author the
 new subject's characters, scenes, narration, renderer and sound in its own project.
 The standalone page includes a released film preview, chapters, English captions,
 transcript, research notes and a bilingual guide to the style. This screening copy
-is separate from the blank authoring starter and does not add a scene renderer.
+is separate from the blank authoring starter and retains the original composition outside the library; the starter now includes a material renderer.
 
 ## Start with a prompt / 用提示词开始
 

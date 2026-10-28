@@ -48,7 +48,7 @@
 <h3>艺术拼贴</h3>
 <sub>Art Collage</sub>
 <p>纸张剪贴、错落字体与层叠构图，让信息通过进入、遮挡和替换形成关系。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh#film">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=zh#film">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -58,7 +58,7 @@
 <h3>蜡笔绘本</h3>
 <sub>Crayon Picture Book</sub>
 <p>蜡质笔触与暖纸纹理，逐笔显现的绘画配合真实的绘本翻页。</p>
-<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=zh">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@
 <h3>50 年代平涂卡通</h3>
 <sub>Mid-century Cartoon</sub>
 <p>柔和套色、微微错位的墨线与停格姿态，配合清楚的教学表演和爵士节奏。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=zh">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -78,7 +78,7 @@
 <h3>卫星影像／地理简报</h3>
 <sub>Satellite Briefing</sub>
 <p>以地理镜头连接真实卫星影像，用克制的标注解释位置、尺度与空间关系。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=zh">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -88,7 +88,7 @@
 <h3>科幻情景喜剧卡通</h3>
 <sub>Sci-Fi Sitcom Toon</sub>
 <p>粗墨线、平涂阴影与反差表演，用反应镜头和空间变化组织喜剧节奏。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=zh">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=zh">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -98,7 +98,7 @@
 <h3>极速微游戏</h3>
 <sub>Microgame Frenzy</sub>
 <p>命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。</p>
-<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -108,7 +108,7 @@
 <h3>装饰艺术</h3>
 <sub>Art Deco</sub>
 <p>黑漆、渐变黄铜、切面人物与具有空间感的机械动效。</p>
-<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -118,7 +118,7 @@
 <h3>字幕新闻</h3>
 <sub>Caption News</sub>
 <p>大字号字幕、黄色重点、账本式图表与有节奏的入场动效。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -128,7 +128,7 @@
 <h3>动态折线图喜剧</h3>
 <sub>Animated Line Chart Comedy</sub>
 <p>克制的图表界面，以生长折线、端点角色、事件卡片与漫画动作讲述数据变化。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -138,7 +138,7 @@
 <h3>点云测绘</h3>
 <sub>LiDAR Survey</sub>
 <p>以连续空间镜头串联测绘点云、树冠剥离、侧光地表与细线剖面，让数据逐层显现。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=zh#films">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@
 <h3>复古新闻片</h3>
 <sub>Newsreel</sub>
 <p>档案影像、旋转头条、九张纸卡与旧时播音，让故事从放映室走来。</p>
-<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+<p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 </td>
 </tr>
 <tr>
@@ -293,3 +293,5 @@ Git 包含源码、字体和乐器采样；影片、配音 WAV 与时间数据�
 [来源与署名](docs/readme/README.md#frame-sources)，字体与乐器采样保留各自许可。
 白板样片的[素材出处](styles/whiteboard/studio/CREDITS.md)。
 [README 设计参考与插图说明](docs/readme/README.md)。
+
+可执行工程现在提供 `doctor`、`check`、`preview`、`build`、`verify` 和 `serve` 入口。[逐风格能力表](styles/README.md#capabilities--能力与网页) 分别记录公开影片、原工程取得方式和重建范围。源码包的获取、校验与恢复见[复现说明](methods/reproduction.md#portable-archives-and-acquisition)。

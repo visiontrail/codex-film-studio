@@ -1,6 +1,11 @@
 # Sci-Fi Sitcom Toon · 科幻情景喜剧卡通
 
-**Package status: starter-ready / 创作起步包.** Flat cartoon drawing, contrasting performances, camera continuity and spatial comedy.
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
+**Package status: renderer-ready / 可执行制作包.** Flat cartoon drawing, contrasting performances, camera continuity and spatial comedy.
 
 This package provides reusable rules, blank inputs and generic tools. Author the
 new subject's characters, scenes, narration, renderer and sound in its own project.

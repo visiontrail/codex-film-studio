@@ -12,6 +12,10 @@
     "toolkit-ready": {
       "name": "Material toolkit",
       "name_zh": "材质工具包"
+    },
+    "renderer-ready": {
+      "name": "Executable production kit",
+      "name_zh": "可执行制作包"
     }
   },
   "styles": [
@@ -32,7 +36,11 @@
       "capabilities": {
         "project_creation": true,
         "scene_renderer": true,
-        "published_demo": true
+        "published_demo": true,
+        "published_film": true,
+        "original_source": "public-inputs-and-repository",
+        "sample_rebuild": "clip",
+        "new_film_scope": "editable-sample"
       },
       "showcases": [
         {
@@ -53,9 +61,9 @@
       "name": "Art Collage",
       "name_zh": "艺术拼贴",
       "description": "Paper cutouts, layered typography and physical collage motion.",
-      "status": "starter-ready",
-      "status_note": "Blank inputs, paper primitives and shared production/review guides; author scenes and renderer.",
-      "status_note_zh": "已有空白输入、纸材工具和通用制作审查流程；需编写场景与渲染器。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/art-collage/STYLE.md",
       "readme": "styles/art-collage/README.md",
       "prompt": "styles/art-collage/prompt.txt",
@@ -63,8 +71,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -96,9 +113,9 @@
       "name": "Crayon Picture Book",
       "name_zh": "蜡笔绘本",
       "description": "Wax pigment, textured paper, hand-drawn reveals and physical book motion.",
-      "status": "toolkit-ready",
-      "status_note": "Material tools and an input contract; project creation is available, scene and audio pipelines remain to be authored.",
-      "status_note_zh": "已有材质工具、输入合同和项目创建入口；场景、配音与渲染流程仍需编写。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/crayon-book/STYLE.md",
       "readme": "styles/crayon-book/README.md",
       "prompt": "styles/crayon-book/prompt.txt",
@@ -106,8 +123,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -150,9 +176,9 @@
       "name": "Mid-century Cartoon",
       "name_zh": "50 年代平涂卡通",
       "description": "Misregistered flat colour, broken ink, held poses and jazz.",
-      "status": "starter-ready",
-      "status_note": "Blank inputs, print/timeline helpers and style-specific workflow, audio and review guides; author scenes and renderer.",
-      "status_note_zh": "已有空白项目、套色与时间轴工具、制作和音频审查规范；需编写场景与渲染器。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/midcentury-cartoon/STYLE.md",
       "readme": "styles/midcentury-cartoon/README.md",
       "prompt": "styles/midcentury-cartoon/prompt.txt",
@@ -160,8 +186,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -233,9 +268,9 @@
       "name": "Satellite Briefing",
       "name_zh": "卫星影像／地理简报",
       "description": "Geographic camera, satellite imagery and measured annotations.",
-      "status": "starter-ready",
-      "status_note": "Blank inputs, geographic helpers and footage/review guides; author imagery renderer and edit.",
-      "status_note_zh": "已有空白项目、地理计算工具、实拍与审查流程；需编写影像渲染与剪辑。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/satellite-briefing/STYLE.md",
       "readme": "styles/satellite-briefing/README.md",
       "prompt": "styles/satellite-briefing/prompt.txt",
@@ -243,8 +278,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -301,9 +345,9 @@
       "name": "Sci-Fi Sitcom Toon",
       "name_zh": "科幻情景喜剧卡通",
       "description": "Flat cartoon drawing, contrasting performances and spatial comedy.",
-      "status": "starter-ready",
-      "status_note": "Blank inputs, ink/timeline helpers and workflow/review guides; author cast, scenes and renderer.",
-      "status_note_zh": "已有空白项目、描边与时间轴工具、制作和审查流程；需创作角色、场景与渲染器。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/scifi-sitcom/STYLE.md",
       "readme": "styles/scifi-sitcom/README.md",
       "prompt": "styles/scifi-sitcom/prompt.txt",
@@ -311,8 +355,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "full",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -356,17 +409,26 @@
       "name_zh": "极速微游戏",
       "description": "Rapid command-action-result games with changing materials, lives and accelerating rhythm.",
       "description_zh": "命令、动作与结果构成的小关卡，用媒介切换、生命计数和加速节奏连接故事。",
-      "status": "toolkit-ready",
-      "status_note": "Independent material and motion helpers; scene direction, audio and delivery require production-specific work.",
-      "status_note_zh": "已有独立材质与动作工具；镜头、音频和交付需在制作项目中完成。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/microgame/STYLE.md",
       "readme": "styles/microgame/README.md",
       "template": "styles/microgame/starter",
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -403,9 +465,9 @@
       "name_zh": "装饰艺术",
       "description": "Black lacquer, graded brass, faceted figures and spatial mechanical motion.",
       "description_zh": "黑漆、渐变黄铜、切面人物与具有空间感的机械动效。",
-      "status": "toolkit-ready",
-      "status_note": "Original drawing and figure toolkit with a blank input contract; new scenes, narration and renderer must be authored.",
-      "status_note_zh": "已有独立绘制工具、人物骨架与空白输入合同；新场景、旁白与渲染器仍需编写。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/art-deco/STYLE.md",
       "readme": "styles/art-deco/README.md",
       "prompt": "styles/art-deco/prompt.txt",
@@ -413,8 +475,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -454,9 +525,9 @@
       "name_zh": "字幕新闻",
       "description": "Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.",
       "description_zh": "大字号字幕、黄色重点、账本式图表与有节奏的入场动效。",
-      "status": "starter-ready",
-      "status_note": "Blank authoring inputs, deterministic caption helpers and shared methods; author new scenes, renderer and audio.",
-      "status_note_zh": "已有空白输入、确定性字幕动效工具和通用方法；需为新选题编写场景、渲染与音频。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/caption-news/STYLE.md",
       "readme": "styles/caption-news/README.md",
       "prompt": "styles/caption-news/prompt.txt",
@@ -464,8 +535,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -514,9 +594,9 @@
       "name_zh": "动态折线图喜剧",
       "description": "A quiet chart interface with growing lines, expressive endpoint tokens, event cards and comic motion accents.",
       "description_zh": "克制的图表界面，以生长折线、端点角色、事件卡片与漫画动作讲述数据变化。",
-      "status": "starter-ready",
-      "status_note": "Blank data/timeline contract, reference-analysis method and generic review tools; author the scene renderer and score.",
-      "status_note_zh": "已有空白数据与时间轴约定、参考分析方法和通用审查工具；需为新主题编写渲染器与配乐。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/line-chart-comedy/STYLE.md",
       "readme": "styles/line-chart-comedy/README.md",
       "prompt": "styles/line-chart-comedy/prompt.txt",
@@ -524,8 +604,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -560,9 +649,9 @@
       "name_zh": "点云测绘",
       "description": "Measured point clouds, canopy peeling, raking-lit terrain and fine sections, carried by one continuous camera move.",
       "description_zh": "以连续空间镜头串联测绘点云、树冠剥离、侧光地表与细线剖面，让数据逐层显现。",
-      "status": "starter-ready",
-      "status_note": "Style guide and blank survey/timeline contract; author the data pipeline, scene renderer and soundtrack per production.",
-      "status_note_zh": "已有风格指南与空白测绘、时间轴约定；新影片需按选题编写数据处理、场景渲染器和声音。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/lidar-survey/STYLE.md",
       "readme": "styles/lidar-survey/README.md",
       "prompt": "styles/lidar-survey/prompt.txt",
@@ -570,8 +659,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "showcases": [
         {
@@ -611,9 +709,9 @@
       "name_zh": "复古新闻片",
       "description": "Archival pictures, spinning headlines, nine-card montages and a voice from the projection booth.",
       "description_zh": "档案影像、旋转头条、九张纸卡与旧时播音，让故事从放映室走来。",
-      "status": "starter-ready",
-      "status_note": "Style guide, blank inputs and review workflow; author the scene renderer and sound for each new film.",
-      "status_note_zh": "已有风格指南、空白输入和审查流程；新影片仍需编写场景渲染与声音。",
+      "status": "renderer-ready",
+      "status_note": "Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.",
+      "status_note_zh": "已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。",
       "guide": "styles/newsreel/STYLE.md",
       "readme": "styles/newsreel/README.md",
       "prompt": "styles/newsreel/prompt.txt",
@@ -621,8 +719,17 @@
       "template_kind": "blank",
       "capabilities": {
         "project_creation": true,
-        "scene_renderer": false,
-        "published_demo": false
+        "scene_renderer": true,
+        "published_demo": false,
+        "material_proof": true,
+        "locked_dependencies": true,
+        "bundled_fonts": true,
+        "audio_mix": true,
+        "source_bundle_restore": true,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "clip",
+        "new_film_scope": "style-tools-and-authored-scenes"
       },
       "preview": "styles/newsreel/showcase/preview.jpg",
       "preview_zh": "styles/newsreel/showcase/preview.jpg",
@@ -672,7 +779,11 @@
       "capabilities": {
         "project_creation": true,
         "scene_renderer": false,
-        "published_demo": false
+        "published_demo": false,
+        "published_film": true,
+        "original_source": "not-audited",
+        "sample_rebuild": "not-yet-revalidated",
+        "new_film_scope": "authoring-inputs-only"
       },
       "preview": "styles/exploded-teardown/showcase/preview.jpg",
       "preview_zh": "styles/exploded-teardown/showcase/preview.jpg",
@@ -702,5 +813,6 @@
       ],
       "preview_showcase": "exploded-teardown-films"
     }
-  ]
+  ],
+  "capability_schema_version": 2
 }

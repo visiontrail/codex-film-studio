@@ -1,8 +1,13 @@
 # Caption News · 字幕新闻
 
-**Package status: starter-ready / 创作起步包.** A subject-empty authoring package
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
+**Package status: renderer-ready / 可执行制作包.** A subject-empty authoring package
 for large editorial captions, selective emphasis, ledger graphics and kinetic
-entrances. The scene renderer and audio pipeline must be authored per production.
+entrances. The included renderer, audio pipeline and preview/export commands accept authored scenes and recordings.
 
 Open the cloned studio in your coding Agent and paste:
 
@@ -28,7 +33,7 @@ configured voice service, then measure and align the audio in that project.
 
 Read [the starter guide](starter/README.md). Choose a licensed font and a renderer
 suited to the new composition; the helpers need only a current Node.js runtime.
-The starter contains no finished scene renderer. A separately published film
+The starter includes an executable material renderer and shared delivery pipeline. A separately published film
 preview is available on the style page.
 
 ## Explore the style
@@ -50,4 +55,4 @@ copied into new-film starters or reusable methods.
 Reference influence: the editorial visual grammar of
 [lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)'s Caption News style.
 The rules and helpers here are independently authored; no upstream media or
-production implementation is bundled.
+finished-story implementation is included in the blank starter; the reusable runtime is bundled.

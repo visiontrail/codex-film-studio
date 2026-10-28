@@ -1,6 +1,11 @@
 # Crayon Picture Book · 蜡笔绘本
 
-**Package status: toolkit-ready / 材质工具包.** Wax pigment, paper relief, drawing reveals and physical picture-book motion.
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
+**Package status: renderer-ready / 可执行制作包.** Wax pigment, paper relief, drawing reveals and physical picture-book motion.
 
 This package provides reusable rules, blank inputs and generic tools. Author the
 new subject's characters, scenes, narration, renderer and sound in its own project.

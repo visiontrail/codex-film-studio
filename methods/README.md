@@ -21,3 +21,6 @@ All visual styles and their completion status are in [the style catalog](../styl
 方法只保存可迁移的决策、约束和检查方式。具体选题、脚本、人物、素材、
 固定参数及单片验收结果留在制作项目；配色、字体与动效语法留在风格包。
 新建影片会带上本目录的独立副本，各类型影片按适用条件选用这些方法。
+
+[Reproduction and source bundles](reproduction.md) covers locked tools, materials,
+original-sample restoration and the distinction between integrity and style review.

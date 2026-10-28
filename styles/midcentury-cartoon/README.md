@@ -1,9 +1,14 @@
 # Mid-century Cartoon · 50 年代平涂卡通
 
-**Package status: starter-ready / 创作起步包.** Misregistered flat colour, broken ink, held poses, purposeful hand actions and jazz.
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
+**Package status: renderer-ready / 可执行制作包.** Misregistered flat colour, broken ink, held poses, purposeful hand actions and jazz.
 
 This package provides reusable rules, blank inputs and generic tools. Author the
-new subject's characters, scenes, narration, renderer and sound in its own project.
+new subject's characters, scenes, narration, scene extensions and sound in its own project.
 The catalog records local showcase pages separately from a published demo.
 
 ## Independent style page

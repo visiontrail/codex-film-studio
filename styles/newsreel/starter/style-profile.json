@@ -1,0 +1,10 @@
+{
+  "id": "newsreel",
+  "width": 1920,
+  "height": 1080,
+  "background": "#eee5d2",
+  "ink": "#2b2119",
+  "accent": "#84663c",
+  "secondary": "#b7aa8e",
+  "font": "Oswald"
+}

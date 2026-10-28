@@ -1,0 +1,10 @@
+{
+  "id": "lidar-survey",
+  "width": 1920,
+  "height": 1080,
+  "background": "#05080a",
+  "ink": "#eef3f1",
+  "accent": "#83c495",
+  "secondary": "#bdb5a6",
+  "font": "Barlow Condensed"
+}

@@ -2,6 +2,21 @@
   "name": "scifi-sitcom-production",
   "private": true,
   "type": "module",
-  "engines": {"node": ">=20"},
-  "scripts": {"test": "node --test tests/*.mjs"}
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.mjs",
+    "render": "node scripts/render.mjs",
+    "proof": "python3 tools/runtime/build.py --proof",
+    "build": "python3 tools/runtime/build.py",
+    "preview": "python3 tools/runtime/build.py --preview",
+    "doctor": "python3 tools/runtime/build.py --doctor",
+    "serve": "python3 tools/runtime/serve.py",
+    "check": "python3 tools/runtime/build.py --check",
+    "verify": "python3 tools/runtime/verify.py"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
 }

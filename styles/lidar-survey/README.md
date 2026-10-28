@@ -9,8 +9,9 @@ reveal, anchored sections, camera movement and sound. The [starter](starter/)
 contains an empty survey and timeline contract. Source credit is recorded in
 [PROVENANCE.md](PROVENANCE.md).
 
-Status: **starter-ready**. New films need their own verified survey data, scene
-renderer, narration and soundtrack. The silent browser study is not a finished
+Status: **renderer-ready**. [TOOLS.md](TOOLS.md) covers the included CSV importer,
+point/surface renderer, licensed fonts and audio/export pipeline. New films need
+verified survey data, scenes, narration and soundtrack. The silent browser study is not a finished
 survey film and its synthetic terrain is not a measurement of a real place.
 
 Give your Agent the subject, audience, language, duration and dataset. It creates

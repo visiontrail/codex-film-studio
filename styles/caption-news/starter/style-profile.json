@@ -1,0 +1,10 @@
+{
+  "id": "caption-news",
+  "width": 1920,
+  "height": 1080,
+  "background": "#121315",
+  "ink": "#f7f3e5",
+  "accent": "#ffd426",
+  "secondary": "#44484d",
+  "font": "Inter Tight"
+}

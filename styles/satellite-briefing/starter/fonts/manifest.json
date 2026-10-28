@@ -1,0 +1,14 @@
+[
+  {
+    "file": "fonts/BarlowCondensed-Regular.ttf",
+    "family": "Barlow Condensed",
+    "license": "fonts/OFL-barlowcondensed.txt",
+    "sha256": "583cec5da3b84bc4dc7c9c72e2a565c94d34e431518b19d7e250b7830ad5f996"
+  },
+  {
+    "file": "fonts/IBMPlexMono-Regular.ttf",
+    "family": "IBM Plex Mono",
+    "license": "fonts/OFL-ibmplexmono.txt",
+    "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+  }
+]

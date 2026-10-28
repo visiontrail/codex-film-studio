@@ -7,6 +7,34 @@ on:
 permissions:
   contents: read
 jobs:
+  production-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        style: [art-collage, crayon-book, midcentury-cartoon, satellite-briefing, scifi-sitcom, microgame, art-deco, caption-news, line-chart-comedy, lidar-survey, newsreel]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Render isolated scene, imported sound and nonzero-start preview
+        run: python3 scripts/smoke_render.py --style "${{ matrix.style }}" --output "$RUNNER_TEMP/film-${{ matrix.style }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: render-${{ matrix.style }}
+          path: |
+            ${{ runner.temp }}/film-${{ matrix.style }}/media/*.mp4
+            ${{ runner.temp }}/film-${{ matrix.style }}/media/*.json
+            ${{ runner.temp }}/film-${{ matrix.style }}/media/*.vtt
+            ${{ runner.temp }}/film-${{ matrix.style }}/review/*.json
   style-helpers:
     runs-on: ubuntu-latest
     strategy:

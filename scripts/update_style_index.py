@@ -52,8 +52,10 @@ def render_summary(catalog, language):
               for status in catalog['statuses']}
     if language == 'zh':
         return (f"**{len(entries)} 种风格** · {counts['demo-ready']} 种完整样片工程 · "
+                f"{counts.get('renderer-ready', 0)} 种可执行制作包 · "
                 f"{counts['starter-ready']} 种创作起步包 · {counts['toolkit-ready']} 种材质工具包")
     return (f"**{len(entries)} styles** · {counts['demo-ready']} complete demo kit · "
+            f"{counts.get('renderer-ready', 0)} executable production kits · "
             f"{counts['starter-ready']} authoring starters · {counts['toolkit-ready']} material toolkit")
 
 
@@ -142,8 +144,8 @@ def render(catalog):
         '本地展示由 Agent 启动并检查制作素材；公开页面可以直接访问。', '',
         render_gallery(catalog, prefix='../'), '',
         '## Capabilities / 能力与网页', '',
-        '| Style / 风格 | Package / 完成状态 | Renderer / 场景渲染工程 | Showcase / 网页 |',
-        '| --- | --- | --- | --- |',
+        '| Style / 风格 | Package / 制作包 | Renderer / 渲染 | Public film / 公开影片 | Original source / 原工程 | Rebuild / 重建验证 |',
+        '| --- | --- | --- | --- | --- | --- |',
     ]
     for entry in catalog['styles']:
         relative = entry.get('readme', entry['guide']).removeprefix('styles/')
@@ -151,12 +153,22 @@ def render(catalog):
         page_links = [f'[{label}]({url})' for url, label in page_actions(entry)]
         pages = ' · '.join(page_links) or '—'
         renderer = 'Included / 已有' if entry['capabilities']['scene_renderer'] else 'Author per project / 需按选题编写'
-        lines.append(f"| [{entry['name_zh']} / {entry['name']}]({relative}) | {state['name_zh']} (`{entry['status']}`) | {renderer} | {pages} |")
+        caps = entry['capabilities']
+        source = caps.get('original_source', 'unknown')
+        replay = caps.get('sample_rebuild', 'not-yet-revalidated')
+        public = pages if caps.get('published_film', caps.get('published_demo')) else 'Not published / 未发布'
+        lines.append(f"| [{entry['name_zh']} / {entry['name']}]({relative}) | `{entry['status']}` | {renderer} | {public} | `{source}` | `{replay}` |")
     lines += ['', '## What is complete / 已完成什么', '']
     for entry in catalog['styles']:
         lines.append(f"- **{entry['id']}** — {entry['status_note_zh']} {entry['status_note']}")
     lines += ['',
-        '`demo-ready` includes a released sample and editable renderer. `starter-ready`',
+        'Publication, executable rendering, source access and rebuild scope are independent.',
+        '`full` means a complete rebuild; `clip` covers only the documented excerpt.',
+        'Local source bundles require separate delivery and are not automatically public.',
+        'See [reproduction](../methods/reproduction.md) for acquisition and verification.', '',
+        '`demo-ready` includes a released sample and editable renderer. `renderer-ready`',
+        'provides executable style tools and audio/export checks; author the new story scenes.',
+        '`starter-ready`',
         'provides blank authoring inputs, guides and helpers. `toolkit-ready` provides',
         'material tools and an input contract. The Agent handles project creation for every style;',
         'none describes the acceptance of a new production.', '',

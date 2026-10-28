@@ -48,7 +48,7 @@
 <h3>Art Collage</h3>
 <sub>艺术拼贴</sub>
 <p>Paper cutouts, layered typography and physical collage motion.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-collage/showcase/index.html?lang=en#film">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -58,7 +58,7 @@
 <h3>Crayon Picture Book</h3>
 <sub>蜡笔绘本</sub>
 <p>Wax pigment, textured paper, hand-drawn reveals and physical book motion.</p>
-<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=en">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/crayon-book/showcase/index.html?lang=en">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@
 <h3>Mid-century Cartoon</h3>
 <sub>50 年代平涂卡通</sub>
 <p>Misregistered flat colour, broken ink, held poses and jazz.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=en">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/midcentury-cartoon/showcase/index.html?lang=en">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -78,7 +78,7 @@
 <h3>Satellite Briefing</h3>
 <sub>卫星影像／地理简报</sub>
 <p>Geographic camera, satellite imagery and measured annotations.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=en">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/satellite-briefing/showcase/index.html?lang=en">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -88,7 +88,7 @@
 <h3>Sci-Fi Sitcom Toon</h3>
 <sub>科幻情景喜剧卡通</sub>
 <p>Flat cartoon drawing, contrasting performances and spatial comedy.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=en">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/scifi-sitcom/showcase/index.html?lang=en">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -98,7 +98,7 @@
 <h3>Microgame Frenzy</h3>
 <sub>极速微游戏</sub>
 <p>Rapid command-action-result games with changing materials, lives and accelerating rhythm.</p>
-<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en#films">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -108,7 +108,7 @@
 <h3>Art Deco</h3>
 <sub>装饰艺术</sub>
 <p>Black lacquer, graded brass, faceted figures and spatial mechanical motion.</p>
-<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en#films">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -118,7 +118,7 @@
 <h3>Caption News</h3>
 <sub>字幕新闻</sub>
 <p>Large editorial captions, yellow emphasis, ledger graphics and kinetic entrances.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/caption-news/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -128,7 +128,7 @@
 <h3>Animated Line Chart Comedy</h3>
 <sub>动态折线图喜剧</sub>
 <p>A quiet chart interface with growing lines, expressive endpoint tokens, event cards and comic motion accents.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/line-chart-comedy/showcase/index.html?lang=en#films">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -138,7 +138,7 @@
 <h3>LiDAR Survey</h3>
 <sub>点云测绘</sub>
 <p>Measured point clouds, canopy peeling, raking-lit terrain and fine sections, carried by one continuous camera move.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@
 <h3>Newsreel</h3>
 <sub>复古新闻片</sub>
 <p>Archival pictures, spinning headlines, nine-card montages and a voice from the projection booth.</p>
-<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
 <tr>
@@ -302,3 +302,5 @@ Code, documentation and layout: [MIT](LICENSE). Original sample films and stills
 [frame-source credits](docs/readme/README.md#frame-sources); fonts and instruments
 retain their own licenses. See [sample credits](styles/whiteboard/studio/CREDITS.md).
 [README design references and artwork notes](docs/readme/README.md).
+
+Executable projects now include `doctor`, `check`, `preview`, `build`, `verify` and `serve` commands. The [capability table](styles/README.md#capabilities--能力与网页) separates public films, source access and rebuild scope. See [source bundle acquisition](methods/reproduction.md#portable-archives-and-acquisition).

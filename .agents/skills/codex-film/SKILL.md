@@ -6,8 +6,9 @@ description: Make or adapt a video using a registered style, starter or editable
 Locate the repository root containing `styles.json`. Read the requested
 style's entry, `DIRECTOR.md`, `TECHNIQUE.md` and its `STYLE.md`. Only choose
 styles actually listed. All visual styles live in `styles/<id>/`; check the
-entry's completion status, capabilities and template kind. A toolkit or starter
-requires new scenes and a renderer. `methods/` holds cross-style workflows only.
+entry's completion status, capabilities and template kind. Executable production
+kits include material renderers and a shared runtime; new subjects still need
+authored scenes and assets. `methods/` holds cross-style workflows only.
 
 ## Start from the user's brief
 
@@ -36,6 +37,15 @@ account for its English lettering limitation before using a different script;
 other styles follow their own typography rules.
 
 Each fresh project includes `methods/README.md` and the common review tools.
+Renderer-ready blank projects also include `PRODUCTION.md`, pinned npm dependencies, licensed
+fonts, `scripts/render.mjs`, `src/scene.mjs`, and the empty executable timeline
+`content/production.json`. Run `npm ci` and `npm run proof` to check the material
+pipeline, then author scenes and run `npm run build`. A proof is diagnostic only.
+Microgame carries its engine; no project may depend on a separate library checkout.
+Use `npm run doctor` to check the environment. After authoring the timeline,
+`npm run preview -- --start FRAME --end FRAME` cuts picture, captions and sound
+to the same source interval; `npm run verify -- media/preview.mp4` rechecks the
+encoded delivery. `npm run serve` opens the project's loopback preview server.
 Apply reference adaptation, media selection and revision guidance when relevant,
 including in other visual styles. Keep the new brief authoritative; no fixed
 story count, cast, runtime or previous production's acceptance is inherited.
@@ -51,8 +61,15 @@ copy a showcase story into a blank starter.
 
 For a whiteboard sample reproduction, use `scripts/fetch_demo.py` and the existing
 composition. Released narration and timing avoid a TTS dependency for replay.
-For other exact samples, read `methods/reproduction.md` and check that the
-original editable project and inputs are available before beginning the rebuild.
+For any other exact sample, use `new_film.py NAME --style ID --replay-bundle PATH`
+with a sealed external source bundle. Read `methods/reproduction.md`.
+Acquire an available source archive with `scripts/fetch_source.py --index INDEX
+--style ID --output EXTERNAL_DIRECTORY` before restoring it. Use a real supplier
+index; `local-source-bundle` does not mean publicly downloadable. Read
+`sample_rebuild` independently: a verified excerpt is not a full rebuild.
+Showcase MP4 archives are not editable source bundles. Verify hashes before restoration;
+follow the bundle's recorded dependency and render commands. Never replace a
+missing original composition with a generic material proof and claim equivalence.
 For new narration use the documented Chatterbox service or import WAVs, then
 produce independent word timing. Never invent a voice endpoint or credential.
 

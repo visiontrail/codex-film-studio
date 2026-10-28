@@ -61,7 +61,7 @@ def create(name, style, root=ROOT, output=None):
     copies.append((guide, "STYLE.md"))
     if (root / "LICENSE").is_file():
         copies.append((root / "LICENSE", "LICENSE"))
-    for name in ["prompt.txt", "PROVENANCE.md", "UPSTREAM-LICENSE.txt"]:
+    for name in ["prompt.txt", "PROVENANCE.md", "UPSTREAM-LICENSE.txt", "TOOLS.md"]:
         if (style_root / name).is_file():
             copies.append((style_root / name, name))
     blank = entry.get("template_kind") == "blank"
@@ -77,12 +77,26 @@ def create(name, style, root=ROOT, output=None):
         if not path.is_file():
             raise ValueError(f"Incomplete style package: {path}")
 
+    # Shared executable tools and external style engines are part of the package,
+    # not dependencies on the original library checkout.
+    runtime = root / "runtime"
+    engine = style_root / "engine"
+
     destination.parent.mkdir(parents=True, exist_ok=True)
     # copytree creates the leaf exclusively and refuses a concurrent creation.
     shutil.copytree(source, destination, ignore=IGNORE)
+    if blank and entry.get('capabilities', {}).get('scene_renderer') and runtime.is_dir():
+        shutil.copytree(runtime, destination / "tools/runtime", ignore=IGNORE)
+        shutil.copy2(runtime / "README.md", destination / "PRODUCTION.md")
+    if blank and engine.is_dir():
+        shutil.copytree(engine, destination / "engine", ignore=IGNORE)
     for path, target in copies:
         if path.suffix == ".md":
-            (destination / target).write_text(project_text(path.read_text()), encoding="utf-8")
+            text = project_text(path.read_text())
+            if path.parent == style_root:
+                text = re.sub(r'\]\((showcase/[^)]+)\)',
+                              lambda m: f'](https://visiontrail.github.io/codex-film-studio/styles/{style}/{m[1]})', text)
+            (destination / target).write_text(text, encoding="utf-8")
         else:
             shutil.copy2(path, destination / target)
     methods = root / "methods"
@@ -123,14 +137,20 @@ def main():
     mode.add_argument("--method", help="Deprecated alias for --style")
     parser.add_argument("--list", action="store_true", help="List all styles and completion status")
     parser.add_argument("--output", type=Path, help="New external project directory")
+    parser.add_argument("--replay-bundle", type=Path,
+                        help="Restore a sealed external sample source bundle instead of a blank starter")
     args = parser.parse_args()
     if args.list:
-        if args.name or args.style or args.method or args.output:
+        if args.name or args.style or args.method or args.output or args.replay_bundle:
             parser.error("Use --list on its own.")
         catalog = json.loads((ROOT / "styles.json").read_text())
         for entry in catalog["styles"]:
             print(f"{entry['id']:22} {entry['status']:15} {entry['name_zh']} / {entry['name']}")
             print(f"  {entry['status_note_zh']}")
+            caps = entry['capabilities']
+            print(f"  public film: {caps.get('published_film', caps.get('published_demo', False))}; "
+                  f"original source: {caps.get('original_source', 'unknown')}; "
+                  f"rebuild: {caps.get('sample_rebuild', 'not-yet-revalidated')}")
         return
     if not args.name:
         parser.error("Provide a project name, or use --list.")
@@ -138,10 +158,22 @@ def main():
         print("--method is deprecated; all styles now use --style.", file=sys.stderr)
     style = args.style or args.method or "whiteboard"
     try:
-        destination = create(args.name, style, output=args.output)
+        if args.replay_bundle:
+            from reproduction import inspect_bundle, restore
+            recorded_style = inspect_bundle(args.replay_bundle).get('style')
+            style = args.style or args.method or recorded_style
+            entries = json.loads((ROOT / 'styles.json').read_text())['styles']
+            if style not in {entry['id'] for entry in entries}:
+                raise ValueError(f'Unknown bundled style: {style}')
+            destination = restore(args.replay_bundle, destination_for(args.name, ROOT, args.output), style)
+        else:
+            destination = create(args.name, style, output=args.output)
     except (ValueError, FileExistsError) as exc:
         parser.error(str(exc))
-    print(f"Created {destination}\nOpen this folder in Codex and describe your film.")
+    if args.replay_bundle:
+        print(f"Created {destination}\nRead REBUILD.md and REPRODUCTION.json for the retained sample's commands.")
+    else:
+        print(f"Created {destination}\nContinue production here using README.md, STYLE.md and PRODUCTION.md when present.")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,10 @@
 # Art Deco toolkit
 
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
 [Open the Art Deco style page](https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=en) · [中文独立风格页](https://visiontrail.github.io/codex-film-studio/styles/art-deco/showcase/index.html?lang=zh)
 
 Explore a 16-second interactive material study, palette, drawing and motion rules,
@@ -24,4 +29,4 @@ For an exact sample, give the Agent its title or link and ask it to check for th
 original source project and assets first. See [reproduction](../../methods/reproduction.md).
 
 
-The default output is outside this library. Author a new storyboard and renderer there; do not copy a prior film's cast, claims, script or scene content. Status: toolkit-ready. The two local experimental productions are not published demos and do not establish exact style equivalence.
+The default output is outside this library. Author a new storyboard and extend the supplied scene renderer there; do not copy a prior film's cast, claims, script or scene content. Status: renderer-ready. The style page links published films; landscape editions remain local. Neither establishes exact style equivalence for a new production.

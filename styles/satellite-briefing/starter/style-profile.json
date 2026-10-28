@@ -1,0 +1,10 @@
+{
+  "id": "satellite-briefing",
+  "width": 1920,
+  "height": 1080,
+  "background": "#06101a",
+  "ink": "#edf0e9",
+  "accent": "#ddba76",
+  "secondary": "#627c89",
+  "font": "Barlow Condensed"
+}

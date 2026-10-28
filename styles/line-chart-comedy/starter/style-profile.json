@@ -1,0 +1,10 @@
+{
+  "id": "line-chart-comedy",
+  "width": 1920,
+  "height": 1080,
+  "background": "#eff2f7",
+  "ink": "#202b3c",
+  "accent": "#3a86bf",
+  "secondary": "#d65564",
+  "font": "Jost"
+}

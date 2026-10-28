@@ -1,9 +1,14 @@
 # Microgame toolkit
 
+Executable tooling is now included: see [TOOLS.md](TOOLS.md). New subjects still
+need authored scenes, source assets and accepted audio. Original-sample replay
+uses an external source bundle, as described in [reproduction](../../methods/reproduction.md).
+
+
 [Open the independent style page](https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=en) · [中文风格页](https://visiontrail.github.io/codex-film-studio/styles/microgame/showcase/index.html?lang=zh)
 
 The page contains an original, silent interactive material study, creation steps
-and source references. It is separate from the toolkit and is not a published film.
+and source references. It is separate from the blank production kit; the page also links released films.
 
 Independent Canvas 2D material, character, action and UI helpers. No example
 story, narration, provider jobs or films are packaged in this library.
@@ -25,7 +30,7 @@ Run `node --test engine/characters.test.mjs engine/materials.test.mjs` to check
 contact transforms, palette closure and ordered ground stipple; inspect rendered motion separately.
 
 Author your composition, camera, story-specific transformations, audio and final
-export in the production project. The toolkit has no accepted published demo.
+export in the production project. Released films are separate from the executable blank kit.
 See `STYLE.md` for review criteria. Python audit requires OpenCV, NumPy and
 Pillow; drawing needs a compatible Canvas 2D implementation and licensed fonts.
 

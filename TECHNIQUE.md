@@ -10,10 +10,19 @@ inside the library, including through a symlink, are rejected. All following
 commands run inside that external project unless stated otherwise.
 For every style, start with the generated `README.md`, `STYLE.md` and available
 `WORKFLOW.md` / `REVIEW.md`. Shared methods live in `methods/` in this repository.
-Blank starters need new scenes and a renderer; material toolkits also need the
-production pipeline. Their package status is separate from existing local
+Executable blank projects include `PRODUCTION.md`, pinned dependencies, fonts,
+material renderers, frame export, audio mixing, captions and delivery checks.
+Run `npm ci` and `npm run proof`, then fill `content/production.json` and author
+new drawings in `src/scene.mjs`. `npm run build` produces the encoded film.
+The proof is a material diagnostic, not a sample story. Package status is separate from existing local
 showcase films. Use `python3 scripts/serve_styles.py` from the library root to
 open the unified catalog and retained showcase pages.
+
+For exact sample replay across styles, restore a sealed external source bundle
+with `--replay-bundle PATH`. See [reproduction](methods/reproduction.md) for file
+hashes, source retention, dependency locks and validation limits. Only the
+whiteboard sample currently has its source inputs supplied by `fetch_demo.py`;
+other showcase archives are presentation packages. Some, especially Satellite Briefing, include live composition code and partial inputs; use a sealed source bundle for the complete recorded rebuild dependency set.
 
 Every new working copy includes `methods/` and `tools/frame_review/`. Read
 `methods/README.md` to select reference adaptation, media selection, continuity
@@ -118,3 +127,5 @@ Review the final stills, consecutive motion and playback. Listen to the audio
 when listening tools are available; otherwise state the actual validation
 scope. Keep the source and a usable MP4 together. Do not upload private keys,
 service settings or provider job records to a public repository.
+
+For bounded previews in blank projects: `npm run doctor`, `npm run preview -- --start 72 --end 120 --width 640`, `npm run verify -- media/preview.mp4`, and `npm run serve`. Frame endpoints use the production FPS. See the copied `PRODUCTION.md`.
