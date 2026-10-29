@@ -867,6 +867,57 @@
         ]
       },
       "public_assets": "styles/halftone-dossier/demo-assets.json"
+    },
+    {
+      "id": "prismatic-atlas",
+      "name": "Prismatic Atlas",
+      "name_zh": "棱彩图谱",
+      "description": "Saturated vector worlds, inhabited isometric scenes and clear mechanisms connected by purposeful changes of scale.",
+      "description_zh": "以高饱和矢量世界、等距场景与清晰机制图，通过有意义的尺度变化解释科学。",
+      "status": "toolkit-ready",
+      "status_note": "Original visual guide, generic geometry and frame-time helpers, and empty production inputs. A complete English film is published separately; author scenes and sound for each new story.",
+      "status_note_zh": "包含原创视觉说明、通用几何与帧时间工具及空白输入。另有完整英文影片公开展示；新故事需独立创作场景与声音。",
+      "guide": "styles/prismatic-atlas/STYLE.md",
+      "readme": "styles/prismatic-atlas/README.md",
+      "prompt": "styles/prismatic-atlas/prompt.txt",
+      "template": "styles/prismatic-atlas/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "not-yet-revalidated",
+        "new_film_scope": "style-tools-and-authored-scenes"
+      },
+      "showcases": [
+        {
+          "id": "prismatic-atlas-film",
+          "title": "English-narrated sample film",
+          "title_zh": "全英文配音样片",
+          "page": "styles/prismatic-atlas/showcase/index.html",
+          "anchor": "screening",
+          "access": "release",
+          "media_manifest": "styles/prismatic-atlas/showcase/media/films.json"
+        }
+      ],
+      "preview": "styles/prismatic-atlas/showcase/atlas.svg",
+      "preview_zh": "styles/prismatic-atlas/showcase/atlas.svg",
+      "preview_kind": "schematic",
+      "preview_showcase": "prismatic-atlas-film",
+      "public_assets": "styles/prismatic-atlas/demo-assets.json",
+      "landing": {
+        "page": "styles/prismatic-atlas/showcase/index.html",
+        "assets": [
+          "styles/prismatic-atlas/showcase/showcase.css",
+          "styles/prismatic-atlas/showcase/showcase.mjs",
+          "styles/prismatic-atlas/showcase/atlas.svg",
+          "styles/prismatic-atlas/STYLE.md",
+          "styles/prismatic-atlas/prompt.txt",
+          "styles/prismatic-atlas/PROVENANCE.md"
+        ]
+      }
     }
   ],
   "capability_schema_version": 2

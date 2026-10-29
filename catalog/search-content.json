@@ -78,5 +78,17 @@
       "method": "每件证物安排一个动作，以可见网点、错版大字、粗描边插画和实体印章组织画面。旁白、字幕、镜头与声音共享时间轴。",
       "check": "检查中英文字体可读性、网点稳定、点阵擦除完整覆盖、印章落点与编码成片声音。自动逐帧统计不能证明风格完全一致。"
     }
+  },
+  "prismatic-atlas": {
+    "en": {
+      "use": "Use Prismatic Atlas when a scientific idea becomes clearer by moving between an inhabited place, a mechanism and a detail. Saturated color, shallow isometric forms and recognizable subjects connect these scales.",
+      "method": "Build crisp silhouettes from a few shaded facets. Give people and objects purposeful local actions, retain the same subject through camera moves, and introduce labels after the new relationship is visible. Keep voice, score, ambience and action cues on one frame timeline.",
+      "check": "Inspect contact, depth order, silhouette contrast and the middle of every scale transition. Compare equivalent visual roles across reference and new subject. Record all-frame measurements, viewed frames, continuous playback and subjective listening separately."
+    },
+    "zh": {
+      "use": "当科学想法需要在生活场景、内部机制与局部细节之间切换才能看清时，可以选择棱彩图谱。用饱和色彩、浅等距体块与可辨认的主体把不同尺度连接起来。",
+      "method": "以少量明暗切面构造清晰轮廓，为人物与物件安排有目的的局部动作。镜头移动时保留同一主体，关系看清后再出现标注。旁白、配乐、环境声与动作提示使用同一条逐帧时间轴。",
+      "check": "检查接触、遮挡顺序、主体对比度以及尺度变化的中间过程。参考片与新主题按相同视觉角色对照，分别记录全帧测量、实际看过的帧、连续播放和主观听音。"
+    }
   }
 }

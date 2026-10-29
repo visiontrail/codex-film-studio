@@ -393,3 +393,20 @@ Release bundle. The MP4 streams directly from the same Release, keeping the
 Pages artifact within its size budget. The catalog and both root READMEs link to the page and screening.
 The reusable package is an authoring starter; sample publication does not certify
 full subjective listening or exact equivalence to its reference.
+
+## Prismatic Atlas
+
+The bilingual independent page at `styles/prismatic-atlas/showcase/index.html`
+uses Whiteboard's film, creation prompt, build notes and source structure with
+saturated indigo, mint and coral, faceted geometry and an inhabited isometric
+study. Visitors can switch between world, mechanism and detail views while
+retaining the same subject. The interaction is silent and respects reduced motion.
+
+A complete English film streams from the pinned `prismatic-atlas-v16` Release.
+The verified small media archive supplies the poster, captions, chapters,
+English transcript and credits. The original MP4 is published without transcoding;
+its byte count and SHA-256 hash are recorded under `external_media`.
+All Styles (including Animation), both root README galleries, the style index,
+bilingual search guides and the sitemap resolve through the registry entry.
+The reusable package remains a generic toolkit; film content stays in Release
+assets and the independent production.

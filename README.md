@@ -171,6 +171,16 @@
 <p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en#screening"><img src="styles/prismatic-atlas/showcase/atlas.svg" alt="Prismatic Atlas — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>15 / <code>prismatic-atlas</code></sub>
+<h3>Prismatic Atlas</h3>
+<sub>棱彩图谱</sub>
+<p>Saturated vector worlds, inhabited isometric scenes and clear mechanisms connected by purposeful changes of scale.</p>
+<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->

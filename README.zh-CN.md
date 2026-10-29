@@ -171,6 +171,16 @@
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=zh#screening"><img src="styles/prismatic-atlas/showcase/atlas.svg" alt="棱彩图谱 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>15 / <code>prismatic-atlas</code></sub>
+<h3>棱彩图谱</h3>
+<sub>Prismatic Atlas</sub>
+<p>以高饱和矢量世界、等距场景与清晰机制图，通过有意义的尺度变化解释科学。</p>
+<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->
