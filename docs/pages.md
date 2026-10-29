@@ -380,3 +380,16 @@ language switching preserves film choice and playback position. All Styles,
 both README galleries and the generated search guides use the registry entry.
 The authoring starter contains an empty object/timeline contract and no film
 content or scene renderer.
+
+## Halftone Dossier
+
+The bilingual independent page at `styles/halftone-dossier/showcase/index.html`
+follows the Whiteboard page's screening, authoring, build notes and reference
+structure with a paper-and-ink visual treatment. It includes the complete English
+Chatterbox-narrated sample, chapters, English captions and transcript, a generic
+interactive halftone-and-stamp study and a natural-language creation prompt.
+Film metadata stays in the checksum-pinned `halftone-dossier-preview-v1`
+Release bundle. The MP4 streams directly from the same Release, keeping the
+Pages artifact within its size budget. The catalog and both root READMEs link to the page and screening.
+The reusable package is an authoring starter; sample publication does not certify
+full subjective listening or exact equivalence to its reference.

@@ -44,6 +44,7 @@ its original text. Both covers use these same six frames in registry order.
 | Satellite Briefing | Singapore · Three Days, Three Routes | 00:06 |
 | Sci-Fi Sitcom Toon | The House Gets Coffee · Pocket V9 | 00:20 |
 | Caption News | Published complete web preview | 00:06 / 01:28 / 02:25 |
+| Halftone Dossier | The Coffee Case · English Chatterbox edition | 00:01.8 |
 
 [frames.json](frames.json) records each source filename, video SHA-256, exact
 frame/time, native dimensions and retained image SHA-256. Source movies and

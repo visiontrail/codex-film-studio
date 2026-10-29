@@ -21,6 +21,7 @@ const categories = {
   'line-chart-comedy':['animation'], 'art-deco':['animation','material'],
   'lidar-survey':['geography'], 'newsreel':['material'],
   'exploded-teardown':['animation','material'],
+  'halftone-dossier':['animation','material'],
 };
 const state = { catalog:null, frames:{}, availability:{mode:'public', pages:{}}, language:'en', filter:'all', query:'', detail:null };
 const $ = selector => document.querySelector(selector);

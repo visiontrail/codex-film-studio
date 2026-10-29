@@ -6,7 +6,7 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
-**13 styles** · 1 complete demo kit · 12 executable production kits · 0 authoring starters · 0 material toolkit
+**14 styles** · 1 complete demo kit · 12 executable production kits · 1 authoring starters · 0 material toolkit
 
 ## Visual index / 风格一览
 
@@ -161,6 +161,17 @@ Ask your Agent to open local showcases and check their retained project files.
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening">Two complete films</a> · <a href="../styles/exploded-teardown/STYLE.md">Style guide</a> · <a href="../styles/exploded-teardown/prompt.txt">Prompt</a> · <a href="../styles/exploded-teardown/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening"><img src="../styles/halftone-dossier/showcase/preview.jpg" alt="Halftone Dossier — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>14 / <code>halftone-dossier</code></sub>
+<h3>Halftone Dossier</h3>
+<sub>复古半调案卷</sub>
+<p>Warm archive paper, spot-ink dots, offset headlines and physical stamps turn a story into a trail of exhibits.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening">English-narrated sample film</a> · <a href="../styles/halftone-dossier/STYLE.md">Style guide</a> · <a href="../styles/halftone-dossier/prompt.txt">Prompt</a> · <a href="../styles/halftone-dossier/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 ## Capabilities / 能力与网页
@@ -180,6 +191,7 @@ Ask your Agent to open local showcases and check their retained project files.
 | [点云测绘 / LiDAR Survey](lidar-survey/README.md) | `renderer-ready` | Included / 已有 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en) · [Finished films](https://visiontrail.github.io/codex-film-studio/styles/lidar-survey/showcase/index.html?lang=en#films) | `local-source-bundle` | `clip` |
 | [复古新闻片 / Newsreel](newsreel/README.md) | `renderer-ready` | Included / 已有 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en) · [Newsreel · Two complete films](https://visiontrail.github.io/codex-film-studio/styles/newsreel/showcase/index.html?lang=en#screening) | `local-source-bundle` | `clip` |
 | [爆炸拆解 / Exploded Teardown](exploded-teardown/README.md) | `renderer-ready` | Included / 已有 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en) · [Two complete films](https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening) | `local-source-bundle` | `clip` |
+| [复古半调案卷 / Halftone Dossier](halftone-dossier/README.md) | `starter-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en) · [English-narrated sample film](https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening) | `not-audited` | `not-yet-revalidated` |
 
 ## What is complete / 已完成什么
 
@@ -196,6 +208,7 @@ Ask your Agent to open local showcases and check their retained project files.
 - **lidar-survey** — 已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。 Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.
 - **newsreel** — 已含锁定依赖、授权字体、风格材质渲染、帧时间轴、混音与交付检查；新主题仍需创作场景。 Pinned runtime, licensed fonts, style material renderer, frame timeline, audio mix and delivery checks; author new story scenes.
 - **exploded-teardown** — 已有可执行 Three.js 装配渲染、PBR 材质、错峰拆解、相机与标注；新题材仍需创作几何和时间轴。原工程包目前仅在本地，两部原片均已重建 30–34 秒片段，整片尚未验收。 Executable Three.js assembly renderer with PBR materials, staggered separation, camera and labels; new subjects still require authored geometry and timing. Original source bundles remain local; both original 30–34 s clips are rebuilt; full videos are not yet verified.
+- **halftone-dossier** — 包含视觉说明、创作提示词与空白输入；新影片需创作画稿、场景与声音，公开样片单独发布。 Visual guide, creative prompt and empty authoring inputs; a new film needs authored artwork, scenes and sound. The published sample is separate.
 
 Publication, executable rendering, source access and rebuild scope are independent.
 `full` means a complete rebuild; `clip` covers only the documented excerpt.

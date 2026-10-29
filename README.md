@@ -161,6 +161,16 @@
 <p><b>Executable production kit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening"><img src="styles/halftone-dossier/showcase/preview.jpg" alt="Halftone Dossier — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>14 / <code>halftone-dossier</code></sub>
+<h3>Halftone Dossier</h3>
+<sub>复古半调案卷</sub>
+<p>Warm archive paper, spot-ink dots, offset headlines and physical stamps turn a story into a trail of exhibits.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->

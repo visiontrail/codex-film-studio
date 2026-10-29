@@ -817,6 +817,56 @@
         }
       ],
       "preview_showcase": "exploded-teardown-films"
+    },
+    {
+      "id": "halftone-dossier",
+      "name": "Halftone Dossier",
+      "name_zh": "复古半调案卷",
+      "description": "Warm archive paper, spot-ink dots, offset headlines and physical stamps turn a story into a trail of exhibits.",
+      "description_zh": "暖色档案纸、专色网点、错版大字和实体印章，把故事编成一条证据链。",
+      "status": "starter-ready",
+      "status_note": "Visual guide, creative prompt and empty authoring inputs; a new film needs authored artwork, scenes and sound. The published sample is separate.",
+      "status_note_zh": "包含视觉说明、创作提示词与空白输入；新影片需创作画稿、场景与声音，公开样片单独发布。",
+      "guide": "styles/halftone-dossier/STYLE.md",
+      "readme": "styles/halftone-dossier/README.md",
+      "prompt": "styles/halftone-dossier/prompt.txt",
+      "template": "styles/halftone-dossier/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false,
+        "published_film": true,
+        "original_source": "not-audited",
+        "sample_rebuild": "not-yet-revalidated",
+        "new_film_scope": "authored-scenes"
+      },
+      "showcases": [
+        {
+          "id": "halftone-dossier-film",
+          "title": "English-narrated sample film",
+          "title_zh": "全英文配音样片",
+          "page": "styles/halftone-dossier/showcase/index.html",
+          "anchor": "screening",
+          "access": "release",
+          "media_manifest": "styles/halftone-dossier/showcase/media/films.json"
+        }
+      ],
+      "preview": "styles/halftone-dossier/showcase/preview.jpg",
+      "preview_zh": "styles/halftone-dossier/showcase/preview.jpg",
+      "preview_kind": "frame",
+      "preview_showcase": "halftone-dossier-film",
+      "landing": {
+        "page": "styles/halftone-dossier/showcase/index.html",
+        "assets": [
+          "styles/halftone-dossier/showcase/showcase.css",
+          "styles/halftone-dossier/showcase/showcase.mjs",
+          "styles/halftone-dossier/STYLE.md",
+          "styles/halftone-dossier/prompt.txt",
+          "styles/halftone-dossier/PROVENANCE.md"
+        ]
+      },
+      "public_assets": "styles/halftone-dossier/demo-assets.json"
     }
   ],
   "capability_schema_version": 2

@@ -161,6 +161,16 @@
 <p><b>可执行制作包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=zh#screening"><img src="styles/halftone-dossier/showcase/preview.jpg" alt="复古半调案卷 — 影片截图" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>14 / <code>halftone-dossier</code></sub>
+<h3>复古半调案卷</h3>
+<sub>Halftone Dossier</sub>
+<p>暖色档案纸、专色网点、错版大字和实体印章，把故事编成一条证据链。</p>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->

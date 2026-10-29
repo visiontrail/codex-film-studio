@@ -1,0 +1,24 @@
+{
+  "release": "halftone-dossier-preview-v1",
+  "archive": {
+    "name": "halftone-dossier-preview-v1.tar.gz",
+    "bytes": 244436,
+    "sha256": "1824e18607618aa3c8ec2d8406298edaed4e16520e9c97ff072ccf9095900af7",
+    "url": "https://github.com/visiontrail/codex-film-studio/releases/download/halftone-dossier-preview-v1/halftone-dossier-preview-v1.tar.gz"
+  },
+  "files": [
+    "media/coffee-case-en.jpg",
+    "media/coffee-case-en.vtt",
+    "media/credits.html",
+    "media/films.json",
+    "media/transcript.json"
+  ],
+  "external_media": [
+    {
+      "name": "coffee-case-en.mp4",
+      "url": "https://github.com/visiontrail/codex-film-studio/releases/download/halftone-dossier-preview-v1/coffee-case-en.mp4",
+      "bytes": 42649297,
+      "sha256": "001b427e11b6f505a1fd79ab25e713189d3a11f7ec20de876c29da3a316a3e49"
+    }
+  ]
+}
