@@ -79,6 +79,18 @@
       "check": "检查中英文字体可读性、网点稳定、点阵擦除完整覆盖、印章落点与编码成片声音。自动逐帧统计不能证明风格完全一致。"
     }
   },
+  "luminous-worlds": {
+    "en": {
+      "use": "Use Luminous Worlds for science stories that need both an inviting environment and a clear explanation of what happens inside. Layered illustrations, expressive subjects and luminous mechanisms connect the world to its hidden processes.",
+      "method": "Separate the environment, acting subjects and explanatory light. Give actions anticipation, contact and a readable result. Keep camera, narration, captions, musical sections and sound cues on one timeline. Author new scenes for each new subject.",
+      "check": "Inspect subject contrast, depth order, attached props and complete transitions. Compare reference and new production by visual role. Keep every-frame diagnostics, viewed frames, continuous playback and subjective listening as separate evidence."
+    },
+    "zh": {
+      "use": "适合既需要生动环境、又需要解释内部过程的科学故事。用分层插画、有表情的主体与明亮机制图，把外部世界与隐藏的过程联系起来。",
+      "method": "分别组织环境、表演主体与解释性的光。动作要有预备、接触和可读的结果。镜头、旁白、字幕、音乐段落与音效使用同一条时间线，为每个新题材创作新的场景。",
+      "check": "检查主体对比、遮挡关系、道具附着和完整转场。参考片与新片按相同视觉功能比较，分别保留全帧诊断、实际看过的帧、连续播放和主观听音的依据。"
+    }
+  },
   "prismatic-atlas": {
     "en": {
       "use": "Use Prismatic Atlas when a scientific idea becomes clearer by moving between an inhabited place, a mechanism and a detail. Saturated color, shallow isometric forms and recognizable subjects connect these scales.",

@@ -181,6 +181,16 @@
 <p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en#screening"><img src="styles/luminous-worlds/preview.svg" alt="Luminous Worlds — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>16 / <code>luminous-worlds</code></sub>
+<h3>Luminous Worlds</h3>
+<sub>明彩世界</sub>
+<p>Layered illustrated worlds, crisp animated subjects and luminous mechanisms, with role-based every-frame diagnostics.</p>
+<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->

@@ -23,6 +23,7 @@ const categories = {
   'exploded-teardown':['animation','material'],
   'halftone-dossier':['animation','material'],
   'prismatic-atlas':['animation'],
+  'luminous-worlds':['animation'],
 };
 const state = { catalog:null, frames:{}, availability:{mode:'public', pages:{}}, language:'en', filter:'all', query:'', detail:null };
 const $ = selector => document.querySelector(selector);
