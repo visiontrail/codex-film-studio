@@ -6,7 +6,7 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
-**16 styles** · 1 complete demo kit · 12 executable production kits · 2 authoring starters · 1 material toolkit
+**17 styles** · 1 complete demo kit · 12 executable production kits · 2 authoring starters · 2 material toolkit
 
 ## Visual index / 风格一览
 
@@ -194,6 +194,17 @@ Ask your Agent to open local showcases and check their retained project files.
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening">English-narrated V60 film</a> · <a href="../styles/hologram-hud/STYLE.md">Style guide</a> · <a href="../styles/hologram-hud/prompt.txt">Prompt</a> · <a href="../styles/hologram-hud/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en#screening"><img src="../styles/luminous-worlds/preview.svg" alt="Luminous Worlds — style sketch" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>17 / <code>luminous-worlds</code></sub>
+<h3>Luminous Worlds</h3>
+<sub>明彩世界</sub>
+<p>Layered illustrated worlds, crisp animated subjects and luminous mechanisms, with role-based every-frame diagnostics.</p>
+<p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en#screening">Finished film</a> · <a href="../styles/luminous-worlds/STYLE.md">Style guide</a> · <a href="../styles/luminous-worlds/prompt.txt">Prompt</a> · <a href="../styles/luminous-worlds/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 ## Capabilities / 能力与网页
@@ -216,6 +227,7 @@ Ask your Agent to open local showcases and check their retained project files.
 | [复古半调案卷 / Halftone Dossier](halftone-dossier/README.md) | `starter-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en) · [English-narrated sample film](https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening) | `not-audited` | `not-yet-revalidated` |
 | [棱彩图谱 / Prismatic Atlas](prismatic-atlas/README.md) | `toolkit-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en) · [English-narrated sample film](https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en#screening) | `local-source-bundle` | `not-yet-revalidated` |
 | [科幻全息 HUD / Sci-fi Hologram HUD](hologram-hud/README.md) | `starter-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en) · [English-narrated V60 film](https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening) | `local-source-bundle` | `not-yet-revalidated` |
+| [明彩世界 / Luminous Worlds](luminous-worlds/README.md) | `toolkit-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en) · [Finished film](https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=en#screening) | `unavailable` | `not-yet-revalidated` |
 
 ## What is complete / 已完成什么
 
@@ -235,6 +247,7 @@ Ask your Agent to open local showcases and check their retained project files.
 - **halftone-dossier** — 包含视觉说明、创作提示词与空白输入；新影片需创作画稿、场景与声音，公开样片单独发布。 Visual guide, creative prompt and empty authoring inputs; a new film needs authored artwork, scenes and sound. The published sample is separate.
 - **prismatic-atlas** — 包含原创视觉说明、通用几何与帧时间工具及空白输入。另有完整英文影片公开展示；新故事需独立创作场景与声音。 Original visual guide, generic geometry and frame-time helpers, and empty production inputs. A complete English film is published separately; author scenes and sound for each new story.
 - **hologram-hud** — 包含视觉说明、创作提示词与空白输入。新主题需创作几何模型、场景与声音；已验收影片单独发布。 Visual guide, creative prompt and empty authoring inputs. Author geometry, scenes and sound for a new subject. The accepted film is published separately.
+- **luminous-worlds** — 含视觉方法、几何与时序工具、空白输入契约、全帧诊断与已发布英文成片。新的场景和声音需要另行创作。 Visual method, geometry and timing helpers, an empty production contract and full-frame diagnostics, plus a published English film. New scenes and sound require authoring.
 
 Publication, executable rendering, source access and rebuild scope are independent.
 `full` means a complete rebuild; `clip` covers only the documented excerpt.

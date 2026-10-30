@@ -973,6 +973,59 @@
         ]
       },
       "public_assets": "styles/hologram-hud/demo-assets.json"
+    },
+    {
+      "id": "luminous-worlds",
+      "name": "Luminous Worlds",
+      "name_zh": "明彩世界",
+      "description": "Layered illustrated worlds, crisp animated subjects and luminous mechanisms, with role-based every-frame diagnostics.",
+      "description_zh": "分层插画世界、清晰角色动作与明亮机制图，配套按视觉功能逐帧比对的工具。",
+      "status": "toolkit-ready",
+      "status_note": "Visual method, geometry and timing helpers, an empty production contract and full-frame diagnostics, plus a published English film. New scenes and sound require authoring.",
+      "status_note_zh": "含视觉方法、几何与时序工具、空白输入契约、全帧诊断与已发布英文成片。新的场景和声音需要另行创作。",
+      "guide": "styles/luminous-worlds/STYLE.md",
+      "readme": "styles/luminous-worlds/README.md",
+      "prompt": "styles/luminous-worlds/prompt.txt",
+      "template": "styles/luminous-worlds/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false,
+        "published_film": true,
+        "original_source": "unavailable",
+        "sample_rebuild": "not-yet-revalidated",
+        "new_film_scope": "hybrid-material-tools-and-authored-scenes"
+      },
+      "showcases": [
+        {
+          "id": "luminous-worlds-film",
+          "title": "Finished film",
+          "title_zh": "完整成片",
+          "page": "styles/luminous-worlds/showcase/index.html",
+          "anchor": "screening",
+          "access": "release",
+          "media_manifest": "styles/luminous-worlds/showcase/media/films.json"
+        }
+      ],
+      "preview": "styles/luminous-worlds/preview.svg",
+      "preview_zh": "styles/luminous-worlds/preview.svg",
+      "preview_kind": "schematic",
+      "landing": {
+        "page": "styles/luminous-worlds/showcase/index.html",
+        "assets": [
+          "styles/luminous-worlds/showcase/showcase.css",
+          "styles/luminous-worlds/showcase/showcase.mjs",
+          "styles/luminous-worlds/showcase/world.svg",
+          "styles/luminous-worlds/showcase/fonts/JostMedium.ttf",
+          "styles/luminous-worlds/showcase/fonts/OFL-jost.txt",
+          "styles/luminous-worlds/STYLE.md",
+          "styles/luminous-worlds/prompt.txt",
+          "styles/luminous-worlds/PROVENANCE.md"
+        ]
+      },
+      "public_assets": "styles/luminous-worlds/demo-assets.json",
+      "preview_showcase": "luminous-worlds-film"
     }
   ],
   "capability_schema_version": 2

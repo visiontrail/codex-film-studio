@@ -1,0 +1,5 @@
+{
+  "interval_convention": "zero-based half-open frame intervals",
+  "selection_policy": "Declare role windows before computing comparisons",
+  "roles": []
+}

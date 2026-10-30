@@ -191,6 +191,16 @@
 <p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=zh#screening"><img src="styles/luminous-worlds/preview.svg" alt="明彩世界 — 风格示意" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>17 / <code>luminous-worlds</code></sub>
+<h3>明彩世界</h3>
+<sub>Luminous Worlds</sub>
+<p>分层插画世界、清晰角色动作与明亮机制图，配套按视觉功能逐帧比对的工具。</p>
+<p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/luminous-worlds/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->
