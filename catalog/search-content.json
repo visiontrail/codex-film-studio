@@ -90,5 +90,17 @@
       "method": "以少量明暗切面构造清晰轮廓，为人物与物件安排有目的的局部动作。镜头移动时保留同一主体，关系看清后再出现标注。旁白、配乐、环境声与动作提示使用同一条逐帧时间轴。",
       "check": "检查接触、遮挡顺序、主体对比度以及尺度变化的中间过程。参考片与新主题按相同视觉角色对照，分别记录全帧测量、实际看过的帧、连续播放和主观听音。"
     }
+  },
+  "hologram-hud": {
+    "en": {
+      "use": "Choose Sci-fi Hologram HUD when a mechanism becomes clearer through scanning, targeted inspection and local exploded views. It suits instruments, vehicles and technical systems with recognizable parts.",
+      "method": "Build connected wireframe geometry over a dark projector stage. Separate the distant grid, object and foreground labels. Use one cool hue, a warm accent for settled information, and deliberate camera moves. Align narration, target locks, captions and sound on one timeline.",
+      "check": "Check line separation at delivery size, callout anchors, assembly axes and subtitle clearance. Watch the encoded motion and listen to the complete mix. State frame-comparison coverage and source-replay limits separately from viewer acceptance."
+    },
+    "zh": {
+      "use": "当机制适合通过扫描、目标检查与局部拆解讲清时，可以选择科幻全息 HUD。适用于具有可辨认部件的仪器、车辆与技术系统。",
+      "method": "在深色投影台上构建相互连接的线框几何，区分远处点阵、物体与前景标签。以冷色为主，以暖色强调落定信息，让镜头移动有明确目的。旁白、目标锁定、字幕和声音共用时间轴。",
+      "check": "检查交付尺寸下的线条分离度、引线锚点、装配轴与字幕空间。观看编码后的运动并试听完整混音，分别说明逐帧比较覆盖范围、源工程重建限制与用户验收。"
+    }
   }
 }

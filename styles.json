@@ -918,6 +918,61 @@
           "styles/prismatic-atlas/PROVENANCE.md"
         ]
       }
+    },
+    {
+      "id": "hologram-hud",
+      "name": "Sci-fi Hologram HUD",
+      "name_zh": "科幻全息 HUD",
+      "description": "Luminous wireframes, scanning planes, target locks and local exploded views reveal how an object works.",
+      "description_zh": "发光线框、扫描平面、目标锁定与局部拆解，逐步揭示物体如何运作。",
+      "status": "starter-ready",
+      "status_note": "Visual guide, creative prompt and empty authoring inputs. Author geometry, scenes and sound for a new subject. The accepted film is published separately.",
+      "status_note_zh": "包含视觉说明、创作提示词与空白输入。新主题需创作几何模型、场景与声音；已验收影片单独发布。",
+      "guide": "styles/hologram-hud/STYLE.md",
+      "readme": "styles/hologram-hud/README.md",
+      "prompt": "styles/hologram-hud/prompt.txt",
+      "template": "styles/hologram-hud/starter",
+      "template_kind": "blank",
+      "capabilities": {
+        "project_creation": true,
+        "scene_renderer": false,
+        "published_demo": false,
+        "published_film": true,
+        "original_source": "local-source-bundle",
+        "sample_rebuild": "not-yet-revalidated",
+        "new_film_scope": "authored-scenes"
+      },
+      "showcases": [
+        {
+          "id": "hologram-hud-film",
+          "title": "English-narrated V60 film",
+          "title_zh": "V60 英文成片",
+          "page": "styles/hologram-hud/showcase/index.html",
+          "anchor": "screening",
+          "access": "release",
+          "media_manifest": "styles/hologram-hud/showcase/media/films.json"
+        }
+      ],
+      "preview": "styles/hologram-hud/showcase/preview.jpg",
+      "preview_zh": "styles/hologram-hud/showcase/preview.jpg",
+      "preview_kind": "frame",
+      "preview_showcase": "hologram-hud-film",
+      "landing": {
+        "page": "styles/hologram-hud/showcase/index.html",
+        "assets": [
+          "styles/hologram-hud/showcase/showcase.css",
+          "styles/hologram-hud/showcase/showcase.mjs",
+          "styles/hologram-hud/STYLE.md",
+          "styles/hologram-hud/prompt.txt",
+          "styles/hologram-hud/PROVENANCE.md",
+          "styles/hologram-hud/showcase/fonts/OFL-rajdhani.txt",
+          "styles/hologram-hud/showcase/fonts/OFL-sharetechmono.txt",
+          "styles/hologram-hud/showcase/fonts/Rajdhani-Light.ttf",
+          "styles/hologram-hud/showcase/fonts/Rajdhani-Medium.ttf",
+          "styles/hologram-hud/showcase/fonts/ShareTechMono-Regular.ttf"
+        ]
+      },
+      "public_assets": "styles/hologram-hud/demo-assets.json"
     }
   ],
   "capability_schema_version": 2

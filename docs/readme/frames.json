@@ -185,6 +185,23 @@
       "image": "docs/readme/frames/halftone-dossier.jpg",
       "image_sha256": "cd4fd780f6c5605d18bf83c98697b28dd026b1388766ccaf2575ef360cf30b9d",
       "treatment": "Decoded web-video frame at 1.8 seconds; full composition retained."
+    },
+    {
+      "style": "hologram-hud",
+      "source_video": "productions/hologram-hud-20261027/lyra-v60-sci-fi-hologram-hud.mp4",
+      "source_sha256": "30b3c35731ced02d365e0ff54675e1cfc80a930a30d31030277c057bb569bfd8",
+      "title": "LYRA · Systems in Space",
+      "title_zh": "LYRA · 太空中的系统",
+      "seconds": 175.0,
+      "frame": 4200,
+      "fps": "24",
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "image": "styles/hologram-hud/showcase/preview.jpg",
+      "image_sha256": "e607bb86a1d19283c90f2c96b61e06fb91eac4f388698498ff83f36f20bd7e76",
+      "treatment": "Retained decoded V60 frame 4200; full composition and original image preserved."
     }
   ]
 }

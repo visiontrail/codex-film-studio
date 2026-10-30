@@ -181,6 +181,16 @@
 <p><b>材质工具包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=zh#screening"><img src="styles/hologram-hud/showcase/preview.jpg" alt="科幻全息 HUD — 影片截图" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>16 / <code>hologram-hud</code></sub>
+<h3>科幻全息 HUD</h3>
+<sub>Sci-fi Hologram HUD</sub>
+<p>发光线框、扫描平面、目标锁定与局部拆解，逐步揭示物体如何运作。</p>
+<p><b>创作起步包</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=zh#screening">▶ 在线播放</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->

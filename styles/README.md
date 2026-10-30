@@ -6,7 +6,7 @@ package completion and showcase availability. Shared workflows live in `methods/
 所有风格统一放在 `styles/<id>/`。完成状态描述仓库中的可复用内容；
 已有本地影片网页、公开样片与新影片验收分别记录。
 
-**15 styles** · 1 complete demo kit · 12 executable production kits · 1 authoring starters · 1 material toolkit
+**16 styles** · 1 complete demo kit · 12 executable production kits · 2 authoring starters · 1 material toolkit
 
 ## Visual index / 风格一览
 
@@ -183,6 +183,17 @@ Ask your Agent to open local showcases and check their retained project files.
 <sub><a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en#screening">English-narrated sample film</a> · <a href="../styles/prismatic-atlas/STYLE.md">Style guide</a> · <a href="../styles/prismatic-atlas/prompt.txt">Prompt</a> · <a href="../styles/prismatic-atlas/starter">Project files</a></sub>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening"><img src="../styles/hologram-hud/showcase/preview.jpg" alt="Sci-fi Hologram HUD — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>16 / <code>hologram-hud</code></sub>
+<h3>Sci-fi Hologram HUD</h3>
+<sub>科幻全息 HUD</sub>
+<p>Luminous wireframes, scanning planes, target locks and local exploded views reveal how an object works.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+<sub><a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en">Style page</a> · <a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening">English-narrated V60 film</a> · <a href="../styles/hologram-hud/STYLE.md">Style guide</a> · <a href="../styles/hologram-hud/prompt.txt">Prompt</a> · <a href="../styles/hologram-hud/starter">Project files</a></sub>
+</td>
+</tr>
 </table>
 
 ## Capabilities / 能力与网页
@@ -204,6 +215,7 @@ Ask your Agent to open local showcases and check their retained project files.
 | [爆炸拆解 / Exploded Teardown](exploded-teardown/README.md) | `renderer-ready` | Included / 已有 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en) · [Two complete films](https://visiontrail.github.io/codex-film-studio/styles/exploded-teardown/showcase/index.html?lang=en#screening) | `local-source-bundle` | `clip` |
 | [复古半调案卷 / Halftone Dossier](halftone-dossier/README.md) | `starter-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en) · [English-narrated sample film](https://visiontrail.github.io/codex-film-studio/styles/halftone-dossier/showcase/index.html?lang=en#screening) | `not-audited` | `not-yet-revalidated` |
 | [棱彩图谱 / Prismatic Atlas](prismatic-atlas/README.md) | `toolkit-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en) · [English-narrated sample film](https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en#screening) | `local-source-bundle` | `not-yet-revalidated` |
+| [科幻全息 HUD / Sci-fi Hologram HUD](hologram-hud/README.md) | `starter-ready` | Author per project / 需按选题编写 | [Style page](https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en) · [English-narrated V60 film](https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening) | `local-source-bundle` | `not-yet-revalidated` |
 
 ## What is complete / 已完成什么
 
@@ -222,6 +234,7 @@ Ask your Agent to open local showcases and check their retained project files.
 - **exploded-teardown** — 已有可执行 Three.js 装配渲染、PBR 材质、错峰拆解、相机与标注；新题材仍需创作几何和时间轴。原工程包目前仅在本地，两部原片均已重建 30–34 秒片段，整片尚未验收。 Executable Three.js assembly renderer with PBR materials, staggered separation, camera and labels; new subjects still require authored geometry and timing. Original source bundles remain local; both original 30–34 s clips are rebuilt; full videos are not yet verified.
 - **halftone-dossier** — 包含视觉说明、创作提示词与空白输入；新影片需创作画稿、场景与声音，公开样片单独发布。 Visual guide, creative prompt and empty authoring inputs; a new film needs authored artwork, scenes and sound. The published sample is separate.
 - **prismatic-atlas** — 包含原创视觉说明、通用几何与帧时间工具及空白输入。另有完整英文影片公开展示；新故事需独立创作场景与声音。 Original visual guide, generic geometry and frame-time helpers, and empty production inputs. A complete English film is published separately; author scenes and sound for each new story.
+- **hologram-hud** — 包含视觉说明、创作提示词与空白输入。新主题需创作几何模型、场景与声音；已验收影片单独发布。 Visual guide, creative prompt and empty authoring inputs. Author geometry, scenes and sound for a new subject. The accepted film is published separately.
 
 Publication, executable rendering, source access and rebuild scope are independent.
 `full` means a complete rebuild; `clip` covers only the documented excerpt.

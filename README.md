@@ -181,6 +181,16 @@
 <p><b>Material toolkit</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/prismatic-atlas/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
 </td>
 </tr>
+<tr>
+<td width="38%" valign="middle"><a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening"><img src="styles/hologram-hud/showcase/preview.jpg" alt="Sci-fi Hologram HUD — film frame" width="320"></a></td>
+<td width="62%" valign="top">
+<sub>16 / <code>hologram-hud</code></sub>
+<h3>Sci-fi Hologram HUD</h3>
+<sub>科幻全息 HUD</sub>
+<p>Luminous wireframes, scanning planes, target locks and local exploded views reveal how an object works.</p>
+<p><b>Authoring starter</b> · <a href="https://visiontrail.github.io/codex-film-studio/styles/hologram-hud/showcase/index.html?lang=en#screening">▶ Watch online</a></p>
+</td>
+</tr>
 </table>
 
 <!-- style-atlas:end -->

@@ -1,0 +1,8 @@
+{
+  "style": "hologram-hud",
+  "brief": {"subject": "", "audience": "", "language": "", "duration_seconds": null},
+  "delivery": {"width": 1920, "height": 1080, "fps": 24},
+  "sources": [],
+  "assets": [],
+  "shots": []
+}

@@ -410,3 +410,19 @@ All Styles (including Animation), both root README galleries, the style index,
 bilingual search guides and the sitemap resolve through the registry entry.
 The reusable package remains a generic toolkit; film content stays in Release
 assets and the independent production.
+
+## Sci-fi Hologram HUD
+
+The bilingual independent page at `styles/hologram-hud/showcase/index.html`
+uses a 1080p web copy of the accepted V60 MP4 from the `hologram-hud-v60` Release.
+The 191-second 1080p film retains its English voice and original soundtrack;
+the AAC stream is copied without another audio encode. The larger master stays
+in the retained production.
+A checksum-pinned small bundle supplies captions, chapter metadata, transcript,
+poster and credits; the MP4 is an external Release asset and is not duplicated
+inside the Pages size budget. The page includes a finite, silent optical-module
+study with scan, lock and reveal controls, plus the shared prompt entry.
+
+The catalog and bilingual README link to the page. The reusable package is an
+authoring starter; its public film does not imply a released source renderer.
+Font files and OFL notices are explicitly included in `landing.assets`.
